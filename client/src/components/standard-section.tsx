@@ -73,30 +73,30 @@ export function StandardSection() {
               </div>
             </div>
 
-            {/* Agricultural Image with Overlay */}
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-xl shadow-lg">
+            {/* Agricultural Image with Overlay - Matching Left Container Height */}
+            <div className="relative h-full">
+              <div className="relative overflow-hidden rounded-xl shadow-lg h-full">
                 <img
                   src={grainImage}
                   alt="Wheat fields - sustainable agriculture and grain production"
-                  className="w-full h-96 object-cover"
+                  className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6">
-                    <h4 className="text-xl font-semibold text-slate-900 mb-3">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4">
+                    <h4 className="text-lg font-semibold text-slate-900 mb-2">
                       Eccellenza nella Certificazione Agricola
                     </h4>
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      Il protocollo EUFD2025-001 garantisce la certificazione di pratiche agricole sostenibili che riducono le emissioni di carbonio mantenendo alta produttività e qualità dei raccolti.
+                    <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                      Il protocollo EUFD2025-001 garantisce la certificazione di pratiche agricole sostenibili.
                     </p>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="flex items-center space-x-2">
-                        <Shield className="h-4 w-4 text-emerald-700" />
+                    <div className="flex items-center space-x-4 text-xs">
+                      <div className="flex items-center space-x-1">
+                        <Shield className="h-3 w-3 text-emerald-700" />
                         <span className="text-slate-700">Certificato UE</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <Globe2 className="h-4 w-4 text-blue-700" />
+                      <div className="flex items-center space-x-1">
+                        <Globe2 className="h-3 w-3 text-blue-700" />
                         <span className="text-slate-700">Standard Globale</span>
                       </div>
                     </div>
