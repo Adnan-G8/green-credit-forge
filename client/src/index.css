@@ -24,13 +24,14 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  /* FAGRI Custom Colors - Enhanced */
-  --fagri-green: hsl(136, 45%, 18%);
-  --fagri-light: hsl(145, 40%, 35%);
-  --fagri-accent: hsl(193, 85%, 45%);
-  --fagri-bg: hsl(0, 0%, 98%);
-  --fagri-gold: hsl(45, 90%, 55%);
-  --fagri-dark: hsl(136, 50%, 12%);
+  /* FAGRI Clean Colors */
+  --fagri-green: hsl(150, 30%, 35%);
+  --fagri-light: hsl(150, 25%, 45%);
+  --fagri-dark: hsl(150, 35%, 25%);
+  --fagri-accent: hsl(200, 70%, 50%);
+  --fagri-bg: hsl(0, 0%, 99%);
+  --fagri-gray: hsl(210, 10%, 85%);
+  --fagri-text: hsl(210, 15%, 20%);
 }
 
 .dark {
@@ -113,38 +114,33 @@
   }
   
   .glass-morphism {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-    backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
   
   .glass-dark {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-    backdrop-filter: blur(15px) saturate(150%);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px -12px rgba(45, 85, 48, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
   
-  .gradient-text {
-    background: linear-gradient(135deg, var(--fagri-green) 0%, var(--fagri-light) 50%, var(--fagri-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .clean-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
   }
   
-  .premium-shadow {
-    box-shadow: 0 32px 64px -12px rgba(45, 85, 48, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  .clean-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
   }
   
-  .floating-card {
-    transform: translateY(0px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  .floating-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 40px 80px -12px rgba(45, 85, 48, 0.3);
+  .gradient-bg {
+    background: linear-gradient(135deg, #f8faf9 0%, #ffffff 100%);
   }
   
   .parallax-bg {

@@ -60,7 +60,7 @@ export function PartnershipsSection() {
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="glass-dark rounded-xl p-6 text-center animate-scale-in hover:scale-105 transition-all duration-300"
+                className="clean-card rounded-xl p-6 text-center animate-scale-in"
                 style={{ animationDelay: partner.delay }}
               >
                 <div className="w-16 h-16 bg-fagri-green rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
