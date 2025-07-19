@@ -1,7 +1,7 @@
 import { useLanguage } from './language-provider';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
-import { Linkedin, Twitter, Facebook } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -84,7 +84,33 @@ export function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">{t('footer-legal')}</h4>
+            <h4 className="font-semibold mb-4">{t('footer-partners')}</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li>
+                <a 
+                  href="https://alphag8.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-fagri-accent transition-colors flex items-center"
+                >
+                  ALPHAG8 Digital Solutions
+                  <ExternalLink className="ml-2 h-3 w-3" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://g8chain.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-fagri-accent transition-colors flex items-center"
+                >
+                  g8Chain Blockchain
+                  <ExternalLink className="ml-2 h-3 w-3" />
+                </a>
+              </li>
+            </ul>
+            
+            <h4 className="font-semibold mb-4 mt-6">{t('footer-legal')}</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="/privacy-policy">
@@ -123,28 +149,16 @@ export function Footer() {
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               {t('footer-copyright')}
             </p>
-            <div className="flex space-x-4">
-              <Button
-                variant="outline"
-                size="icon"
-                className="w-10 h-10 bg-fagri-green border-fagri-green text-white hover:bg-fagri-light"
+            <div className="flex space-x-6 text-sm text-gray-400">
+              <span>{t('footer-powered-by')}</span>
+              <a 
+                href="https://alphag8.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-emerald-400 transition-colors font-medium"
               >
-                <Linkedin className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="w-10 h-10 bg-fagri-green border-fagri-green text-white hover:bg-fagri-light"
-              >
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="w-10 h-10 bg-fagri-green border-fagri-green text-white hover:bg-fagri-light"
-              >
-                <Facebook className="h-4 w-4" />
-              </Button>
+                ALPHAG8 Switzerland
+              </a>
             </div>
           </div>
         </div>
