@@ -25,28 +25,28 @@ export function IntroductionSection() {
                 <Users className="text-emerald-700 h-8 w-8" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-2">110,000+</h3>
-              <p className="text-slate-600 text-sm">Membri Attivi</p>
+              <p className="text-slate-600 text-sm">{t('intro-stat1')}</p>
             </div>
             <div className="text-center p-6 bg-slate-50 rounded-xl border border-slate-200">
               <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="text-blue-700 h-8 w-8" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-2">80,000+</h3>
-              <p className="text-slate-600 text-sm">Imprese Italiane</p>
+              <p className="text-slate-600 text-sm">{t('intro-stat2')}</p>
             </div>
             <div className="text-center p-6 bg-slate-50 rounded-xl border border-slate-200">
               <div className="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Globe className="text-amber-700 h-8 w-8" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-2">30+</h3>
-              <p className="text-slate-600 text-sm">Anni di Esperienza</p>
+              <p className="text-slate-600 text-sm">{t('intro-stat3')}</p>
             </div>
             <div className="text-center p-6 bg-slate-50 rounded-xl border border-slate-200">
               <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Leaf className="text-purple-700 h-8 w-8" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-2">5</h3>
-              <p className="text-slate-600 text-sm">Continenti</p>
+              <p className="text-slate-600 text-sm">{t('intro-stat4')}</p>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ export function IntroductionSection() {
           <div className="space-y-8">
             <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
               <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                La Nostra Missione
+                {t('intro-mission-title')}
               </h3>
               <p className="text-lg text-slate-600 leading-relaxed">
                 {t('intro-mission')}
@@ -64,18 +64,18 @@ export function IntroductionSection() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl p-8 border border-slate-200">
                 <h4 className="text-xl font-medium text-slate-900 mb-4">
-                  Innovazione Digitale
+                  {t('intro-innovation-title')}
                 </h4>
                 <p className="text-slate-600 leading-relaxed">
-                  Utilizziamo tecnologie avanzate come IoT, blockchain e intelligenza artificiale per creare un ecosistema agricolo completamente digitalizzato e tracciabile.
+                  {t('intro-innovation-text')}
                 </p>
               </div>
               <div className="bg-white rounded-xl p-8 border border-slate-200">
                 <h4 className="text-xl font-medium text-slate-900 mb-4">
-                  Sostenibilità Certificata
+                  {t('intro-sustainability-title')}
                 </h4>
                 <p className="text-slate-600 leading-relaxed">
-                  I nostri protocolli di certificazione garantiscono che ogni credito di carbonio sia verificabile, misurabile e conforme agli standard internazionali più rigorosi.
+                  {t('intro-sustainability-text')}
                 </p>
               </div>
             </div>
