@@ -39,12 +39,11 @@ export function Footer() {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('platform')}
-                  className="hover:text-fagri-accent transition-colors text-left"
-                >
-                  {t('footer-certification')}
-                </button>
+                <Link href="/co2-certification">
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
+                    {t('footer-certification')}
+                  </span>
+                </Link>
               </li>
               <li>
                 <Link href="/security">

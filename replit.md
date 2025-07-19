@@ -29,6 +29,8 @@ Preferred communication style: Simple, everyday language.
 - **Security Trust Integration**: Added prominent security notices to all legal pages highlighting Swiss banking-level data protection
 - **Navigation Enhancement**: Fixed scroll-to-top functionality for all page navigation with automatic hook implementation
 - **Security Visibility**: Enhanced footer security link visibility with lock icon and emerald highlighting to guide users to security information
+- **CO2 Certification Subpage**: Created comprehensive dedicated page showcasing certification partnerships, legal framework, and technology stack
+- **Enhanced Footer Navigation**: Added CO2 certification link to footer platform section for improved discoverability
 
 ## System Architecture
 
