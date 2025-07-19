@@ -10,11 +10,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
-import { Mail, Users, Send, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail, Users, Send } from 'lucide-react';
+import { MembershipModal } from './membership-modal';
 
 export function ContactSection() {
   const { t, language } = useLanguage();
   const { toast } = useToast();
+  const [showMembershipModal, setShowMembershipModal] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     surname: '',
@@ -133,30 +135,17 @@ export function ContactSection() {
                   </div>
 
                   <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h4 className="font-semibold text-fagri-green mb-4">Seguici</h4>
-                    <div className="flex space-x-4">
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="w-10 h-10 bg-fagri-green border-fagri-green text-white hover:bg-fagri-light"
-                      >
-                        <Linkedin className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="w-10 h-10 bg-fagri-green border-fagri-green text-white hover:bg-fagri-light"
-                      >
-                        <Twitter className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="w-10 h-10 bg-fagri-green border-fagri-green text-white hover:bg-fagri-light"
-                      >
-                        <Facebook className="h-4 w-4" />
-                      </Button>
-                    </div>
+                    <h4 className="font-semibold text-fagri-green mb-4">{t('contact-membership-action')}</h4>
+                    <Button
+                      onClick={() => setShowMembershipModal(true)}
+                      className="w-full bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-3"
+                    >
+                      <Users className="h-5 w-5" />
+                      <span>{t('contact-join-filiera')}</span>
+                    </Button>
+                    <p className="text-sm text-gray-600 mt-3 text-center">
+                      {t('contact-membership-description')}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -284,6 +273,11 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+      
+      <MembershipModal 
+        isOpen={showMembershipModal} 
+        onClose={() => setShowMembershipModal(false)} 
+      />
     </section>
   );
 }

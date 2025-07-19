@@ -255,6 +255,9 @@ export const translations = {
     'contact-membership-title': 'Adesione a Filiera Agricola Italiana',
     'contact-membership-email': 'Member@fagri.digital',
     'contact-conclusion': 'Saremo lieti di ricevere il tuo messaggio – costruiamo insieme un futuro sostenibile.',
+    'contact-membership-action': 'Diventa Membro',
+    'contact-join-filiera': 'Aderisci alla Filiera Agricola Italiana',
+    'contact-membership-description': 'Compila il modulo per ricevere informazioni sulla membership e essere contattato dal nostro team.',
     
     // Forms
     'form-name': 'Nome',
@@ -571,6 +574,9 @@ export const translations = {
     'contact-membership-title': 'Italian Agricultural Supply Chain Membership',
     'contact-membership-email': 'Member@fagri.digital',
     'contact-conclusion': 'We will be happy to receive your message – let\'s build a sustainable future together.',
+    'contact-membership-action': 'Become a Member',
+    'contact-join-filiera': 'Join Filiera Agricola Italiana',
+    'contact-membership-description': 'Fill out the form to receive membership information and be contacted by our team.',
     
     // Forms
     'form-name': 'Name',

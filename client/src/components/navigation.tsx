@@ -100,22 +100,10 @@ export function Navigation() {
               >
                 {t('nav-contact')}
               </button>
-              <Button
-                onClick={() => setShowMembershipModal(true)}
-                className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-200 ml-4"
-              >
-                {t('nav-join')}
-              </Button>
+
             </div>
 
             <div className="flex items-center space-x-4 md:hidden">
-              <Button
-                onClick={() => setShowMembershipModal(true)}
-                className="bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-200"
-              >
-                {t('nav-join')}
-              </Button>
-
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
