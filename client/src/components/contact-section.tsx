@@ -90,6 +90,17 @@ export function ContactSection() {
                   <h3 className="text-2xl font-bold text-fagri-green mb-6">
                     Informazioni di Contatto
                   </h3>
+                  
+                  <div className="mb-6 p-4 bg-slate-50 rounded-lg border">
+                    <h4 className="font-semibold text-fagri-green mb-3">Sede Legale</h4>
+                    <div className="text-sm text-gray-700 space-y-1">
+                      <p className="font-medium">Fagri Digital S.r.l.</p>
+                      <p>Via Isonzo 38, 00198 Roma (RM) – Italia</p>
+                      <p>C.F./P.IVA: 17843431002</p>
+                      <p>REA RM-1745329</p>
+                    </div>
+                  </div>
+                  
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-fagri-green rounded-full flex items-center justify-center flex-shrink-0">
@@ -99,7 +110,7 @@ export function ContactSection() {
                         <h4 className="font-semibold text-fagri-green mb-2">
                           {t('contact-general-title')}
                         </h4>
-                        <p className="text-gray-700 font-mono">{t('contact-general-email')}</p>
+                        <p className="text-gray-700 font-mono">info@fagri.digital</p>
                         <p className="text-sm text-gray-600 mt-1">
                           Per informazioni sulla piattaforma e collaborazioni
                         </p>
@@ -113,7 +124,7 @@ export function ContactSection() {
                         <h4 className="font-semibold text-fagri-green mb-2">
                           {t('contact-membership-title')}
                         </h4>
-                        <p className="text-gray-700 font-mono">{t('contact-membership-email')}</p>
+                        <p className="text-gray-700 font-mono">info@fagri.digital</p>
                         <p className="text-sm text-gray-600 mt-1">
                           Per aderire alla Filiera Agricola Italiana
                         </p>

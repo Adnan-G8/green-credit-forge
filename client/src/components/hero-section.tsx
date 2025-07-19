@@ -43,7 +43,7 @@ export function HeroSection() {
                 <span className="text-slate-900 font-semibold">Clima.</span>
               </h1>
               <p className="text-xl md:text-2xl text-amber-700 font-light tracking-wide">
-                Costruiamo il futuro insieme.
+                Piattaforma di Trasformazione Agricola - Connetti produttori, PMI, cooperative e comunità attraverso la sostenibilità
               </p>
             </div>
             

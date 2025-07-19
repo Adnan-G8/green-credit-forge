@@ -70,19 +70,22 @@ export function Footer() {
           
           <div>
             <h4 className="font-semibold mb-4">{t('footer-company')}</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-fagri-accent transition-colors">{t('footer-about')}</a></li>
-              <li><a href="#" className="hover:text-fagri-accent transition-colors">{t('footer-mission')}</a></li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="hover:text-fagri-accent transition-colors text-left"
-                >
-                  {t('footer-contact')}
-                </button>
-              </li>
-              <li><a href="#" className="hover:text-fagri-accent transition-colors">{t('footer-news')}</a></li>
-            </ul>
+            <div className="space-y-3 text-sm text-gray-400">
+              <div>
+                <p className="font-medium text-white">Fagri Digital S.r.l.</p>
+                <p>Via Isonzo 38</p>
+                <p>00198 Roma (RM) – Italia</p>
+              </div>
+              <div>
+                <p>C.F./P.IVA: 17843431002</p>
+                <p>REA RM-1745329</p>
+              </div>
+              <div>
+                <a href="mailto:info@fagri.digital" className="hover:text-fagri-accent transition-colors">
+                  info@fagri.digital
+                </a>
+              </div>
+            </div>
           </div>
           
           <div>
