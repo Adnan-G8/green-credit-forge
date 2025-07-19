@@ -11,6 +11,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('it');
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem('fagri-lang') as Language;
@@ -21,15 +22,25 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       setLanguage('it');
       localStorage.setItem('fagri-lang', 'it');
     }
+    setIsInitialized(true);
   }, []);
 
   const handleSetLanguage = (lang: Language) => {
+    console.log('Switching language to:', lang); // Debug log
     setLanguage(lang);
     localStorage.setItem('fagri-lang', lang);
     document.documentElement.lang = lang;
+    // Force a small delay to ensure state update
+    setTimeout(() => {
+      console.log('Language state updated to:', lang); // Debug log
+    }, 100);
   };
 
   const t = (key: TranslationKey): string => {
+    if (!isInitialized) {
+      // Return Italian translation while initializing
+      return translations['it'][key] || key;
+    }
     const translation = translations[language]?.[key] || translations['it'][key] || key;
     return translation;
   };
