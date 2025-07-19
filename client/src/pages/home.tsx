@@ -2,6 +2,7 @@ import { Navigation } from '@/components/navigation';
 import { HeroSection } from '@/components/hero-section';
 import { IntroductionSection } from '@/components/introduction-section';
 import { StandardSection } from '@/components/standard-section';
+import { ShowcaseSection } from '@/components/showcase-section';
 import { PartnershipsSection } from '@/components/partnerships-section';
 import { PlatformSection } from '@/components/platform-section';
 import { SecuritySection } from '@/components/security-section';
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <IntroductionSection />
       <StandardSection />
+      <ShowcaseSection />
       <PartnershipsSection />
       <PlatformSection />
       <SecuritySection />

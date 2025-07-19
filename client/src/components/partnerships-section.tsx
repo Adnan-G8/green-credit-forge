@@ -44,14 +44,14 @@ export function PartnershipsSection() {
   ];
 
   return (
-    <section id="partnerships" className="py-20 bg-white">
+    <section id="partnerships" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-fagri-green mb-6 font-sans animate-slide-up">
+            <h2 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-6 font-sans animate-slide-up">
               {t('partnerships-title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed animate-fade-in">
+            <p className="text-xl text-indigo-700 max-w-4xl mx-auto leading-relaxed animate-fade-in">
               {t('partnerships-subtitle')}
             </p>
           </div>
@@ -60,16 +60,23 @@ export function PartnershipsSection() {
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="clean-card rounded-xl p-6 text-center animate-scale-in"
+                className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center animate-scale-in shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300"
                 style={{ animationDelay: partner.delay }}
               >
-                <div className="w-16 h-16 bg-fagri-green rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <partner.icon className="text-white h-8 w-8" />
+                <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg ${
+                  index % 6 === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
+                  index % 6 === 1 ? 'bg-gradient-to-br from-emerald-500 to-emerald-600' :
+                  index % 6 === 2 ? 'bg-gradient-to-br from-amber-500 to-amber-600' :
+                  index % 6 === 3 ? 'bg-gradient-to-br from-purple-500 to-purple-600' :
+                  index % 6 === 4 ? 'bg-gradient-to-br from-pink-500 to-pink-600' :
+                  'bg-gradient-to-br from-indigo-500 to-indigo-600'
+                }`}>
+                  <partner.icon className="text-white h-10 w-10" />
                 </div>
-                <h3 className="text-xl font-bold text-fagri-green mb-4">
+                <h3 className="text-xl font-bold text-slate-800 mb-4">
                   {partner.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   {partner.description}
                 </p>
               </div>
