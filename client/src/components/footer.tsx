@@ -1,6 +1,7 @@
 import { useLanguage } from './language-provider';
 import { FagriLogo } from '@/assets/fagri-logo';
 import { Button } from '@/components/ui/button';
+import { Link } from 'wouter';
 import { Linkedin, Twitter, Facebook } from 'lucide-react';
 
 export function Footer() {
@@ -50,12 +51,11 @@ export function Footer() {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => scrollToSection('security')}
-                  className="hover:text-fagri-accent transition-colors text-left"
-                >
-                  {t('footer-security')}
-                </button>
+                <Link href="/security">
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
+                    Digital Security
+                  </span>
+                </Link>
               </li>
               <li>
                 <button

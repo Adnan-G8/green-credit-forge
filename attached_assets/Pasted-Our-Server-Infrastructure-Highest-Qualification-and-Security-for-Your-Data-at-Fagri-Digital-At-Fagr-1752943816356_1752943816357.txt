@@ -1,0 +1,53 @@
+Our Server Infrastructure: Highest Qualification and Security for Your Data at Fagri.Digital
+At Fagri.Digital, we place the highest value on the security and reliability of the infrastructure where your data and applications are hosted. We understand that not all data is created equal, and we've implemented a robust, multi-tiered approach to ensure optimal security and performance for every piece of information. We achieve this by exclusively collaborating with partners who distinguish themselves through industry-leading qualifications and the highest security standards. These first-class prerequisites allow us to directly provide you, our users, with an environment that is secure, high-performing, and always available for your critical information.
+
+Data Classification and Storage Strategy
+We implement a clear data classification strategy to ensure the highest level of protection for your most sensitive information:
+
+Premium Data Security (Swiss Data Banking Environment): All personally identifiable data (PII), including information collected during Know Your Customer (KYC) processes, banking details, and other highly sensitive financial or personal information, is exclusively stored and processed within a specialized, highly secure "Data Banking Environment" located in Switzerland. Switzerland is globally recognized for having some of the strongest and most protective data regulation standards worldwide. Swiss law provides robust legal protection for user data, rigorously safeguarding it against any kind of overreach, non-legitimate information requests, or unauthorized third-party access. This commitment to privacy ensures an unparalleled level of confidentiality and integrity for your most critical assets.
+
+High-Availability Data (Global Distribution): For all other non-sensitive, "second-class" data—which does not fall under the strict PII or banking categories and is optimized for rapid access and high availability—we leverage a globally distributed infrastructure. This ensures that essential data is delivered with exceptional speed and resilience, optimizing your overall service experience.
+
+Robust Hardware and Data Center Security
+The data centers we use for your services are secured according to the strictest global and national standards. This ensures that you benefit from:
+
+Multi-layered Physical Security: Access controls that restrict entry to authorized personnel, 24/7 video surveillance, and advanced intrusion detection systems physically protect the infrastructure.
+
+Fail-safe Infrastructure: Redundant power supply, precise climate control, and state-of-the-art fire suppression systems ensure your servers always operate optimally and your services are available without interruption.
+
+Secure Data Disposal and Destruction: When hardware reaches its end-of-life, all storage media undergo a rigorous multi-step data destruction process. First, data is forensically wiped using industry-standard secure data erasure software (e.g., following NIST 800-88 guidelines for media sanitization), ensuring data is irrecoverable. Only after this software-based destruction is verified, the media is then physically destroyed through shredding, crushing, or degaussing, rendering any remaining data absolutely irretrievable. This comprehensive process prevents any data leakage.
+
+Strategic Geographic Redundancy and Availability: For our globally distributed non-sensitive data, the infrastructure is spread across multiple geographic regions and availability zones to ensure maximum resilience, data durability, and continuous availability. For sensitive data, the focus is on robust redundancy within the secure Swiss Data Banking Environment.
+
+Enterprise-Grade Network Security: This includes advanced firewalls, Intrusion Detection/Prevention Systems (IDS/IPS), and DDoS protection mechanisms that continuously monitor and mitigate traffic threats.
+
+Comprehensive Certifications and Compliance
+The strict adherence to international security and data protection standards is confirmed by independent audits and certifications. This allows us to ensure that your data resides in an environment that meets the following audit and compliance requirements:
+
+ISO/IEC 27001 (Information Security Management Systems - ISMS): Proof of a systematic approach to managing sensitive company information to ensure its confidentiality, integrity, and availability.
+
+ISO/IEC 27017 (Information Security for Cloud Services): Specific guidelines for information security in the context of cloud services, relevant for both cloud service providers and cloud customers.
+
+ISO/IEC 27018 (Protection of Personally Identifiable Information in Public Clouds): Guidelines for the protection of personal data in public cloud environments, extending beyond the requirements of ISO 27002.
+
+SOC 1 (Service Organization Control 1): Reports on internal controls relevant to financial reporting.
+
+SOC 2 (Service Organization Control 2 Type 2): Comprehensive reports on a service organization's controls related to the Trust Services Criteria: Security, Availability, Processing Integrity, Confidentiality, and Privacy. "Type 2" confirms the effectiveness of these controls over a specified period.
+
+SOC 3 (Service Organization Control 3): A general and publicly available version of the SOC 2 report, providing an overview of controls.
+
+PCI DSS Level 1 (Payment Card Industry Data Security Standard): The highest level of certification for service providers processing credit card data, ensuring the strictest data security requirements for payment transactions.
+
+GDPR (General Data Protection Regulation - EU): The infrastructure and operational processes support compliance with stringent European data protection regulations for the protection of personal data, especially relevant for our Swiss Data Banking Environment.
+
+DSG (Bundesgesetz über den Datenschutz - Switzerland) and DSV (Datenschutzverordnung - Switzerland): Our primary focus on the Swiss Data Banking Environment for sensitive data directly ensures strict conformity with the specific requirements of the Swiss Federal Act on Data Protection (FADP) and the Data Protection Ordinance.
+
+FIPS 140-2 (Federal Information Processing Standard): Validates cryptographic modules used in the infrastructure, ensuring the use of robust encryption technologies.
+
+HIPAA/HITECH (Health Insurance Portability and Accountability Act / Health Information Technology for Economic and Clinical Health Act): For industries handling health data, we ensure compliance with these US standards for patient data protection.
+
+CSA STAR (Cloud Security Alliance STAR): Participation in the Cloud Security Alliance's STAR program, providing transparency and assessment of cloud security practices.
+
+IT-Grundschutz (BSI - Germany): The infrastructure can meet the requirements for protecting sensitive data according to the recommendations of the German Federal Office for Information Security (BSI).
+
+Through these stringent measures and our intelligent data classification, Fagri.Digital ensures that your data resides on an infrastructure that meets the highest demands for security, availability, and integrity, thereby offering you the utmost confidence and protection.
