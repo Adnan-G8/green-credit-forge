@@ -99,12 +99,7 @@ export function Navigation() {
               >
                 {t('nav-standard')}
               </button>
-              <button
-                onClick={() => navigateToSection('partnerships')}
-                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
-              >
-                {t('nav-partnerships')}
-              </button>
+
               <button
                 onClick={() => navigateToSection('platform')}
                 className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
@@ -153,12 +148,7 @@ export function Navigation() {
                 >
                   {t('nav-standard')}
                 </button>
-                <button
-                  onClick={() => navigateToSection('partnerships')}
-                  className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"
-                >
-                  {t('nav-partnerships')}
-                </button>
+
                 <button
                   onClick={() => navigateToSection('platform')}
                   className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"

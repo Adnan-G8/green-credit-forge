@@ -52,14 +52,7 @@ export function Footer() {
                   </span>
                 </Link>
               </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('partnerships')}
-                  className="hover:text-fagri-accent transition-colors text-left"
-                >
-                  {t('footer-partnerships')}
-                </button>
-              </li>
+
             </ul>
           </div>
           

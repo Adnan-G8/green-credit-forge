@@ -31,6 +31,8 @@ Preferred communication style: Simple, everyday language.
 - **Security Visibility**: Enhanced footer security link visibility with lock icon and emerald highlighting to guide users to security information
 - **CO2 Certification Subpage**: Created comprehensive dedicated page showcasing certification partnerships, legal framework, and technology stack
 - **Enhanced Footer Navigation**: Added CO2 certification link to footer platform section for improved discoverability
+- **Removed Generic Partnerships Section**: Eliminated empty "Institutional Partnerships" section from home page since specific partners are already detailed in CO2 certification subpage
+- **Updated Footer Partner Links**: Replaced social media icons with ALPHAG8 and g8Chain technology partner links, added "Powered by ALPHAG8 Switzerland" credit
 
 ## System Architecture
 
