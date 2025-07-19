@@ -53,7 +53,7 @@ export function IntroductionSection() {
           {/* Content Blocks */}
           <div className="space-y-8">
             <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
-              <h3 className="text-2xl font-medium text-slate-900 mb-4">
+              <h3 className="text-2xl font-medium text-emerald-700 mb-4">
                 {t('intro-mission-title')}
               </h3>
               <p className="text-lg text-slate-600 leading-relaxed">
