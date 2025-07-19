@@ -8,6 +8,10 @@ import Home from "@/pages/home";
 import Security from "@/pages/security";
 import EufdStandard from "@/pages/eufd-standard";
 import NotFound from "@/pages/not-found";
+import PrivacyPolicy from "@/pages/privacy-policy";
+import TermsOfService from "@/pages/terms-of-service";
+import GDPR from "@/pages/gdpr";
+import Cookies from "@/pages/cookies";
 
 function Router() {
   return (
@@ -15,6 +19,10 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/security" component={Security} />
       <Route path="/eufd-standard" component={EufdStandard} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/gdpr" component={GDPR} />
+      <Route path="/cookies" component={Cookies} />
       <Route component={NotFound} />
     </Switch>
   );

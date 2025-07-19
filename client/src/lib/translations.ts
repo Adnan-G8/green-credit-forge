@@ -316,16 +316,16 @@ export const translations = {
     'footer-security': 'Sicurezza Digitale',
     'footer-partnerships': 'Partnership',
     'footer-company': 'Organizzazione',
+    'footer-legal': 'Aspetti Legali',
+    'footer-privacy': 'Privacy Policy',
+    'footer-terms': 'Termini e Condizioni',
+    'footer-gdpr': 'Informazioni GDPR',
+    'footer-cookies': 'Politica sui Cookie',
+    'footer-copyright': '© 2025 Fagri Digital S.r.l. Tutti i diritti riservati.',
     'footer-about': 'Chi Siamo',
     'footer-mission': 'Missione',
     'footer-contact': 'Contatti',
-    'footer-news': 'News',
-    'footer-legal': 'Legale',
-    'footer-privacy': 'Privacy Policy',
-    'footer-terms': 'Termini di Servizio',
-    'footer-gdpr': 'Conformità GDPR',
-    'footer-cookies': 'Cookie Policy',
-    'footer-copyright': '© 2024 FAGRI.Digital. Tutti i diritti riservati. | Piattaforma per la certificazione CO₂ e l\'agricoltura sostenibile.'
+    'footer-news': 'Notizie'
   },
   en: {
     // Navigation
@@ -644,16 +644,16 @@ export const translations = {
     'footer-security': 'Digital Security',
     'footer-partnerships': 'Partnerships',
     'footer-company': 'Organization',
+    'footer-legal': 'Legal',
+    'footer-privacy': 'Privacy Policy',
+    'footer-terms': 'Terms and Conditions',
+    'footer-gdpr': 'GDPR Information',
+    'footer-cookies': 'Cookie Policy',
+    'footer-copyright': '© 2025 Fagri Digital S.r.l. All rights reserved.',
     'footer-about': 'About Us',
     'footer-mission': 'Mission',
     'footer-contact': 'Contact',
-    'footer-news': 'News',
-    'footer-legal': 'Legal',
-    'footer-privacy': 'Privacy Policy',
-    'footer-terms': 'Terms of Service',
-    'footer-gdpr': 'GDPR Compliance',
-    'footer-cookies': 'Cookie Policy',
-    'footer-copyright': '© 2024 FAGRI.Digital. All rights reserved. | Platform for CO₂ certification and sustainable agriculture.'
+    'footer-news': 'News'
   }
 };
 

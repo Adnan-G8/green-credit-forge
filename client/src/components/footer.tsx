@@ -87,10 +87,26 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">{t('footer-legal')}</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-fagri-accent transition-colors">{t('footer-privacy')}</a></li>
-              <li><a href="#" className="hover:text-fagri-accent transition-colors">{t('footer-terms')}</a></li>
-              <li><a href="#" className="hover:text-fagri-accent transition-colors">{t('footer-gdpr')}</a></li>
-              <li><a href="#" className="hover:text-fagri-accent transition-colors">{t('footer-cookies')}</a></li>
+              <li>
+                <Link href="/privacy-policy">
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">{t('footer-privacy')}</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service">
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">{t('footer-terms')}</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/gdpr">
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">{t('footer-gdpr')}</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookies">
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">{t('footer-cookies')}</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
