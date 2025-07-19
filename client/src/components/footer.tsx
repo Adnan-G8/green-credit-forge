@@ -1,5 +1,4 @@
 import { useLanguage } from './language-provider';
-import { FagriLogo } from '@/assets/fagri-logo';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { Linkedin, Twitter, Facebook } from 'lucide-react';
@@ -19,12 +18,9 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <div className="flex items-center space-x-3 mb-6">
-              <FagriLogo className="w-12 h-12" />
-              <div>
-                <h3 className="text-xl font-bold font-sans">FAGRI</h3>
-                <p className="text-xs text-gray-400 font-medium">DIGITAL</p>
-              </div>
+            <div className="mb-6">
+              <h3 className="text-xl font-bold font-sans">FAGRI</h3>
+              <p className="text-xs text-gray-400 font-medium">DIGITAL</p>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               {t('footer-description')}
