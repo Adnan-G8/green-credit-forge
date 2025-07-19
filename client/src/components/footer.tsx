@@ -89,22 +89,30 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <Link href="/privacy-policy">
-                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">{t('footer-privacy')}</span>
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
+                    {t('footer-privacy')}
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/terms-of-service">
-                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">{t('footer-terms')}</span>
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
+                    {t('footer-terms')}
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/gdpr">
-                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">{t('footer-gdpr')}</span>
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
+                    {t('footer-gdpr')}
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/cookies">
-                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">{t('footer-cookies')}</span>
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
+                    {t('footer-cookies')}
+                  </span>
                 </Link>
               </li>
             </ul>
