@@ -27,7 +27,9 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     phone: '',
     company: '',
     city: '',
+    isFromItaly: '',
     region: '',
+    country: '',
     activity: '',
     hectares: '',
     interests: [] as string[],
@@ -56,7 +58,9 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
         phone: '',
         company: '',
         city: '',
+        isFromItaly: '',
         region: '',
+        country: '',
         activity: '',
         hectares: '',
         interests: [],
@@ -202,35 +206,84 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
             />
           </div>
           
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="modal-city" className="text-sm font-medium text-gray-700 mb-2">
-                {t('modal-city')} *
-              </Label>
-              <Input
-                id="modal-city"
-                type="text"
-                required
-                value={formData.city}
-                onChange={(e) => updateFormData('city', e.target.value)}
-              />
-            </div>
+          <div>
+            <Label htmlFor="modal-city" className="text-sm font-medium text-gray-700 mb-2">
+              {t('modal-city')} *
+            </Label>
+            <Input
+              id="modal-city"
+              type="text"
+              required
+              value={formData.city}
+              onChange={(e) => updateFormData('city', e.target.value)}
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="modal-italy" className="text-sm font-medium text-gray-700 mb-2">
+              Sei dall'Italia? / Are you from Italy? *
+            </Label>
+            <Select value={formData.isFromItaly} onValueChange={(value) => updateFormData('isFromItaly', value)}>
+              <SelectTrigger>
+                <SelectValue placeholder="Seleziona / Select" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="yes">Sì / Yes</SelectItem>
+                <SelectItem value="no">No</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          {formData.isFromItaly === 'yes' && (
             <div>
               <Label htmlFor="modal-region" className="text-sm font-medium text-gray-700 mb-2">
-                {t('modal-region')} *
+                Regione Italiana *
               </Label>
               <Select required onValueChange={(value) => updateFormData('region', value)}>
                 <SelectTrigger>
-                  <SelectValue placeholder={t('modal-region-select')} />
+                  <SelectValue placeholder="Seleziona la tua regione" />
                 </SelectTrigger>
                 <SelectContent>
-                  {italianRegions.map(region => (
-                    <SelectItem key={region} value={region.toLowerCase()}>{region}</SelectItem>
-                  ))}
+                  <SelectItem value="abruzzo">Abruzzo</SelectItem>
+                  <SelectItem value="basilicata">Basilicata</SelectItem>
+                  <SelectItem value="calabria">Calabria</SelectItem>
+                  <SelectItem value="campania">Campania</SelectItem>
+                  <SelectItem value="emilia-romagna">Emilia-Romagna</SelectItem>
+                  <SelectItem value="friuli-venezia-giulia">Friuli-Venezia Giulia</SelectItem>
+                  <SelectItem value="lazio">Lazio</SelectItem>
+                  <SelectItem value="liguria">Liguria</SelectItem>
+                  <SelectItem value="lombardia">Lombardia</SelectItem>
+                  <SelectItem value="marche">Marche</SelectItem>
+                  <SelectItem value="molise">Molise</SelectItem>
+                  <SelectItem value="piemonte">Piemonte</SelectItem>
+                  <SelectItem value="puglia">Puglia</SelectItem>
+                  <SelectItem value="sardegna">Sardegna</SelectItem>
+                  <SelectItem value="sicilia">Sicilia</SelectItem>
+                  <SelectItem value="toscana">Toscana</SelectItem>
+                  <SelectItem value="trentino-alto-adige">Trentino-Alto Adige</SelectItem>
+                  <SelectItem value="umbria">Umbria</SelectItem>
+                  <SelectItem value="valle-d-aosta">Valle d'Aosta</SelectItem>
+                  <SelectItem value="veneto">Veneto</SelectItem>
                 </SelectContent>
               </Select>
             </div>
-          </div>
+          )}
+
+          {formData.isFromItaly === 'no' && (
+            <div>
+              <Label htmlFor="modal-country" className="text-sm font-medium text-gray-700 mb-2">
+                Paese / Country *
+              </Label>
+              <Input
+                id="modal-country"
+                type="text"
+                required
+                value={formData.country}
+                onChange={(e) => updateFormData('country', e.target.value)}
+                placeholder="Inserisci il tuo paese / Enter your country"
+              />
+            </div>
+          )}
           
           <div>
             <Label htmlFor="modal-activity" className="text-sm font-medium text-gray-700 mb-2">

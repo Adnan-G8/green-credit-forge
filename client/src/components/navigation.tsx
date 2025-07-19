@@ -29,87 +29,89 @@ export function Navigation() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm border-b border-slate-200' : 'bg-white/80 backdrop-blur-sm'
-      }`}>
-        {/* Language Switcher */}
-        <div className="absolute top-4 right-6 z-50">
-          <div className="bg-emerald-700 rounded-lg overflow-hidden">
-            <button
-              onClick={() => setLanguage('it')}
-              className={`px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                language === 'it' 
-                  ? 'bg-white text-emerald-700' 
-                  : 'text-white hover:bg-emerald-600'
-              }`}
-            >
-              IT
-            </button>
-            <button
-              onClick={() => setLanguage('en')}
-              className={`px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                language === 'en' 
-                  ? 'bg-white text-emerald-700' 
-                  : 'text-white hover:bg-emerald-600'
-              }`}
-            >
-              EN
-            </button>
-          </div>
-        </div>
-
+      <nav className="fixed top-0 left-0 w-full z-40 bg-white shadow-sm border-b border-slate-200">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
-              <div className="transform transition-all duration-300 hover:scale-110">
-                <FagriLogo className="w-14 h-8" />
+              <FagriLogo className="w-20 h-12" />
+            </div>
+
+            {/* Language Switcher - moved to right side of nav */}
+            <div className="absolute top-4 right-6">
+              <div className="bg-emerald-700 rounded-lg overflow-hidden shadow-sm">
+                <button
+                  onClick={() => setLanguage('it')}
+                  className={`px-3 py-2 text-sm font-medium transition-all duration-200 ${
+                    language === 'it' 
+                      ? 'bg-white text-emerald-700' 
+                      : 'text-white hover:bg-emerald-600'
+                  }`}
+                >
+                  IT
+                </button>
+                <button
+                  onClick={() => setLanguage('en')}
+                  className={`px-3 py-2 text-sm font-medium transition-all duration-200 ${
+                    language === 'en' 
+                      ? 'bg-white text-emerald-700' 
+                      : 'text-white hover:bg-emerald-600'
+                  }`}
+                >
+                  EN
+                </button>
               </div>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-8 mr-24">
               <button
                 onClick={() => scrollToSection('home')}
-                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
+                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
                 {t('nav-home')}
               </button>
               <button
                 onClick={() => scrollToSection('standard')}
-                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
+                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
                 {t('nav-standard')}
               </button>
               <button
                 onClick={() => scrollToSection('partnerships')}
-                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
+                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
                 {t('nav-partnerships')}
               </button>
               <button
                 onClick={() => scrollToSection('platform')}
-                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
+                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
                 {t('nav-platform')}
               </button>
               <button
                 onClick={() => scrollToSection('security')}
-                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
+                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
                 {t('nav-security')}
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
+                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
                 {t('nav-contact')}
               </button>
-            </div>
-
-            <div className="flex items-center space-x-4">
               <Button
                 onClick={() => setShowMembershipModal(true)}
-                className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-200"
+                className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-200 ml-4"
+              >
+                {t('nav-join')}
+              </Button>
+            </div>
+
+            <div className="flex items-center space-x-4 md:hidden">
+              <Button
+                onClick={() => setShowMembershipModal(true)}
+                className="bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-200"
               >
                 {t('nav-join')}
               </Button>
@@ -117,7 +119,7 @@ export function Navigation() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden text-white hover:text-fagri-accent transition-colors duration-300"
+                className="md:hidden text-slate-800 hover:text-emerald-700 transition-colors duration-300"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
