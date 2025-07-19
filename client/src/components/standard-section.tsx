@@ -1,5 +1,6 @@
 import { useLanguage } from './language-provider';
 import { Shield, Award, Leaf, Globe2 } from 'lucide-react';
+import grainImage from '@assets/image_1752936515114.png';
 
 export function StandardSection() {
   const { t } = useLanguage();
@@ -72,46 +73,33 @@ export function StandardSection() {
               </div>
             </div>
 
-            {/* Professional Feature Cards */}
-            <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-8 border border-slate-200">
-              <h3 className="text-2xl font-medium text-slate-900 mb-6 text-center">
-                Vantaggi del Protocollo EUFD2025-001
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Shield className="text-emerald-700 h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-slate-900 mb-1">Certificazione Europea</h4>
-                    <p className="text-slate-600 text-sm">Standard riconosciuto a livello UE</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Globe2 className="text-blue-700 h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-slate-900 mb-1">Mercato Globale</h4>
-                    <p className="text-slate-600 text-sm">Accesso ai mercati internazionali</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Award className="text-amber-700 h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-slate-900 mb-1">Alta Qualità</h4>
-                    <p className="text-slate-600 text-sm">Verifiche rigorose e trasparenti</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Leaf className="text-purple-700 h-4 w-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-slate-900 mb-1">Impatto Reale</h4>
-                    <p className="text-slate-600 text-sm">Riduzioni verificabili di CO₂</p>
+            {/* Agricultural Image with Overlay */}
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-xl shadow-lg">
+                <img
+                  src={grainImage}
+                  alt="Wheat fields - sustainable agriculture and grain production"
+                  className="w-full h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6">
+                    <h4 className="text-xl font-semibold text-slate-900 mb-3">
+                      Eccellenza nella Certificazione Agricola
+                    </h4>
+                    <p className="text-slate-600 leading-relaxed mb-4">
+                      Il protocollo EUFD2025-001 garantisce la certificazione di pratiche agricole sostenibili che riducono le emissioni di carbonio mantenendo alta produttività e qualità dei raccolti.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="flex items-center space-x-2">
+                        <Shield className="h-4 w-4 text-emerald-700" />
+                        <span className="text-slate-700">Certificato UE</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Globe2 className="h-4 w-4 text-blue-700" />
+                        <span className="text-slate-700">Standard Globale</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
