@@ -17,6 +17,10 @@ Preferred communication style: Simple, everyday language.
 - **Simplified Navigation**: Clean navigation bar with consistent emerald accent colors
 - **Removed Creative Elements**: Eliminated colorful gradients and complex animations in favor of clean, minimal design
 - **Banking-Style Buttons**: Professional button styling with subtle shadows and clean rounded corners
+- **Fixed Protocol Name**: Corrected all instances from "EUP02025-001" to "EUFD2025-001" throughout website
+- **Enhanced Language System**: Improved Italian/English switching with better fallback handling
+- **Eliminated Duplicate Content**: Replaced duplicate statistics sections with unique process flow design
+- **Added Company Information**: Integrated official Fagri Digital S.r.l. legal details and contact information
 
 ## System Architecture
 

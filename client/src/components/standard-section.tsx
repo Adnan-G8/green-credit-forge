@@ -86,35 +86,44 @@ export function StandardSection() {
             </div>
           </div>
 
-          {/* Trust Metrics */}
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center p-6 bg-slate-50 rounded-xl border border-slate-200">
-              <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Globe2 className="text-emerald-700 h-8 w-8" />
+          {/* Banking-Style Process Steps */}
+          <div className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl p-8 border border-slate-200">
+            <h3 className="text-2xl font-medium text-slate-900 mb-8 text-center">Processo di Certificazione EUFD2025-001</h3>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="relative">
+                <div className="flex items-center justify-center w-12 h-12 bg-emerald-700 text-white rounded-lg font-semibold text-lg mb-4">
+                  1
+                </div>
+                <h4 className="text-lg font-medium text-slate-900 mb-3">Valutazione Iniziale</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Analisi dell'azienda agricola e dei dati preliminari per determinare il potenziale di certificazione dei crediti di carbonio
+                </p>
+                {/* Connection Line */}
+                <div className="hidden md:block absolute top-6 left-12 w-full h-0.5 bg-slate-300 -z-10"></div>
               </div>
-              <h4 className="text-2xl font-semibold text-slate-900 mb-2">110,000+</h4>
-              <p className="text-slate-600 text-sm">Membri Attivi</p>
-            </div>
-            <div className="text-center p-6 bg-slate-50 rounded-xl border border-slate-200">
-              <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Shield className="text-blue-700 h-8 w-8" />
+              
+              <div className="relative">
+                <div className="flex items-center justify-center w-12 h-12 bg-emerald-700 text-white rounded-lg font-semibold text-lg mb-4">
+                  2
+                </div>
+                <h4 className="text-lg font-medium text-slate-900 mb-3">Implementazione</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Applicazione delle metodologie EUFD2025-001 con monitoraggio continuo e documentazione dettagliata delle pratiche sostenibili
+                </p>
+                {/* Connection Line */}
+                <div className="hidden md:block absolute top-6 left-12 w-full h-0.5 bg-slate-300 -z-10"></div>
               </div>
-              <h4 className="text-2xl font-semibold text-slate-900 mb-2">80,000+</h4>
-              <p className="text-slate-600 text-sm">Imprese Certificate</p>
-            </div>
-            <div className="text-center p-6 bg-slate-50 rounded-xl border border-slate-200">
-              <div className="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Award className="text-amber-700 h-8 w-8" />
+              
+              <div>
+                <div className="flex items-center justify-center w-12 h-12 bg-emerald-700 text-white rounded-lg font-semibold text-lg mb-4">
+                  3
+                </div>
+                <h4 className="text-lg font-medium text-slate-900 mb-3">Certificazione</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Verifica indipendente da parte di enti accreditati e rilascio ufficiale dei crediti di carbonio certificati
+                </p>
               </div>
-              <h4 className="text-2xl font-semibold text-slate-900 mb-2">30+</h4>
-              <p className="text-slate-600 text-sm">Anni di Esperienza</p>
-            </div>
-            <div className="text-center p-6 bg-slate-50 rounded-xl border border-slate-200">
-              <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Leaf className="text-purple-700 h-8 w-8" />
-              </div>
-              <h4 className="text-2xl font-semibold text-slate-900 mb-2">5</h4>
-              <p className="text-slate-600 text-sm">Continenti</p>
             </div>
           </div>
         </div>
