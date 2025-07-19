@@ -38,22 +38,19 @@ export function HeroSection() {
             {/* Clean Typography Hierarchy */}
             <div className="mb-12">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-6">
-                <span className="text-amber-800 font-normal">Digitalizzazione.</span><br />
-                <span className="text-orange-800 font-normal">Responsabilità.</span><br />
-                <span className="text-slate-900 font-semibold">Clima.</span>
+                <span className="text-amber-800 font-normal">{t('hero-title1')}</span><br />
+                <span className="text-orange-800 font-normal">{t('hero-title2')}</span><br />
+                <span className="text-slate-900 font-semibold">{t('hero-title3')}</span>
               </h1>
               <p className="text-xl md:text-2xl text-amber-700 font-light tracking-wide">
-                Piattaforma di Trasformazione Agricola - Connetti produttori, PMI, cooperative e comunità attraverso la sostenibilità
+                {t('hero-subtitle')}
               </p>
             </div>
             
             {/* Professional Content Box */}
             <div className="bg-white/95 backdrop-blur-sm rounded-xl p-10 mb-10 shadow-lg border border-amber-200/50 max-w-3xl mx-auto text-left">
               <p className="text-lg text-slate-700 leading-relaxed font-light">
-                FAGRI.Digital è la piattaforma digitale del movimento agricolo italiano FAGRI – fondata su oltre 30 anni 
-                di esperienza e sostenuta da una solida rete internazionale. Con più di 110.000 membri e quasi 80.000 
-                imprese solo in Italia, collaboriamo con partner in Europa, America Latina, Africa e altri continenti per 
-                costruire un'agricoltura sostenibile e digitalmente integrata.
+                {t('hero-description')}
               </p>
             </div>
             
@@ -63,14 +60,14 @@ export function HeroSection() {
                 onClick={scrollToStandard}
                 className="bg-amber-700 hover:bg-amber-800 text-white px-10 py-4 rounded-lg text-base font-medium shadow-sm hover:shadow-md transition-all duration-200 border-0"
               >
-                Scopri EUFD2025-001 <ArrowRight className="ml-2 h-4 w-4" />
+                {t('hero-cta1')} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 onClick={() => setShowMembershipModal(true)}
                 className="bg-emerald-700 hover:bg-emerald-800 text-white border-emerald-700 px-10 py-4 rounded-lg text-base font-medium shadow-sm hover:shadow-md transition-all duration-200"
               >
                 <Leaf className="mr-2 h-4 w-4" />
-                Unisciti alla Rete
+                {t('hero-cta2')}
               </Button>
             </div>
           </div>
