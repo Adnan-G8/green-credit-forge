@@ -1,6 +1,6 @@
 import { useLanguage } from './language-provider';
 import { Zap, Sun, Leaf, TrendingUp, Users, Globe } from 'lucide-react';
-import solarImage from '@assets/image_1752942192290.png';
+import windFarmImage from '@assets/image_1752942713929.png';
 
 export function RenewableEnergySection() {
   const { t } = useLanguage();
@@ -86,33 +86,33 @@ export function RenewableEnergySection() {
               </div>
             </div>
 
-            {/* Image Side */}
+            {/* Image Side - Large Wind Farm Display */}
             <div className="relative">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src={solarImage}
-                  alt="Solar panels and renewable energy infrastructure"
+                  src={windFarmImage}
+                  alt="Wind turbines and sheep - perfect integration of renewable energy and sustainable agriculture"
                   className="w-full h-[600px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
                 
                 {/* Overlay Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6">
                     <h4 className="text-2xl font-semibold text-slate-900 mb-3">
-                      Tecnologia Avanzata per l'Energia Pulita
+                      Agricoltura e Energia Eolica in Perfetta Armonia
                     </h4>
                     <p className="text-slate-600 leading-relaxed mb-4">
-                      I nostri impianti utilizzano tecnologie di ultima generazione per massimizzare l'efficienza energetica e la produzione di crediti di carbonio certificati secondo il protocollo EUFD2025-001.
+                      Questo è il futuro dell'agricoltura sostenibile: allevamento tradizionale di pecore che convive perfettamente con turbine eoliche moderne. Un esempio straordinario di come FAGRI Digital certifica progetti che generano sia alimenti che energia pulita.
                     </p>
                     <div className="flex items-center space-x-6 text-sm">
                       <div className="flex items-center space-x-2">
                         <Users className="h-4 w-4 text-emerald-700" />
-                        <span className="text-slate-600">1200+ Installazioni</span>
+                        <span className="text-slate-600">3,500+ Aziende Integrate</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Globe className="h-4 w-4 text-blue-700" />
-                        <span className="text-slate-600">15 Paesi Attivi</span>
+                        <span className="text-slate-600">22 Paesi Attivi</span>
                       </div>
                     </div>
                   </div>

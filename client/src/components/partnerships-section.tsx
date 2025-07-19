@@ -100,39 +100,7 @@ export function PartnershipsSection() {
             </div>
           </div>
 
-          {/* Hero Image Section - Wind Farm Integration */}
-          <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-            <img
-              src={windFarmImage}
-              alt="Wind turbines and livestock - sustainable agriculture and renewable energy integration"
-              className="w-full h-80 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-8">
-              <div className="max-w-4xl">
-                <h3 className="text-3xl font-semibold text-white mb-4">
-                  Agricoltura e Energia Rinnovabile in Sinergia
-                </h3>
-                <p className="text-white/90 text-lg leading-relaxed mb-6">
-                  Il futuro dell'agricoltura sostenibile integra perfettamente allevamento tradizionale e produzione di energia pulita. I nostri partner combinano pratiche agricole certificate con impianti eolici, creando un ecosistema produttivo che genera sia alimenti che crediti di carbonio.
-                </p>
-                <div className="flex items-center space-x-6 text-sm text-white/80">
-                  <div className="flex items-center space-x-2">
-                    <TrendingUp className="h-4 w-4" />
-                    <span>+35% Reddito Agricolo</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Target className="h-4 w-4" />
-                    <span>-60% Emissioni CO₂</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Users className="h-4 w-4" />
-                    <span>2.800+ Aziende Partner</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
