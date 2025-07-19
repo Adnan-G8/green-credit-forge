@@ -1,8 +1,11 @@
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
+import { useLanguage } from '@/components/language-provider';
 import { Shield, Database, Globe, Lock, CheckCircle, Server } from 'lucide-react';
 
 export default function Security() {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen bg-fagri-bg">
       <Navigation />
@@ -12,10 +15,10 @@ export default function Security() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-light text-slate-900 mb-8">
-              Digital Security
+              {t('security-page-title')}
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed font-light max-w-3xl mx-auto">
-              La sicurezza e l'affidabilità della nostra infrastruttura rappresentano la base della fiducia che riponi in FAGRI Digital.
+              {t('security-page-subtitle')}
             </p>
           </div>
         </div>
@@ -31,12 +34,12 @@ export default function Security() {
               <div className="flex items-center mb-8">
                 <Server className="h-8 w-8 text-emerald-700 mr-4" />
                 <h2 className="text-3xl font-light text-slate-900">
-                  Our Server Infrastructure: Highest Qualification and Security for Your Data
+                  {t('security-infrastructure-title')}
                 </h2>
               </div>
               <div className="prose prose-lg max-w-none">
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  At Fagri.Digital, we place the highest value on the security and reliability of the infrastructure where your data and applications are hosted. We understand that not all data is created equal, and we've implemented a robust, multi-tiered approach to ensure optimal security and performance for every piece of information. We achieve this by exclusively collaborating with partners who distinguish themselves through industry-leading qualifications and the highest security standards.
+                  {t('security-infrastructure-text')}
                 </p>
               </div>
             </div>
@@ -46,7 +49,7 @@ export default function Security() {
               <div className="flex items-center mb-8">
                 <Database className="h-8 w-8 text-blue-700 mr-4" />
                 <h2 className="text-3xl font-light text-slate-900">
-                  Data Classification and Storage Strategy
+                  {t('security-classification-title')}
                 </h2>
               </div>
               <div className="grid md:grid-cols-2 gap-8">
@@ -54,10 +57,10 @@ export default function Security() {
                   <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
                     <Lock className="text-emerald-700 h-6 w-6" />
                   </div>
-                  <h3 className="text-xl font-medium text-slate-900 mb-4">Premium Data Security</h3>
-                  <h4 className="text-lg font-medium text-slate-700 mb-3">Swiss Data Banking Environment</h4>
+                  <h3 className="text-xl font-medium text-slate-900 mb-4">{t('security-premium-title')}</h3>
+                  <h4 className="text-lg font-medium text-slate-700 mb-3">{t('security-premium-subtitle')}</h4>
                   <p className="text-slate-600 leading-relaxed">
-                    All personally identifiable data (PII), including information collected during Know Your Customer (KYC) processes, banking details, and other highly sensitive financial or personal information, is exclusively stored and processed within a specialized, highly secure "Data Banking Environment" located in Switzerland. Switzerland is globally recognized for having some of the strongest and most protective data regulation standards.
+                    {t('security-premium-text')}
                   </p>
                 </div>
                 
@@ -65,10 +68,10 @@ export default function Security() {
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                     <Globe className="text-blue-700 h-6 w-6" />
                   </div>
-                  <h3 className="text-xl font-medium text-slate-900 mb-4">High-Availability Data</h3>
-                  <h4 className="text-lg font-medium text-slate-700 mb-3">Global Distribution</h4>
+                  <h3 className="text-xl font-medium text-slate-900 mb-4">{t('security-highavail-title')}</h3>
+                  <h4 className="text-lg font-medium text-slate-700 mb-3">{t('security-highavail-subtitle')}</h4>
                   <p className="text-slate-600 leading-relaxed">
-                    For all other non-sensitive, "second-class" data—which does not fall under the strict PII or banking categories and is optimized for rapid access and high availability—we leverage a globally distributed infrastructure. This ensures that essential data is delivered with exceptional speed and resilience, optimizing your overall service experience.
+                    {t('security-highavail-text')}
                   </p>
                 </div>
               </div>
@@ -79,51 +82,51 @@ export default function Security() {
               <div className="flex items-center mb-8">
                 <Shield className="h-8 w-8 text-purple-700 mr-4" />
                 <h2 className="text-3xl font-light text-slate-900">
-                  Robust Hardware and Data Center Security
+                  {t('security-hardware-title')}
                 </h2>
               </div>
               <div className="bg-white rounded-xl p-8 border border-slate-200">
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  The data centers we use for your services are secured according to the strictest global and national standards. This ensures that you benefit from:
+                  {t('security-hardware-text')}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium text-slate-900 mb-2">Multi-layered Physical Security</h4>
-                      <p className="text-slate-600">Access controls that restrict entry to authorized personnel, 24/7 video surveillance, and advanced intrusion detection systems physically protect the infrastructure.</p>
+                      <h4 className="font-medium text-slate-900 mb-2">{t('security-physical-title')}</h4>
+                      <p className="text-slate-600">{t('security-physical-text')}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium text-slate-900 mb-2">Fail-safe Infrastructure</h4>
-                      <p className="text-slate-600">Redundant power supply, precise climate control, and state-of-the-art fire suppression systems ensure your servers always operate optimally and your services are available without interruption.</p>
+                      <h4 className="font-medium text-slate-900 mb-2">{t('security-failsafe-title')}</h4>
+                      <p className="text-slate-600">{t('security-failsafe-text')}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium text-slate-900 mb-2">Secure Data Disposal and Destruction</h4>
-                      <p className="text-slate-600">When hardware reaches its end-of-life, all storage media undergo a rigorous multi-step data destruction process. First, data is forensically wiped using industry-standard secure data erasure software (e.g., following NIST 800-88 guidelines for media sanitization), ensuring data is irrecoverable. Only after this software-based destruction is verified, the media is then physically destroyed through shredding, crushing, or degaussing.</p>
+                      <h4 className="font-medium text-slate-900 mb-2">{t('security-disposal-title')}</h4>
+                      <p className="text-slate-600">{t('security-disposal-text')}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium text-slate-900 mb-2">Strategic Geographic Redundancy</h4>
-                      <p className="text-slate-600">For our globally distributed non-sensitive data, the infrastructure is spread across multiple geographic regions and availability zones to ensure maximum resilience, data durability, and continuous availability. For sensitive data, the focus is on robust redundancy within the secure Swiss Data Banking Environment.</p>
+                      <h4 className="font-medium text-slate-900 mb-2">{t('security-redundancy-title')}</h4>
+                      <p className="text-slate-600">{t('security-redundancy-text')}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-medium text-slate-900 mb-2">Enterprise-Grade Network Security</h4>
-                      <p className="text-slate-600">This includes advanced firewalls, Intrusion Detection/Prevention Systems (IDS/IPS), and DDoS protection mechanisms that continuously monitor and mitigate traffic threats.</p>
+                      <h4 className="font-medium text-slate-900 mb-2">{t('security-network-title')}</h4>
+                      <p className="text-slate-600">{t('security-network-text')}</p>
                     </div>
                   </div>
                 </div>
@@ -135,12 +138,12 @@ export default function Security() {
               <div className="flex items-center mb-8">
                 <CheckCircle className="h-8 w-8 text-emerald-700 mr-4" />
                 <h2 className="text-3xl font-light text-slate-900">
-                  Comprehensive Certifications and Compliance
+                  {t('security-certifications-title')}
                 </h2>
               </div>
               <div className="bg-white rounded-xl p-8 border border-slate-200 mb-8">
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  The strict adherence to international security and data protection standards is confirmed by independent audits and certifications. This allows us to ensure that your data resides in an environment that meets the following audit and compliance requirements:
+                  {t('security-certifications-text')}
                 </p>
               </div>
               
@@ -171,10 +174,10 @@ export default function Security() {
             {/* Conclusion */}
             <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-8">
               <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                Your Data, Our Commitment
+                {t('security-conclusion-title')}
               </h3>
               <p className="text-slate-600 leading-relaxed">
-                Through these stringent measures and our intelligent data classification, Fagri.Digital ensures that your data resides on an infrastructure that meets the highest demands for security, availability, and integrity, thereby offering you the utmost confidence and protection.
+                {t('security-conclusion-text')}
               </p>
             </div>
 
