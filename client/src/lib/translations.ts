@@ -17,6 +17,14 @@ export const translations = {
     'hero-description': 'FAGRI.Digital è la piattaforma digitale del movimento agricolo italiano FAGRI – fondata su oltre 30 anni di esperienza e sostenuta da una solida rete internazionale. Con più di 110.000 membri e quasi 80.000 imprese solo in Italia, collaboriamo con partner in Europa, America Latina, Africa e altri continenti per costruire un\'agricoltura sostenibile e digitalmente integrata.',
     'hero-cta1': 'Scopri EUFD2025-001',
     'hero-cta2': 'Unisciti alla Rete',
+    'hero-status-badge': 'Platform Globale Attiva',
+    'hero-cta-discover': 'Scopri EUFD2025-001',
+    'hero-cta-join': 'Unisciti alla Rete',
+    'hero-stat-members': 'Membri',
+    'hero-stat-standard': 'Standard',
+    'hero-feature-blockchain': 'Blockchain Technology',
+    'hero-feature-global': 'Rete Globale',
+    'hero-feature-sustainable': 'Sostenibilità',
     
     // Introduction
     'intro-title': 'Un Nuovo Approccio al Clima',
@@ -354,6 +362,14 @@ export const translations = {
     'hero-description': 'FAGRI.Digital is the digital platform of the Italian agricultural movement FAGRI – founded on over 30 years of experience and supported by a solid international network. With more than 110,000 members and nearly 80,000 enterprises in Italy alone, we collaborate with partners in Europe, Latin America, Africa and other continents to build sustainable and digitally integrated agriculture.',
     'hero-cta1': 'Discover EUFD2025-001',
     'hero-cta2': 'Join the Network',
+    'hero-status-badge': 'Global Platform Active',
+    'hero-cta-discover': 'Discover EUFD2025-001',
+    'hero-cta-join': 'Join the Network',
+    'hero-stat-members': 'Members',
+    'hero-stat-standard': 'Standard',
+    'hero-feature-blockchain': 'Blockchain Technology',
+    'hero-feature-global': 'Global Network',
+    'hero-feature-sustainable': 'Sustainability',
     
     // Introduction
     'intro-title': 'A New Approach to Climate',
