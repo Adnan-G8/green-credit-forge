@@ -15,13 +15,18 @@ export function StandardSection() {
       </div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-sans animate-slide-up">
-              {t('standard-title')}
-            </h2>
-            <p className="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              {t('standard-subtitle')}
-            </p>
+          <div className="text-center mb-20">
+            <div className="animate-slide-up">
+              <h2 className="text-5xl md:text-7xl font-black text-white mb-8 font-sans tracking-tight text-balance">
+                {t('standard-title')}
+              </h2>
+              <div className="relative">
+                <p className="text-2xl md:text-3xl text-gray-100 max-w-4xl mx-auto leading-relaxed animate-fade-in font-light tracking-wide">
+                  {t('standard-subtitle')}
+                </p>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent"></div>
+              </div>
+            </div>
           </div>
 
           <div className="glass-morphism rounded-2xl p-8 mb-12 animate-fade-in">

@@ -33,20 +33,24 @@ export function Navigation() {
         isScrolled ? 'glass-morphism' : 'bg-transparent'
       }`}>
         {/* Language Switcher */}
-        <div className="absolute top-4 right-4 z-50">
-          <div className="glass-morphism rounded-full p-2">
+        <div className="absolute top-6 right-6 z-50">
+          <div className="glass-morphism rounded-full p-1 premium-shadow">
             <button
               onClick={() => setLanguage('it')}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ${
-                language === 'it' ? 'bg-white text-fagri-green' : 'text-white hover:bg-white/20'
+              className={`px-4 py-2 rounded-full text-sm font-bold tracking-wider transition-all duration-500 ${
+                language === 'it' 
+                  ? 'bg-gradient-to-r from-white to-gray-100 text-fagri-green shadow-lg transform scale-105' 
+                  : 'text-white hover:bg-white/15 hover:scale-105'
               }`}
             >
               IT
             </button>
             <button
               onClick={() => setLanguage('en')}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ${
-                language === 'en' ? 'bg-white text-fagri-green' : 'text-white hover:bg-white/20'
+              className={`px-4 py-2 rounded-full text-sm font-bold tracking-wider transition-all duration-500 ${
+                language === 'en' 
+                  ? 'bg-gradient-to-r from-white to-gray-100 text-fagri-green shadow-lg transform scale-105' 
+                  : 'text-white hover:bg-white/15 hover:scale-105'
               }`}
             >
               EN
@@ -56,11 +60,9 @@ export function Navigation() {
 
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <FagriLogo />
-              <div>
-                <h1 className="text-xl font-bold text-white font-sans">FAGRI</h1>
-                <p className="text-xs text-gray-200 font-medium">DIGITAL</p>
+            <div className="flex items-center space-x-4">
+              <div className="transform transition-all duration-300 hover:scale-110">
+                <FagriLogo className="w-14 h-8" />
               </div>
             </div>
 

@@ -57,7 +57,9 @@ export class MemStorage implements IStorage {
   async createContactRequest(insertRequest: InsertContactRequest): Promise<ContactRequest> {
     const id = this.currentContactId++;
     const request: ContactRequest = { 
-      ...insertRequest, 
+      ...insertRequest,
+      company: insertRequest.company || null,
+      language: insertRequest.language || 'it',
       id, 
       createdAt: new Date() 
     };
@@ -68,7 +70,12 @@ export class MemStorage implements IStorage {
   async createMembershipApplication(insertApplication: InsertMembershipApplication): Promise<MembershipApplication> {
     const id = this.currentMembershipId++;
     const application: MembershipApplication = { 
-      ...insertApplication, 
+      ...insertApplication,
+      language: insertApplication.language || 'it',
+      hectares: insertApplication.hectares || null,
+      interests: insertApplication.interests || null,
+      notes: insertApplication.notes || null,
+      newsletter: insertApplication.newsletter || false,
       id, 
       createdAt: new Date() 
     };
