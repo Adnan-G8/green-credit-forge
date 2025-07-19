@@ -21,6 +21,10 @@ Preferred communication style: Simple, everyday language.
 - **Enhanced Language System**: Improved Italian/English switching with better fallback handling
 - **Eliminated Duplicate Content**: Replaced duplicate statistics sections with unique process flow design
 - **Added Company Information**: Integrated official Fagri Digital S.r.l. legal details and contact information
+- **Fixed Bilingual Functionality**: Resolved all hardcoded Italian text issues across all website sections
+- **Added EUFD Standard Subpage**: Created dedicated /eufd-standard page with comprehensive EUFD2025-001 information
+- **Read More Functionality**: Added "Read More" button in standard section linking to detailed subpage
+- **ALPHAG8 Partnership Details**: Enhanced content to highlight Swiss technology partnership and blockchain architecture
 
 ## System Architecture
 
