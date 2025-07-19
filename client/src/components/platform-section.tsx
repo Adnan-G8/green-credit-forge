@@ -13,8 +13,8 @@ export function PlatformSection() {
     },
     {
       number: "02", 
-      title: "Implementazione del Protocollo",
-      description: "Adozione delle metodologie EUP02025-001 per la riduzione verificabile delle emissioni di carbonio.",
+      title: "Implementazione dello Standard",
+      description: "Adozione delle metodologie EUFD2025-001 per la riduzione verificabile delle emissioni di carbonio.",
       icon: Shield
     },
     {

@@ -48,7 +48,7 @@ export function StandardSection() {
                     </div>
                     <div>
                       <h4 className="font-medium text-slate-900 mb-2">
-                        Protocollo EUP02025-001
+                        Standard EUFD2025-001
                       </h4>
                       <p className="text-slate-600 text-sm leading-relaxed">
                         Metodologia proprietaria per la certificazione di crediti di carbonio agricoli

@@ -63,7 +63,7 @@ export function HeroSection() {
                 onClick={scrollToStandard}
                 className="bg-amber-700 hover:bg-amber-800 text-white px-10 py-4 rounded-lg text-base font-medium shadow-sm hover:shadow-md transition-all duration-200 border-0"
               >
-                Scopri EUP02025-001 <ArrowRight className="ml-2 h-4 w-4" />
+                Scopri EUFD2025-001 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 onClick={() => setShowMembershipModal(true)}
