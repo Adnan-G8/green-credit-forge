@@ -19,8 +19,6 @@ export default function Home() {
       <StandardSection />
       <PartnershipsSection />
       <PlatformSection />
-      <SecuritySection />
-      <MissionSection />
       <RenewableEnergySection />
       <ContactSection />
       <Footer />
