@@ -11,6 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'wouter';
 
 interface MembershipModalProps {
   isOpen: boolean;
@@ -357,8 +358,8 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
               checked={formData.privacy}
               onCheckedChange={(checked) => updateFormData('privacy', checked as boolean)}
             />
-            <Label htmlFor="modal-privacy" className="text-sm text-gray-700">
-              {t('modal-privacy' as any)} *
+            <Label htmlFor="modal-privacy" className="text-sm text-gray-700 leading-relaxed">
+              {t('modal-privacy-start')} <Link href="/gdpr" className="text-emerald-600 hover:text-emerald-700 underline">{t('form-gdpr')}</Link> {t('form-privacy-and')} <Link href="/privacy-policy" className="text-emerald-600 hover:text-emerald-700 underline">{t('form-privacy-policy')}</Link> *
             </Label>
           </div>
           

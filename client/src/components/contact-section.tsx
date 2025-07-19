@@ -12,6 +12,7 @@ import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { Mail, Users, Send } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
+import { Link } from 'wouter';
 
 export function ContactSection() {
   const { t, language } = useLanguage();
@@ -249,7 +250,7 @@ export function ContactSection() {
                         onCheckedChange={(checked) => updateFormData('privacy', checked as boolean)}
                       />
                       <Label htmlFor="privacy" className="text-sm text-gray-700 leading-relaxed">
-{t('form-privacy-start')} <a href="#" className="text-emerald-600 hover:text-emerald-700 underline">{t('form-gdpr')}</a> {t('form-privacy-and')} <a href="#" className="text-emerald-600 hover:text-emerald-700 underline">{t('form-privacy-policy')}</a> {t('form-privacy-end')} *
+{t('form-privacy-start')} <Link href="/gdpr" className="text-emerald-600 hover:text-emerald-700 underline">{t('form-gdpr')}</Link> {t('form-privacy-and')} <Link href="/privacy-policy" className="text-emerald-600 hover:text-emerald-700 underline">{t('form-privacy-policy')}</Link> {t('form-privacy-end')} *
                       </Label>
                     </div>
                     <Button
