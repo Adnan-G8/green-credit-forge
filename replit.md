@@ -1,0 +1,124 @@
+# FAGRI Digital Platform
+
+## Overview
+
+FAGRI Digital is a modern web application built for agricultural digitalization and climate responsibility. It serves as a digital platform for the Italian agricultural movement FAGRI, featuring a comprehensive landing page with contact forms, membership applications, and multi-language support. The application follows a full-stack architecture with a React frontend and Express.js backend.
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.
+
+## System Architecture
+
+### Frontend Architecture
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite for fast development and optimized builds
+- **Routing**: Wouter for lightweight client-side routing
+- **UI Framework**: Tailwind CSS with shadcn/ui components
+- **Component Library**: Radix UI primitives for accessible components
+- **State Management**: TanStack Query for server state management
+- **Styling**: Modern CSS-in-JS approach with CSS variables for theming
+
+### Backend Architecture
+- **Runtime**: Node.js with Express.js framework
+- **Language**: TypeScript throughout the stack
+- **API Design**: RESTful API with JSON responses
+- **Request Handling**: Express middleware for logging, parsing, and error handling
+- **Development Server**: Vite integration for hot module replacement in development
+
+### Database Layer
+- **ORM**: Drizzle ORM for type-safe database operations
+- **Database**: PostgreSQL (configured for Neon serverless)
+- **Schema Management**: Drizzle Kit for migrations and schema evolution
+- **Connection**: Neon serverless driver for PostgreSQL connections
+
+## Key Components
+
+### Frontend Components
+- **Navigation**: Fixed navigation with smooth scrolling and language switching
+- **Landing Sections**: Hero, Introduction, Standard, Partnerships, Platform, Security, Mission, Contact
+- **Forms**: Contact form and membership application modal with validation
+- **Language System**: Complete internationalization support (Italian/English)
+- **UI Library**: Comprehensive component library based on shadcn/ui and Radix UI
+
+### Backend Services
+- **Storage Layer**: Abstracted storage interface with in-memory implementation
+- **API Routes**: Contact form and membership application endpoints
+- **Validation**: Zod schema validation for all form submissions
+- **Development Tools**: Request logging and error handling middleware
+
+### Shared Resources
+- **Schema**: Centralized Drizzle schema definitions for users, contacts, and memberships
+- **Types**: Shared TypeScript types between frontend and backend
+- **Validation**: Zod schemas for runtime type checking and validation
+
+## Data Flow
+
+### Form Submissions
+1. User fills out contact or membership forms in the frontend
+2. Form data is validated client-side using Zod schemas
+3. Data is sent via POST requests to backend API endpoints
+4. Backend validates data again using the same Zod schemas
+5. Validated data is stored using the storage abstraction layer
+6. Success/error responses are returned to the frontend
+7. Toast notifications inform users of submission status
+
+### Language Management
+1. Language preference is stored in localStorage
+2. Context provider manages current language state
+3. Translation function looks up keys in translation objects
+4. Language selection affects form submissions and API calls
+
+### Navigation and Routing
+1. Single-page application with smooth scrolling navigation
+2. Wouter handles client-side routing for different pages
+3. Navigation state management for mobile responsiveness
+
+## External Dependencies
+
+### Core Framework Dependencies
+- React 18 ecosystem (react, react-dom, @types/react)
+- Vite build tooling with React plugin
+- Express.js for backend server
+- Drizzle ORM with PostgreSQL driver
+
+### UI and Styling
+- Tailwind CSS for utility-first styling
+- Radix UI components for accessibility
+- Lucide React for consistent iconography
+- Class Variance Authority for component variants
+
+### Data Management
+- TanStack Query for server state and caching
+- Zod for schema validation and type safety
+- React Hook Form with Zod resolvers
+
+### Development Tools
+- TypeScript for type safety across the stack
+- ESBuild for production bundling
+- PostCSS with Autoprefixer for CSS processing
+
+## Deployment Strategy
+
+### Build Process
+1. Frontend builds with Vite to `dist/public` directory
+2. Backend builds with ESBuild to `dist` directory as ESM modules
+3. Shared schema and types are included in both builds
+4. Production build excludes development-only dependencies
+
+### Environment Configuration
+- Database URL required for PostgreSQL connection
+- Drizzle migrations stored in `./migrations` directory
+- Development mode includes Vite dev server integration
+- Production serves static files from Express
+
+### Hosting Requirements
+- Node.js runtime for Express server
+- PostgreSQL database (configured for Neon serverless)
+- Static file serving capability for frontend assets
+- Environment variable support for DATABASE_URL
+
+### Development vs Production
+- Development: Vite dev server with HMR, memory storage fallback
+- Production: Compiled Express server, PostgreSQL database, static asset serving
+- Shared configuration through environment variables and build scripts
