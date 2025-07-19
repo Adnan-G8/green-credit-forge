@@ -22,7 +22,7 @@ export function StandardSection() {
             {/* Read More Button */}
             <div className="text-center">
               <Link 
-                href="/eufd-standard"
+                href="/co2-certification"
                 className="inline-flex items-center px-8 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium"
               >
                 {t('standard-read-more')}

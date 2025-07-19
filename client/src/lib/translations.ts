@@ -47,9 +47,9 @@ export const translations = {
     'intro-point3-text': 'Strumenti digitali moderni per una partecipazione equa e trasparente ai programmi ambientali e climatici.',
     
     // Standard section
-    'standard-title': 'Il nuovo standard EUFD2025-001',
-    'standard-subtitle': 'Scientifico, concreto, accessibile.',
-    'standard-intro': 'FAGRI.Digital ha sviluppato, in collaborazione con importanti università italiane, enti tecnici e organismi di certificazione, un nuovo standard europeo per l\'emissione di crediti di carbonio: EUFD2025-001.',
+    'standard-title': 'Il Tuo Partner di Fiducia per la Certificazione CO₂',
+    'standard-subtitle': 'La certificazione CO₂ è costruita su fondamenta di rigore scientifico, tecnologia all\'avanguardia e solida conformità legale.',
+    'standard-intro': 'Il nostro processo di certificazione CO₂ opera sotto lo standard EUFD2025-001, sviluppato negli anni di ricerca con importanti università italiane e il nostro partner tecnologico, ALPHAG8 Digital Solutions Switzerland.',
     'standard-objective': 'L\'obiettivo è fornire una base trasparente, verificabile e scientificamente fondata per accedere ai meccanismi di valorizzazione climatica – in particolare per aziende agricole, produttori di energia, sviluppatori di progetti e organizzazioni che generano benefici ambientali misurabili.',
     'standard-feature1-title': 'Base Scientifica',
     'standard-feature1-text': 'Sviluppato in collaborazione con importanti università italiane e enti tecnici qualificati.',
@@ -444,9 +444,9 @@ export const translations = {
     'intro-point3-text': 'Modern digital tools for fair and transparent participation in environmental and climate programs.',
     
     // Standard section
-    'standard-title': 'The new EUFD2025-001 standard',
-    'standard-subtitle': 'Scientific, concrete, accessible.',
-    'standard-intro': 'FAGRI.Digital has developed, in collaboration with leading Italian universities, technical institutions and certification bodies, a new European standard for carbon credit issuance: EUFD2025-001.',
+    'standard-title': 'Your Trusted Partner for CO₂ Certification',
+    'standard-subtitle': 'CO₂ certification is built on a foundation of scientific rigour, cutting-edge technology, and robust legal compliance.',
+    'standard-intro': 'Our CO₂ certification process operates under the EUFD2025-001 standard, developed over years of research with prominent Italian universities and our technology partner, ALPHAG8 Digital Solutions Switzerland.',
     'standard-objective': 'The objective is to provide a transparent, verifiable and scientifically based foundation for accessing climate valorization mechanisms – particularly for agricultural companies, energy producers, project developers and organizations that generate measurable environmental benefits.',
     'standard-feature1-title': 'Scientific Foundation',
     'standard-feature1-text': 'Developed in collaboration with leading Italian universities and qualified technical institutions.',

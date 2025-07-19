@@ -1,4 +1,6 @@
 import { useLanguage } from '../components/language-provider';
+import { Navigation } from '../components/navigation';
+import { Footer } from '../components/footer';
 import { Shield, Globe, CheckCircle, Users, FileText, Lock } from 'lucide-react';
 
 export default function CO2Certification() {
@@ -6,9 +8,10 @@ export default function CO2Certification() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="pt-32 pb-20 bg-slate-50 border-b border-slate-200">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
@@ -202,6 +205,8 @@ export default function CO2Certification() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }
