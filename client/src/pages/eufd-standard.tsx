@@ -196,12 +196,21 @@ export default function EufdStandardPage() {
                 {t('eufd-cta-text')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
+                <a 
                   href="/#contact"
                   className="inline-flex items-center justify-center px-8 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium"
+                  onClick={() => {
+                    window.location.href = '/#contact';
+                    setTimeout(() => {
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }, 100);
+                  }}
                 >
                   {t('eufd-cta-contact')}
-                </Link>
+                </a>
                 <Link 
                   href="/"
                   className="inline-flex items-center justify-center px-8 py-3 bg-white text-slate-700 rounded-lg border border-slate-300 hover:bg-slate-50 transition-colors font-medium"
