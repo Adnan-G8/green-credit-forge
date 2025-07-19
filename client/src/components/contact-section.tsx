@@ -90,11 +90,11 @@ export function ContactSection() {
               <Card className="glass-dark border-0">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-fagri-green mb-6">
-                    Informazioni di Contatto
+                    {t('contact-info-title')}
                   </h3>
                   
                   <div className="mb-6 p-4 bg-slate-50 rounded-lg border">
-                    <h4 className="font-semibold text-fagri-green mb-3">Sede Legale</h4>
+                    <h4 className="font-semibold text-fagri-green mb-3">{t('contact-legal-office')}</h4>
                     <div className="text-sm text-gray-700 space-y-1">
                       <p className="font-medium">Fagri Digital S.r.l.</p>
                       <p>Via Isonzo 38, 00198 Roma (RM) – Italia</p>
@@ -114,7 +114,7 @@ export function ContactSection() {
                         </h4>
                         <p className="text-gray-700 font-mono">info@fagri.digital</p>
                         <p className="text-sm text-gray-600 mt-1">
-                          Per informazioni sulla piattaforma e collaborazioni
+                          {t('contact-general-description')}
                         </p>
                       </div>
                     </div>
@@ -128,7 +128,7 @@ export function ContactSection() {
                         </h4>
                         <p className="text-gray-700 font-mono">info@fagri.digital</p>
                         <p className="text-sm text-gray-600 mt-1">
-                          Per aderire alla Filiera Agricola Italiana
+                          {t('contact-membership-info')}
                         </p>
                       </div>
                     </div>
@@ -155,7 +155,7 @@ export function ContactSection() {
               <Card className="glass-dark border-0">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-fagri-green mb-6">
-                    Invia un Messaggio
+                    {t('contact-send-message')}
                   </h3>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
@@ -249,7 +249,7 @@ export function ContactSection() {
                         onCheckedChange={(checked) => updateFormData('privacy', checked as boolean)}
                       />
                       <Label htmlFor="privacy" className="text-sm text-gray-700 leading-relaxed">
-                        {t('form-privacy')} *
+{t('form-privacy-start')} <a href="#" className="text-emerald-600 hover:text-emerald-700 underline">{t('form-gdpr')}</a> {t('form-privacy-and')} <a href="#" className="text-emerald-600 hover:text-emerald-700 underline">{t('form-privacy-policy')}</a> {t('form-privacy-end')} *
                       </Label>
                     </div>
                     <Button

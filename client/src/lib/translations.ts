@@ -258,6 +258,11 @@ export const translations = {
     'contact-membership-action': 'Diventa Membro',
     'contact-join-filiera': 'Aderisci alla Filiera Agricola Italiana',
     'contact-membership-description': 'Compila il modulo per ricevere informazioni sulla membership e essere contattato dal nostro team.',
+    'contact-info-title': 'Informazioni di Contatto',
+    'contact-send-message': 'Invia un Messaggio',
+    'contact-legal-office': 'Sede Legale',
+    'contact-general-description': 'Per informazioni sulla piattaforma e collaborazioni',
+    'contact-membership-info': 'Per aderire alla Filiera Agricola Italiana',
     
     // Forms
     'form-name': 'Nome',
@@ -272,7 +277,11 @@ export const translations = {
     'form-subject-tech': 'Supporto tecnico',
     'form-message': 'Messaggio',
     'form-message-placeholder': 'Descrivi la tua richiesta...',
-    'form-privacy': 'Accetto il trattamento dei dati personali secondo la normativa GDPR e la privacy policy di FAGRI.Digital',
+    'form-privacy-start': 'Accetto il trattamento dei dati personali secondo la normativa',
+    'form-gdpr': 'GDPR',
+    'form-privacy-and': 'e la',
+    'form-privacy-policy': 'privacy policy di FAGRI.Digital',
+    'form-privacy-end': '',
     'form-submit': 'Invia Messaggio',
     'form-success': 'Grazie per il tuo messaggio! Ti risponderemo al più presto.',
     
@@ -577,6 +586,11 @@ export const translations = {
     'contact-membership-action': 'Become a Member',
     'contact-join-filiera': 'Join Filiera Agricola Italiana',
     'contact-membership-description': 'Fill out the form to receive membership information and be contacted by our team.',
+    'contact-info-title': 'Contact Information',
+    'contact-send-message': 'Send a Message',
+    'contact-legal-office': 'Legal Office',
+    'contact-general-description': 'For platform information and collaborations',
+    'contact-membership-info': 'To join the Italian Agricultural Supply Chain',
     
     // Forms
     'form-name': 'Name',
@@ -591,7 +605,11 @@ export const translations = {
     'form-subject-tech': 'Technical support',
     'form-message': 'Message',
     'form-message-placeholder': 'Describe your request...',
-    'form-privacy': 'I accept the processing of personal data according to GDPR regulations and FAGRI.Digital privacy policy',
+    'form-privacy-start': 'I accept the processing of personal data according to',
+    'form-gdpr': 'GDPR regulations',
+    'form-privacy-and': 'and',
+    'form-privacy-policy': 'FAGRI.Digital privacy policy',
+    'form-privacy-end': '',
     'form-submit': 'Send Message',
     'form-success': 'Thank you for your message! We will respond as soon as possible.',
     
