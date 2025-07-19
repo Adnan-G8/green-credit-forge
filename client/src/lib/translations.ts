@@ -240,8 +240,8 @@ export const translations = {
     'security-evolution-objective': 'Il nostro obiettivo non è solo rispettare le regole attuali, ma offrire strumenti digitali che anticipano il futuro, per garantire stabilità e accessibilità anche in contesti complessi.',
     
     // Mission
-    'mission-title': 'Un\'Iniziativa al Servizio del Cambiamento Reale',
-    'mission-description1': 'FAGRI.Digital non è un esperimento né una piattaforma commerciale. È un\'infrastruttura solida, concepita per costruire una rete condivisa, trasparente e decentralizzata, che permetta a chi opera nel territorio di ricevere un riconoscimento concreto per i benefici ambientali generati.',
+    'mission-title': 'FAGRI.Digital: La Nostra Missione',
+    'mission-description1': 'La nostra missione in FAGRI.Digital è creare la piattaforma agricola leader mondiale, coltivando un ambiente sicuro e affidabile per ogni partecipante. Siamo dedicati a garantire che agricoltori e aziende di tutte le dimensioni ricevano opportunità eque per prosperare all\'interno di un ecosistema veramente globale e sostenibile, costruito sui pilastri della trasparenza e dell\'equità.',
     'mission-description2': 'Con un forte radicamento agricolo, una visione internazionale e una struttura tecnica autonoma, mettiamo a disposizione uno strumento etico, funzionale e accessibile, per promuovere una partecipazione reale alla transizione ecologica.',
     'stat1': 'Membri della Rete',
     'stat2': 'Imprese Coinvolte',
@@ -570,8 +570,8 @@ export const translations = {
     'security-evolution-objective': 'Our objective is not only to comply with current rules, but to offer digital tools that anticipate the future, to guarantee stability and accessibility even in complex contexts.',
     
     // Mission
-    'mission-title': 'An Initiative Serving Real Change',
-    'mission-description1': 'FAGRI.Digital is not an experiment nor a commercial platform. It is a solid infrastructure designed to build a shared, transparent and decentralized network that allows those operating in the territory to receive concrete recognition for the environmental benefits generated.',
+    'mission-title': 'FAGRI.Digital: Our Mission',
+    'mission-description1': 'Our mission at FAGRI.Digital is to forge the world\'s leading agricultural platform, cultivating a secure and trustworthy environment for every participant. We are dedicated to ensuring that farmers and corporations of all sizes receive equitable opportunities to thrive within a truly global and sustainable ecosystem, built on the pillars of transparency and fairness.',
     'mission-description2': 'With strong agricultural roots, an international vision and an autonomous technical structure, we provide an ethical, functional and accessible tool to promote real participation in the ecological transition.',
     'stat1': 'Network Members',
     'stat2': 'Involved Companies',
