@@ -112,7 +112,7 @@ export function Navigation() {
                 {t('nav-platform')}
               </button>
               <button
-                onClick={() => navigateToSection('security')}
+                onClick={() => setLocation('/security')}
                 className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
                 {t('nav-security')}
@@ -166,7 +166,7 @@ export function Navigation() {
                   {t('nav-platform')}
                 </button>
                 <button
-                  onClick={() => navigateToSection('security')}
+                  onClick={() => setLocation('/security')}
                   className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"
                 >
                   {t('nav-security')}

@@ -4,7 +4,6 @@ import { IntroductionSection } from '@/components/introduction-section';
 import { StandardSection } from '@/components/standard-section';
 import { PartnershipsSection } from '@/components/partnerships-section';
 import { PlatformSection } from '@/components/platform-section';
-import { SecuritySection } from '@/components/security-section';
 import { MissionSection } from '@/components/mission-section';
 import { RenewableEnergySection } from '@/components/renewable-energy-section';
 import { ContactSection } from '@/components/contact-section';
