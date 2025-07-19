@@ -1,6 +1,6 @@
 import { useLanguage } from './language-provider';
 import { Shield, Award, Leaf, Globe2 } from 'lucide-react';
-import standardImage from '@assets/image_1752936515114.png';
+import solarImage from '@assets/image_1752942192290.png';
 
 export function StandardSection() {
   const { t } = useLanguage();
@@ -77,11 +77,19 @@ export function StandardSection() {
             <div className="relative">
               <div className="relative overflow-hidden rounded-xl shadow-lg">
                 <img
-                  src={standardImage}
-                  alt="Agricultural standards"
+                  src={solarImage}
+                  alt="Solar panels and renewable energy infrastructure"
                   className="w-full h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4">
+                    <h4 className="font-semibold text-slate-900 mb-2">Energia Rinnovabile & Agricoltura</h4>
+                    <p className="text-sm text-slate-600">
+                      FAGRI Digital certifica crediti di carbonio sia per l'agricoltura sostenibile che per progetti di energia rinnovabile, creando un ecosistema integrato.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
