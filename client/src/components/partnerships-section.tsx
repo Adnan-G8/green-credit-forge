@@ -1,95 +1,102 @@
 import { useLanguage } from './language-provider';
-import { Flag, Building, Zap, Shield, Globe, GraduationCap } from 'lucide-react';
+import { 
+  Users, 
+  Handshake, 
+  Building, 
+  Globe, 
+  TrendingUp, 
+  Target 
+} from 'lucide-react';
 
 export function PartnershipsSection() {
   const { t } = useLanguage();
 
-  const partners = [
+  const partnerships = [
     {
-      icon: Flag,
-      title: t('partner1-title'),
-      description: t('partner1-description'),
-      delay: '0s'
+      icon: Users,
+      title: "Agricoltori e Produttori",
+      description: "Rete di oltre 110.000 membri che implementano pratiche sostenibili certificate per la riduzione delle emissioni di carbonio.",
     },
     {
       icon: Building,
-      title: t('partner2-title'),
-      description: t('partner2-description'),
-      delay: '0.1s'
-    },
-    {
-      icon: Zap,
-      title: t('partner3-title'),
-      description: t('partner3-description'),
-      delay: '0.2s'
-    },
-    {
-      icon: Shield,
-      title: t('partner4-title'),
-      description: t('partner4-description'),
-      delay: '0.3s'
+      title: "Istituzioni Finanziarie",
+      description: "Partnership con banche e fondi di investimento per finanziare progetti di agricoltura sostenibile e crediti di carbonio.",
     },
     {
       icon: Globe,
-      title: t('partner5-title'),
-      description: t('partner5-description'),
-      delay: '0.4s'
+      title: "Organizzazioni Internazionali",
+      description: "Collaborazioni con enti internazionali per l'implementazione di standard globali di certificazione ambientale.",
     },
     {
-      icon: GraduationCap,
-      title: 'Università Italiane',
-      description: 'Collaborazioni con importanti università per garantire la solidità scientifica dei nostri standard.',
-      delay: '0.5s'
-    }
+      icon: Handshake,
+      title: "Partner Tecnologici",
+      description: "Integrazione con piattaforme di monitoraggio digitale e sistemi di tracciabilità per garantire trasparenza.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Consulenti di Sostenibilità",
+      description: "Rete di esperti per supportare la transizione verso pratiche agricole a basso impatto ambientale.",
+    },
+    {
+      icon: Target,
+      title: "Enti di Certificazione",
+      description: "Collaborazione con organismi accreditati per la verifica e validazione dei crediti di carbonio agricoli.",
+    },
   ];
 
   return (
-    <section id="partnerships" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <section id="partnerships" className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
+          {/* Clean Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-indigo-800 mb-6 font-sans animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               {t('partnerships-title')}
             </h2>
-            <p className="text-xl text-indigo-700 max-w-4xl mx-auto leading-relaxed animate-fade-in">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
               {t('partnerships-subtitle')}
             </p>
           </div>
 
+          {/* Professional Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {partners.map((partner, index) => (
+            {partnerships.map((partnership, index) => (
               <div
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 text-center animate-scale-in shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300"
-                style={{ animationDelay: partner.delay }}
+                className="bg-white rounded-xl p-8 border border-slate-200 hover:border-slate-300 transition-all duration-200 hover:shadow-lg"
               >
-                <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg ${
-                  index % 6 === 0 ? 'bg-gradient-to-br from-blue-500 to-blue-600' :
-                  index % 6 === 1 ? 'bg-gradient-to-br from-emerald-500 to-emerald-600' :
-                  index % 6 === 2 ? 'bg-gradient-to-br from-amber-500 to-amber-600' :
-                  index % 6 === 3 ? 'bg-gradient-to-br from-purple-500 to-purple-600' :
-                  index % 6 === 4 ? 'bg-gradient-to-br from-pink-500 to-pink-600' :
-                  'bg-gradient-to-br from-indigo-500 to-indigo-600'
-                }`}>
-                  <partner.icon className="text-white h-10 w-10" />
+                <div className="w-16 h-16 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <partnership.icon className="text-slate-700 h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-4">
-                  {partner.title}
+                <h3 className="text-xl font-medium text-slate-900 mb-4">
+                  {partnership.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {partner.description}
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  {partnership.description}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="glass-dark rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-fagri-green mb-4">
-              Garanzie di Qualità
+          {/* Trust Section */}
+          <div className="bg-white rounded-xl p-10 border border-slate-200 text-center">
+            <h3 className="text-2xl font-medium text-slate-900 mb-6">
+              La Nostra Rete Globale
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              {t('partnerships-guarantee')}
-            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h4 className="text-3xl font-semibold text-emerald-700 mb-2">5</h4>
+                <p className="text-slate-600">Continenti Attivi</p>
+              </div>
+              <div>
+                <h4 className="text-3xl font-semibold text-blue-700 mb-2">25+</h4>
+                <p className="text-slate-600">Paesi Partner</p>
+              </div>
+              <div>
+                <h4 className="text-3xl font-semibold text-amber-700 mb-2">1000+</h4>
+                <p className="text-slate-600">Progetti Certificati</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -30,27 +30,27 @@ export function Navigation() {
   return (
     <>
       <nav className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm border-b border-slate-200' : 'bg-white/80 backdrop-blur-sm'
       }`}>
         {/* Language Switcher */}
         <div className="absolute top-4 right-6 z-50">
-          <div className="bg-white/90 backdrop-blur-sm rounded-full p-1 shadow-sm border border-gray-200">
+          <div className="bg-emerald-700 rounded-lg overflow-hidden">
             <button
               onClick={() => setLanguage('it')}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 py-2 text-sm font-medium transition-all duration-300 ${
                 language === 'it' 
-                  ? 'bg-fagri-green text-white shadow-sm' 
-                  : 'text-gray-600 hover:bg-gray-100'
+                  ? 'bg-white text-emerald-700' 
+                  : 'text-white hover:bg-emerald-600'
               }`}
             >
               IT
             </button>
             <button
               onClick={() => setLanguage('en')}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 py-2 text-sm font-medium transition-all duration-300 ${
                 language === 'en' 
-                  ? 'bg-fagri-green text-white shadow-sm' 
-                  : 'text-gray-600 hover:bg-gray-100'
+                  ? 'bg-white text-emerald-700' 
+                  : 'text-white hover:bg-emerald-600'
               }`}
             >
               EN
@@ -70,37 +70,37 @@ export function Navigation() {
             <div className="hidden md:flex space-x-8">
               <button
                 onClick={() => scrollToSection('home')}
-                className={`${isScrolled ? 'text-gray-600 hover:text-fagri-green' : 'text-white hover:text-gray-200'} transition-colors duration-300 font-medium`}
+                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
               >
                 {t('nav-home')}
               </button>
               <button
                 onClick={() => scrollToSection('standard')}
-                className={`${isScrolled ? 'text-gray-600 hover:text-fagri-green' : 'text-white hover:text-gray-200'} transition-colors duration-300 font-medium`}
+                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
               >
                 {t('nav-standard')}
               </button>
               <button
                 onClick={() => scrollToSection('partnerships')}
-                className={`${isScrolled ? 'text-gray-600 hover:text-fagri-green' : 'text-white hover:text-gray-200'} transition-colors duration-300 font-medium`}
+                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
               >
                 {t('nav-partnerships')}
               </button>
               <button
                 onClick={() => scrollToSection('platform')}
-                className={`${isScrolled ? 'text-gray-600 hover:text-fagri-green' : 'text-white hover:text-gray-200'} transition-colors duration-300 font-medium`}
+                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
               >
                 {t('nav-platform')}
               </button>
               <button
                 onClick={() => scrollToSection('security')}
-                className={`${isScrolled ? 'text-gray-600 hover:text-fagri-green' : 'text-white hover:text-gray-200'} transition-colors duration-300 font-medium`}
+                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
               >
                 {t('nav-security')}
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className={`${isScrolled ? 'text-gray-600 hover:text-fagri-green' : 'text-white hover:text-gray-200'} transition-colors duration-300 font-medium`}
+                className="text-slate-700 hover:text-emerald-700 transition-colors duration-200 font-medium"
               >
                 {t('nav-contact')}
               </button>
@@ -109,7 +109,7 @@ export function Navigation() {
             <div className="flex items-center space-x-4">
               <Button
                 onClick={() => setShowMembershipModal(true)}
-                className="bg-fagri-green text-white px-6 py-2 rounded-full hover:bg-fagri-dark transition-all duration-300"
+                className="bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-2 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-200"
               >
                 {t('nav-join')}
               </Button>

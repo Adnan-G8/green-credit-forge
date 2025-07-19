@@ -1,110 +1,91 @@
 import { useLanguage } from './language-provider';
-import { Key, Shield, Link, Lock, Database, Eye, Gavel, Globe, Handshake } from 'lucide-react';
+import { Shield, Lock, Eye, CheckCircle, Database, UserCheck } from 'lucide-react';
 
 export function SecuritySection() {
   const { t } = useLanguage();
 
+  const features = [
+    {
+      icon: Shield,
+      title: "Sicurezza dei Dati",
+      description: "Crittografia end-to-end e protocolli di sicurezza di livello bancario per proteggere tutte le informazioni sensibili."
+    },
+    {
+      icon: Lock,
+      title: "Accesso Controllato",
+      description: "Autenticazione multi-fattore e controlli granulari per garantire l'accesso solo ad utenti autorizzati."
+    },
+    {
+      icon: Eye,
+      title: "Trasparenza Totale",
+      description: "Tutti i processi di certificazione sono tracciabili e verificabili attraverso tecnologia blockchain."
+    },
+    {
+      icon: UserCheck,
+      title: "Compliance Normativa",
+      description: "Piena conformità con GDPR, ISO 27001 e altri standard internazionali di sicurezza e privacy."
+    }
+  ];
+
   return (
-    <section id="security" className="py-20 bg-white">
+    <section id="security" className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
+          {/* Clean Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-fagri-green mb-6 font-sans animate-slide-up">
+            <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               {t('security-title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed animate-fade-in">
-              {t('security-intro')}
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
+              {t('security-subtitle')}
             </p>
           </div>
 
-          {/* 3FA Section */}
-          <div className="glass-dark rounded-2xl p-8 mb-12 animate-scale-in">
-            <h3 className="text-2xl font-bold text-fagri-green mb-6 text-center">
-              {t('security-3fa-title')}
-            </h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              {t('security-3fa-description')}
-            </p>
-            <p className="text-gray-700 leading-relaxed italic">
-              {t('security-3fa-guarantee')}
-            </p>
+          {/* Security Features Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white rounded-xl p-8 border border-slate-200">
+                <div className="w-16 h-16 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="text-slate-700 h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-medium text-slate-900 mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
 
-          {/* Data Sovereignty Section */}
-          <div className="glass-dark rounded-2xl p-8 mb-12 animate-scale-in">
-            <h3 className="text-2xl font-bold text-fagri-green mb-6 text-center">
-              {t('security-data-title')}
+          {/* Certifications */}
+          <div className="bg-white rounded-xl p-10 border border-slate-200">
+            <h3 className="text-2xl font-medium text-slate-900 mb-8 text-center">
+              Certificazioni e Standard
             </h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              {t('security-data-description')}
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              {t('security-data-features')}
-            </p>
-          </div>
-
-          {/* Digital Integrity Section */}
-          <div className="glass-dark rounded-2xl p-8 mb-12 animate-scale-in">
-            <h3 className="text-2xl font-bold text-fagri-green mb-6 text-center">
-              {t('security-integrity-title')}
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              {t('security-integrity-description')}
-            </p>
-          </div>
-
-          {/* Blockchain Section */}
-          <div className="glass-dark rounded-2xl p-8 mb-12 animate-scale-in">
-            <h3 className="text-2xl font-bold text-fagri-green mb-6 text-center">
-              {t('security-blockchain-title')}
-            </h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              {t('security-blockchain-intro')}
-            </p>
-            <ul className="space-y-3 text-gray-700 mb-6">
-              <li className="flex items-start space-x-3">
-                <Database className="text-fagri-accent mt-1 h-5 w-5 flex-shrink-0" />
-                <span>{t('security-blockchain-feature1')}</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Link className="text-fagri-accent mt-1 h-5 w-5 flex-shrink-0" />
-                <span>{t('security-blockchain-feature2')}</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Eye className="text-fagri-accent mt-1 h-5 w-5 flex-shrink-0" />
-                <span>{t('security-blockchain-feature3')}</span>
-              </li>
-            </ul>
-            <p className="text-gray-700 leading-relaxed">
-              {t('security-blockchain-conclusion')}
-            </p>
-          </div>
-
-          {/* Regulatory Evolution Section */}
-          <div className="glass-dark rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-fagri-green mb-6 text-center">
-              {t('security-evolution-title')}
-            </h3>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              {t('security-evolution-intro')}
-            </p>
-            <ul className="space-y-3 text-gray-700 mb-6">
-              <li className="flex items-start space-x-3">
-                <Gavel className="text-fagri-accent mt-1 h-5 w-5 flex-shrink-0" />
-                <span>{t('security-evolution-ets')}</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Globe className="text-fagri-accent mt-1 h-5 w-5 flex-shrink-0" />
-                <span>{t('security-evolution-cbam')}</span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <Handshake className="text-fagri-accent mt-1 h-5 w-5 flex-shrink-0" />
-                <span>{t('security-evolution-integration')}</span>
-              </li>
-            </ul>
-            <p className="text-gray-700 leading-relaxed">
-              {t('security-evolution-objective')}
-            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Database className="text-blue-700 h-10 w-10" />
+                </div>
+                <h4 className="font-medium text-slate-900 mb-2">ISO 27001</h4>
+                <p className="text-slate-600 text-sm">Gestione della Sicurezza Informatica</p>
+              </div>
+              <div className="text-center">
+                <div className="w-20 h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Shield className="text-emerald-700 h-10 w-10" />
+                </div>
+                <h4 className="font-medium text-slate-900 mb-2">GDPR</h4>
+                <p className="text-slate-600 text-sm">Protezione Dati Personali</p>
+              </div>
+              <div className="text-center">
+                <div className="w-20 h-20 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="text-amber-700 h-10 w-10" />
+                </div>
+                <h4 className="font-medium text-slate-900 mb-2">SOC 2</h4>
+                <p className="text-slate-600 text-sm">Controlli di Sicurezza Operativa</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
