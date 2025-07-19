@@ -15,33 +15,33 @@ export function PartnershipsSection() {
   const partnerships = [
     {
       icon: Users,
-      title: "Agricoltori e Produttori",
-      description: "Rete di oltre 110.000 membri che implementano pratiche sostenibili certificate per la riduzione delle emissioni di carbonio.",
+      title: t('partner1-title'),
+      description: t('partner1-description'),
     },
     {
       icon: Building,
-      title: "Istituzioni Finanziarie",
-      description: "Partnership con banche e fondi di investimento per finanziare progetti di agricoltura sostenibile e crediti di carbonio.",
+      title: t('partner2-title'),
+      description: t('partner2-description'),
     },
     {
       icon: Globe,
-      title: "Organizzazioni Internazionali",
-      description: "Collaborazioni con enti internazionali per l'implementazione di standard globali di certificazione ambientale.",
+      title: t('partner3-title'),
+      description: t('partner3-description'),
     },
     {
       icon: Handshake,
-      title: "Partner Tecnologici",
-      description: "Integrazione con piattaforme di monitoraggio digitale e sistemi di tracciabilità per garantire trasparenza.",
+      title: t('partner4-title'),
+      description: t('partner4-description'),
     },
     {
       icon: TrendingUp,
-      title: "Consulenti di Sostenibilità",
-      description: "Rete di esperti per supportare la transizione verso pratiche agricole a basso impatto ambientale.",
+      title: t('partner5-title'),
+      description: t('partner5-description'),
     },
     {
       icon: Target,
-      title: "Enti di Certificazione",
-      description: "Collaborazione con organismi accreditati per la verifica e validazione dei crediti di carbonio agricoli.",
+      title: t('partner6-title'),
+      description: t('partner6-description'),
     },
   ];
 
@@ -82,20 +82,20 @@ export function PartnershipsSection() {
           {/* Trust Section */}
           <div className="bg-white rounded-xl p-10 border border-slate-200 text-center">
             <h3 className="text-2xl font-medium text-slate-900 mb-6">
-              La Nostra Rete Globale
+              {t('partnerships-network-title')}
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
                 <h4 className="text-3xl font-semibold text-emerald-700 mb-2">5</h4>
-                <p className="text-slate-600">Continenti Attivi</p>
+                <p className="text-slate-600">{t('partnerships-stat1')}</p>
               </div>
               <div>
                 <h4 className="text-3xl font-semibold text-blue-700 mb-2">25+</h4>
-                <p className="text-slate-600">Paesi Partner</p>
+                <p className="text-slate-600">{t('partnerships-stat2')}</p>
               </div>
               <div>
                 <h4 className="text-3xl font-semibold text-amber-700 mb-2">1000+</h4>
-                <p className="text-slate-600">Progetti Certificati</p>
+                <p className="text-slate-600">{t('partnerships-stat3')}</p>
               </div>
             </div>
           </div>

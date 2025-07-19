@@ -7,26 +7,26 @@ export function PlatformSection() {
   const steps = [
     {
       number: "01",
-      title: "Registrazione e Valutazione",
-      description: "Registrazione dell'azienda agricola e valutazione iniziale delle pratiche di sostenibilità esistenti.",
+      title: t('platform-step-1-title'),
+      description: t('platform-step-1-description'),
       icon: CheckCircle
     },
     {
       number: "02", 
-      title: "Implementazione dello Standard",
-      description: "Adozione delle metodologie EUFD2025-001 per la riduzione verificabile delle emissioni di carbonio.",
+      title: t('platform-step-2-title'),
+      description: t('platform-step-2-description'),
       icon: Shield
     },
     {
       number: "03",
-      title: "Monitoraggio Digitale",
-      description: "Utilizzo di sistemi di monitoraggio IoT e satellitare per tracciare in tempo reale i progressi ambientali.",
+      title: t('platform-step-3-title'),
+      description: t('platform-step-3-description'),
       icon: Database
     },
     {
       number: "04",
-      title: "Certificazione e Crediti",
-      description: "Verifica da parte di terzi e emissione di crediti di carbonio certificati pronti per il mercato.",
+      title: t('platform-step-4-title'),
+      description: t('platform-step-4-description'),
       icon: BarChart3
     }
   ];
@@ -76,30 +76,30 @@ export function PlatformSection() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-2xl font-medium text-slate-900 mb-6">
-                  Compliance e Trasparenza
+                  {t('platform-compliance-title')}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">Certificazione ISO 14064-2</span>
+                    <span className="text-slate-700">{t('platform-iso-cert')}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">Verifica di terze parti accreditate</span>
+                    <span className="text-slate-700">{t('platform-third-party')}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">Tracciabilità blockchain</span>
+                    <span className="text-slate-700">{t('platform-blockchain')}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">Audit periodici obbligatori</span>
+                    <span className="text-slate-700">{t('platform-audits')}</span>
                   </div>
                 </div>
               </div>
               <div>
                 <h3 className="text-2xl font-medium text-slate-900 mb-6">
-                  Il Nostro Obiettivo
+                  {t('platform-goal-title')}
                 </h3>
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
                   {t('platform-objective')}
@@ -108,11 +108,11 @@ export function PlatformSection() {
                   <div className="grid grid-cols-2 gap-6 text-center">
                     <div>
                       <h4 className="text-2xl font-semibold text-emerald-700 mb-1">95%</h4>
-                      <p className="text-slate-600 text-sm">Accuratezza Verifiche</p>
+                      <p className="text-slate-600 text-sm">{t('platform-accuracy')}</p>
                     </div>
                     <div>
                       <h4 className="text-2xl font-semibold text-blue-700 mb-1">24/7</h4>
-                      <p className="text-slate-600 text-sm">Monitoraggio Attivo</p>
+                      <p className="text-slate-600 text-sm">{t('platform-monitoring')}</p>
                     </div>
                   </div>
                 </div>

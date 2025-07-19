@@ -13,10 +13,10 @@ export function RenewableEnergySection() {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
-              Energia Rinnovabile & Sostenibilità
+              {t('renewable-title')}
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
-              FAGRI Digital certifica crediti di carbonio sia per l'agricoltura sostenibile che per progetti di energia rinnovabile, creando un ecosistema integrato per la lotta al cambiamento climatico.
+              {t('renewable-subtitle')}
             </p>
           </div>
 
@@ -31,7 +31,7 @@ export function RenewableEnergySection() {
               />
               <div className="absolute bottom-4 left-4">
                 <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
-                  <h4 className="font-medium text-slate-900">Energia Solare</h4>
+                  <h4 className="font-medium text-slate-900">{t('renewable-solar')}</h4>
                 </div>
               </div>
             </div>
@@ -45,7 +45,7 @@ export function RenewableEnergySection() {
               />
               <div className="absolute bottom-4 left-4">
                 <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
-                  <h4 className="font-medium text-slate-900">Energia Eolica</h4>
+                  <h4 className="font-medium text-slate-900">{t('renewable-wind')}</h4>
                 </div>
               </div>
             </div>
