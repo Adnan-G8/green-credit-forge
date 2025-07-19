@@ -16,6 +16,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const stored = localStorage.getItem('fagri-lang') as Language;
     if (stored && translations[stored]) {
       setLanguage(stored);
+    } else {
+      // Ensure Italian is set as default if no stored language
+      setLanguage('it');
+      localStorage.setItem('fagri-lang', 'it');
     }
   }, []);
 
@@ -26,7 +30,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   };
 
   const t = (key: TranslationKey): string => {
-    return translations[language][key] || key;
+    const translation = translations[language]?.[key] || translations['it'][key] || key;
+    return translation;
   };
 
   return (
