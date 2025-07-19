@@ -48,8 +48,8 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/security">
-                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
-                    Digital Security
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer text-emerald-400 font-medium">
+                    🔒 {t('footer-security')}
                   </span>
                 </Link>
               </li>

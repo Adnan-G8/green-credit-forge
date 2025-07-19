@@ -25,6 +25,10 @@ Preferred communication style: Simple, everyday language.
 - **Added EUFD Standard Subpage**: Created dedicated /eufd-standard page with comprehensive EUFD2025-001 information
 - **Read More Functionality**: Added "Read More" button in standard section linking to detailed subpage
 - **ALPHAG8 Partnership Details**: Enhanced content to highlight Swiss technology partnership and blockchain architecture
+- **Complete Legal Compliance Framework**: Created comprehensive legal pages (Privacy Policy, Terms & Conditions, GDPR, Cookie Policy) in both languages
+- **Security Trust Integration**: Added prominent security notices to all legal pages highlighting Swiss banking-level data protection
+- **Navigation Enhancement**: Fixed scroll-to-top functionality for all page navigation with automatic hook implementation
+- **Security Visibility**: Enhanced footer security link visibility with lock icon and emerald highlighting to guide users to security information
 
 ## System Architecture
 

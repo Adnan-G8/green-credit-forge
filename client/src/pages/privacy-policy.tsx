@@ -20,11 +20,37 @@ function PrivacyPolicyPage() {
             <h1 className="text-4xl font-bold text-fagri-green mb-4">
               {language === 'it' ? 'Privacy Policy' : 'Privacy Policy'}
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 mb-6">
               {language === 'it' 
                 ? 'Ultima modifica: 19 luglio 2025' 
                 : 'Last updated: July 19, 2025'}
             </p>
+            
+            {/* Security Notice */}
+            <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-8">
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0">
+                  <svg className="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-emerald-800 mb-2">
+                    {language === 'it' ? 'Sicurezza dei Tuoi Dati' : 'Your Data Security'}
+                  </h3>
+                  <p className="text-emerald-700 mb-3">
+                    {language === 'it' 
+                      ? 'I tuoi dati sono protetti dai più alti standard di sicurezza internazionali, inclusi ambienti bancari svizzeri per dati sensibili e infrastrutture globali ridondanti per massima disponibilità.'
+                      : 'Your data is protected by the highest international security standards, including Swiss banking environments for sensitive data and redundant global infrastructure for maximum availability.'}
+                  </p>
+                  <Link href="/security">
+                    <Button variant="outline" size="sm" className="text-emerald-700 border-emerald-300 hover:bg-emerald-100">
+                      {language === 'it' ? 'Scopri la Nostra Sicurezza Digitale' : 'Learn About Our Digital Security'}
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="prose prose-lg max-w-none space-y-8">
