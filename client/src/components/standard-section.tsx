@@ -1,5 +1,6 @@
 import { useLanguage } from './language-provider';
 import { Shield, Award, Leaf, Globe2 } from 'lucide-react';
+import { Link } from 'wouter';
 import grainImage from '@assets/image_1752936515114.png';
 
 export function StandardSection() {
@@ -14,9 +15,22 @@ export function StandardSection() {
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               {t('standard-title')}
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light mb-8">
               {t('standard-subtitle')}
             </p>
+            
+            {/* Read More Button */}
+            <div className="text-center">
+              <Link 
+                href="/eufd-standard"
+                className="inline-flex items-center px-8 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium"
+              >
+                {t('standard-read-more')}
+                <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
 
           {/* Professional Two-Column Layout */}

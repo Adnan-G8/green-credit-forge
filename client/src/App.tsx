@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "./components/language-provider";
 import Home from "@/pages/home";
 import Security from "@/pages/security";
+import EufdStandard from "@/pages/eufd-standard";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/security" component={Security} />
+      <Route path="/eufd-standard" component={EufdStandard} />
       <Route component={NotFound} />
     </Switch>
   );

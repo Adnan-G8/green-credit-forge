@@ -119,6 +119,50 @@ export const translations = {
     'renewable-solar': 'Energia Solare',
     'renewable-wind': 'Energia Eolica',
     
+    // Read more button
+    'standard-read-more': 'Scopri di Più',
+    'back-to-home': 'Torna alla Home',
+    
+    // EUFD Standard page translations
+    'eufd-hero-title': 'Lo Standard EUFD2025-001',
+    'eufd-hero-subtitle': 'Scientifico, concreto, accessibile.',
+    'eufd-status': 'Standard Globale Pioneer',
+    
+    'eufd-intro-title': 'Pioniere dall\'Italia al Mondo: Il Nostro Standard Blockchain per i Certificati CO₂',
+    'eufd-intro-text1': 'In FAGRI.Digital, siamo orgogliosi di presentare il nostro nuovo standard innovativo: EUFD2025-001. Questo standard è il risultato di anni di ricerca e sviluppo intensivi, basato sulle ultime scoperte scientifiche e creato in stretta collaborazione con le principali università italiane.',
+    'eufd-intro-text2': 'Sviluppato con il nostro partner tecnologico ALPHAG8 Digital Solutions Switzerland, EUFD2025-001 è progettato per inaugurare una nuova era di affidabilità ed efficienza nella certificazione CO₂.',
+    
+    'eufd-features-title': 'EUFD2025-001: Scientifico, Trasparente, Accessibile e Sicuro con Blockchain',
+    'eufd-feature1-title': 'Eliminazione del Doppio Conteggio',
+    'eufd-feature1-description': 'Ogni certificato è unico e immutabile grazie alla tecnologia blockchain.',
+    'eufd-feature2-title': 'Prevenzione del Greenwashing',
+    'eufd-feature2-description': 'L\'intera catena del valore è trasparente e tracciabile.',
+    'eufd-feature3-title': 'Proprietà Chiara',
+    'eufd-feature3-description': 'Le registrazioni digitali sono a prova di manomissione e permanenti.',
+    'eufd-feature4-title': 'Sicurezza Massima',
+    'eufd-feature4-description': 'Impronta digitale unica e autenticazione a tre fattori (3FA).',
+    
+    'eufd-blockchain-title': 'Tecnologia Blockchain per Trasparenza e Sicurezza',
+    'eufd-blockchain-intro': 'Al centro del nostro standard c\'è l\'uso strategico della tecnologia blockchain. Questo crea una trasparenza senza precedenti e risolve problemi critici nel mercato del carbonio:',
+    'eufd-blockchain-benefit1': 'Il doppio conteggio è eliminato: ogni certificato è unico e immutabile.',
+    'eufd-blockchain-benefit2': 'Il greenwashing è prevenuto: l\'intera catena del valore è trasparente e tracciabile.',
+    'eufd-blockchain-benefit3': 'La proprietà chiara è garantita: le registrazioni digitali sono a prova di manomissione e permanenti.',
+    
+    'eufd-vision-title': 'La Nostra Visione: Efficienza e Equità per un Impatto Reale',
+    'eufd-vision-text1': 'Il nostro obiettivo principale è semplificare drasticamente la richiesta e il riconoscimento delle iniziative di protezione climatica, specialmente nella certificazione CO₂.',
+    'eufd-vision-text2': 'Garantiamo che i ricavi dai certificati arrivino dove sono più necessari: con gli stakeholder che guidano la trasformazione sostenibile—dagli agricoltori e sviluppatori di progetti ai produttori di energia e partner di cooperazione.',
+    
+    'eufd-trust-title': 'Fiducia, Sicurezza e Portata Globale',
+    'eufd-trust-text': 'Con EUFD2025-001, stabiliamo lo standard per fiducia, sicurezza, trasparenza ed efficienza. Attraverso 30 anni di lavoro dedicato nel settore agricolo, FAGRI ha costruito una rete unica con portata internazionale e cooperazione.',
+    'eufd-network-members': 'Membri della Rete',
+    'eufd-network-companies': 'Aziende Coinvolte',
+    'eufd-network-years': 'Anni di Esperienza',
+    
+    'eufd-cta-title': 'Unisciti a Noi per un Futuro più Verde',
+    'eufd-cta-text': 'Vuoi saperne di più su EUFD2025-001 o su come può aiutare le tue iniziative di protezione climatica? Contattaci oggi!',
+    'eufd-cta-contact': 'Contattaci',
+    'eufd-cta-back': 'Torna alla Home',
+    
     // Platform
     'platform-title': 'Un Percorso Digitale per la Certificazione della CO₂ – Passo dopo Passo',
     'platform-intro': 'FAGRI.Digital sta sviluppando una piattaforma digitale che copre l\'intero processo di certificazione dei crediti di carbonio – dalla richiesta iniziale alla validazione, fino al rilascio e al ritiro dei crediti. La piattaforma sarà disponibile a breve e includerà:',
@@ -422,6 +466,50 @@ export const translations = {
     'renewable-subtitle': 'FAGRI Digital certifies carbon credits for both sustainable agriculture and renewable energy projects, creating an integrated ecosystem for combating climate change.',
     'renewable-solar': 'Solar Energy',
     'renewable-wind': 'Wind Energy',
+    
+    // Read more button
+    'standard-read-more': 'Learn More',
+    'back-to-home': 'Back to Home',
+    
+    // EUFD Standard page translations
+    'eufd-hero-title': 'The EUFD2025-001 Standard',
+    'eufd-hero-subtitle': 'Scientific, concrete, accessible.',
+    'eufd-status': 'Global Pioneer Standard',
+    
+    'eufd-intro-title': 'Pioneering from Italy to the World: Our Blockchain-Powered Standard for CO₂ Certificates',
+    'eufd-intro-text1': 'At FAGRI.Digital, we\'re proud to introduce our new, innovative standard: EUFD2025-001. This standard is the result of years of intensive research and development, built on the latest scientific insights and created in close collaboration with leading Italian universities.',
+    'eufd-intro-text2': 'Developed with our technology partner ALPHAG8 Digital Solutions Switzerland, EUFD2025-001 is designed to usher in a new era of trustworthiness and efficiency in CO₂ certification.',
+    
+    'eufd-features-title': 'EUFD2025-001: Scientific, Transparent, Accessible, and Secure with Blockchain',
+    'eufd-feature1-title': 'Double Counting Elimination',
+    'eufd-feature1-description': 'Every certificate is unique and immutable through blockchain technology.',
+    'eufd-feature2-title': 'Greenwashing Prevention',
+    'eufd-feature2-description': 'The entire value chain is transparent and traceable.',
+    'eufd-feature3-title': 'Clear Ownership',
+    'eufd-feature3-description': 'Digital entries are tamper-proof and permanent.',
+    'eufd-feature4-title': 'Maximum Security',
+    'eufd-feature4-description': 'Unique digital fingerprint and Three-Factor Authentication (3FA).',
+    
+    'eufd-blockchain-title': 'Blockchain Technology for Transparency and Security',
+    'eufd-blockchain-intro': 'At the heart of our standard is the strategic use of blockchain technology. This creates unparalleled transparency and resolves critical issues within the carbon market:',
+    'eufd-blockchain-benefit1': 'Double counting is eliminated: Every certificate is unique and immutable.',
+    'eufd-blockchain-benefit2': 'Greenwashing is prevented: The entire value chain is transparent and traceable.',
+    'eufd-blockchain-benefit3': 'Clear ownership is ensured: Digital entries are tamper-proof and permanent.',
+    
+    'eufd-vision-title': 'Our Vision: Efficiency and Fairness for Real Impact',
+    'eufd-vision-text1': 'Our primary goal is to drastically simplify the application for and recognition of climate protection initiatives, especially in CO₂ certification.',
+    'eufd-vision-text2': 'We ensure that the revenue from certificates reaches where it\'s most needed: with the stakeholders driving sustainable transformation—from farmers and project developers to energy producers and cooperation partners.',
+    
+    'eufd-trust-title': 'Trust, Security, and Global Reach',
+    'eufd-trust-text': 'With EUFD2025-001, we set the standard for trust, security, transparency, and efficiency. Through 30 years of dedicated work in the agricultural sector, FAGRI has built a unique network with international reach and cooperation.',
+    'eufd-network-members': 'Network Members',
+    'eufd-network-companies': 'Involved Companies',
+    'eufd-network-years': 'Years of Experience',
+    
+    'eufd-cta-title': 'Join Us for a Greener Future',
+    'eufd-cta-text': 'Would you like to learn more about EUFD2025-001 or how it can help your climate protection initiatives? Contact us today!',
+    'eufd-cta-contact': 'Contact Us',
+    'eufd-cta-back': 'Back to Home',
     
     // Security
     'security-title': 'Member Protection, Digital Responsibility and Access Security',
