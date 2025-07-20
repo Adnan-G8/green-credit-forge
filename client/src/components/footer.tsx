@@ -1,15 +1,22 @@
 import { useLanguage } from './language-provider';
 import { Button } from '@/components/ui/button';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import { ExternalLink } from 'lucide-react';
 
 export function Footer() {
   const { t } = useLanguage();
+  const [location, setLocation] = useLocation();
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const navigateToSection = (sectionId: string) => {
+    // If we're on the home page, scroll to section
+    if (location === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we're on a different page, navigate to home with hash
+      setLocation(`/#${sectionId}`);
     }
   };
 
@@ -32,7 +39,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <button
-                  onClick={() => scrollToSection('standard')}
+                  onClick={() => navigateToSection('standard')}
                   className="hover:text-fagri-accent transition-colors text-left"
                 >
                   {t('footer-standard')}
