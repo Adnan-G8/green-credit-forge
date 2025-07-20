@@ -94,7 +94,7 @@ export function Navigation() {
                 {t('nav-home')}
               </button>
               <button
-                onClick={() => navigateToSection('standard')}
+                onClick={() => setLocation('/eufd-standard')}
                 className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
                 {t('nav-standard')}
@@ -143,7 +143,10 @@ export function Navigation() {
                   {t('nav-home')}
                 </button>
                 <button
-                  onClick={() => navigateToSection('standard')}
+                  onClick={() => {
+                    setLocation('/eufd-standard');
+                    setIsOpen(false);
+                  }}
                   className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"
                 >
                   {t('nav-standard')}
@@ -156,7 +159,10 @@ export function Navigation() {
                   {t('nav-platform')}
                 </button>
                 <button
-                  onClick={() => setLocation('/security')}
+                  onClick={() => {
+                    setLocation('/security');
+                    setIsOpen(false);
+                  }}
                   className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"
                 >
                   {t('nav-security')}
