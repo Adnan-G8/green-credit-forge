@@ -33,6 +33,8 @@ Preferred communication style: Simple, everyday language.
 - **Enhanced Footer Navigation**: Added CO2 certification link to footer platform section for improved discoverability
 - **Removed Generic Partnerships Section**: Eliminated empty "Institutional Partnerships" section from home page since specific partners are already detailed in CO2 certification subpage
 - **Updated Footer Partner Links**: Replaced social media icons with ALPHAG8 and g8Chain technology partner links, added "Powered by ALPHAG8 Switzerland" credit
+- **Standardized Navigation**: All subpages now use consistent full Navigation component instead of mixed approaches (some had "back" buttons, others full nav)
+- **Enhanced User Experience**: Users can now access language switching and full navigation from any page without returning to home first
 
 ## System Architecture
 

@@ -1,4 +1,6 @@
 import { useLanguage } from '../components/language-provider';
+import { Navigation } from '../components/navigation';
+import { Footer } from '../components/footer';
 import { CheckCircle, Shield, Globe, Users } from 'lucide-react';
 import { Link } from 'wouter';
 
@@ -7,19 +9,10 @@ export default function EufdStandardPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="text-emerald-600 hover:text-emerald-700 font-medium">
-              ← {t('back-to-home')}
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+      <section className="pt-32 pb-20 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-light text-slate-900 mb-6">
@@ -223,6 +216,8 @@ export default function EufdStandardPage() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }
