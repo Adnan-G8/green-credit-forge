@@ -104,7 +104,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-fagri-accent transition-colors flex items-center"
                 >
-                  g8Chain Blockchain
+                  G8Chain Blockchain
                   <ExternalLink className="ml-2 h-3 w-3" />
                 </a>
               </li>
