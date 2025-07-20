@@ -2,7 +2,6 @@ import { useLanguage } from './language-provider';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Leaf, Globe, Shield, TrendingUp, Users } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
-import { GeometricPattern } from './geometric-pattern';
 import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import heroImage from '@assets/image_1752936487549.png';
@@ -40,12 +39,9 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-800/60 to-slate-900/80"></div>
         </div>
 
-        {/* Geometric Pattern */}
-        <GeometricPattern />
-
         {/* Professional Content Container */}
         <div className="container mx-auto px-4 sm:px-6 pt-24 pb-20 relative z-10">
-          <div className="max-w-6xl mx-auto text-center lg:text-left lg:max-w-4xl">
+          <div className="max-w-6xl mx-auto text-center">
             
             {/* Professional Status Badge */}
             <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-full mb-8">
@@ -108,7 +104,7 @@ export function HeroSection() {
             </div>
             
             {/* Premium Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Link href="/eufd-standard">
                 <button className="group relative inline-flex items-center justify-center px-12 py-5 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 transition-all duration-300 font-medium text-lg shadow-2xl hover:shadow-emerald-500/20 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -129,7 +125,7 @@ export function HeroSection() {
             </div>
             
             {/* Professional Trust Indicators */}
-            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-8 pt-8 border-t border-white/10">
+            <div className="flex flex-wrap justify-center items-center gap-8 pt-8 border-t border-white/10">
               <div className="flex items-center space-x-3 text-slate-400">
                 <Shield className="h-6 w-6 text-emerald-400" />
                 <span className="text-sm font-medium">ISO 14064 Certified</span>
