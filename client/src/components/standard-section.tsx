@@ -243,8 +243,20 @@ export function StandardSection() {
                         <Award className="text-amber-700 h-6 w-6" />
                       </div>
                       <div>
-                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-iso-title')}</h5>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-iso-desc')}</p>
+                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-iso-uni-title')}</h5>
+                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-iso-uni-desc')}</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="text-emerald-700 h-6 w-6" />
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-suolo-title')}</h5>
+                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-suolo-desc')}</p>
                       </div>
                     </div>
                   </div>
