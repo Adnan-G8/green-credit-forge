@@ -8,7 +8,7 @@ export function StandardSection() {
 
   return (
     <section id="standard" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Clean Header */}
           <div className="text-center mb-16">
@@ -162,7 +162,7 @@ export function StandardSection() {
           </div>
 
           {/* Technology & Institutional Partners Section */}
-          <div className="mt-20 bg-gradient-to-br from-slate-50 to-white rounded-2xl p-12 border border-slate-200">
+          <div className="mt-20 bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 sm:p-8 md:p-12 border border-slate-200">
             <div className="text-center mb-12">
               <h3 className="text-3xl font-light text-slate-900 mb-4">
                 {t('partners-title')}
@@ -180,7 +180,7 @@ export function StandardSection() {
               </h4>
               
               {/* First Row: 3 partners */}
-              <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -219,7 +219,7 @@ export function StandardSection() {
               </div>
               
               {/* Second Row: 2 partners centered */}
-              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -252,7 +252,7 @@ export function StandardSection() {
                 <Building2 className="h-6 w-6 text-emerald-700 mr-3" />
                 {t('partners-tech-title')}
               </h4>
-              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">

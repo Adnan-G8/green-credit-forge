@@ -40,7 +40,7 @@ export function HeroSection() {
         </div>
 
         {/* Professional Content Container */}
-        <div className="container mx-auto px-6 pt-24 pb-20 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 pt-24 pb-20 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
             
             {/* Professional Status Badge */}
@@ -53,19 +53,19 @@ export function HeroSection() {
             
             {/* Banking-Style Main Title */}
             <div className="mb-8">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extralight text-white leading-[0.9] mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extralight text-white leading-[0.9] mb-6">
                 <span className="block mb-2 font-light">{t('hero-title1')}</span>
                 <span className="block mb-2 font-light">{t('hero-title2')}</span>
                 <span className="block font-normal text-emerald-400">{t('hero-title3')}</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-light max-w-4xl mx-auto leading-relaxed px-4">
                 {t('hero-subtitle')}
               </p>
             </div>
             
             {/* Premium Financial Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto px-4">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
                   <div className="p-4 bg-emerald-500/20 rounded-full border border-emerald-400/30">

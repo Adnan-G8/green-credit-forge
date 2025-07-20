@@ -51,7 +51,7 @@ export function Navigation() {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-40 bg-white shadow-sm border-b border-slate-200">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-4">
               <button onClick={() => setLocation('/')} className="flex items-center">
@@ -59,34 +59,8 @@ export function Navigation() {
               </button>
             </div>
 
-            {/* Language Switcher - moved to right side of nav */}
-            <div className="absolute top-4 right-6">
-              <div className="bg-emerald-700 rounded-lg overflow-hidden shadow-sm">
-                <button
-                  onClick={() => setLanguage('it')}
-                  className={`px-3 py-2 text-sm font-medium transition-all duration-200 ${
-                    language === 'it' 
-                      ? 'bg-white text-emerald-700' 
-                      : 'text-white hover:bg-emerald-600'
-                  }`}
-                >
-                  IT
-                </button>
-                <button
-                  onClick={() => setLanguage('en')}
-                  className={`px-3 py-2 text-sm font-medium transition-all duration-200 ${
-                    language === 'en' 
-                      ? 'bg-white text-emerald-700' 
-                      : 'text-white hover:bg-emerald-600'
-                  }`}
-                >
-                  EN
-                </button>
-              </div>
-            </div>
-
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8 mr-24">
+            <div className="hidden md:flex space-x-8">
               <button
                 onClick={() => navigateToSection('home')}
                 className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
@@ -121,7 +95,32 @@ export function Navigation() {
 
             </div>
 
-            <div className="flex items-center space-x-4 md:hidden">
+            {/* Language Switcher & Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              {/* Language Switcher */}
+              <div className="bg-emerald-700 rounded-lg overflow-hidden shadow-sm">
+                <button
+                  onClick={() => setLanguage('it')}
+                  className={`px-3 py-2 text-sm font-medium transition-all duration-200 ${
+                    language === 'it' 
+                      ? 'bg-white text-emerald-700' 
+                      : 'text-white hover:bg-emerald-600'
+                  }`}
+                >
+                  IT
+                </button>
+                <button
+                  onClick={() => setLanguage('en')}
+                  className={`px-3 py-2 text-sm font-medium transition-all duration-200 ${
+                    language === 'en' 
+                      ? 'bg-white text-emerald-700' 
+                      : 'text-white hover:bg-emerald-600'
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
+
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -134,11 +133,11 @@ export function Navigation() {
 
           {/* Mobile Navigation */}
           {isOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-white/20 pt-4">
+            <div className="md:hidden mt-4 pb-4 border-t border-slate-200 pt-4">
               <div className="flex flex-col space-y-3">
                 <button
                   onClick={() => navigateToSection('home')}
-                  className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"
+                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
                   {t('nav-home')}
                 </button>
@@ -147,14 +146,14 @@ export function Navigation() {
                     setLocation('/eufd-standard');
                     setIsOpen(false);
                   }}
-                  className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"
+                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
                   {t('nav-standard')}
                 </button>
 
                 <button
                   onClick={() => navigateToSection('platform')}
-                  className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"
+                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
                   {t('nav-platform')}
                 </button>
@@ -163,13 +162,13 @@ export function Navigation() {
                     setLocation('/security');
                     setIsOpen(false);
                   }}
-                  className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"
+                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
                   {t('nav-security')}
                 </button>
                 <button
                   onClick={() => navigateToSection('contact')}
-                  className="text-white hover:text-fagri-accent transition-colors duration-300 text-left"
+                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
                   {t('nav-contact')}
                 </button>
