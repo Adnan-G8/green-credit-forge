@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Leaf, Globe, Shield, TrendingUp, Users } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
 import { useState, useEffect } from 'react';
+import { Link } from 'wouter';
 import heroImage from '@assets/image_1752936487549.png';
 
 export function HeroSection() {
@@ -104,16 +105,15 @@ export function HeroSection() {
             
             {/* Premium Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <button
-                onClick={scrollToStandard}
-                className="group relative inline-flex items-center justify-center px-12 py-5 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 transition-all duration-300 font-medium text-lg shadow-2xl hover:shadow-emerald-500/20 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative flex items-center">
-                  {t('hero-cta-discover')}
-                  <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </span>
-              </button>
+              <Link href="/eufd-standard">
+                <button className="group relative inline-flex items-center justify-center px-12 py-5 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 transition-all duration-300 font-medium text-lg shadow-2xl hover:shadow-emerald-500/20 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative flex items-center">
+                    {t('hero-cta-discover')}
+                    <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </button>
+              </Link>
               
               <button
                 onClick={() => setShowMembershipModal(true)}
