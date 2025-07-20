@@ -172,104 +172,102 @@ export function StandardSection() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Technology Partners */}
-              <div>
-                <h4 className="text-xl font-medium text-slate-900 mb-6 flex items-center">
-                  <Building2 className="h-6 w-6 text-emerald-700 mr-3" />
-                  {t('partners-tech-title')}
-                </h4>
-                <div className="space-y-6">
-                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Shield className="text-blue-700 h-6 w-6" />
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-alphag8-title')}</h5>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-alphag8-desc')}</p>
-                      </div>
+            {/* Technology Partners Section */}
+            <div className="mb-12">
+              <h4 className="text-xl font-medium text-slate-900 mb-6 flex items-center justify-center">
+                <Building2 className="h-6 w-6 text-emerald-700 mr-3" />
+                {t('partners-tech-title')}
+              </h4>
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Shield className="text-blue-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-alphag8-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-alphag8-desc')}</p>
                     </div>
                   </div>
-                  
-                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="text-emerald-700 h-6 w-6" />
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-g8chain-title')}</h5>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-g8chain-desc')}</p>
-                      </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="text-emerald-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-g8chain-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-g8chain-desc')}</p>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Institutional Partners */}
-              <div>
-                <h4 className="text-xl font-medium text-slate-900 mb-6 flex items-center">
-                  <Users className="h-6 w-6 text-blue-700 mr-3" />
-                  {t('partners-institutional-title')}
-                </h4>
-                <div className="space-y-6">
-                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Globe2 className="text-blue-700 h-6 w-6" />
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-eu-title')}</h5>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-eu-desc')}</p>
-                      </div>
+            {/* Institutional Partners Section */}
+            <div>
+              <h4 className="text-xl font-medium text-slate-900 mb-6 flex items-center justify-center">
+                <Users className="h-6 w-6 text-blue-700 mr-3" />
+                {t('partners-institutional-title')}
+              </h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Globe2 className="text-blue-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-eu-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-eu-desc')}</p>
                     </div>
                   </div>
-                  
-                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Shield className="text-green-700 h-6 w-6" />
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-ministry-title')}</h5>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-ministry-desc')}</p>
-                      </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Shield className="text-green-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-ministry-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-ministry-desc')}</p>
                     </div>
                   </div>
-                  
-                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Award className="text-amber-700 h-6 w-6" />
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-iso-uni-title')}</h5>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-iso-uni-desc')}</p>
-                      </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Award className="text-amber-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-iso-uni-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-iso-uni-desc')}</p>
                     </div>
                   </div>
-                  
-                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="text-emerald-700 h-6 w-6" />
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-suolo-title')}</h5>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-suolo-desc')}</p>
-                      </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="text-emerald-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-suolo-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-suolo-desc')}</p>
                     </div>
                   </div>
-                  
-                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Users className="text-purple-700 h-6 w-6" />
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-slate-900 mb-2">{t('partners-universities-title')}</h5>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-universities-desc')}</p>
-                      </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow md:col-span-2 lg:col-span-1">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Users className="text-purple-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-universities-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-universities-desc')}</p>
                     </div>
                   </div>
                 </div>
