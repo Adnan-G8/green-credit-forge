@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Navigation } from '@/components/navigation';
 import { HeroSection } from '@/components/hero-section';
+import { TransitionSection } from '@/components/transition-section';
 import { IntroductionSection } from '@/components/introduction-section';
 import { StandardSection } from '@/components/standard-section';
 import { PlatformSection } from '@/components/platform-section';
@@ -26,6 +27,7 @@ export default function Home() {
     <div className="min-h-screen bg-fagri-bg">
       <Navigation />
       <HeroSection />
+      <TransitionSection />
       <IntroductionSection />
       <StandardSection />
       <PlatformSection />

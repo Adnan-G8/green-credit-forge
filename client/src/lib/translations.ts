@@ -194,6 +194,10 @@ export const translations = {
     'eufd-cta-contact': 'Contattaci',
     'eufd-cta-back': 'Torna alla Home',
     
+    // Transition Section
+    'transition-title': 'Dal Campo al Futuro',
+    'transition-subtitle': 'Innovazione digitale per l\'agricoltura sostenibile italiana',
+
     // Platform
     'platform-title': 'Un Percorso Digitale per la Certificazione della CO₂ – Passo dopo Passo',
     'platform-intro': 'FAGRI.Digital sta sviluppando una piattaforma digitale che copre l\'intero processo di certificazione dei crediti di carbonio – dalla richiesta iniziale alla validazione, fino al rilascio e al ritiro dei crediti. La piattaforma sarà disponibile a breve e includerà:',
@@ -505,6 +509,10 @@ export const translations = {
 
     'partnerships-guarantee': 'These collaborations guarantee regulatory soundness, operational credibility and full traceability for all involved actors: technicians, authorities, investors and local communities.',
     
+    // Transition Section
+    'transition-title': 'From Field to Future',
+    'transition-subtitle': 'Digital innovation for sustainable Italian agriculture',
+
     // Platform
     'platform-title': 'A Digital Path for CO₂ Certification – Step by Step',
     'platform-intro': 'FAGRI.Digital is developing a digital platform that covers the entire carbon credit certification process – from initial request to validation, up to credit issuance and retirement. The platform will be available soon and will include:',
