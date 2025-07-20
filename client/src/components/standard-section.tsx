@@ -173,48 +173,14 @@ export function StandardSection() {
             </div>
 
             {/* Institutional Partners Section */}
-            <div>
-              <h4 className="text-xl font-medium text-slate-900 mb-8 flex items-center justify-center">
+            <div className="mb-12">
+              <h4 className="text-xl font-medium text-slate-900 mb-6 flex items-center justify-center">
                 <Users className="h-6 w-6 text-blue-700 mr-3" />
                 {t('partners-institutional-title')}
               </h4>
               
-              {/* Technology Partners Subsection */}
-              <div className="mb-8">
-                <h5 className="text-lg font-medium text-slate-800 mb-4 flex items-center justify-center">
-                  <Building2 className="h-5 w-5 text-emerald-700 mr-2" />
-                  {t('partners-tech-title')}
-                </h5>
-                <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Shield className="text-blue-700 h-6 w-6" />
-                      </div>
-                      <div>
-                        <h6 className="font-medium text-slate-900 mb-2">{t('partners-alphag8-title')}</h6>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-alphag8-desc')}</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="text-emerald-700 h-6 w-6" />
-                      </div>
-                      <div>
-                        <h6 className="font-medium text-slate-900 mb-2">{t('partners-g8chain-title')}</h6>
-                        <p className="text-slate-600 text-sm leading-relaxed">{t('partners-g8chain-desc')}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Other Institutional Partners */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
+              {/* First Row: 3 partners */}
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
                 <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -250,7 +216,10 @@ export function StandardSection() {
                     </div>
                   </div>
                 </div>
-                
+              </div>
+              
+              {/* Second Row: 2 partners centered */}
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -263,7 +232,7 @@ export function StandardSection() {
                   </div>
                 </div>
                 
-                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow md:col-span-2 lg:col-span-1">
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Users className="text-purple-700 h-6 w-6" />
@@ -271,6 +240,39 @@ export function StandardSection() {
                     <div>
                       <h5 className="font-medium text-slate-900 mb-2">{t('partners-universities-title')}</h5>
                       <p className="text-slate-600 text-sm leading-relaxed">{t('partners-universities-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Technology Partners Section */}
+            <div>
+              <h4 className="text-xl font-medium text-slate-900 mb-6 flex items-center justify-center">
+                <Building2 className="h-6 w-6 text-emerald-700 mr-3" />
+                {t('partners-tech-title')}
+              </h4>
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Shield className="text-blue-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-alphag8-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-alphag8-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="text-emerald-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-g8chain-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-g8chain-desc')}</p>
                     </div>
                   </div>
                 </div>
