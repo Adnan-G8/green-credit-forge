@@ -148,7 +148,7 @@ export function Footer() {
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               {t('footer-copyright')}
             </p>
-            <div className="flex space-x-6 text-sm text-gray-400">
+            <div className="flex space-x-2 text-sm text-gray-400">
               <span>{t('footer-powered-by')}</span>
               <a 
                 href="https://alphag8.com" 
@@ -156,7 +156,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-emerald-400 transition-colors font-medium"
               >
-                ALPHAG8 Switzerland
+                ALPHAG8 Digital Solution Switzerland
               </a>
             </div>
           </div>
