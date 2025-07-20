@@ -35,6 +35,8 @@ Preferred communication style: Simple, everyday language.
 - **Updated Footer Partner Links**: Replaced social media icons with ALPHAG8 and g8Chain technology partner links, added "Powered by ALPHAG8 Switzerland" credit
 - **Standardized Navigation**: All subpages now use consistent full Navigation component instead of mixed approaches (some had "back" buttons, others full nav)
 - **Enhanced User Experience**: Users can now access language switching and full navigation from any page without returning to home first
+- **Technology & Institutional Partners Showcase**: Added comprehensive partner section displaying ALPHAG8, G8Chain, EU Commission, Italian Ministry, ISO, and Italian Universities with professional banking-style design
+- **Credibility Enhancement**: Partner showcase strengthens platform trustworthiness by highlighting serious technological and institutional backing behind CO₂ certification process
 
 ## System Architecture
 

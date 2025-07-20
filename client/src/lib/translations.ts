@@ -129,6 +129,25 @@ export const translations = {
     
     // Read more button
     'standard-read-more': 'Scopri di Più',
+    
+    // Partners section
+    'partners-title': 'Tecnologia e Partnership Istituzionali',
+    'partners-subtitle': 'La piattaforma FAGRI Digital è supportata da un solido ecosistema di partner tecnologici e istituzionali che garantiscono la massima credibilità e sicurezza.',
+    'partners-tech-title': 'Partner Tecnologici',
+    'partners-institutional-title': 'Partner Istituzionali',
+    'partners-alphag8-title': 'ALPHAG8 Digital Solutions',
+    'partners-alphag8-desc': 'Partner tecnologico svizzero per l\'infrastruttura blockchain e sicurezza avanzata',
+    'partners-g8chain-title': 'G8Chain Blockchain',
+    'partners-g8chain-desc': 'Piattaforma blockchain dedicata per la tracciabilità e l\'immutabilità dei certificati',
+    'partners-eu-title': 'Commissione Europea',
+    'partners-eu-desc': 'Allineamento con le politiche climatiche e gli obiettivi dell\'UE',
+    'partners-ministry-title': 'Ministero dell\'Ambiente Italiano',
+    'partners-ministry-desc': 'Conformità alle normative ambientali nazionali',
+    'partners-iso-title': 'ISO International',
+    'partners-iso-desc': 'Standard di qualità e procedure riconosciuti a livello mondiale',
+    'partners-universities-title': 'Università Italiane',
+    'partners-universities-desc': 'Collaborazione per ricerca e sviluppo scientifico',
+    'partners-learn-more': 'Scopri di Più sui Partner',
     'back-to-home': 'Torna alla Home',
     
     // EUFD Standard page translations
@@ -541,6 +560,25 @@ export const translations = {
     
     // Read more button
     'standard-read-more': 'Learn More',
+    
+    // Partners section
+    'partners-title': 'Technology & Institutional Partnerships',
+    'partners-subtitle': 'The FAGRI Digital platform is supported by a robust ecosystem of technology and institutional partners that guarantee maximum credibility and security.',
+    'partners-tech-title': 'Technology Partners',
+    'partners-institutional-title': 'Institutional Partners',
+    'partners-alphag8-title': 'ALPHAG8 Digital Solutions',
+    'partners-alphag8-desc': 'Swiss technology partner for blockchain infrastructure and advanced security',
+    'partners-g8chain-title': 'G8Chain Blockchain',
+    'partners-g8chain-desc': 'Dedicated blockchain platform for certificate traceability and immutability',
+    'partners-eu-title': 'European Commission',
+    'partners-eu-desc': 'Alignment with EU climate policies and objectives',
+    'partners-ministry-title': 'Italian Ministry of Environment',
+    'partners-ministry-desc': 'Compliance with national environmental regulations',
+    'partners-iso-title': 'ISO International',
+    'partners-iso-desc': 'Globally recognized quality standards and procedures',
+    'partners-universities-title': 'Italian Universities',
+    'partners-universities-desc': 'Collaboration for scientific research and development',
+    'partners-learn-more': 'Learn More About Partners',
     'back-to-home': 'Back to Home',
     
     // EUFD Standard page translations
