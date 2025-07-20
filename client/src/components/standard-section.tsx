@@ -172,27 +172,6 @@ export function StandardSection() {
               </p>
             </div>
 
-            {/* Technology Partners Section */}
-            <div className="mb-12">
-              <h4 className="text-xl font-medium text-slate-900 mb-6 flex items-center justify-center">
-                <Building2 className="h-6 w-6 text-emerald-700 mr-3" />
-                {t('partners-tech-title')}
-              </h4>
-              <div className="flex justify-center">
-                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow max-w-md">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="text-emerald-700 h-6 w-6" />
-                    </div>
-                    <div>
-                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-g8chain-title')}</h5>
-                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-g8chain-desc')}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Institutional Partners Section */}
             <div>
               <h4 className="text-xl font-medium text-slate-900 mb-6 flex items-center justify-center">
@@ -208,6 +187,18 @@ export function StandardSection() {
                     <div>
                       <h5 className="font-medium text-slate-900 mb-2">{t('partners-alphag8-title')}</h5>
                       <p className="text-slate-600 text-sm leading-relaxed">{t('partners-alphag8-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="text-emerald-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-g8chain-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-g8chain-desc')}</p>
                     </div>
                   </div>
                 </div>
