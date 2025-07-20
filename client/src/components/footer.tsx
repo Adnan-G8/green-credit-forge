@@ -38,12 +38,11 @@ export function Footer() {
             <h4 className="font-semibold mb-4">{t('footer-platform')}</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <button
-                  onClick={() => navigateToSection('standard')}
-                  className="hover:text-fagri-accent transition-colors text-left"
-                >
-                  {t('footer-standard')}
-                </button>
+                <Link href="/eufd-standard">
+                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
+                    {t('footer-standard')}
+                  </span>
+                </Link>
               </li>
               <li>
                 <Link href="/co2-certification">
