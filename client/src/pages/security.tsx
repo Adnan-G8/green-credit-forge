@@ -235,24 +235,6 @@ export default function Security() {
                   {t('security-alpine-blockchain-subtitle')}
                 </p>
               </div>
-
-              {/* Alpine Data Centers Meet Blockchain Innovation */}
-              <div className="bg-emerald-50 rounded-xl p-8 mb-12 border border-emerald-200">
-                <div className="text-center mb-8">
-                  <h4 className="text-2xl font-medium text-slate-900 mb-4">
-                    {t('security-alpine-innovation-title')}
-                  </h4>
-                  <p className="text-slate-700 leading-relaxed max-w-3xl mx-auto">
-                    {t('security-alpine-innovation-description')}
-                  </p>
-                </div>
-                <div className="flex justify-center">
-                  <div className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white rounded-lg">
-                    <Shield className="mr-3 h-5 w-5" />
-                    <span className="font-medium">{t('security-swiss-guarantee')}</span>
-                  </div>
-                </div>
-              </div>
               
               <div className="grid md:grid-cols-3 gap-8 mb-12">
                 <div className="bg-white rounded-lg p-8 text-center">
