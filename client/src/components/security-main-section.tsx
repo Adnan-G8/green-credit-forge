@@ -31,7 +31,7 @@ export function SecurityMainSection() {
                 {t('security-3fa-title')}
               </h3>
               <p className="text-slate-600 text-sm">
-                Access secured via certified user identity, authorized devices, and active sessions.
+                {t('security-3fa-summary')}
               </p>
             </div>
 
@@ -44,7 +44,7 @@ export function SecurityMainSection() {
                 {t('security-data-title')}
               </h3>
               <p className="text-slate-600 text-sm">
-                Swiss data protection laws and FINMA banking compliance for unrivaled data sovereignty.
+                {t('security-data-summary')}
               </p>
             </div>
 
@@ -57,7 +57,7 @@ export function SecurityMainSection() {
                 {t('security-summary-title')}
               </h3>
               <p className="text-slate-600 text-sm">
-                Alpine fortress data centers with military-grade security and blockchain infrastructure.
+                {t('security-infrastructure-summary')}
               </p>
             </div>
           </div>

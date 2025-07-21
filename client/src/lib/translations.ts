@@ -192,6 +192,16 @@ export const translations = {
     'security-blockchain-technical-point1': 'Tracce di audit immutabili per tutte le transazioni',
     'security-blockchain-technical-point2': 'Validazione di smart contract delle metriche di sostenibilità',
     'security-blockchain-technical-point3': 'Prova crittografica delle pratiche agricole',
+    
+    // Security Main Section Summaries
+    'security-3fa-summary': 'Accesso protetto tramite identità utente certificata, dispositivi autorizzati e sessioni attive.',
+    'security-data-summary': 'Leggi svizzere di protezione dati e conformità bancaria FINMA per sovranità dati ineguagliabile.',
+    'security-infrastructure-summary': 'Data center fortezza alpini con sicurezza di livello militare e infrastruttura blockchain.',
+    
+    // Security Conclusion Section
+    'security-conclusion-title': 'Data Center Alpini Incontrano Innovazione Blockchain',
+    'security-conclusion-description': 'I nostri data center montani svizzeri forniscono le fondamenta di sicurezza fisica, mentre la nostra rete blockchain a 51 nodi garantisce integrità crittografica. Questa combinazione crea un livello di protezione senza precedenti per i tuoi dati agricoli, con gli stessi standard di sicurezza utilizzati da banche svizzere e istituzioni governative.',
+    'security-conclusion-guarantee': 'Garanzia di Sicurezza Svizzera',
     'platform-goal-title': 'Il Nostro Obiettivo',
     'platform-accuracy': 'Accuratezza Verifiche',
     'platform-monitoring': 'Monitoraggio Attivo',
@@ -317,8 +327,8 @@ export const translations = {
     'security-network-text': 'Include firewall avanzati, Sistemi di Rilevamento/Prevenzione Intrusioni (IDS/IPS) e meccanismi di protezione DDoS che monitorano continuamente e mitigano le minacce del traffico.',
     'security-certifications-title': 'Certificazioni e Conformità Complete',
     'security-certifications-text': 'La rigorosa aderenza agli standard internazionali di sicurezza e protezione dati è confermata da audit indipendenti e certificazioni. Questo ci permette di garantire che i tuoi dati risiedano in un ambiente che soddisfa i seguenti requisiti di audit e conformità:',
-    'security-conclusion-title': 'I Tuoi Dati, Il Nostro Impegno',
-    'security-conclusion-text': 'Attraverso queste misure rigorose e la nostra classificazione intelligente dei dati, Fagri.Digital garantisce che i tuoi dati risiedano su un\'infrastruttura che soddisfa le più alte richieste di sicurezza, disponibilità e integrità, offrendoti così la massima fiducia e protezione.',
+    'security-old-conclusion-title': 'I Tuoi Dati, Il Nostro Impegno',
+    'security-old-conclusion-text': 'Attraverso queste misure rigorose e la nostra classificazione intelligente dei dati, Fagri.Digital garantisce che i tuoi dati risiedano su un\'infrastruttura che soddisfa le più alte richieste di sicurezza, disponibilità e integrità, offrendoti così la massima fiducia e protezione.',
     
     // Security (original)
     'security-title': 'Tutela dei Membri, Responsabilità Digitale e Sicurezza degli Accessi',
@@ -535,7 +545,7 @@ export const translations = {
     'security-network-text': 'This includes advanced firewalls, Intrusion Detection/Prevention Systems (IDS/IPS), and DDoS protection mechanisms that continuously monitor and mitigate traffic threats.',
     'security-certifications-title': 'Comprehensive Certifications and Compliance',
     'security-certifications-text': 'The strict adherence to international security and data protection standards is confirmed by independent audits and certifications. This allows us to ensure that your data resides in an environment that meets the following audit and compliance requirements:',
-    'security-conclusion-title': 'Your Data, Our Commitment',
+    'security-old-conclusion-title': 'Your Data, Our Commitment',
     'security-conclusion-text': 'Through these stringent measures and our intelligent data classification, Fagri.Digital ensures that your data resides on an infrastructure that meets the highest demands for security, availability, and integrity, thereby offering you the utmost confidence and protection.',
     
     // Hero section
@@ -738,6 +748,16 @@ export const translations = {
     'security-blockchain-technical-point1': 'Immutable audit trails for all transactions',
     'security-blockchain-technical-point2': 'Smart contract validation of sustainability metrics',
     'security-blockchain-technical-point3': 'Cryptographic proof of agricultural practices',
+    
+    // Security Main Section Summaries
+    'security-3fa-summary': 'Access secured via certified user identity, authorized devices, and active sessions.',
+    'security-data-summary': 'Swiss data protection laws and FINMA banking compliance for unrivaled data sovereignty.',
+    'security-infrastructure-summary': 'Alpine fortress data centers with military-grade security and blockchain infrastructure.',
+    
+    // Security Conclusion Section
+    'security-conclusion-title': 'Alpine Data Centers Meet Blockchain Innovation',
+    'security-conclusion-description': 'Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.',
+    'security-conclusion-guarantee': 'Swiss Security Guarantee',
     'platform-goal-title': 'Our Objective',
     'platform-accuracy': 'Verification Accuracy',
     'platform-monitoring': 'Active Monitoring',

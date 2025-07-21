@@ -365,14 +365,14 @@ export default function Security() {
             {/* Security Guarantee */}
             <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-12 text-center">
               <h3 className="text-3xl font-medium text-slate-900 mb-6">
-                Alpine Data Centers Meet Blockchain Innovation
+                {t('security-conclusion-title')}
               </h3>
               <p className="text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto mb-8">
-                Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.
+                {t('security-conclusion-description')}
               </p>
               <div className="inline-flex items-center px-8 py-4 bg-emerald-600 text-white rounded-lg">
                 <Shield className="mr-3 h-6 w-6" />
-                <span className="text-lg font-medium">Swiss Security Guarantee</span>
+                <span className="text-lg font-medium">{t('security-conclusion-guarantee')}</span>
               </div>
             </div>
 
