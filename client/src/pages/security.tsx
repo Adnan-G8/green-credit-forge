@@ -12,14 +12,22 @@ export default function Security() {
     <div className="min-h-screen bg-fagri-bg">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container mx-auto px-6">
+      {/* Hero Section with Agricultural Image */}
+      <section className="pt-20 pb-20 relative">
+        <div className="absolute inset-0">
+          <img 
+            src={agriculturalLandscape} 
+            alt="Agricultural landscape representing digital security for farming"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 to-slate-900/30"></div>
+        </div>
+        <div className="relative container mx-auto px-6 pt-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-light text-slate-900 mb-8">
+            <h1 className="text-5xl md:text-6xl font-light text-white mb-8">
               {t('security-page-title')}
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed font-light max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 leading-relaxed font-light max-w-3xl mx-auto">
               {t('security-page-subtitle')}
             </p>
           </div>
@@ -145,26 +153,7 @@ export default function Security() {
               </div>
             </div>
 
-            {/* Visual Break - Agricultural Security */}
-            <div className="mb-20">
-              <div className="relative h-80 rounded-xl overflow-hidden">
-                <img 
-                  src={agriculturalLandscape} 
-                  alt="Secure agricultural landscape representing digital protection of farming data"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-slate-900/20 flex items-center justify-center">
-                  <div className="text-center text-white max-w-2xl px-6">
-                    <h3 className="text-3xl font-light mb-4">
-                      {t('security-agricultural-trust-title')}
-                    </h3>
-                    <p className="text-lg font-light opacity-90">
-                      {t('security-agricultural-trust-subtitle')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
 
             {/* Physical Infrastructure Security with Data Center Image */}
             <div className="bg-slate-50 rounded-xl p-12 mb-16">
