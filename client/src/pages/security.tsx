@@ -171,6 +171,116 @@ export default function Security() {
               </div>
             </div>
 
+            {/* Swiss Alpine Fortress Infrastructure */}
+            <div className="mb-16">
+              <div className="flex items-center mb-8">
+                <Lock className="h-8 w-8 text-amber-700 mr-4" />
+                <h2 className="text-3xl font-light text-slate-900">
+                  Swiss Alpine Fortress Infrastructure
+                </h2>
+              </div>
+              
+              <div className="bg-white rounded-xl p-10 border border-slate-200 mb-8">
+                <div className="text-center mb-8">
+                  <div className="w-20 h-20 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <Lock className="text-amber-700 h-10 w-10" />
+                  </div>
+                  <h3 className="text-3xl font-medium text-slate-900 mb-4">
+                    {t('security-physical-title')}
+                  </h3>
+                  <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    {t('security-physical-description')}
+                  </p>
+                </div>
+                
+                <div className="grid md:grid-cols-3 gap-8 mb-8">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <Shield className="text-red-700 h-8 w-8" />
+                    </div>
+                    <h4 className="text-lg font-medium text-slate-900 mb-2">Military-Grade Protection</h4>
+                    <p className="text-slate-700 leading-relaxed">
+                      {t('security-physical-point1')}
+                    </p>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <Database className="text-blue-700 h-8 w-8" />
+                    </div>
+                    <h4 className="text-lg font-medium text-slate-900 mb-2">Autonomous Operations</h4>
+                    <p className="text-slate-700 leading-relaxed">
+                      {t('security-physical-point2')}
+                    </p>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="text-emerald-700 h-8 w-8" />
+                    </div>
+                    <h4 className="text-lg font-medium text-slate-900 mb-2">Maximum Access Control</h4>
+                    <p className="text-slate-700 leading-relaxed">
+                      {t('security-physical-point3')}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Technical Excellence Integration */}
+                <div className="bg-slate-50 rounded-lg p-8">
+                  <h4 className="text-2xl font-medium text-slate-900 mb-6 text-center">
+                    {t('security-technical-title')}
+                  </h4>
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <Lock className="text-blue-700 h-6 w-6" />
+                      </div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('security-encryption-title')}</h5>
+                      <p className="text-sm text-slate-600">{t('security-encryption-description')}</p>
+                    </div>
+                    
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <Shield className="text-emerald-700 h-6 w-6" />
+                      </div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('security-redundancy-title')}</h5>
+                      <p className="text-sm text-slate-600">{t('security-redundancy-description')}</p>
+                    </div>
+                  </div>
+
+                  {/* Comprehensive Certifications */}
+                  <div className="border-t border-slate-200 pt-6">
+                    <h5 className="text-lg font-medium text-slate-900 mb-4 text-center">{t('security-compliance-title')}</h5>
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="text-center">
+                        <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                          <CheckCircle className="text-blue-700 h-5 w-5" />
+                        </div>
+                        <h6 className="font-medium text-slate-900 text-sm mb-1">{t('security-tier-title')}</h6>
+                        <p className="text-xs text-slate-600">{t('security-tier-description')}</p>
+                      </div>
+                      
+                      <div className="text-center">
+                        <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                          <Shield className="text-emerald-700 h-5 w-5" />
+                        </div>
+                        <h6 className="font-medium text-slate-900 text-sm mb-1">{t('security-iso-title')}</h6>
+                        <p className="text-xs text-slate-600">{t('security-iso-description')}</p>
+                      </div>
+                      
+                      <div className="text-center">
+                        <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                          <Lock className="text-amber-700 h-5 w-5" />
+                        </div>
+                        <h6 className="font-medium text-slate-900 text-sm mb-1">{t('security-cyber-title')}</h6>
+                        <p className="text-xs text-slate-600">{t('security-cyber-description')}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Conclusion */}
             <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-8">
               <h3 className="text-2xl font-medium text-slate-900 mb-4">

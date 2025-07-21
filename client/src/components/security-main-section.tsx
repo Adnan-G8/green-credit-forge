@@ -1,5 +1,6 @@
 import { useLanguage } from './language-provider';
 import { Shield, Lock, Database, CheckCircle } from 'lucide-react';
+import { Link } from 'wouter';
 
 export function SecurityMainSection() {
   const { t } = useLanguage();
@@ -78,104 +79,49 @@ export function SecurityMainSection() {
               </div>
             </div>
 
-            {/* Physical Security Section */}
+            {/* Simplified Security Summary */}
             <div className="bg-white rounded-xl p-8 border border-slate-200">
               <div className="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
                 <Lock className="text-amber-700 h-8 w-8" />
               </div>
               <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                {t('security-physical-title')}
+                {t('security-summary-title')}
               </h3>
               <p className="text-slate-600 mb-4">
-                {t('security-physical-description')}
+                {t('security-summary-description')}
               </p>
               <div className="space-y-3">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-slate-700">{t('security-physical-point1')}</span>
+                  <span className="text-slate-700">{t('security-summary-point1')}</span>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-slate-700">{t('security-physical-point2')}</span>
+                  <span className="text-slate-700">{t('security-summary-point2')}</span>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-slate-700">{t('security-physical-point3')}</span>
+                  <span className="text-slate-700">{t('security-summary-point3')}</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Technical Excellence Section */}
-          <div className="bg-white rounded-xl p-10 border border-slate-200">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-                <Database className="text-purple-700 h-10 w-10" />
-              </div>
-              <h3 className="text-3xl font-medium text-slate-900 mb-4">
-                {t('security-technical-title')}
-              </h3>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                {t('security-technical-intro')}
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Lock className="text-blue-700 h-8 w-8" />
-                </div>
-                <h4 className="text-lg font-medium text-slate-900 mb-2">{t('security-encryption-title')}</h4>
-                <p className="text-slate-700 leading-relaxed">
-                  {t('security-encryption-description')}
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Shield className="text-emerald-700 h-8 w-8" />
-                </div>
-                <h4 className="text-lg font-medium text-slate-900 mb-2">{t('security-redundancy-title')}</h4>
-                <p className="text-slate-700 leading-relaxed">
-                  {t('security-redundancy-description')}
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-slate-50 rounded-lg p-6 mt-8">
-              <h4 className="text-lg font-medium text-slate-900 mb-4">{t('security-compliance-title')}</h4>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <CheckCircle className="text-blue-700 h-6 w-6" />
-                  </div>
-                  <h5 className="font-medium text-slate-900 mb-2">{t('security-tier-title')}</h5>
-                  <p className="text-sm text-slate-600">{t('security-tier-description')}</p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <Shield className="text-emerald-700 h-6 w-6" />
-                  </div>
-                  <h5 className="font-medium text-slate-900 mb-2">{t('security-iso-title')}</h5>
-                  <p className="text-sm text-slate-600">{t('security-iso-description')}</p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <Lock className="text-amber-700 h-6 w-6" />
-                  </div>
-                  <h5 className="font-medium text-slate-900 mb-2">{t('security-cyber-title')}</h5>
-                  <p className="text-sm text-slate-600">{t('security-cyber-description')}</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center mt-8">
-              <p className="text-lg text-slate-600 font-medium">
-                {t('security-blockchain-conclusion')}
-              </p>
-            </div>
+          {/* Call to Action for Full Security Details */}
+          <div className="bg-slate-50 rounded-xl p-8 text-center">
+            <h3 className="text-2xl font-medium text-slate-900 mb-4">
+              {t('security-cta-title')}
+            </h3>
+            <p className="text-lg text-slate-600 mb-6">
+              {t('security-cta-description')}
+            </p>
+            <Link
+              href="/security"
+              className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium"
+            >
+              <Shield className="mr-2 h-5 w-5" />
+              {t('security-cta-button')}
+            </Link>
           </div>
         </div>
       </div>
