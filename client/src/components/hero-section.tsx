@@ -100,9 +100,9 @@ export function HeroSection() {
                     <TrendingUp className="h-8 w-8 text-amber-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">€2.4B+</div>
+                <div className="text-3xl font-light text-white mb-2">30+</div>
                 <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
-                  Carbon Credit Value
+                  {t('hero-stat-experience')}
                 </div>
               </div>
             </div>
