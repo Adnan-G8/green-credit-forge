@@ -1,5 +1,5 @@
 import { useLanguage } from './language-provider';
-import { Sprout, Factory, TrendingUp, Globe, Leaf, Zap } from 'lucide-react';
+import { Sprout, Factory, TrendingUp, Globe, Leaf, Zap, Award, Database } from 'lucide-react';
 
 export default function OpportunitiesSection() {
   const { t } = useLanguage();
@@ -17,6 +17,38 @@ export default function OpportunitiesSection() {
             <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               {t('opportunities-subtitle')}
             </p>
+          </div>
+
+          {/* What Are Carbon Credits Section */}
+          <div className="bg-gradient-to-r from-emerald-900 to-slate-900 rounded-2xl p-8 mb-16 text-white">
+            <div className="text-center mb-8">
+              <div className="inline-flex p-3 bg-emerald-500 rounded-full mb-4">
+                <Award className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-light mb-4">
+                {t('opportunities-credits-title')}
+              </h3>
+            </div>
+            
+            <div className="max-w-4xl mx-auto space-y-6">
+              <p className="text-lg leading-relaxed text-emerald-100">
+                {t('opportunities-credits-definition')}
+              </p>
+              
+              <p className="text-lg leading-relaxed text-slate-200">
+                {t('opportunities-credits-origin')}
+              </p>
+              
+              <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+                <div className="flex items-center mb-4">
+                  <Database className="h-6 w-6 text-emerald-400 mr-3" />
+                  <h4 className="text-xl font-medium text-emerald-400">FAGRI.Digital Process</h4>
+                </div>
+                <p className="text-slate-300 leading-relaxed">
+                  {t('opportunities-fagri-process')}
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Paris Agreement Context */}

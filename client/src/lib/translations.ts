@@ -59,6 +59,10 @@ export const translations = {
     'opportunities-market-regulated': 'Mercati Regolamentati',
     'opportunities-carbon-farming': 'Carbon Farming',
     'opportunities-co2-sequestration': 'Sequestro CO₂',
+    'opportunities-credits-title': 'Cosa Sono i Crediti di Carbonio?',
+    'opportunities-credits-definition': 'I crediti di carbonio sono certificati commerciabili con reale valore economico. Un credito di carbonio rappresenta una tonnellata metrica di CO₂ sequestrata o impedita dal essere rilasciata nell\'atmosfera.',
+    'opportunities-credits-origin': 'Questi crediti derivano da progetti di compensazione ambientale o produzione di energia rinnovabile, e una volta certificati secondo standard rilevanti, possono essere pubblicati in un registro digitale basato su blockchain e venduti sul mercato.',
+    'opportunities-fagri-process': 'FAGRI.Digital accetta sia progetti di carbon farming che di energia rinnovabile, li valida attraverso il proprio organismo di certificazione designato, emette crediti di carbonio e li pubblica sul suo registro digitale – pronti per la vendita.',
     
     // Standard section
     'standard-title': 'Il Tuo Partner di Fiducia per la Certificazione CO₂',
@@ -497,6 +501,10 @@ export const translations = {
     'opportunities-market-regulated': 'Regulated Markets',
     'opportunities-carbon-farming': 'Carbon Farming',
     'opportunities-co2-sequestration': 'CO₂ Sequestration',
+    'opportunities-credits-title': 'What Are Carbon Credits?',
+    'opportunities-credits-definition': 'Carbon credits are tradeable certificates with real economic value. One carbon credit represents one metric ton of CO₂ sequestered or prevented from being released into the atmosphere.',
+    'opportunities-credits-origin': 'These credits derive from environmental compensation projects or renewable energy production, and once certified in accordance with relevant standards, can be published in a blockchain-based digital registry and sold on the market.',
+    'opportunities-fagri-process': 'FAGRI.Digital accepts both carbon farming and renewable energy projects, validates them through its own designated certification body, issues carbon credits, and publishes them on its digital registry – ready for sale.',
     
     // Standard section
     'standard-title': 'Your Trusted Partner for CO₂ Certification',
