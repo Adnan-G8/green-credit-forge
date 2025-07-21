@@ -3,6 +3,7 @@ import { Footer } from '@/components/footer';
 import { useLanguage } from '@/components/language-provider';
 import { Shield, Database, Lock, CheckCircle, Server, Globe, Eye, Key, Mountain, Building, Leaf } from 'lucide-react';
 import dataCenter from '@assets/image_1753120952664.png';
+import agriculturalLandscape from '@assets/image_1753121514850.png';
 
 export default function Security() {
   const { t } = useLanguage();
@@ -124,6 +125,27 @@ export default function Security() {
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
                     <span className="text-slate-700">Multi-ton security doors with biometric access</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual Break - Agricultural Security */}
+            <div className="mb-20">
+              <div className="relative h-80 rounded-xl overflow-hidden">
+                <img 
+                  src={agriculturalLandscape} 
+                  alt="Secure agricultural landscape representing digital protection of farming data"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-slate-900/20 flex items-center justify-center">
+                  <div className="text-center text-white max-w-2xl px-6">
+                    <h3 className="text-3xl font-light mb-4">
+                      {t('security-agricultural-trust-title')}
+                    </h3>
+                    <p className="text-lg font-light opacity-90">
+                      {t('security-agricultural-trust-subtitle')}
+                    </p>
                   </div>
                 </div>
               </div>
