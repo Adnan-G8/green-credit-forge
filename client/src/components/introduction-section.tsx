@@ -45,7 +45,7 @@ export function IntroductionSection() {
               <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Leaf className="text-purple-700 h-8 w-8" />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-2">5</h3>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-2">73</h3>
               <p className="text-slate-600 text-sm">{t('intro-stat4')}</p>
             </div>
           </div>
