@@ -69,78 +69,78 @@ export function HeroSection() {
             </div>
             
             {/* Trust & Value Propositions */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto px-4">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12 max-w-4xl mx-auto px-4">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/10 transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="p-4 bg-emerald-500/20 rounded-full border border-emerald-400/30">
+                  <div className="p-3 sm:p-4 bg-emerald-500/20 rounded-full border border-emerald-400/30">
                     <Shield className="h-8 w-8 text-emerald-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">EU</div>
-                <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
+                <div className="text-2xl sm:text-3xl font-light text-white mb-2">EU</div>
+                <div className="text-slate-400 font-medium text-xs sm:text-sm uppercase tracking-wider">
                   {t('hero-trust-compliance')}
                 </div>
               </div>
               
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/10 transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="p-4 bg-blue-500/20 rounded-full border border-blue-400/30">
-                    <Globe className="h-8 w-8 text-blue-400" />
+                  <div className="p-3 sm:p-4 bg-blue-500/20 rounded-full border border-blue-400/30">
+                    <Globe className="h-6 sm:h-8 w-6 sm:w-8 text-blue-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">Global</div>
-                <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
+                <div className="text-2xl sm:text-3xl font-light text-white mb-2">Global</div>
+                <div className="text-slate-400 font-medium text-xs sm:text-sm uppercase tracking-wider">
                   {t('hero-trust-network')}
                 </div>
               </div>
               
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 sm:p-6 md:p-8 hover:bg-white/10 transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="p-4 bg-amber-500/20 rounded-full border border-amber-400/30">
-                    <TrendingUp className="h-8 w-8 text-amber-400" />
+                  <div className="p-3 sm:p-4 bg-amber-500/20 rounded-full border border-amber-400/30">
+                    <TrendingUp className="h-6 sm:h-8 w-6 sm:w-8 text-amber-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">Digital</div>
-                <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
+                <div className="text-2xl sm:text-3xl font-light text-white mb-2">Digital</div>
+                <div className="text-slate-400 font-medium text-xs sm:text-sm uppercase tracking-wider">
                   {t('hero-trust-innovation')}
                 </div>
               </div>
             </div>
             
             {/* Premium Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 px-4">
               <Link href="/eufd-standard">
-                <button className="group relative inline-flex items-center justify-center px-12 py-5 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 transition-all duration-300 font-medium text-lg shadow-2xl hover:shadow-emerald-500/20 overflow-hidden">
+                <button className="group relative inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 transition-all duration-300 font-medium text-base sm:text-lg shadow-2xl hover:shadow-emerald-500/20 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative flex items-center">
                     {t('hero-cta-discover')}
-                    <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="ml-2 sm:ml-3 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-1" />
                   </span>
                 </button>
               </Link>
               
               <button
                 onClick={() => setShowMembershipModal(true)}
-                className="group relative inline-flex items-center justify-center px-12 py-5 bg-transparent text-white rounded-xl border-2 border-white/30 hover:border-white/50 hover:bg-white/5 transition-all duration-300 font-medium text-lg backdrop-blur-sm"
+                className="group relative inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-transparent text-white rounded-xl border-2 border-white/30 hover:border-white/50 hover:bg-white/5 transition-all duration-300 font-medium text-base sm:text-lg backdrop-blur-sm"
               >
-                <Users className="mr-3 h-5 w-5" />
+                <Users className="mr-2 sm:mr-3 h-4 sm:h-5 w-4 sm:w-5" />
                 {t('hero-cta-join')}
               </button>
             </div>
             
             {/* Professional Trust Indicators */}
-            <div className="flex flex-wrap justify-center items-center gap-8 pt-8 border-t border-white/10">
-              <div className="flex items-center space-x-3 text-slate-400">
-                <Shield className="h-6 w-6 text-emerald-400" />
-                <span className="text-sm font-medium">ISO 14064 Certified</span>
+            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 pt-6 sm:pt-8 border-t border-white/10 px-4">
+              <div className="flex items-center space-x-2 sm:space-x-3 text-slate-400">
+                <Shield className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6 text-emerald-400" />
+                <span className="text-xs sm:text-sm font-medium">ISO 14064 Certified</span>
               </div>
-              <div className="flex items-center space-x-3 text-slate-400">
-                <Globe className="h-6 w-6 text-blue-400" />
-                <span className="text-sm font-medium">ALPHAG8 Partnership</span>
+              <div className="flex items-center space-x-2 sm:space-x-3 text-slate-400">
+                <Globe className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6 text-blue-400" />
+                <span className="text-xs sm:text-sm font-medium">Swiss Partnership</span>
               </div>
-              <div className="flex items-center space-x-3 text-slate-400">
-                <Leaf className="h-6 w-6 text-green-400" />
-                <span className="text-sm font-medium">EU Standards Compliant</span>
+              <div className="flex items-center space-x-2 sm:space-x-3 text-slate-400">
+                <Leaf className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6 text-green-400" />
+                <span className="text-xs sm:text-sm font-medium">EU Standards Compliant</span>
               </div>
             </div>
           </div>

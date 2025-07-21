@@ -49,23 +49,23 @@ export function PlatformSection() {
           </div>
 
           {/* Professional Process Steps */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-16">
             {steps.map((step, index) => (
-              <div key={index} className="bg-slate-50 rounded-xl p-8 border border-slate-200">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                      <step.icon className="text-emerald-700 h-8 w-8" />
+              <div key={index} className="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200">
+                <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                  <div className="flex-shrink-0 flex sm:flex-col items-center sm:items-start space-x-4 sm:space-x-0">
+                    <div className="w-12 sm:w-16 h-12 sm:h-16 bg-emerald-100 rounded-lg flex items-center justify-center mb-0 sm:mb-4">
+                      <step.icon className="text-emerald-700 h-6 sm:h-8 w-6 sm:w-8" />
                     </div>
-                    <div className="text-2xl font-light text-slate-400">
+                    <div className="text-xl sm:text-2xl font-light text-slate-400">
                       {step.number}
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-medium text-slate-900 mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg sm:text-xl font-medium text-slate-900 mb-3 sm:mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed">
+                    <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                       {step.description}
                     </p>
                   </div>
