@@ -147,7 +147,7 @@ export const translations = {
     'platform-impact-title': 'Impatto Certificazione CO₂',
     'platform-impact-description': 'Il nostro standard EUFD2025-001 consente alle imprese agricole di dimostrare un impatto climatico misurabile accedendo a opportunità di finanza sostenibile.',
     'platform-impact-eufd': 'Conformità Standard UE',
-    'platform-impact-iso': 'Certificazione 14064-2',
+    'platform-impact-iso': 'Certificazione 14064-1,2,3',
     
     // EU Standards Focus  
     'platform-eu-standards-title': 'Standard UE per Certificazione CO₂',
@@ -707,7 +707,7 @@ export const translations = {
     'platform-impact-title': 'CO₂ Certification Impact',
     'platform-impact-description': 'Our EUFD2025-001 standard enables agricultural enterprises to demonstrate measurable climate impact while accessing sustainable finance opportunities.',
     'platform-impact-eufd': 'EU Standard Compliance',
-    'platform-impact-iso': '14064-2 Certification',
+    'platform-impact-iso': '14064-1,2,3 Certification',
     
     // EU Standards Focus
     'platform-eu-standards-title': 'EU Standards for CO₂ Certification',
