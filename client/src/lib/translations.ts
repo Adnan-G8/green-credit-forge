@@ -254,7 +254,7 @@ export const translations = {
     'eufd-launch-info': 'Stiamo lanciando EUFD2025-001 inizialmente in Italia, ma la nostra visione si estende molto oltre.',
     'eufd-global-vision': 'Il nostro obiettivo è implementare progressivamente questo standard rivoluzionario in tutto il mondo, fornendo supporto cruciale per l\'azione climatica globale.',
     'eufd-intro-text1': 'In FAGRI.Digital, siamo orgogliosi di presentare il nostro nuovo standard innovativo: EUFD2025-001. Questo standard è il risultato di anni di ricerca e sviluppo intensivi, basato sulle ultime scoperte scientifiche e creato in stretta collaborazione con le principali università italiane.',
-    'eufd-intro-text2': 'Sviluppato in partnership con ALPHAG8 Digital Solutions Switzerland, la piattaforma che supporta lo standard EUFD2025-001 è progettata per inaugurare una nuova era di fiducia, efficienza e trasparenza nella certificazione e commercio di CO₂ — alimentata da tecnologia blockchain, protocolli avanzati di protezione dati e architettura di sicurezza 3FA.',
+    'eufd-intro-text2': 'Sviluppato in partnership con ALPHAG8 Digital Solutions Switzerland, G8Chain e altri partner tecnologici internazionali, la piattaforma che supporta lo standard EUFD2025-001 è progettata per inaugurare una nuova era di fiducia, efficienza e trasparenza nella certificazione e commercio di CO₂ — alimentata da tecnologia blockchain, protocolli avanzati di protezione dati e architettura di sicurezza 3FA.',
     
     'eufd-features-title': 'EUFD2025-001: Scientifico, Trasparente, Accessibile e Sicuro con Blockchain',
     'eufd-feature1-title': 'Eliminazione del Doppio Conteggio',
@@ -814,7 +814,7 @@ export const translations = {
     'eufd-launch-info': 'We\'re launching EUFD2025-001 initially in Italy, but our vision extends far beyond.',
     'eufd-global-vision': 'Our goal is to progressively roll out this groundbreaking standard worldwide, providing crucial support for global climate action.',
     'eufd-intro-text1': 'At FAGRI.Digital, we\'re proud to introduce our new, innovative standard: EUFD2025-001. This standard is the result of years of intensive research and development, built on the latest scientific insights and created in close collaboration with leading Italian universities.',
-    'eufd-intro-text2': 'Developed in partnership with ALPHAG8 Digital Solutions Switzerland, the platform supporting the EUFD2025-001 standard is designed to usher in a new era of trust, efficiency, and transparency in CO₂ certification and trading — powered by blockchain technology, advanced data protection protocols, and 3FA security architecture.',
+    'eufd-intro-text2': 'Developed in partnership with ALPHAG8 Digital Solutions Switzerland, G8Chain, and other international technology partners, the platform supporting the EUFD2025-001 standard is designed to usher in a new era of trust, efficiency, and transparency in CO₂ certification and trading — powered by blockchain technology, advanced data protection protocols, and 3FA security architecture.',
     
     'eufd-features-title': 'EUFD2025-001: Scientific, Transparent, Accessible, and Secure with Blockchain',
     'eufd-feature1-title': 'Double Counting Elimination',
