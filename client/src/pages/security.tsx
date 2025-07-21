@@ -32,10 +32,10 @@ export default function Security() {
             {/* Security Overview */}
             <div className="text-center mb-16">
               <h2 className="text-4xl font-light text-slate-900 mb-6">
-                Swiss Banking-Level Data Protection
+                Swiss Alpine Security Meets Blockchain Innovation
               </h2>
               <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                Our platform operates under Switzerland's world-renowned data protection framework, combining military-grade physical security with cutting-edge technical safeguards.
+                Our platform combines Switzerland's world-renowned data protection framework with advanced blockchain technology. Physical data centers in Alpine military bunkers provide the foundation, while our 51-node decentralized network ensures cryptographic integrity and tamper-proof agricultural certifications.
               </p>
             </div>
 
@@ -102,10 +102,10 @@ export default function Security() {
                   <Mountain className="text-amber-700 h-8 w-8" />
                 </div>
                 <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                  Alpine Fortress Infrastructure
+                  Alpine Data Centers
                 </h3>
                 <p className="text-slate-600 mb-6">
-                  Data centers located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and protection.
+                  Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from both environmental and human threats.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start">
@@ -222,6 +222,102 @@ export default function Security() {
               </div>
             </div>
 
+            {/* Blockchain Security Infrastructure */}
+            <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-12 mb-16">
+              <div className="text-center mb-12">
+                <div className="w-20 h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                  <Globe className="text-emerald-700 h-10 w-10" />
+                </div>
+                <h3 className="text-3xl font-medium text-slate-900 mb-4">
+                  EVM-Compatible DPoS Blockchain Architecture
+                </h3>
+                <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                  Our platform operates on a decentralized blockchain infrastructure with 51 validator nodes, creating an unbreachable network of trust through diversified social and corporate participation.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="bg-white rounded-lg p-8 text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Server className="text-blue-700 h-8 w-8" />
+                  </div>
+                  <h4 className="text-xl font-medium text-slate-900 mb-4">51 Validator Nodes</h4>
+                  <p className="text-slate-700 leading-relaxed">
+                    Each partner organization controls one validator node, ensuring no single point of failure and creating a truly decentralized governance structure across social and corporate entities.
+                  </p>
+                </div>
+                
+                <div className="bg-white rounded-lg p-8 text-center">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Shield className="text-emerald-700 h-8 w-8" />
+                  </div>
+                  <h4 className="text-xl font-medium text-slate-900 mb-4">DPoS Consensus</h4>
+                  <p className="text-slate-700 leading-relaxed">
+                    Delegated Proof of Stake ensures energy efficiency while maintaining security. Validators are chosen through democratic participation, creating accountability and trust.
+                  </p>
+                </div>
+                
+                <div className="bg-white rounded-lg p-8 text-center">
+                  <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Globe className="text-purple-700 h-8 w-8" />
+                  </div>
+                  <h4 className="text-xl font-medium text-slate-900 mb-4">EVM Compatibility</h4>
+                  <p className="text-slate-700 leading-relaxed">
+                    Full Ethereum Virtual Machine compatibility ensures interoperability with existing DeFi protocols while maintaining our specialized agricultural focus.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg p-8">
+                <h4 className="text-2xl font-medium text-slate-900 mb-6 text-center">
+                  Diversified Trust Network
+                </h4>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h5 className="text-lg font-medium text-slate-900 mb-4">Multi-Stakeholder Governance</h5>
+                    <p className="text-slate-700 leading-relaxed mb-4">
+                      Our blockchain brings together agricultural cooperatives, environmental organizations, financial institutions, and technology partners. This diversification ensures no single entity can manipulate the network.
+                    </p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-slate-700">Agricultural cooperatives and farmers' unions</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-slate-700">Environmental certification bodies</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-slate-700">Financial institutions and impact investors</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h5 className="text-lg font-medium text-slate-900 mb-4">Technical Security Features</h5>
+                    <p className="text-slate-700 leading-relaxed mb-4">
+                      Advanced cryptographic mechanisms ensure data integrity and prevent double-counting or manipulation of carbon credits and agricultural certifications.
+                    </p>
+                    <ul className="space-y-2">
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-slate-700">Immutable audit trails for all transactions</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-slate-700">Smart contract validation of sustainability metrics</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                        <span className="text-slate-700">Cryptographic proof of agricultural practices</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Certifications and Compliance */}
             <div className="bg-slate-50 rounded-xl p-12 mb-16">
               <div className="text-center mb-12">
@@ -269,10 +365,10 @@ export default function Security() {
             {/* Security Guarantee */}
             <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-12 text-center">
               <h3 className="text-3xl font-medium text-slate-900 mb-6">
-                Your Data, Our Fortress
+                Alpine Data Centers Meet Blockchain Innovation
               </h3>
               <p className="text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto mb-8">
-                {t('security-blockchain-conclusion')} Every aspect of our infrastructure is designed to protect your agricultural data with the same standards used by Swiss banks and government institutions.
+                Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for agricultural data and carbon certifications. {t('security-blockchain-conclusion')}
               </p>
               <div className="inline-flex items-center px-8 py-4 bg-emerald-600 text-white rounded-lg">
                 <Shield className="mr-3 h-6 w-6" />
