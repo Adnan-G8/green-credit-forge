@@ -39,20 +39,7 @@ export default function Security() {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             
-            {/* Digital Fingerprint Requirement */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-12 mb-16">
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <Shield className="text-blue-700 h-10 w-10" />
-                </div>
-                <h2 className="text-3xl font-medium text-slate-900 mb-6">
-                  {t('security-digital-fingerprint-title')}
-                </h2>
-                <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                  {t('security-digital-fingerprint-description')}
-                </p>
-              </div>
-            </div>
+
 
             {/* Security Overview */}
             <div className="text-center mb-16">
@@ -95,6 +82,16 @@ export default function Security() {
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
                     <span className="text-slate-700">{t('security-3fa-point4')}</span>
                   </div>
+                </div>
+                
+                {/* Digital Fingerprint Section within 3FA */}
+                <div className="mt-8 pt-6 border-t border-slate-200">
+                  <h4 className="text-lg font-medium text-slate-900 mb-4">
+                    {t('security-digital-fingerprint-title')}
+                  </h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    {t('security-digital-fingerprint-description')}
+                  </p>
                 </div>
               </div>
 
