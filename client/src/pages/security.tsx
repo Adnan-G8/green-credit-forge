@@ -67,6 +67,10 @@ export default function Security() {
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
                     <span className="text-slate-700">{t('security-3fa-point3')}</span>
                   </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">{t('security-3fa-point4')}</span>
+                  </div>
                 </div>
               </div>
 
