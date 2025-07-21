@@ -76,9 +76,9 @@ export function HeroSection() {
                     <Shield className="h-8 w-8 text-emerald-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">ISO</div>
+                <div className="text-3xl font-light text-white mb-2">EU</div>
                 <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
-                  {t('hero-trust-certified')}
+                  {t('hero-trust-compliance')}
                 </div>
               </div>
               
@@ -88,9 +88,9 @@ export function HeroSection() {
                     <Globe className="h-8 w-8 text-blue-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">3FA</div>
+                <div className="text-3xl font-light text-white mb-2">Global</div>
                 <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
-                  {t('hero-trust-security')}
+                  {t('hero-trust-network')}
                 </div>
               </div>
               
@@ -100,9 +100,9 @@ export function HeroSection() {
                     <TrendingUp className="h-8 w-8 text-amber-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">Swiss</div>
+                <div className="text-3xl font-light text-white mb-2">Digital</div>
                 <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
-                  {t('hero-trust-blockchain')}
+                  {t('hero-trust-innovation')}
                 </div>
               </div>
             </div>
