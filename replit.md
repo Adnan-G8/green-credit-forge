@@ -88,6 +88,12 @@ Preferred communication style: Simple, everyday language.
   * **Platform Section Update**: Added blockchain mandate notification directly in certification impact section
   * **Complete Bilingual Support**: All new regulatory framework content available in Italian and English
   * **Regulatory Alignment**: Clear explanation of how blockchain technology aligns with EU regulation and ISO standards
+- **100% CO₂ Neutral Infrastructure Showcase**: Integrated comprehensive environmental responsibility content highlighting:
+  * **Swiss Hydropower Infrastructure**: All data centers powered entirely by 100% certified Swiss hydropower
+  * **Military Bunker Repurposing**: Environmental sustainability through repurposing of existing Swiss military infrastructure
+  * **Natural Alpine Cooling**: Mountain climate reduces energy-intensive cooling requirements
+  * **Climate-Neutral Operations**: Every data process, certification, and transaction conducted climate-neutrally
+  * **Future Generations Commitment**: Clear positioning as ecologically responsible digital ecosystem
 
 ## System Architecture
 

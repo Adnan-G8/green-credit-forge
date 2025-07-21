@@ -1,7 +1,7 @@
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { useLanguage } from '@/components/language-provider';
-import { Shield, Database, Lock, CheckCircle, Server, Globe, Eye, Key, Mountain, Building } from 'lucide-react';
+import { Shield, Database, Lock, CheckCircle, Server, Globe, Eye, Key, Mountain, Building, Leaf } from 'lucide-react';
 
 export default function Security() {
   const { t } = useLanguage();
@@ -241,6 +241,29 @@ export default function Security() {
                   <p className="text-lg text-slate-600 leading-relaxed font-medium">
                     {t('security-alpine-p3')}
                   </p>
+                </div>
+              </div>
+
+              {/* 100% CO₂ Neutral Section */}
+              <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-12 mb-16">
+                <div className="text-center mb-12">
+                  <div className="w-20 h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                    <Leaf className="text-emerald-700 h-10 w-10" />
+                  </div>
+                  <h3 className="text-3xl font-medium text-slate-900 mb-6">
+                    {t('security-co2-neutral-title')}
+                  </h3>
+                  <div className="max-w-4xl mx-auto space-y-6">
+                    <p className="text-lg text-slate-600 leading-relaxed">
+                      {t('security-co2-neutral-p1')}
+                    </p>
+                    <p className="text-lg text-slate-600 leading-relaxed">
+                      {t('security-co2-neutral-p2')}
+                    </p>
+                    <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                      {t('security-co2-neutral-p3')}
+                    </p>
+                  </div>
                 </div>
               </div>
               

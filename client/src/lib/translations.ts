@@ -180,6 +180,12 @@ export const translations = {
     'security-alpine-p1': 'Per la prima volta, i validatori blockchain sono gestiti congiuntamente da istituzioni, organizzazioni sociali e partner di più paesi — tutti con pari diritti e responsabilità condivise.',
     'security-alpine-p2': 'Ospitati in data center di montagna svizzeri con sicurezza di livello bancario, la nostra blockchain a 51 nodi garantisce integrità, resilienza e sovranità dei dati.',
     'security-alpine-p3': 'FAGRI.Digital combina protezione fisica con governance decentralizzata, creando un\'infrastruttura trasparente e affidabile per la certificazione CO₂ e i dati agricoli per il mondo di domani.',
+    
+    // CO₂ Neutral Infrastructure Section (Italian)
+    'security-co2-neutral-title': '100% CO₂ Neutrale – Tecnologia Sostenibile per una Nuova Era dell\'Infrastruttura Digitale',
+    'security-co2-neutral-p1': 'Tutti i nostri data center e servizi digitali operano su base completamente CO₂-neutrale. Situati nelle Alpi svizzere, all\'interno di bunker militari riconvertiti, la nostra infrastruttura è alimentata interamente da energia idroelettrica svizzera 100% certificata.',
+    'security-co2-neutral-p2': 'Il clima naturalmente fresco della regione montana riduce significativamente la necessità di raffreddamento ad alta intensità energetica, diminuendo il consumo energetico complessivo senza compromettere prestazioni o sicurezza.',
+    'security-co2-neutral-p3': 'FAGRI.Digital rappresenta un ecosistema digitale che non è solo sicuro e sovrano, ma anche ecologicamente responsabile. Ogni processo di dati, ogni certificazione, ogni transazione è condotta in modo climaticamente neutrale – un impegno verso i nostri partner, membri e le generazioni future.',
     'security-blockchain-architecture-title': 'Architettura Blockchain DPoS Compatibile EVM',
     'security-blockchain-architecture-description': 'La nostra piattaforma opera su un\'infrastruttura blockchain decentralizzata con 51 nodi validatori, creando una rete di fiducia impenetrabile attraverso la partecipazione sociale e aziendale diversificata.',
     'security-blockchain-nodes-title': '51 Nodi Validatori',
@@ -743,6 +749,12 @@ export const translations = {
     'security-alpine-p1': 'For the first time, blockchain validators are jointly operated by institutions, social organizations, and partners from multiple countries — all with equal rights and shared responsibilities.',
     'security-alpine-p2': 'Housed in Swiss mountain data centers with bank-level security, our 51-node blockchain ensures data integrity, resilience, and sovereignty.',
     'security-alpine-p3': 'FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and trustworthy infrastructure for CO₂ certification and agricultural data for the world of tomorrow.',
+    
+    // CO₂ Neutral Infrastructure Section (English)
+    'security-co2-neutral-title': '100% CO₂ Neutral – Sustainable Technology for a New Era of Digital Infrastructure',
+    'security-co2-neutral-p1': 'All our data centers and digital services operate on a fully CO₂-neutral basis. Located in the Swiss Alps, within repurposed military bunkers, our infrastructure is powered entirely by 100% certified Swiss hydropower.',
+    'security-co2-neutral-p2': 'The naturally cool climate of the mountain region significantly reduces the need for energy-intensive cooling, lowering overall power consumption without compromising on performance or security.',
+    'security-co2-neutral-p3': 'FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members, and future generations.',
     'security-blockchain-architecture-title': 'EVM-Compatible DPoS Blockchain Architecture',
     'security-blockchain-architecture-description': 'Our platform operates on a decentralized blockchain infrastructure with 51 validator nodes, creating an unbreachable network of trust through diversified social and corporate participation.',
     'security-blockchain-nodes-title': '51 Validator Nodes',
