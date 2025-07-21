@@ -91,6 +91,56 @@ export function SecurityMainSection() {
               </p>
             </div>
           </div>
+
+          {/* Blockchain Integrity Section */}
+          <div className="bg-white rounded-xl p-10 border border-slate-200">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                <Database className="text-purple-700 h-10 w-10" />
+              </div>
+              <h3 className="text-3xl font-medium text-slate-900 mb-4">
+                {t('security-blockchain-title')}
+              </h3>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                {t('security-blockchain-intro')}
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="text-blue-700 h-8 w-8" />
+                </div>
+                <p className="text-slate-700 leading-relaxed">
+                  {t('security-blockchain-feature1')}
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Shield className="text-emerald-700 h-8 w-8" />
+                </div>
+                <p className="text-slate-700 leading-relaxed">
+                  {t('security-blockchain-feature2')}
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Lock className="text-amber-700 h-8 w-8" />
+                </div>
+                <p className="text-slate-700 leading-relaxed">
+                  {t('security-blockchain-feature3')}
+                </p>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <p className="text-lg text-slate-600 font-medium">
+                {t('security-blockchain-conclusion')}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
