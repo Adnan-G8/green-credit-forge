@@ -230,16 +230,17 @@ export const translations = {
 
     // Platform
     'platform-title': 'Un Percorso Digitale per la Certificazione della CO₂ – Passo dopo Passo',
-    'platform-intro': 'FAGRI.Digital sta sviluppando una piattaforma digitale che copre l\'intero processo di certificazione dei crediti di carbonio – dalla richiesta iniziale alla validazione, fino al rilascio e al ritiro dei crediti. La piattaforma sarà disponibile a breve e includerà:',
+    'platform-intro': 'FAGRI.Digital sta sviluppando una piattaforma digitale che copre l\'intero processo di certificazione dei crediti di carbonio – dalla domanda iniziale alla validazione, emissione e commercializzazione.',
+    'platform-availability': 'La piattaforma sarà presto disponibile e includerà:',
     'platform-step1-title': 'Procedure Guidate',
-    'platform-step1-text': 'per la compilazione delle domande',
+    'platform-step1-text': 'per la presentazione di progetti di compensazione ambientale',
     'platform-step2-title': 'Tracciabilità Completa',
-    'platform-step2-text': 'della documentazione e dello stato delle richieste',
+    'platform-step2-text': 'della documentazione e dello stato dei progetti',
     'platform-step3-title': 'Integrazione con Enti VVB',
-    'platform-step3-text': 'e registri europei',
-    'platform-step4-title': 'Struttura dei Costi',
-    'platform-step4-text': 'chiara, equa e prevedibile',
-    'platform-objective': 'Il nostro obiettivo è assicurare che le prestazioni climatiche siano valutate correttamente, certificate con rigore e rese accessibili anche alle realtà medio-piccole.',
+    'platform-step3-text': 'e registri europei per processi trasparenti',
+    'platform-step4-title': 'Struttura dei Costi Chiara',
+    'platform-step4-text': 'equa e prezzo prevedibile',
+    'platform-goal': 'Il nostro obiettivo è garantire che le prestazioni climatiche siano valutate rigorosamente, certificate accuratamente e rese accessibili anche alle piccole e medie imprese.',
     
     // Security Page
     'security-page-title': 'Sicurezza Digitale',
@@ -571,16 +572,17 @@ export const translations = {
 
     // Platform
     'platform-title': 'A Digital Path for CO₂ Certification – Step by Step',
-    'platform-intro': 'FAGRI.Digital is developing a digital platform that covers the entire carbon credit certification process – from initial request to validation, up to credit issuance and retirement. The platform will be available soon and will include:',
+    'platform-intro': 'FAGRI.Digital is developing a digital platform covering the entire carbon credit certification process – from initial application to validation, issuance, and trading.',
+    'platform-availability': 'The platform will soon be available and include:',
     'platform-step1-title': 'Guided Procedures',
-    'platform-step1-text': 'for application completion',
+    'platform-step1-text': 'for submitting environmental compensation projects',
     'platform-step2-title': 'Complete Traceability',
-    'platform-step2-text': 'of documentation and request status',
+    'platform-step2-text': 'of documentation and project status',
     'platform-step3-title': 'Integration with VVB Bodies',
-    'platform-step3-text': 'and European registries',
-    'platform-step4-title': 'Cost Structure',
-    'platform-step4-text': 'clear, fair and predictable',
-    'platform-objective': 'Our objective is to ensure that climate performance is properly assessed, rigorously certified and made accessible even to medium-small enterprises.',
+    'platform-step3-text': 'and EU registries for transparent processes',
+    'platform-step4-title': 'Clear Cost Structure',
+    'platform-step4-text': 'fair, and predictable pricing',
+    'platform-goal': 'Our goal is to ensure climate performance is assessed rigorously, certified accurately, and made accessible even to small and mid-sized enterprises.',
     
     // Partnership component translations - duplicate key section to override
     'partner1-title': 'Farmers and Producers',

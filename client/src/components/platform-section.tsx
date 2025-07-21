@@ -7,26 +7,26 @@ export function PlatformSection() {
   const steps = [
     {
       number: "01",
-      title: t('platform-step-1-title'),
-      description: t('platform-step-1-description'),
+      title: t('platform-step1-title'),
+      description: t('platform-step1-text'),
       icon: CheckCircle
     },
     {
       number: "02", 
-      title: t('platform-step-2-title'),
-      description: t('platform-step-2-description'),
-      icon: Shield
-    },
-    {
-      number: "03",
-      title: t('platform-step-3-title'),
-      description: t('platform-step-3-description'),
+      title: t('platform-step2-title'),
+      description: t('platform-step2-text'),
       icon: Database
     },
     {
+      number: "03",
+      title: t('platform-step3-title'),
+      description: t('platform-step3-text'),
+      icon: Shield
+    },
+    {
       number: "04",
-      title: t('platform-step-4-title'),
-      description: t('platform-step-4-description'),
+      title: t('platform-step4-title'),
+      description: t('platform-step4-text'),
       icon: BarChart3
     }
   ];
@@ -40,8 +40,11 @@ export function PlatformSection() {
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               {t('platform-title')}
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light mb-4">
               {t('platform-intro')}
+            </p>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
+              {t('platform-availability')}
             </p>
           </div>
 
@@ -102,7 +105,7 @@ export function PlatformSection() {
                   {t('platform-goal-title')}
                 </h3>
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                  {t('platform-objective')}
+                  {t('platform-goal')}
                 </p>
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="grid grid-cols-2 gap-6 text-center">
