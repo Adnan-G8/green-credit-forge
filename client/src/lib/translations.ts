@@ -437,8 +437,9 @@ export const translations = {
     'hero-title1': 'Digitalization.',
     'hero-title2': 'Responsibility.',
     'hero-title3': 'Climate.',
-    'hero-subtitle': 'Agricultural Transformation Platform - Connecting producers, SMEs, cooperatives and communities through sustainability',
-    'hero-description': 'FAGRI.Digital is the digital platform of the Italian agricultural movement FAGRI – founded on over 30 years of experience and supported by a solid international network. With more than 110,000 members and nearly 80,000 enterprises in Italy alone, we collaborate with partners in Europe, Latin America, Africa and other continents to build sustainable and digitally integrated agriculture.',
+    'hero-tagline': 'Let\'s Build the Future Together.',
+    'hero-subtitle': 'For Our Members, Partners, and International Networks',
+    'hero-description': 'FAGRI.Digital, developed within the FAGRI organization, is a global digital platform and certification system for the carbon market and blockchain-based certification in agriculture.',
     'hero-cta1': 'Discover EUFD2025-001',
     'hero-cta2': 'Join the Network',
     'hero-status-badge': 'Certified CO₂ Platform',
@@ -452,7 +453,7 @@ export const translations = {
     
     // Introduction
     'intro-title': 'A New Approach to Climate',
-    'intro-subtitle': 'In a world marked by climate change, technological transformations and an ever-evolving regulatory framework, FAGRI.Digital proposes a new approach: combining the concreteness of agricultural experience with modern digital tools, for fair and transparent participation in environmental and climate programs – particularly in CO₂ certification.',
+    'intro-subtitle': 'In a world shaped by climate change, technological transformation, and evolving regulations, FAGRI.Digital proposes a new approach: combining the solid foundation of agricultural experience with modern digital tools to enable fair and transparent participation in environmental and climate programs – especially in CO₂ certification.',
     'intro-stat1': 'Active Members',
     'intro-stat2': 'Italian Enterprises',
     'intro-stat3': 'Years of Experience',
