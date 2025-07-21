@@ -68,17 +68,17 @@ export const translations = {
     'opportunities-markets-title': 'Mercati dei Crediti di Carbonio',
     
     // Standard section
-    'standard-title': 'Il Tuo Partner di Fiducia per la Certificazione CO₂',
-    'standard-subtitle': 'La certificazione CO₂ è costruita su fondamenta di rigore scientifico, tecnologia all\'avanguardia e solida conformità legale.',
+    'standard-title': 'Il Nuovo Standard EUFD2025-001: Scientifico, Pratico, Accessibile',
+    'standard-subtitle': 'FAGRI.Digital, in collaborazione con le principali università italiane, istituzioni tecniche e organismi di certificazione, ha sviluppato un nuovo standard globale per l\'emissione di crediti di carbonio: EUFD2025-001.',
     'standard-intro': 'Il nostro processo di certificazione CO₂ opera sotto lo standard EUFD2025-001, sviluppato negli anni di ricerca con importanti università italiane e il nostro partner tecnologico, ALPHAG8 Digital Solutions Switzerland.',
-    'standard-objective': 'L\'obiettivo è fornire una base trasparente, verificabile e scientificamente fondata per accedere ai meccanismi di valorizzazione climatica – in particolare per aziende agricole, produttori di energia, sviluppatori di progetti e organizzazioni che generano benefici ambientali misurabili.',
+    'standard-objective': 'L\'obiettivo è offrire un quadro trasparente, verificabile e scientificamente solido per accedere ai meccanismi di benefici climatici – specialmente per aziende agricole, produttori di energia, sviluppatori di progetti e organizzazioni che generano un impatto ambientale misurabile.',
     'standard-feature1-title': 'Base Scientifica',
     'standard-feature1-text': 'Sviluppato in collaborazione con importanti università italiane e enti tecnici qualificati.',
     'standard-feature2-title': 'Certificazione Rigorosa',
     'standard-feature2-text': 'Organismi di certificazione indipendenti e accreditati garantiscono la massima credibilità.',
     'standard-feature3-title': 'Accessibilità',
     'standard-feature3-text': 'Criteri chiari e coerenti con la realtà dell\'agricoltura europea e internazionale.',
-    'standard-reliability': 'Lo standard si basa su criteri chiari, coerenti con la realtà dell\'agricoltura europea e internazionale, offrendo una soluzione giuridicamente sicura e tecnicamente affidabile.',
+    'standard-reliability': 'Lo standard si basa su criteri chiari, allineati con la realtà dell\'agricoltura europea e internazionale, e fornisce una soluzione giuridicamente sicura e tecnicamente robusta.',
     
     // Standard section details
     'standard-certifications-title': 'Standard di Certificazione',
@@ -513,17 +513,17 @@ export const translations = {
     'opportunities-markets-title': 'Carbon Credit Markets',
     
     // Standard section
-    'standard-title': 'Your Trusted Partner for CO₂ Certification',
-    'standard-subtitle': 'CO₂ certification is built on a foundation of scientific rigour, cutting-edge technology, and robust legal compliance.',
+    'standard-title': 'The New EUFD2025-001 Standard: Scientific, Practical, Accessible',
+    'standard-subtitle': 'FAGRI.Digital, in collaboration with leading Italian universities, technical institutions, and certification bodies, has developed a new global standard for carbon credit issuance: EUFD2025-001.',
     'standard-intro': 'Our CO₂ certification process operates under the EUFD2025-001 standard, developed over years of research with prominent Italian universities and our technology partner, ALPHAG8 Digital Solutions Switzerland.',
-    'standard-objective': 'The objective is to provide a transparent, verifiable and scientifically based foundation for accessing climate valorization mechanisms – particularly for agricultural companies, energy producers, project developers and organizations that generate measurable environmental benefits.',
+    'standard-objective': 'The goal is to offer a transparent, verifiable, and scientifically sound framework to access climate-related benefit mechanisms – especially for farms, energy producers, project developers, and organizations generating measurable environmental impact.',
     'standard-feature1-title': 'Scientific Foundation',
     'standard-feature1-text': 'Developed in collaboration with leading Italian universities and qualified technical institutions.',
     'standard-feature2-title': 'Rigorous Certification',
     'standard-feature2-text': 'Independent and accredited certification bodies ensure maximum credibility.',
     'standard-feature3-title': 'Accessibility',
     'standard-feature3-text': 'Clear criteria consistent with the reality of European and international agriculture.',
-    'standard-reliability': 'The standard is based on clear criteria, consistent with the reality of European and international agriculture, offering a legally secure and technically reliable solution.',
+    'standard-reliability': 'The standard is based on clear criteria, aligned with the reality of European and international agriculture, and provides a legally secure and technically robust solution.',
     
     // Standard section details
     'standard-certifications-title': 'Certification Standards',
