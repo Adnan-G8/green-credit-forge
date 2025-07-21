@@ -368,7 +368,7 @@ export default function Security() {
                 Alpine Data Centers Meet Blockchain Innovation
               </h3>
               <p className="text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto mb-8">
-                Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for agricultural data and carbon certifications. {t('security-blockchain-conclusion')}
+                Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.
               </p>
               <div className="inline-flex items-center px-8 py-4 bg-emerald-600 text-white rounded-lg">
                 <Shield className="mr-3 h-6 w-6" />
