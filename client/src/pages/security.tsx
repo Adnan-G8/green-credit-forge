@@ -4,6 +4,7 @@ import { useLanguage } from '@/components/language-provider';
 import { Shield, Database, Lock, CheckCircle, Server, Globe, Eye, Key, Mountain, Building, Leaf } from 'lucide-react';
 import dataCenter from '@assets/image_1753120952664.png';
 import agriculturalLandscape from '@assets/image_1753121514850.png';
+import italianGovernment from '@assets/image_1753122095811.png';
 
 export default function Security() {
   const { t } = useLanguage();

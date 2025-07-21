@@ -3,6 +3,7 @@ import { Navigation } from '../components/navigation';
 import { Footer } from '../components/footer';
 import { CheckCircle, Shield, Globe, Users } from 'lucide-react';
 import { Link } from 'wouter';
+import italianGovernment from '@assets/image_1753122095811.png';
 
 export default function EufdStandardPage() {
   const { t } = useLanguage();
@@ -24,6 +25,17 @@ export default function EufdStandardPage() {
             <div className="inline-flex items-center space-x-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full border border-emerald-200">
               <Globe className="h-4 w-4" />
               <span className="text-sm font-medium">{t('eufd-status')}</span>
+            </div>
+          </div>
+          
+          {/* Italian Government Building Image */}
+          <div className="mt-16">
+            <div className="relative rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src={italianGovernment} 
+                alt="Italian government building representing official EUFD2025-001 standard backing"
+                className="w-full h-96 object-cover"
+              />
             </div>
           </div>
         </div>
