@@ -145,18 +145,18 @@ export function Footer() {
         
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            <p className="text-gray-400 text-base mb-4 md:mb-0 font-medium">
               {t('footer-copyright')}
             </p>
-            <div className="flex space-x-2 text-sm text-gray-400">
-              <span>{t('footer-powered-by')}</span>
+            <div className="flex space-x-2 text-xs text-gray-500">
+              <span>Concept e Design del Sito Web di</span>
               <a 
                 href="https://alphag8.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-emerald-400 transition-colors font-medium"
+                className="hover:text-emerald-400 transition-colors"
               >
-                ALPHAG8 Digital Solution Switzerland
+                ALPHAG8 Digital Solution Switzerland Technology by ALPHAG8
               </a>
             </div>
           </div>

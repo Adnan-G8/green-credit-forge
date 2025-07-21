@@ -266,87 +266,87 @@ export default function Security() {
             </div>
 
             {/* Alpine Security Meets Global Blockchain Governance */}
-            <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-12 mb-16">
-              <div className="text-center mb-12">
-                <div className="w-20 h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <Mountain className="text-emerald-700 h-10 w-10" />
+            <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-6 sm:p-8 lg:p-12 mb-16">
+              <div className="text-center mb-8 sm:mb-12">
+                <div className="w-16 sm:w-20 h-16 sm:h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <Mountain className="text-emerald-700 h-8 sm:h-10 w-8 sm:w-10" />
                 </div>
-                <h3 className="text-3xl font-medium text-slate-900 mb-6">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 mb-4 sm:mb-6 px-2">
                   Alpine Security Meets Global Blockchain Governance
                 </h3>
-                <div className="max-w-4xl mx-auto space-y-6">
-                  <p className="text-lg text-slate-600 leading-relaxed">
+                <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 px-4">
+                  <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
                     {t('security-alpine-p1')}
                   </p>
-                  <p className="text-lg text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
                     {t('security-alpine-p2')}
                   </p>
-                  <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                  <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-medium">
                     {t('security-alpine-p3')}
                   </p>
                 </div>
               </div>
 
               {/* 100% CO₂ Neutral Section */}
-              <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-12 mb-16">
-                <div className="text-center mb-12">
-                  <div className="w-20 h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-                    <Leaf className="text-emerald-700 h-10 w-10" />
+              <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-6 sm:p-8 lg:p-12 mb-8 sm:mb-16">
+                <div className="text-center mb-8 sm:mb-12">
+                  <div className="w-16 sm:w-20 h-16 sm:h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <Leaf className="text-emerald-700 h-8 sm:h-10 w-8 sm:w-10" />
                   </div>
-                  <h3 className="text-3xl font-medium text-slate-900 mb-6">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 mb-4 sm:mb-6 px-2">
                     {t('security-co2-neutral-title')}
                   </h3>
-                  <div className="max-w-4xl mx-auto space-y-6">
-                    <p className="text-lg text-slate-600 leading-relaxed">
+                  <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 px-4">
+                    <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
                       {t('security-co2-neutral-p1')}
                     </p>
-                    <p className="text-lg text-slate-600 leading-relaxed">
+                    <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
                       {t('security-co2-neutral-p2')}
                     </p>
-                    <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                    <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-medium">
                       {t('security-co2-neutral-p3')}
                     </p>
                   </div>
                 </div>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
-                <div className="bg-white rounded-lg p-8 text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Server className="text-blue-700 h-8 w-8" />
+              <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+                <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 text-center">
+                  <div className="w-12 sm:w-16 h-12 sm:h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Server className="text-blue-700 h-6 sm:h-8 w-6 sm:w-8" />
                   </div>
-                  <h4 className="text-xl font-medium text-slate-900 mb-4">{t('security-blockchain-nodes-title')}</h4>
-                  <p className="text-slate-700 leading-relaxed">
+                  <h4 className="text-lg sm:text-xl font-medium text-slate-900 mb-3 sm:mb-4">{t('security-blockchain-nodes-title')}</h4>
+                  <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
                     {t('security-blockchain-nodes-description')}
                   </p>
                 </div>
                 
-                <div className="bg-white rounded-lg p-8 text-center">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Shield className="text-emerald-700 h-8 w-8" />
+                <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 text-center">
+                  <div className="w-12 sm:w-16 h-12 sm:h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Shield className="text-emerald-700 h-6 sm:h-8 w-6 sm:w-8" />
                   </div>
-                  <h4 className="text-xl font-medium text-slate-900 mb-4">{t('security-blockchain-dpos-title')}</h4>
-                  <p className="text-slate-700 leading-relaxed">
+                  <h4 className="text-lg sm:text-xl font-medium text-slate-900 mb-3 sm:mb-4">{t('security-blockchain-dpos-title')}</h4>
+                  <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
                     {t('security-blockchain-dpos-description')}
                   </p>
                 </div>
                 
-                <div className="bg-white rounded-lg p-8 text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Globe className="text-purple-700 h-8 w-8" />
+                <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 text-center">
+                  <div className="w-12 sm:w-16 h-12 sm:h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <Globe className="text-purple-700 h-6 sm:h-8 w-6 sm:w-8" />
                   </div>
-                  <h4 className="text-xl font-medium text-slate-900 mb-4">{t('security-blockchain-evm-title')}</h4>
-                  <p className="text-slate-700 leading-relaxed">
+                  <h4 className="text-lg sm:text-xl font-medium text-slate-900 mb-3 sm:mb-4">{t('security-blockchain-evm-title')}</h4>
+                  <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
                     {t('security-blockchain-evm-description')}
                   </p>
                 </div>
               </div>
 
-              <div className="bg-white rounded-lg p-8">
-                <h4 className="text-2xl font-medium text-slate-900 mb-6 text-center">
+              <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8">
+                <h4 className="text-xl sm:text-2xl font-medium text-slate-900 mb-4 sm:mb-6 text-center">
                   {t('security-blockchain-trust-title')}
                 </h4>
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                   <div>
                     <h5 className="text-lg font-medium text-slate-900 mb-4">{t('security-blockchain-governance-title')}</h5>
                     <p className="text-slate-700 leading-relaxed mb-4">
