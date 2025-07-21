@@ -146,15 +146,15 @@ export default function OpportunitiesSection() {
 
           {/* Market Types */}
           <div className="bg-slate-900 rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-light text-white mb-8">Carbon Credit Markets</h3>
+            <h3 className="text-2xl font-light text-white mb-8">{t('opportunities-markets-title')}</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="p-6 bg-slate-800 rounded-xl border border-slate-700">
                 <h4 className="text-lg font-medium text-emerald-400 mb-2">{t('opportunities-market-voluntary')}</h4>
-                <p className="text-slate-300 text-sm">Agricultural and agroforestry companies</p>
+                <p className="text-slate-300 text-sm">{t('opportunities-market-voluntary-desc')}</p>
               </div>
               <div className="p-6 bg-slate-800 rounded-xl border border-slate-700">
                 <h4 className="text-lg font-medium text-blue-400 mb-2">{t('opportunities-market-regulated')}</h4>
-                <p className="text-slate-300 text-sm">Energy companies with renewable sources</p>
+                <p className="text-slate-300 text-sm">{t('opportunities-market-regulated-desc')}</p>
               </div>
             </div>
           </div>
