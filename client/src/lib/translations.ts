@@ -187,6 +187,10 @@ export const translations = {
     'security-co2-neutral-p2': 'Il clima naturalmente fresco della regione montana riduce significativamente la necessità di raffreddamento ad alta intensità energetica, diminuendo il consumo energetico complessivo senza compromettere prestazioni o sicurezza.',
     'security-co2-neutral-p3': 'FAGRI.Digital rappresenta un ecosistema digitale che non è solo sicuro e sovrano, ma anche ecologicamente responsabile. Ogni processo di dati, ogni certificazione, ogni transazione è condotta in modo climaticamente neutrale – un impegno verso i nostri partner, membri e le generazioni future.',
     
+    // Digital Fingerprint Section (Italian)
+    'security-digital-fingerprint-title': 'Impronta Digitale Obbligatoria per Ogni Utente e Membro Attivo',
+    'security-digital-fingerprint-description': 'Per un ecosistema di fiducia e rispetto, ogni utente e membro attivo sulla piattaforma deve fornire la propria impronta digitale obbligatoria. Questo garantisce responsabilità, trasparenza e un ambiente sicuro per tutti i partecipanti.',
+    
     // Agricultural Trust Visual Section (Italian)
     'security-agricultural-trust-title': 'Proteggendo il Futuro dell\'Agricoltura',
     'security-agricultural-trust-subtitle': 'Ogni campo, ogni raccolta, ogni dato agricolo è protetto con la massima sicurezza digitale per le generazioni future.',
@@ -760,6 +764,10 @@ export const translations = {
     'security-co2-neutral-p1': 'All our data centers and digital services operate on a fully CO₂-neutral basis. Located in the Swiss Alps, within repurposed military bunkers, our infrastructure is powered entirely by 100% certified Swiss hydropower.',
     'security-co2-neutral-p2': 'The naturally cool climate of the mountain region significantly reduces the need for energy-intensive cooling, lowering overall power consumption without compromising on performance or security.',
     'security-co2-neutral-p3': 'FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members, and future generations.',
+    
+    // Digital Fingerprint Section (English)
+    'security-digital-fingerprint-title': 'Obligatory Digital Fingerprint for Every User and Active Member',
+    'security-digital-fingerprint-description': 'For an ecosystem of trust and respect, every user and active member on the platform must provide their obligatory digital fingerprint. This ensures accountability, transparency, and a secure environment for all participants.',
     
     // Agricultural Trust Visual Section (English)
     'security-agricultural-trust-title': 'Protecting Agriculture\'s Future',

@@ -31,6 +31,21 @@ export default function Security() {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             
+            {/* Digital Fingerprint Requirement */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-12 mb-16">
+              <div className="text-center mb-8">
+                <div className="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-6">
+                  <Shield className="text-blue-700 h-10 w-10" />
+                </div>
+                <h2 className="text-3xl font-medium text-slate-900 mb-6">
+                  {t('security-digital-fingerprint-title')}
+                </h2>
+                <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                  {t('security-digital-fingerprint-description')}
+                </p>
+              </div>
+            </div>
+
             {/* Security Overview */}
             <div className="text-center mb-16">
               <h2 className="text-4xl font-light text-slate-900 mb-6">
