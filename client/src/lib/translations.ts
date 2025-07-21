@@ -102,9 +102,14 @@ export const translations = {
     
     // Partnerships
     'partnerships-title': 'Collaborazioni Istituzionali per Costruire Fiducia',
-    'partnerships-subtitle': 'FAGRI.Digital opera in stretto coordinamento con le seguenti istituzioni e partner:',
-
-    'partnerships-guarantee': 'Queste collaborazioni garantiscono solidità normativa, credibilità operativa e piena tracciabilità per tutti gli attori coinvolti: tecnici, autorità, investitori e comunità locali.',
+    'partnerships-subtitle': 'FAGRI.Digital lavora in stretto coordinamento con i seguenti partner:',
+    'partnerships-eu-commission': 'Commissione Europea – per la conformità agli obiettivi e alla regolamentazione climatica dell\'UE',
+    'partnerships-italian-ministry': 'Ministero dell\'Ambiente e della Sicurezza Energetica – per l\'allineamento normativo nazionale',
+    'partnerships-gse': 'GSE (Gestore dei Servizi Energetici) – per l\'integrazione con i registri nazionali dell\'energia e delle emissioni',
+    'partnerships-non-eu': 'Governi extra-UE – per allinearsi agli obiettivi climatici globali',
+    'partnerships-suolo-salute': 'SUOLO E SALUTE – organismo di certificazione indipendente e accreditato',
+    'partnerships-iso-uni': 'ISO e UNI – per l\'adozione di standard tecnici internazionali e italiani',
+    'partnerships-guarantee': 'Queste collaborazioni garantiscono forza normativa, credibilità operativa e piena tracciabilità per tutti gli stakeholder: tecnici, autorità, investitori e comunità locali.',
     
     // Partnership component translations
     'partner1-title': 'Agricoltori e Produttori',
@@ -546,10 +551,15 @@ export const translations = {
     'standard-step3-description': 'Independent verification by accredited bodies and official issuance of certified carbon credits',
     
     // Partnerships
-    'partnerships-title': 'Institutional Partnerships for Building Trust',
-    'partnerships-subtitle': 'FAGRI.Digital operates in close coordination with the following institutions and partners:',
-
-    'partnerships-guarantee': 'These collaborations guarantee regulatory soundness, operational credibility and full traceability for all involved actors: technicians, authorities, investors and local communities.',
+    'partnerships-title': 'Institutional Collaborations to Build Trust',
+    'partnerships-subtitle': 'FAGRI.Digital works in close coordination with the following partners:',
+    'partnerships-eu-commission': 'European Commission – for compliance with EU climate targets and regulation',
+    'partnerships-italian-ministry': 'Italian Ministry of Environment and Energy Security – for national regulatory alignment',
+    'partnerships-gse': 'GSE (Italian Energy Services Manager) – for integration with national energy and emissions registries',
+    'partnerships-non-eu': 'Non-EU governments – to align with global climate goals',
+    'partnerships-suolo-salute': 'SUOLO E SALUTE – independent and accredited certification body',
+    'partnerships-iso-uni': 'ISO and UNI – for adoption of international and Italian technical standards',
+    'partnerships-guarantee': 'These collaborations ensure regulatory strength, operational credibility, and full traceability for all stakeholders: technicians, authorities, investors, and local communities.',
     
     // Transition Section
     'transition-title': 'From Field to Future',

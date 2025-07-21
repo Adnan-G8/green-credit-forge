@@ -14,34 +14,34 @@ export function PartnershipsSection() {
 
   const partnerships = [
     {
-      icon: Users,
-      title: t('partner1-title'),
-      description: t('partner1-description'),
+      icon: Globe,
+      title: 'European Commission',
+      description: t('partnerships-eu-commission'),
     },
     {
       icon: Building,
-      title: t('partner2-title'),
-      description: t('partner2-description'),
+      title: 'Italian Ministry of Environment and Energy Security',
+      description: t('partnerships-italian-ministry'),
     },
     {
-      icon: Globe,
-      title: t('partner3-title'),
-      description: t('partner3-description'),
-    },
-    {
-      icon: Handshake,
-      title: t('partner4-title'),
-      description: t('partner4-description'),
-    },
-    {
-      icon: TrendingUp,
-      title: t('partner5-title'),
-      description: t('partner5-description'),
+      icon: Users,
+      title: 'GSE (Italian Energy Services Manager)',
+      description: t('partnerships-gse'),
     },
     {
       icon: Target,
-      title: t('partner6-title'),
-      description: t('partner6-description'),
+      title: 'Non-EU governments',
+      description: t('partnerships-non-eu'),
+    },
+    {
+      icon: Handshake,
+      title: 'SUOLO E SALUTE',
+      description: t('partnerships-suolo-salute'),
+    },
+    {
+      icon: TrendingUp,
+      title: 'ISO and UNI',
+      description: t('partnerships-iso-uni'),
     },
   ];
 
