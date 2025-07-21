@@ -81,6 +81,13 @@ Preferred communication style: Simple, everyday language.
   * **Added CO₂ Certification Impact Section**: New content explaining EUFD2025-001 standard benefits for agricultural enterprises
   * **Relevant Metrics**: Now shows "EUFD - EU Standard Compliance" and "ISO - 14064-2 Certification" which directly relate to platform purpose
   * **Enhanced Context**: Content now helps users understand measurable climate impact and sustainable finance opportunities
+- **Blockchain Integration Mandate Enhancement**: Added critical new EUFD2025-001 blockchain requirement information:
+  * **Mandatory Blockchain Integration**: Added prominent callout highlighting blockchain technology mandate for carbon credit issuance
+  * **EU Regulation 3012/2024 Information Box**: Comprehensive explanation of EU legal framework requiring blockchain-based digital platforms
+  * **ISO 14064-1, 2, 3 Standards Box**: Detailed breakdown of international greenhouse gas accounting and verification standards
+  * **Platform Section Update**: Added blockchain mandate notification directly in certification impact section
+  * **Complete Bilingual Support**: All new regulatory framework content available in Italian and English
+  * **Regulatory Alignment**: Clear explanation of how blockchain technology aligns with EU regulation and ISO standards
 
 ## System Architecture
 

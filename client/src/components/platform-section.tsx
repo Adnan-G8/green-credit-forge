@@ -107,7 +107,7 @@ export function PlatformSection() {
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
                   {t('platform-impact-description')}
                 </p>
-                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                <div className="bg-white rounded-lg p-6 border border-slate-200 mb-6">
                   <div className="grid grid-cols-2 gap-6 text-center">
                     <div>
                       <h4 className="text-2xl font-semibold text-emerald-700 mb-1">EUFD</h4>
@@ -118,6 +118,13 @@ export function PlatformSection() {
                       <p className="text-slate-600 text-sm">{t('platform-impact-iso')}</p>
                     </div>
                   </div>
+                </div>
+                
+                <div className="bg-blue-600 text-white rounded-lg p-4">
+                  <h4 className="font-medium mb-2">🔗 Mandatory Blockchain Integration</h4>
+                  <p className="text-blue-100 text-sm">
+                    EUFD2025-001 mandates blockchain technology for issuing and registering certified carbon credits, ensuring traceability, transparency, and immutability. This aligns with EU Regulation 3012/2024 and ISO 14064-1, 2, and 3 standards.
+                  </p>
                 </div>
               </div>
             </div>

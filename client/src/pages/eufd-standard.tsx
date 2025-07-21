@@ -118,7 +118,13 @@ export default function EufdStandardPage() {
               <h2 className="text-3xl font-light text-slate-900 mb-6">
                 {t('eufd-blockchain-title')}
               </h2>
-              <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
+              <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200 mb-8">
+                <div className="bg-blue-600 text-white rounded-lg p-4 mb-6">
+                  <h3 className="text-xl font-medium mb-2">{t('eufd-blockchain-mandate-title')}</h3>
+                  <p className="text-blue-100">
+                    {t('eufd-blockchain-mandate-description')}
+                  </p>
+                </div>
                 <p className="text-slate-700 mb-6 leading-relaxed">
                   {t('eufd-blockchain-intro')}
                 </p>
@@ -134,6 +140,87 @@ export default function EufdStandardPage() {
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
                     <span className="text-slate-700">{t('eufd-blockchain-benefit3')}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Regulatory Framework */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-light text-slate-900 mb-8">
+                {t('eufd-regulatory-title')}
+              </h2>
+              
+              {/* EU Regulation 3012/2024 Box */}
+              <div className="bg-white rounded-xl p-8 border-2 border-blue-200 mb-6 shadow-lg">
+                <div className="flex items-start space-x-4">
+                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Globe className="text-blue-700 h-8 w-8" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-medium text-slate-900 mb-3">
+                      {t('eufd-eu-regulation-title')}
+                    </h3>
+                    <p className="text-slate-700 leading-relaxed mb-4">
+                      {t('eufd-eu-regulation-description')}
+                    </p>
+                    <div className="bg-blue-50 rounded-lg p-4">
+                      <h4 className="font-medium text-blue-900 mb-2">{t('eufd-eu-regulation-requirements')}:</h4>
+                      <ul className="space-y-2 text-sm text-blue-800">
+                        <li className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
+                          <span>{t('eufd-eu-regulation-req1')}</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
+                          <span>{t('eufd-eu-regulation-req2')}</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
+                          <span>{t('eufd-eu-regulation-req3')}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* ISO Standards Box */}
+              <div className="bg-white rounded-xl p-8 border-2 border-emerald-200 shadow-lg">
+                <div className="flex items-start space-x-4">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="text-emerald-700 h-8 w-8" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-medium text-slate-900 mb-3">
+                      {t('eufd-iso-standards-title')}
+                    </h3>
+                    <p className="text-slate-700 leading-relaxed mb-4">
+                      {t('eufd-iso-standards-description')}
+                    </p>
+                    
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="bg-emerald-50 rounded-lg p-4">
+                        <h4 className="font-medium text-emerald-900 mb-2">{t('eufd-iso-14064-1-title')}</h4>
+                        <p className="text-sm text-emerald-800">
+                          {t('eufd-iso-14064-1-description')}
+                        </p>
+                      </div>
+                      
+                      <div className="bg-emerald-50 rounded-lg p-4">
+                        <h4 className="font-medium text-emerald-900 mb-2">{t('eufd-iso-14064-2-title')}</h4>
+                        <p className="text-sm text-emerald-800">
+                          {t('eufd-iso-14064-2-description')}
+                        </p>
+                      </div>
+                      
+                      <div className="bg-emerald-50 rounded-lg p-4">
+                        <h4 className="font-medium text-emerald-900 mb-2">{t('eufd-iso-14064-3-title')}</h4>
+                        <p className="text-sm text-emerald-800">
+                          {t('eufd-iso-14064-3-description')}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
