@@ -3,6 +3,7 @@ import { Navigation } from '@/components/navigation';
 import { HeroSection } from '@/components/hero-section';
 import { TransitionSection } from '@/components/transition-section';
 import { IntroductionSection } from '@/components/introduction-section';
+import OpportunitiesSection from '@/components/opportunities-section';
 import { StandardSection } from '@/components/standard-section';
 import { PlatformSection } from '@/components/platform-section';
 import { RenewableEnergySection } from '@/components/renewable-energy-section';
@@ -29,6 +30,7 @@ export default function Home() {
       <HeroSection />
       <TransitionSection />
       <IntroductionSection />
+      <OpportunitiesSection />
       <StandardSection />
       <PlatformSection />
       <RenewableEnergySection />

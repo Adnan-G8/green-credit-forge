@@ -3,6 +3,7 @@ export const translations = {
     // Navigation
     'nav-home': 'Home',
     'nav-standard': 'Standard',
+    'nav-opportunities': 'Opportunità',
     'nav-partnerships': 'Partnership',
     'nav-platform': 'Piattaforma',
     'nav-security': 'Sicurezza',
@@ -46,6 +47,18 @@ export const translations = {
     'intro-point2-text': 'Collaborazioni attive in Europa, America Latina, Africa e altri continenti per un\'agricoltura sostenibile globale.',
     'intro-point3-title': 'Innovazione Digitale',
     'intro-point3-text': 'Strumenti digitali moderni per una partecipazione equa e trasparente ai programmi ambientali e climatici.',
+    
+    // Opportunities section
+    'opportunities-title': 'Opportunità per Aziende Agricole, Agroforestali ed Energetiche',
+    'opportunities-subtitle': 'L\'Accordo di Parigi del 2015, sostenuto da 194 paesi, mira a raggiungere la neutralità climatica entro il 2050 attraverso progetti di mitigazione ambientale come il carbon farming e progetti di energia rinnovabile che prevengono le emissioni di CO₂.',
+    'opportunities-agricultural-title': 'Aziende Agricole e Agroforestali',
+    'opportunities-agricultural-description': 'Le aziende agricole e agroforestali che sequestrano CO₂ attraverso progetti di compensazione pluriennali possono generare crediti di carbonio da vendere sui mercati volontari.',
+    'opportunities-energy-title': 'Aziende Energetiche',
+    'opportunities-energy-description': 'Le aziende energetiche che producono elettricità da fonti rinnovabili evitano efficacemente le emissioni di CO₂ e possono anche generare crediti di carbonio per la vendita sui mercati volontari e regolamentati.',
+    'opportunities-market-voluntary': 'Mercati Volontari',
+    'opportunities-market-regulated': 'Mercati Regolamentati',
+    'opportunities-carbon-farming': 'Carbon Farming',
+    'opportunities-co2-sequestration': 'Sequestro CO₂',
     
     // Standard section
     'standard-title': 'Il Tuo Partner di Fiducia per la Certificazione CO₂',
@@ -399,6 +412,7 @@ export const translations = {
     // Navigation
     'nav-home': 'Home',
     'nav-standard': 'Standard',
+    'nav-opportunities': 'Opportunities',
     'nav-partnerships': 'Partnerships',
     'nav-platform': 'Platform',
     'nav-security': 'Security',
@@ -471,6 +485,18 @@ export const translations = {
     'intro-point2-text': 'Active collaborations in Europe, Latin America, Africa and other continents for global sustainable agriculture.',
     'intro-point3-title': 'Digital Innovation',
     'intro-point3-text': 'Modern digital tools for fair and transparent participation in environmental and climate programs.',
+    
+    // Opportunities section
+    'opportunities-title': 'Opportunities for Agricultural, Agroforestry, and Energy Companies',
+    'opportunities-subtitle': 'The 2015 Paris Agreement, endorsed by 194 countries, aims to achieve climate neutrality by 2050 through environmental mitigation projects like carbon farming and renewable energy projects that prevent CO₂ emissions.',
+    'opportunities-agricultural-title': 'Agricultural and Agroforestry Companies',
+    'opportunities-agricultural-description': 'Agricultural and agroforestry companies that sequester CO₂ through multi-year compensation projects can generate carbon credits to sell on voluntary markets.',
+    'opportunities-energy-title': 'Energy Companies',
+    'opportunities-energy-description': 'Energy companies producing electricity from renewable sources effectively avoid CO₂ emissions and can also generate carbon credits for sale on voluntary and regulated markets.',
+    'opportunities-market-voluntary': 'Voluntary Markets',
+    'opportunities-market-regulated': 'Regulated Markets',
+    'opportunities-carbon-farming': 'Carbon Farming',
+    'opportunities-co2-sequestration': 'CO₂ Sequestration',
     
     // Standard section
     'standard-title': 'Your Trusted Partner for CO₂ Certification',
