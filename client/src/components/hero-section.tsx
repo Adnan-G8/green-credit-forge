@@ -68,29 +68,29 @@ export function HeroSection() {
               </p>
             </div>
             
-            {/* Premium Financial Metrics */}
+            {/* Trust & Value Propositions */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto px-4">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
                   <div className="p-4 bg-emerald-500/20 rounded-full border border-emerald-400/30">
-                    <Users className="h-8 w-8 text-emerald-400" />
+                    <Shield className="h-8 w-8 text-emerald-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">110,000+</div>
+                <div className="text-3xl font-light text-white mb-2">ISO</div>
                 <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
-                  {t('hero-stat-members')}
+                  {t('hero-trust-certified')}
                 </div>
               </div>
               
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
                 <div className="flex items-center justify-center mb-4">
                   <div className="p-4 bg-blue-500/20 rounded-full border border-blue-400/30">
-                    <Shield className="h-8 w-8 text-blue-400" />
+                    <Globe className="h-8 w-8 text-blue-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">EUFD2025-001</div>
+                <div className="text-3xl font-light text-white mb-2">3FA</div>
                 <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
-                  {t('hero-stat-standard')}
+                  {t('hero-trust-security')}
                 </div>
               </div>
               
@@ -100,9 +100,9 @@ export function HeroSection() {
                     <TrendingUp className="h-8 w-8 text-amber-400" />
                   </div>
                 </div>
-                <div className="text-3xl font-light text-white mb-2">30+</div>
+                <div className="text-3xl font-light text-white mb-2">Swiss</div>
                 <div className="text-slate-400 font-medium text-sm uppercase tracking-wider">
-                  {t('hero-stat-experience')}
+                  {t('hero-trust-blockchain')}
                 </div>
               </div>
             </div>
