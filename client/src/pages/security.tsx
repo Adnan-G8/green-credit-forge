@@ -35,7 +35,7 @@ export default function Security() {
                 {t('security-alpine-blockchain-title')}
               </h2>
               <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                {t('security-alpine-blockchain-description')}
+                {t('security-alpine-blockchain-subtitle')}
               </p>
             </div>
 
@@ -222,18 +222,36 @@ export default function Security() {
               </div>
             </div>
 
-            {/* Blockchain Security Infrastructure */}
+            {/* Alpine Security Meets Global Blockchain Governance */}
             <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-12 mb-16">
               <div className="text-center mb-12">
                 <div className="w-20 h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <Globe className="text-emerald-700 h-10 w-10" />
+                  <Mountain className="text-emerald-700 h-10 w-10" />
                 </div>
                 <h3 className="text-3xl font-medium text-slate-900 mb-4">
-                  {t('security-blockchain-architecture-title')}
+                  {t('security-alpine-blockchain-title')}
                 </h3>
                 <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                  {t('security-blockchain-architecture-description')}
+                  {t('security-alpine-blockchain-subtitle')}
                 </p>
+              </div>
+
+              {/* Alpine Data Centers Meet Blockchain Innovation */}
+              <div className="bg-emerald-50 rounded-xl p-8 mb-12 border border-emerald-200">
+                <div className="text-center mb-8">
+                  <h4 className="text-2xl font-medium text-slate-900 mb-4">
+                    {t('security-alpine-innovation-title')}
+                  </h4>
+                  <p className="text-slate-700 leading-relaxed max-w-3xl mx-auto">
+                    {t('security-alpine-innovation-description')}
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white rounded-lg">
+                    <Shield className="mr-3 h-5 w-5" />
+                    <span className="font-medium">{t('security-swiss-guarantee')}</span>
+                  </div>
+                </div>
               </div>
               
               <div className="grid md:grid-cols-3 gap-8 mb-12">

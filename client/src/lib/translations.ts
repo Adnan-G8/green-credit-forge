@@ -174,9 +174,12 @@ export const translations = {
     'eufd-iso-14064-3-title': 'ISO 14064-3',
     'eufd-iso-14064-3-description': 'Verifica e validazione delle asserzioni sui gas serra. Fornisce requisiti per verificare inventari GHG organizzativi o di progetto.',
     
-    // Security Page - Blockchain Section
-    'security-alpine-blockchain-title': 'Sicurezza Alpina Svizzera Incontra Innovazione Blockchain',
-    'security-alpine-blockchain-description': 'La nostra piattaforma combina il quadro di protezione dati di fama mondiale della Svizzera con la tecnologia blockchain avanzata. I data center fisici in bunker militari alpini forniscono le fondamenta, mentre la nostra rete decentralizzata a 51 nodi garantisce integrità crittografica e certificazioni agricole a prova di manomissione.',
+    // Security Page - Alpine Blockchain Section (Italian)
+    'security-alpine-blockchain-title': 'Sicurezza Alpina Incontra la Governance Blockchain Globale',
+    'security-alpine-blockchain-subtitle': 'Per la prima volta, i validatori blockchain sono gestiti congiuntamente da istituzioni, organizzazioni sociali e partner di più paesi — tutti con pari diritti e responsabilità condivise. Ospitati in data center di montagna svizzeri con sicurezza di livello bancario, la nostra blockchain a 51 nodi garantisce integrità, resilienza e sovranità dei dati.',
+    'security-alpine-innovation-title': 'Data Center Alpini Incontrano l\'Innovazione Blockchain',
+    'security-alpine-innovation-description': 'I nostri data center di montagna svizzeri forniscono le fondamenta di sicurezza fisica, mentre la nostra rete blockchain a 51 nodi garantisce integrità crittografica. Questa combinazione crea un livello di protezione senza precedenti per i tuoi dati agricoli, con gli stessi standard di sicurezza utilizzati dalle banche e istituzioni governative svizzere.',
+    'security-swiss-guarantee': 'Garanzia di Sicurezza Svizzera',
     'security-blockchain-architecture-title': 'Architettura Blockchain DPoS Compatibile EVM',
     'security-blockchain-architecture-description': 'La nostra piattaforma opera su un\'infrastruttura blockchain decentralizzata con 51 nodi validatori, creando una rete di fiducia impenetrabile attraverso la partecipazione sociale e aziendale diversificata.',
     'security-blockchain-nodes-title': '51 Nodi Validatori',
@@ -734,9 +737,12 @@ export const translations = {
     'eufd-iso-14064-3-title': 'ISO 14064-3',
     'eufd-iso-14064-3-description': 'Verification and validation of greenhouse gas assertions. Provides requirements for verifying organizational or project GHG inventories.',
     
-    // Security Page - Blockchain Section
-    'security-alpine-blockchain-title': 'Swiss Alpine Security Meets Blockchain Innovation',
-    'security-alpine-blockchain-description': 'Our platform combines Switzerland\'s world-renowned data protection framework with advanced blockchain technology. Physical data centers in Alpine military bunkers provide the foundation, while our 51-node decentralized network ensures cryptographic integrity and tamper-proof agricultural certifications.',
+    // Security Page - Alpine Blockchain Section (English)
+    'security-alpine-blockchain-title': 'Alpine Security Meets Global Blockchain Governance',
+    'security-alpine-blockchain-subtitle': 'For the first time, blockchain validators are jointly operated by institutions, social organizations, and partners from multiple countries — all with equal rights and shared responsibilities. Housed in Swiss mountain data centers with bank-level security, our 51-node blockchain ensures data integrity, resilience, and sovereignty.',
+    'security-alpine-innovation-title': 'Alpine Data Centers Meet Blockchain Innovation',
+    'security-alpine-innovation-description': 'Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.',
+    'security-swiss-guarantee': 'Swiss Security Guarantee',
     'security-blockchain-architecture-title': 'EVM-Compatible DPoS Blockchain Architecture',
     'security-blockchain-architecture-description': 'Our platform operates on a decentralized blockchain infrastructure with 51 validator nodes, creating an unbreachable network of trust through diversified social and corporate participation.',
     'security-blockchain-nodes-title': '51 Validator Nodes',
