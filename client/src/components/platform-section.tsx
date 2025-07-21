@@ -121,9 +121,9 @@ export function PlatformSection() {
                 </div>
                 
                 <div className="bg-blue-600 text-white rounded-lg p-4">
-                  <h4 className="font-medium mb-2">🔗 Mandatory Blockchain Integration</h4>
+                  <h4 className="font-medium mb-2">🇪🇺 {t('platform-eu-standards-title')}</h4>
                   <p className="text-blue-100 text-sm">
-                    EUFD2025-001 mandates blockchain technology for issuing and registering certified carbon credits, ensuring traceability, transparency, and immutability. This aligns with EU Regulation 3012/2024 and ISO 14064-1, 2, and 3 standards.
+                    {t('platform-eu-standards-description')}
                   </p>
                 </div>
               </div>
