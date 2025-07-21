@@ -90,9 +90,14 @@ export default function Security() {
                   <h4 className="text-lg font-medium text-slate-900 mb-4">
                     {t('security-digital-fingerprint-title')}
                   </h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
                     {t('security-digital-fingerprint-description')}
                   </p>
+                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <p className="text-slate-700 text-sm leading-relaxed">
+                      has to go through a KYC process in order to create its digital fingerprint. After the Digital Fingerprint is issued the Data and all other informations are highly encrypted on a seperate server structurte to protect it against every and all misues. All this information are only used for legal and regulation processing and nothing else and not shared with any other organisation.
+                    </p>
+                  </div>
                 </div>
               </div>
 
