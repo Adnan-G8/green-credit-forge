@@ -6,6 +6,7 @@ import { IntroductionSection } from '@/components/introduction-section';
 import OpportunitiesSection from '@/components/opportunities-section';
 import { StandardSection } from '@/components/standard-section';
 import { PlatformSection } from '@/components/platform-section';
+import { SecurityMainSection } from '@/components/security-main-section';
 import { RenewableEnergySection } from '@/components/renewable-energy-section';
 import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
@@ -33,6 +34,7 @@ export default function Home() {
       <OpportunitiesSection />
       <StandardSection />
       <PlatformSection />
+      <SecurityMainSection />
       <RenewableEnergySection />
       <ContactSection />
       <Footer />
