@@ -1,0 +1,37 @@
+Your Data. Our Fortress. Swiss Precision for a Global Platform.
+The Fagri.Digital platform and ALPHAG8 Digital Solutions Switzerland are designed to connect nations worldwide and enable international applications. To ensure the highest data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management. This partner leverages the unique advantages of Switzerland – a country renowned for its neutrality, stability, and unwavering commitment to privacy.
+
+The Swiss Advantage: Neutrality and the Highest Standards
+Switzerland offers a unique legal framework that elevates the protection of your data to an exceptional level. The country's political neutrality creates an environment free from geopolitical influences that could compromise access to or the security of your data.
+
+Strictest Data Protection Laws: Your data is subject to the New Federal Act on Data Protection (nFADP), one of the world's strictest data protection laws, which ensures comprehensive rights and "Privacy by Design" principles.   
+
+Trust in the Financial Sector: Our service provider's infrastructure meets the highest requirements of the Swiss Financial Market Supervisory Authority (FINMA), including FINMA-RS 18/3 compliance. This means their systems adhere to the stringent security and operational standards demanded by leading Swiss banks and insurers.   
+
+Unrivalled Physical Security: Data in Alpine Fortresses
+A cornerstone of our service provider's security strategy is the use of former Swiss military bunkers, repurposed into state-of-the-art data centers. These unique locations offer a level of physical protection far beyond conventional data centers.
+
+Military Standard: These bunkers were originally built to withstand extreme conditions, including conventional attacks, chemical/biological threats, and electromagnetic pulses (EMPs). Their underground depth and reinforced concrete construction act as a natural shield, protecting your data from external influences.   
+
+Autonomous Operability: Our service provider's infrastructure is designed for complete self-sufficiency and operational continuity, even in the event of disasters, featuring independent power supply systems and autonomous ventilation systems.   
+
+Strict Access Controls: Access to these facilities is strictly regulated and highly secure, with multiple layers of defence such as multi-ton security doors, biometric scanners, and 24/7 video surveillance.   
+
+Technical Excellence and Operational Resilience
+Beyond impressive physical security, our service provider integrates cutting-edge technical measures and comprehensive redundancies.
+
+Multi-Layer Encryption: Your data is protected with internationally recognized encryption standards such as AES-256 and RSA-4096. A "Zero-Knowledge Architecture" means that only you can decrypt your files, ensuring exclusive control and privacy.   
+
+Robust Redundancy: Customer data is triple-backed up, with each file stored simultaneously in different, geographically dispersed locations within Switzerland. A dedicated "Disaster Recovery Site" deep in the Swiss Alps offers maximum protection in the event of a regional catastrophe.   
+
+Highest Availability: Our service provider's data centers comply with the highest Uptime Institute Tier Classifications (Tier III/IV), ensuring concurrent maintainability and fault tolerance.   
+
+Certifications and Compliance: The Highest Standards for Your Security
+Our service provider's commitment to the highest security standards is confirmed by comprehensive certifications:
+
+ISO/IEC 27001: This internationally recognized standard confirms our service provider's systematic approach to managing sensitive corporate information.   
+
+PCI DSS: For companies processing payment card data, our service provider's PCI DSS certification is crucial, as it ensures the highest security standards for protecting sensitive payment information.   
+
+National Cyber Resilience: As an operator of critical infrastructure, our service provider is integrated into Switzerland's national cyber resilience strategy and reports cyberattacks to the National Cyber Security Centre (NCSC) within 24 hours.   
+
