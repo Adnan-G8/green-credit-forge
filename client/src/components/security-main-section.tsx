@@ -142,7 +142,36 @@ export function SecurityMainSection() {
               </div>
             </div>
             
-            <div className="text-center">
+            <div className="bg-slate-50 rounded-lg p-6 mt-8">
+              <h4 className="text-lg font-medium text-slate-900 mb-4">{t('security-compliance-title')}</h4>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <CheckCircle className="text-blue-700 h-6 w-6" />
+                  </div>
+                  <h5 className="font-medium text-slate-900 mb-2">{t('security-tier-title')}</h5>
+                  <p className="text-sm text-slate-600">{t('security-tier-description')}</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <Shield className="text-emerald-700 h-6 w-6" />
+                  </div>
+                  <h5 className="font-medium text-slate-900 mb-2">{t('security-iso-title')}</h5>
+                  <p className="text-sm text-slate-600">{t('security-iso-description')}</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <Lock className="text-amber-700 h-6 w-6" />
+                  </div>
+                  <h5 className="font-medium text-slate-900 mb-2">{t('security-cyber-title')}</h5>
+                  <p className="text-sm text-slate-600">{t('security-cyber-description')}</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center mt-8">
               <p className="text-lg text-slate-600 font-medium">
                 {t('security-blockchain-conclusion')}
               </p>
