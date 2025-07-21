@@ -59,7 +59,11 @@ export function HeroSection() {
                 <span className="block font-normal text-emerald-400">{t('hero-title3')}</span>
               </h1>
               
-              <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-light max-w-4xl mx-auto leading-relaxed px-4">
+              <p className="text-xl sm:text-2xl text-emerald-400 font-medium mb-4">
+                {t('hero-tagline')}
+              </p>
+              
+              <p className="text-lg sm:text-xl text-slate-300 font-light max-w-4xl mx-auto leading-relaxed px-4">
                 {t('hero-subtitle')}
               </p>
             </div>

@@ -13,6 +13,7 @@ export const translations = {
     'hero-title1': 'Digitalizzazione.',
     'hero-title2': 'Responsabilità.',
     'hero-title3': 'Clima.',
+    'hero-tagline': 'Insieme costruiamo il futuro.',
     'hero-subtitle': 'Piattaforma di Trasformazione Agricola - Connetti produttori, PMI, cooperative e comunità attraverso la sostenibilità',
     'hero-description': 'FAGRI.Digital è la piattaforma digitale del movimento agricolo italiano FAGRI – fondata su oltre 30 anni di esperienza e sostenuta da una solida rete internazionale. Con più di 110.000 membri e quasi 80.000 imprese solo in Italia, collaboriamo con partner in Europa, America Latina, Africa e altri continenti per costruire un\'agricoltura sostenibile e digitalmente integrata.',
     'hero-cta1': 'Scopri EUFD2025-001',
