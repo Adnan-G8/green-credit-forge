@@ -1,5 +1,5 @@
 import { useLanguage } from './language-provider';
-import { Shield, Award, Leaf, Globe2, Users, Building2, CheckCircle } from 'lucide-react';
+import { Shield, Award, Leaf, Globe2, Globe, Users, Building2, Building, CheckCircle } from 'lucide-react';
 import { Link } from 'wouter';
 import grainImage from '@assets/image_1752936515114.png';
 
@@ -207,19 +207,31 @@ export function StandardSection() {
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Award className="text-amber-700 h-6 w-6" />
+                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Building className="text-orange-700 h-6 w-6" />
                     </div>
                     <div>
-                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-iso-uni-title')}</h5>
-                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-iso-uni-desc')}</p>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-gse-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-gse-desc')}</p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* Second Row: 2 partners centered */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {/* Second Row: 3 partners */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Globe className="text-slate-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-non-eu-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-non-eu-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                
                 <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -232,6 +244,21 @@ export function StandardSection() {
                   </div>
                 </div>
                 
+                <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Award className="text-amber-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h5 className="font-medium text-slate-900 mb-2">{t('partners-iso-uni-title')}</h5>
+                      <p className="text-slate-600 text-sm leading-relaxed">{t('partners-iso-uni-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Third Row: Universities centered */}
+              <div className="grid grid-cols-1 max-w-md mx-auto">
                 <div className="bg-white rounded-lg p-6 border border-slate-200 hover:shadow-md transition-shadow">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
