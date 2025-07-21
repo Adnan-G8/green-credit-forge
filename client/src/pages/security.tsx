@@ -134,23 +134,23 @@ export default function Security() {
                   <Mountain className="text-amber-700 h-8 w-8" />
                 </div>
                 <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                  Alpine Data Centers
+                  {t('security-alpine-datacenters-title')}
                 </h3>
                 <p className="text-slate-600 mb-6">
-                  Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from both environmental and human threats.
+                  {t('security-alpine-datacenters-description')}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">EMP-resistant military bunkers</span>
+                    <span className="text-slate-700">{t('security-alpine-datacenters-point1')}</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Autonomous power and cooling systems</span>
+                    <span className="text-slate-700">{t('security-alpine-datacenters-point2')}</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Multi-ton security doors with biometric access</span>
+                    <span className="text-slate-700">{t('security-alpine-datacenters-point3')}</span>
                   </div>
                 </div>
               </div>
@@ -186,7 +186,7 @@ export default function Security() {
                   <div className="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Shield className="text-red-700 h-8 w-8" />
                   </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">Military Standards</h4>
+                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-military-standards-title')}</h4>
                   <p className="text-slate-700 text-sm leading-relaxed">
                     {t('security-physical-point1')}
                   </p>
@@ -196,7 +196,7 @@ export default function Security() {
                   <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Server className="text-blue-700 h-8 w-8" />
                   </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">Autonomous Operations</h4>
+                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-autonomous-operations-title')}</h4>
                   <p className="text-slate-700 text-sm leading-relaxed">
                     {t('security-physical-point2')}
                   </p>
@@ -206,7 +206,7 @@ export default function Security() {
                   <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Eye className="text-emerald-700 h-8 w-8" />
                   </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">Access Control</h4>
+                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-access-control-title')}</h4>
                   <p className="text-slate-700 text-sm leading-relaxed">
                     {t('security-physical-point3')}
                   </p>
@@ -216,9 +216,9 @@ export default function Security() {
                   <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Mountain className="text-purple-700 h-8 w-8" />
                   </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">Disaster Recovery</h4>
+                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-disaster-recovery-title')}</h4>
                   <p className="text-slate-700 text-sm leading-relaxed">
-                    Dedicated Alpine recovery site with triple backup systems across geographically dispersed Swiss locations.
+                    {t('security-disaster-recovery-description')}
                   </p>
                 </div>
               </div>
@@ -272,7 +272,7 @@ export default function Security() {
                   <Mountain className="text-emerald-700 h-8 sm:h-10 w-8 sm:w-10" />
                 </div>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 mb-4 sm:mb-6 px-2">
-                  Alpine Security Meets Global Blockchain Governance
+                  {t('security-alpine-blockchain-title')}
                 </h3>
                 <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 px-4">
                   <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">

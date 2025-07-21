@@ -192,6 +192,23 @@ export const translations = {
     'security-digital-fingerprint-description': 'Per un ecosistema di fiducia e rispetto, ogni utente e membro attivo sulla piattaforma deve fornire la propria impronta digitale obbligatoria. Questo garantisce responsabilità, trasparenza e un ambiente sicuro per tutti i partecipanti.',
     'security-digital-fingerprint-kyc': 'deve sottoporsi a un processo KYC per creare la propria impronta digitale. Dopo l\'emissione dell\'Impronta Digitale, i Dati e tutte le altre informazioni sono altamente crittografate su una struttura server separata per proteggerle da ogni e qualsiasi abuso. Tutte queste informazioni sono utilizzate solo per elaborazioni legali e normative e nient\'altro e non sono condivise con nessun\'altra organizzazione.',
     
+    // Alpine Data Centers (Italian)
+    'security-alpine-datacenters-title': 'Data Center Alpini',
+    'security-alpine-datacenters-description': 'I nostri data center primari sono strategicamente situati in ex bunker militari svizzeri nelle profondità delle Alpi, offrendo una sicurezza fisica senza pari e protezione naturale da minacce ambientali e umane.',
+    'security-alpine-datacenters-point1': 'Bunker militari resistenti agli impulsi elettromagnetici',
+    'security-alpine-datacenters-point2': 'Sistemi autonomi di alimentazione e raffreddamento',
+    'security-alpine-datacenters-point3': 'Porte di sicurezza multi-tonnellata con accesso biometrico',
+    
+    // Physical Security Pillars (Italian)
+    'security-military-standards-title': 'Standard Militari',
+    'security-autonomous-operations-title': 'Operazioni Autonome',
+    'security-access-control-title': 'Controllo Accessi',
+    'security-disaster-recovery-title': 'Disaster Recovery',
+    'security-disaster-recovery-description': 'Sito di recupero alpino dedicato con sistemi di backup triplo distribuiti geograficamente in località svizzere.',
+    
+    // Alpine Blockchain Section (Italian)
+    'security-alpine-blockchain-title': 'Sicurezza Alpina Incontra la Governance Blockchain Globale',
+    
     // Agricultural Trust Visual Section (Italian)
     'security-agricultural-trust-title': 'Proteggendo il Futuro dell\'Agricoltura',
     'security-agricultural-trust-subtitle': 'Ogni campo, ogni raccolta, ogni dato agricolo è protetto con la massima sicurezza digitale per le generazioni future.',
@@ -770,6 +787,23 @@ export const translations = {
     'security-digital-fingerprint-title': 'Obligatory Digital Fingerprint for Every User and Active Member',
     'security-digital-fingerprint-description': 'For an ecosystem of trust and respect, every user and active member on the platform must provide their obligatory digital fingerprint. This ensures accountability, transparency, and a secure environment for all participants.',
     'security-digital-fingerprint-kyc': 'has to go through a KYC process in order to create its digital fingerprint. After the Digital Fingerprint is issued the Data and all other informations are highly encrypted on a seperate server structurte to protect it against every and all misues. All this information are only used for legal and regulation processing and nothing else and not shared with any other organisation.',
+    
+    // Alpine Data Centers (English)
+    'security-alpine-datacenters-title': 'Alpine Data Centers',
+    'security-alpine-datacenters-description': 'Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from both environmental and human threats.',
+    'security-alpine-datacenters-point1': 'EMP-resistant military bunkers',
+    'security-alpine-datacenters-point2': 'Autonomous power and cooling systems',
+    'security-alpine-datacenters-point3': 'Multi-ton security doors with biometric access',
+    
+    // Physical Security Pillars (English)
+    'security-military-standards-title': 'Military Standards',
+    'security-autonomous-operations-title': 'Autonomous Operations',
+    'security-access-control-title': 'Access Control',
+    'security-disaster-recovery-title': 'Disaster Recovery',
+    'security-disaster-recovery-description': 'Dedicated Alpine recovery site with triple backup systems across geographically dispersed Swiss locations.',
+    
+    // Alpine Blockchain Section (English)
+    'security-alpine-blockchain-title': 'Alpine Security Meets Global Blockchain Governance',
     
     // Agricultural Trust Visual Section (English)
     'security-agricultural-trust-title': 'Protecting Agriculture\'s Future',
