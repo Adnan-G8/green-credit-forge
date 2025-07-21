@@ -102,20 +102,20 @@ export function PlatformSection() {
               </div>
               <div>
                 <h3 className="text-2xl font-medium text-slate-900 mb-6">
-                  {t('platform-goal-title')}
+                  {t('platform-impact-title')}
                 </h3>
                 <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                  {t('platform-goal')}
+                  {t('platform-impact-description')}
                 </p>
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="grid grid-cols-2 gap-6 text-center">
                     <div>
-                      <h4 className="text-2xl font-semibold text-emerald-700 mb-1">95%</h4>
-                      <p className="text-slate-600 text-sm">{t('platform-accuracy')}</p>
+                      <h4 className="text-2xl font-semibold text-emerald-700 mb-1">EUFD</h4>
+                      <p className="text-slate-600 text-sm">{t('platform-impact-eufd')}</p>
                     </div>
                     <div>
-                      <h4 className="text-2xl font-semibold text-blue-700 mb-1">24/7</h4>
-                      <p className="text-slate-600 text-sm">{t('platform-monitoring')}</p>
+                      <h4 className="text-2xl font-semibold text-blue-700 mb-1">ISO</h4>
+                      <p className="text-slate-600 text-sm">{t('platform-impact-iso')}</p>
                     </div>
                   </div>
                 </div>
