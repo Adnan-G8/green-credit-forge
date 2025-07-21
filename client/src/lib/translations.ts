@@ -190,6 +190,7 @@ export const translations = {
     // Digital Fingerprint Section (Italian)
     'security-digital-fingerprint-title': 'Impronta Digitale Obbligatoria per Ogni Utente e Membro Attivo',
     'security-digital-fingerprint-description': 'Per un ecosistema di fiducia e rispetto, ogni utente e membro attivo sulla piattaforma deve fornire la propria impronta digitale obbligatoria. Questo garantisce responsabilità, trasparenza e un ambiente sicuro per tutti i partecipanti.',
+    'security-digital-fingerprint-kyc': 'deve sottoporsi a un processo KYC per creare la propria impronta digitale. Dopo l\'emissione dell\'Impronta Digitale, i Dati e tutte le altre informazioni sono altamente crittografate su una struttura server separata per proteggerle da ogni e qualsiasi abuso. Tutte queste informazioni sono utilizzate solo per elaborazioni legali e normative e nient\'altro e non sono condivise con nessun\'altra organizzazione.',
     
     // Agricultural Trust Visual Section (Italian)
     'security-agricultural-trust-title': 'Proteggendo il Futuro dell\'Agricoltura',
@@ -768,6 +769,7 @@ export const translations = {
     // Digital Fingerprint Section (English)
     'security-digital-fingerprint-title': 'Obligatory Digital Fingerprint for Every User and Active Member',
     'security-digital-fingerprint-description': 'For an ecosystem of trust and respect, every user and active member on the platform must provide their obligatory digital fingerprint. This ensures accountability, transparency, and a secure environment for all participants.',
+    'security-digital-fingerprint-kyc': 'has to go through a KYC process in order to create its digital fingerprint. After the Digital Fingerprint is issued the Data and all other informations are highly encrypted on a seperate server structurte to protect it against every and all misues. All this information are only used for legal and regulation processing and nothing else and not shared with any other organisation.',
     
     // Agricultural Trust Visual Section (English)
     'security-agricultural-trust-title': 'Protecting Agriculture\'s Future',

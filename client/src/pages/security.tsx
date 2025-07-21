@@ -95,7 +95,7 @@ export default function Security() {
                   </p>
                   <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                     <p className="text-slate-700 text-sm leading-relaxed">
-                      has to go through a KYC process in order to create its digital fingerprint. After the Digital Fingerprint is issued the Data and all other informations are highly encrypted on a seperate server structurte to protect it against every and all misues. All this information are only used for legal and regulation processing and nothing else and not shared with any other organisation.
+                      {t('security-digital-fingerprint-kyc')}
                     </p>
                   </div>
                 </div>
