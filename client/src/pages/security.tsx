@@ -32,10 +32,10 @@ export default function Security() {
             {/* Security Overview */}
             <div className="text-center mb-16">
               <h2 className="text-4xl font-light text-slate-900 mb-6">
-                {t('security-alpine-blockchain-title')}
+                {t('security-page-overview-title')}
               </h2>
               <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                {t('security-alpine-blockchain-subtitle')}
+                {t('security-page-overview-subtitle')}
               </p>
             </div>
 
@@ -228,12 +228,20 @@ export default function Security() {
                 <div className="w-20 h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-6">
                   <Mountain className="text-emerald-700 h-10 w-10" />
                 </div>
-                <h3 className="text-3xl font-medium text-slate-900 mb-4">
-                  {t('security-alpine-blockchain-title')}
+                <h3 className="text-3xl font-medium text-slate-900 mb-6">
+                  Alpine Security Meets Global Blockchain Governance
                 </h3>
-                <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                  {t('security-alpine-blockchain-subtitle')}
-                </p>
+                <div className="max-w-4xl mx-auto space-y-6">
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    {t('security-alpine-p1')}
+                  </p>
+                  <p className="text-lg text-slate-600 leading-relaxed">
+                    {t('security-alpine-p2')}
+                  </p>
+                  <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                    {t('security-alpine-p3')}
+                  </p>
+                </div>
               </div>
               
               <div className="grid md:grid-cols-3 gap-8 mb-12">

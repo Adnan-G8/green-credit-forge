@@ -174,12 +174,12 @@ export const translations = {
     'eufd-iso-14064-3-title': 'ISO 14064-3',
     'eufd-iso-14064-3-description': 'Verifica e validazione delle asserzioni sui gas serra. Fornisce requisiti per verificare inventari GHG organizzativi o di progetto.',
     
-    // Security Page - Alpine Blockchain Section (Italian)
-    'security-alpine-blockchain-title': 'Sicurezza Alpina Incontra la Governance Blockchain Globale',
-    'security-alpine-blockchain-subtitle': 'Per la prima volta, i validatori blockchain sono gestiti congiuntamente da istituzioni, organizzazioni sociali e partner di più paesi — tutti con pari diritti e responsabilità condivise. Ospitati in data center di montagna svizzeri con sicurezza di livello bancario, la nostra blockchain a 51 nodi garantisce integrità, resilienza e sovranità dei dati.',
-    'security-alpine-innovation-title': 'Data Center Alpini Incontrano l\'Innovazione Blockchain',
-    'security-alpine-innovation-description': 'I nostri data center di montagna svizzeri forniscono le fondamenta di sicurezza fisica, mentre la nostra rete blockchain a 51 nodi garantisce integrità crittografica. Questa combinazione crea un livello di protezione senza precedenti per i tuoi dati agricoli, con gli stessi standard di sicurezza utilizzati dalle banche e istituzioni governative svizzere.',
-    'security-swiss-guarantee': 'Garanzia di Sicurezza Svizzera',
+    // Security Page - Alpine Blockchain Section (Italian) - SIMPLIFIED
+    'security-page-overview-title': 'Panoramica Sicurezza',
+    'security-page-overview-subtitle': 'La nostra architettura di sicurezza a più livelli garantisce la massima protezione per i tuoi dati agricoli.',
+    'security-alpine-p1': 'Per la prima volta, i validatori blockchain sono gestiti congiuntamente da istituzioni, organizzazioni sociali e partner di più paesi — tutti con pari diritti e responsabilità condivise.',
+    'security-alpine-p2': 'Ospitati in data center di montagna svizzeri con sicurezza di livello bancario, la nostra blockchain a 51 nodi garantisce integrità, resilienza e sovranità dei dati.',
+    'security-alpine-p3': 'FAGRI.Digital combina protezione fisica con governance decentralizzata, creando un\'infrastruttura trasparente e affidabile per la certificazione CO₂ e i dati agricoli per il mondo di domani.',
     'security-blockchain-architecture-title': 'Architettura Blockchain DPoS Compatibile EVM',
     'security-blockchain-architecture-description': 'La nostra piattaforma opera su un\'infrastruttura blockchain decentralizzata con 51 nodi validatori, creando una rete di fiducia impenetrabile attraverso la partecipazione sociale e aziendale diversificata.',
     'security-blockchain-nodes-title': '51 Nodi Validatori',
@@ -737,12 +737,12 @@ export const translations = {
     'eufd-iso-14064-3-title': 'ISO 14064-3',
     'eufd-iso-14064-3-description': 'Verification and validation of greenhouse gas assertions. Provides requirements for verifying organizational or project GHG inventories.',
     
-    // Security Page - Alpine Blockchain Section (English)
-    'security-alpine-blockchain-title': 'Alpine Security Meets Global Blockchain Governance',
-    'security-alpine-blockchain-subtitle': 'For the first time, blockchain validators are jointly operated by institutions, social organizations, and partners from multiple countries — all with equal rights and shared responsibilities. Housed in Swiss mountain data centers with bank-level security, our 51-node blockchain ensures data integrity, resilience, and sovereignty.',
-    'security-alpine-innovation-title': 'Alpine Data Centers Meet Blockchain Innovation',
-    'security-alpine-innovation-description': 'Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.',
-    'security-swiss-guarantee': 'Swiss Security Guarantee',
+    // Security Page - Alpine Blockchain Section (English) - SIMPLIFIED
+    'security-page-overview-title': 'Security Overview',
+    'security-page-overview-subtitle': 'Our multi-layered security architecture ensures maximum protection for your agricultural data.',
+    'security-alpine-p1': 'For the first time, blockchain validators are jointly operated by institutions, social organizations, and partners from multiple countries — all with equal rights and shared responsibilities.',
+    'security-alpine-p2': 'Housed in Swiss mountain data centers with bank-level security, our 51-node blockchain ensures data integrity, resilience, and sovereignty.',
+    'security-alpine-p3': 'FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and trustworthy infrastructure for CO₂ certification and agricultural data for the world of tomorrow.',
     'security-blockchain-architecture-title': 'EVM-Compatible DPoS Blockchain Architecture',
     'security-blockchain-architecture-description': 'Our platform operates on a decentralized blockchain infrastructure with 51 validator nodes, creating an unbreachable network of trust through diversified social and corporate participation.',
     'security-blockchain-nodes-title': '51 Validator Nodes',
