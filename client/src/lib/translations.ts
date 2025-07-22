@@ -431,6 +431,11 @@ export const translations = {
     'stat2': 'Imprese Coinvolte',
     'stat3': 'anni di Esperienza',
     
+    // Hero Ecosystem Trust Indicators
+    'hero-ecosystem-3fa': '3FA Protetto',
+    'hero-ecosystem-privacy': 'Privacy Swiss Level',
+    'hero-ecosystem-blockchain': 'Blockchain Immutabile',
+    
     // Contact
     'contact-title': 'Contatti',
     'contact-subtitle': 'Desideri ricevere maggiori informazioni su FAGRI.Digital? Hai in programma un progetto o desideri entrare a far parte della nostra rete?',
@@ -1001,6 +1006,11 @@ export const translations = {
     'contact-legal-office': 'Legal Office',
     'contact-general-description': 'For platform information and collaborations',
     'contact-membership-info': 'To join the Italian Agricultural Supply Chain',
+    
+    // Hero Ecosystem Trust Indicators  
+    'hero-ecosystem-3fa': '3FA Protected',
+    'hero-ecosystem-privacy': 'Swiss Privacy Level',
+    'hero-ecosystem-blockchain': 'Immutable Blockchain',
     
     // Forms
     'form-name': 'Name',

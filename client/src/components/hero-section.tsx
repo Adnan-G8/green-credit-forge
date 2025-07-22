@@ -128,19 +128,19 @@ export function HeroSection() {
               </button>
             </div>
             
-            {/* Professional Trust Indicators */}
+            {/* State-of-the-Art Ecosystem Indicators */}
             <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 pt-6 sm:pt-8 border-t border-white/10 px-4">
               <div className="flex items-center space-x-2 sm:space-x-3 text-slate-400">
                 <Shield className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6 text-emerald-400" />
-                <span className="text-xs sm:text-sm font-medium">ISO 14064 Certified</span>
+                <span className="text-xs sm:text-sm font-medium">{t('hero-ecosystem-3fa')}</span>
               </div>
               <div className="flex items-center space-x-2 sm:space-x-3 text-slate-400">
                 <Globe className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6 text-blue-400" />
-                <span className="text-xs sm:text-sm font-medium">Swiss Partnership</span>
+                <span className="text-xs sm:text-sm font-medium">{t('hero-ecosystem-privacy')}</span>
               </div>
               <div className="flex items-center space-x-2 sm:space-x-3 text-slate-400">
                 <Leaf className="h-4 sm:h-5 md:h-6 w-4 sm:w-5 md:w-6 text-green-400" />
-                <span className="text-xs sm:text-sm font-medium">EU Standards Compliant</span>
+                <span className="text-xs sm:text-sm font-medium">{t('hero-ecosystem-blockchain')}</span>
               </div>
             </div>
           </div>
