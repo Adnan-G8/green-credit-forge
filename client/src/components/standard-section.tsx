@@ -99,10 +99,10 @@ export function StandardSection() {
                 <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-lg p-3 sm:p-4">
                     <h4 className="text-base sm:text-lg font-semibold text-slate-900 mb-1 sm:mb-2">
-                      {t('standard-excellence-title')}
+                      {t('standard-blockchain-title')}
                     </h4>
                     <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-2 sm:mb-3">
-                      {t('standard-excellence-description')}
+                      {t('standard-blockchain-description')}
                     </p>
                     <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-1 sm:space-y-0 text-xs">
                       <div className="flex items-center space-x-1">
