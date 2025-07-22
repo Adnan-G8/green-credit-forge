@@ -275,8 +275,8 @@ export const translations = {
     'partners-iso-uni-desc': 'Adozione di standard tecnici internazionali e italiani',
     'partners-suolo-title': 'SUOLO E SALUTE',
     'partners-suolo-desc': 'Organismo di certificazione indipendente e accreditato',
-    'partners-universities-title': 'Università Italiane',
-    'partners-universities-desc': 'Collaborazione per ricerca e sviluppo scientifico',
+    'partners-universities-title': 'Università degli Studi di Viterbo La Tuscia',
+    'partners-universities-desc': 'Partnership scientifica per ricerca e validazione delle metodologie di certificazione EUFD2025-001',
     'partners-learn-more': 'Scopri di Più sui Partner',
     'back-to-home': 'Torna alla Home',
     
@@ -871,8 +871,8 @@ export const translations = {
     'partners-iso-uni-desc': 'Adoption of international and Italian technical standards',
     'partners-suolo-title': 'SUOLO E SALUTE',
     'partners-suolo-desc': 'Independent and accredited certification body',
-    'partners-universities-title': 'Italian Universities',
-    'partners-universities-desc': 'Collaboration for scientific research and development',
+    'partners-universities-title': 'Università degli Studi di Viterbo La Tuscia',
+    'partners-universities-desc': 'Scientific partnership for research and validation of EUFD2025-001 certification methodologies',
     'partners-learn-more': 'Learn More About Partners',
     'back-to-home': 'Back to Home',
     
