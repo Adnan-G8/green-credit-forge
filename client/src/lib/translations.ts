@@ -83,8 +83,8 @@ export const translations = {
     
     // Standard section details
     'standard-certifications-title': 'Standard di Certificazione',
-    'standard-iso-title': 'Certificazione ISO 14064',
-    'standard-iso-description': 'Standard internazionale per la quantificazione e reporting delle emissioni di gas serra',
+    'standard-iso-title': 'Certificazione ISO 14064-1, 14064-2, 14064-3',
+    'standard-iso-description': 'Standard internazionali completi per la quantificazione e reporting delle emissioni di gas serra',
     'standard-eufd-title': 'Standard EUFD2025-001',
     'standard-eufd-description': 'Metodologia proprietaria per la certificazione di crediti di carbonio agricoli',
     'standard-sustainability-title': 'Sostenibilità Verificata',
@@ -147,13 +147,13 @@ export const translations = {
     'platform-impact-title': 'Impatto Certificazione CO₂',
     'platform-impact-description': 'Il nostro standard EUFD2025-001 consente alle imprese agricole di dimostrare un impatto climatico misurabile accedendo a opportunità di finanza sostenibile.',
     'platform-impact-eufd': 'Conformità Standard UE',
-    'platform-impact-iso': 'Certificazione 14064-1,2,3',
+    'platform-impact-iso': 'Certificazione ISO 14064-1, 14064-2, 14064-3',
     
     // EU Standards Focus  
     'platform-eu-standards-title': 'Standard UE per Certificazione CO₂',
     'platform-eu-standards-description': 'Conformità completa agli standard europei: EU ETS (Sistema di Scambio Emissioni), preparazione per CBAM 2026 (Carbon Border Adjustment Mechanism), e integrazione con registri europei per il commercio internazionale di crediti carbonio.',
     'platform-blockchain-mandate': 'Integrazione Blockchain Obbligatoria',
-    'platform-blockchain-description': 'EUFD2025-001 rende obbligatorio l\'uso della tecnologia blockchain per l\'emissione e registrazione di crediti di carbonio certificati, garantendo tracciabilità, trasparenza e immutabilità. Questo si allinea con il Regolamento UE 3012/2024 e gli standard ISO 14064-1, 2 e 3.',
+    'platform-blockchain-description': 'EUFD2025-001 rende obbligatorio l\'uso della tecnologia blockchain per l\'emissione e registrazione di crediti di carbonio certificati, garantendo tracciabilità, trasparenza e immutabilità. Questo si allinea con il Regolamento UE 3012/2024 e gli standard ISO 14064-1, 14064-2 e 14064-3.',
     
     // EUFD Regulatory Framework
     'eufd-blockchain-mandate-title': 'Integrazione Blockchain Obbligatoria',
@@ -661,8 +661,8 @@ export const translations = {
     
     // Standard section details
     'standard-certifications-title': 'Certification Standards',
-    'standard-iso-title': 'ISO 14064 Certification',
-    'standard-iso-description': 'International standard for quantification and reporting of greenhouse gas emissions',
+    'standard-iso-title': 'ISO 14064-1, 14064-2, 14064-3 Certification',
+    'standard-iso-description': 'Complete international standards for quantification and reporting of greenhouse gas emissions',
     'standard-eufd-title': 'EUFD2025-001 Standard',
     'standard-eufd-description': 'Proprietary methodology for agricultural carbon credit certification',
     'standard-sustainability-title': 'Verified Sustainability',
@@ -743,13 +743,13 @@ export const translations = {
     'platform-impact-title': 'CO₂ Certification Impact',
     'platform-impact-description': 'Our EUFD2025-001 standard enables agricultural enterprises to demonstrate measurable climate impact while accessing sustainable finance opportunities.',
     'platform-impact-eufd': 'EU Standard Compliance',
-    'platform-impact-iso': '14064-1,2,3 Certification',
+    'platform-impact-iso': 'ISO 14064-1, 14064-2, 14064-3 Certification',
     
     // EU Standards Focus
     'platform-eu-standards-title': 'EU Standards for CO₂ Certification',
     'platform-eu-standards-description': 'Full compliance with European standards: EU ETS (Emissions Trading System), preparation for CBAM 2026 (Carbon Border Adjustment Mechanism), and integration with European registries for international carbon credit trading.',
     'platform-blockchain-mandate': 'Mandatory Blockchain Integration',
-    'platform-blockchain-description': 'EUFD2025-001 mandates blockchain technology for issuing and registering certified carbon credits, ensuring traceability, transparency, and immutability. This aligns with EU Regulation 3012/2024 and ISO 14064-1, 2, and 3 standards.',
+    'platform-blockchain-description': 'EUFD2025-001 mandates blockchain technology for issuing and registering certified carbon credits, ensuring traceability, transparency, and immutability. This aligns with EU Regulation 3012/2024 and ISO 14064-1, 14064-2, and 14064-3 standards.',
     
     // EUFD Regulatory Framework
     'eufd-blockchain-mandate-title': 'Mandatory Blockchain Integration',
