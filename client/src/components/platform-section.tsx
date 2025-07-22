@@ -74,55 +74,63 @@ export function PlatformSection() {
             ))}
           </div>
 
-          {/* Trust and Compliance Section */}
-          <div className="bg-slate-50 rounded-xl p-10 border border-slate-200">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-2xl font-medium text-slate-900 mb-6">
-                  {t('platform-benefits-title')}
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">{t('platform-carbon-credits')}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">{t('platform-revenue-stream')}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">{t('platform-blockchain')}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">{t('platform-market-access')}</span>
-                  </div>
+          {/* Impact and Value Proposition */}
+          <div className="bg-gradient-to-br from-slate-50 to-white rounded-xl p-8 border border-slate-200">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-light text-slate-900 mb-4">
+                {t('platform-impact-title')}
+              </h3>
+              <p className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                {t('platform-impact-description')}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="text-emerald-700 h-8 w-8" />
                 </div>
+                <h4 className="text-lg font-medium text-slate-900 mb-2">{t('platform-carbon-credits')}</h4>
+                <p className="text-slate-600 text-sm">{t('platform-carbon-credits-desc')}</p>
               </div>
-              <div>
-                <h3 className="text-2xl font-medium text-slate-900 mb-6">
-                  {t('platform-impact-title')}
-                </h3>
-                <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                  {t('platform-impact-description')}
-                </p>
-                <div className="bg-white rounded-lg p-6 border border-slate-200 mb-6">
-                  <div className="grid grid-cols-2 gap-6 text-center">
-                    <div>
-                      <h4 className="text-2xl font-semibold text-emerald-700 mb-1">EUFD</h4>
-                      <p className="text-slate-600 text-sm">{t('platform-impact-eufd')}</p>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Database className="text-blue-700 h-8 w-8" />
+                </div>
+                <h4 className="text-lg font-medium text-slate-900 mb-2">{t('platform-revenue-stream')}</h4>
+                <p className="text-slate-600 text-sm">{t('platform-revenue-stream-desc')}</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="text-purple-700 h-8 w-8" />
+                </div>
+                <h4 className="text-lg font-medium text-slate-900 mb-2">{t('platform-market-access')}</h4>
+                <p className="text-slate-600 text-sm">{t('platform-market-access-desc')}</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-6 border border-slate-200">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h4 className="text-xl font-medium text-slate-900 mb-3">
+                    {t('platform-standards-title')}
+                  </h4>
+                  <div className="flex items-center space-x-6">
+                    <div className="text-center">
+                      <div className="text-2xl font-semibold text-emerald-700">EUFD</div>
+                      <div className="text-xs text-slate-600">{t('platform-impact-eufd')}</div>
                     </div>
-                    <div>
-                      <h4 className="text-2xl font-semibold text-blue-700 mb-1">ISO</h4>
-                      <p className="text-slate-600 text-sm">{t('platform-impact-iso')}</p>
+                    <div className="text-center">
+                      <div className="text-2xl font-semibold text-blue-700">ISO</div>
+                      <div className="text-xs text-slate-600">{t('platform-impact-iso')}</div>
                     </div>
                   </div>
                 </div>
-                
                 <div className="bg-blue-600 text-white rounded-lg p-4">
-                  <h4 className="font-medium mb-2">🇪🇺 {t('platform-eu-standards-title')}</h4>
-                  <p className="text-blue-100 text-sm">
+                  <h5 className="font-medium mb-2 flex items-center">
+                    🇪🇺 {t('platform-eu-standards-title')}
+                  </h5>
+                  <p className="text-blue-100 text-sm leading-relaxed">
                     {t('platform-eu-standards-description')}
                   </p>
                 </div>
