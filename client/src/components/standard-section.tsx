@@ -120,42 +120,45 @@ export function StandardSection() {
             </div>
           </div>
 
-          {/* Banking-Style Process Steps */}
-          <div className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-2xl p-4 sm:p-6 lg:p-8 border border-slate-200">
-            <h3 className="text-xl sm:text-2xl font-medium text-slate-900 mb-6 sm:mb-8 text-center">{t('standard-process-title')}</h3>
+          {/* Global Vision Section */}
+          <div className="bg-gradient-to-br from-emerald-50 via-blue-50 to-slate-50 rounded-2xl p-6 sm:p-8 lg:p-12 border border-slate-200">
+            <div className="text-center mb-8 sm:mb-12">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-slate-900 mb-4 sm:mb-6">
+                {t('standard-global-title')}
+              </h3>
+              <p className="text-lg sm:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
+                {t('standard-global-subtitle')}
+              </p>
+            </div>
             
             <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
-              <div className="relative">
-                <div className="flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 bg-emerald-700 text-white rounded-lg font-semibold text-base sm:text-lg mb-3 sm:mb-4">
-                  1
+              <div className="text-center bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Globe className="text-white h-8 w-8" />
                 </div>
-                <h4 className="text-base sm:text-lg font-medium text-slate-900 mb-2 sm:mb-3">{t('standard-step1-title')}</h4>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                  {t('standard-step1-description')}
+                <h4 className="text-lg font-medium text-slate-900 mb-3">{t('standard-global-feature1-title')}</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {t('standard-global-feature1-description')}
                 </p>
-                {/* Connection Line */}
-                <div className="hidden lg:block absolute top-6 left-12 w-full h-0.5 bg-slate-300 -z-10"></div>
               </div>
               
-              <div className="relative">
-                <div className="flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 bg-emerald-700 text-white rounded-lg font-semibold text-base sm:text-lg mb-3 sm:mb-4">
-                  2
+              <div className="text-center bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Shield className="text-white h-8 w-8" />
                 </div>
-                <h4 className="text-base sm:text-lg font-medium text-slate-900 mb-2 sm:mb-3">{t('standard-step2-title')}</h4>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                  {t('standard-step2-description')}
+                <h4 className="text-lg font-medium text-slate-900 mb-3">{t('standard-global-feature2-title')}</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {t('standard-global-feature2-description')}
                 </p>
-                {/* Connection Line */}
-                <div className="hidden lg:block absolute top-6 left-12 w-full h-0.5 bg-slate-300 -z-10"></div>
               </div>
               
-              <div>
-                <div className="flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 bg-emerald-700 text-white rounded-lg font-semibold text-base sm:text-lg mb-3 sm:mb-4">
-                  3
+              <div className="text-center bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/50">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Users className="text-white h-8 w-8" />
                 </div>
-                <h4 className="text-base sm:text-lg font-medium text-slate-900 mb-2 sm:mb-3">{t('standard-step3-title')}</h4>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                  {t('standard-step3-description')}
+                <h4 className="text-lg font-medium text-slate-900 mb-3">{t('standard-global-feature3-title')}</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {t('standard-global-feature3-description')}
                 </p>
               </div>
             </div>

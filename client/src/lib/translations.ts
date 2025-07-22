@@ -100,6 +100,14 @@ export const translations = {
     'standard-step2-description': 'Applicazione delle metodologie EUFD2025-001 con monitoraggio continuo e documentazione dettagliata delle pratiche sostenibili',
     'standard-step3-title': 'Certificazione',
     'standard-step3-description': 'Verifica indipendente da parte di enti accreditati e rilascio ufficiale dei crediti di carbonio certificati',
+    'standard-global-title': 'Il Nuovo Standard Europeo per un Ecosistema CO₂ Globale Trasparente e Equo',
+    'standard-global-subtitle': 'Aperto a tutti i paesi per partecipare alla costruzione di un futuro sostenibile basato su blockchain, trasparenza e giustizia climatica.',
+    'standard-global-feature1-title': 'Inclusione Globale',
+    'standard-global-feature1-description': 'Standard europeo progettato per accogliere la partecipazione di tutti i paesi nella lotta al cambiamento climatico',
+    'standard-global-feature2-title': 'Trasparenza Blockchain',
+    'standard-global-feature2-description': 'Tecnologia blockchain garantisce tracciabilità completa e prevenzione del double counting a livello mondiale',
+    'standard-global-feature3-title': 'Equità e Accessibilità',
+    'standard-global-feature3-description': 'Framework fair-trade per assicurare che i benefici raggiungano chi guida realmente la trasformazione sostenibile',
     
     // Partnerships
     'partnerships-title': 'Collaborazioni Istituzionali per Costruire Fiducia',
@@ -688,6 +696,14 @@ export const translations = {
     'standard-step2-description': 'Application of EUFD2025-001 methodologies with continuous monitoring and detailed documentation of sustainable practices',
     'standard-step3-title': 'Certification',
     'standard-step3-description': 'Independent verification by accredited bodies and official issuance of certified carbon credits',
+    'standard-global-title': 'The New European Standard for a Global Transparent and Fair CO₂ Ecosystem',
+    'standard-global-subtitle': 'Open to all countries to participate in building a sustainable future based on blockchain, transparency, and climate justice.',
+    'standard-global-feature1-title': 'Global Inclusion',
+    'standard-global-feature1-description': 'European standard designed to welcome participation from all countries in the fight against climate change',
+    'standard-global-feature2-title': 'Blockchain Transparency',
+    'standard-global-feature2-description': 'Blockchain technology ensures complete traceability and prevention of double counting worldwide',
+    'standard-global-feature3-title': 'Equity and Accessibility',
+    'standard-global-feature3-description': 'Fair-trade framework to ensure benefits reach those who truly drive sustainable transformation',
     
     // Partnerships
     'partnerships-title': 'Institutional Collaborations to Build Trust',
