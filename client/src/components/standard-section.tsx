@@ -71,15 +71,15 @@ export function StandardSection() {
                   </div>
                   
                   <div className="flex items-start space-x-3 sm:space-x-4">
-                    <div className="w-10 sm:w-12 h-10 sm:h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Leaf className="text-amber-700 h-5 sm:h-6 w-5 sm:w-6" />
+                    <div className="w-10 sm:w-12 h-10 sm:h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Building2 className="text-purple-700 h-5 sm:h-6 w-5 sm:w-6" />
                     </div>
                     <div>
                       <h4 className="font-medium text-slate-900 mb-1 sm:mb-2 text-sm sm:text-base">
-                        {t('standard-sustainability-title')}
+                        {t('standard-finma-title')}
                       </h4>
                       <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        {t('standard-sustainability-description')}
+                        {t('standard-finma-description')}
                       </p>
                     </div>
                   </div>
