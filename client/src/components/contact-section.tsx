@@ -113,7 +113,7 @@ export function ContactSection() {
                         <h4 className="font-semibold text-fagri-green mb-2">
                           {t('contact-general-title')}
                         </h4>
-                        <p className="text-gray-700 font-mono">info@fagri.digital</p>
+                        <p className="text-gray-700 font-mono">Contact@fagri.digital</p>
                         <p className="text-sm text-gray-600 mt-1">
                           {t('contact-general-description')}
                         </p>
@@ -127,7 +127,7 @@ export function ContactSection() {
                         <h4 className="font-semibold text-fagri-green mb-2">
                           {t('contact-membership-title')}
                         </h4>
-                        <p className="text-gray-700 font-mono">info@fagri.digital</p>
+                        <p className="text-gray-700 font-mono">Member@fagri.digital</p>
                         <p className="text-sm text-gray-600 mt-1">
                           {t('contact-membership-info')}
                         </p>

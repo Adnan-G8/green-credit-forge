@@ -75,8 +75,8 @@ export function Footer() {
                 <p>REA RM-1745329</p>
               </div>
               <div>
-                <a href="mailto:info@fagri.digital" className="hover:text-fagri-accent transition-colors">
-                  info@fagri.digital
+                <a href="mailto:Contact@fagri.digital" className="hover:text-fagri-accent transition-colors">
+                  Contact@fagri.digital
                 </a>
               </div>
             </div>

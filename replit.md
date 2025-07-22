@@ -45,6 +45,8 @@ Preferred communication style: Simple, everyday language.
 - **Complete Italian Translation Resolution**: Fixed all remaining hardcoded English text in security page sections including Alpine Data Centers, Physical Security Pillars, and Blockchain Governance
 - **Successful Domain Deployment**: Project successfully deployed and live at https://fagri.digital with full SSL certificate and domain verification complete
 - **Production Ready**: Website fully operational with complete bilingual functionality, mobile optimization, and professional banking-style design
+- **Email Contact Information Updated**: All contact email addresses across website corrected to official addresses: Contact@fagri.digital for general inquiries and Member@fagri.digital for membership applications (July 22, 2025)
+- **Complete ISO Standards Specification**: Updated all ISO references from "ISO 14064" to full specification "ISO 14064-1, 14064-2, 14064-3" across entire platform for regulatory compliance accuracy
 - **Comprehensive Swiss Data Security Integration**: Enhanced the Data Sovereignty & Access Control section with detailed Alpine fortress infrastructure, including:
   * **Military-Grade Physical Security**: Former Swiss military bunkers with EMP resistance, chemical/biological threat protection
   * **FINMA Banking Compliance**: Infrastructure meets Swiss Financial Market Supervisory Authority requirements (FINMA-RS 18/3)
