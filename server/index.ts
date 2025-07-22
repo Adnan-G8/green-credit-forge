@@ -7,15 +7,25 @@ const app = express();
 // Configure trust proxy and security headers to prevent Replit shield
 app.set('trust proxy', true);
 
-// Add domain-specific headers
+// Add domain-specific headers and force HTTPS
 app.use((req, res, next) => {
-  // Set security headers to prevent shield redirection
+  // Force HTTPS redirect for production domain
+  const host = req.get('Host');
+  const proto = req.get('X-Forwarded-Proto') || req.protocol;
+  
+  if (host === 'fagri.digital' && proto !== 'https') {
+    return res.redirect(301, `https://${host}${req.url}`);
+  }
+  
+  // Set comprehensive security headers
   res.setHeader('X-Replit-No-Shield', '1');
   res.setHeader('X-Frame-Options', 'SAMEORIGIN');
   res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   
   // Handle domain-specific routing
-  const host = req.get('Host');
   if (host === 'fagri.digital' || host === 'www.fagri.digital') {
     res.setHeader('X-Forwarded-Host', host);
   }
