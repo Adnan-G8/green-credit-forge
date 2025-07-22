@@ -4,6 +4,7 @@ build = ["npm", "run", "build"]
 run = ["npm", "run", "start"]
 publicDir = "."
 ignorePorts = false
+visibility = "public"
 
 [[ports]]
 localPort = 5000
