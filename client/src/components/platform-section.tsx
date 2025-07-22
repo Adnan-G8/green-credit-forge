@@ -79,16 +79,16 @@ export function PlatformSection() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-2xl font-medium text-slate-900 mb-6">
-                  {t('platform-compliance-title')}
+                  {t('platform-benefits-title')}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">{t('platform-iso-cert')}</span>
+                    <span className="text-slate-700">{t('platform-carbon-credits')}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">{t('platform-third-party')}</span>
+                    <span className="text-slate-700">{t('platform-revenue-stream')}</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
@@ -96,7 +96,7 @@ export function PlatformSection() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="text-emerald-600 h-5 w-5 flex-shrink-0" />
-                    <span className="text-slate-700">{t('platform-audits')}</span>
+                    <span className="text-slate-700">{t('platform-market-access')}</span>
                   </div>
                 </div>
               </div>

@@ -83,7 +83,7 @@ export const translations = {
     
     // Standard section details
     'standard-certifications-title': 'Standard di Certificazione',
-    'standard-iso-title': 'Certificazione ISO 14064-1, 14064-2, 14064-3',
+    'standard-iso-title': 'Certificazione ISO 14064-1/2/3',
     'standard-iso-description': 'Standard internazionali completi per la quantificazione e reporting delle emissioni di gas serra',
     'standard-eufd-title': 'Standard EUFD2025-001',
     'standard-eufd-description': 'Metodologia proprietaria per la certificazione di crediti di carbonio agricoli',
@@ -139,15 +139,16 @@ export const translations = {
     'platform-step-3-description': 'Utilizzo di sistemi di monitoraggio IoT e satellitare per tracciare in tempo reale i progressi ambientali.',
     'platform-step-4-title': 'Certificazione e Crediti',
     'platform-step-4-description': 'Verifica da parte di terzi e emissione di crediti di carbonio certificati pronti per il mercato.',
-    'platform-compliance-title': 'Compliance e Trasparenza',
-    'platform-iso-cert': 'Certificazione ISO 14064-2',
+    'platform-benefits-title': 'Vantaggi per le Aziende Agricole',
+    'platform-carbon-credits': 'Crediti di Carbonio Verificati',
     'platform-third-party': 'Verifica di terze parti accreditate',
     'platform-blockchain': 'Tracciabilità blockchain',
-    'platform-audits': 'Audit periodici obbligatori',
+    'platform-revenue-stream': 'Nuovi flussi di ricavi sostenibili',
+    'platform-market-access': 'Accesso diretto ai mercati del carbonio',
     'platform-impact-title': 'Impatto Certificazione CO₂',
     'platform-impact-description': 'Il nostro standard EUFD2025-001 consente alle imprese agricole di dimostrare un impatto climatico misurabile accedendo a opportunità di finanza sostenibile.',
     'platform-impact-eufd': 'Conformità Standard UE',
-    'platform-impact-iso': 'Certificazione ISO 14064-1, 14064-2, 14064-3',
+    'platform-impact-iso': 'Certificazione ISO 14064-1/2/3',
     
     // EU Standards Focus  
     'platform-eu-standards-title': 'Standard UE per Certificazione CO₂',
@@ -661,7 +662,7 @@ export const translations = {
     
     // Standard section details
     'standard-certifications-title': 'Certification Standards',
-    'standard-iso-title': 'ISO 14064-1, 14064-2, 14064-3 Certification',
+    'standard-iso-title': 'ISO 14064-1/2/3 Certification',
     'standard-iso-description': 'Complete international standards for quantification and reporting of greenhouse gas emissions',
     'standard-eufd-title': 'EUFD2025-001 Standard',
     'standard-eufd-description': 'Proprietary methodology for agricultural carbon credit certification',
@@ -735,15 +736,16 @@ export const translations = {
     'platform-step-3-description': 'Use of IoT and satellite monitoring systems to track environmental progress in real time.',
     'platform-step-4-title': 'Certification and Credits',
     'platform-step-4-description': 'Third-party verification and issuance of certified carbon credits ready for market.',
-    'platform-compliance-title': 'Compliance and Transparency',
-    'platform-iso-cert': 'ISO 14064-2 Certification',
+    'platform-benefits-title': 'Benefits for Agricultural Enterprises',
+    'platform-carbon-credits': 'Verified Carbon Credits',
     'platform-third-party': 'Accredited third-party verification',
     'platform-blockchain': 'Blockchain traceability',
-    'platform-audits': 'Mandatory periodic audits',
+    'platform-revenue-stream': 'New sustainable revenue streams',
+    'platform-market-access': 'Direct access to carbon markets',
     'platform-impact-title': 'CO₂ Certification Impact',
     'platform-impact-description': 'Our EUFD2025-001 standard enables agricultural enterprises to demonstrate measurable climate impact while accessing sustainable finance opportunities.',
     'platform-impact-eufd': 'EU Standard Compliance',
-    'platform-impact-iso': 'ISO 14064-1, 14064-2, 14064-3 Certification',
+    'platform-impact-iso': 'ISO 14064-1/2/3 Certification',
     
     // EU Standards Focus
     'platform-eu-standards-title': 'EU Standards for CO₂ Certification',
