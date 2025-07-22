@@ -5,6 +5,7 @@ import { Shield, Database, Lock, CheckCircle, Server, Globe, Eye, Key, Mountain,
 import dataCenter from '@assets/image_1753120952664.png';
 import agriculturalLandscape from '@assets/image_1753121514850.png';
 import italianGovernment from '@assets/image_1753122095811.png';
+import swissAlps from '@assets/image_1753202443401.png';
 
 export default function Security() {
   const { t } = useLanguage();
@@ -285,6 +286,16 @@ export default function Security() {
                     {t('security-alpine-p3')}
                   </p>
                 </div>
+              </div>
+
+              {/* Swiss Alps Visual Divider */}
+              <div className="relative mb-8 sm:mb-16 rounded-xl overflow-hidden">
+                <img 
+                  src={swissAlps} 
+                  alt="Swiss Alps representing the secure mountain data centers"
+                  className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
               </div>
 
               {/* 100% CO₂ Neutral Section */}
