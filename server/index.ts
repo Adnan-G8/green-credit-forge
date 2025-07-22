@@ -3,6 +3,26 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
+
+// Configure trust proxy and security headers to prevent Replit shield
+app.set('trust proxy', true);
+
+// Add domain-specific headers
+app.use((req, res, next) => {
+  // Set security headers to prevent shield redirection
+  res.setHeader('X-Replit-No-Shield', '1');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  
+  // Handle domain-specific routing
+  const host = req.get('Host');
+  if (host === 'fagri.digital' || host === 'www.fagri.digital') {
+    res.setHeader('X-Forwarded-Host', host);
+  }
+  
+  next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -67,5 +87,6 @@ app.use((req, res, next) => {
     reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
+    log(`Domain: fagri.digital configured and ready`);
   });
 })();
