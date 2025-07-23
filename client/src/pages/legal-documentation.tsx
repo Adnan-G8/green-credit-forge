@@ -9,12 +9,36 @@ export default function LegalDocumentationPage() {
   const [activeSection, setActiveSection] = useState('');
 
   const sections = [
-    { id: 'executive-summary', title: t('legal-doc-executive-summary'), icon: FileText },
-    { id: 'regulatory-framework', title: t('legal-doc-regulatory-framework'), icon: Globe },
-    { id: 'market-problems', title: t('legal-doc-market-problems'), icon: Shield },
-    { id: 'fagri-solution', title: t('legal-doc-fagri-solution'), icon: Zap },
-    { id: 'implementation', title: t('legal-doc-implementation'), icon: Building2 },
-    { id: 'technical-architecture', title: t('legal-doc-technical-architecture'), icon: Users },
+    { 
+      id: 'executive-summary', 
+      title: language === 'it' ? 'Riassunto Esecutivo' : 'Executive Summary', 
+      icon: FileText 
+    },
+    { 
+      id: 'regulatory-framework', 
+      title: language === 'it' ? 'Quadro Normativo Globale' : 'Global Regulatory Framework', 
+      icon: Globe 
+    },
+    { 
+      id: 'market-problems', 
+      title: language === 'it' ? 'Problemi di Mercato Attuali' : 'Current Market Problems', 
+      icon: Shield 
+    },
+    { 
+      id: 'fagri-solution', 
+      title: language === 'it' ? 'La Soluzione FAGRI.Digital' : 'FAGRI.Digital Solution', 
+      icon: Zap 
+    },
+    { 
+      id: 'implementation', 
+      title: language === 'it' ? 'Strategia di Implementazione' : 'Implementation Strategy', 
+      icon: Building2 
+    },
+    { 
+      id: 'technical-architecture', 
+      title: language === 'it' ? 'Architettura Tecnica' : 'Technical Architecture', 
+      icon: Users 
+    },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -38,10 +62,13 @@ export default function LegalDocumentationPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-light text-slate-900 mb-6">
-              {t('legal-doc-title')}
+              {language === 'it' ? 'Documentazione Legale' : 'Legal Documentation'}
             </h1>
             <p className="text-xl text-slate-600 mb-12 font-light">
-              {t('legal-doc-subtitle')}
+              {language === 'it' 
+                ? 'Guida completa alla nostra piattaforma di certificazione CO₂ basata su blockchain'
+                : 'Comprehensive guide to our blockchain-powered CO₂ certification platform'
+              }
             </p>
 
             {/* Navigation Grid */}
@@ -79,23 +106,39 @@ export default function LegalDocumentationPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-3 mb-8">
               <FileText className="h-6 w-6 text-emerald-700" />
-              <h2 className="text-3xl font-light text-slate-900">Executive Summary</h2>
+              <h2 className="text-3xl font-light text-slate-900">
+                {language === 'it' ? 'Riassunto Esecutivo' : 'Executive Summary'}
+              </h2>
             </div>
             
             <div className="prose prose-lg max-w-none">
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mb-8">
-                <h3 className="text-xl font-medium text-emerald-900 mb-4">Revolutionizing Carbon Markets for a Sustainable Future</h3>
+                <h3 className="text-xl font-medium text-emerald-900 mb-4">
+                  {language === 'it' 
+                    ? 'Rivoluzionare i Mercati del Carbonio per un Futuro Sostenibile'
+                    : 'Revolutionizing Carbon Markets for a Sustainable Future'
+                  }
+                </h3>
                 <p className="text-slate-700 leading-relaxed">
-                  The global effort to mitigate climate change critically relies on the efficacy of carbon markets. However, the current landscape is significantly hindered by systemic challenges, including the pervasive issues of double counting, the deceptive practice of greenwashing, and a fundamental lack of data integrity and transparency.
+                  {language === 'it' 
+                    ? 'Lo sforzo globale per mitigare il cambiamento climatico si basa criticamente sull\'efficacia dei mercati del carbonio. Tuttavia, il panorama attuale è significativamente ostacolato da sfide sistemiche, inclusi i problemi pervasivi del doppio conteggio, la pratica ingannevole del greenwashing e una fondamentale mancanza di integrità e trasparenza dei dati.'
+                    : 'The global effort to mitigate climate change critically relies on the efficacy of carbon markets. However, the current landscape is significantly hindered by systemic challenges, including the pervasive issues of double counting, the deceptive practice of greenwashing, and a fundamental lack of data integrity and transparency.'
+                  }
                 </p>
               </div>
 
               <p className="text-slate-600 leading-relaxed mb-6">
-                Fagri Digital is positioned to fundamentally transform this environment by strategically leveraging Distributed Ledger Technology (DLT), with a particular focus on our proprietary G8Chain, which is based on EVM-compatible blockchain technology. This technological foundation is designed to establish a new paradigm for CO₂ legislation compliance, enhanced traceability, and expanded market accessibility.
+                {language === 'it' 
+                  ? 'FAGRI.Digital è posizionata per trasformare fondamentalmente questo ambiente sfruttando strategicamente la Distributed Ledger Technology (DLT), con un focus particolare sulla nostra G8Chain proprietaria, basata su tecnologia blockchain EVM-compatibile. Questa fondazione tecnologica è progettata per stabilire un nuovo paradigma per la conformità legislativa CO₂, tracciabilità migliorata e accessibilità di mercato espansa.'
+                  : 'FAGRI.Digital is positioned to fundamentally transform this environment by strategically leveraging Distributed Ledger Technology (DLT), with a particular focus on our proprietary G8Chain, which is based on EVM-compatible blockchain technology. This technological foundation is designed to establish a new paradigm for CO₂ legislation compliance, enhanced traceability, and expanded market accessibility.'
+                }
               </p>
 
               <p className="text-slate-600 leading-relaxed mb-8">
-                The platform offers an immutable, verifiable, and transparent ecosystem for carbon credit management that addresses the core deficiencies plaguing current carbon markets.
+                {language === 'it' 
+                  ? 'La piattaforma offre un ecosistema immutabile, verificabile e trasparente per la gestione dei crediti di carbonio che affronta le carenze fondamentali che affliggono i mercati attuali del carbonio. Con un lancio meticolosamente pianificato iniziando dall\'Italia, progredendo attraverso l\'Europa e aspirando infine a stabilire uno standard globale unico, FAGRI.Digital è impegnata a democratizzare i mercati del carbonio.'
+                  : 'The platform offers an immutable, verifiable, and transparent ecosystem for carbon credit management that addresses the core deficiencies plaguing current carbon markets. With a meticulously planned rollout commencing in Italy, progressing across Europe, and ultimately aspiring to establish a unique global standard, FAGRI.Digital is committed to democratizing carbon markets.'
+                }
               </p>
             </div>
           </div>
@@ -108,7 +151,9 @@ export default function LegalDocumentationPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-3 mb-8">
               <Globe className="h-6 w-6 text-emerald-700" />
-              <h2 className="text-3xl font-light text-slate-900">Global Regulatory Framework</h2>
+              <h2 className="text-3xl font-light text-slate-900">
+                {language === 'it' ? 'Quadro Normativo Globale' : 'Global Regulatory Framework'}
+              </h2>
             </div>
 
             {/* International Frameworks */}
