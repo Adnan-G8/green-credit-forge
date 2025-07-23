@@ -21,9 +21,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="bg-gray-900 text-white py-20">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div>
             <div className="mb-6">
               <h3 className="text-xl font-bold font-sans">FAGRI</h3>
@@ -82,142 +82,122 @@ export function Footer() {
             </div>
           </div>
           
+          {/* Partners Section */}
           <div>
-            <h4 className="font-semibold mb-4">{t('footer-partners')}</h4>
+            <h4 className="text-lg font-semibold mb-8 text-white">{t('footer-partners')}</h4>
             
-            {/* Institutional & Government Partners */}
-            <div className="mb-4">
-              <h5 className="text-xs font-medium text-gray-300 mb-2 uppercase tracking-wide">Institutional Partners</h5>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <a 
-                    href="https://commission.europa.eu" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    European Commission
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.mase.gov.it" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    Italian Ministry of Environment
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.gse.it" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    GSE - Energy Services Manager
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.suoloesalute.it" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    SUOLO E SALUTE
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.iso.org" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    ISO / UNI Standards
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.unitus.it" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    Università La Tuscia
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-              </ul>
+            {/* Institutional Partners */}
+            <div className="mb-8">
+              <h5 className="text-sm font-medium text-emerald-400 mb-4 uppercase tracking-wider">Institutional Partners</h5>
+              <div className="grid gap-3">
+                <a 
+                  href="https://commission.europa.eu" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-emerald-400 transition-colors text-sm flex items-center justify-between group"
+                >
+                  European Commission
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="https://www.mase.gov.it" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-emerald-400 transition-colors text-sm flex items-center justify-between group"
+                >
+                  Italian Ministry of Environment
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="https://www.gse.it" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-emerald-400 transition-colors text-sm flex items-center justify-between group"
+                >
+                  GSE - Energy Services Manager
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="https://www.suoloesalute.it" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-emerald-400 transition-colors text-sm flex items-center justify-between group"
+                >
+                  SUOLO E SALUTE
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="https://www.iso.org" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-emerald-400 transition-colors text-sm flex items-center justify-between group"
+                >
+                  ISO / UNI Standards
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="https://www.unitus.it" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-emerald-400 transition-colors text-sm flex items-center justify-between group"
+                >
+                  Università La Tuscia
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
             </div>
 
             {/* Technology Partners */}
-            <div className="mb-4">
-              <h5 className="text-xs font-medium text-gray-300 mb-2 uppercase tracking-wide">Technology Partners</h5>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <a 
-                    href="https://alphag8.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    ALPHAG8 Digital Solutions
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://g8chain.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    G8Chain Blockchain
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-              </ul>
+            <div>
+              <h5 className="text-sm font-medium text-blue-400 mb-4 uppercase tracking-wider">Technology Partners</h5>
+              <div className="grid gap-3">
+                <a 
+                  href="https://alphag8.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-sm flex items-center justify-between group"
+                >
+                  ALPHAG8 Digital Solutions
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="https://g8chain.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-blue-400 transition-colors text-sm flex items-center justify-between group"
+                >
+                  G8Chain Blockchain
+                  <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
             </div>
-            
-            <h4 className="font-semibold mb-4 mt-6">{t('footer-legal')}</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>
-                <Link href="/privacy-policy">
-                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
-                    {t('footer-privacy')}
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms-of-service">
-                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
-                    {t('footer-terms')}
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/gdpr">
-                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
-                    {t('footer-gdpr')}
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookies">
-                  <span className="hover:text-fagri-accent transition-colors cursor-pointer">
-                    {t('footer-cookies')}
-                  </span>
-                </Link>
-              </li>
-            </ul>
+          </div>
+
+          {/* Legal Section */}
+          <div>
+            <h4 className="text-lg font-semibold mb-8 text-white">{t('footer-legal')}</h4>
+            <div className="grid gap-4">
+              <Link href="/privacy-policy">
+                <span className="text-gray-300 hover:text-emerald-400 transition-colors cursor-pointer text-sm block">
+                  {t('footer-privacy')}
+                </span>
+              </Link>
+              <Link href="/terms-of-service">
+                <span className="text-gray-300 hover:text-emerald-400 transition-colors cursor-pointer text-sm block">
+                  {t('footer-terms')}
+                </span>
+              </Link>
+              <Link href="/gdpr">
+                <span className="text-gray-300 hover:text-emerald-400 transition-colors cursor-pointer text-sm block">
+                  {t('footer-gdpr')}
+                </span>
+              </Link>
+              <Link href="/cookies">
+                <span className="text-gray-300 hover:text-emerald-400 transition-colors cursor-pointer text-sm block">
+                  {t('footer-cookies')}
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
         
