@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from './language-provider';
+import { useAuthentication } from '../hooks/use-authentication';
 import { FagriLogo } from '@/assets/fagri-logo';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, LogOut } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
 import { useLocation } from 'wouter';
 
 export function Navigation() {
   const { language, setLanguage, t } = useLanguage();
+  const { logout } = useAuthentication();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMembershipModal, setShowMembershipModal] = useState(false);
@@ -121,6 +123,15 @@ export function Navigation() {
                 </button>
               </div>
 
+              {/* Logout Button */}
+              <button
+                onClick={logout}
+                className="hidden md:flex items-center px-3 py-2 text-slate-600 hover:text-red-600 transition-colors duration-200"
+                title="Logout"
+              >
+                <LogOut className="h-5 w-5" />
+              </button>
+
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -171,6 +182,18 @@ export function Navigation() {
                   className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
                   {t('nav-contact')}
+                </button>
+                
+                {/* Mobile Logout */}
+                <button
+                  onClick={() => {
+                    logout();
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center text-slate-600 hover:text-red-600 transition-colors duration-300 text-left font-medium"
+                >
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Logout
                 </button>
               </div>
             </div>
