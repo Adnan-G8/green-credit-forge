@@ -85,6 +85,79 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">{t('footer-partners')}</h4>
             
+            {/* Institutional & Government Partners */}
+            <div className="mb-4">
+              <h5 className="text-xs font-medium text-gray-300 mb-2 uppercase tracking-wide">Institutional Partners</h5>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a 
+                    href="https://commission.europa.eu" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    European Commission
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.mase.gov.it" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    Italian Ministry of Environment
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.gse.it" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    GSE - Energy Services Manager
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.suoloesalute.it" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    SUOLO E SALUTE
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.iso.org" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    ISO / UNI Standards
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.unitus.it" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    Università La Tuscia
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
             {/* Technology Partners */}
             <div className="mb-4">
               <h5 className="text-xs font-medium text-gray-300 mb-2 uppercase tracking-wide">Technology Partners</h5>
@@ -108,57 +181,6 @@ export function Footer() {
                     className="hover:text-fagri-accent transition-colors flex items-center"
                   >
                     G8Chain Blockchain
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Institutional Partners */}
-            <div className="mb-4">
-              <h5 className="text-xs font-medium text-gray-300 mb-2 uppercase tracking-wide">Institutional Partners</h5>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <a 
-                    href="https://commission.europa.eu" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    European Commission
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.governo.it" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    Italian Government
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.gse.it" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    GSE - Gestore Servizi Energetici
-                    <ExternalLink className="ml-2 h-3 w-3" />
-                  </a>
-                </li>
-                <li>
-                  <a 
-                    href="https://www.iso.org" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-fagri-accent transition-colors flex items-center"
-                  >
-                    ISO International
                     <ExternalLink className="ml-2 h-3 w-3" />
                   </a>
                 </li>
