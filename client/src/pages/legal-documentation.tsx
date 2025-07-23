@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { ChevronRight, ArrowUp, FileText, Globe, Shield, Zap, Building2, Users, ExternalLink } from 'lucide-react';
 
 export default function LegalDocumentationPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeSection, setActiveSection] = useState('');
 
   const sections = [
@@ -265,85 +265,115 @@ export default function LegalDocumentationPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-3 mb-8">
               <Zap className="h-6 w-6 text-emerald-700" />
-              <h2 className="text-3xl font-light text-slate-900">La Soluzione FAGRI.Digital</h2>
+              <h2 className="text-3xl font-light text-slate-900">{t('legal-doc-fagri-solution')}</h2>
             </div>
 
             <div className="bg-white rounded-xl p-8 border border-slate-200 mb-8">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">FAGRI.Digital: Piattaforma Globale per la Certificazione CO₂</h3>
+              <h3 className="text-2xl font-light text-slate-900 mb-6">
+                FAGRI.Digital: {language === 'it' ? 'Piattaforma Globale per la Certificazione CO₂' : 'Global Platform for CO₂ Certification'}
+              </h3>
               
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mb-8">
-                <h4 className="text-xl font-medium text-emerald-900 mb-4">Chi Siamo</h4>
+                <h4 className="text-xl font-medium text-emerald-900 mb-4">
+                  {language === 'it' ? 'Chi Siamo' : 'Who We Are'}
+                </h4>
                 <p className="text-emerald-800 leading-relaxed mb-4">
-                  FAGRI.Digital, nata in seno alla FAGRI (Federazione Agricoltori Italiani), è un Sistema di Certificazione con piattaforma digitale globale per il mercato del carbonio e per le certificazioni in blockchain in agricoltura. Con oltre 30 anni di esperienza nel settore agricolo italiano, rappresentiamo più di 110.000 membri e quasi 80.000 imprese.
+                  {language === 'it' 
+                    ? 'FAGRI.Digital, nata in seno alla FAGRI (Federazione Agricoltori Italiani), è un Sistema di Certificazione con piattaforma digitale globale per il mercato del carbonio e per le certificazioni in blockchain in agricoltura. Con oltre 30 anni di esperienza nel settore agricolo italiano, rappresentiamo più di 110.000 membri e quasi 80.000 imprese.'
+                    : 'FAGRI.Digital, born within FAGRI (Italian Farmers Federation), is a Certification System with a global digital platform for the carbon market and blockchain certifications in agriculture. With over 30 years of experience in the Italian agricultural sector, we represent more than 110,000 members and nearly 80,000 enterprises.'
+                  }
                 </p>
                 <p className="text-emerald-800 leading-relaxed">
-                  La nostra missione è creare un ponte tra la concretezza dell'esperienza agricola e gli strumenti digitali moderni, per una partecipazione equa e trasparente ai programmi ambientali e climatici – in particolare nella certificazione della CO₂.
+                  {language === 'it' 
+                    ? 'La nostra missione è creare un ponte tra la concretezza dell\'esperienza agricola e gli strumenti digitali moderni, per una partecipazione equa e trasparente ai programmi ambientali e climatici – in particolare nella certificazione della CO₂.'
+                    : 'Our mission is to create a bridge between the concreteness of agricultural experience and modern digital tools, for fair and transparent participation in environmental and climate programs – particularly in CO₂ certification.'
+                  }
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8 mb-6">
                 <div>
-                  <h4 className="font-medium text-slate-900 mb-3">La Nostra Esperienza</h4>
+                  <h4 className="font-medium text-slate-900 mb-3">
+                    {language === 'it' ? 'La Nostra Esperienza' : 'Our Experience'}
+                  </h4>
                   <ul className="space-y-2 text-slate-600 text-sm">
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Oltre 30 anni di esperienza nel settore agricolo italiano</span>
+                      <span>{language === 'it' ? 'Oltre 30 anni di esperienza nel settore agricolo italiano' : 'Over 30 years of experience in the Italian agricultural sector'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Rete di più di 110.000 membri attivi</span>
+                      <span>{language === 'it' ? 'Rete di più di 110.000 membri attivi' : 'Network of more than 110,000 active members'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Quasi 80.000 imprese agricole coinvolte</span>
+                      <span>{language === 'it' ? 'Quasi 80.000 imprese agricole coinvolte' : 'Nearly 80,000 agricultural enterprises involved'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Collaborazioni internazionali attive in Europa, America Latina, Africa</span>
+                      <span>{language === 'it' ? 'Collaborazioni internazionali attive in Europa, America Latina, Africa' : 'Active international collaborations in Europe, Latin America, Africa'}</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="font-medium text-slate-900 mb-3">Il Nostro Processo di Certificazione</h4>
+                  <h4 className="font-medium text-slate-900 mb-3">
+                    {language === 'it' ? 'Il Nostro Processo di Certificazione' : 'Our Certification Process'}
+                  </h4>
                   <ul className="space-y-2 text-slate-600 text-sm">
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Accettazione progetti di compensazione ambientale da carbon farming</span>
+                      <span>{language === 'it' ? 'Accettazione progetti di compensazione ambientale da carbon farming' : 'Acceptance of environmental compensation projects from carbon farming'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Certificazione di conformità attraverso Organismo designato</span>
+                      <span>{language === 'it' ? 'Certificazione di conformità attraverso Organismo designato' : 'Compliance certification through designated Organization'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Pubblicazione su Registro Digitale in blockchain</span>
+                      <span>{language === 'it' ? 'Pubblicazione su Registro Digitale in blockchain' : 'Publication on Digital Registry in blockchain'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Vendita carbon credits sui mercati volontari e regolamentati</span>
+                      <span>{language === 'it' ? 'Vendita carbon credits sui mercati volontari e regolamentati' : 'Sale of carbon credits on voluntary and regulated markets'}</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-                <h4 className="font-medium text-blue-900 mb-3">Partnership Tecnologica con ALPHAG8 Switzerland</h4>
+                <h4 className="font-medium text-blue-900 mb-3">
+                  {language === 'it' ? 'Partnership Tecnologica con ALPHAG8 Switzerland' : 'Technology Partnership with ALPHAG8 Switzerland'}
+                </h4>
                 <p className="text-blue-800 text-sm mb-3">
-                  La piattaforma FAGRI.Digital è sviluppata in collaborazione con ALPHAG8 Digital Solutions Switzerland, nostro partner tecnologico per la sicurezza completa, la progettazione della piattaforma e il concetto di infrastruttura digitale.
+                  {language === 'it' 
+                    ? 'La piattaforma FAGRI.Digital è sviluppata in collaborazione con ALPHAG8 Digital Solutions Switzerland, nostro partner tecnologico per la sicurezza completa, la progettazione della piattaforma e il concetto di infrastruttura digitale.'
+                    : 'The FAGRI.Digital platform is developed in collaboration with ALPHAG8 Digital Solutions Switzerland, our technology partner for complete security, platform design and digital infrastructure concept.'
+                  }
                 </p>
                 <p className="text-blue-800 text-sm">
-                  Utilizziamo la tecnologia blockchain G8Chain (EVM-compatibile) per garantire tracciabilità, immutabilità e sicurezza di livello bancario svizzero per tutti i certificati CO₂.
+                  {language === 'it' 
+                    ? 'Utilizziamo la tecnologia blockchain G8Chain (EVM-compatibile) per garantire tracciabilità, immutabilità e sicurezza di livello bancario svizzero per tutti i certificati CO₂.'
+                    : 'We use G8Chain blockchain technology (EVM-compatible) to ensure traceability, immutability and Swiss banking-level security for all CO₂ certificates.'
+                  }
                 </p>
               </div>
 
               <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
-                <h4 className="font-medium text-emerald-900 mb-3">Standard EUFD2025-001: La Nostra Innovazione</h4>
+                <h4 className="font-medium text-emerald-900 mb-3">
+                  {language === 'it' ? 'Standard EUFD2025-001: La Nostra Innovazione' : 'EUFD2025-001 Standard: Our Innovation'}
+                </h4>
                 <p className="text-emerald-800 text-sm mb-3">
-                  Sviluppato in collaborazione con le principali università italiane, tra cui l'Università degli Studi di Viterbo La Tuscia, lo standard EUFD2025-001 rappresenta un nuovo paradigma globale per l'emissione di crediti di carbonio.
+                  {language === 'it' 
+                    ? 'Sviluppato in collaborazione con le principali università italiane, tra cui l\'Università degli Studi di Viterbo La Tuscia, lo standard EUFD2025-001 rappresenta un nuovo paradigma globale per l\'emissione di crediti di carbonio.'
+                    : 'Developed in collaboration with leading Italian universities, including the University of Viterbo La Tuscia, the EUFD2025-001 standard represents a new global paradigm for carbon credit issuance.'
+                  }
                 </p>
                 <p className="text-emerald-800 text-sm">
-                  Il nostro standard integra obbligatoriamente la tecnologia blockchain per l'emissione e la registrazione di crediti di carbonio certificati, garantendo tracciabilità, trasparenza e immutabilità in conformità al Regolamento UE 3012/2024 e agli standard ISO 14064-1, 14064-2, e 14064-3.
+                  {language === 'it' 
+                    ? 'Il nostro standard integra obbligatoriamente la tecnologia blockchain per l\'emissione e la registrazione di crediti di carbonio certificati, garantendo tracciabilità, trasparenza e immutabilità in conformità al Regolamento UE 3012/2024 e agli standard ISO 14064-1, 14064-2, e 14064-3.'
+                    : 'Our standard mandatorily integrates blockchain technology for the issuance and registration of certified carbon credits, ensuring traceability, transparency and immutability in compliance with EU Regulation 3012/2024 and ISO 14064-1, 14064-2, and 14064-3 standards.'
+                  }
                 </p>
               </div>
             </div>

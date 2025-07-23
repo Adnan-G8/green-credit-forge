@@ -1183,7 +1183,15 @@ export const translations = {
     'footer-contact': 'Contact',
     'footer-news': 'News',
 
-
+    // Legal Documentation (English)
+    'legal-doc-title': 'Legal Documentation',
+    'legal-doc-subtitle': 'Comprehensive guide to our blockchain-powered CO₂ certification platform',
+    'legal-doc-executive-summary': 'Executive Summary',
+    'legal-doc-regulatory-framework': 'Global Regulatory Framework',
+    'legal-doc-market-problems': 'Current Market Problems',
+    'legal-doc-fagri-solution': 'FAGRI.Digital Solution',
+    'legal-doc-implementation': 'Implementation Strategy',
+    'legal-doc-technical-architecture': 'Technical Architecture'
   }
 };
 
