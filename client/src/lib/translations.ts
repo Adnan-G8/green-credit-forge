@@ -335,6 +335,26 @@ export const translations = {
     'eufd-cta-contact': 'Contattaci',
     'eufd-cta-back': 'Torna alla Home',
     
+    // Password Protection
+    'password-title': 'FAGRI.Digital',
+    'password-subtitle': 'Costruire il Futuro della Certificazione CO₂',
+    'password-description': 'Stiamo creando la piattaforma digitale di prossima generazione per i mercati del carbonio agricolo e la certificazione basata su blockchain. Unisciti a noi nel rivoluzionare la responsabilità ambientale attraverso tecnologie innovative.',
+    'password-access-title': 'Accesso alla Piattaforma',
+    'password-placeholder': 'Inserire la password di accesso',
+    'password-button': 'Accedi alla Piattaforma',
+    'password-verifying': 'Verifica in corso...',
+    'password-contact': 'Solo accesso autorizzato. Contattare l\'amministratore per le credenziali.',
+    'password-feature1': 'Certificazione CO₂',
+    'password-feature1-desc': 'Standard EUFD2025-001',
+    'password-feature2': 'Registro Blockchain',
+    'password-feature2-desc': 'Sicuro e Trasparente',
+    'password-feature3': 'Rete Globale',
+    'password-feature3-desc': 'Eccellenza Agricola',
+    'password-success': 'Accesso Consentito',
+    'password-success-desc': 'Benvenuto sulla piattaforma FAGRI.Digital',
+    'password-error': 'Accesso Negato',
+    'password-error-desc': 'Password non corretta. Riprovare.',
+
     // Transition Section
     'transition-title': 'Dal Campo al Futuro',
     'transition-subtitle': 'Innovazione digitale per l\'agricoltura sostenibile italiana',
@@ -645,6 +665,26 @@ export const translations = {
     'intro-point3-title': 'Digital Innovation',
     'intro-point3-text': 'Modern digital tools for fair and transparent participation in environmental and climate programs.',
     
+    // Password Protection
+    'password-title': 'FAGRI.Digital',
+    'password-subtitle': 'Building the Future of CO₂ Certification',
+    'password-description': 'We are creating the next-generation digital platform for agricultural carbon markets and blockchain-based certification. Join us in revolutionizing environmental responsibility through innovative technology.',
+    'password-access-title': 'Platform Access',
+    'password-placeholder': 'Enter access password',
+    'password-button': 'Access Platform',
+    'password-verifying': 'Verifying...',
+    'password-contact': 'Authorized access only. Contact administrator for credentials.',
+    'password-feature1': 'CO₂ Certification',
+    'password-feature1-desc': 'EUFD2025-001 Standard',
+    'password-feature2': 'Blockchain Registry',
+    'password-feature2-desc': 'Secure & Transparent',
+    'password-feature3': 'Global Network',
+    'password-feature3-desc': 'Agricultural Excellence',
+    'password-success': 'Access Granted',
+    'password-success-desc': 'Welcome to the FAGRI.Digital platform',
+    'password-error': 'Access Denied',
+    'password-error-desc': 'Incorrect password. Please try again.',
+
     // Opportunities section
     'opportunities-title': 'Opportunities for agricultural enterprises, for agroforestry enterprises and for energy enterprises',
     'opportunities-subtitle': 'The PARIS agreement of 2015 to which no less than 194 countries of the Earth have adhered, provides for the achievement of climate neutrality by 2050, through environmental mitigation projects from Carbon farming aimed at capturing CO2 and projects from renewable sources aimed at not releasing CO2 into the atmosphere.',
