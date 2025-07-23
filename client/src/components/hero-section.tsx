@@ -63,8 +63,12 @@ export function HeroSection() {
                 {t('hero-tagline')}
               </p>
               
-              <p className="text-lg sm:text-xl text-slate-300 font-light max-w-4xl mx-auto leading-relaxed px-4">
+              <p className="text-lg sm:text-xl text-slate-300 font-light max-w-4xl mx-auto leading-relaxed px-4 mb-6">
                 {t('hero-subtitle')}
+              </p>
+              
+              <p className="text-base sm:text-lg text-slate-400 font-light max-w-5xl mx-auto leading-relaxed px-4">
+                {t('hero-description')}
               </p>
             </div>
             
