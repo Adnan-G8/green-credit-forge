@@ -84,30 +84,86 @@ export function Footer() {
           
           <div>
             <h4 className="font-semibold mb-4">{t('footer-partners')}</h4>
-            <ul className="space-y-3 text-sm text-gray-400">
-              <li>
-                <a 
-                  href="https://alphag8.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-fagri-accent transition-colors flex items-center"
-                >
-                  ALPHAG8 Digital Solutions
-                  <ExternalLink className="ml-2 h-3 w-3" />
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://g8chain.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-fagri-accent transition-colors flex items-center"
-                >
-                  G8Chain Blockchain
-                  <ExternalLink className="ml-2 h-3 w-3" />
-                </a>
-              </li>
-            </ul>
+            
+            {/* Technology Partners */}
+            <div className="mb-4">
+              <h5 className="text-xs font-medium text-gray-300 mb-2 uppercase tracking-wide">Technology Partners</h5>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a 
+                    href="https://alphag8.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    ALPHAG8 Digital Solutions
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://g8chain.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    G8Chain Blockchain
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Institutional Partners */}
+            <div className="mb-4">
+              <h5 className="text-xs font-medium text-gray-300 mb-2 uppercase tracking-wide">Institutional Partners</h5>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a 
+                    href="https://commission.europa.eu" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    European Commission
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.governo.it" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    Italian Government
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.gse.it" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    GSE - Gestore Servizi Energetici
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.iso.org" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-fagri-accent transition-colors flex items-center"
+                  >
+                    ISO International
+                    <ExternalLink className="ml-2 h-3 w-3" />
+                  </a>
+                </li>
+              </ul>
+            </div>
             
             <h4 className="font-semibold mb-4 mt-6">{t('footer-legal')}</h4>
             <ul className="space-y-2 text-sm text-gray-400">
