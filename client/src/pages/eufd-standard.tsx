@@ -29,12 +29,12 @@ export default function EufdStandardPage() {
           </div>
           
           {/* Italian Government Building Image */}
-          <div className="mt-16">
+          <div className="mt-16 max-w-4xl mx-auto">
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <img 
                 src={italianGovernment} 
                 alt="Italian government building representing official EUFD2025-001 standard backing"
-                className="w-full h-96 object-cover"
+                className="w-full h-64 md:h-80 object-cover object-center"
               />
             </div>
           </div>
