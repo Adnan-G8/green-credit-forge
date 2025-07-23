@@ -193,9 +193,9 @@ export function Footer() {
             {/* Context Information */}
             <h4 className="font-semibold mb-4 text-white">Context Information</h4>
             <div className="space-y-2 text-sm text-gray-400">
-              <Link href="/technical-documentation">
+              <Link href="/legal-documentation">
                 <span className="hover:text-emerald-400 transition-colors cursor-pointer block">
-                  Technical Documentation
+                  Legal Documentation
                 </span>
               </Link>
             </div>

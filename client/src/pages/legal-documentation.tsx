@@ -4,17 +4,17 @@ import { Footer } from '../components/footer';
 import { useState } from 'react';
 import { ChevronRight, ArrowUp, FileText, Globe, Shield, Zap, Building2, Users, ExternalLink } from 'lucide-react';
 
-export default function TechnicalDocumentationPage() {
+export default function LegalDocumentationPage() {
   const { t } = useLanguage();
   const [activeSection, setActiveSection] = useState('');
 
   const sections = [
-    { id: 'executive-summary', title: 'Executive Summary', icon: FileText },
-    { id: 'regulatory-framework', title: 'Global Regulatory Framework', icon: Globe },
-    { id: 'market-problems', title: 'Current Market Problems', icon: Shield },
-    { id: 'technology-solution', title: 'Our Technology Solution', icon: Zap },
-    { id: 'implementation', title: 'Implementation Strategy', icon: Building2 },
-    { id: 'technical-architecture', title: 'Technical Architecture', icon: Users },
+    { id: 'executive-summary', title: t('legal-doc-executive-summary'), icon: FileText },
+    { id: 'regulatory-framework', title: t('legal-doc-regulatory-framework'), icon: Globe },
+    { id: 'market-problems', title: t('legal-doc-market-problems'), icon: Shield },
+    { id: 'fagri-solution', title: t('legal-doc-fagri-solution'), icon: Zap },
+    { id: 'implementation', title: t('legal-doc-implementation'), icon: Building2 },
+    { id: 'technical-architecture', title: t('legal-doc-technical-architecture'), icon: Users },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -38,10 +38,10 @@ export default function TechnicalDocumentationPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-light text-slate-900 mb-6">
-              Technical Documentation
+              {t('legal-doc-title')}
             </h1>
             <p className="text-xl text-slate-600 mb-12 font-light">
-              Comprehensive guide to our blockchain-powered CO₂ certification platform
+              {t('legal-doc-subtitle')}
             </p>
 
             {/* Navigation Grid */}
@@ -259,68 +259,91 @@ export default function TechnicalDocumentationPage() {
         </div>
       </section>
 
-      {/* Technology Solution */}
-      <section id="technology-solution" className="py-16 bg-slate-50">
+      {/* FAGRI.Digital Solution */}
+      <section id="fagri-solution" className="py-16 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-3 mb-8">
               <Zap className="h-6 w-6 text-emerald-700" />
-              <h2 className="text-3xl font-light text-slate-900">Our Technology Solution</h2>
+              <h2 className="text-3xl font-light text-slate-900">La Soluzione FAGRI.Digital</h2>
             </div>
 
             <div className="bg-white rounded-xl p-8 border border-slate-200 mb-8">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">G8Chain: EVM-Compatible Blockchain Platform</h3>
+              <h3 className="text-2xl font-light text-slate-900 mb-6">FAGRI.Digital: Piattaforma Globale per la Certificazione CO₂</h3>
               
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mb-8">
+                <h4 className="text-xl font-medium text-emerald-900 mb-4">Chi Siamo</h4>
+                <p className="text-emerald-800 leading-relaxed mb-4">
+                  FAGRI.Digital, nata in seno alla FAGRI (Federazione Agricoltori Italiani), è un Sistema di Certificazione con piattaforma digitale globale per il mercato del carbonio e per le certificazioni in blockchain in agricoltura. Con oltre 30 anni di esperienza nel settore agricolo italiano, rappresentiamo più di 110.000 membri e quasi 80.000 imprese.
+                </p>
+                <p className="text-emerald-800 leading-relaxed">
+                  La nostra missione è creare un ponte tra la concretezza dell'esperienza agricola e gli strumenti digitali moderni, per una partecipazione equa e trasparente ai programmi ambientali e climatici – in particolare nella certificazione della CO₂.
+                </p>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-8 mb-6">
                 <div>
-                  <h4 className="font-medium text-slate-900 mb-3">Distributed Ledger Technology Benefits</h4>
+                  <h4 className="font-medium text-slate-900 mb-3">La Nostra Esperienza</h4>
                   <ul className="space-y-2 text-slate-600 text-sm">
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Immutable transaction records preventing double counting</span>
+                      <span>Oltre 30 anni di esperienza nel settore agricolo italiano</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Transparent audit trails for complete traceability</span>
+                      <span>Rete di più di 110.000 membri attivi</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Smart contract automation for verified compliance</span>
+                      <span>Quasi 80.000 imprese agricole coinvolte</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Decentralized governance eliminating single points of failure</span>
+                      <span>Collaborazioni internazionali attive in Europa, America Latina, Africa</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="font-medium text-slate-900 mb-3">EVM Compatibility Advantages</h4>
+                  <h4 className="font-medium text-slate-900 mb-3">Il Nostro Processo di Certificazione</h4>
                   <ul className="space-y-2 text-slate-600 text-sm">
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Access to largest blockchain developer ecosystem</span>
+                      <span>Accettazione progetti di compensazione ambientale da carbon farming</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Seamless integration with existing DeFi infrastructure</span>
+                      <span>Certificazione di conformità attraverso Organismo designato</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Proven smart contract capabilities and security</span>
+                      <span>Pubblicazione su Registro Digitale in blockchain</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Cross-chain interoperability for global reach</span>
+                      <span>Vendita carbon credits sui mercati volontari e regolamentati</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                <h4 className="font-medium text-blue-900 mb-3">Partnership Tecnologica con ALPHAG8 Switzerland</h4>
+                <p className="text-blue-800 text-sm mb-3">
+                  La piattaforma FAGRI.Digital è sviluppata in collaborazione con ALPHAG8 Digital Solutions Switzerland, nostro partner tecnologico per la sicurezza completa, la progettazione della piattaforma e il concetto di infrastruttura digitale.
+                </p>
+                <p className="text-blue-800 text-sm">
+                  Utilizziamo la tecnologia blockchain G8Chain (EVM-compatibile) per garantire tracciabilità, immutabilità e sicurezza di livello bancario svizzero per tutti i certificati CO₂.
+                </p>
+              </div>
+
               <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
-                <h4 className="font-medium text-emerald-900 mb-3">EUFD2025-001 Standard Compliance</h4>
+                <h4 className="font-medium text-emerald-900 mb-3">Standard EUFD2025-001: La Nostra Innovazione</h4>
+                <p className="text-emerald-800 text-sm mb-3">
+                  Sviluppato in collaborazione con le principali università italiane, tra cui l'Università degli Studi di Viterbo La Tuscia, lo standard EUFD2025-001 rappresenta un nuovo paradigma globale per l'emissione di crediti di carbonio.
+                </p>
                 <p className="text-emerald-800 text-sm">
-                  Our platform is specifically designed to meet the EUFD2025-001 standard requirements, ensuring full compliance with EU regulations while providing blockchain-based verification and traceability for agricultural CO₂ certification processes.
+                  Il nostro standard integra obbligatoriamente la tecnologia blockchain per l'emissione e la registrazione di crediti di carbonio certificati, garantendo tracciabilità, trasparenza e immutabilità in conformità al Regolamento UE 3012/2024 e agli standard ISO 14064-1, 14064-2, e 14064-3.
                 </p>
               </div>
             </div>

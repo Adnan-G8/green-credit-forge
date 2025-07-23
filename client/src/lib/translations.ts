@@ -921,6 +921,16 @@ export const translations = {
     // Read more button
     'standard-read-more': 'Learn More',
     
+    // Legal Documentation (Italian)
+    'legal-doc-title': 'Documentazione Legale',
+    'legal-doc-subtitle': 'Guida completa alla nostra piattaforma di certificazione CO₂ basata su blockchain',
+    'legal-doc-executive-summary': 'Riassunto Esecutivo',
+    'legal-doc-regulatory-framework': 'Quadro Normativo Globale',
+    'legal-doc-market-problems': 'Problemi di Mercato Attuali',
+    'legal-doc-fagri-solution': 'La Soluzione FAGRI.Digital',
+    'legal-doc-implementation': 'Strategia di Implementazione',
+    'legal-doc-technical-architecture': 'Architettura Tecnica',
+
     // Partners section
     'partners-title': 'Technology & Institutional Partnerships',
     'partners-subtitle': 'The FAGRI Digital platform is supported by a robust ecosystem of technology and institutional partners that guarantee maximum credibility and security.',
@@ -1171,7 +1181,9 @@ export const translations = {
     'footer-about': 'About Us',
     'footer-mission': 'Mission',
     'footer-contact': 'Contact',
-    'footer-news': 'News'
+    'footer-news': 'News',
+
+
   }
 };
 
