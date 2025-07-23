@@ -42,7 +42,7 @@ export default function EufdStandardPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             
