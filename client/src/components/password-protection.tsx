@@ -179,7 +179,7 @@ export function PasswordProtection({ onAuthenticated }: PasswordProtectionProps)
                   ALPHAG8 Digital Solution Switzerland
                 </a>
                 <br />
-                All rights by FAGRI Digital Italia
+                All rights reserved by FAGRI Italia © 2025
               </p>
             </div>
           </div>
