@@ -169,7 +169,7 @@ export function Footer() {
           {/* Technology Partners */}
           <div>
             <h4 className="font-semibold mb-6 text-white">Technology Partners</h4>
-            <div className="space-y-3 text-sm text-gray-400">
+            <div className="space-y-3 text-sm text-gray-400 mb-8">
               <a 
                 href="https://alphag8.com" 
                 target="_blank" 
@@ -188,6 +188,16 @@ export function Footer() {
                 G8Chain Blockchain
                 <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
+            </div>
+
+            {/* Context Information */}
+            <h4 className="font-semibold mb-4 text-white">Context Information</h4>
+            <div className="space-y-2 text-sm text-gray-400">
+              <Link href="/technical-documentation">
+                <span className="hover:text-emerald-400 transition-colors cursor-pointer block">
+                  Technical Documentation
+                </span>
+              </Link>
             </div>
           </div>
         </div>
