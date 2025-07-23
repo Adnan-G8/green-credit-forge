@@ -638,29 +638,41 @@ export default function LegalDocumentationPage() {
 
             {/* Italy's Progressive Stance */}
             <div>
-              <h3 className="text-2xl font-light text-slate-900 mb-6">Italy's Progressive Stance on CO₂ Legislation and DLT</h3>
+              <h3 className="text-2xl font-light text-slate-900 mb-6">
+                {language === 'it' ? 'Posizione Progressiva dell\'Italia sulla Legislazione CO₂ e DLT' : 'Italy\'s Progressive Stance on CO₂ Legislation and DLT'}
+              </h3>
               
               <div className="bg-white rounded-xl p-8 border border-slate-200">
-                <h4 className="font-medium text-slate-900 mb-4">Legal Recognition of DLT and Smart Contracts</h4>
+                <h4 className="font-medium text-slate-900 mb-4">
+                  {language === 'it' ? 'Riconoscimento Legale di DLT e Smart Contract' : 'Legal Recognition of DLT and Smart Contracts'}
+                </h4>
                 <p className="text-slate-600 mb-4">
-                  Italian Law no. 12/2019 ("Decreto Semplificazioni") provides explicit legal definitions for Distributed Ledger Technologies and Smart Contracts, creating legal certainty for DLT-based applications.
+                  {language === 'it' 
+                    ? 'La Legge italiana n. 12/2019 ("Decreto Semplificazioni") fornisce definizioni legali esplicite per le Tecnologie di Registro Distribuito e gli Smart Contract, creando certezza legale per le applicazioni basate su DLT.'
+                    : 'Italian Law no. 12/2019 ("Decreto Semplificazioni") provides explicit legal definitions for Distributed Ledger Technologies and Smart Contracts, creating legal certainty for DLT-based applications.'
+                  }
                 </p>
                 
                 <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-4">
-                  <p className="text-emerald-800 text-sm font-medium">Key Legal Framework:</p>
+                  <p className="text-emerald-800 text-sm font-medium">
+                    {language === 'it' ? 'Quadro Legale Chiave:' : 'Key Legal Framework:'}
+                  </p>
                   <ul className="text-emerald-700 text-sm mt-2 space-y-1">
-                    <li>• DLT defined as "shared, distributed, replicable ledger accessible"</li>
-                    <li>• Smart contracts legally binding when parties are electronically identified</li>
-                    <li>• DLT storage produces legal effects of electronic time validation</li>
+                    <li>• {language === 'it' ? 'DLT definita come "registro condiviso, distribuito, replicabile accessibile"' : 'DLT defined as "shared, distributed, replicable ledger accessible"'}</li>
+                    <li>• {language === 'it' ? 'Smart contract legalmente vincolanti quando le parti sono identificate elettronicamente' : 'Smart contracts legally binding when parties are electronically identified'}</li>
+                    <li>• {language === 'it' ? 'L\'archiviazione DLT produce effetti legali di validazione temporale elettronica' : 'DLT storage produces legal effects of electronic time validation'}</li>
                   </ul>
                 </div>
 
                 <p className="text-slate-600 mb-4">
-                  The Italian Ministry of Economic Development has actively explored blockchain for traceability in the "Made in Italy" initiative, with direct applicability to CO₂ emissions tracking.
+                  {language === 'it' 
+                    ? 'Il Ministero dello Sviluppo Economico italiano ha esplorato attivamente la blockchain per la tracciabilità nell\'iniziativa "Made in Italy", con applicabilità diretta al tracciamento delle emissioni di CO₂.'
+                    : 'The Italian Ministry of Economic Development has actively explored blockchain for traceability in the "Made in Italy" initiative, with direct applicability to CO₂ emissions tracking.'
+                  }
                 </p>
 
                 <a href="https://www.gazzettaufficiale.it/eli/id/2019/02/12/19G00017/sg" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center">
-                  Italian Law 12/2019 <ExternalLink className="ml-1 h-3 w-3" />
+                  {language === 'it' ? 'Legge Italiana 12/2019' : 'Italian Law 12/2019'} <ExternalLink className="ml-1 h-3 w-3" />
                 </a>
               </div>
             </div>
@@ -674,36 +686,58 @@ export default function LegalDocumentationPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-3 mb-8">
               <Shield className="h-6 w-6 text-emerald-700" />
-              <h2 className="text-3xl font-light text-slate-900">Current Market Problems</h2>
+              <h2 className="text-3xl font-light text-slate-900">
+                {language === 'it' ? 'Problemi di Mercato Attuali' : 'Current Market Problems'}
+              </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="bg-red-50 border border-red-200 rounded-xl p-6">
-                <h3 className="font-medium text-red-900 mb-3">Double Counting</h3>
+                <h3 className="font-medium text-red-900 mb-3">
+                  {language === 'it' ? 'Doppio Conteggio' : 'Double Counting'}
+                </h3>
                 <p className="text-red-700 text-sm">
-                  A single carbon credit counted multiple times through double selling, double issuance, or double claiming, severely undermining market integrity.
+                  {language === 'it' 
+                    ? 'Un singolo credito di carbonio conteggiato più volte attraverso doppia vendita, doppia emissione o doppia rivendicazione, minando gravemente l\'integrità del mercato.'
+                    : 'A single carbon credit counted multiple times through double selling, double issuance, or double claiming, severely undermining market integrity.'
+                  }
                 </p>
               </div>
 
               <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-                <h3 className="font-medium text-orange-900 mb-3">Greenwashing</h3>
+                <h3 className="font-medium text-orange-900 mb-3">
+                  {language === 'it' ? 'Greenwashing' : 'Greenwashing'}
+                </h3>
                 <p className="text-orange-700 text-sm">
-                  Deceptive practices where companies claim environmental benefits without genuine emission reductions, often through low-quality offset projects.
+                  {language === 'it' 
+                    ? 'Pratiche ingannevoli dove le aziende rivendicano benefici ambientali senza genuine riduzioni delle emissioni, spesso attraverso progetti di compensazione di bassa qualità.'
+                    : 'Deceptive practices where companies claim environmental benefits without genuine emission reductions, often through low-quality offset projects.'
+                  }
                 </p>
               </div>
 
               <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
-                <h3 className="font-medium text-yellow-900 mb-3">Data Integrity Issues</h3>
+                <h3 className="font-medium text-yellow-900 mb-3">
+                  {language === 'it' ? 'Problemi di Integrità dei Dati' : 'Data Integrity Issues'}
+                </h3>
                 <p className="text-yellow-700 text-sm">
-                  Flawed data, lack of standardization, limited oversight, and anonymity in reporting create systemic trust issues in carbon markets.
+                  {language === 'it' 
+                    ? 'Dati imperfetti, mancanza di standardizzazione, supervisione limitata e anonimato nella rendicontazione creano problemi sistemici di fiducia nei mercati del carbonio.'
+                    : 'Flawed data, lack of standardization, limited oversight, and anonymity in reporting create systemic trust issues in carbon markets.'
+                  }
                 </p>
               </div>
             </div>
 
             <div className="bg-slate-100 rounded-xl p-8">
-              <h3 className="text-xl font-medium text-slate-900 mb-4">Impact on Climate Action</h3>
+              <h3 className="text-xl font-medium text-slate-900 mb-4">
+                {language === 'it' ? 'Impatto sull\'Azione Climatica' : 'Impact on Climate Action'}
+              </h3>
               <p className="text-slate-600 leading-relaxed">
-                These interconnected problems create a "tragedy of the commons" scenario where individual actors may not prioritize data integrity without systemic incentives, leading to collective market failure. The result is misallocated resources, delayed meaningful action, and erosion of trust in carbon markets as effective climate solutions.
+                {language === 'it' 
+                  ? 'Questi problemi interconnessi creano uno scenario di "tragedia dei beni comuni" dove gli attori individuali potrebbero non dare priorità all\'integrità dei dati senza incentivi sistemici, portando al fallimento collettivo del mercato. Il risultato è un\'allocazione errata delle risorse, azioni significative ritardate ed erosione della fiducia nei mercati del carbonio come soluzioni climatiche efficaci.'
+                  : 'These interconnected problems create a "tragedy of the commons" scenario where individual actors may not prioritize data integrity without systemic incentives, leading to collective market failure. The result is misallocated resources, delayed meaningful action, and erosion of trust in carbon markets as effective climate solutions.'
+                }
               </p>
             </div>
           </div>
@@ -840,7 +874,9 @@ export default function LegalDocumentationPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-3 mb-8">
               <Building2 className="h-6 w-6 text-emerald-700" />
-              <h2 className="text-3xl font-light text-slate-900">Implementation Strategy</h2>
+              <h2 className="text-3xl font-light text-slate-900">
+                {language === 'it' ? 'Strategia di Implementazione' : 'Implementation Strategy'}
+              </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -848,9 +884,14 @@ export default function LegalDocumentationPage() {
                 <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                   <span className="text-emerald-700 font-bold">1</span>
                 </div>
-                <h3 className="font-medium text-emerald-900 mb-3">Italy-First Launch</h3>
+                <h3 className="font-medium text-emerald-900 mb-3">
+                  {language === 'it' ? 'Lancio Prima in Italia' : 'Italy-First Launch'}
+                </h3>
                 <p className="text-emerald-700 text-sm">
-                  Leverage Italy's progressive DLT legislation and supportive regulatory framework for initial deployment and testing.
+                  {language === 'it' 
+                    ? 'Sfruttare la legislazione DLT progressiva dell\'Italia e il quadro normativo di supporto per il deployment iniziale e i test.'
+                    : 'Leverage Italy\'s progressive DLT legislation and supportive regulatory framework for initial deployment and testing.'
+                  }
                 </p>
               </div>
 
@@ -858,9 +899,14 @@ export default function LegalDocumentationPage() {
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <span className="text-blue-700 font-bold">2</span>
                 </div>
-                <h3 className="font-medium text-blue-900 mb-3">European Expansion</h3>
+                <h3 className="font-medium text-blue-900 mb-3">
+                  {language === 'it' ? 'Espansione Europea' : 'European Expansion'}
+                </h3>
                 <p className="text-blue-700 text-sm">
-                  Scale across EU member states leveraging harmonized climate legislation and CSRD reporting requirements.
+                  {language === 'it' 
+                    ? 'Scalare attraverso gli stati membri dell\'UE sfruttando la legislazione climatica armonizzata e i requisiti di rendicontazione CSRD.'
+                    : 'Scale across EU member states leveraging harmonized climate legislation and CSRD reporting requirements.'
+                  }
                 </p>
               </div>
 
@@ -868,26 +914,43 @@ export default function LegalDocumentationPage() {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                   <span className="text-purple-700 font-bold">3</span>
                 </div>
-                <h3 className="font-medium text-purple-900 mb-3">Global Deployment</h3>
+                <h3 className="font-medium text-purple-900 mb-3">
+                  {language === 'it' ? 'Deployment Globale' : 'Global Deployment'}
+                </h3>
                 <p className="text-purple-700 text-sm">
-                  Expand to international markets with established legal precedent and proven technology platform.
+                  {language === 'it' 
+                    ? 'Espandere ai mercati internazionali con precedente legale stabilito e piattaforma tecnologica comprovata.'
+                    : 'Expand to international markets with established legal precedent and proven technology platform.'
+                  }
                 </p>
               </div>
             </div>
 
             <div className="bg-slate-100 rounded-xl p-8">
-              <h3 className="text-xl font-medium text-slate-900 mb-4">Strategic Advantages</h3>
+              <h3 className="text-xl font-medium text-slate-900 mb-4">
+                {language === 'it' ? 'Vantaggi Strategici' : 'Strategic Advantages'}
+              </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-medium text-slate-900 mb-2">Regulatory Alignment</h4>
+                  <h4 className="font-medium text-slate-900 mb-2">
+                    {language === 'it' ? 'Allineamento Normativo' : 'Regulatory Alignment'}
+                  </h4>
                   <p className="text-slate-600 text-sm">
-                    Direct alignment with EU ETS, CSRD requirements, and national climate adaptation plans creates immediate market demand.
+                    {language === 'it' 
+                      ? 'Allineamento diretto con EU ETS, requisiti CSRD e piani nazionali di adattamento climatico crea domanda di mercato immediata.'
+                      : 'Direct alignment with EU ETS, CSRD requirements, and national climate adaptation plans creates immediate market demand.'
+                    }
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-medium text-slate-900 mb-2">Technology Leadership</h4>
+                  <h4 className="font-medium text-slate-900 mb-2">
+                    {language === 'it' ? 'Leadership Tecnologica' : 'Technology Leadership'}
+                  </h4>
                   <p className="text-slate-600 text-sm">
-                    First-mover advantage in blockchain-based CO₂ certification with legally recognized smart contract framework.
+                    {language === 'it' 
+                      ? 'Vantaggio first-mover nella certificazione CO₂ basata su blockchain con framework di smart contract legalmente riconosciuto.'
+                      : 'First-mover advantage in blockchain-based CO₂ certification with legally recognized smart contract framework.'
+                    }
                   </p>
                 </div>
               </div>
@@ -902,53 +965,80 @@ export default function LegalDocumentationPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-3 mb-8">
               <Users className="h-6 w-6 text-emerald-700" />
-              <h2 className="text-3xl font-light text-slate-900">Technical Architecture</h2>
+              <h2 className="text-3xl font-light text-slate-900">
+                {language === 'it' ? 'Architettura Tecnica' : 'Technical Architecture'}
+              </h2>
             </div>
 
             <div className="bg-white rounded-xl p-8 border border-slate-200 mb-8">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">Multi-Stakeholder Blockchain Governance</h3>
+              <h3 className="text-2xl font-light text-slate-900 mb-6">
+                {language === 'it' ? 'Governance Blockchain Multi-Stakeholder' : 'Multi-Stakeholder Blockchain Governance'}
+              </h3>
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="font-medium text-slate-900 mb-4">51-Node Validator Network</h4>
+                  <h4 className="font-medium text-slate-900 mb-4">
+                    {language === 'it' ? 'Rete di Validatori a 51 Nodi' : '51-Node Validator Network'}
+                  </h4>
                   <p className="text-slate-600 text-sm mb-4">
-                    Each partner organization controls one validator node, ensuring true decentralization and preventing single points of control in the carbon certification process.
+                    {language === 'it' 
+                      ? 'Ogni organizzazione partner controlla un nodo validatore, garantendo vera decentralizzazione e prevenendo punti singoli di controllo nel processo di certificazione del carbonio.'
+                      : 'Each partner organization controls one validator node, ensuring true decentralization and preventing single points of control in the carbon certification process.'
+                    }
                   </p>
                   
                   <div className="space-y-2">
                     <div className="bg-emerald-50 rounded p-3">
-                      <span className="text-emerald-800 text-sm font-medium">Agricultural Cooperatives</span>
+                      <span className="text-emerald-800 text-sm font-medium">
+                        {language === 'it' ? 'Cooperative Agricole' : 'Agricultural Cooperatives'}
+                      </span>
                     </div>
                     <div className="bg-blue-50 rounded p-3">
-                      <span className="text-blue-800 text-sm font-medium">Environmental Organizations</span>
+                      <span className="text-blue-800 text-sm font-medium">
+                        {language === 'it' ? 'Organizzazioni Ambientali' : 'Environmental Organizations'}
+                      </span>
                     </div>
                     <div className="bg-purple-50 rounded p-3">
-                      <span className="text-purple-800 text-sm font-medium">Financial Institutions</span>
+                      <span className="text-purple-800 text-sm font-medium">
+                        {language === 'it' ? 'Istituzioni Finanziarie' : 'Financial Institutions'}
+                      </span>
                     </div>
                     <div className="bg-orange-50 rounded p-3">
-                      <span className="text-orange-800 text-sm font-medium">Technology Partners</span>
+                      <span className="text-orange-800 text-sm font-medium">
+                        {language === 'it' ? 'Partner Tecnologici' : 'Technology Partners'}
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="font-medium text-slate-900 mb-4">Smart Contract Framework</h4>
+                  <h4 className="font-medium text-slate-900 mb-4">
+                    {language === 'it' ? 'Framework Smart Contract' : 'Smart Contract Framework'}
+                  </h4>
                   <ul className="space-y-3 text-slate-600 text-sm">
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span><strong>Immutable Audit Trails:</strong> Every certification process permanently recorded</span>
+                      <span>
+                        <strong>{language === 'it' ? 'Tracce di Audit Immutabili:' : 'Immutable Audit Trails:'}</strong> {language === 'it' ? 'Ogni processo di certificazione registrato permanentemente' : 'Every certification process permanently recorded'}
+                      </span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span><strong>Automated Validation:</strong> Smart contracts verify agricultural practice compliance</span>
+                      <span>
+                        <strong>{language === 'it' ? 'Validazione Automatica:' : 'Automated Validation:'}</strong> {language === 'it' ? 'Gli smart contract verificano la conformità delle pratiche agricole' : 'Smart contracts verify agricultural practice compliance'}
+                      </span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span><strong>Cryptographic Proof:</strong> Mathematical verification of environmental impact claims</span>
+                      <span>
+                        <strong>{language === 'it' ? 'Prova Crittografica:' : 'Cryptographic Proof:'}</strong> {language === 'it' ? 'Verifica matematica delle rivendicazioni di impatto ambientale' : 'Mathematical verification of environmental impact claims'}
+                      </span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span><strong>DeFi Integration:</strong> Seamless connection to decentralized finance protocols</span>
+                      <span>
+                        <strong>{language === 'it' ? 'Integrazione DeFi:' : 'DeFi Integration:'}</strong> {language === 'it' ? 'Connessione senza soluzione di continuità ai protocolli di finanza decentralizzata' : 'Seamless connection to decentralized finance protocols'}
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -957,22 +1047,26 @@ export default function LegalDocumentationPage() {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-xl p-6 border border-slate-200">
-                <h4 className="font-medium text-slate-900 mb-3">Data Security & Privacy</h4>
+                <h4 className="font-medium text-slate-900 mb-3">
+                  {language === 'it' ? 'Sicurezza dei Dati e Privacy' : 'Data Security & Privacy'}
+                </h4>
                 <ul className="space-y-2 text-slate-600 text-sm">
-                  <li>• Zero-knowledge encryption architecture</li>
-                  <li>• AES-256 and RSA-4096 encryption standards</li>
-                  <li>• Swiss Alpine data center infrastructure</li>
-                  <li>• FINMA banking compliance level security</li>
+                  <li>• {language === 'it' ? 'Architettura di crittografia zero-knowledge' : 'Zero-knowledge encryption architecture'}</li>
+                  <li>• {language === 'it' ? 'Standard di crittografia AES-256 e RSA-4096' : 'AES-256 and RSA-4096 encryption standards'}</li>
+                  <li>• {language === 'it' ? 'Infrastruttura data center Alpino Svizzero' : 'Swiss Alpine data center infrastructure'}</li>
+                  <li>• {language === 'it' ? 'Sicurezza a livello di conformità bancaria FINMA' : 'FINMA banking compliance level security'}</li>
                 </ul>
               </div>
 
               <div className="bg-white rounded-xl p-6 border border-slate-200">
-                <h4 className="font-medium text-slate-900 mb-3">Compliance & Standards</h4>
+                <h4 className="font-medium text-slate-900 mb-3">
+                  {language === 'it' ? 'Conformità e Standard' : 'Compliance & Standards'}
+                </h4>
                 <ul className="space-y-2 text-slate-600 text-sm">
-                  <li>• ISO 14064-1, 14064-2, 14064-3 compliance</li>
-                  <li>• EU Regulation 3012/2024 alignment</li>
-                  <li>• EUFD2025-001 standard implementation</li>
-                  <li>• Swiss Federal Data Protection Act compliance</li>
+                  <li>• {language === 'it' ? 'Conformità ISO 14064-1, 14064-2, 14064-3' : 'ISO 14064-1, 14064-2, 14064-3 compliance'}</li>
+                  <li>• {language === 'it' ? 'Allineamento al Regolamento UE 3012/2024' : 'EU Regulation 3012/2024 alignment'}</li>
+                  <li>• {language === 'it' ? 'Implementazione standard EUFD2025-001' : 'EUFD2025-001 standard implementation'}</li>
+                  <li>• {language === 'it' ? 'Conformità alla Legge Federale Svizzera sulla Protezione dei Dati' : 'Swiss Federal Data Protection Act compliance'}</li>
                 </ul>
               </div>
             </div>
