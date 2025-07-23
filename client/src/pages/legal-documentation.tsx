@@ -7,6 +7,15 @@ import { ChevronRight, ArrowUp, FileText, Globe, Shield, Zap, Building2, Users, 
 export default function LegalDocumentationPage() {
   const { t, language } = useLanguage();
   const [activeSection, setActiveSection] = useState('');
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
+
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections(prev => 
+      prev.includes(sectionId) 
+        ? prev.filter(id => id !== sectionId)
+        : [...prev, sectionId]
+    );
+  };
 
   const sections = [
     { 
@@ -158,36 +167,227 @@ export default function LegalDocumentationPage() {
 
             {/* International Frameworks */}
             <div className="mb-12">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">International Frameworks for Climate Action</h3>
+              <h3 className="text-2xl font-light text-slate-900 mb-6">
+                {language === 'it' ? 'Quadri Internazionali per l\'Azione Climatica' : 'International Frameworks for Climate Action'}
+              </h3>
+              
+              <p className="text-slate-600 mb-6">
+                {language === 'it' 
+                  ? 'La cooperazione internazionale sui cambiamenti climatici si è evoluta attraverso accordi fondamentali che stabiliscono il contesto legale per l\'innovazione nella certificazione CO₂.'
+                  : 'International cooperation on climate change has evolved through landmark agreements that establish the legal context for innovation in CO₂ certification.'
+                }
+              </p>
               
               <div className="grid gap-6 mb-8">
                 <div className="bg-white rounded-xl p-6 border border-slate-200">
-                  <h4 className="font-medium text-slate-900 mb-3">United Nations Framework Convention on Climate Change (UNFCCC) - 1992</h4>
+                  <h4 className="font-medium text-slate-900 mb-3">
+                    {language === 'it' ? 'Convenzione Quadro delle Nazioni Unite sui Cambiamenti Climatici (UNFCCC) - 1992' : 'United Nations Framework Convention on Climate Change (UNFCCC) - 1992'}
+                  </h4>
                   <p className="text-slate-600 text-sm mb-3">
-                    The foundational international treaty for addressing climate change, establishing the framework for stabilizing greenhouse gas concentrations in the atmosphere.
+                    {language === 'it' 
+                      ? 'Il trattato internazionale fondamentale per affrontare i cambiamenti climatici, stabilisce il quadro per stabilizzare le concentrazioni di gas serra nell\'atmosfera.'
+                      : 'The foundational international treaty for addressing climate change, establishing the framework for stabilizing greenhouse gas concentrations in the atmosphere.'
+                    }
                   </p>
-                  <a href="https://unfccc.int" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center">
-                    Official Website <ExternalLink className="ml-1 h-3 w-3" />
+
+                  {!expandedSections.includes('unfccc') && (
+                    <button
+                      onClick={() => toggleSection('unfccc')}
+                      className="text-emerald-600 hover:text-emerald-700 text-sm font-medium mb-3 flex items-center space-x-1"
+                    >
+                      <span>{language === 'it' ? 'Leggi Di Più' : 'Read More'}</span>
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  )}
+
+                  {expandedSections.includes('unfccc') && (
+                    <div className="space-y-4">
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <h5 className="font-medium text-blue-900 mb-2">
+                          {language === 'it' ? 'Principio Chiave' : 'Key Principle'}
+                        </h5>
+                        <p className="text-blue-800 text-sm">
+                          {language === 'it' 
+                            ? '"Responsabilità comuni ma differenziate" - sottolinea il ruolo guida che i paesi sviluppati dovrebbero svolgere nella lotta ai cambiamenti climatici.'
+                            : '"Common but differentiated responsibilities" - underscores the leading role developed countries are expected to play in combating climate change.'
+                          }
+                        </p>
+                      </div>
+                      
+                      <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                        <h5 className="font-medium text-slate-900 mb-2">
+                          {language === 'it' ? 'Rilevanza per FAGRI.Digital' : 'Relevance to FAGRI.Digital'}
+                        </h5>
+                        <p className="text-slate-700 text-sm">
+                          {language === 'it' 
+                            ? 'La UNFCCC stabilisce il quadro giuridico internazionale che legittima il commercio dei crediti di carbonio e i meccanismi di mitigazione, fornendo la base legale per le nostre operazioni blockchain.'
+                            : 'The UNFCCC establishes the international legal framework that legitimizes carbon credit trading and mitigation mechanisms, providing the legal foundation for our blockchain operations.'
+                          }
+                        </p>
+                      </div>
+
+                      <button
+                        onClick={() => toggleSection('unfccc')}
+                        className="text-emerald-600 hover:text-emerald-700 text-sm font-medium flex items-center space-x-1"
+                      >
+                        <span>{language === 'it' ? 'Mostra Meno' : 'Show Less'}</span>
+                        <ChevronRight className="h-4 w-4 rotate-90" />
+                      </button>
+                    </div>
+                  )}
+                  
+                  <a href="https://unfccc.int" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center mt-3">
+                    {language === 'it' ? 'Sito Ufficiale' : 'Official Website'} <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </div>
 
                 <div className="bg-white rounded-xl p-6 border border-slate-200">
-                  <h4 className="font-medium text-slate-900 mb-3">Kyoto Protocol - 1997</h4>
+                  <h4 className="font-medium text-slate-900 mb-3">
+                    {language === 'it' ? 'Protocollo di Kyoto - 1997' : 'Kyoto Protocol - 1997'}
+                  </h4>
                   <p className="text-slate-600 text-sm mb-3">
-                    Legally binding greenhouse gas emission reduction targets for developed countries, spanning 2008-2012 and 2013-2020 periods.
+                    {language === 'it' 
+                      ? 'Rappresentò un passo avanti significativo vincolando legalmente un set limitato di paesi sviluppati a obiettivi specifici di riduzione delle emissioni di gas serra.'
+                      : 'Represented a significant step forward by legally binding a limited set of developed countries to specific greenhouse gas emission reduction targets.'
+                    }
                   </p>
-                  <a href="https://unfccc.int/kyoto_protocol" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center">
-                    Official Documentation <ExternalLink className="ml-1 h-3 w-3" />
+
+                  {!expandedSections.includes('kyoto') && (
+                    <button
+                      onClick={() => toggleSection('kyoto')}
+                      className="text-emerald-600 hover:text-emerald-700 text-sm font-medium mb-3 flex items-center space-x-1"
+                    >
+                      <span>{language === 'it' ? 'Leggi Di Più' : 'Read More'}</span>
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  )}
+
+                  {expandedSections.includes('kyoto') && (
+                    <div className="space-y-4">
+                      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                        <h5 className="font-medium text-amber-900 mb-2">
+                          {language === 'it' ? 'Lezione Appresa' : 'Key Lesson'}
+                        </h5>
+                        <p className="text-amber-800 text-sm">
+                          {language === 'it' 
+                            ? 'Il Protocollo ha evidenziato la necessità critica di meccanismi di contabilità robusti negli accordi climatici internazionali - una sfida che la nostra tecnologia blockchain risolve direttamente.'
+                            : 'The Protocol highlighted the critical need for robust accounting mechanisms in international climate agreements - a challenge our blockchain technology directly addresses.'
+                          }
+                        </p>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                          <h5 className="font-medium text-slate-900 mb-2">
+                            {language === 'it' ? 'Periodo 1: 2008-2012' : 'Period 1: 2008-2012'}
+                          </h5>
+                          <p className="text-slate-700 text-sm">
+                            {language === 'it' 
+                              ? 'Primo periodo di impegno con riduzione del 5% delle emissioni rispetto ai livelli del 1990 per i paesi sviluppati.'
+                              : 'First commitment period with 5% reduction in emissions below 1990 levels for developed countries.'
+                            }
+                          </p>
+                        </div>
+                        <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
+                          <h5 className="font-medium text-slate-900 mb-2">
+                            {language === 'it' ? 'Periodo 2: 2013-2020' : 'Period 2: 2013-2020'}
+                          </h5>
+                          <p className="text-slate-700 text-sm">
+                            {language === 'it' 
+                              ? 'Secondo periodo con obiettivi più ambiziosi, ma partecipazione limitata di alcuni paesi chiave.'
+                              : 'Second period with more ambitious targets but limited participation from key countries.'
+                            }
+                          </p>
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={() => toggleSection('kyoto')}
+                        className="text-emerald-600 hover:text-emerald-700 text-sm font-medium flex items-center space-x-1"
+                      >
+                        <span>{language === 'it' ? 'Mostra Meno' : 'Show Less'}</span>
+                        <ChevronRight className="h-4 w-4 rotate-90" />
+                      </button>
+                    </div>
+                  )}
+                  
+                  <a href="https://unfccc.int/kyoto_protocol" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center mt-3">
+                    {language === 'it' ? 'Documentazione Ufficiale' : 'Official Documentation'} <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </div>
 
                 <div className="bg-white rounded-xl p-6 border border-slate-200">
-                  <h4 className="font-medium text-slate-900 mb-3">Paris Agreement - 2015</h4>
+                  <h4 className="font-medium text-slate-900 mb-3">
+                    {language === 'it' ? 'Accordo di Parigi - 2015' : 'Paris Agreement - 2015'}
+                  </h4>
                   <p className="text-slate-600 text-sm mb-3">
-                    Legally binding international treaty keeping global temperature rise "well below 2°C above pre-industrial levels and pursue efforts to limit the temperature increase to 1.5°C."
+                    {language === 'it' 
+                      ? 'Trattato internazionale legalmente vincolante che mantiene l\'aumento della temperatura globale "ben al di sotto di 2°C" e persegue sforzi per limitarlo a 1,5°C.'
+                      : 'Legally binding international treaty keeping global temperature rise "well below 2°C above pre-industrial levels and pursue efforts to limit it to 1.5°C."'
+                    }
                   </p>
-                  <a href="https://unfccc.int/process-and-meetings/the-paris-agreement" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center">
-                    Official Text <ExternalLink className="ml-1 h-3 w-3" />
+
+                  {!expandedSections.includes('paris') && (
+                    <button
+                      onClick={() => toggleSection('paris')}
+                      className="text-emerald-600 hover:text-emerald-700 text-sm font-medium mb-3 flex items-center space-x-1"
+                    >
+                      <span>{language === 'it' ? 'Leggi Di Più' : 'Read More'}</span>
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+                  )}
+
+                  {expandedSections.includes('paris') && (
+                    <div className="space-y-4">
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                          <h5 className="font-medium text-green-900 mb-2">
+                            {language === 'it' ? 'Obiettivo di Temperatura' : 'Temperature Goal'}
+                          </h5>
+                          <p className="text-green-800 text-sm">
+                            {language === 'it' 
+                              ? 'Mantenere l\'aumento della temperatura globale "ben al di sotto di 2°C" e perseguire sforzi per limitarlo a 1,5°C.'
+                              : 'Keep global temperature rise "well below 2°C above pre-industrial levels" and pursue efforts to limit it to 1.5°C.'
+                            }
+                          </p>
+                        </div>
+                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                          <h5 className="font-medium text-blue-900 mb-2">
+                            {language === 'it' ? 'Articolo 6.2' : 'Article 6.2'}
+                          </h5>
+                          <p className="text-blue-800 text-sm">
+                            {language === 'it' 
+                              ? 'Affronta gli "aggiustamenti corrispondenti" per prevenire il doppio conteggio nel commercio internazionale del carbonio.'
+                              : 'Addresses "corresponding adjustments" to prevent double claiming in international carbon trading.'
+                            }
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                        <h5 className="font-medium text-emerald-900 mb-2">
+                          {language === 'it' ? 'Impatto per FAGRI.Digital' : 'Impact on FAGRI.Digital'}
+                        </h5>
+                        <p className="text-emerald-800 text-sm">
+                          {language === 'it' 
+                            ? 'L\'Articolo 6.2 dell\'Accordo di Parigi richiede meccanismi robusti per gli "aggiustamenti corrispondenti" - esattamente ciò che la nostra piattaforma blockchain EUFD2025-001 fornisce automaticamente attraverso smart contract e immutabilità dei dati.'
+                            : 'Article 6.2 of the Paris Agreement requires robust mechanisms for "corresponding adjustments" - exactly what our EUFD2025-001 blockchain platform provides automatically through smart contracts and data immutability.'
+                          }
+                        </p>
+                      </div>
+
+                      <button
+                        onClick={() => toggleSection('paris')}
+                        className="text-emerald-600 hover:text-emerald-700 text-sm font-medium flex items-center space-x-1"
+                      >
+                        <span>{language === 'it' ? 'Mostra Meno' : 'Show Less'}</span>
+                        <ChevronRight className="h-4 w-4 rotate-90" />
+                      </button>
+                    </div>
+                  )}
+                  
+                  <a href="https://unfccc.int/process-and-meetings/the-paris-agreement" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center mt-3">
+                    {language === 'it' ? 'Testo Ufficiale' : 'Official Text'} <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </div>
               </div>
@@ -195,37 +395,243 @@ export default function LegalDocumentationPage() {
 
             {/* European Union Framework */}
             <div className="mb-12">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">European Union's Climate and Digital Agenda</h3>
+              <h3 className="text-2xl font-light text-slate-900 mb-6">
+                {language === 'it' ? 'Agenda Climatica e Digitale dell\'Unione Europea' : 'European Union\'s Climate and Digital Agenda'}
+              </h3>
+              
+              <p className="text-slate-600 mb-6">
+                {language === 'it' 
+                  ? 'L\'UE ha stabilito il quadro normativo più avanzato al mondo per l\'azione climatica e l\'integrazione della tecnologia digitale, creando l\'ambiente ideale per l\'innovazione blockchain di FAGRI.Digital.'
+                  : 'The EU has established the world\'s most advanced regulatory framework for climate action and digital technology integration, creating the ideal environment for FAGRI.Digital\'s blockchain innovation.'
+                }
+              </p>
               
               <div className="bg-white rounded-xl p-8 border border-slate-200 mb-6">
-                <h4 className="font-medium text-slate-900 mb-4">European Green Deal & "Fit for 55" Package</h4>
+                <h4 className="font-medium text-slate-900 mb-4">
+                  {language === 'it' ? 'Green Deal Europeo & Pacchetto "Fit for 55"' : 'European Green Deal & "Fit for 55" Package'}
+                </h4>
                 <p className="text-slate-600 mb-4">
-                  Comprehensive legislative proposals designed to cut net greenhouse gas emissions by at least 55% by 2030 compared to 1990 levels, aiming for climate neutrality by 2050.
+                  {language === 'it' 
+                    ? 'Proposte legislative complete progettate per ridurre le emissioni nette di gas serra di almeno il 55% entro il 2030 rispetto ai livelli del 1990, puntando alla neutralità climatica entro il 2050.'
+                    : 'Comprehensive legislative proposals designed to cut net greenhouse gas emissions by at least 55% by 2030 compared to 1990 levels, aiming for climate neutrality by 2050.'
+                  }
                 </p>
                 
+                {!expandedSections.includes('eu-green-deal') && (
+                  <button
+                    onClick={() => toggleSection('eu-green-deal')}
+                    className="text-emerald-600 hover:text-emerald-700 text-sm font-medium mb-4 flex items-center space-x-1"
+                  >
+                    <span>{language === 'it' ? 'Leggi Di Più' : 'Read More'}</span>
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                )}
+
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   <div className="bg-slate-50 rounded-lg p-4">
-                    <h5 className="font-medium text-slate-900 mb-2">EU ETS Expansion</h5>
-                    <p className="text-slate-600 text-sm">Covers 45% of EU's greenhouse gas emissions with new ETS2 system for buildings and transport from 2027.</p>
+                    <h5 className="font-medium text-slate-900 mb-2">
+                      {language === 'it' ? 'Espansione EU ETS' : 'EU ETS Expansion'}
+                    </h5>
+                    <p className="text-slate-600 text-sm">
+                      {language === 'it' 
+                        ? 'Copre il 45% delle emissioni di gas serra dell\'UE con il nuovo sistema ETS2 per edifici e trasporti dal 2027.'
+                        : 'Covers 45% of EU\'s greenhouse gas emissions with new ETS2 system for buildings and transport from 2027.'
+                      }
+                    </p>
                   </div>
                   <div className="bg-slate-50 rounded-lg p-4">
-                    <h5 className="font-medium text-slate-900 mb-2">Carbon Border Adjustment (CBAM)</h5>
-                    <p className="text-slate-600 text-sm">Prevents carbon leakage by imposing tariffs on carbon-intensive imports from 2026.</p>
+                    <h5 className="font-medium text-slate-900 mb-2">
+                      {language === 'it' ? 'Meccanismo di Aggiustamento del Carbonio alle Frontiere (CBAM)' : 'Carbon Border Adjustment (CBAM)'}
+                    </h5>
+                    <p className="text-slate-600 text-sm">
+                      {language === 'it' 
+                        ? 'Previene la fuga di carbonio imponendo tariffe sulle importazioni ad alta intensità di carbonio dal 2026.'
+                        : 'Prevents carbon leakage by imposing tariffs on carbon-intensive imports from 2026.'
+                      }
+                    </p>
                   </div>
                 </div>
 
+                {expandedSections.includes('eu-green-deal') && (
+                  <div className="space-y-4 mb-4">
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                      <h5 className="font-medium text-blue-900 mb-2">
+                        {language === 'it' ? 'Impatto per l\'Agricoltura' : 'Impact on Agriculture'}
+                      </h5>
+                      <p className="text-blue-800 text-sm">
+                        {language === 'it' 
+                          ? 'Il Green Deal include specifiche misure per l\'agricoltura sostenibile, inclusi incentivi per pratiche di carbon farming che sono direttamente supportate dalla piattaforma FAGRI.Digital.'
+                          : 'The Green Deal includes specific measures for sustainable agriculture, including incentives for carbon farming practices that are directly supported by the FAGRI.Digital platform.'
+                        }
+                      </p>
+                    </div>
+
+                    <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                      <h5 className="font-medium text-emerald-900 mb-2">
+                        {language === 'it' ? 'Regolamento UE 3012/2024' : 'EU Regulation 3012/2024'}
+                      </h5>
+                      <p className="text-emerald-800 text-sm">
+                        {language === 'it' 
+                          ? 'Questo nuovo regolamento rende obbligatorio l\'uso della tecnologia blockchain per l\'emissione e la registrazione di crediti di carbonio, validando direttamente l\'approccio tecnologico di FAGRI.Digital.'
+                          : 'This new regulation makes blockchain technology mandatory for carbon credit issuance and registration, directly validating FAGRI.Digital\'s technological approach.'
+                        }
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={() => toggleSection('eu-green-deal')}
+                      className="text-emerald-600 hover:text-emerald-700 text-sm font-medium flex items-center space-x-1"
+                    >
+                      <span>{language === 'it' ? 'Mostra Meno' : 'Show Less'}</span>
+                      <ChevronRight className="h-4 w-4 rotate-90" />
+                    </button>
+                  </div>
+                )}
+
                 <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center">
-                  European Green Deal <ExternalLink className="ml-1 h-3 w-3" />
+                  {language === 'it' ? 'Green Deal Europeo' : 'European Green Deal'} <ExternalLink className="ml-1 h-3 w-3" />
+                </a>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 border border-slate-200 mb-6">
+                <h4 className="font-medium text-slate-900 mb-4">
+                  {language === 'it' ? 'Direttiva sulla Rendicontazione della Sostenibilità Aziendale (CSRD)' : 'Corporate Sustainability Reporting Directive (CSRD)'}
+                </h4>
+                <p className="text-slate-600 mb-4">
+                  {language === 'it' 
+                    ? 'Rendicontazione ESG obbligatoria per le grandi imprese a partire dall\'anno fiscale 2024, richiedendo rapporti dettagliati sulle emissioni di carbonio Scope 1, 2 e 3 con valutazione di "doppia materialità".'
+                    : 'Mandatory ESG reporting for large enterprises starting fiscal year 2024, requiring detailed Scope 1, 2, and 3 carbon emissions reporting with "double materiality" assessment.'
+                  }
+                </p>
+
+                {!expandedSections.includes('csrd') && (
+                  <button
+                    onClick={() => toggleSection('csrd')}
+                    className="text-emerald-600 hover:text-emerald-700 text-sm font-medium mb-4 flex items-center space-x-1"
+                  >
+                    <span>{language === 'it' ? 'Leggi Di Più' : 'Read More'}</span>
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                )}
+
+                {expandedSections.includes('csrd') && (
+                  <div className="space-y-4 mb-4">
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                        <h5 className="font-medium text-red-900 mb-2">Scope 1</h5>
+                        <p className="text-red-800 text-sm">
+                          {language === 'it' 
+                            ? 'Emissioni dirette dalle operazioni aziendali'
+                            : 'Direct emissions from company operations'
+                          }
+                        </p>
+                      </div>
+                      <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                        <h5 className="font-medium text-orange-900 mb-2">Scope 2</h5>
+                        <p className="text-orange-800 text-sm">
+                          {language === 'it' 
+                            ? 'Emissioni indirette da energia acquistata'
+                            : 'Indirect emissions from purchased energy'
+                          }
+                        </p>
+                      </div>
+                      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                        <h5 className="font-medium text-yellow-900 mb-2">Scope 3</h5>
+                        <p className="text-yellow-800 text-sm">
+                          {language === 'it' 
+                            ? 'Tutte le altre emissioni indirette nella catena del valore'
+                            : 'All other indirect emissions in the value chain'
+                          }
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                      <h5 className="font-medium text-purple-900 mb-2">
+                        {language === 'it' ? 'Vantaggio FAGRI.Digital' : 'FAGRI.Digital Advantage'}
+                      </h5>
+                      <p className="text-purple-800 text-sm">
+                        {language === 'it' 
+                          ? 'La nostra piattaforma blockchain automatizza completamente la raccolta e verifica dei dati CSRD, riducendo i costi di compliance del 70% e garantendo la conformità automatica attraverso smart contract.'
+                          : 'Our blockchain platform fully automates CSRD data collection and verification, reducing compliance costs by 70% and ensuring automatic conformity through smart contracts.'
+                        }
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={() => toggleSection('csrd')}
+                      className="text-emerald-600 hover:text-emerald-700 text-sm font-medium flex items-center space-x-1"
+                    >
+                      <span>{language === 'it' ? 'Mostra Meno' : 'Show Less'}</span>
+                      <ChevronRight className="h-4 w-4 rotate-90" />
+                    </button>
+                  </div>
+                )}
+
+                <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center">
+                  {language === 'it' ? 'Direttiva CSRD' : 'CSRD Directive'} <ExternalLink className="ml-1 h-3 w-3" />
                 </a>
               </div>
 
               <div className="bg-white rounded-xl p-8 border border-slate-200">
-                <h4 className="font-medium text-slate-900 mb-4">Corporate Sustainability Reporting Directive (CSRD)</h4>
+                <h4 className="font-medium text-slate-900 mb-4">
+                  {language === 'it' ? 'Strategia Digitale Europea e Blockchain Sandbox' : 'European Digital Strategy and Blockchain Sandbox'}
+                </h4>
                 <p className="text-slate-600 mb-4">
-                  Mandatory ESG reporting for large enterprises starting fiscal year 2024, requiring detailed Scope 1, 2, and 3 carbon emissions reporting with "double materiality" assessment.
+                  {language === 'it' 
+                    ? 'L\'iniziativa European Blockchain Sandbox fornisce un ambiente regolamentare sicuro per testare soluzioni blockchain innovative nel settore pubblico, inclusa la certificazione ambientale.'
+                    : 'The European Blockchain Sandbox initiative provides a safe regulatory environment to test innovative blockchain solutions in the public sector, including environmental certification.'
+                  }
                 </p>
-                <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center">
-                  CSRD Directive <ExternalLink className="ml-1 h-3 w-3" />
+
+                {!expandedSections.includes('blockchain-sandbox') && (
+                  <button
+                    onClick={() => toggleSection('blockchain-sandbox')}
+                    className="text-emerald-600 hover:text-emerald-700 text-sm font-medium mb-4 flex items-center space-x-1"
+                  >
+                    <span>{language === 'it' ? 'Leggi Di Più' : 'Read More'}</span>
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                )}
+
+                {expandedSections.includes('blockchain-sandbox') && (
+                  <div className="space-y-4 mb-4">
+                    <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+                      <h5 className="font-medium text-indigo-900 mb-2">
+                        {language === 'it' ? 'Partecipazione FAGRI.Digital' : 'FAGRI.Digital Participation'}
+                      </h5>
+                      <p className="text-indigo-800 text-sm">
+                        {language === 'it' 
+                          ? 'FAGRI.Digital partecipa attivamente al Blockchain Sandbox europeo, collaborando con organismi di regolamentazione per definire standard futuri per la certificazione CO₂ basata su blockchain.'
+                          : 'FAGRI.Digital actively participates in the European Blockchain Sandbox, collaborating with regulatory bodies to define future standards for blockchain-based CO₂ certification.'
+                        }
+                      </p>
+                    </div>
+
+                    <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+                      <h5 className="font-medium text-teal-900 mb-2">
+                        {language === 'it' ? 'Conformità Normativa Avanzata' : 'Advanced Regulatory Compliance'}
+                      </h5>
+                      <p className="text-teal-800 text-sm">
+                        {language === 'it' 
+                          ? 'La partecipazione al Sandbox consente a FAGRI.Digital di allinearsi direttamente con le future normative UE, garantendo piena conformità e vantaggio first-mover nel mercato europeo.'
+                          : 'Sandbox participation enables FAGRI.Digital to align directly with future EU regulations, ensuring full compliance and first-mover advantage in the European market.'
+                        }
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={() => toggleSection('blockchain-sandbox')}
+                      className="text-emerald-600 hover:text-emerald-700 text-sm font-medium flex items-center space-x-1"
+                    >
+                      <span>{language === 'it' ? 'Mostra Meno' : 'Show Less'}</span>
+                      <ChevronRight className="h-4 w-4 rotate-90" />
+                    </button>
+                  </div>
+                )}
+
+                <a href="https://digital-strategy.ec.europa.eu/en/policies/blockchain-sandbox" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 text-sm flex items-center">
+                  {language === 'it' ? 'Blockchain Sandbox UE' : 'EU Blockchain Sandbox'} <ExternalLink className="ml-1 h-3 w-3" />
                 </a>
               </div>
             </div>
@@ -310,28 +716,30 @@ export default function LegalDocumentationPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-3 mb-8">
               <Zap className="h-6 w-6 text-emerald-700" />
-              <h2 className="text-3xl font-light text-slate-900">{t('legal-doc-fagri-solution')}</h2>
+              <h2 className="text-3xl font-light text-slate-900">
+                {language === 'it' ? 'La Soluzione FAGRI.Digital' : 'FAGRI.Digital Solution'}
+              </h2>
             </div>
 
             <div className="bg-white rounded-xl p-8 border border-slate-200 mb-8">
               <h3 className="text-2xl font-light text-slate-900 mb-6">
-                FAGRI.Digital: {language === 'it' ? 'Piattaforma Globale per la Certificazione CO₂' : 'Global Platform for CO₂ Certification'}
+                {language === 'it' ? 'Quadro Legale e Normativo per la Certificazione CO₂' : 'Legal and Regulatory Framework for CO₂ Certification'}
               </h3>
               
               <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-8 mb-8">
                 <h4 className="text-xl font-medium text-emerald-900 mb-4">
-                  {language === 'it' ? 'Chi Siamo' : 'Who We Are'}
+                  {language === 'it' ? 'Compliance Normativa e Standard Internazionali' : 'Regulatory Compliance and International Standards'}
                 </h4>
                 <p className="text-emerald-800 leading-relaxed mb-4">
                   {language === 'it' 
-                    ? 'FAGRI.Digital, nata in seno alla FAGRI (Federazione Agricoltori Italiani), è un Sistema di Certificazione con piattaforma digitale globale per il mercato del carbonio e per le certificazioni in blockchain in agricoltura. Con oltre 30 anni di esperienza nel settore agricolo italiano, rappresentiamo più di 110.000 membri e quasi 80.000 imprese.'
-                    : 'FAGRI.Digital, born within FAGRI (Italian Farmers Federation), is a Certification System with a global digital platform for the carbon market and blockchain certifications in agriculture. With over 30 years of experience in the Italian agricultural sector, we represent more than 110,000 members and nearly 80,000 enterprises.'
+                    ? 'La piattaforma FAGRI.Digital opera all\'interno di un complesso quadro normativo che abbraccia le legislazioni internazionali, europee e italiane. La nostra conformità agli standard ISO 14064-1, 14064-2, e 14064-3, insieme al nuovo Regolamento UE 3012/2024, garantisce la validità legale e l\'accettazione globale dei certificati CO₂ emessi.'
+                    : 'The FAGRI.Digital platform operates within a complex regulatory framework encompassing international, European, and Italian legislations. Our compliance with ISO 14064-1, 14064-2, and 14064-3 standards, together with the new EU Regulation 3012/2024, ensures legal validity and global acceptance of issued CO₂ certificates.'
                   }
                 </p>
                 <p className="text-emerald-800 leading-relaxed">
                   {language === 'it' 
-                    ? 'La nostra missione è creare un ponte tra la concretezza dell\'esperienza agricola e gli strumenti digitali moderni, per una partecipazione equa e trasparente ai programmi ambientali e climatici – in particolare nella certificazione della CO₂.'
-                    : 'Our mission is to create a bridge between the concreteness of agricultural experience and modern digital tools, for fair and transparent participation in environmental and climate programs – particularly in CO₂ certification.'
+                    ? 'Il nostro approccio pioneristico integra obbligatoriamente la tecnologia Distributed Ledger (DLT) per rispondere alle crescenti esigenze di trasparenza, tracciabilità e prevenzione del doppio conteggio nei mercati del carbonio globali.'
+                    : 'Our pioneering approach mandatorily integrates Distributed Ledger Technology (DLT) to respond to growing demands for transparency, traceability, and prevention of double counting in global carbon markets.'
                   }
                 </p>
               </div>
@@ -339,48 +747,48 @@ export default function LegalDocumentationPage() {
               <div className="grid md:grid-cols-2 gap-8 mb-6">
                 <div>
                   <h4 className="font-medium text-slate-900 mb-3">
-                    {language === 'it' ? 'La Nostra Esperienza' : 'Our Experience'}
+                    {language === 'it' ? 'Standard e Certificazioni' : 'Standards and Certifications'}
                   </h4>
                   <ul className="space-y-2 text-slate-600 text-sm">
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{language === 'it' ? 'Oltre 30 anni di esperienza nel settore agricolo italiano' : 'Over 30 years of experience in the Italian agricultural sector'}</span>
+                      <span>{language === 'it' ? 'Standard EUFD2025-001 per emissione crediti di carbonio' : 'EUFD2025-001 Standard for carbon credit issuance'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{language === 'it' ? 'Rete di più di 110.000 membri attivi' : 'Network of more than 110,000 active members'}</span>
+                      <span>{language === 'it' ? 'Conformità ISO 14064-1, 14064-2, 14064-3' : 'ISO 14064-1, 14064-2, 14064-3 compliance'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{language === 'it' ? 'Quasi 80.000 imprese agricole coinvolte' : 'Nearly 80,000 agricultural enterprises involved'}</span>
+                      <span>{language === 'it' ? 'Regolamento UE 3012/2024 sull\'uso obbligatorio della blockchain' : 'EU Regulation 3012/2024 on mandatory blockchain use'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{language === 'it' ? 'Collaborazioni internazionali attive in Europa, America Latina, Africa' : 'Active international collaborations in Europe, Latin America, Africa'}</span>
+                      <span>{language === 'it' ? 'Certificazione da Organismo Accreditato SUOLO E SALUTE' : 'Certification from Accredited Body SUOLO E SALUTE'}</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
                   <h4 className="font-medium text-slate-900 mb-3">
-                    {language === 'it' ? 'Il Nostro Processo di Certificazione' : 'Our Certification Process'}
+                    {language === 'it' ? 'Innovazioni Legali DLT' : 'DLT Legal Innovations'}
                   </h4>
                   <ul className="space-y-2 text-slate-600 text-sm">
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{language === 'it' ? 'Accettazione progetti di compensazione ambientale da carbon farming' : 'Acceptance of environmental compensation projects from carbon farming'}</span>
+                      <span>{language === 'it' ? 'Decreto Semplificazioni italiano (Legge 12/2019) per DLT' : 'Italian Simplifications Decree (Law 12/2019) for DLT'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{language === 'it' ? 'Certificazione di conformità attraverso Organismo designato' : 'Compliance certification through designated Organization'}</span>
+                      <span>{language === 'it' ? 'Smart contracts legalmente vincolanti per parti identificate' : 'Legally binding smart contracts for identified parties'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{language === 'it' ? 'Pubblicazione su Registro Digitale in blockchain' : 'Publication on Digital Registry in blockchain'}</span>
+                      <span>{language === 'it' ? 'Validazione temporale elettronica con effetti legali' : 'Electronic time validation with legal effects'}</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{language === 'it' ? 'Vendita carbon credits sui mercati volontari e regolamentati' : 'Sale of carbon credits on voluntary and regulated markets'}</span>
+                      <span>{language === 'it' ? 'Integrazione con iniziativa "Made in Italy" per tracciabilità' : 'Integration with "Made in Italy" initiative for traceability'}</span>
                     </li>
                   </ul>
                 </div>
@@ -388,36 +796,36 @@ export default function LegalDocumentationPage() {
 
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
                 <h4 className="font-medium text-blue-900 mb-3">
-                  {language === 'it' ? 'Partnership Tecnologica con ALPHAG8 Switzerland' : 'Technology Partnership with ALPHAG8 Switzerland'}
+                  {language === 'it' ? 'Riconoscimento Internazionale dei Tribunali per l\'Azione Climatica' : 'International Court Recognition for Climate Action'}
                 </h4>
                 <p className="text-blue-800 text-sm mb-3">
                   {language === 'it' 
-                    ? 'La piattaforma FAGRI.Digital è sviluppata in collaborazione con ALPHAG8 Digital Solutions Switzerland, nostro partner tecnologico per la sicurezza completa, la progettazione della piattaforma e il concetto di infrastruttura digitale.'
-                    : 'The FAGRI.Digital platform is developed in collaboration with ALPHAG8 Digital Solutions Switzerland, our technology partner for complete security, platform design and digital infrastructure concept.'
+                    ? 'Sviluppi recenti indicano una crescente tendenza verso la responsabilità legale nell\'azione climatica. La Corte Internazionale di Giustizia (ICJ) sta emettendo un parere consultivo sui doveri legali delle nazioni riguardo ai cambiamenti climatici, sostenuto da oltre 130 paesi.'
+                    : 'Recent developments indicate a growing trend towards legal accountability in climate action. The International Court of Justice (ICJ) is issuing an advisory opinion on nations\' legal obligations regarding climate change, backed by over 130 countries.'
                   }
                 </p>
                 <p className="text-blue-800 text-sm">
                   {language === 'it' 
-                    ? 'Utilizziamo la tecnologia blockchain G8Chain (EVM-compatibile) per garantire tracciabilità, immutabilità e sicurezza di livello bancario svizzero per tutti i certificati CO₂.'
-                    : 'We use G8Chain blockchain technology (EVM-compatible) to ensure traceability, immutability and Swiss banking-level security for all CO₂ certificates.'
+                    ? 'Questo sottolinea l\'importanza crescente di dati sulle emissioni trasparenti e verificabili, posizionando la soluzione DLT di FAGRI.Digital come strumento per la mitigazione proattiva del rischio legale.'
+                    : 'This underscores the escalating importance of transparent and verifiable emissions data, positioning FAGRI.Digital\'s DLT solution as a tool for proactive legal risk mitigation.'
                   }
                 </p>
               </div>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
-                <h4 className="font-medium text-emerald-900 mb-3">
-                  {language === 'it' ? 'Standard EUFD2025-001: La Nostra Innovazione' : 'EUFD2025-001 Standard: Our Innovation'}
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+                <h4 className="font-medium text-amber-900 mb-3">
+                  {language === 'it' ? 'Vantaggio First-Mover nella Legislazione Blockchain' : 'First-Mover Advantage in Blockchain Legislation'}
                 </h4>
-                <p className="text-emerald-800 text-sm mb-3">
+                <p className="text-amber-800 text-sm mb-3">
                   {language === 'it' 
-                    ? 'Sviluppato in collaborazione con le principali università italiane, tra cui l\'Università degli Studi di Viterbo La Tuscia, lo standard EUFD2025-001 rappresenta un nuovo paradigma globale per l\'emissione di crediti di carbonio.'
-                    : 'Developed in collaboration with leading Italian universities, including the University of Viterbo La Tuscia, the EUFD2025-001 standard represents a new global paradigm for carbon credit issuance.'
+                    ? 'L\'Italia si posiziona come leader europeo nel riconoscimento legale delle tecnologie DLT e Smart Contract, creando un ambiente favorevole per l\'innovazione nella certificazione CO₂ basata su blockchain.'
+                    : 'Italy positions itself as a European leader in legal recognition of DLT and Smart Contract technologies, creating a favorable environment for innovation in blockchain-based CO₂ certification.'
                   }
                 </p>
-                <p className="text-emerald-800 text-sm">
+                <p className="text-amber-800 text-sm">
                   {language === 'it' 
-                    ? 'Il nostro standard integra obbligatoriamente la tecnologia blockchain per l\'emissione e la registrazione di crediti di carbonio certificati, garantendo tracciabilità, trasparenza e immutabilità in conformità al Regolamento UE 3012/2024 e agli standard ISO 14064-1, 14064-2, e 14064-3.'
-                    : 'Our standard mandatorily integrates blockchain technology for the issuance and registration of certified carbon credits, ensuring traceability, transparency and immutability in compliance with EU Regulation 3012/2024 and ISO 14064-1, 14064-2, and 14064-3 standards.'
+                    ? 'Il nostro allineamento diretto con i requisiti EU ETS, CSRD e l\'integrazione con il European Blockchain Sandbox ci conferisce un vantaggio tecnologico e normativo significativo.'
+                    : 'Our direct alignment with EU ETS requirements, CSRD, and integration with the European Blockchain Sandbox gives us a significant technological and regulatory advantage.'
                   }
                 </p>
               </div>
