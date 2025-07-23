@@ -166,6 +166,22 @@ export function PasswordProtection({ onAuthenticated }: PasswordProtectionProps)
                 <p className="text-white/70 text-sm">{t('password-feature3-desc')}</p>
               </div>
             </div>
+
+            {/* Footer Credits */}
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <p className="text-white/60 text-sm text-center">
+                <a 
+                  href="https://alphag8.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-emerald-300 hover:text-emerald-200 transition-colors underline"
+                >
+                  ALPHAG8 Digital Solution Switzerland
+                </a>
+                <br />
+                All rights by FAGRI Digital Italia
+              </p>
+            </div>
           </div>
         </div>
       </div>
