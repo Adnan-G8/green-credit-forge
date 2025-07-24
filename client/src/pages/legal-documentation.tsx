@@ -677,6 +677,115 @@ export default function LegalDocumentationPage() {
               </div>
             </div>
 
+            {/* Read More - Global Regulatory Framework */}
+            <div className="mt-12">
+              {!expandedSections.includes('global-regulatory') && (
+                <div className="text-center">
+                  <button
+                    onClick={() => toggleSection('global-regulatory')}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-medium flex items-center space-x-2 mx-auto"
+                  >
+                    <span>{language === 'it' ? 'Leggi Analisi Completa del Quadro Normativo' : 'Read Complete Regulatory Framework Analysis'}</span>
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
+              )}
+
+              {expandedSections.includes('global-regulatory') && (
+                <div className="bg-white rounded-xl p-8 border border-slate-200">
+                  <h3 className="text-2xl font-light text-slate-900 mb-6">
+                    {language === 'it' ? 'Il Panorama Normativo Globale per la CO₂ e l\'Innovazione Digitale' : 'The Global Regulatory Landscape for CO₂ and Digital Innovation'}
+                  </h3>
+
+                  <div className="prose prose-slate max-w-none">
+                    <p className="text-slate-600 mb-6">
+                      {language === 'it' 
+                        ? 'L\'imperativo per soluzioni avanzate di gestione della CO₂ è sostenuto da un ambiente legale e politico in rapida evoluzione che integra sempre più le tecnologie digitali. Questa sezione descrive i quadri internazionali, europei e italiani che modellano l\'azione climatica e il ruolo dell\'innovazione.'
+                        : 'The imperative for advanced CO₂ management solutions is underpinned by a rapidly evolving legal and policy environment that increasingly integrates digital technologies. This section details the international, European, and Italian frameworks shaping climate action and the role of innovation.'
+                      }
+                    </p>
+
+                    <h4 className="text-xl font-medium text-slate-900 mb-4">
+                      {language === 'it' ? 'Quadri Internazionali per l\'Azione Climatica' : 'International Frameworks for Climate Action'}
+                    </h4>
+
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                      <h5 className="font-medium text-blue-900 mb-3">
+                        {language === 'it' ? 'Convenzione Quadro delle Nazioni Unite sui Cambiamenti Climatici (UNFCCC)' : 'United Nations Framework Convention on Climate Change (UNFCCC)'}
+                      </h5>
+                      <p className="text-blue-800 text-sm mb-3">
+                        {language === 'it' 
+                          ? 'La Convenzione Quadro delle Nazioni Unite sui Cambiamenti Climatici (UNFCCC), adottata nel 1992 al Summit della Terra, rappresenta il trattato internazionale fondamentale per affrontare il cambiamento climatico. Il suo obiettivo principale è stabilizzare le concentrazioni di gas serra nell\'atmosfera a un livello che impedisca pericolose interferenze umane con il sistema climatico, entro un lasso di tempo che consenta agli ecosistemi di adattarsi naturalmente e permetta lo sviluppo sostenibile.'
+                          : 'The United Nations Framework Convention on Climate Change (UNFCCC), adopted in 1992 at the Earth Summit, stands as the foundational international treaty for addressing climate change. Its core objective is to stabilize greenhouse gas concentrations in the atmosphere at a level that will prevent dangerous human interference with the climate system, within a timeframe that allows ecosystems to adapt naturally and enables sustainable development.'
+                        }
+                      </p>
+                    </div>
+
+                    <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-6">
+                      <h5 className="font-medium text-emerald-900 mb-3">
+                        {language === 'it' ? 'Protocollo di Kyoto (1997)' : 'Kyoto Protocol (1997)'}
+                      </h5>
+                      <p className="text-emerald-800 text-sm mb-3">
+                        {language === 'it' 
+                          ? 'Basandosi sull\'UNFCCC, il Protocollo di Kyoto, adottato nel 1997 alla COP3, ha rappresentato un passo significativo in avanti vincolando legalmente un set limitato di paesi sviluppati a obiettivi specifici di riduzione delle emissioni di gas serra. Questi impegni coprivano due periodi: 2008-2012 e 2013-2020. È importante notare che gli Stati Uniti hanno scelto di non ratificare il Protocollo, principalmente a causa della sua natura legalmente vincolante, il che ha contribuito alle sfide nelle successive negoziazioni climatiche internazionali.'
+                          : 'Building on the UNFCCC, the Kyoto Protocol, adopted in 1997 at COP3, represented a significant step forward by legally binding a limited set of developed countries to specific greenhouse gas emission reduction targets. These commitments spanned two periods: 2008-2012 and 2013-2020. Notably, the United States chose not to ratify the Protocol, primarily due to its legally-binding nature, which contributed to challenges in subsequent international climate negotiations.'
+                        }
+                      </p>
+                    </div>
+
+                    <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-6">
+                      <h5 className="font-medium text-purple-900 mb-3">
+                        {language === 'it' ? 'Accordo di Parigi (2015)' : 'Paris Agreement (2015)'}
+                      </h5>
+                      <p className="text-purple-800 text-sm mb-3">
+                        {language === 'it' 
+                          ? 'L\'Accordo di Parigi, adottato il 12 dicembre 2015 alla COP21, ha segnato un momento cruciale nella governance climatica globale. Questo trattato internazionale legalmente vincolante ha sostituito il Protocollo di Kyoto nel stabilire obiettivi climatici globali completi. Il suo obiettivo centrale è rafforzare la risposta globale alla minaccia del cambiamento climatico mantenendo l\'aumento della temperatura globale in questo secolo "ben al di sotto dei 2 gradi Celsius rispetto ai livelli pre-industriali e perseguire sforzi per limitare l\'aumento di temperatura a 1,5°C".'
+                          : 'The Paris Agreement, adopted on December 12, 2015, at COP21, marked a pivotal moment in global climate governance. This legally binding international treaty superseded the Kyoto Protocol in setting comprehensive global climate goals. Its central aim is to strengthen the global response to the threat of climate change by keeping a global temperature rise this century "well below 2 degrees Celsius above pre-industrial levels and to pursue efforts to limit the temperature increase to 1.5°C".'
+                        }
+                      </p>
+                    </div>
+
+                    <h4 className="text-xl font-medium text-slate-900 mb-4">
+                      {language === 'it' ? 'Agenda Climatica e Digitale Ambiziosa dell\'Unione Europea' : 'European Union\'s Ambitious Climate and Digital Agenda'}
+                    </h4>
+
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-6">
+                      <h5 className="font-medium text-yellow-900 mb-3">
+                        {language === 'it' ? 'European Green Deal e Pacchetto "Fit for 55"' : 'European Green Deal and "Fit for 55" Package'}
+                      </h5>
+                      <p className="text-yellow-800 text-sm mb-3">
+                        {language === 'it' 
+                          ? 'L\'Unione Europea si è posizionata come leader globale nell\'azione climatica, adottando politiche complete ed esplorando attivamente innovazioni digitali per raggiungere i suoi ambiziosi obiettivi ambientali. Al centro della strategia climatica dell\'UE c\'è il Green Deal europeo, un\'iniziativa globale che mira alla neutralità climatica entro il 2050. Per raggiungere questo obiettivo, l\'UE ha introdotto il Pacchetto "Fit for 55", un insieme di proposte legislative progettate per rivedere la legislazione UE esistente al fine di ridurre le emissioni nette di gas serra di almeno il 55% entro il 2030 rispetto ai livelli del 1990.'
+                          : 'The European Union has positioned itself as a global leader in climate action, enacting comprehensive policies and actively exploring digital innovations to achieve its ambitious environmental goals. At the core of the EU\'s climate strategy is the European Green Deal, an overarching initiative aiming for climate neutrality by 2050. To achieve this, the EU introduced the "Fit for 55" Package, a set of legislative proposals designed to revise existing EU legislation to cut net greenhouse gas emissions by at least 55% by 2030 compared to 1990 levels.'
+                        }
+                      </p>
+                    </div>
+
+                    <div className="bg-slate-100 border border-slate-300 rounded-lg p-6 my-6">
+                      <h5 className="font-medium text-slate-900 mb-3">
+                        {language === 'it' ? 'European Blockchain Sandbox per l\'Azione Climatica' : 'European Blockchain Sandbox for Climate Action'}
+                      </h5>
+                      <p className="text-slate-700 text-sm">
+                        {language === 'it' 
+                          ? 'La Commissione Europea supporta attivamente l\'uso delle tecnologie blockchain per aiutare a combattere il cambiamento climatico, riconoscendo il loro potenziale significativo per migliorare la trasparenza, la responsabilità e la tracciabilità delle emissioni di gas serra. Un\'iniziativa chiave in questo senso è la European Blockchain Sandbox, lanciata nel 2023, che fornisce un quadro paneuropeo per il dialogo normativo tra regolatori e innovatori sui casi d\'uso delle Tecnologie di Registro Distribuito (DLT). Significativamente, il reporting CO₂ all\'interno dell\'EU ETS e i processi di Misurazione, Reporting e Verifica (MRV) sono esplicitamente inclusi come aree prioritarie.'
+                          : 'The European Commission actively supports the use of blockchain technologies to help combat climate change, acknowledging their significant potential to improve the transparency, accountability, and traceability of greenhouse gas emissions. A key initiative in this regard is the European Blockchain Sandbox, launched in 2023, which provides a pan-European framework for regulatory dialogue between regulators and innovators on Distributed Ledger Technologies (DLT) use cases. Significantly, CO₂ reporting within the EU ETS and Measurement, Reporting, and Verification (MRV) processes are explicitly included as priority areas.'
+                        }
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="text-center mt-8">
+                    <button
+                      onClick={() => toggleSection('global-regulatory')}
+                      className="text-emerald-600 hover:text-emerald-700 font-medium flex items-center space-x-2 mx-auto"
+                    >
+                      <span>{language === 'it' ? 'Mostra Meno' : 'Show Less'}</span>
+                      <ChevronRight className="h-4 w-4 rotate-90" />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
 
           </div>
         </div>
