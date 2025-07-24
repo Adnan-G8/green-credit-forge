@@ -165,6 +165,16 @@ Preferred communication style: Simple, everyday language.
   * **Enhanced User Experience**: Clear association with CO₂ certification and renewable energy context
   * **Bilingual Download Interface**: Complete Italian and English support for download functionality
   * **Direct PDF Access**: Users can download the complete 1410-line EUFD2025-001 standard document
+- **Banking-Based KYC Registration System** (July 24, 2025):
+  * **Streamlined Employee Registration**: Name, Social Security Number, Phone Number, and Banking Information only (no passport/ID required)
+  * **FAGRI Internal Verification**: FAGRI handles document verification internally for employees, reducing complexity
+  * **Payment Integration**: €5 account creation fee + €12 first year fee (total €17) with Stripe integration
+  * **Banking KYC Security**: Payment must come from same account name or credit card holder name for identification verification
+  * **Multi-Step Process**: Three-step registration: Personal/Banking Info → Secure Payment → Account Activation
+  * **Payment Method Options**: Bank transfer or credit card with same-name verification requirement
+  * **Professional Form Design**: Banking-style form layouts with emerald, blue, and green color-coded steps
+  * **Complete Form Validation**: Required field validation and payment method conditional logic
+  * **Bilingual Support**: Complete Italian and English translations for all banking KYC terminology
 
 ## System Architecture
 
