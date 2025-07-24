@@ -131,6 +131,15 @@ Preferred communication style: Simple, everyday language.
   * **Mobile Navigation**: Both buttons available in mobile hamburger menu
   * **Professional Styling**: Banking-style button design with emerald color scheme and icons
   * **Complete Translation**: Full bilingual support for all new navigation elements
+- **ALPHAG8 Digital Identity System** (July 24, 2025):
+  * **KYC Registration Process**: Comprehensive 3-step KYC verification system for ALPHAG8 ID creation
+  * **Digital Identity Required**: Mandatory ALPHAG8 ID for accessing CO₂ certification applications
+  * **Swiss Banking Security**: Registration process with same security standards as Swiss financial institutions
+  * **Progress Tracking**: Visual progress indicators showing KYC completion status
+  * **Identity Verification Steps**: Personal verification, document validation, and account activation
+  * **CO₂ Access Control**: Clear messaging that CO₂ applications require completed ALPHAG8 ID
+  * **Bilingual KYC Interface**: Complete Italian and English support for entire registration process
+  * **Crypto-Free Terminology**: Avoided all crypto/wallet terminology while maintaining blockchain security benefits
 
 ## System Architecture
 

@@ -5,6 +5,7 @@ import { FagriLogo } from '@/assets/fagri-logo';
 import { Button } from '@/components/ui/button';
 import { Menu, X, LogOut, UserPlus, User } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
+import { AlphaG8RegistrationModal } from './alphag8-registration-modal';
 import { useLocation } from 'wouter';
 
 export function Navigation() {
@@ -13,6 +14,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMembershipModal, setShowMembershipModal] = useState(false);
+  const [showAlphaG8Modal, setShowAlphaG8Modal] = useState(false);
   const [location, setLocation] = useLocation();
 
   useEffect(() => {
@@ -125,7 +127,7 @@ export function Navigation() {
 
               {/* Sign Up and Register Buttons */}
               <Button
-                onClick={() => setShowMembershipModal(true)}
+                onClick={() => setShowAlphaG8Modal(true)}
                 variant="outline"
                 size="sm"
                 className="hidden md:flex items-center px-3 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
@@ -135,7 +137,7 @@ export function Navigation() {
               </Button>
               
               <Button
-                onClick={() => setShowMembershipModal(true)}
+                onClick={() => setShowAlphaG8Modal(true)}
                 size="sm"
                 className="hidden md:flex items-center px-3 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
               >
@@ -207,7 +209,7 @@ export function Navigation() {
                 {/* Mobile Sign Up and Register */}
                 <button
                   onClick={() => {
-                    setShowMembershipModal(true);
+                    setShowAlphaG8Modal(true);
                     setIsOpen(false);
                   }}
                   className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
@@ -218,7 +220,7 @@ export function Navigation() {
                 
                 <button
                   onClick={() => {
-                    setShowMembershipModal(true);
+                    setShowAlphaG8Modal(true);
                     setIsOpen(false);
                   }}
                   className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
@@ -247,6 +249,11 @@ export function Navigation() {
       <MembershipModal
         isOpen={showMembershipModal}
         onClose={() => setShowMembershipModal(false)}
+      />
+      
+      <AlphaG8RegistrationModal
+        isOpen={showAlphaG8Modal}
+        onClose={() => setShowAlphaG8Modal(false)}
       />
     </>
   );
