@@ -65,10 +65,10 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
             </div>
             <div>
               <DialogTitle className="text-2xl font-light text-slate-900">
-                {t('create-alphag8-id')}
+                {t('alphag8-id-key')}
               </DialogTitle>
               <p className="text-slate-600 font-light">
-                {t('digital-identity')} • {t('kyc-verification')}
+                {t('legal-protection')} • {t('kyc-verification')}
               </p>
             </div>
           </div>
@@ -177,20 +177,50 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
             })}
           </div>
 
-          {/* CO2 Access Information */}
-          <Card className="border-emerald-200 bg-emerald-50">
-            <CardHeader>
-              <CardTitle className="text-emerald-800 flex items-center space-x-2">
-                <UserCheck className="h-5 w-5" />
-                <span>{t('co2-access-title')}</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-emerald-700 font-light">
-                {t('co2-access-desc')}
-              </p>
-            </CardContent>
-          </Card>
+          {/* Legal Protection Information */}
+          <div className="grid md:grid-cols-3 gap-4">
+            <Card className="border-blue-200 bg-blue-50">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-blue-800 flex items-center space-x-2 text-sm">
+                  <Shield className="h-4 w-4" />
+                  <span>{t('legal-protection')}</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <p className="text-blue-700 font-light text-sm">
+                  {t('legal-protection-desc')}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-purple-200 bg-purple-50">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-purple-800 flex items-center space-x-2 text-sm">
+                  <UserCheck className="h-4 w-4" />
+                  <span>{t('privacy-protection')}</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <p className="text-purple-700 font-light text-sm">
+                  {t('privacy-protection-desc')}
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-emerald-200 bg-emerald-50">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-emerald-800 flex items-center space-x-2 text-sm">
+                  <AlertCircle className="h-4 w-4" />
+                  <span>{t('data-security')}</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <p className="text-emerald-700 font-light text-sm">
+                  {t('data-security-desc')}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-4">

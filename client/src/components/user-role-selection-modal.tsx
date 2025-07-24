@@ -105,44 +105,44 @@ export function UserRoleSelectionModal({ isOpen, onClose, onRoleSelected }: User
         </DialogHeader>
 
         <div className="space-y-6">
-          {/* Role Selection Cards */}
+          {/* Role Selection Cards - Fixed Height for Symmetry */}
           <div className="grid md:grid-cols-3 gap-6">
             {roles.map((role) => {
               const Icon = role.icon;
               
               return (
-                <Card key={role.id} className={`transition-all duration-300 cursor-pointer hover:shadow-lg ${
+                <Card key={role.id} className={`h-[500px] flex flex-col transition-all duration-300 cursor-pointer hover:shadow-lg ${
                   selectedRole === role.id ? `ring-2 ring-offset-2 ${role.borderColor}` : 'hover:border-slate-300'
                 } ${role.borderColor}`}>
-                  <CardHeader className="text-center pb-4">
+                  <CardHeader className="text-center pb-4 flex-shrink-0">
                     <div className={`mx-auto p-4 rounded-full w-16 h-16 flex items-center justify-center ${role.bgColor}`}>
                       <Icon className={`h-8 w-8 ${role.textColor}`} />
                     </div>
-                    <CardTitle className="text-lg font-semibold text-slate-900">
+                    <CardTitle className="text-lg font-semibold text-slate-900 min-h-[28px]">
                       {role.title}
                     </CardTitle>
-                    <CardDescription className="text-slate-600 font-light">
+                    <CardDescription className="text-slate-600 font-light min-h-[48px] flex items-center justify-center">
                       {role.description}
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="space-y-4">
-                    <div className="space-y-2">
+                  <CardContent className="flex-1 flex flex-col justify-between space-y-4">
+                    <div className="space-y-2 flex-1">
                       {role.features.map((feature, index) => (
-                        <div key={index} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-500" />
-                          <span className="text-sm text-slate-600">{feature}</span>
+                        <div key={index} className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm text-slate-600 leading-relaxed">{feature}</span>
                         </div>
                       ))}
                     </div>
                     
                     <Button
                       onClick={() => handleRoleSelection(role.id)}
-                      className={`w-full ${role.color} hover:opacity-90 text-white`}
+                      className={`w-full ${role.color} hover:opacity-90 text-white mt-4`}
                       disabled={role.id === 'non-member'}
                     >
                       {role.id === 'non-member' ? (
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center justify-center space-x-2">
                           <Lock className="h-4 w-4" />
                           <span>{role.buttonText}</span>
                         </div>

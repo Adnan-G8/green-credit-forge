@@ -392,6 +392,15 @@ export const translations = {
     'admin-rights': 'Diritti Amministratore',
     'member-access': 'Accesso Membro',
     'membership-needed': 'Adesione Necessaria',
+    
+    // ALPHAG8 ID KEY Legal Protection
+    'alphag8-id-key': 'ALPHAG8 ID KEY',
+    'legal-protection': 'Protezione Legale',
+    'legal-protection-desc': 'L\'ALPHAG8 ID KEY è un requisito legale per proteggere gli utenti contro terze parti non identificate e salvaguardare la privacy e i dati dell\'account.',
+    'privacy-protection': 'Protezione della Privacy',
+    'privacy-protection-desc': 'Il tuo account è collegato all\'ALPHAG8 ID KEY, fornendo protezione contro malintenzionati esterni e garantendo la sicurezza dei tuoi dati.',
+    'data-security': 'Sicurezza dei Dati',
+    'data-security-desc': 'Protezione avanzata contro accessi non autorizzati e salvaguardia dell\'identità digitale attraverso crittografia di livello bancario.',
 
     // Transition Section
     'transition-title': 'Dal Campo al Futuro',
@@ -760,6 +769,15 @@ export const translations = {
     'admin-rights': 'Administrator Rights',
     'member-access': 'Member Access',
     'membership-needed': 'Membership Needed',
+    
+    // ALPHAG8 ID KEY Legal Protection
+    'alphag8-id-key': 'ALPHAG8 ID KEY',
+    'legal-protection': 'Legal Protection',
+    'legal-protection-desc': 'The ALPHAG8 ID KEY is a legal requirement to protect users against unidentified third parties and safeguard account privacy and data.',
+    'privacy-protection': 'Privacy Protection',
+    'privacy-protection-desc': 'Your account is connected to the ALPHAG8 ID KEY, providing protection against external bad actors and ensuring data security.',
+    'data-security': 'Data Security',
+    'data-security-desc': 'Advanced protection against unauthorized access and digital identity safeguarding through banking-level encryption.',
 
     // Opportunities section
     'opportunities-title': 'Opportunities for agricultural enterprises, for agroforestry enterprises and for energy enterprises',
