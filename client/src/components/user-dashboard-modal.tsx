@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -97,6 +97,8 @@ Security: swiss-security@alphag8.digital`;
     <>
       <Dialog open={isOpen} onOpenChange={onClose}>
         <DialogContent className="max-w-3xl max-h-[85vh] bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-y-auto z-[10005]">
+          <DialogTitle className="sr-only">User Dashboard</DialogTitle>
+          <DialogDescription className="sr-only">Access your account dashboard and manage projects</DialogDescription>
           {/* Header Section */}
           <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 px-6 py-4 relative">
             <button 

@@ -1215,6 +1215,8 @@ export const translations = {
     'copy-id': 'Copy ID',
 
     'welcome-back-message': 'Welcome to FAGRI platform',
+    'invalid-id': 'Invalid ID',
+    'invalid-id-desc': 'Please enter a valid ALPHAG8 ID KEY',
     'download-certificate': 'Download Certificate',
     'quick-actions': 'Quick Actions',
     'manage-upload-organize-documents': 'Manage, upload, and organize your documents securely',
@@ -1816,7 +1818,8 @@ translations.it = {
   'solar-wind-hydroelectric-projects': 'Iniziative solari, eoliche, idroelettriche e di energia rinnovabile',
   'project-submitted': 'Domanda di Progetto Inviata',
   'project-review-process': 'Il tuo progetto sarà esaminato dal nostro team di certificazione entro 5-7 giorni lavorativi.',
-
+  'invalid-id': 'ID Non Valido',
+  'invalid-id-desc': 'Inserisci un ALPHAG8 ID KEY valido',
 };
 
 export type TranslationKey = keyof typeof translations['it'];
