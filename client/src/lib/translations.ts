@@ -401,6 +401,10 @@ export const translations = {
     'privacy-protection-desc': 'Il tuo account è collegato all\'ALPHAG8 ID KEY, fornendo protezione contro malintenzionati esterni e garantendo la sicurezza dei tuoi dati.',
     'data-security': 'Sicurezza dei Dati',
     'data-security-desc': 'Protezione avanzata contro accessi non autorizzati e salvaguardia dell\'identità digitale attraverso crittografia di livello bancario.',
+    
+    // EUFD Standard Download
+    'download-eufd-standard': 'EUFD2025-001 STANDARD',
+    'download-standard-desc': 'Scarica il documento completo dello standard EUFD2025-001 per la certificazione CO₂',
 
     // Transition Section
     'transition-title': 'Dal Campo al Futuro',
@@ -778,6 +782,10 @@ export const translations = {
     'privacy-protection-desc': 'Your account is connected to the ALPHAG8 ID KEY, providing protection against external bad actors and ensuring data security.',
     'data-security': 'Data Security',
     'data-security-desc': 'Advanced protection against unauthorized access and digital identity safeguarding through banking-level encryption.',
+    
+    // EUFD Standard Download
+    'download-eufd-standard': 'EUFD2025-001 STANDARD',
+    'download-standard-desc': 'Download the complete EUFD2025-001 standard document for CO₂ certification',
 
     // Opportunities section
     'opportunities-title': 'Opportunities for agricultural enterprises, for agroforestry enterprises and for energy enterprises',
