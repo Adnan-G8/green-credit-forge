@@ -736,7 +736,7 @@ export const translations = {
     'standard-step2-description': 'Application of EUFD2025-001 methodologies with continuous monitoring and detailed documentation of sustainable practices',
     'standard-step3-title': 'Certification',
     'standard-step3-description': 'Independent verification by accredited bodies and official issuance of certified carbon credits',
-    'standard-global-title': 'The New European Standard for a Global Transparent and Fair CO₂ Ecosystem',
+    'standard-global-title': 'The New European Standard for a Global, Transparent and Fair CO₂ Ecosystem',
     'standard-global-subtitle': 'Open to all countries to participate in building a sustainable future based on blockchain, transparency, and climate justice.',
     'standard-global-feature1-title': 'Global Inclusion',
     'standard-global-feature1-description': 'European standard designed to welcome participation from all countries in the fight against climate change',
