@@ -120,8 +120,14 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
                   <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
                     <p className="text-xs font-medium text-amber-800 mb-1">Test ID for Development:</p>
                     <p className="text-xs font-mono text-amber-700 bg-amber-100 px-2 py-1 rounded">
-                      ALPHAG8-1BKQE5C3-K9X2P4M7-A3
+                      ALPHAG8-1BKQE5C3-K9X2P4M7-15
                     </p>
+                    <button
+                      onClick={() => setAlphaG8Id('ALPHAG8-1BKQE5C3-K9X2P4M7-15')}
+                      className="text-xs text-amber-800 hover:text-amber-900 underline mt-1"
+                    >
+                      Click to auto-fill
+                    </button>
                   </div>
                 </div>
 
