@@ -8,6 +8,7 @@ import { useLanguage } from './language-provider';
 import { useToast } from '@/hooks/use-toast';
 import { validateAlphaG8Id } from '@shared/alphag8-id-generator';
 import { LogIn, Key, Shield, CheckCircle, AlertCircle, X, Lock } from 'lucide-react';
+import { UserDashboardModal } from './user-dashboard-modal';
 
 interface SignInModalProps {
   isOpen: boolean;
@@ -19,6 +20,7 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
   const { toast } = useToast();
   const [alphaG8Id, setAlphaG8Id] = useState('');
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [showDashboard, setShowDashboard] = useState(false);
 
   const TEST_ID = 'ALPHAG8-1BKQE5C3-K9X2P4M7-15';
 
@@ -34,12 +36,12 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
         description: t('welcome-back-message'),
       });
       
-      // Simulate sign-in success and close after 2 seconds
+      // Show dashboard after brief success display
       setTimeout(() => {
         onClose();
+        setShowDashboard(true);
         setIsSignedIn(false);
-        setAlphaG8Id('');
-      }, 2000);
+      }, 1500);
     } else {
       toast({
         title: t('invalid-id'),
@@ -49,7 +51,13 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
     }
   };
 
+  const handleDashboardClose = () => {
+    setShowDashboard(false);
+    setAlphaG8Id('');
+  };
+
   return (
+    <>
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-hidden">
         {/* Header Section */}
@@ -198,5 +206,13 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
         </div>
       </DialogContent>
     </Dialog>
+
+    <UserDashboardModal
+      isOpen={showDashboard}
+      onClose={handleDashboardClose}
+      alphaG8Id={alphaG8Id}
+      userRole="FAGRI Member"
+    />
+  </>
   );
 }
