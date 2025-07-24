@@ -924,7 +924,7 @@ export const translations = {
     'security-certifications-title': 'Comprehensive Certifications and Compliance',
     'security-certifications-text': 'The strict adherence to international security and data protection standards is confirmed by independent audits and certifications. This allows us to ensure that your data resides in an environment that meets the following audit and compliance requirements:',
     'security-old-conclusion-title': 'Your Data, Our Commitment',
-    'security-conclusion-text': 'Through these stringent measures and our intelligent data classification, Fagri.Digital ensures that your data resides on an infrastructure that meets the highest demands for security, availability, and integrity, thereby offering you the utmost confidence and protection.',
+    'security-old-conclusion-text': 'Through these stringent measures and our intelligent data classification, Fagri.Digital ensures that your data resides on an infrastructure that meets the highest demands for security, availability, and integrity, thereby offering you the utmost confidence and protection.',
     
     // Hero section
     'hero-title1': 'Digitalization.',

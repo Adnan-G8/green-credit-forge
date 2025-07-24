@@ -55,7 +55,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           {!isAuthenticated ? (
-            <PasswordProtection onAuthenticate={authenticate} />
+            <PasswordProtection onAuthenticated={authenticate} />
           ) : (
             <>
               <ProtectedRouter />
