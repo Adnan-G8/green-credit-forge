@@ -20,6 +20,12 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
   const [alphaG8Id, setAlphaG8Id] = useState('');
   const [isSignedIn, setIsSignedIn] = useState(false);
 
+  const TEST_ID = 'ALPHAG8-1BKQE5C3-K9X2P4M7-15';
+
+  const handleAutoFill = () => {
+    setAlphaG8Id(TEST_ID);
+  };
+
   const handleSignIn = () => {
     if (validateAlphaG8Id(alphaG8Id)) {
       setIsSignedIn(true);
@@ -108,6 +114,23 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
                       <p className="text-xs text-slate-500 text-center">
                         {t('enter-complete-id-key')}
                       </p>
+                      
+                      {/* Development Test ID */}
+                      <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
+                        <div className="text-center">
+                          <p className="text-xs text-amber-700 font-medium mb-2">Test ID for Development:</p>
+                          <div className="bg-amber-100 rounded px-3 py-2 font-mono text-sm text-amber-800 mb-2">
+                            {TEST_ID}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={handleAutoFill}
+                            className="text-xs text-amber-700 hover:text-amber-900 underline font-medium"
+                          >
+                            Click to auto-fill
+                          </button>
+                        </div>
+                      </div>
                     </div>
                     
                     <Button

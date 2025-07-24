@@ -22,6 +22,12 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
   const [alphaG8Id, setAlphaG8Id] = useState('');
   const [isValidId, setIsValidId] = useState(false);
 
+  const TEST_ID = 'ALPHAG8-1BKQE5C3-K9X2P4M7-15';
+
+  const handleAutoFill = () => {
+    setAlphaG8Id(TEST_ID);
+  };
+
   const handleIdSubmit = () => {
     if (validateAlphaG8Id(alphaG8Id)) {
       setIsValidId(true);
