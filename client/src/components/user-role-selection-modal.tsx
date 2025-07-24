@@ -24,12 +24,12 @@ export function UserRoleSelectionModal({ isOpen, onClose, onRoleSelected }: User
       description: t('sales-team-desc'),
       features: [
         t('admin-rights'),
-        'Create accounts for clients',
-        'Manage customer relationships',
-        'Full platform access',
-        'Client management dashboard'
+        t('create-accounts-clients'),
+        t('manage-customer-relationships'),
+        t('full-platform-access'),
+        t('client-management-dashboard')
       ],
-      buttonText: 'Select Sales Team',
+      buttonText: t('select-sales-team'),
       color: 'bg-purple-600',
       borderColor: 'border-purple-200',
       bgColor: 'bg-purple-50',
@@ -42,12 +42,12 @@ export function UserRoleSelectionModal({ isOpen, onClose, onRoleSelected }: User
       description: t('fagri-member-desc'),
       features: [
         t('member-access'),
-        'CO₂ certification applications',
-        'ALPHAG8 ID registration',
-        'Platform features',
-        'Personal account only'
+        t('co2-certification-applications'),
+        t('alphag8-id-registration'),
+        t('platform-features'),
+        t('personal-account-only')
       ],
-      buttonText: 'Select Member',
+      buttonText: t('select-member'),
       color: 'bg-emerald-600',
       borderColor: 'border-emerald-200',
       bgColor: 'bg-emerald-50',
@@ -60,10 +60,10 @@ export function UserRoleSelectionModal({ isOpen, onClose, onRoleSelected }: User
       description: t('non-member-desc'),
       features: [
         t('membership-needed'),
-        'Must become FAGRI member first',
-        'Limited access until membership',
-        'Membership application required',
-        'No CO₂ features without membership'
+        t('must-become-fagri-member'),
+        t('limited-access-until-membership'),
+        t('membership-application-required'),
+        t('no-co2-features-without-membership')
       ],
       buttonText: t('become-member'),
       color: 'bg-amber-600',
@@ -161,8 +161,7 @@ export function UserRoleSelectionModal({ isOpen, onClose, onRoleSelected }: User
                     {t('membership-required-desc')}
                   </p>
                   <p className="text-amber-700 font-light mt-2">
-                    Non-members must first apply for FAGRI membership through our membership application process 
-                    before they can proceed to create an ALPHAG8 ID and access CO₂ certification features.
+                    {t('non-members-must-apply-desc')}
                   </p>
                 </div>
               </div>

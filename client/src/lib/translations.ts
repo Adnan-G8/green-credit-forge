@@ -426,6 +426,26 @@ export const translations = {
     'first-year-fee': 'Primo Anno: €12',
     'proceed-payment': 'Procedi al Pagamento',
 
+    // User Role Selection Buttons
+    'select-sales-team': 'Seleziona Sales Team',
+    'select-member': 'Seleziona Membro',
+    'select-non-member': 'Diventa Membro',
+    
+    // User Role Features
+    'create-accounts-clients': 'Creare account per i clienti',
+    'manage-customer-relationships': 'Gestire le relazioni con i clienti',
+    'full-platform-access': 'Accesso completo alla piattaforma',
+    'client-management-dashboard': 'Dashboard di gestione clienti',
+    'co2-certification-applications': 'Applicazioni di certificazione CO₂',
+    'alphag8-id-registration': 'Registrazione ALPHAG8 ID',
+    'platform-features': 'Funzionalità della piattaforma',
+    'personal-account-only': 'Solo account personale',
+    'must-become-fagri-member': 'Deve prima diventare membro FAGRI',
+    'limited-access-until-membership': 'Accesso limitato fino all\'adesione',
+    'membership-application-required': 'Richiesta domanda di adesione',
+    'no-co2-features-without-membership': 'Nessuna funzionalità CO₂ senza adesione',
+    'non-members-must-apply-desc': 'I non membri devono prima fare domanda per l\'adesione FAGRI attraverso il nostro processo di candidatura prima di poter procedere a creare un ALPHAG8 ID e accedere alle funzionalità di certificazione CO₂.',
+
     // Transition Section
     'transition-title': 'Dal Campo al Futuro',
     'transition-subtitle': 'Innovazione digitale per l\'agricoltura sostenibile italiana',
@@ -826,6 +846,26 @@ export const translations = {
     'account-creation-fee': 'Account Creation: €5',
     'first-year-fee': 'First Year: €12',
     'proceed-payment': 'Proceed to Payment',
+
+    // User Role Selection Buttons
+    'select-sales-team': 'Select Sales Team',
+    'select-member': 'Select Member',
+    'select-non-member': 'Become Member',
+    
+    // User Role Features
+    'create-accounts-clients': 'Create accounts for clients',
+    'manage-customer-relationships': 'Manage customer relationships',
+    'full-platform-access': 'Full platform access',
+    'client-management-dashboard': 'Client management dashboard',
+    'co2-certification-applications': 'CO₂ certification applications',
+    'alphag8-id-registration': 'ALPHAG8 ID registration',
+    'platform-features': 'Platform features',
+    'personal-account-only': 'Personal account only',
+    'must-become-fagri-member': 'Must become FAGRI member first',
+    'limited-access-until-membership': 'Limited access until membership',
+    'membership-application-required': 'Membership application required',
+    'no-co2-features-without-membership': 'No CO₂ features without membership',
+    'non-members-must-apply-desc': 'Non-members must first apply for FAGRI membership through our membership application process before they can proceed to create an ALPHAG8 ID and access CO₂ certification features.',
 
     // Opportunities section
     'opportunities-title': 'Opportunities for agricultural enterprises, for agroforestry enterprises and for energy enterprises',
