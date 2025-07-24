@@ -136,44 +136,24 @@ export function Navigation() {
                 </button>
               </div>
 
-              {/* Navigation Buttons */}
-              <Button
-                onClick={() => setShowRoleModal(true)}
-                variant="outline"
-                size="sm"
-                className="hidden md:flex items-center px-3 py-2 text-blue-700 border-blue-700 hover:bg-blue-50 transition-colors duration-200"
-              >
-                <Key className="h-4 w-4 mr-2" />
-                {t('create-id-key')}
-              </Button>
-              
+              {/* Clean Navigation Buttons */}
               <Button
                 onClick={() => setShowSignInModal(true)}
                 variant="outline"
                 size="sm"
-                className="hidden md:flex items-center px-3 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
+                className="hidden md:flex items-center px-4 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
               >
                 <LogIn className="h-4 w-4 mr-2" />
                 {t('sign-in')}
               </Button>
               
               <Button
-                onClick={() => setShowProjectRegistrationModal(true)}
+                onClick={() => setShowRoleModal(true)}
                 size="sm"
-                className="hidden md:flex items-center px-3 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
+                className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
               >
-                <FileText className="h-4 w-4 mr-2" />
-                {t('register-project')}
-              </Button>
-              
-              <Button
-                onClick={() => setShowDocumentManagementModal(true)}
-                variant="outline"
-                size="sm"
-                className="hidden md:flex items-center px-3 py-2 text-orange-700 border-orange-700 hover:bg-orange-50 transition-colors duration-200"
-              >
-                <Folder className="h-4 w-4 mr-2" />
-                {t('document-management')}
+                <UserPlus className="h-4 w-4 mr-2" />
+                {t('get-started')}
               </Button>
 
 
@@ -230,18 +210,7 @@ export function Navigation() {
                   {t('nav-contact')}
                 </button>
                 
-                {/* Mobile Navigation Buttons */}
-                <button
-                  onClick={() => {
-                    setShowRoleModal(true);
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center text-blue-700 hover:text-blue-800 transition-colors duration-300 text-left font-medium"
-                >
-                  <Key className="h-4 w-4 mr-2" />
-                  {t('create-id-key')}
-                </button>
-                
+                {/* Clean Mobile Navigation */}
                 <button
                   onClick={() => {
                     setShowSignInModal(true);
@@ -255,24 +224,13 @@ export function Navigation() {
                 
                 <button
                   onClick={() => {
-                    setShowProjectRegistrationModal(true);
+                    setShowRoleModal(true);
                     setIsOpen(false);
                   }}
                   className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
                 >
-                  <FileText className="h-4 w-4 mr-2" />
-                  {t('register-project')}
-                </button>
-                
-                <button
-                  onClick={() => {
-                    setShowDocumentManagementModal(true);
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center text-orange-700 hover:text-orange-800 transition-colors duration-300 text-left font-medium"
-                >
-                  <Folder className="h-4 w-4 mr-2" />
-                  {t('document-management')}
+                  <UserPlus className="h-4 w-4 mr-2" />
+                  {t('get-started')}
                 </button>
                 
 
