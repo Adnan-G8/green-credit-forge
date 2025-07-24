@@ -369,12 +369,36 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
                     <SelectTrigger className="border-blue-200 focus:border-blue-500">
                       <SelectValue placeholder={t('payment-method')} />
                     </SelectTrigger>
-                    <SelectContent className="z-[10001]">
+                    <SelectContent className="z-[10001] bg-white border shadow-lg">
                       <SelectItem value="bank-transfer">{t('bank-transfer')}</SelectItem>
                       <SelectItem value="credit-card">{t('credit-card')}</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
+
+                {/* Bank Transfer Instructions */}
+                {formData.paymentMethod === 'bank-transfer' && (
+                  <div className="space-y-4 p-4 bg-white rounded-lg border border-blue-200">
+                    <h4 className="font-semibold text-blue-900">{t('bank-transfer-instructions')}</h4>
+                    <div className="space-y-3 text-sm">
+                      <div className="bg-blue-50 p-3 rounded-lg">
+                        <p className="font-medium text-blue-800 mb-2">{t('transfer-details')}:</p>
+                        <div className="space-y-1 text-blue-700">
+                          <p><strong>{t('recipient')}:</strong> FAGRI DIGITAL S.r.l.</p>
+                          <p><strong>IBAN:</strong> IT60 X054 2811 1010 0000 0123 456</p>
+                          <p><strong>BIC/SWIFT:</strong> BPMIIT3XXXX</p>
+                          <p><strong>{t('amount')}:</strong> €17.00</p>
+                          <p><strong>{t('reference')}:</strong> ALPHAG8-{formData.fullName?.replace(/\s+/g, '').toUpperCase() || 'REG'}</p>
+                        </div>
+                      </div>
+                      <div className="bg-amber-50 p-3 rounded-lg border border-amber-200">
+                        <p className="text-amber-800 text-sm">
+                          <strong>{t('important')}:</strong> {t('transfer-verification-note')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* Credit Card Fields */}
                 {formData.paymentMethod === 'credit-card' && (

@@ -425,6 +425,13 @@ export const translations = {
     'account-creation-fee': 'Creazione Account: €5',
     'first-year-fee': 'Primo Anno: €12',
     'proceed-payment': 'Procedi al Pagamento',
+    'bank-transfer-instructions': 'Istruzioni per Bonifico Bancario',
+    'transfer-details': 'Dettagli del Bonifico',
+    'recipient': 'Beneficiario',
+    'amount': 'Importo',
+    'reference': 'Causale',
+    'important': 'Importante',
+    'transfer-verification-note': 'Utilizzare esattamente la causale indicata sopra. La verifica del pagamento avviene tramite corrispondenza del nome - assicurarsi che il bonifico provenga da un conto intestato al nome registrato.',
 
     // User Role Selection Buttons
     'select-sales-team': 'Seleziona Sales Team',
@@ -1042,6 +1049,13 @@ export const translations = {
     'account-creation-fee': 'Account Creation: €5',
     'first-year-fee': 'First Year: €12',
     'proceed-payment': 'Proceed to Payment',
+  'bank-transfer-instructions': 'Bank Transfer Instructions',
+  'transfer-details': 'Transfer Details',
+  'recipient': 'Recipient',
+  'amount': 'Amount',
+  'reference': 'Reference',
+  'important': 'Important',
+  'transfer-verification-note': 'Please use the exact reference number shown above. Payment verification is done through name matching - ensure the transfer comes from an account matching your registered name.',
 
     // User Role Selection Buttons
     'select-sales-team': 'Select Sales Team',
