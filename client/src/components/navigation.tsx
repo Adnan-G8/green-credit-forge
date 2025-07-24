@@ -9,7 +9,7 @@ import { AlphaG8RegistrationModal } from './alphag8-registration-modal';
 import { UserRoleSelectionModal } from './user-role-selection-modal';
 import { FagriMemberRegistrationModal } from './fagri-member-registration-modal';
 import { ProjectRegistrationModal } from './project-registration-modal';
-import { SignInModal } from './sign-in-modal';
+import { SignInModal } from './sign-in-modal-enhanced';
 import { DocumentManagementModal } from './document-management-modal';
 import { useLocation } from 'wouter';
 
@@ -176,14 +176,7 @@ export function Navigation() {
                 {t('document-management')}
               </Button>
 
-              {/* Logout Button */}
-              <button
-                onClick={logout}
-                className="hidden md:flex items-center px-3 py-2 text-slate-600 hover:text-red-600 transition-colors duration-200"
-                title={t('logout')}
-              >
-                <LogOut className="h-5 w-5" />
-              </button>
+
 
               {/* Mobile menu button */}
               <button
@@ -282,17 +275,7 @@ export function Navigation() {
                   {t('document-management')}
                 </button>
                 
-                {/* Mobile Logout */}
-                <button
-                  onClick={() => {
-                    logout();
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center text-slate-600 hover:text-red-600 transition-colors duration-300 text-left font-medium"
-                >
-                  <LogOut className="h-4 w-4 mr-2" />
-                  {t('logout')}
-                </button>
+
               </div>
             </div>
           )}
