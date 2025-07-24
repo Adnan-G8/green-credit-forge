@@ -128,7 +128,7 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
     <Dialog open={isOpen} onOpenChange={(open) => {
       if (!open) onClose();
     }}>
-      <DialogContent className="max-w-5xl max-h-[90vh] p-0 overflow-hidden relative">
+      <DialogContent className="max-w-5xl max-h-[90vh] p-0 overflow-hidden relative z-[10003]">
         <DialogTitle className="sr-only">CO₂ Project Registration</DialogTitle>
         <DialogDescription className="sr-only">Register your CO₂ certification project</DialogDescription>
         

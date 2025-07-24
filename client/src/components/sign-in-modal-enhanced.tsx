@@ -59,7 +59,7 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
   return (
     <>
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-hidden">
+      <DialogContent className="max-w-2xl bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-hidden z-[10004]">
         {/* Header Section */}
         <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 px-8 py-6 relative">
           <button 

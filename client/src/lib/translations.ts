@@ -1213,6 +1213,12 @@ export const translations = {
     'session-ended-successfully': 'Your session has ended successfully',
     'secure-identity-verification': 'Secure identity verification for platform access',
     'copy-id': 'Copy ID',
+    'access-granted': 'Access granted to project registration system',
+    'id-verified': 'ID Verified',
+    'invalid-id': 'Invalid ID',
+    'invalid-id-desc': 'Please enter a valid ALPHAG8 ID KEY',
+    'sign-in-successful': 'Sign In Successful',
+    'welcome-back-message': 'Welcome to FAGRI platform',
     'download-certificate': 'Download Certificate',
     'quick-actions': 'Quick Actions',
     'manage-upload-organize-documents': 'Manage, upload, and organize your documents securely',
@@ -1815,6 +1821,11 @@ translations.it = {
   'project-submitted': 'Domanda di Progetto Inviata',
   'project-review-process': 'Il tuo progetto sarà esaminato dal nostro team di certificazione entro 5-7 giorni lavorativi.',
   'access-granted': 'Accesso concesso al sistema di registrazione progetti.',
+  'id-verified': 'ID Verificato',
+  'invalid-id': 'ID Non Valido',
+  'invalid-id-desc': 'Inserisci un ALPHAG8 ID KEY valido',
+  'sign-in-successful': 'Accesso Effettuato',
+  'welcome-back-message': 'Benvenuto nella piattaforma FAGRI',
 };
 
 export type TranslationKey = keyof typeof translations['it'];
