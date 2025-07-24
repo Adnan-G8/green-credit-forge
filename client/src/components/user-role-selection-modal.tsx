@@ -81,13 +81,7 @@ export function UserRoleSelectionModal({ isOpen, onClose, onRoleSelected }: User
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-white">
-        <DialogHeader className="relative pb-6">
-          <button
-            onClick={onClose}
-            className="absolute right-0 top-0 text-slate-400 hover:text-slate-600 transition-colors"
-          >
-            <X className="h-6 w-6" />
-          </button>
+        <DialogHeader className="pb-6">
           
           <div className="flex items-center space-x-3 mb-4">
             <div className="p-3 bg-slate-100 rounded-lg">
