@@ -369,7 +369,7 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
                     <SelectTrigger className="border-blue-200 focus:border-blue-500">
                       <SelectValue placeholder={t('payment-method')} />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="z-[10001]">
                       <SelectItem value="bank-transfer">{t('bank-transfer')}</SelectItem>
                       <SelectItem value="credit-card">{t('credit-card')}</SelectItem>
                     </SelectContent>
