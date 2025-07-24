@@ -47,20 +47,10 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <div className="flex items-center justify-between">
-            <DialogTitle className="text-xl font-semibold text-slate-800 flex items-center space-x-3">
-              <LogIn className="h-5 w-5 text-emerald-700" />
-              <span>{t('sign-in-to-platform')}</span>
-            </DialogTitle>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onClose}
-              className="h-8 w-8 p-0"
-            >
-              <X className="h-4 w-4" />
-            </Button>
-          </div>
+          <DialogTitle className="text-xl font-semibold text-slate-800 flex items-center space-x-3">
+            <LogIn className="h-5 w-5 text-emerald-700" />
+            <span>{t('sign-in-to-platform')}</span>
+          </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">

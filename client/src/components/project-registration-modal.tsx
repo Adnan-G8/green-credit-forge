@@ -78,20 +78,10 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <div className="flex items-center justify-between">
-            <DialogTitle className="text-2xl font-semibold text-slate-800 flex items-center space-x-3">
-              <FileText className="h-6 w-6 text-emerald-700" />
-              <span>{t('co2-project-registration')}</span>
-            </DialogTitle>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onClose}
-              className="h-8 w-8 p-0"
-            >
-              <X className="h-4 w-4" />
-            </Button>
-          </div>
+          <DialogTitle className="text-2xl font-semibold text-slate-800 flex items-center space-x-3">
+            <FileText className="h-6 w-6 text-emerald-700" />
+            <span>{t('co2-project-registration')}</span>
+          </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">
@@ -165,38 +155,79 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
                 </div>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
+              <div className="grid gap-4 md:grid-cols-3">
                 {projectTypes.map((project) => {
                   const IconComponent = project.icon;
+                  const colorClasses = {
+                    emerald: {
+                      bg: 'bg-emerald-100',
+                      text: 'text-emerald-700',
+                      border: 'border-emerald-200',
+                      hoverBorder: 'hover:border-emerald-300',
+                      titleText: 'text-emerald-800',
+                      descText: 'text-emerald-600',
+                      badgeBg: 'bg-emerald-100',
+                      badgeText: 'text-emerald-800',
+                      buttonBg: 'bg-emerald-700',
+                      buttonHover: 'hover:bg-emerald-800'
+                    },
+                    green: {
+                      bg: 'bg-green-100',
+                      text: 'text-green-700',
+                      border: 'border-green-200',
+                      hoverBorder: 'hover:border-green-300',
+                      titleText: 'text-green-800',
+                      descText: 'text-green-600',
+                      badgeBg: 'bg-green-100',
+                      badgeText: 'text-green-800',
+                      buttonBg: 'bg-green-700',
+                      buttonHover: 'hover:bg-green-800'
+                    },
+                    blue: {
+                      bg: 'bg-blue-100',
+                      text: 'text-blue-700',
+                      border: 'border-blue-200',
+                      hoverBorder: 'hover:border-blue-300',
+                      titleText: 'text-blue-800',
+                      descText: 'text-blue-600',
+                      badgeBg: 'bg-blue-100',
+                      badgeText: 'text-blue-800',
+                      buttonBg: 'bg-blue-700',
+                      buttonHover: 'hover:bg-blue-800'
+                    }
+                  };
+                  
+                  const colors = colorClasses[project.color as keyof typeof colorClasses];
+                  
                   return (
                     <Card 
                       key={project.id}
-                      className={`cursor-pointer transition-all duration-200 hover:shadow-lg border-${project.color}-200 hover:border-${project.color}-300`}
+                      className={`cursor-pointer transition-all duration-200 hover:shadow-lg ${colors.border} ${colors.hoverBorder} h-full flex flex-col`}
                       onClick={() => handleProjectSelect(project.id)}
                     >
-                      <CardHeader className="pb-3">
-                        <div className={`w-12 h-12 bg-${project.color}-100 rounded-lg flex items-center justify-center mb-3`}>
-                          <IconComponent className={`h-6 w-6 text-${project.color}-700`} />
+                      <CardHeader className="pb-3 flex-shrink-0">
+                        <div className={`w-12 h-12 ${colors.bg} rounded-lg flex items-center justify-center mb-3`}>
+                          <IconComponent className={`h-6 w-6 ${colors.text}`} />
                         </div>
-                        <CardTitle className={`text-${project.color}-800 text-lg`}>
+                        <CardTitle className={`${colors.titleText} text-lg font-semibold`}>
                           {project.title}
                         </CardTitle>
-                        <CardDescription className={`text-${project.color}-600 font-light`}>
+                        <CardDescription className={`${colors.descText} font-light text-sm leading-relaxed`}>
                           {project.description}
                         </CardDescription>
                       </CardHeader>
-                      <CardContent>
-                        <div className="space-y-3">
+                      <CardContent className="flex-grow flex flex-col justify-between">
+                        <div className="space-y-4">
                           <div>
-                            <p className="text-sm font-medium text-slate-700 mb-2">
+                            <p className="text-xs font-medium text-slate-600 mb-2 uppercase tracking-wide">
                               {t('applicable-standards')}
                             </p>
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-1">
                               {project.standards.map((standard) => (
                                 <Badge 
                                   key={standard}
                                   variant="secondary" 
-                                  className={`bg-${project.color}-100 text-${project.color}-800 text-xs`}
+                                  className={`${colors.badgeBg} ${colors.badgeText} text-xs px-2 py-1 font-medium`}
                                 >
                                   {standard}
                                 </Badge>
@@ -205,7 +236,7 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
                           </div>
                           
                           <Button 
-                            className={`w-full bg-${project.color}-700 hover:bg-${project.color}-800 text-white`}
+                            className={`w-full ${colors.buttonBg} ${colors.buttonHover} text-white font-medium py-2`}
                           >
                             <ArrowRight className="h-4 w-4 mr-2" />
                             {t('register-this-project')}
