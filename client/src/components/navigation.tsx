@@ -28,6 +28,7 @@ export function Navigation() {
   const [showProjectRegistrationModal, setShowProjectRegistrationModal] = useState(false);
   const [showDocumentManagementModal, setShowDocumentManagementModal] = useState(false);
   const [showRecommendationsModal, setShowRecommendationsModal] = useState(false);
+  const [activeModal, setActiveModal] = useState<string | null>(null);
   const [location, setLocation] = useLocation();
 
   useEffect(() => {
@@ -140,7 +141,11 @@ export function Navigation() {
 
               {/* Clean Navigation Buttons */}
               <Button
-                onClick={() => setShowSignInModal(true)}
+                onClick={() => {
+                  if (activeModal) return; // Prevent opening if another modal is active
+                  setActiveModal('signin');
+                  setShowSignInModal(true);
+                }}
                 variant="outline"
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
@@ -150,7 +155,11 @@ export function Navigation() {
               </Button>
               
               <Button
-                onClick={() => setShowRoleModal(true)}
+                onClick={() => {
+                  if (activeModal) return; // Prevent opening if another modal is active
+                  setActiveModal('role');
+                  setShowRoleModal(true);
+                }}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
               >
@@ -159,7 +168,11 @@ export function Navigation() {
               </Button>
               
               <Button
-                onClick={() => setShowRecommendationsModal(true)}
+                onClick={() => {
+                  if (activeModal) return; // Prevent opening if another modal is active
+                  setActiveModal('recommendations');
+                  setShowRecommendationsModal(true);
+                }}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-200"
               >
@@ -168,7 +181,11 @@ export function Navigation() {
               </Button>
               
               <Button
-                onClick={() => setShowProjectRegistrationModal(true)}
+                onClick={() => {
+                  if (activeModal) return; // Prevent opening if another modal is active
+                  setActiveModal('project');
+                  setShowProjectRegistrationModal(true);
+                }}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
               >
@@ -233,6 +250,8 @@ export function Navigation() {
                 {/* Clean Mobile Navigation */}
                 <button
                   onClick={() => {
+                    if (activeModal) return;
+                    setActiveModal('signin');
                     setShowSignInModal(true);
                     setIsOpen(false);
                   }}
@@ -244,6 +263,8 @@ export function Navigation() {
                 
                 <button
                   onClick={() => {
+                    if (activeModal) return;
+                    setActiveModal('role');
                     setShowRoleModal(true);
                     setIsOpen(false);
                   }}
@@ -255,6 +276,8 @@ export function Navigation() {
                 
                 <button
                   onClick={() => {
+                    if (activeModal) return;
+                    setActiveModal('recommendations');
                     setShowRecommendationsModal(true);
                     setIsOpen(false);
                   }}
@@ -266,6 +289,8 @@ export function Navigation() {
                 
                 <button
                   onClick={() => {
+                    if (activeModal) return;
+                    setActiveModal('project');
                     setShowProjectRegistrationModal(true);
                     setIsOpen(false);
                   }}
@@ -284,25 +309,36 @@ export function Navigation() {
 
       <MembershipModal
         isOpen={showMembershipModal}
-        onClose={() => setShowMembershipModal(false)}
+        onClose={() => {
+          setShowMembershipModal(false);
+          setActiveModal(null);
+        }}
       />
       
       <UserRoleSelectionModal
         isOpen={showRoleModal}
-        onClose={() => setShowRoleModal(false)}
+        onClose={() => {
+          setShowRoleModal(false);
+          setActiveModal(null);
+        }}
         onRoleSelected={(role) => {
           setSelectedRole(role);
           setShowRoleModal(false);
+          setActiveModal(null);
           if (role === 'non-member') {
+            setActiveModal('membership');
             setShowMembershipModal(true);
           } else if (role === 'fagri-member') {
+            setActiveModal('fagri-member');
             setShowFagriMemberModal(true);
           } else {
+            setActiveModal('alphag8');
             setShowAlphaG8Modal(true);
           }
         }}
         onMembershipApplicationOpen={() => {
           setShowRoleModal(false);
+          setActiveModal('membership');
           setShowMembershipModal(true);
         }}
       />
@@ -312,9 +348,11 @@ export function Navigation() {
         onClose={() => {
           setShowFagriMemberModal(false);
           setSelectedRole(null);
+          setActiveModal(null);
         }}
         onRegistrationComplete={(memberData) => {
           setShowFagriMemberModal(false);
+          setActiveModal('alphag8');
           setShowAlphaG8Modal(true);
         }}
       />
@@ -324,28 +362,41 @@ export function Navigation() {
         onClose={() => {
           setShowAlphaG8Modal(false);
           setSelectedRole(null);
+          setActiveModal(null);
         }}
         userRole={selectedRole || undefined}
       />
 
       <SignInModal
         isOpen={showSignInModal}
-        onClose={() => setShowSignInModal(false)}
+        onClose={() => {
+          setShowSignInModal(false);
+          setActiveModal(null);
+        }}
       />
 
       <ProjectRegistrationModal
         isOpen={showProjectRegistrationModal}
-        onClose={() => setShowProjectRegistrationModal(false)}
+        onClose={() => {
+          setShowProjectRegistrationModal(false);
+          setActiveModal(null);
+        }}
       />
 
       <DocumentManagementModal
         isOpen={showDocumentManagementModal}
-        onClose={() => setShowDocumentManagementModal(false)}
+        onClose={() => {
+          setShowDocumentManagementModal(false);
+          setActiveModal(null);
+        }}
       />
 
       <ProjectRecommendationsModal
         isOpen={showRecommendationsModal}
-        onClose={() => setShowRecommendationsModal(false)}
+        onClose={() => {
+          setShowRecommendationsModal(false);
+          setActiveModal(null);
+        }}
       />
     </>
   );

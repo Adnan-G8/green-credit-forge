@@ -98,7 +98,7 @@ Security: swiss-security@alphag8.digital`;
   return (
     <>
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="max-w-3xl max-h-[85vh] bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-y-auto">
+        <DialogContent className="max-w-3xl max-h-[85vh] bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-y-auto z-[10005]">
           {/* Header Section */}
           <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 px-6 py-4 relative">
             <button 
