@@ -3,13 +3,14 @@ import { useLanguage } from './language-provider';
 import { useAuthentication } from '../hooks/use-authentication';
 import { FagriLogo } from '@/assets/fagri-logo';
 import { Button } from '@/components/ui/button';
-import { Menu, X, LogOut, UserPlus, User, Key, LogIn, FileText } from 'lucide-react';
+import { Menu, X, LogOut, UserPlus, User, Key, LogIn, FileText, Folder } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
 import { AlphaG8RegistrationModal } from './alphag8-registration-modal';
 import { UserRoleSelectionModal } from './user-role-selection-modal';
 import { FagriMemberRegistrationModal } from './fagri-member-registration-modal';
 import { ProjectRegistrationModal } from './project-registration-modal';
 import { SignInModal } from './sign-in-modal';
+import { DocumentManagementModal } from './document-management-modal';
 import { useLocation } from 'wouter';
 
 export function Navigation() {
@@ -24,6 +25,7 @@ export function Navigation() {
   const [selectedRole, setSelectedRole] = useState<'sales-team' | 'fagri-member' | 'non-member' | null>(null);
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [showProjectRegistrationModal, setShowProjectRegistrationModal] = useState(false);
+  const [showDocumentManagementModal, setShowDocumentManagementModal] = useState(false);
   const [location, setLocation] = useLocation();
 
   useEffect(() => {
@@ -163,6 +165,16 @@ export function Navigation() {
                 <FileText className="h-4 w-4 mr-2" />
                 {t('register-project')}
               </Button>
+              
+              <Button
+                onClick={() => setShowDocumentManagementModal(true)}
+                variant="outline"
+                size="sm"
+                className="hidden md:flex items-center px-3 py-2 text-orange-700 border-orange-700 hover:bg-orange-50 transition-colors duration-200"
+              >
+                <Folder className="h-4 w-4 mr-2" />
+                {t('document-management')}
+              </Button>
 
               {/* Logout Button */}
               <button
@@ -259,6 +271,17 @@ export function Navigation() {
                   {t('register-project')}
                 </button>
                 
+                <button
+                  onClick={() => {
+                    setShowDocumentManagementModal(true);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center text-orange-700 hover:text-orange-800 transition-colors duration-300 text-left font-medium"
+                >
+                  <Folder className="h-4 w-4 mr-2" />
+                  {t('document-management')}
+                </button>
+                
                 {/* Mobile Logout */}
                 <button
                   onClick={() => {
@@ -330,6 +353,11 @@ export function Navigation() {
       <ProjectRegistrationModal
         isOpen={showProjectRegistrationModal}
         onClose={() => setShowProjectRegistrationModal(false)}
+      />
+
+      <DocumentManagementModal
+        isOpen={showDocumentManagementModal}
+        onClose={() => setShowDocumentManagementModal(false)}
       />
     </>
   );
