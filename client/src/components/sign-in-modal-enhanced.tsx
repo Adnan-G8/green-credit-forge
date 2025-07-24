@@ -13,9 +13,10 @@ import { UserDashboardModal } from './user-dashboard-modal';
 interface SignInModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onSignInSuccess?: (alphaG8Id: string) => void;
 }
 
-export function SignInModal({ isOpen, onClose }: SignInModalProps) {
+export function SignInModal({ isOpen, onClose, onSignInSuccess }: SignInModalProps) {
   const { t } = useLanguage();
   const { toast } = useToast();
   const [alphaG8Id, setAlphaG8Id] = useState('');
@@ -38,7 +39,9 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
       
       // Show dashboard after brief success display
       setTimeout(() => {
-        onClose();
+        if (onSignInSuccess) {
+          onSignInSuccess(alphaG8Id);
+        }
         setShowDashboard(true);
         setIsSignedIn(false);
       }, 1500);
@@ -60,6 +63,8 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
     <>
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-hidden z-[10004]">
+        <DialogTitle className="sr-only">Sign In</DialogTitle>
+        <DialogDescription className="sr-only">Enter your ALPHAG8 ID to sign in</DialogDescription>
         {/* Header Section */}
         <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 px-8 py-6 relative">
           <button 

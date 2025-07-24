@@ -22,6 +22,8 @@ export function Navigation() {
   const [showFagriMemberModal, setShowFagriMemberModal] = useState(false);
   const [selectedRole, setSelectedRole] = useState<'sales-team' | 'fagri-member' | 'non-member' | null>(null);
   const [showSignInModal, setShowSignInModal] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [signedInAlphaG8Id, setSignedInAlphaG8Id] = useState<string>('');
 
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [location, setLocation] = useLocation();
@@ -135,32 +137,69 @@ export function Navigation() {
               </div>
 
               {/* Clean Navigation Buttons */}
-              <Button
-                onClick={() => {
-                  if (activeModal) return; // Prevent opening if another modal is active
-                  setActiveModal('signin');
-                  setShowSignInModal(true);
-                }}
-                variant="outline"
-                size="sm"
-                className="hidden md:flex items-center px-4 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
-              >
-                <LogIn className="h-4 w-4 mr-2" />
-                {t('sign-in')}
-              </Button>
-              
-              <Button
-                onClick={() => {
-                  if (activeModal) return; // Prevent opening if another modal is active
-                  setActiveModal('role');
-                  setShowRoleModal(true);
-                }}
-                size="sm"
-                className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
-              >
-                <Key className="h-4 w-4 mr-2" />
-                {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
-              </Button>
+              {!isSignedIn ? (
+                <>
+                  <Button
+                    onClick={() => {
+                      if (activeModal) return;
+                      setActiveModal('signin');
+                      setShowSignInModal(true);
+                    }}
+                    variant="outline"
+                    size="sm"
+                    className="hidden md:flex items-center px-4 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
+                  >
+                    <LogIn className="h-4 w-4 mr-2" />
+                    {t('sign-in')}
+                  </Button>
+                  
+                  <Button
+                    onClick={() => {
+                      if (activeModal) return;
+                      setActiveModal('role');
+                      setShowRoleModal(true);
+                    }}
+                    size="sm"
+                    className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
+                  >
+                    <Key className="h-4 w-4 mr-2" />
+                    {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <span className="hidden md:flex items-center px-3 py-2 bg-green-100 text-green-800 rounded-lg text-sm font-medium">
+                    <User className="h-4 w-4 mr-2" />
+                    Signed In
+                  </span>
+                  
+                  <Button
+                    onClick={() => {
+                      // New Register Project functionality
+                      console.log('Register Project clicked for user:', signedInAlphaG8Id);
+                    }}
+                    size="sm"
+                    className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
+                  >
+                    <FileText className="h-4 w-4 mr-2" />
+                    {language === 'it' ? 'Registra Progetto' : 'Register Project'}
+                  </Button>
+                  
+                  <Button
+                    onClick={() => {
+                      setIsSignedIn(false);
+                      setSignedInAlphaG8Id('');
+                      console.log('User logged out');
+                    }}
+                    variant="outline"
+                    size="sm"
+                    className="hidden md:flex items-center px-4 py-2 text-red-700 border-red-700 hover:bg-red-50 transition-colors duration-200"
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    {language === 'it' ? 'Disconnetti' : 'Logout'}
+                  </Button>
+                </>
+              )}
               
 
 
@@ -219,31 +258,66 @@ export function Navigation() {
                 </button>
                 
                 {/* Clean Mobile Navigation */}
-                <button
-                  onClick={() => {
-                    if (activeModal) return;
-                    setActiveModal('signin');
-                    setShowSignInModal(true);
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
-                >
-                  <LogIn className="h-4 w-4 mr-2" />
-                  {t('sign-in')}
-                </button>
-                
-                <button
-                  onClick={() => {
-                    if (activeModal) return;
-                    setActiveModal('role');
-                    setShowRoleModal(true);
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
-                >
-                  <Key className="h-4 w-4 mr-2" />
-                  {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
-                </button>
+                {!isSignedIn ? (
+                  <>
+                    <button
+                      onClick={() => {
+                        if (activeModal) return;
+                        setActiveModal('signin');
+                        setShowSignInModal(true);
+                        setIsOpen(false);
+                      }}
+                      className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
+                    >
+                      <LogIn className="h-4 w-4 mr-2" />
+                      {t('sign-in')}
+                    </button>
+                    
+                    <button
+                      onClick={() => {
+                        if (activeModal) return;
+                        setActiveModal('role');
+                        setShowRoleModal(true);
+                        setIsOpen(false);
+                      }}
+                      className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
+                    >
+                      <Key className="h-4 w-4 mr-2" />
+                      {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex items-center text-green-700 font-medium py-2">
+                      <User className="h-4 w-4 mr-2" />
+                      Signed In
+                    </div>
+                    
+                    <button
+                      onClick={() => {
+                        console.log('Mobile Register Project clicked for user:', signedInAlphaG8Id);
+                        setIsOpen(false);
+                      }}
+                      className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
+                    >
+                      <FileText className="h-4 w-4 mr-2" />
+                      {language === 'it' ? 'Registra Progetto' : 'Register Project'}
+                    </button>
+                    
+                    <button
+                      onClick={() => {
+                        setIsSignedIn(false);
+                        setSignedInAlphaG8Id('');
+                        setIsOpen(false);
+                        console.log('Mobile user logged out');
+                      }}
+                      className="flex items-center text-red-600 hover:text-red-700 transition-colors duration-300 text-left font-medium"
+                    >
+                      <LogOut className="h-4 w-4 mr-2" />
+                      {language === 'it' ? 'Disconnetti' : 'Logout'}
+                    </button>
+                  </>
+                )}
                 
 
                 
@@ -317,6 +391,12 @@ export function Navigation() {
       <SignInModal
         isOpen={showSignInModal}
         onClose={() => {
+          setShowSignInModal(false);
+          setActiveModal(null);
+        }}
+        onSignInSuccess={(alphaG8Id: string) => {
+          setIsSignedIn(true);
+          setSignedInAlphaG8Id(alphaG8Id);
           setShowSignInModal(false);
           setActiveModal(null);
         }}
