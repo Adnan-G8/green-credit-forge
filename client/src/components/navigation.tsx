@@ -150,36 +150,30 @@ export function Navigation() {
               </Button>
               
               <Button
-                onClick={() => {
-                  console.log('Recommendations button clicked');
-                  setShowRecommendationsModal(true);
-                }}
+                onClick={() => setShowRoleModal(true)}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
+              >
+                <Key className="h-4 w-4 mr-2" />
+                {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
+              </Button>
+              
+              <Button
+                onClick={() => setShowRecommendationsModal(true)}
+                size="sm"
+                className="hidden md:flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-200"
               >
                 <Lightbulb className="h-4 w-4 mr-2" />
                 {language === 'it' ? 'Raccomandazioni' : 'Recommendations'}
               </Button>
               
               <Button
-                onClick={() => {
-                  console.log('Register Project button clicked');
-                  setShowProjectRegistrationModal(true);
-                }}
+                onClick={() => setShowProjectRegistrationModal(true)}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
               >
                 <FileText className="h-4 w-4 mr-2" />
                 {language === 'it' ? 'Registra Progetto' : 'Register Project'}
-              </Button>
-              
-              <Button
-                onClick={() => setShowRoleModal(true)}
-                size="sm"
-                className="hidden md:flex items-center px-4 py-2 bg-slate-700 hover:bg-slate-800 text-white transition-colors duration-200"
-              >
-                <UserPlus className="h-4 w-4 mr-2" />
-                {t('get-started')}
               </Button>
 
 
@@ -239,17 +233,6 @@ export function Navigation() {
                 {/* Clean Mobile Navigation */}
                 <button
                   onClick={() => {
-                    setShowRecommendationsModal(true);
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
-                >
-                  <Lightbulb className="h-4 w-4 mr-2" />
-                  {language === 'it' ? 'Raccomandazioni' : 'Recommendations'}
-                </button>
-                
-                <button
-                  onClick={() => {
                     setShowSignInModal(true);
                     setIsOpen(false);
                   }}
@@ -261,6 +244,28 @@ export function Navigation() {
                 
                 <button
                   onClick={() => {
+                    setShowRoleModal(true);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
+                >
+                  <Key className="h-4 w-4 mr-2" />
+                  {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
+                </button>
+                
+                <button
+                  onClick={() => {
+                    setShowRecommendationsModal(true);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center text-purple-600 hover:text-purple-700 transition-colors duration-300 text-left font-medium"
+                >
+                  <Lightbulb className="h-4 w-4 mr-2" />
+                  {language === 'it' ? 'Raccomandazioni' : 'Recommendations'}
+                </button>
+                
+                <button
+                  onClick={() => {
                     setShowProjectRegistrationModal(true);
                     setIsOpen(false);
                   }}
@@ -268,17 +273,6 @@ export function Navigation() {
                 >
                   <FileText className="h-4 w-4 mr-2" />
                   {language === 'it' ? 'Registra Progetto' : 'Register Project'}
-                </button>
-                
-                <button
-                  onClick={() => {
-                    setShowRoleModal(true);
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center text-slate-700 hover:text-slate-800 transition-colors duration-300 text-left font-medium"
-                >
-                  <UserPlus className="h-4 w-4 mr-2" />
-                  {t('get-started')}
                 </button>
                 
 

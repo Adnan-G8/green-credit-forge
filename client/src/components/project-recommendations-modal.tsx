@@ -213,10 +213,10 @@ export function ProjectRecommendationsModal({ isOpen, onClose }: ProjectRecommen
 
   const recommendations = step === 'recommendations' ? generateRecommendations() : [];
 
-  console.log('ProjectRecommendationsModal rendering, isOpen:', isOpen);
-  
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={(open) => {
+      if (!open) onClose();
+    }}>
       <DialogContent className="max-w-6xl max-h-[90vh] p-0 overflow-hidden relative">
         <DialogTitle className="sr-only">Personalized Renewable Energy Project Recommendations</DialogTitle>
         <DialogDescription className="sr-only">Get personalized recommendations for renewable energy projects</DialogDescription>
