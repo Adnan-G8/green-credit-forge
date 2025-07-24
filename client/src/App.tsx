@@ -54,13 +54,13 @@ function App() {
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
-          {isAuthenticated ? (
-            <>
-              <SessionExpiryHandler />
-              <ProtectedRouter />
-            </>
+          {!isAuthenticated ? (
+            <PasswordProtection onAuthenticate={authenticate} />
           ) : (
-            <PasswordProtection onAuthenticated={authenticate} />
+            <>
+              <ProtectedRouter />
+              <SessionExpiryHandler />
+            </>
           )}
         </TooltipProvider>
       </LanguageProvider>

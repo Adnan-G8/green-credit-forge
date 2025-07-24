@@ -443,9 +443,7 @@ export const translations = {
     'farming-projects': 'Progetti Agricoli',
     'forest-projects': 'Progetti Forestali',
     'renewable-energy-projects': 'Progetti Energia Rinnovabile',
-    'id-verified': 'ID Verificato',
-    'invalid-id': 'ID Non Valido',
-    'invalid-id-desc': 'Inserisci un ID ALPHAG8 valido',
+
 
     // User Role Selection Buttons
     'select-sales-team': 'Seleziona Sales Team',
@@ -600,10 +598,7 @@ export const translations = {
     'verify-and-continue': 'Verifica e Continua',
     'dont-have-id': 'Non hai un ID KEY?',
     'create-id-first-desc': 'Devi prima creare un ALPHAG8 ID KEY usando il pulsante "Crea ID KEY"',
-    'id-verified': 'ID Verificato',
     'id-verified-desc': 'Il tuo ALPHAG8 ID è valido. Ora puoi selezionare il tipo di progetto.',
-    'invalid-id': 'ID Non Valido',
-    'invalid-id-desc': 'Formato ID KEY non corretto. Verifica e riprova.',
     'id-authenticated': 'ID Autenticato',
     'select-project-type-below': 'Seleziona il tipo di progetto CO₂ che vuoi registrare qui sotto',
     'farming-projects-desc': 'Certificazione CO₂ per pratiche agricole sostenibili',
@@ -1078,9 +1073,7 @@ export const translations = {
   'farming-projects': 'Farming Projects',
   'forest-projects': 'Forest Projects',
   'renewable-energy-projects': 'Renewable Energy Projects',
-  'id-verified': 'ID Verified',
-  'invalid-id': 'Invalid ID',
-  'invalid-id-desc': 'Please enter a valid ALPHAG8 ID',
+
 
     // User Role Selection Buttons
     'select-sales-team': 'Select Sales Team',
@@ -1235,10 +1228,7 @@ export const translations = {
     'verify-and-continue': 'Verify and Continue',
     'dont-have-id': 'Don\'t have an ID KEY?',
     'create-id-first-desc': 'You need to create an ALPHAG8 ID KEY first using the "Create ID KEY" button',
-    'id-verified': 'ID Verified',
     'id-verified-desc': 'Your ALPHAG8 ID is valid. You can now select project type.',
-    'invalid-id': 'Invalid ID',
-    'invalid-id-desc': 'Incorrect ID KEY format. Please check and try again.',
     'id-authenticated': 'ID Authenticated',
     'select-project-type-below': 'Select the CO₂ project type you want to register below',
     'farming-projects-desc': 'CO₂ certification for sustainable agricultural practices',
