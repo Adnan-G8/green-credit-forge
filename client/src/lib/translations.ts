@@ -354,6 +354,9 @@ export const translations = {
     'password-success-desc': 'Benvenuto sulla piattaforma FAGRI.Digital',
     'password-error': 'Accesso Negato',
     'password-error-desc': 'Password non corretta. Riprovare.',
+    'session-expired': 'Sessione Scaduta',
+    'session-expired-desc': 'La tua sessione è scaduta dopo 10 minuti di inattività. Effettua nuovamente l\'accesso.',
+    'logout': 'Esci',
 
     // Transition Section
     'transition-title': 'Dal Campo al Futuro',
@@ -684,6 +687,9 @@ export const translations = {
     'password-success-desc': 'Welcome to the FAGRI.Digital platform',
     'password-error': 'Access Denied',
     'password-error-desc': 'Incorrect password. Please try again.',
+    'session-expired': 'Session Expired',
+    'session-expired-desc': 'Your session has expired after 10 minutes of inactivity. Please login again.',
+    'logout': 'Logout',
 
     // Opportunities section
     'opportunities-title': 'Opportunities for agricultural enterprises, for agroforestry enterprises and for energy enterprises',

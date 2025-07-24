@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "./components/language-provider";
 import { PasswordProtection } from "./components/password-protection";
+import { SessionExpiryHandler } from "./components/session-expiry-handler";
 import { useAuthentication } from "./hooks/use-authentication";
 import { useScrollToTop } from "./hooks/use-scroll-to-top";
 import Home from "@/pages/home";
@@ -53,6 +54,7 @@ function App() {
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
+          <SessionExpiryHandler />
           {isAuthenticated ? (
             <ProtectedRouter />
           ) : (

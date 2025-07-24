@@ -193,7 +193,7 @@ export function Navigation() {
                   className="flex items-center text-slate-600 hover:text-red-600 transition-colors duration-300 text-left font-medium"
                 >
                   <LogOut className="h-4 w-4 mr-2" />
-                  Logout
+                  {t('logout')}
                 </button>
               </div>
             </div>

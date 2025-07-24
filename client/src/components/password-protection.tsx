@@ -17,7 +17,7 @@ export function PasswordProtection({ onAuthenticated }: PasswordProtectionProps)
   const { toast } = useToast();
   const { language, setLanguage, t } = useLanguage();
 
-  const correctPassword = 'FAGRI2025'; // You can change this password
+  const correctPassword = 'CO2FAGRI2025'; // You can change this password
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +26,6 @@ export function PasswordProtection({ onAuthenticated }: PasswordProtectionProps)
     // Simulate a brief loading time
     setTimeout(() => {
       if (password === correctPassword) {
-        localStorage.setItem('fagri-authenticated', 'true');
         onAuthenticated();
         toast({
           title: t('password-success'),
