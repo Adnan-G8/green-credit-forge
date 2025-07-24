@@ -3,11 +3,13 @@ import { useLanguage } from './language-provider';
 import { useAuthentication } from '../hooks/use-authentication';
 import { FagriLogo } from '@/assets/fagri-logo';
 import { Button } from '@/components/ui/button';
-import { Menu, X, LogOut, UserPlus, User } from 'lucide-react';
+import { Menu, X, LogOut, UserPlus, User, Key, LogIn, FileText } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
 import { AlphaG8RegistrationModal } from './alphag8-registration-modal';
 import { UserRoleSelectionModal } from './user-role-selection-modal';
 import { FagriMemberRegistrationModal } from './fagri-member-registration-modal';
+import { ProjectRegistrationModal } from './project-registration-modal';
+import { SignInModal } from './sign-in-modal';
 import { useLocation } from 'wouter';
 
 export function Navigation() {
@@ -20,6 +22,8 @@ export function Navigation() {
   const [showRoleModal, setShowRoleModal] = useState(false);
   const [showFagriMemberModal, setShowFagriMemberModal] = useState(false);
   const [selectedRole, setSelectedRole] = useState<'sales-team' | 'fagri-member' | 'non-member' | null>(null);
+  const [showSignInModal, setShowSignInModal] = useState(false);
+  const [showProjectRegistrationModal, setShowProjectRegistrationModal] = useState(false);
   const [location, setLocation] = useLocation();
 
   useEffect(() => {
@@ -130,24 +134,34 @@ export function Navigation() {
                 </button>
               </div>
 
-              {/* Sign Up and Register Buttons */}
+              {/* Navigation Buttons */}
               <Button
                 onClick={() => setShowRoleModal(true)}
                 variant="outline"
                 size="sm"
-                className="hidden md:flex items-center px-3 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
+                className="hidden md:flex items-center px-3 py-2 text-blue-700 border-blue-700 hover:bg-blue-50 transition-colors duration-200"
               >
-                <UserPlus className="h-4 w-4 mr-2" />
-                {t('signup')}
+                <Key className="h-4 w-4 mr-2" />
+                {t('create-id-key')}
               </Button>
               
               <Button
-                onClick={() => setShowRoleModal(true)}
+                onClick={() => setShowSignInModal(true)}
+                variant="outline"
+                size="sm"
+                className="hidden md:flex items-center px-3 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
+              >
+                <LogIn className="h-4 w-4 mr-2" />
+                {t('sign-in')}
+              </Button>
+              
+              <Button
+                onClick={() => setShowProjectRegistrationModal(true)}
                 size="sm"
                 className="hidden md:flex items-center px-3 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
               >
-                <User className="h-4 w-4 mr-2" />
-                {t('register')}
+                <FileText className="h-4 w-4 mr-2" />
+                {t('register-project')}
               </Button>
 
               {/* Logout Button */}
@@ -211,27 +225,38 @@ export function Navigation() {
                   {t('nav-contact')}
                 </button>
                 
-                {/* Mobile Sign Up and Register */}
+                {/* Mobile Navigation Buttons */}
                 <button
                   onClick={() => {
                     setShowRoleModal(true);
                     setIsOpen(false);
                   }}
-                  className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
+                  className="flex items-center text-blue-700 hover:text-blue-800 transition-colors duration-300 text-left font-medium"
                 >
-                  <UserPlus className="h-4 w-4 mr-2" />
-                  {t('signup')}
+                  <Key className="h-4 w-4 mr-2" />
+                  {t('create-id-key')}
                 </button>
                 
                 <button
                   onClick={() => {
-                    setShowRoleModal(true);
+                    setShowSignInModal(true);
                     setIsOpen(false);
                   }}
                   className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
                 >
-                  <User className="h-4 w-4 mr-2" />
-                  {t('register')}
+                  <LogIn className="h-4 w-4 mr-2" />
+                  {t('sign-in')}
+                </button>
+                
+                <button
+                  onClick={() => {
+                    setShowProjectRegistrationModal(true);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
+                >
+                  <FileText className="h-4 w-4 mr-2" />
+                  {t('register-project')}
                 </button>
                 
                 {/* Mobile Logout */}
@@ -295,6 +320,16 @@ export function Navigation() {
           setSelectedRole(null);
         }}
         userRole={selectedRole || undefined}
+      />
+
+      <SignInModal
+        isOpen={showSignInModal}
+        onClose={() => setShowSignInModal(false)}
+      />
+
+      <ProjectRegistrationModal
+        isOpen={showProjectRegistrationModal}
+        onClose={() => setShowProjectRegistrationModal(false)}
       />
     </>
   );

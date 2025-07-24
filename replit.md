@@ -184,6 +184,17 @@ Preferred communication style: Simple, everyday language.
   * **Visible Access**: ID KEY made immediately visible after registration completion instead of email delivery
   * **Complete Integration**: Seamless flow from registration completion to ID KEY display with professional styling
   * **Bilingual ID Interface**: Complete Italian and English support for all ID display and certificate functionality
+- **Navigation Restructuring for CO₂ Project Applications** (July 24, 2025):
+  * **Create ID KEY Button**: Changed "Sign Up" to "Create ID KEY" with blue styling and key icon
+  * **Sign In Functionality**: Added new "Sign In" button for existing users with ALPHAG8 ID authentication
+  * **Register Project Button**: New emerald "Register Project" button specifically for CO₂ project applications
+  * **Three-Button Navigation**: Clean separation of ID creation, authentication, and project registration functions
+  * **Mobile Navigation Updated**: All new buttons available in mobile hamburger menu with consistent styling
+  * **Project Registration Flow**: ALPHAG8 ID verification required before accessing project type selection
+  * **CO₂ Project Types**: Three categories - Farming, Forest, and Renewable Energy projects with applicable standards
+  * **Authentication-First Design**: Users must have valid ALPHAG8 ID before accessing any CO₂ certification features
+  * **Professional Project Interface**: Banking-style project selection with ISO standards and EUFD2025-001 compliance
+  * **Complete Bilingual Support**: Full Italian and English translations for all new navigation and project functionality
 
 ## System Architecture
 
