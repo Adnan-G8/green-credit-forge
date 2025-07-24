@@ -726,7 +726,7 @@ export const translations = {
     'standard-finma-title': 'FINMA Compliance',
     'standard-finma-description': 'Infrastructure meets Swiss Financial Market Supervisory Authority requirements',
     'standard-blockchain-title': 'From CO₂ Application to Trading - All Under One Roof on Blockchain',
-    'standard-blockchain-description': 'Complete solution for certification, registration and trading of carbon credits on secure digital platform.',
+    'standard-blockchain-description': 'Complete solution for certification, registration and trading of carbon credits on a secure digital platform.',
     'standard-eu-certified': 'EU Certified',
     'standard-global-standard': 'Global Standard',
     'standard-process-title': 'EUFD2025-001 Certification Process',
