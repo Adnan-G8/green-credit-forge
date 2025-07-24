@@ -1,19 +1,9 @@
 import { useLanguage } from './language-provider';
-import { Shield, Lock, Database, CheckCircle, Download, FileText } from 'lucide-react';
+import { Shield, Lock, Database, CheckCircle } from 'lucide-react';
 import { Link } from 'wouter';
-import eufdStandardPdf from '@assets/STANDARD DI FAGRI DIGITAL_1753380505244.pdf';
 
 export function SecurityMainSection() {
   const { t } = useLanguage();
-
-  const handleDownloadStandard = () => {
-    const link = document.createElement('a');
-    link.href = eufdStandardPdf;
-    link.download = 'EUFD2025-001_STANDARD_FAGRI_DIGITAL.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <section id="security-main" className="py-20 bg-slate-50">
@@ -80,36 +70,13 @@ export function SecurityMainSection() {
             <p className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
               {t('security-cta-description')}
             </p>
-            <div className="flex flex-col items-center space-y-4">
-              <Link
-                href="/security"
-                className="inline-flex items-center px-8 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium text-lg shadow-lg hover:shadow-xl"
-              >
-                <Shield className="mr-3 h-6 w-6" />
-                {t('security-cta-button')}
-              </Link>
-              
-              {/* EUFD2025-001 STANDARD Download Button */}
-              <button
-                onClick={handleDownloadStandard}
-                className="inline-flex items-center px-12 py-6 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-300 font-bold text-xl shadow-xl hover:shadow-2xl transform hover:scale-105 border-2 border-blue-500"
-                style={{
-                  background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1e3a8a 100%)',
-                  boxShadow: '0 10px 25px rgba(30, 64, 175, 0.3)'
-                }}
-              >
-                <FileText className="mr-4 h-8 w-8" />
-                <div className="flex flex-col items-start">
-                  <span className="text-2xl font-black tracking-wide">
-                    {t('download-eufd-standard')}
-                  </span>
-                  <span className="text-blue-100 text-sm font-light">
-                    {t('download-standard-desc')}
-                  </span>
-                </div>
-                <Download className="ml-4 h-8 w-8" />
-              </button>
-            </div>
+            <Link
+              href="/security"
+              className="inline-flex items-center px-8 py-4 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium text-lg shadow-lg hover:shadow-xl"
+            >
+              <Shield className="mr-3 h-6 w-6" />
+              {t('security-cta-button')}
+            </Link>
           </div>
         </div>
       </div>

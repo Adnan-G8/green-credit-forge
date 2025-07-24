@@ -403,8 +403,8 @@ export const translations = {
     'data-security-desc': 'Protezione avanzata contro accessi non autorizzati e salvaguardia dell\'identità digitale attraverso crittografia di livello bancario.',
     
     // EUFD Standard Download
-    'download-eufd-standard': 'EUFD2025-001 STANDARD',
-    'download-standard-desc': 'Scarica il documento completo dello standard EUFD2025-001 per la certificazione CO₂',
+    'download-eufd-standard': 'FAGRI DIGITAL CERTIFICATION STANDARD',
+    'download-standard-desc': 'Scarica il documento completo FAGRI DIGITAL - EUFD2025-001 per la certificazione CO₂',
 
     // Transition Section
     'transition-title': 'Dal Campo al Futuro',
@@ -784,8 +784,8 @@ export const translations = {
     'data-security-desc': 'Advanced protection against unauthorized access and digital identity safeguarding through banking-level encryption.',
     
     // EUFD Standard Download
-    'download-eufd-standard': 'EUFD2025-001 STANDARD',
-    'download-standard-desc': 'Download the complete EUFD2025-001 standard document for CO₂ certification',
+    'download-eufd-standard': 'FAGRI DIGITAL CERTIFICATION STANDARD',
+    'download-standard-desc': 'Download the complete FAGRI DIGITAL - EUFD2025-001 standard document for CO₂ certification',
 
     // Opportunities section
     'opportunities-title': 'Opportunities for agricultural enterprises, for agroforestry enterprises and for energy enterprises',

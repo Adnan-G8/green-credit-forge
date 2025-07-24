@@ -158,12 +158,13 @@ Preferred communication style: Simple, everyday language.
   * **Three-Pillar Protection**: Legal Protection, Privacy Protection, and Data Security with uniform card presentation
   * **Professional Security Messaging**: Avoided crypto terminology while emphasizing legitimate security benefits
 - **EUFD2025-001 STANDARD Downloadable PDF** (July 24, 2025):
-  * **Large EU-Blue Download Button**: Prominent download button larger than "View Security Details" in European Union blue styling
+  * **Relocated to Renewable Energy Section**: Moved download button from security to renewable energy section for better contextual alignment
+  * **FAGRI DIGITAL CERTIFICATION STANDARD Title**: Updated button title for clearer branding and recognition
+  * **White Background Professional Design**: Clean EU-blue button on white card background with professional styling
   * **Complete PDF Integration**: Full STANDARD DI FAGRI DIGITAL document accessible as downloadable PDF
-  * **Professional Design**: Gradient EU-blue styling with hover effects and scale transformation
+  * **Enhanced User Experience**: Clear association with CO₂ certification and renewable energy context
   * **Bilingual Download Interface**: Complete Italian and English support for download functionality
   * **Direct PDF Access**: Users can download the complete 1410-line EUFD2025-001 standard document
-  * **Enhanced User Experience**: Clear call-to-action with document description and download icon
 
 ## System Architecture
 
