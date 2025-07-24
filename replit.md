@@ -140,6 +140,15 @@ Preferred communication style: Simple, everyday language.
   * **CO₂ Access Control**: Clear messaging that CO₂ applications require completed ALPHAG8 ID
   * **Bilingual KYC Interface**: Complete Italian and English support for entire registration process
   * **Crypto-Free Terminology**: Avoided all crypto/wallet terminology while maintaining blockchain security benefits
+- **Three-Tier User Role Management System** (July 24, 2025):
+  * **FAGRI Sales Team**: Administrator rights with ability to open accounts for clients and manage multiple accounts
+  * **FAGRI Members**: Full platform access for personal CO₂ certification applications only
+  * **Non-Members**: Must become FAGRI members before accessing any CO₂ features
+  * **Role-Based Access Control**: Different access levels and capabilities based on user role selection
+  * **Registration Flow Control**: Non-members directed to membership application, others to ALPHAG8 ID creation
+  * **Client Management**: Sales team can create ALPHAG8 IDs for clients with administrator privileges
+  * **Professional User Interface**: Banking-style role selection with clear access level descriptions
+  * **Complete Bilingual Support**: Full Italian and English translations for all role-related content
 
 ## System Architecture
 

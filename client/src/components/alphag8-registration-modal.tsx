@@ -10,9 +10,10 @@ import { X, Shield, FileText, CheckCircle, UserCheck, AlertCircle, Fingerprint }
 interface AlphaG8RegistrationModalProps {
   isOpen: boolean;
   onClose: () => void;
+  userRole?: 'sales-team' | 'fagri-member' | 'non-member';
 }
 
-export function AlphaG8RegistrationModal({ isOpen, onClose }: AlphaG8RegistrationModalProps) {
+export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8RegistrationModalProps) {
   const { t } = useLanguage();
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -86,15 +87,37 @@ export function AlphaG8RegistrationModal({ isOpen, onClose }: AlphaG8Registratio
         </DialogHeader>
 
         <div className="space-y-6">
-          {/* Identity Required Notice */}
-          <Card className="border-amber-200 bg-amber-50">
+          {/* Role-Based Access Notice */}
+          <Card className={`${
+            userRole === 'sales-team' ? 'border-purple-200 bg-purple-50' :
+            userRole === 'fagri-member' ? 'border-emerald-200 bg-emerald-50' :
+            'border-amber-200 bg-amber-50'
+          }`}>
             <CardContent className="pt-6">
               <div className="flex items-start space-x-3">
-                <AlertCircle className="h-6 w-6 text-amber-600 mt-0.5" />
+                <AlertCircle className={`h-6 w-6 mt-0.5 ${
+                  userRole === 'sales-team' ? 'text-purple-600' :
+                  userRole === 'fagri-member' ? 'text-emerald-600' :
+                  'text-amber-600'
+                }`} />
                 <div>
-                  <h3 className="font-semibold text-amber-800">{t('identity-required')}</h3>
-                  <p className="text-amber-700 font-light mt-1">
-                    {t('identity-required-desc')}
+                  <h3 className={`font-semibold ${
+                    userRole === 'sales-team' ? 'text-purple-800' :
+                    userRole === 'fagri-member' ? 'text-emerald-800' :
+                    'text-amber-800'
+                  }`}>
+                    {userRole === 'sales-team' ? 'FAGRI Sales Team Access' :
+                     userRole === 'fagri-member' ? 'FAGRI Member Access' :
+                     t('identity-required')}
+                  </h3>
+                  <p className={`font-light mt-1 ${
+                    userRole === 'sales-team' ? 'text-purple-700' :
+                    userRole === 'fagri-member' ? 'text-emerald-700' :
+                    'text-amber-700'
+                  }`}>
+                    {userRole === 'sales-team' ? 'As a Sales Team member, you can create ALPHAG8 IDs for clients and manage multiple accounts with administrator privileges.' :
+                     userRole === 'fagri-member' ? 'As a FAGRI member, you can create your own ALPHAG8 ID and access all CO₂ certification features.' :
+                     t('identity-required-desc')}
                   </p>
                 </div>
               </div>

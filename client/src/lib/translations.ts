@@ -375,6 +375,23 @@ export const translations = {
     'start-kyc': 'Inizia Processo KYC',
     'co2-access-title': 'Accesso alle Applicazioni CO₂',
     'co2-access-desc': 'Una volta completata la registrazione ALPHAG8 ID, potrai accedere a tutte le funzionalità di certificazione CO₂ della piattaforma.',
+    
+    // User Role System
+    'user-roles': 'Ruoli Utente',
+    'sales-team': 'FAGRI Sales Team',
+    'fagri-member': 'Membro FAGRI',
+    'non-member': 'Non Membro',
+    'sales-team-desc': 'Diritti amministratore, può aprire account per altri e gestire clienti',
+    'fagri-member-desc': 'Accesso completo alle funzionalità, può registrare solo il proprio account',
+    'non-member-desc': 'Deve diventare membro FAGRI prima di accedere alle funzionalità CO₂',
+    'become-member': 'Diventa Membro',
+    'membership-required': 'Adesione Richiesta',
+    'membership-required-desc': 'Per accedere alle applicazioni di certificazione CO₂, devi prima diventare membro FAGRI.',
+    'role-selection': 'Selezione Ruolo',
+    'select-your-role': 'Seleziona il tuo ruolo',
+    'admin-rights': 'Diritti Amministratore',
+    'member-access': 'Accesso Membro',
+    'membership-needed': 'Adesione Necessaria',
 
     // Transition Section
     'transition-title': 'Dal Campo al Futuro',
@@ -726,6 +743,23 @@ export const translations = {
     'start-kyc': 'Start KYC Process',
     'co2-access-title': 'CO₂ Application Access',
     'co2-access-desc': 'Once your ALPHAG8 ID registration is complete, you will have access to all CO₂ certification features of the platform.',
+    
+    // User Role System
+    'user-roles': 'User Roles',
+    'sales-team': 'FAGRI Sales Team',
+    'fagri-member': 'FAGRI Member',
+    'non-member': 'Non-Member',
+    'sales-team-desc': 'Administrator rights, can open accounts for others and manage clients',
+    'fagri-member-desc': 'Full feature access, can only register own account',
+    'non-member-desc': 'Must become FAGRI member before accessing CO₂ features',
+    'become-member': 'Become Member',
+    'membership-required': 'Membership Required',
+    'membership-required-desc': 'To access CO₂ certification applications, you must first become a FAGRI member.',
+    'role-selection': 'Role Selection',
+    'select-your-role': 'Select your role',
+    'admin-rights': 'Administrator Rights',
+    'member-access': 'Member Access',
+    'membership-needed': 'Membership Needed',
 
     // Opportunities section
     'opportunities-title': 'Opportunities for agricultural enterprises, for agroforestry enterprises and for energy enterprises',
