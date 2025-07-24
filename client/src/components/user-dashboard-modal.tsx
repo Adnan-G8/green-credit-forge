@@ -16,7 +16,8 @@ import {
   Download,
   ChevronRight,
   X,
-  Settings
+  Settings,
+  Lock
 } from 'lucide-react';
 import { DocumentManagementModal } from './document-management-modal';
 import { ProjectRegistrationModal } from './project-registration-modal';
@@ -366,7 +367,7 @@ Security: swiss-security@alphag8.digital`;
                             <span>Active Security</span>
                           </div>
                           <div className="flex items-center space-x-1">
-                            <Lock className="h-3 w-3" />
+                            <Shield className="h-3 w-3" />
                             <span>Encrypted Session</span>
                           </div>
                         </div>
