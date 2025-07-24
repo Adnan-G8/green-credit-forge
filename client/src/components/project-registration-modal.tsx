@@ -26,6 +26,7 @@ import {
   Building,
   Shield
 } from 'lucide-react';
+import forestImagePath from '@assets/image_1753387571371.png';
 
 interface ProjectRegistrationModalProps {
   isOpen: boolean;
@@ -46,7 +47,14 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
     startDate: '',
     contactName: '',
     contactEmail: '',
-    organization: ''
+    organization: '',
+    // Renewable Energy specific fields
+    technologyType: '',
+    installedCapacity: '',
+    expectedProduction: '',
+    gridConnection: '',
+    commissioningDate: '',
+    emissionReduction: ''
   });
 
   const TEST_ID = 'ALPHAG8-1BKQE5C3-K9X2P4M7-15';
@@ -128,7 +136,7 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('/attached_assets/image_1753387571371.png')`
+              backgroundImage: `url(${forestImagePath})`
             }}
           />
           {/* Dark overlay for text readability */}
@@ -307,13 +315,78 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
 
               <Card className="border-2 border-slate-200 shadow-lg">
                 <CardContent className="p-8 space-y-6">
-                  {/* Project Information */}
-                  <div className="space-y-4">
+                  {/* Renewable Energy Project Information */}
+                  <div className="space-y-6">
                     <h4 className="text-lg font-medium text-slate-800 flex items-center space-x-2">
-                      <Building className="h-5 w-5" />
-                      <span>Project Information</span>
+                      <Sun className="h-5 w-5 text-blue-600" />
+                      <span>Renewable Energy Project Details</span>
                     </h4>
                     
+                    {/* Technology Type & Capacity */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="technologyType">Energy Technology Type</Label>
+                        <Select value={formData.technologyType} onValueChange={(value) => setFormData({...formData, technologyType: value})}>
+                          <SelectTrigger className="border-slate-300">
+                            <SelectValue placeholder="Select Technology" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="solar_pv">Solar Photovoltaic (PV)</SelectItem>
+                            <SelectItem value="solar_thermal">Solar Thermal</SelectItem>
+                            <SelectItem value="wind_onshore">Wind Onshore</SelectItem>
+                            <SelectItem value="wind_offshore">Wind Offshore</SelectItem>
+                            <SelectItem value="hydroelectric">Hydroelectric</SelectItem>
+                            <SelectItem value="biomass">Biomass Energy</SelectItem>
+                            <SelectItem value="biogas">Biogas/Anaerobic Digestion</SelectItem>
+                            <SelectItem value="geothermal">Geothermal</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="installedCapacity">Installed Capacity (MW)</Label>
+                        <Input
+                          id="installedCapacity"
+                          type="number"
+                          step="0.001"
+                          value={formData.installedCapacity}
+                          onChange={(e) => setFormData({...formData, installedCapacity: e.target.value})}
+                          placeholder="e.g. 5.5"
+                          className="border-slate-300"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Production & Grid Connection */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="expectedProduction">Expected Annual Energy Production (MWh)</Label>
+                        <Input
+                          id="expectedProduction"
+                          type="number"
+                          value={formData.expectedProduction}
+                          onChange={(e) => setFormData({...formData, expectedProduction: e.target.value})}
+                          placeholder="e.g. 12000"
+                          className="border-slate-300"
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="gridConnection">Grid Connection Type</Label>
+                        <Select value={formData.gridConnection} onValueChange={(value) => setFormData({...formData, gridConnection: value})}>
+                          <SelectTrigger className="border-slate-300">
+                            <SelectValue placeholder="Select Connection" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="grid_tied">Grid-Tied</SelectItem>
+                            <SelectItem value="off_grid">Off-Grid</SelectItem>
+                            <SelectItem value="hybrid">Hybrid (Grid + Storage)</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
+                    {/* Project Basic Information */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="projectName">Project Name</Label>
@@ -327,20 +400,21 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
                       </div>
                       
                       <div className="space-y-2">
-                        <Label htmlFor="area">Project Area (hectares)</Label>
+                        <Label htmlFor="area">Land Area (hectares)</Label>
                         <Input
                           id="area"
                           type="number"
+                          step="0.1"
                           value={formData.area}
                           onChange={(e) => setFormData({...formData, area: e.target.value})}
-                          placeholder="e.g. 50"
+                          placeholder="e.g. 10.5"
                           className="border-slate-300"
                         />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="location">Project Location</Label>
+                      <Label htmlFor="location">Project Location & Land Use</Label>
                       <Input
                         id="location"
                         value={formData.location}
@@ -351,25 +425,39 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="description">Project Description</Label>
+                      <Label htmlFor="emissionReduction">CO₂ Emission Reduction Methodology</Label>
                       <Textarea
-                        id="description"
-                        value={formData.description}
-                        onChange={(e) => setFormData({...formData, description: e.target.value})}
-                        placeholder="Describe your CO₂ certification project goals and methodology"
+                        id="emissionReduction"
+                        value={formData.emissionReduction}
+                        onChange={(e) => setFormData({...formData, emissionReduction: e.target.value})}
+                        placeholder="Describe how this renewable energy project will reduce CO₂ emissions (displaced fossil fuel generation, emission factors, calculation methodology)..."
                         className="border-slate-300 min-h-[100px]"
                       />
                     </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="startDate">Expected Start Date</Label>
-                      <Input
-                        id="startDate"
-                        type="date"
-                        value={formData.startDate}
-                        onChange={(e) => setFormData({...formData, startDate: e.target.value})}
-                        className="border-slate-300"
-                      />
+
+                    {/* Project Timeline */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="startDate">Project Start Date</Label>
+                        <Input
+                          id="startDate"
+                          type="date"
+                          value={formData.startDate}
+                          onChange={(e) => setFormData({...formData, startDate: e.target.value})}
+                          className="border-slate-300"
+                        />
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <Label htmlFor="commissioningDate">Expected Commissioning Date</Label>
+                        <Input
+                          id="commissioningDate"
+                          type="date"
+                          value={formData.commissioningDate}
+                          onChange={(e) => setFormData({...formData, commissioningDate: e.target.value})}
+                          className="border-slate-300"
+                        />
+                      </div>
                     </div>
                   </div>
 
