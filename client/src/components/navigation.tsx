@@ -7,6 +7,7 @@ import { Menu, X, LogOut, UserPlus, User } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
 import { AlphaG8RegistrationModal } from './alphag8-registration-modal';
 import { UserRoleSelectionModal } from './user-role-selection-modal';
+import { FagriMemberRegistrationModal } from './fagri-member-registration-modal';
 import { useLocation } from 'wouter';
 
 export function Navigation() {
@@ -17,6 +18,7 @@ export function Navigation() {
   const [showMembershipModal, setShowMembershipModal] = useState(false);
   const [showAlphaG8Modal, setShowAlphaG8Modal] = useState(false);
   const [showRoleModal, setShowRoleModal] = useState(false);
+  const [showFagriMemberModal, setShowFagriMemberModal] = useState(false);
   const [selectedRole, setSelectedRole] = useState<'sales-team' | 'fagri-member' | 'non-member' | null>(null);
   const [location, setLocation] = useLocation();
 
@@ -262,9 +264,27 @@ export function Navigation() {
           setShowRoleModal(false);
           if (role === 'non-member') {
             setShowMembershipModal(true);
+          } else if (role === 'fagri-member') {
+            setShowFagriMemberModal(true);
           } else {
             setShowAlphaG8Modal(true);
           }
+        }}
+        onMembershipApplicationOpen={() => {
+          setShowRoleModal(false);
+          setShowMembershipModal(true);
+        }}
+      />
+      
+      <FagriMemberRegistrationModal
+        isOpen={showFagriMemberModal}
+        onClose={() => {
+          setShowFagriMemberModal(false);
+          setSelectedRole(null);
+        }}
+        onRegistrationComplete={(memberData) => {
+          setShowFagriMemberModal(false);
+          setShowAlphaG8Modal(true);
         }}
       />
       

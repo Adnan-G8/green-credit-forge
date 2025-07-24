@@ -10,9 +10,10 @@ interface UserRoleSelectionModalProps {
   isOpen: boolean;
   onClose: () => void;
   onRoleSelected: (role: 'sales-team' | 'fagri-member' | 'non-member') => void;
+  onMembershipApplicationOpen: () => void;
 }
 
-export function UserRoleSelectionModal({ isOpen, onClose, onRoleSelected }: UserRoleSelectionModalProps) {
+export function UserRoleSelectionModal({ isOpen, onClose, onRoleSelected, onMembershipApplicationOpen }: UserRoleSelectionModalProps) {
   const { t } = useLanguage();
   const [selectedRole, setSelectedRole] = useState<'sales-team' | 'fagri-member' | 'non-member' | null>(null);
 
@@ -131,13 +132,19 @@ export function UserRoleSelectionModal({ isOpen, onClose, onRoleSelected }: User
                     </div>
                     
                     <Button
-                      onClick={() => handleRoleSelection(role.id)}
+                      onClick={() => {
+                        if (role.id === 'non-member') {
+                          onMembershipApplicationOpen();
+                          onClose();
+                        } else {
+                          handleRoleSelection(role.id);
+                        }
+                      }}
                       className={`w-full ${role.color} hover:opacity-90 text-white mt-4`}
-                      disabled={role.id === 'non-member'}
                     >
                       {role.id === 'non-member' ? (
                         <div className="flex items-center justify-center space-x-2">
-                          <Lock className="h-4 w-4" />
+                          <User className="h-4 w-4" />
                           <span>{role.buttonText}</span>
                         </div>
                       ) : (
