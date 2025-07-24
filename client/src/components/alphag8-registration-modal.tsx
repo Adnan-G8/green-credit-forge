@@ -8,6 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useLanguage } from './language-provider';
+import { AlphaG8IdDisplayModal } from './alphag8-id-display-modal';
+import { generateAlphaG8Id } from '@shared/alphag8-id-generator';
 import { X, Shield, FileText, CheckCircle, UserCheck, AlertCircle, Fingerprint, CreditCard, User, Phone } from 'lucide-react';
 
 interface AlphaG8RegistrationModalProps {
@@ -19,6 +21,8 @@ interface AlphaG8RegistrationModalProps {
 export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8RegistrationModalProps) {
   const { t } = useLanguage();
   const [currentStep, setCurrentStep] = useState(0);
+  const [showIdDisplay, setShowIdDisplay] = useState(false);
+  const [generatedId, setGeneratedId] = useState('');
   
   // Banking KYC Form State
   const [formData, setFormData] = useState({
@@ -499,7 +503,12 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
             
             {currentStep === 3 && (
               <Button
-                onClick={onClose}
+                onClick={() => {
+                  // Generate ALPHAG8 ID and show display modal
+                  const newId = generateAlphaG8Id();
+                  setGeneratedId(newId);
+                  setShowIdDisplay(true);
+                }}
                 className="flex-1 bg-green-700 hover:bg-green-800 text-white py-3"
               >
                 <CheckCircle className="h-4 w-4 mr-2" />
@@ -531,6 +540,19 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
           </div>
         </div>
       </DialogContent>
+
+      {/* ALPHAG8 ID Display Modal */}
+      <AlphaG8IdDisplayModal
+        isOpen={showIdDisplay}
+        onClose={() => {
+          setShowIdDisplay(false);
+          onClose();
+        }}
+        alphaG8Id={generatedId}
+        userEmail={formData.fullName.includes('@') ? formData.fullName : 'user@fagri.digital'}
+        userName={formData.fullName}
+        userRole={userRole || 'member'}
+      />
     </Dialog>
   );
 }
