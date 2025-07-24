@@ -53,7 +53,7 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
       icon: TreePine,
       title: t('forest-projects'),
       description: t('forest-projects-desc'),
-      color: 'green',
+      color: 'orange',
       standards: ['ISO 14064-2', 'EUFD2025-001'],
     },
     {
@@ -187,17 +187,17 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
                       buttonBg: 'bg-emerald-700',
                       buttonHover: 'hover:bg-emerald-800'
                     },
-                    green: {
-                      bg: 'bg-green-100',
-                      text: 'text-green-700',
-                      border: 'border-green-200',
-                      hoverBorder: 'hover:border-green-300',
-                      titleText: 'text-green-800',
-                      descText: 'text-green-600',
-                      badgeBg: 'bg-green-100',
-                      badgeText: 'text-green-800',
-                      buttonBg: 'bg-green-700',
-                      buttonHover: 'hover:bg-green-800'
+                    orange: {
+                      bg: 'bg-orange-100',
+                      text: 'text-orange-700',
+                      border: 'border-orange-200',
+                      hoverBorder: 'hover:border-orange-300',
+                      titleText: 'text-orange-800',
+                      descText: 'text-orange-600',
+                      badgeBg: 'bg-orange-100',
+                      badgeText: 'text-orange-800',
+                      buttonBg: 'bg-orange-700',
+                      buttonHover: 'hover:bg-orange-800'
                     },
                     blue: {
                       bg: 'bg-blue-100',
@@ -213,7 +213,7 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
                     }
                   };
                   
-                  const colors = colorClasses[project.color as keyof typeof colorClasses];
+                  const colors = colorClasses[project.color as keyof typeof colorClasses] || colorClasses.blue;
                   
                   return (
                     <Card 
