@@ -126,21 +126,22 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-5xl max-h-[90vh] p-0 overflow-hidden">
+      <DialogContent className="max-w-5xl max-h-[90vh] p-0 overflow-hidden relative">
         <DialogTitle className="sr-only">CO₂ Project Registration</DialogTitle>
         <DialogDescription className="sr-only">Register your CO₂ certification project</DialogDescription>
         
-        {/* Hero Background Section */}
-        <div className="relative h-64 overflow-hidden">
+        {/* Hero Background Section with Forest */}
+        <div className="relative h-80 overflow-hidden">
           {/* Beautiful Forest Background */}
           <div 
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
             style={{
-              backgroundImage: `url(${forestImagePath})`
+              backgroundImage: `url(${forestImagePath})`,
+              filter: 'brightness(1.1) contrast(1.2)'
             }}
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black bg-opacity-40" />
+          {/* Enhanced overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60" />
           
           <button 
             onClick={onClose}
@@ -149,52 +150,75 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
             <X className="h-6 w-6" />
           </button>
 
-          <div className="relative h-full flex items-center justify-center text-center text-white px-8">
-            <div>
-              <h1 className="text-4xl font-light mb-4 drop-shadow-lg">CO₂ Project Registration</h1>
-              <p className="text-white text-opacity-90 text-lg max-w-2xl mx-auto drop-shadow-md">
-                Register your sustainable agriculture project for official CO₂ certification and carbon credit generation.
+          <div className="relative h-full flex items-center justify-center text-center text-white px-8 z-10">
+            <div className="backdrop-blur-sm bg-white/10 rounded-3xl p-8 border border-white/20 shadow-2xl">
+              <h1 className="text-5xl font-extralight mb-6 drop-shadow-2xl text-white tracking-wide">
+                CO₂ Project Registration
+              </h1>
+              <p className="text-white/90 text-xl max-w-3xl mx-auto drop-shadow-lg font-light leading-relaxed">
+                Register your renewable energy project for official CO₂ certification and carbon credit generation in harmony with nature.
               </p>
               
-              {/* Progress Steps */}
-              <div className="flex items-center justify-center space-x-4 mt-8">
-                <div className={`flex items-center space-x-2 ${step === 'auth' ? 'text-white' : 'text-white text-opacity-70'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 'auth' ? 'bg-white text-emerald-600 shadow-lg' : 'bg-white bg-opacity-20'}`}>
-                    <Shield className="h-4 w-4" />
+              {/* Progress Steps with Glass Effect */}
+              <div className="flex items-center justify-center space-x-6 mt-8">
+                <div className={`flex items-center space-x-3 ${step === 'auth' ? 'text-white' : 'text-white/70'}`}>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-md border transition-all duration-300 ${step === 'auth' ? 'bg-white text-emerald-600 shadow-2xl border-white' : 'bg-white/20 border-white/30'}`}>
+                    <Shield className="h-5 w-5" />
                   </div>
-                  <span className="text-sm font-medium drop-shadow-sm">Authentication</span>
+                  <span className="text-base font-medium drop-shadow-lg">Authentication</span>
                 </div>
-                <ArrowRight className="h-4 w-4 text-white text-opacity-80" />
-                <div className={`flex items-center space-x-2 ${step === 'type' ? 'text-white' : 'text-white text-opacity-70'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 'type' ? 'bg-white text-emerald-600 shadow-lg' : step === 'details' ? 'bg-white bg-opacity-30' : 'bg-white bg-opacity-20'}`}>
-                    <FileText className="h-4 w-4" />
+                <ArrowRight className="h-5 w-5 text-white/80 drop-shadow-lg" />
+                <div className={`flex items-center space-x-3 ${step === 'type' ? 'text-white' : 'text-white/70'}`}>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-md border transition-all duration-300 ${step === 'type' ? 'bg-white text-emerald-600 shadow-2xl border-white' : step === 'details' ? 'bg-white/30 border-white/40' : 'bg-white/20 border-white/30'}`}>
+                    <FileText className="h-5 w-5" />
                   </div>
-                  <span className="text-sm font-medium drop-shadow-sm">Project Type</span>
+                  <span className="text-base font-medium drop-shadow-lg">Project Type</span>
                 </div>
-                <ArrowRight className="h-4 w-4 text-white text-opacity-80" />
-                <div className={`flex items-center space-x-2 ${step === 'details' ? 'text-white' : 'text-white text-opacity-70'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 'details' ? 'bg-white text-emerald-600 shadow-lg' : 'bg-white bg-opacity-20'}`}>
-                    <Upload className="h-4 w-4" />
+                <ArrowRight className="h-5 w-5 text-white/80 drop-shadow-lg" />
+                <div className={`flex items-center space-x-3 ${step === 'details' ? 'text-white' : 'text-white/70'}`}>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-md border transition-all duration-300 ${step === 'details' ? 'bg-white text-emerald-600 shadow-2xl border-white' : 'bg-white/20 border-white/30'}`}>
+                    <Upload className="h-5 w-5" />
                   </div>
-                  <span className="text-sm font-medium drop-shadow-sm">Project Details</span>
+                  <span className="text-base font-medium drop-shadow-lg">Project Details</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Content Section */}
-        <div className="p-8 bg-gradient-to-br from-slate-50 to-white overflow-y-auto max-h-[calc(90vh-16rem)]">
-          {/* Step 1: ALPHAG8 ID Authentication */}
+        {/* Content Area with Natural Styling */}
+        <div className="relative bg-gradient-to-b from-emerald-50/30 via-slate-50 to-white overflow-y-auto max-h-[calc(90vh-20rem)]">
+          {/* Subtle nature pattern overlay */}
+          <div className="absolute inset-0 opacity-3">
+            <div 
+              className="w-full h-full bg-repeat"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.2'%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+              }}
+            />
+          </div>
+          <div className="relative z-10 p-8">
+            {/* Step 1: ALPHAG8 ID Authentication */}
           {step === 'auth' && (
             <div className="max-w-2xl mx-auto">
-              <Card className="border-2 border-blue-200 shadow-lg">
-                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
-                  <h3 className="text-xl font-light mb-2 flex items-center space-x-3">
-                    <Shield className="h-6 w-6" />
-                    <span>ALPHAG8 ID Verification Required</span>
-                  </h3>
-                  <p className="text-blue-100">Secure access to CO₂ project registration requires valid ALPHAG8 ID authentication.</p>
+              <Card className="border-2 border-emerald-200 shadow-2xl bg-white/90 backdrop-blur-sm">
+                <div className="bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 p-8 text-white relative overflow-hidden">
+                  {/* Subtle pattern overlay */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div 
+                      className="w-full h-full bg-repeat"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M20 20c0-5.523-4.477-10-10-10s-10 4.477-10 10 4.477 10 10 10 10-4.477 10-10z'/%3E%3C/g%3E%3C/svg%3E")`
+                      }}
+                    />
+                  </div>
+                  <div className="relative z-10">
+                    <h3 className="text-2xl font-light mb-3 flex items-center space-x-3">
+                      <Shield className="h-7 w-7 drop-shadow-lg" />
+                      <span>ALPHAG8 ID Verification Required</span>
+                    </h3>
+                    <p className="text-emerald-100 text-lg font-light">Secure access to CO₂ project registration requires valid ALPHAG8 ID authentication.</p>
+                  </div>
                 </div>
                 <CardContent className="p-6 space-y-6">
                   <div className="space-y-2">
@@ -313,8 +337,8 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
                 <p className="text-slate-600">Complete your project details for CO₂ certification application.</p>
               </div>
 
-              <Card className="border-2 border-slate-200 shadow-lg">
-                <CardContent className="p-8 space-y-6">
+              <Card className="border-2 border-emerald-200 shadow-2xl bg-white/95 backdrop-blur-sm">
+                <CardContent className="p-10 space-y-8">
                   {/* Renewable Energy Project Information */}
                   <div className="space-y-6">
                     <h4 className="text-lg font-medium text-slate-800 flex items-center space-x-2">
@@ -539,6 +563,7 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
               </Card>
             </div>
           )}
+          </div>
         </div>
       </DialogContent>
     </Dialog>
