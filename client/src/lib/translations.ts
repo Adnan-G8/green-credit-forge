@@ -1808,7 +1808,7 @@ translations.en = {
   'solar-wind-hydroelectric-projects': 'Solar, wind, hydroelectric and renewable energy initiatives',
   'project-submitted': 'Project Application Submitted',
   'project-review-process': 'Your project will be reviewed by our certification team within 5-7 business days.',
-  'access-granted': 'Access granted to project registration system.',
+  'access-granted': 'Access granted to project registration system',
 };
 
 translations.it = {
