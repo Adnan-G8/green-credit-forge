@@ -150,7 +150,10 @@ export function Navigation() {
               </Button>
               
               <Button
-                onClick={() => setShowRecommendationsModal(true)}
+                onClick={() => {
+                  console.log('Recommendations button clicked');
+                  setShowRecommendationsModal(true);
+                }}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
               >
@@ -159,7 +162,10 @@ export function Navigation() {
               </Button>
               
               <Button
-                onClick={() => setShowProjectRegistrationModal(true)}
+                onClick={() => {
+                  console.log('Register Project button clicked');
+                  setShowProjectRegistrationModal(true);
+                }}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
               >

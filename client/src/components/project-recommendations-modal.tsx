@@ -213,6 +213,8 @@ export function ProjectRecommendationsModal({ isOpen, onClose }: ProjectRecommen
 
   const recommendations = step === 'recommendations' ? generateRecommendations() : [];
 
+  console.log('ProjectRecommendationsModal rendering, isOpen:', isOpen);
+  
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-6xl max-h-[90vh] p-0 overflow-hidden relative">
