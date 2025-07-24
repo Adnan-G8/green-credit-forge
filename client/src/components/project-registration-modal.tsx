@@ -123,52 +123,52 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
         <DialogDescription className="sr-only">Register your CO₂ certification project</DialogDescription>
         
         {/* Hero Background Section */}
-        <div className="relative h-64 bg-gradient-to-r from-emerald-600 to-green-700 overflow-hidden">
-          {/* Agricultural Background Pattern */}
-          <div className="absolute inset-0 opacity-20">
-            <div 
-              className="w-full h-full bg-cover bg-center"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='50' cy='10' r='1'/%3E%3Ccircle cx='10' cy='50' r='1'/%3E%3Ccircle cx='50' cy='50' r='1'/%3E%3Cpath d='M30 15 L30 45 M15 30 L45 30' stroke='%23ffffff' stroke-width='0.5' opacity='0.4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-              }}
-            />
-          </div>
+        <div className="relative h-64 overflow-hidden">
+          {/* Beautiful Forest Background */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('/attached_assets/image_1753387571371.png')`
+            }}
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black bg-opacity-40" />
           
           <button 
             onClick={onClose}
-            className="absolute top-6 right-6 text-white hover:text-emerald-200 transition-colors z-10"
+            className="absolute top-6 right-6 text-white hover:text-white hover:text-opacity-80 transition-colors z-10 drop-shadow-lg"
           >
             <X className="h-6 w-6" />
           </button>
 
           <div className="relative h-full flex items-center justify-center text-center text-white px-8">
             <div>
-              <h1 className="text-4xl font-light mb-4">CO₂ Project Registration</h1>
-              <p className="text-emerald-100 text-lg max-w-2xl mx-auto">
+              <h1 className="text-4xl font-light mb-4 drop-shadow-lg">CO₂ Project Registration</h1>
+              <p className="text-white text-opacity-90 text-lg max-w-2xl mx-auto drop-shadow-md">
                 Register your sustainable agriculture project for official CO₂ certification and carbon credit generation.
               </p>
               
               {/* Progress Steps */}
               <div className="flex items-center justify-center space-x-4 mt-8">
-                <div className={`flex items-center space-x-2 ${step === 'auth' ? 'text-white' : 'text-emerald-200'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 'auth' ? 'bg-white text-emerald-600' : 'bg-emerald-500'}`}>
+                <div className={`flex items-center space-x-2 ${step === 'auth' ? 'text-white' : 'text-white text-opacity-70'}`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 'auth' ? 'bg-white text-emerald-600 shadow-lg' : 'bg-white bg-opacity-20'}`}>
                     <Shield className="h-4 w-4" />
                   </div>
-                  <span className="text-sm font-medium">Authentication</span>
+                  <span className="text-sm font-medium drop-shadow-sm">Authentication</span>
                 </div>
-                <ArrowRight className="h-4 w-4 text-emerald-300" />
-                <div className={`flex items-center space-x-2 ${step === 'type' ? 'text-white' : 'text-emerald-200'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 'type' ? 'bg-white text-emerald-600' : step === 'details' ? 'bg-emerald-500' : 'bg-emerald-600'}`}>
+                <ArrowRight className="h-4 w-4 text-white text-opacity-80" />
+                <div className={`flex items-center space-x-2 ${step === 'type' ? 'text-white' : 'text-white text-opacity-70'}`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 'type' ? 'bg-white text-emerald-600 shadow-lg' : step === 'details' ? 'bg-white bg-opacity-30' : 'bg-white bg-opacity-20'}`}>
                     <FileText className="h-4 w-4" />
                   </div>
-                  <span className="text-sm font-medium">Project Type</span>
+                  <span className="text-sm font-medium drop-shadow-sm">Project Type</span>
                 </div>
-                <ArrowRight className="h-4 w-4 text-emerald-300" />
-                <div className={`flex items-center space-x-2 ${step === 'details' ? 'text-white' : 'text-emerald-200'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 'details' ? 'bg-white text-emerald-600' : 'bg-emerald-600'}`}>
+                <ArrowRight className="h-4 w-4 text-white text-opacity-80" />
+                <div className={`flex items-center space-x-2 ${step === 'details' ? 'text-white' : 'text-white text-opacity-70'}`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step === 'details' ? 'bg-white text-emerald-600 shadow-lg' : 'bg-white bg-opacity-20'}`}>
                     <Upload className="h-4 w-4" />
                   </div>
-                  <span className="text-sm font-medium">Project Details</span>
+                  <span className="text-sm font-medium drop-shadow-sm">Project Details</span>
                 </div>
               </div>
             </div>
