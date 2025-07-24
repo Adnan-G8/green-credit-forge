@@ -184,18 +184,17 @@ Security: swiss-security@alphag8.digital`;
               {/* Quick Actions */}
               <div className="bg-white border border-slate-200/80 rounded-3xl p-8 shadow-lg">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl flex items-center justify-center shadow-sm">
                     <Settings className="h-6 w-6 text-slate-600" />
                   </div>
                   <h3 className="text-lg font-medium text-slate-900">Quick Actions</h3>
                 </div>
                 <Button
                   onClick={handleLogout}
-                  variant="outline"
                   size="lg"
-                  className="w-full text-red-600 border-red-200 hover:bg-red-50 hover:border-red-300 font-medium"
+                  className="w-full bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] border-0"
                 >
-                  <LogOut className="h-5 w-5 mr-2" />
+                  <LogOut className="h-5 w-5 mr-3" />
                   Logout
                 </Button>
               </div>
