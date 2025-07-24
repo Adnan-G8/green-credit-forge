@@ -3,12 +3,13 @@ import { useLanguage } from './language-provider';
 import { useAuthentication } from '../hooks/use-authentication';
 import { FagriLogo } from '@/assets/fagri-logo';
 import { Button } from '@/components/ui/button';
-import { Menu, X, LogOut, UserPlus, User, Key, LogIn, FileText, Folder } from 'lucide-react';
+import { Menu, X, LogOut, UserPlus, User, Key, LogIn, FileText, Folder, Lightbulb } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
 import { AlphaG8RegistrationModal } from './alphag8-registration-modal';
 import { UserRoleSelectionModal } from './user-role-selection-modal';
 import { FagriMemberRegistrationModal } from './fagri-member-registration-modal';
 import { ProjectRegistrationModal } from './project-registration-modal';
+import { ProjectRecommendationsModal } from './project-recommendations-modal';
 import { SignInModal } from './sign-in-modal-enhanced';
 import { DocumentManagementModal } from './document-management-modal';
 import { useLocation } from 'wouter';
@@ -26,6 +27,7 @@ export function Navigation() {
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [showProjectRegistrationModal, setShowProjectRegistrationModal] = useState(false);
   const [showDocumentManagementModal, setShowDocumentManagementModal] = useState(false);
+  const [showRecommendationsModal, setShowRecommendationsModal] = useState(false);
   const [location, setLocation] = useLocation();
 
   useEffect(() => {
@@ -148,6 +150,15 @@ export function Navigation() {
               </Button>
               
               <Button
+                onClick={() => setShowRecommendationsModal(true)}
+                size="sm"
+                className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
+              >
+                <Lightbulb className="h-4 w-4 mr-2" />
+                {language === 'it' ? 'Raccomandazioni' : 'Recommendations'}
+              </Button>
+              
+              <Button
                 onClick={() => setShowRoleModal(true)}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
@@ -211,6 +222,17 @@ export function Navigation() {
                 </button>
                 
                 {/* Clean Mobile Navigation */}
+                <button
+                  onClick={() => {
+                    setShowRecommendationsModal(true);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
+                >
+                  <Lightbulb className="h-4 w-4 mr-2" />
+                  {language === 'it' ? 'Raccomandazioni' : 'Recommendations'}
+                </button>
+                
                 <button
                   onClick={() => {
                     setShowSignInModal(true);
@@ -299,6 +321,11 @@ export function Navigation() {
       <DocumentManagementModal
         isOpen={showDocumentManagementModal}
         onClose={() => setShowDocumentManagementModal(false)}
+      />
+
+      <ProjectRecommendationsModal
+        isOpen={showRecommendationsModal}
+        onClose={() => setShowRecommendationsModal(false)}
       />
     </>
   );
