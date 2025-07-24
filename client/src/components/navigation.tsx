@@ -8,10 +8,7 @@ import { MembershipModal } from './membership-modal';
 import { AlphaG8RegistrationModal } from './alphag8-registration-modal';
 import { UserRoleSelectionModal } from './user-role-selection-modal';
 import { FagriMemberRegistrationModal } from './fagri-member-registration-modal';
-import { ProjectRegistrationModal } from './project-registration-modal';
-import { ProjectRecommendationsModal } from './project-recommendations-modal';
 import { SignInModal } from './sign-in-modal-enhanced';
-import { DocumentManagementModal } from './document-management-modal';
 import { useLocation } from 'wouter';
 
 export function Navigation() {
@@ -25,9 +22,7 @@ export function Navigation() {
   const [showFagriMemberModal, setShowFagriMemberModal] = useState(false);
   const [selectedRole, setSelectedRole] = useState<'sales-team' | 'fagri-member' | 'non-member' | null>(null);
   const [showSignInModal, setShowSignInModal] = useState(false);
-  const [showProjectRegistrationModal, setShowProjectRegistrationModal] = useState(false);
-  const [showDocumentManagementModal, setShowDocumentManagementModal] = useState(false);
-  const [showRecommendationsModal, setShowRecommendationsModal] = useState(false);
+
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [location, setLocation] = useLocation();
 
@@ -167,31 +162,7 @@ export function Navigation() {
                 {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
               </Button>
               
-              <Button
-                onClick={() => {
-                  if (activeModal) return; // Prevent opening if another modal is active
-                  setActiveModal('recommendations');
-                  setShowRecommendationsModal(true);
-                }}
-                size="sm"
-                className="hidden md:flex items-center px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-200"
-              >
-                <Lightbulb className="h-4 w-4 mr-2" />
-                {language === 'it' ? 'Raccomandazioni' : 'Recommendations'}
-              </Button>
-              
-              <Button
-                onClick={() => {
-                  if (activeModal) return; // Prevent opening if another modal is active
-                  setActiveModal('project');
-                  setShowProjectRegistrationModal(true);
-                }}
-                size="sm"
-                className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
-              >
-                <FileText className="h-4 w-4 mr-2" />
-                {language === 'it' ? 'Registra Progetto' : 'Register Project'}
-              </Button>
+
 
 
 
@@ -274,31 +245,7 @@ export function Navigation() {
                   {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
                 </button>
                 
-                <button
-                  onClick={() => {
-                    if (activeModal) return;
-                    setActiveModal('recommendations');
-                    setShowRecommendationsModal(true);
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center text-purple-600 hover:text-purple-700 transition-colors duration-300 text-left font-medium"
-                >
-                  <Lightbulb className="h-4 w-4 mr-2" />
-                  {language === 'it' ? 'Raccomandazioni' : 'Recommendations'}
-                </button>
-                
-                <button
-                  onClick={() => {
-                    if (activeModal) return;
-                    setActiveModal('project');
-                    setShowProjectRegistrationModal(true);
-                    setIsOpen(false);
-                  }}
-                  className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
-                >
-                  <FileText className="h-4 w-4 mr-2" />
-                  {language === 'it' ? 'Registra Progetto' : 'Register Project'}
-                </button>
+
                 
 
               </div>
@@ -371,30 +318,6 @@ export function Navigation() {
         isOpen={showSignInModal}
         onClose={() => {
           setShowSignInModal(false);
-          setActiveModal(null);
-        }}
-      />
-
-      <ProjectRegistrationModal
-        isOpen={showProjectRegistrationModal}
-        onClose={() => {
-          setShowProjectRegistrationModal(false);
-          setActiveModal(null);
-        }}
-      />
-
-      <DocumentManagementModal
-        isOpen={showDocumentManagementModal}
-        onClose={() => {
-          setShowDocumentManagementModal(false);
-          setActiveModal(null);
-        }}
-      />
-
-      <ProjectRecommendationsModal
-        isOpen={showRecommendationsModal}
-        onClose={() => {
-          setShowRecommendationsModal(false);
           setActiveModal(null);
         }}
       />

@@ -19,8 +19,7 @@ import {
   Settings,
   Lock
 } from 'lucide-react';
-import { DocumentManagementModal } from './document-management-modal';
-import { ProjectRegistrationModal } from './project-registration-modal';
+
 
 interface UserDashboardModalProps {
   isOpen: boolean;
@@ -32,8 +31,7 @@ interface UserDashboardModalProps {
 export function UserDashboardModal({ isOpen, onClose, alphaG8Id, userRole = "FAGRI Member" }: UserDashboardModalProps) {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const [showDocumentManagement, setShowDocumentManagement] = useState(false);
-  const [showProjectRegistration, setShowProjectRegistration] = useState(false);
+
 
   const handleCopyId = () => {
     navigator.clipboard.writeText(alphaG8Id);
@@ -284,11 +282,11 @@ Security: swiss-security@alphag8.digital`;
                       {t('manage-upload-organize-documents')}
                     </p>
                     <Button
-                      onClick={() => setShowDocumentManagement(true)}
-                      className="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                      disabled
+                      className="w-full bg-gray-400 text-white cursor-not-allowed"
                     >
                       <Folder className="h-4 w-4 mr-2" />
-                      {t('open-documents')}
+                      Coming Soon
                     </Button>
                   </CardContent>
                 </Card>
@@ -327,11 +325,11 @@ Security: swiss-security@alphag8.digital`;
                       {t('register-co2-certification-projects')}
                     </p>
                     <Button
-                      onClick={() => setShowProjectRegistration(true)}
-                      className="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                      disabled
+                      className="w-full bg-gray-400 text-white cursor-not-allowed"
                     >
                       <FileText className="h-4 w-4 mr-2" />
-                      {t('register-project')}
+                      Coming Soon
                     </Button>
                   </CardContent>
                 </Card>
@@ -381,16 +379,7 @@ Security: swiss-security@alphag8.digital`;
         </DialogContent>
       </Dialog>
 
-      {/* Sub-modals */}
-      <DocumentManagementModal
-        isOpen={showDocumentManagement}
-        onClose={() => setShowDocumentManagement(false)}
-      />
-      
-      <ProjectRegistrationModal
-        isOpen={showProjectRegistration}
-        onClose={() => setShowProjectRegistration(false)}
-      />
+
     </>
   );
 }

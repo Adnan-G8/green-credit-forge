@@ -1251,7 +1251,7 @@ export const translations = {
     'secure-authentication': 'Secure Authentication',
     'swiss-banking-level-security': 'Swiss banking-level security for identity protection',
     'sign-in-successful': 'Sign In Successful',
-    'welcome-back-message': 'Welcome back to FAGRI Digital platform',
+
     
     // Document Management
     'document-management': 'Document Management',
