@@ -98,9 +98,9 @@ Security: swiss-security@alphag8.digital`;
   return (
     <>
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="max-w-4xl bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-hidden">
+        <DialogContent className="max-w-3xl max-h-[85vh] bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-y-auto">
           {/* Header Section */}
-          <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 px-8 py-6 relative">
+          <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 px-6 py-4 relative">
             <button 
               onClick={onClose}
               className="absolute top-4 right-4 text-white hover:text-emerald-200 transition-colors"
@@ -109,12 +109,12 @@ Security: swiss-security@alphag8.digital`;
             </button>
             
             <div className="flex items-center justify-between text-white">
-              <div className="flex items-center space-x-4">
-                <div className="w-14 h-14 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                  <User className="h-7 w-7" />
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                  <User className="h-6 w-6" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-light mb-1">User Dashboard</h2>
+                  <h2 className="text-xl font-light mb-1">User Dashboard</h2>
                   <p className="text-emerald-100 text-sm">FAGRI.Digital Platform Access</p>
                 </div>
               </div>
@@ -124,8 +124,8 @@ Security: swiss-security@alphag8.digital`;
             </div>
           </div>
 
-          <div className="px-8 py-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="px-6 py-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               {/* ALPHAG8 ID Section */}
               <div className="lg:col-span-2">
                 <Card className="border-2 border-blue-200 shadow-lg overflow-hidden">
@@ -154,10 +154,10 @@ Security: swiss-security@alphag8.digital`;
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent className="p-6 bg-gradient-to-br from-slate-50 to-blue-50">
-                    <div className="space-y-6">
+                  <CardContent className="p-4 bg-gradient-to-br from-slate-50 to-blue-50">
+                    <div className="space-y-4">
                       <div className="relative">
-                        <div className="bg-white rounded-xl p-6 border-2 border-dashed border-blue-300 shadow-inner">
+                        <div className="bg-white rounded-xl p-4 border-2 border-dashed border-blue-300 shadow-inner">
                           <div className="text-center">
                             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                               <Shield className="h-6 w-6 text-blue-600" />
@@ -245,12 +245,12 @@ Security: swiss-security@alphag8.digital`;
             </div>
 
             {/* Platform Features */}
-            <div className="mt-8">
-              <h3 className="text-xl font-light text-slate-800 mb-6">Platform Features</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="mt-6">
+              <h3 className="text-lg font-light text-slate-800 mb-4">Platform Features</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Document Management */}
                 <Card className="border-orange-200 hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden">
-                  <div className="relative h-32 bg-gradient-to-br from-orange-400 to-red-500 overflow-hidden">
+                  <div className="relative h-24 bg-gradient-to-br from-orange-400 to-red-500 overflow-hidden">
                     {/* Document Background Pattern */}
                     <div className="absolute inset-0 opacity-20">
                       <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -265,13 +265,13 @@ Security: swiss-security@alphag8.digital`;
                         <rect width="100" height="100" fill="url(#doc-pattern)" />
                       </svg>
                     </div>
-                    <div className="absolute top-4 right-4">
-                      <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
-                        <Folder className="h-8 w-8 text-white" />
+                    <div className="absolute top-3 right-3">
+                      <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
+                        <Folder className="h-6 w-6 text-white" />
                       </div>
                     </div>
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <h4 className="text-xl font-light mb-1">{t('document-management')}</h4>
+                    <div className="absolute bottom-3 left-3 text-white">
+                      <h4 className="text-lg font-light mb-1">{t('document-management')}</h4>
                       <div className="flex items-center space-x-1 text-orange-100">
                         <div className="w-2 h-2 bg-white rounded-full opacity-60"></div>
                         <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
@@ -279,8 +279,8 @@ Security: swiss-security@alphag8.digital`;
                       </div>
                     </div>
                   </div>
-                  <CardContent className="p-6 bg-gradient-to-br from-orange-50 to-red-50">
-                    <p className="text-sm text-slate-700 mb-6 leading-relaxed">
+                  <CardContent className="p-4 bg-gradient-to-br from-orange-50 to-red-50">
+                    <p className="text-sm text-slate-700 mb-4 leading-relaxed">
                       {t('manage-upload-organize-documents')}
                     </p>
                     <Button
@@ -295,7 +295,7 @@ Security: swiss-security@alphag8.digital`;
 
                 {/* Project Registration */}
                 <Card className="border-emerald-200 hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden">
-                  <div className="relative h-32 bg-gradient-to-br from-emerald-500 to-green-600 overflow-hidden">
+                  <div className="relative h-24 bg-gradient-to-br from-emerald-500 to-green-600 overflow-hidden">
                     {/* Agricultural Background Pattern */}
                     <div className="absolute inset-0 opacity-20">
                       <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -308,13 +308,13 @@ Security: swiss-security@alphag8.digital`;
                         <rect width="100" height="100" fill="url(#agri-pattern)" />
                       </svg>
                     </div>
-                    <div className="absolute top-4 right-4">
-                      <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
-                        <FileText className="h-8 w-8 text-white" />
+                    <div className="absolute top-3 right-3">
+                      <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
+                        <FileText className="h-6 w-6 text-white" />
                       </div>
                     </div>
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <h4 className="text-xl font-light mb-1">{t('project-registration')}</h4>
+                    <div className="absolute bottom-3 left-3 text-white">
+                      <h4 className="text-lg font-light mb-1">{t('project-registration')}</h4>
                       <div className="flex items-center space-x-1 text-emerald-100">
                         <div className="w-2 h-2 bg-white rounded-full opacity-60"></div>
                         <div className="w-2 h-2 bg-white rounded-full opacity-40"></div>
@@ -322,8 +322,8 @@ Security: swiss-security@alphag8.digital`;
                       </div>
                     </div>
                   </div>
-                  <CardContent className="p-6 bg-gradient-to-br from-emerald-50 to-green-50">
-                    <p className="text-sm text-slate-700 mb-6 leading-relaxed">
+                  <CardContent className="p-4 bg-gradient-to-br from-emerald-50 to-green-50">
+                    <p className="text-sm text-slate-700 mb-4 leading-relaxed">
                       {t('register-co2-certification-projects')}
                     </p>
                     <Button
@@ -339,7 +339,7 @@ Security: swiss-security@alphag8.digital`;
             </div>
 
             {/* Security Info */}
-            <div className="mt-8">
+            <div className="mt-6">
               <Card className="border-green-200 bg-gradient-to-r from-green-50 to-emerald-50 shadow-lg overflow-hidden">
                 <div className="relative">
                   {/* Swiss Mountains Background */}
@@ -349,7 +349,7 @@ Security: swiss-security@alphag8.digital`;
                       <path d="M0 55 L25 30 L50 40 L80 25 L110 35 L140 20 L170 30 L200 25 L200 60 L0 60 Z" fill="currentColor" opacity="0.5" />
                     </svg>
                   </div>
-                  <CardContent className="p-6 relative">
+                  <CardContent className="p-4 relative">
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
                         <Shield className="h-6 w-6 text-green-600" />
