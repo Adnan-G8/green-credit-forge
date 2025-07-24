@@ -118,6 +118,19 @@ Preferred communication style: Simple, everyday language.
   * **Natural Alpine Cooling**: Mountain climate reduces energy-intensive cooling requirements
   * **Climate-Neutral Operations**: Every data process, certification, and transaction conducted climate-neutrally
   * **Future Generations Commitment**: Clear positioning as ecologically responsible digital ecosystem
+- **Enhanced Security & Access Control** (July 24, 2025):
+  * **Password Updated**: Changed from "FAGRI2025" to "CO2FAGRI2025" for enhanced confidentiality
+  * **Automatic Logout**: Implemented 10-minute inactivity timeout with user activity tracking
+  * **Session Management**: Activity detection via mouse, keyboard, scroll, and touch events
+  * **Session Expiry Notifications**: Toast notifications in both languages when session expires
+  * **Logout Functionality**: Added logout buttons to navigation (desktop and mobile)
+  * **Bilingual Support**: Complete Italian and English translations for all session-related messages
+- **Navigation Enhancement** (July 24, 2025):
+  * **Sign Up Button**: Added "Registrati" (Italian) / "Sign Up" (English) button opening membership modal
+  * **Register Button**: Added "Registrati" (Italian) / "Register" (English) button for user registration
+  * **Mobile Navigation**: Both buttons available in mobile hamburger menu
+  * **Professional Styling**: Banking-style button design with emerald color scheme and icons
+  * **Complete Translation**: Full bilingual support for all new navigation elements
 
 ## System Architecture
 

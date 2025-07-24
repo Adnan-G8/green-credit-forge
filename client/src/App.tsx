@@ -54,9 +54,11 @@ function App() {
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
-          <SessionExpiryHandler />
           {isAuthenticated ? (
-            <ProtectedRouter />
+            <>
+              <SessionExpiryHandler />
+              <ProtectedRouter />
+            </>
           ) : (
             <PasswordProtection onAuthenticated={authenticate} />
           )}

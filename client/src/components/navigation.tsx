@@ -3,7 +3,7 @@ import { useLanguage } from './language-provider';
 import { useAuthentication } from '../hooks/use-authentication';
 import { FagriLogo } from '@/assets/fagri-logo';
 import { Button } from '@/components/ui/button';
-import { Menu, X, LogOut } from 'lucide-react';
+import { Menu, X, LogOut, UserPlus, User } from 'lucide-react';
 import { MembershipModal } from './membership-modal';
 import { useLocation } from 'wouter';
 
@@ -123,11 +123,31 @@ export function Navigation() {
                 </button>
               </div>
 
+              {/* Sign Up and Register Buttons */}
+              <Button
+                onClick={() => setShowMembershipModal(true)}
+                variant="outline"
+                size="sm"
+                className="hidden md:flex items-center px-3 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
+              >
+                <UserPlus className="h-4 w-4 mr-2" />
+                {t('signup')}
+              </Button>
+              
+              <Button
+                onClick={() => setShowMembershipModal(true)}
+                size="sm"
+                className="hidden md:flex items-center px-3 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
+              >
+                <User className="h-4 w-4 mr-2" />
+                {t('register')}
+              </Button>
+
               {/* Logout Button */}
               <button
                 onClick={logout}
                 className="hidden md:flex items-center px-3 py-2 text-slate-600 hover:text-red-600 transition-colors duration-200"
-                title="Logout"
+                title={t('logout')}
               >
                 <LogOut className="h-5 w-5" />
               </button>
@@ -182,6 +202,29 @@ export function Navigation() {
                   className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
                   {t('nav-contact')}
+                </button>
+                
+                {/* Mobile Sign Up and Register */}
+                <button
+                  onClick={() => {
+                    setShowMembershipModal(true);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
+                >
+                  <UserPlus className="h-4 w-4 mr-2" />
+                  {t('signup')}
+                </button>
+                
+                <button
+                  onClick={() => {
+                    setShowMembershipModal(true);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
+                >
+                  <User className="h-4 w-4 mr-2" />
+                  {t('register')}
                 </button>
                 
                 {/* Mobile Logout */}

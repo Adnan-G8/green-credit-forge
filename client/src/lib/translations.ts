@@ -357,6 +357,8 @@ export const translations = {
     'session-expired': 'Sessione Scaduta',
     'session-expired-desc': 'La tua sessione è scaduta dopo 10 minuti di inattività. Effettua nuovamente l\'accesso.',
     'logout': 'Esci',
+    'signup': 'Registrati',
+    'register': 'Registrati',
 
     // Transition Section
     'transition-title': 'Dal Campo al Futuro',
@@ -690,6 +692,8 @@ export const translations = {
     'session-expired': 'Session Expired',
     'session-expired-desc': 'Your session has expired after 10 minutes of inactivity. Please login again.',
     'logout': 'Logout',
+    'signup': 'Sign Up',
+    'register': 'Register',
 
     // Opportunities section
     'opportunities-title': 'Opportunities for agricultural enterprises, for agroforestry enterprises and for energy enterprises',
