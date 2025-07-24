@@ -159,9 +159,18 @@ export function Navigation() {
               </Button>
               
               <Button
-                onClick={() => setShowRoleModal(true)}
+                onClick={() => setShowProjectRegistrationModal(true)}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
+              >
+                <FileText className="h-4 w-4 mr-2" />
+                {language === 'it' ? 'Registra Progetto' : 'Register Project'}
+              </Button>
+              
+              <Button
+                onClick={() => setShowRoleModal(true)}
+                size="sm"
+                className="hidden md:flex items-center px-4 py-2 bg-slate-700 hover:bg-slate-800 text-white transition-colors duration-200"
               >
                 <UserPlus className="h-4 w-4 mr-2" />
                 {t('get-started')}
@@ -246,10 +255,21 @@ export function Navigation() {
                 
                 <button
                   onClick={() => {
-                    setShowRoleModal(true);
+                    setShowProjectRegistrationModal(true);
                     setIsOpen(false);
                   }}
                   className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
+                >
+                  <FileText className="h-4 w-4 mr-2" />
+                  {language === 'it' ? 'Registra Progetto' : 'Register Project'}
+                </button>
+                
+                <button
+                  onClick={() => {
+                    setShowRoleModal(true);
+                    setIsOpen(false);
+                  }}
+                  className="flex items-center text-slate-700 hover:text-slate-800 transition-colors duration-300 text-left font-medium"
                 >
                   <UserPlus className="h-4 w-4 mr-2" />
                   {t('get-started')}

@@ -219,72 +219,86 @@ export function ProjectRecommendationsModal({ isOpen, onClose }: ProjectRecommen
         <DialogTitle className="sr-only">Personalized Renewable Energy Project Recommendations</DialogTitle>
         <DialogDescription className="sr-only">Get personalized recommendations for renewable energy projects</DialogDescription>
         
-        {/* Hero Background Section with Forest */}
-        <div className="relative h-80 overflow-hidden">
+        {/* Hero Background Section - From Field to Future Style */}
+        <div className="relative h-96 overflow-hidden">
+          {/* Beautiful Agricultural Landscape Background */}
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: `url(${forestImagePath})`,
-              filter: 'brightness(1.1) contrast(1.2)'
+              filter: 'brightness(1.0) contrast(1.1) saturate(1.1)'
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60" />
+          
+          {/* Dark navy overlay like in the hero design */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-800/60 to-slate-900/80" />
+          
+          {/* Top trust indicators bar */}
+          <div className="absolute top-0 left-0 right-0 bg-slate-900/90 backdrop-blur-sm border-b border-slate-700/50">
+            <div className="container mx-auto px-6 py-4">
+              <div className="flex items-center justify-center space-x-8 text-sm">
+                <div className="flex items-center space-x-2 text-emerald-400">
+                  <CheckCircle className="h-4 w-4" />
+                  <span>ISO 14064-1, 14064-2, 14064-3</span>
+                </div>
+                <div className="flex items-center space-x-2 text-blue-400">
+                  <CheckCircle className="h-4 w-4" />
+                  <span>Swiss Privacy Level</span>
+                </div>
+                <div className="flex items-center space-x-2 text-green-400">
+                  <CheckCircle className="h-4 w-4" />
+                  <span>Immutable Blockchain</span>
+                </div>
+              </div>
+            </div>
+          </div>
           
           <button 
             onClick={onClose}
-            className="absolute top-6 right-6 text-white hover:text-white/80 transition-colors z-10 drop-shadow-lg"
+            className="absolute top-16 right-6 text-white hover:text-white/80 transition-colors z-20 drop-shadow-lg"
           >
             <X className="h-6 w-6" />
           </button>
 
-          <div className="relative h-full flex items-center justify-center text-center text-white px-8 z-10">
-            <div className="backdrop-blur-sm bg-white/10 rounded-3xl p-8 border border-white/20 shadow-2xl">
-              <h1 className="text-5xl font-extralight mb-6 drop-shadow-2xl text-white tracking-wide">
-                <Lightbulb className="h-12 w-12 inline-block mr-4 mb-2" />
-                Project Recommendations
+          <div className="relative h-full flex items-center justify-center text-center text-white px-8 z-10 pt-16">
+            {/* Frosted glass container like in the image */}
+            <div className="backdrop-blur-md bg-slate-800/30 rounded-3xl p-12 border border-white/20 shadow-2xl max-w-4xl">
+              <h1 className="text-6xl font-light mb-4 drop-shadow-2xl text-white tracking-wide">
+                From Data to Decision
               </h1>
-              <p className="text-white/90 text-xl max-w-3xl mx-auto drop-shadow-lg font-light leading-relaxed">
-                Get personalized renewable energy project recommendations based on your land, goals, and preferences.
+              <p className="text-white/90 text-2xl max-w-3xl mx-auto drop-shadow-lg font-light leading-relaxed">
+                Personalized renewable energy project intelligence for sustainable Italian agriculture
               </p>
             </div>
           </div>
         </div>
 
-        {/* Content Area */}
-        <div className="relative bg-gradient-to-b from-emerald-50/30 via-slate-50 to-white overflow-y-auto max-h-[calc(90vh-20rem)]">
-          <div className="absolute inset-0 opacity-3">
-            <div 
-              className="w-full h-full bg-repeat"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.2'%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-              }}
-            />
-          </div>
-          <div className="relative z-10 p-8">
+        {/* Content Area - Clean white background like in your image */}
+        <div className="bg-white overflow-y-auto max-h-[calc(90vh-24rem)]">
+          <div className="p-8">
 
             {/* Step 1: User Preferences */}
             {step === 'preferences' && (
               <div className="max-w-4xl mx-auto">
-                <Card className="border-2 border-emerald-200 shadow-2xl bg-white/90 backdrop-blur-sm">
-                  <div className="bg-gradient-to-r from-emerald-600 via-green-600 to-teal-600 p-8 text-white relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-10">
-                      <div 
-                        className="w-full h-full bg-repeat"
-                        style={{
-                          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M20 20c0-5.523-4.477-10-10-10s-10 4.477-10 10 4.477 10 10 10 10-4.477 10-10z'/%3E%3C/g%3E%3C/svg%3E")`
-                        }}
-                      />
+                {/* Clean section title like in your image */}
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl font-light text-slate-800 mb-4">An Initiative for Real Change</h2>
+                  <p className="text-slate-600 text-lg max-w-3xl mx-auto leading-relaxed">
+                    FAGRI.Digital is not a commercial platform, but a solid infrastructure designed to build a 
+                    sustainable future through personalized renewable energy intelligence.
+                  </p>
+                </div>
+                
+                <Card className="border border-slate-200 shadow-lg bg-white">
+                  <div className="bg-slate-50 border-b border-slate-200 p-6">
+                    <div className="flex items-center space-x-3">
+                      <Calculator className="h-6 w-6 text-slate-600" />
+                      <h3 className="text-xl font-medium text-slate-800">Project Requirements Assessment</h3>
                     </div>
-                    <div className="relative z-10">
-                      <h3 className="text-2xl font-light mb-3 flex items-center space-x-3">
-                        <Calculator className="h-7 w-7 drop-shadow-lg" />
-                        <span>Tell Us About Your Project</span>
-                      </h3>
-                      <p className="text-emerald-100 text-lg font-light">Help us understand your goals to provide the best renewable energy recommendations.</p>
-                    </div>
+                    <p className="text-slate-600 mt-2">Help us understand your agricultural land and energy goals to provide tailored recommendations.</p>
                   </div>
                   
-                  <CardContent className="p-10 space-y-8">
+                  <CardContent className="p-8 space-y-6">
                     {/* Location and Land */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
@@ -393,10 +407,10 @@ export function ProjectRecommendationsModal({ isOpen, onClose }: ProjectRecommen
                       </div>
                     </div>
 
-                    <div className="flex justify-center pt-6">
+                    <div className="flex justify-center pt-8">
                       <Button
                         onClick={handleGenerateRecommendations}
-                        className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 px-12 py-3 text-lg"
+                        className="bg-slate-800 hover:bg-slate-900 text-white px-8 py-3 text-base font-medium rounded-lg shadow-lg"
                       >
                         <Lightbulb className="h-5 w-5 mr-2" />
                         Generate Personalized Recommendations
@@ -523,13 +537,13 @@ export function ProjectRecommendationsModal({ isOpen, onClose }: ProjectRecommen
                   <Button
                     onClick={() => setStep('preferences')}
                     variant="outline"
-                    className="px-8 py-3"
+                    className="px-8 py-3 border-slate-300 text-slate-700 hover:bg-slate-50"
                   >
                     Modify Preferences
                   </Button>
                   <Button
                     onClick={onClose}
-                    className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 px-8 py-3"
+                    className="bg-slate-800 hover:bg-slate-900 text-white px-8 py-3"
                   >
                     Start Project Registration
                     <ArrowRight className="h-4 w-4 ml-2" />
