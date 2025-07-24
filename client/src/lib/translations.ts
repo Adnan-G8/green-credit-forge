@@ -691,7 +691,7 @@ export const translations = {
     'opportunities-agricultural-title': 'Agricultural and Agroforestry Companies',
     'opportunities-agricultural-description': 'Agricultural and agroforestry enterprises that capture CO2 equivalent through multi-year environmental compensation projects from carbon farming generate carbon credits to sell on voluntary markets.',
     'opportunities-energy-title': 'Energy enterprises',
-    'opportunities-energy-description': 'Energy enterprises that produce electricity from renewable sources, in fact avoid the emission of CO2 into the atmosphere and generate carbon credits to sell on voluntary and regulated markets.',
+    'opportunities-energy-description': 'Energy enterprises that produce electricity from renewable sources. These enterprises in fact avoid the emission of CO2 into the atmosphere and generate carbon credits to sell on voluntary and regulated markets.',
     'opportunities-market-voluntary': 'Voluntary Markets',
     'opportunities-market-regulated': 'Regulated Markets',
     'opportunities-carbon-farming': 'Carbon Farming',
