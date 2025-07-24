@@ -1770,5 +1770,26 @@ export const translations = {
   }
 };
 
+// Add missing project registration translations
+translations.en = {
+  ...translations.en,
+  'agricultural-co2-sequestration': 'Agricultural CO₂ sequestration and sustainable farming practices',
+  'forest-conservation-reforestation': 'Forest conservation, reforestation and carbon capture projects',
+  'solar-wind-hydroelectric-projects': 'Solar, wind, hydroelectric and renewable energy initiatives',
+  'project-submitted': 'Project Application Submitted',
+  'project-review-process': 'Your project will be reviewed by our certification team within 5-7 business days.',
+  'access-granted': 'Access granted to project registration system.',
+};
+
+translations.it = {
+  ...translations.it,
+  'agricultural-co2-sequestration': 'Sequestro di CO₂ agricola e pratiche agricole sostenibili',
+  'forest-conservation-reforestation': 'Conservazione forestale, riforestazione e progetti di cattura del carbonio',
+  'solar-wind-hydroelectric-projects': 'Iniziative solari, eoliche, idroelettriche e di energia rinnovabile',
+  'project-submitted': 'Domanda di Progetto Inviata',
+  'project-review-process': 'Il tuo progetto sarà esaminato dal nostro team di certificazione entro 5-7 giorni lavorativi.',
+  'access-granted': 'Accesso concesso al sistema di registrazione progetti.',
+};
+
 export type TranslationKey = keyof typeof translations['it'];
 export type Language = 'it' | 'en';
