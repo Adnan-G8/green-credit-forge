@@ -168,11 +168,7 @@ export function Navigation() {
               </Button>
               
               <Button
-                onClick={() => {
-                  console.log('Register Project clicked - setting state to true');
-                  setShowProjectRegistrationModal(true);
-                  console.log('showProjectRegistrationModal state:', true);
-                }}
+                onClick={() => setShowProjectRegistrationModal(true)}
                 size="sm"
                 className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
               >
@@ -270,7 +266,6 @@ export function Navigation() {
                 
                 <button
                   onClick={() => {
-                    console.log('Mobile Register Project clicked');
                     setShowProjectRegistrationModal(true);
                     setIsOpen(false);
                   }}
