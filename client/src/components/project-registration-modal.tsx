@@ -76,7 +76,11 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent 
+        className="max-w-4xl max-h-[90vh] overflow-y-auto"
+        onEscapeKeyDown={(e) => e.preventDefault()}
+        onPointerDownOutside={(e) => e.preventDefault()}
+      >
         <DialogHeader>
           <DialogTitle className="text-2xl font-semibold text-slate-800 flex items-center space-x-3">
             <FileText className="h-6 w-6 text-emerald-700" />
@@ -113,6 +117,12 @@ export function ProjectRegistrationModal({ isOpen, onClose }: ProjectRegistratio
                   <p className="text-sm text-blue-600 font-light">
                     {t('id-format-example')}
                   </p>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
+                    <p className="text-xs font-medium text-amber-800 mb-1">Test ID for Development:</p>
+                    <p className="text-xs font-mono text-amber-700 bg-amber-100 px-2 py-1 rounded">
+                      ALPHAG8-1BKQE5C3-K9X2P4M7-A3
+                    </p>
+                  </div>
                 </div>
 
                 <Button
