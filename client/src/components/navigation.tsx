@@ -9,6 +9,7 @@ import { AlphaG8RegistrationModal } from './alphag8-registration-modal';
 import { UserRoleSelectionModal } from './user-role-selection-modal';
 import { FagriMemberRegistrationModal } from './fagri-member-registration-modal';
 import { SignInModal } from './sign-in-modal-enhanced';
+import { RegisterProjectModal } from './register-project-modal';
 import { useLocation } from 'wouter';
 
 export function Navigation() {
@@ -22,6 +23,7 @@ export function Navigation() {
   const [showFagriMemberModal, setShowFagriMemberModal] = useState(false);
   const [selectedRole, setSelectedRole] = useState<'sales-team' | 'fagri-member' | 'non-member' | null>(null);
   const [showSignInModal, setShowSignInModal] = useState(false);
+  const [showRegisterProjectModal, setShowRegisterProjectModal] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [signedInAlphaG8Id, setSignedInAlphaG8Id] = useState<string>('');
 
@@ -175,8 +177,8 @@ export function Navigation() {
                   
                   <Button
                     onClick={() => {
-                      // New Register Project functionality
                       console.log('Register Project clicked for user:', signedInAlphaG8Id);
+                      setShowRegisterProjectModal(true);
                     }}
                     size="sm"
                     className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
@@ -296,6 +298,7 @@ export function Navigation() {
                     <button
                       onClick={() => {
                         console.log('Mobile Register Project clicked for user:', signedInAlphaG8Id);
+                        setShowRegisterProjectModal(true);
                         setIsOpen(false);
                       }}
                       className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
@@ -400,6 +403,11 @@ export function Navigation() {
           setShowSignInModal(false);
           setActiveModal(null);
         }}
+      />
+
+      <RegisterProjectModal
+        isOpen={showRegisterProjectModal}
+        onClose={() => setShowRegisterProjectModal(false)}
       />
     </>
   );
