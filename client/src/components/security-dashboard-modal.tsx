@@ -96,7 +96,7 @@ Authorized by ALPHAG8 Switzerland Technology
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `ALPHAG8_ID_Certificate_${alphaG8Id}.txt`;
+    a.download = `FAGRI_ID_Certificate_${alphaG8Id}.txt`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -241,6 +241,71 @@ Authorized by ALPHAG8 Switzerland Technology
                   <div>
                     <span className="font-medium text-slate-700">{t('alphag8-id')}:</span>
                     <br /><span className="font-mono">{alphaG8Id}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">{t('account-name')}:</span>
+                    <br /><span>FAGRI Member User</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">{t('role')}:</span>
+                    <br /><span className="text-emerald-600 font-medium">FAGRI Member</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">{t('access-level')}:</span>
+                    <br /><span className="text-blue-600 font-medium">3FA Protected</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Real-time Verification */}
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+                <h4 className="font-medium text-emerald-900 mb-4 flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-emerald-600" />
+                  {t('real-time-verification')}
+                </h4>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-emerald-700 mb-1">{t('session-protected-swiss-security')}</p>
+                    <p className="text-xs text-emerald-600">Swiss Alps Security Bunker - 001</p>
+                  </div>
+                  <Button
+                    onClick={handleRealTimeVerification}
+                    disabled={realTimeCheck}
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                  >
+                    {realTimeCheck ? (
+                      <div className="flex items-center gap-2">
+                        <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
+                        {t('verifying')}
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <Eye className="h-4 w-4" />
+                        {t('verify-now')}
+                      </div>
+                    )}
+                  </Button>
+                </div>
+              </div>
+
+              {/* Current Session Details */}
+              <div className="bg-white border border-slate-200 rounded-xl p-6">
+                <h4 className="font-medium text-slate-900 mb-4 flex items-center gap-2">
+                  <Monitor className="h-5 w-5 text-blue-600" />
+                  {t('current-session-details')}
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <span className="font-medium text-slate-700">{t('login-time')}:</span>
+                    <br /><span>{new Date(Date.now() - 2 * 60 * 60 * 1000).toLocaleString()}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">{t('device')}:</span>
+                    <br /><span>Chrome Browser on Windows 11</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">{t('location')}:</span>
+                    <br /><span>Rome, Italy</span>
                   </div>
                   <div>
                     <span className="font-medium text-slate-700">{t('account-role')}:</span>
