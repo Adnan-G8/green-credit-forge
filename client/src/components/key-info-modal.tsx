@@ -181,7 +181,7 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin className="h-3 w-3 text-green-600" />
-                    <span className="text-gray-700">{t('access-location')}: Replit Cloud</span>
+                    <span className="text-gray-700">{t('access-location')}: Swiss Alps Security Bunker - 001</span>
                   </div>
                 </div>
 
