@@ -42,12 +42,17 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     // Location
     country: '',
     region: '', // for Italy
-    fullAddress: '',
+    streetAddress: '',
+    city: '',
+    postalCode: '',
+    province: '', // for detailed location info
     
     // Agricultural Business
     businessSector: '',
     agriculturalActivity: '',
     hectares: '',
+    renewableEnergyType: '', // for renewable energy sector
+    renewableCapacity: '', // MW or kW for renewable energy
     
     // Contact Preferences
     websiteUrl: '',
@@ -95,6 +100,12 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     'renewable-energy', 'agritourism', 'food-processing', 'other'
   ];
 
+  const renewableEnergyTypes = [
+    'solar-photovoltaic', 'solar-thermal', 'wind-turbines', 'hydropower',
+    'biomass-energy', 'biogas-production', 'geothermal', 'agrivoltaics',
+    'energy-storage', 'grid-integration', 'green-hydrogen', 'other-renewable'
+  ];
+
   const updateFormData = (field: string, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -122,10 +133,15 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
         companyRole: '',
         country: '',
         region: '',
-        fullAddress: '',
+        streetAddress: '',
+        city: '',
+        postalCode: '',
+        province: '',
         businessSector: '',
         agriculturalActivity: '',
         hectares: '',
+        renewableEnergyType: '',
+        renewableCapacity: '',
         websiteUrl: '',
         emailContact: false,
         phoneContact: false,
@@ -427,18 +443,61 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                   )}
                 </div>
                 
-                <div className="space-y-2">
-                  <Label htmlFor="fullAddress" className="text-amber-800 font-medium">
-                    {t('full-address')}
-                  </Label>
-                  <Textarea
-                    id="fullAddress"
-                    value={formData.fullAddress}
-                    onChange={(e) => updateFormData('fullAddress', e.target.value)}
-                    className="border-amber-200 focus:border-amber-500"
-                    placeholder={t('full-address-placeholder')}
-                    rows={3}
-                  />
+                {/* Structured Address Fields */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="streetAddress" className="text-amber-800 font-medium">
+                      {t('street-address')} *
+                    </Label>
+                    <Input
+                      id="streetAddress"
+                      value={formData.streetAddress}
+                      onChange={(e) => updateFormData('streetAddress', e.target.value)}
+                      className="border-amber-200 focus:border-amber-500"
+                      placeholder={t('street-address-placeholder')}
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="city" className="text-amber-800 font-medium">
+                      {t('city')} *
+                    </Label>
+                    <Input
+                      id="city"
+                      value={formData.city}
+                      onChange={(e) => updateFormData('city', e.target.value)}
+                      className="border-amber-200 focus:border-amber-500"
+                      placeholder={t('city-placeholder')}
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="postalCode" className="text-amber-800 font-medium">
+                      {t('postal-code')} *
+                    </Label>
+                    <Input
+                      id="postalCode"
+                      value={formData.postalCode}
+                      onChange={(e) => updateFormData('postalCode', e.target.value)}
+                      className="border-amber-200 focus:border-amber-500"
+                      placeholder={t('postal-code-placeholder')}
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="province" className="text-amber-800 font-medium">
+                      {t('province-state')}
+                    </Label>
+                    <Input
+                      id="province"
+                      value={formData.province}
+                      onChange={(e) => updateFormData('province', e.target.value)}
+                      className="border-amber-200 focus:border-amber-500"
+                      placeholder={t('province-placeholder')}
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -471,19 +530,54 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                     </Select>
                   </div>
                   
+                  {/* Dynamic field - Hectares for traditional agriculture, Renewable Energy Type for renewable */}
+                  {formData.businessSector === 'renewable-energy' ? (
+                    <div className="space-y-2">
+                      <Label htmlFor="renewableEnergyType" className="text-green-800 font-medium">
+                        {t('renewable-energy-type')} *
+                      </Label>
+                      <Select value={formData.renewableEnergyType} onValueChange={(value) => updateFormData('renewableEnergyType', value)}>
+                        <SelectTrigger className="border-green-200 focus:border-green-500">
+                          <SelectValue placeholder={t('select-renewable-type')} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {renewableEnergyTypes.map((type) => (
+                            <SelectItem key={type} value={type}>{t(type)}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  ) : (
+                    <div className="space-y-2">
+                      <Label htmlFor="hectares" className="text-green-800 font-medium">
+                        {t('hectares')}
+                      </Label>
+                      <Input
+                        id="hectares"
+                        value={formData.hectares}
+                        onChange={(e) => updateFormData('hectares', e.target.value)}
+                        className="border-green-200 focus:border-green-500"
+                        placeholder={t('hectares-placeholder')}
+                      />
+                    </div>
+                  )}
+                </div>
+                
+                {/* Additional field for renewable energy capacity */}
+                {formData.businessSector === 'renewable-energy' && (
                   <div className="space-y-2">
-                    <Label htmlFor="hectares" className="text-green-800 font-medium">
-                      {t('hectares')}
+                    <Label htmlFor="renewableCapacity" className="text-green-800 font-medium">
+                      {t('renewable-capacity')}
                     </Label>
                     <Input
-                      id="hectares"
-                      value={formData.hectares}
-                      onChange={(e) => updateFormData('hectares', e.target.value)}
+                      id="renewableCapacity"
+                      value={formData.renewableCapacity}
+                      onChange={(e) => updateFormData('renewableCapacity', e.target.value)}
                       className="border-green-200 focus:border-green-500"
-                      placeholder={t('hectares-placeholder')}
+                      placeholder={t('capacity-placeholder')}
                     />
                   </div>
-                </div>
+                )}
                 
                 <div className="space-y-2">
                   <Label htmlFor="agriculturalActivity" className="text-green-800 font-medium">
