@@ -356,12 +356,51 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                         <SelectValue placeholder={t('select-country')} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="Italy">Italy</SelectItem>
-                        <SelectItem value="Germany">Germany</SelectItem>
-                        <SelectItem value="France">France</SelectItem>
-                        <SelectItem value="Spain">Spain</SelectItem>
+                        {/* EU Member States */}
                         <SelectItem value="Austria">Austria</SelectItem>
+                        <SelectItem value="Belgium">Belgium</SelectItem>
+                        <SelectItem value="Bulgaria">Bulgaria</SelectItem>
+                        <SelectItem value="Croatia">Croatia</SelectItem>
+                        <SelectItem value="Cyprus">Cyprus</SelectItem>
+                        <SelectItem value="Czech Republic">Czech Republic</SelectItem>
+                        <SelectItem value="Denmark">Denmark</SelectItem>
+                        <SelectItem value="Estonia">Estonia</SelectItem>
+                        <SelectItem value="Finland">Finland</SelectItem>
+                        <SelectItem value="France">France</SelectItem>
+                        <SelectItem value="Germany">Germany</SelectItem>
+                        <SelectItem value="Greece">Greece</SelectItem>
+                        <SelectItem value="Hungary">Hungary</SelectItem>
+                        <SelectItem value="Ireland">Ireland</SelectItem>
+                        <SelectItem value="Italy">Italy</SelectItem>
+                        <SelectItem value="Latvia">Latvia</SelectItem>
+                        <SelectItem value="Lithuania">Lithuania</SelectItem>
+                        <SelectItem value="Luxembourg">Luxembourg</SelectItem>
+                        <SelectItem value="Malta">Malta</SelectItem>
+                        <SelectItem value="Netherlands">Netherlands</SelectItem>
+                        <SelectItem value="Poland">Poland</SelectItem>
+                        <SelectItem value="Portugal">Portugal</SelectItem>
+                        <SelectItem value="Romania">Romania</SelectItem>
+                        <SelectItem value="Slovakia">Slovakia</SelectItem>
+                        <SelectItem value="Slovenia">Slovenia</SelectItem>
+                        <SelectItem value="Spain">Spain</SelectItem>
+                        <SelectItem value="Sweden">Sweden</SelectItem>
+                        
+                        {/* EEA Countries */}
+                        <SelectItem value="Iceland">Iceland</SelectItem>
+                        <SelectItem value="Liechtenstein">Liechtenstein</SelectItem>
+                        <SelectItem value="Norway">Norway</SelectItem>
                         <SelectItem value="Switzerland">Switzerland</SelectItem>
+                        
+                        {/* Partner Countries */}
+                        <SelectItem value="Albania">Albania</SelectItem>
+                        <SelectItem value="Bosnia and Herzegovina">Bosnia and Herzegovina</SelectItem>
+                        <SelectItem value="Georgia">Georgia</SelectItem>
+                        <SelectItem value="Moldova">Moldova</SelectItem>
+                        <SelectItem value="Montenegro">Montenegro</SelectItem>
+                        <SelectItem value="North Macedonia">North Macedonia</SelectItem>
+                        <SelectItem value="Serbia">Serbia</SelectItem>
+                        <SelectItem value="Turkey">Turkey</SelectItem>
+                        
                         <SelectItem value="Other">{t('other')}</SelectItem>
                       </SelectContent>
                     </Select>
