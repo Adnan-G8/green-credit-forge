@@ -103,6 +103,12 @@ export const translations = {
     'rejected': 'Rifiutato',
     'session-protected-swiss-security': 'La tua sessione è protetta dai protocolli di sicurezza svizzeri.',
 
+    // Membership & Form Keys
+    'agreements-consent': 'Accordi e Consensi',
+    'marketing-consent-text': 'Acconsento a ricevere comunicazioni commerciali e di marketing da FAGRI Digital S.r.l. via email e altri canali digitali.',
+    'additional-notes': 'Note Aggiuntive',
+    'additional-notes-placeholder': 'Inserisci eventuali note o richieste specifiche...',
+
     // Common
     'name': 'Nome',
     'email': 'Email',
@@ -224,6 +230,12 @@ export const translations = {
     'approved': 'Approved',
     'rejected': 'Rejected',
     'session-protected-swiss-security': 'Your session is protected by Swiss security protocols.',
+
+    // Membership & Form Keys
+    'agreements-consent': 'Agreements & Consent',
+    'marketing-consent-text': 'I consent to receive commercial and marketing communications from FAGRI Digital S.r.l. via email and other digital channels.',
+    'additional-notes': 'Additional Notes',
+    'additional-notes-placeholder': 'Enter any additional notes or specific requests...',
 
     // Common
     'name': 'Name',
