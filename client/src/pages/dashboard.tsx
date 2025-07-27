@@ -4,12 +4,13 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro } from 'lucide-react';
+import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro, Settings } from 'lucide-react';
 import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
 import { SecurityDashboardModal } from '@/components/security-dashboard-modal';
 import { OrganizationInformationModal } from '@/components/organization-information-modal';
 import { CertificationPricingModal } from '@/components/certification-pricing-modal';
+import { AdminUserManagementModal } from '@/components/admin-user-management-modal';
 
 export default function Dashboard() {
   const { t } = useLanguage();
@@ -22,6 +23,8 @@ export default function Dashboard() {
   const [showSecurityDashboard, setShowSecurityDashboard] = useState(false);
   const [showOrganizationInfo, setShowOrganizationInfo] = useState(false);
   const [showPricingInfo, setShowPricingInfo] = useState(false);
+  const [showAdminPanel, setShowAdminPanel] = useState(false);
+  const [currentUserRole, setCurrentUserRole] = useState('FAGRI Member');
 
   useEffect(() => {
     // Fast authentication check - immediate, no loading delay
@@ -94,6 +97,19 @@ export default function Dashboard() {
   const handleViewPricing = () => {
     setShowPricingInfo(true);
   };
+
+  const handleAdminPanel = () => {
+    setShowAdminPanel(true);
+  };
+
+  // Mock: determine user role based on FAGRI ID (in real app, this comes from backend)
+  useEffect(() => {
+    if (alphaG8Id === 'FAGRI-2MKQW8X9-PLVNR4T6-A2' || alphaG8Id === 'FAGRI-5ZXCV9L4-ASDFGH34-C1') {
+      setCurrentUserRole('FAGRI Sales Team');
+    } else {
+      setCurrentUserRole('FAGRI Member');
+    }
+  }, [alphaG8Id]);
 
   const handleViewKeyCard = () => {
     setShowSecurityDashboard(true);
@@ -341,6 +357,17 @@ export default function Dashboard() {
                 <Euro className="h-6 w-6 text-orange-600 group-hover:scale-110 transition-transform" />
                 <span className="text-orange-800 font-medium text-center leading-tight">{t('view-certification-pricing')}</span>
               </button>
+              
+              {/* Admin Panel - only show for Sales Team */}
+              {currentUserRole === 'FAGRI Sales Team' && (
+                <button
+                  onClick={handleAdminPanel}
+                  className="flex flex-col items-center justify-center space-y-3 bg-purple-50 hover:bg-purple-100 border border-purple-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+                >
+                  <Settings className="h-6 w-6 text-purple-600 group-hover:scale-110 transition-transform" />
+                  <span className="text-purple-800 font-medium text-center leading-tight">Admin Panel</span>
+                </button>
+              )}
             </div>
           </div>
           
@@ -366,6 +393,13 @@ export default function Dashboard() {
       <CertificationPricingModal
         isOpen={showPricingInfo}
         onClose={() => setShowPricingInfo(false)}
+      />
+
+      {/* Admin User Management Modal */}
+      <AdminUserManagementModal
+        isOpen={showAdminPanel}
+        onClose={() => setShowAdminPanel(false)}
+        currentUserRole={currentUserRole}
       />
     </div>
   );

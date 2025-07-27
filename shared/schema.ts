@@ -8,6 +8,41 @@ export const users = pgTable("users", {
   password: text("password").notNull(),
 });
 
+// FAGRI ID KEY User Profiles
+export const userProfiles = pgTable("user_profiles", {
+  id: serial("id").primaryKey(),
+  fagriIdKey: varchar("fagri_id_key").notNull().unique(), // FAGRI-XXXXXXXX-XXXXXXXX-XX format
+  fullName: varchar("full_name").notNull(),
+  email: varchar("email").notNull(),
+  phone: varchar("phone"),
+  company: varchar("company"),
+  userRole: varchar("user_role").notNull().default("FAGRI Member"), // FAGRI Member, FAGRI Sales Team, Non-Member
+  profileImageUrl: varchar("profile_image_url"),
+  address: text("address"),
+  city: varchar("city"),
+  postalCode: varchar("postal_code"),
+  country: varchar("country").notNull().default("Italy"),
+  dateOfBirth: varchar("date_of_birth"),
+  fiscalCode: varchar("fiscal_code"),
+  isActive: boolean("is_active").notNull().default(true),
+  lastLogin: timestamp("last_login"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+// User Sessions for Security Dashboard
+export const userSessions = pgTable("user_sessions", {
+  id: serial("id").primaryKey(),
+  fagriIdKey: varchar("fagri_id_key").notNull(),
+  sessionId: varchar("session_id").notNull().unique(),
+  ipAddress: varchar("ip_address").notNull(),
+  deviceInfo: varchar("device_info").notNull(),
+  location: varchar("location").notNull(),
+  loginTime: timestamp("login_time").defaultNow().notNull(),
+  lastActivity: timestamp("last_activity").defaultNow().notNull(),
+  isActive: boolean("is_active").notNull().default(true),
+});
+
 export const contactRequests = pgTable("contact_requests", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
@@ -59,6 +94,24 @@ export type ContactRequest = typeof contactRequests.$inferSelect;
 export type InsertContactRequest = z.infer<typeof insertContactRequestSchema>;
 export type MembershipApplication = typeof membershipApplications.$inferSelect;
 export type InsertMembershipApplication = z.infer<typeof insertMembershipApplicationSchema>;
+
+// User Profile schemas
+export const insertUserProfileSchema = createInsertSchema(userProfiles).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export const insertUserSessionSchema = createInsertSchema(userSessions).omit({
+  id: true,
+  loginTime: true,
+  lastActivity: true,
+});
+
+export type UserProfile = typeof userProfiles.$inferSelect;
+export type InsertUserProfile = z.infer<typeof insertUserProfileSchema>;
+export type UserSession = typeof userSessions.$inferSelect;
+export type InsertUserSession = z.infer<typeof insertUserSessionSchema>;
 
 // Document Management System Tables
 export const documents = pgTable("documents", {

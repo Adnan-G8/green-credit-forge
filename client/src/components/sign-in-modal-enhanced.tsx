@@ -23,10 +23,20 @@ export function SignInModal({ isOpen, onClose, onSignInSuccess }: SignInModalPro
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [showDashboard, setShowDashboard] = useState(false);
 
-  const TEST_ID = 'FAGRI-1BKQE5C3-K9X2P4M7-15';
+  const TEST_IDS = [
+    'FAGRI-1BKQE5C3-K9X2P4M7-15', // Marco Rossi - FAGRI Member
+    'FAGRI-2MKQW8X9-PLVNR4T6-A2', // Sofia Bianchi - FAGRI Sales Team
+    'FAGRI-3HKLS7M2-BNXCV9Q8-F4', // Giuseppe Verdi - FAGRI Member
+    'FAGRI-5ZXCV9L4-ASDFGH34-C1'  // Roberto Galli - FAGRI Sales Team
+  ];
+  const [selectedTestId, setSelectedTestId] = useState(0);
 
   const handleAutoFill = () => {
-    setAlphaG8Id(TEST_ID);
+    setAlphaG8Id(TEST_IDS[selectedTestId]);
+  };
+
+  const cycleTestId = () => {
+    setSelectedTestId((prev) => (prev + 1) % TEST_IDS.length);
   };
 
   const handleSignIn = () => {
@@ -132,20 +142,33 @@ export function SignInModal({ isOpen, onClose, onSignInSuccess }: SignInModalPro
                         {t('enter-complete-id-key')}
                       </p>
                       
-                      {/* Development Test ID */}
+                      {/* Development Test IDs */}
                       <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
                         <div className="text-center">
-                          <p className="text-xs text-amber-700 font-medium mb-2">Test ID for Development:</p>
+                          <p className="text-xs text-amber-700 font-medium mb-2">Test IDs for Development:</p>
                           <div className="bg-amber-100 rounded px-3 py-2 font-mono text-sm text-amber-800 mb-2">
-                            {TEST_ID}
+                            {TEST_IDS[selectedTestId]}
                           </div>
-                          <button
-                            type="button"
-                            onClick={handleAutoFill}
-                            className="text-xs text-amber-700 hover:text-amber-900 underline font-medium"
-                          >
-                            Click to auto-fill
-                          </button>
+                          <div className="flex gap-2 justify-center">
+                            <button
+                              type="button"
+                              onClick={cycleTestId}
+                              className="text-xs text-amber-700 hover:text-amber-900 underline font-medium"
+                            >
+                              Next User
+                            </button>
+                            <span className="text-amber-600">•</span>
+                            <button
+                              type="button"
+                              onClick={handleAutoFill}
+                              className="text-xs text-amber-700 hover:text-amber-900 underline font-medium"
+                            >
+                              Auto-fill
+                            </button>
+                          </div>
+                          <p className="text-xs text-amber-600 mt-1">
+                            {selectedTestId < 2 ? 'Member' : 'Sales Team'} Account
+                          </p>
                         </div>
                       </div>
                     </div>

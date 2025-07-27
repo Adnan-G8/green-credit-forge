@@ -10,6 +10,20 @@ interface SecurityDashboardModalProps {
   alphaG8Id: string;
 }
 
+interface UserProfile {
+  fagriIdKey: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  company: string;
+  userRole: string;
+  profileImageUrl?: string;
+  city: string;
+  country: string;
+  isActive: boolean;
+  lastLogin: Date;
+}
+
 interface SessionInfo {
   id: string;
   userId: string;
@@ -29,29 +43,75 @@ export function SecurityDashboardModal({ isOpen, onClose, alphaG8Id }: SecurityD
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState<'keycard' | 'security' | 'sessions'>('keycard');
   const [sessions, setSessions] = useState<SessionInfo[]>([]);
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [realTimeCheck, setRealTimeCheck] = useState(false);
 
-  // Mock session data - in real implementation this would come from backend
+  // Mock user profiles and session data - in real implementation this would come from backend
   useEffect(() => {
+    // Mock user profiles database
+    const userProfiles: UserProfile[] = [
+      {
+        fagriIdKey: 'FAGRI-1BKQE5C3-K9X2P4M7-15',
+        fullName: 'Marco Rossi',
+        email: 'marco.rossi@agritech.it',
+        phone: '+39 339 1234567',
+        company: 'AgroTech Solutions S.r.l.',
+        userRole: 'FAGRI Member',
+        city: 'Roma',
+        country: 'Italy',
+        isActive: true,
+        lastLogin: new Date(Date.now() - 5 * 60 * 1000)
+      },
+      {
+        fagriIdKey: 'FAGRI-2MKQW8X9-PLVNR4T6-A2',
+        fullName: 'Sofia Bianchi',
+        email: 'sofia.bianchi@greenfarms.it',
+        phone: '+39 348 9876543',
+        company: 'Green Farms Network',
+        userRole: 'FAGRI Sales Team',
+        city: 'Milano',
+        country: 'Italy',
+        isActive: true,
+        lastLogin: new Date(Date.now() - 2 * 60 * 60 * 1000)
+      },
+      {
+        fagriIdKey: 'FAGRI-3HKLS7M2-BNXCV9Q8-F4',
+        fullName: 'Giuseppe Verdi',
+        email: 'g.verdi@carbonfarm.eu',
+        phone: '+39 335 5678901',
+        company: 'Carbon Farm Italia',
+        userRole: 'FAGRI Member',
+        city: 'Napoli',
+        country: 'Italy',
+        isActive: true,
+        lastLogin: new Date(Date.now() - 24 * 60 * 60 * 1000)
+      }
+    ];
+
+    // Find current user profile
+    const currentProfile = userProfiles.find(profile => profile.fagriIdKey === alphaG8Id);
+    setUserProfile(currentProfile || userProfiles[0]); // Fallback to first profile for demo
+
+    // Generate mock sessions for current user
     const mockSessions: SessionInfo[] = [
       {
         id: 'session-001',
         userId: alphaG8Id,
-        userName: 'FAGRI Member User',
-        userRole: 'FAGRI Member',
+        userName: currentProfile?.fullName || 'Demo User',
+        userRole: currentProfile?.userRole || 'FAGRI Member',
         loginTime: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
         lastActivity: new Date(Date.now() - 5 * 60 * 1000), // 5 minutes ago
         ipAddress: '192.168.1.100',
         deviceInfo: 'Chrome 121.0 on Windows 11',
-        location: 'Rome, Italy',
+        location: currentProfile?.city + ', ' + currentProfile?.country || 'Rome, Italy',
         isCurrentSession: true,
         permissions: ['view_projects', 'create_projects', 'organization_info', 'pricing_access']
       },
       {
         id: 'session-002',
         userId: alphaG8Id,
-        userName: 'FAGRI Member User',
-        userRole: 'FAGRI Member',
+        userName: currentProfile?.fullName || 'Demo User',
+        userRole: currentProfile?.userRole || 'FAGRI Member',
         loginTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 24 hours ago
         lastActivity: new Date(Date.now() - 22 * 60 * 60 * 1000), // 22 hours ago
         ipAddress: '10.0.0.50',
@@ -239,20 +299,38 @@ Authorized by ALPHAG8 Switzerland Technology
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="font-medium text-slate-700">{t('alphag8-id')}:</span>
-                    <br /><span className="font-mono">{alphaG8Id}</span>
+                    <span className="font-medium text-slate-700">FAGRI ID KEY:</span>
+                    <br /><span className="font-mono text-blue-600">{alphaG8Id}</span>
                   </div>
                   <div>
                     <span className="font-medium text-slate-700">{t('account-name')}:</span>
-                    <br /><span>FAGRI Member User</span>
+                    <br /><span className="font-medium">{userProfile?.fullName || 'Unknown User'}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">Email:</span>
+                    <br /><span>{userProfile?.email || 'No email on file'}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">Company:</span>
+                    <br /><span>{userProfile?.company || 'No company specified'}</span>
                   </div>
                   <div>
                     <span className="font-medium text-slate-700">{t('role')}:</span>
-                    <br /><span className="text-emerald-600 font-medium">FAGRI Member</span>
+                    <br /><span className="text-emerald-600 font-medium">{userProfile?.userRole || 'FAGRI Member'}</span>
                   </div>
                   <div>
                     <span className="font-medium text-slate-700">{t('access-level')}:</span>
                     <br /><span className="text-blue-600 font-medium">3FA Protected</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">Location:</span>
+                    <br /><span>{userProfile?.city || 'Unknown'}, {userProfile?.country || 'Italy'}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">Status:</span>
+                    <br /><span className={`font-medium ${userProfile?.isActive ? 'text-green-600' : 'text-red-600'}`}>
+                      {userProfile?.isActive ? 'Active' : 'Inactive'}
+                    </span>
                   </div>
                 </div>
               </div>
