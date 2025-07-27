@@ -420,7 +420,7 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                     onCheckedChange={setAutoRenewalEnabled}
                     className={`${autoRenewalEnabled 
                       ? 'data-[state=checked]:bg-green-600' 
-                      : 'data-[state=unchecked]:bg-red-500'
+                      : 'data-[state=unchecked]:bg-gray-400'
                     }`}
                   />
                 </div>
