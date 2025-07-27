@@ -301,7 +301,7 @@ Authorized by ALPHAG8 Switzerland Technology
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="font-medium text-slate-700">FAGRI ID KEY:</span>
+                    <span className="font-medium text-slate-700">ALPHAG8 ID KEY:</span>
                     <br /><span className="font-mono text-blue-600">{alphaG8Id}</span>
                   </div>
                   <div>
