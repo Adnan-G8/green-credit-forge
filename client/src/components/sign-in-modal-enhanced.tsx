@@ -41,8 +41,14 @@ export function SignInModal({ isOpen, onClose, onSignInSuccess }: SignInModalPro
 
   const handleSignIn = () => {
     if (validateAlphaG8Id(alphaG8Id)) {
+      // Convert old ALPHAG8- format to new FAGRI- format if needed
+      let processedId = alphaG8Id.trim();
+      if (processedId.startsWith('ALPHAG8-')) {
+        processedId = processedId.replace('ALPHAG8-', 'FAGRI-');
+      }
+      
       // Store the authenticated ID
-      localStorage.setItem('alphaG8Id', alphaG8Id);
+      localStorage.setItem('alphaG8Id', processedId);
       localStorage.setItem('sessionActive', 'true');
       
       setIsSignedIn(true);
@@ -54,7 +60,7 @@ export function SignInModal({ isOpen, onClose, onSignInSuccess }: SignInModalPro
       // Show dashboard after brief success display
       setTimeout(() => {
         if (onSignInSuccess) {
-          onSignInSuccess(alphaG8Id);
+          onSignInSuccess(processedId);
         }
         setShowDashboard(true);
         setIsSignedIn(false);

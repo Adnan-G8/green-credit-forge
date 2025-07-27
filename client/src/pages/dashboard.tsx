@@ -29,9 +29,25 @@ export default function Dashboard() {
   const [currentUserRole, setCurrentUserRole] = useState('FAGRI Member');
 
   useEffect(() => {
+    // Clear all old data and force refresh for ID format conversion
+    const migrationDone = localStorage.getItem('fagri-migration-done');
+    if (!migrationDone) {
+      // Clear all localStorage data to ensure clean migration
+      localStorage.clear();
+      // Mark migration as completed
+      localStorage.setItem('fagri-migration-done', 'true');
+    }
+    
     // Fast authentication check - immediate, no loading delay
-    const storedId = localStorage.getItem('alphaG8Id');
+    let storedId = localStorage.getItem('alphaG8Id');
     const sessionActive = localStorage.getItem('sessionActive');
+    
+    // Convert old ALPHAG8- format to new FAGRI- format
+    if (storedId && storedId.startsWith('ALPHAG8-')) {
+      const newId = storedId.replace('ALPHAG8-', 'FAGRI-');
+      localStorage.setItem('alphaG8Id', newId);
+      storedId = newId;
+    }
     
     if (storedId && sessionActive === 'true') {
       setIsAuthenticated(true);
@@ -42,8 +58,15 @@ export default function Dashboard() {
     
     // Listen for auth changes
     const handleStorageChange = () => {
-      const storedId = localStorage.getItem('alphaG8Id');
+      let storedId = localStorage.getItem('alphaG8Id');
       const sessionActive = localStorage.getItem('sessionActive');
+      
+      // Convert old ALPHAG8- format to new FAGRI- format
+      if (storedId && storedId.startsWith('ALPHAG8-')) {
+        const newId = storedId.replace('ALPHAG8-', 'FAGRI-');
+        localStorage.setItem('alphaG8Id', newId);
+        storedId = newId;
+      }
       
       if (storedId && sessionActive === 'true') {
         setIsAuthenticated(true);
@@ -71,10 +94,16 @@ export default function Dashboard() {
     
     // Instant authentication for better UX
     if (loginId.trim().length >= 8) { // Basic validation
-      localStorage.setItem('alphaG8Id', loginId);
+      // Convert old ALPHAG8- format to new FAGRI- format if needed
+      let processedId = loginId.trim();
+      if (processedId.startsWith('ALPHAG8-')) {
+        processedId = processedId.replace('ALPHAG8-', 'FAGRI-');
+      }
+      
+      localStorage.setItem('alphaG8Id', processedId);
       localStorage.setItem('sessionActive', 'true');
       setIsAuthenticated(true);
-      setAlphaG8Id(loginId);
+      setAlphaG8Id(processedId);
     }
     setIsLoggingIn(false);
   };
