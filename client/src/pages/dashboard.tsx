@@ -4,9 +4,10 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText } from 'lucide-react';
+import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info } from 'lucide-react';
 import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
+import { KeyInfoModal } from '@/components/key-info-modal';
 
 export default function Dashboard() {
   const { t } = useLanguage();
@@ -16,6 +17,7 @@ export default function Dashboard() {
   const [isLoading, setIsLoading] = useState(false); // Start with false for faster loading
   const [loginId, setLoginId] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [showKeyInfo, setShowKeyInfo] = useState(false);
 
   useEffect(() => {
     // Fast authentication check - immediate, no loading delay
@@ -278,9 +280,17 @@ export default function Dashboard() {
                   <Key className="h-4 w-4 mr-2" />
                   {t('id-verified')}
                 </div>
-                <p className="text-xs text-emerald-600 font-medium">
-                  {t('valid-for-one-year')}
-                </p>
+                <div className="flex items-center space-x-2">
+                  <p className="text-xs text-emerald-600 font-medium">
+                    {t('valid-for-one-year')}
+                  </p>
+                  <button
+                    onClick={() => setShowKeyInfo(true)}
+                    className="text-emerald-600 hover:text-emerald-700 transition-colors"
+                  >
+                    <Info className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
             </div>
             
@@ -323,6 +333,13 @@ export default function Dashboard() {
           <ProjectTrackingDashboard userId={alphaG8Id} />
         </div>
       </main>
+
+      {/* Key Info Modal */}
+      <KeyInfoModal 
+        isOpen={showKeyInfo}
+        onClose={() => setShowKeyInfo(false)}
+        alphaG8Id={alphaG8Id}
+      />
     </div>
   );
 }
