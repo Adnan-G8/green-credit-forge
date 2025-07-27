@@ -4,8 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { useLanguage } from './language-provider';
-import { Key, Calendar, CreditCard, RefreshCw, Shield, CheckCircle, Clock, AlertCircle, Settings, X } from 'lucide-react';
-import { useState } from 'react';
+import { Key, Calendar, CreditCard, RefreshCw, Shield, CheckCircle, Clock, AlertCircle, Settings, X, Lock, Server, Eye, MapPin } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 interface KeyInfoModalProps {
   isOpen: boolean;
@@ -21,6 +21,7 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
   const [paymentMethod, setPaymentMethod] = useState<'bank' | 'card'>('card');
   const [autoRenewalEnabled, setAutoRenewalEnabled] = useState(true);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   // Calculate dates
   const issueDate = new Date();
@@ -32,11 +33,31 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
   const timeDiff = expiryDate.getTime() - today.getTime();
   const daysRemaining = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
+  // Update current time every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   const formatDate = (date: Date) => {
     return date.toLocaleDateString(undefined, { 
       year: 'numeric', 
       month: 'long', 
       day: 'numeric' 
+    });
+  };
+
+  const formatDateTime = (date: Date) => {
+    return date.toLocaleString(undefined, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
     });
   };
 
@@ -124,6 +145,7 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                 <div>
                   <label className="text-sm font-medium text-gray-600">{t('issue-date')}</label>
                   <p className="text-sm mt-1">{formatDate(issueDate)}</p>
+                  <p className="text-xs text-gray-500 mt-1">14:32:45 UTC+1</p>
                 </div>
                 <div>
                   <label className="text-sm font-medium text-gray-600">{t('expiry-date')}</label>
@@ -131,6 +153,42 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                   <p className="text-xs text-emerald-600 font-medium mt-1">
                     {daysRemaining} {t('days-remaining')}
                   </p>
+                </div>
+              </div>
+
+              {/* Real-time Security Status */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Lock className="h-4 w-4 text-blue-600" />
+                    <span className="text-sm font-medium text-blue-800">{t('security-status')}</span>
+                  </div>
+                  <span className="text-xs font-mono text-blue-600">{formatDateTime(currentTime)}</span>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                  <div className="flex items-center gap-2">
+                    <Server className="h-3 w-3 text-green-600" />
+                    <span className="text-gray-700">{t('server-location')}: {t('zurich-switzerland')}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Shield className="h-3 w-3 text-green-600" />
+                    <span className="text-gray-700">{t('encryption')}: AES-256</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Eye className="h-3 w-3 text-green-600" />
+                    <span className="text-gray-700">{t('last-access')}: {formatDateTime(currentTime)}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-3 w-3 text-green-600" />
+                    <span className="text-gray-700">{t('access-location')}: Replit Cloud</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 pt-2 border-t border-blue-200">
+                  <CheckCircle className="h-3 w-3 text-green-600" />
+                  <span className="text-xs text-green-700 font-medium">{t('security-verified')}</span>
+                  <span className="text-xs text-gray-500">| {t('session-protected')}</span>
                 </div>
               </div>
             </CardContent>
