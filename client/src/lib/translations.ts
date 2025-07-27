@@ -458,26 +458,7 @@ export const translations = {
     'security-blockchain-technical-point1': 'Audit trail immutabili per tracciabilità completa',
     'security-blockchain-technical-point2': 'Validazione smart contract per pratiche agricole',
 
-    // EUFD Standard Page Keys - Complete Content Restoration
-    'eufd-blockchain-title': 'Tecnologia Blockchain',
-    'eufd-blockchain-mandate-title': 'Integrazione Blockchain Obbligatoria',
-    'eufd-blockchain-mandate-description': 'Il Regolamento UE 3012/2024 richiede l\'uso della tecnologia blockchain per l\'emissione di crediti di carbonio.',
-    'eufd-blockchain-intro': 'La tecnologia blockchain garantisce trasparenza e immutabilità nelle certificazioni CO₂.',
-    'eufd-blockchain-benefit1': 'Tracciabilità immutabile dei crediti di carbonio',
-    'eufd-blockchain-benefit2': 'Prevenzione della doppia contabilizzazione',
-    'eufd-blockchain-benefit3': 'Trasparenza totale nelle transazioni',
-    'eufd-blockchain-benefits': 'Vantaggi della Blockchain',
-    'eufd-regulatory-title': 'Quadro Normativo',
-    'eufd-regulatory-intro': 'Framework legale europeo per la certificazione CO₂',
-    'eufd-eu-regulation-title': 'Regolamento UE 3012/2024',
-    'eufd-eu-regulation-description': 'Normativa europea che disciplina le piattaforme digitali blockchain per crediti di carbonio',
-    'eufd-eu-regulation-requirements': 'Requisiti del regolamento:',
-    'eufd-eu-regulation-req1': 'Piattaforme digitali obbligatorie per l\'emissione di crediti',
-    'eufd-eu-regulation-req2': 'Tecnologia blockchain per garantire trasparenza',
-    'eufd-eu-regulation-req3': 'Conformità agli standard ISO 14064-1, 14064-2, 14064-3',
-    'eufd-iso-standards-title': 'Standard ISO 14064-1, 14064-2, 14064-3',
-    'eufd-iso-standards-description': 'Standard internazionali per la quantificazione e verifica dei gas serra',
-    'eufd-iso-standards-intro': 'Gli standard ISO 14064 forniscono il framework per la quantificazione accurata delle emissioni di gas serra.',
+
     
     // EUFD Detailed Content Restoration
     'eufd-detailed-title': 'Pioniere dall\'Italia al Mondo: Il Nostro Standard Blockchain per i Certificati CO₂',
