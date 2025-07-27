@@ -187,30 +187,31 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white">
-        <DialogHeader className="pb-6">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center space-x-3">
-              <div className="p-3 bg-emerald-100 rounded-lg">
-                <Building className="h-8 w-8 text-emerald-700" />
+    <>
+      <Dialog open={isOpen} onOpenChange={onClose}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white">
+          <DialogHeader className="pb-6">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center space-x-3">
+                <div className="p-3 bg-emerald-100 rounded-lg">
+                  <Building className="h-8 w-8 text-emerald-700" />
+                </div>
+                <div>
+                  <DialogTitle className="text-2xl font-light text-slate-900">
+                    {t('fagri-membership-application')}
+                  </DialogTitle>
+                  <p className="text-slate-600 font-light">
+                    {t('professional-membership-desc')}
+                  </p>
+                </div>
               </div>
-              <div>
-                <DialogTitle className="text-2xl font-light text-slate-900">
-                  {t('fagri-membership-application')}
-                </DialogTitle>
-                <p className="text-slate-600 font-light">
-                  {t('professional-membership-desc')}
-                </p>
+              
+              {/* FAGRI Logo */}
+              <div className="flex items-center">
+                <FagriLogo className="w-24 h-14" />
               </div>
             </div>
-            
-            {/* FAGRI Logo */}
-            <div className="flex items-center">
-              <FagriLogo className="w-24 h-14" />
-            </div>
-          </div>
-        </DialogHeader>
+          </DialogHeader>
 
         <div className="space-y-6">
           {/* Membership Type Selection */}
@@ -672,9 +673,10 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
             </div>
           )}
         </div>
-      </DialogContent>
+        </DialogContent>
+      </Dialog>
       
-      {/* Legal Document Modals */}
+      {/* Legal Document Modals - Outside main dialog to avoid z-index conflicts */}
       <PrivacyPolicyModal 
         isOpen={showPrivacyModal} 
         onClose={() => setShowPrivacyModal(false)} 
@@ -684,6 +686,6 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
         isOpen={showTermsModal} 
         onClose={() => setShowTermsModal(false)} 
       />
-    </Dialog>
+    </>
   );
 }
