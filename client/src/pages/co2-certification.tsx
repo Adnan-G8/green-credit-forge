@@ -1,7 +1,7 @@
 import { useLanguage } from '../components/language-provider';
 import { Navigation } from '../components/navigation';
 import { Footer } from '../components/footer';
-import { Shield, Globe, CheckCircle, Users, FileText, Lock } from 'lucide-react';
+import { Shield, Globe, CheckCircle, Users, FileText, Lock, Check } from 'lucide-react';
 
 export default function CO2Certification() {
   const { t } = useLanguage();
@@ -114,7 +114,7 @@ export default function CO2Certification() {
               </div>
             </div>
 
-            {/* Legal Framework */}
+            {/* Legal and Technological Basis */}
             <div className="bg-white rounded-xl p-8 border border-slate-200">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
                 {t('co2-cert-legal-title')}
@@ -123,30 +123,55 @@ export default function CO2Certification() {
                 {t('co2-cert-legal-description')}
               </p>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-ets')}</h3>
-                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-ets-desc')}</p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="text-white h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-ets')}</h3>
+                    <p className="text-slate-600 text-sm">{t('co2-cert-compliance-ets-desc')}</p>
+                  </div>
                 </div>
                 
-                <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-cbam')}</h3>
-                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-cbam-desc')}</p>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="text-white h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-cbam')}</h3>
+                    <p className="text-slate-600 text-sm">{t('co2-cert-compliance-cbam-desc')}</p>
+                  </div>
                 </div>
                 
-                <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-aml')}</h3>
-                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-aml-desc')}</p>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="text-white h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-aml')}</h3>
+                    <p className="text-slate-600 text-sm">{t('co2-cert-compliance-aml-desc')}</p>
+                  </div>
                 </div>
                 
-                <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-paris')}</h3>
-                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-paris-desc')}</p>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="text-white h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-paris')}</h3>
+                    <p className="text-slate-600 text-sm">{t('co2-cert-compliance-paris-desc')}</p>
+                  </div>
                 </div>
                 
-                <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-kyoto')}</h3>
-                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-kyoto-desc')}</p>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="text-white h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-kyoto')}</h3>
+                    <p className="text-slate-600 text-sm">{t('co2-cert-compliance-kyoto-desc')}</p>
+                  </div>
                 </div>
               </div>
             </div>
