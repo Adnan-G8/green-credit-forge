@@ -599,7 +599,7 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                           onClick={() => setShowPrivacyModal(true)}
                           className="text-emerald-600 hover:text-emerald-700 underline font-medium"
                         >
-                          Privacy Policy
+                          Informativa sulla Privacy
                         </button>
                         {' '}e i{' '}
                         <button
