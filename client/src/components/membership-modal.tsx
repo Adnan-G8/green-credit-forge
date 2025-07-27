@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,7 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from './language-provider';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
-import { X, Building, User, MapPin, Phone, Mail, Globe, Briefcase, CheckCircle } from 'lucide-react';
+import { X, Building, User, MapPin, Phone, Mail, Globe, Briefcase, CheckCircle, Search } from 'lucide-react';
 import { PrivacyPolicyModal } from './privacy-policy-modal';
 import { TermsOfServiceModal } from './terms-of-service-modal';
 import { FagriLogo } from '../assets/fagri-logo';
@@ -28,6 +28,9 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
   // Modal states for legal documents
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
+  
+  // Country search state
+  const [countrySearch, setCountrySearch] = useState('');
   
   const [formData, setFormData] = useState({
     // Membership Type
@@ -65,6 +68,27 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     // Additional Information
     additionalNotes: ''
   });
+
+  const countries = [
+    // EU Member States
+    'Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czech Republic',
+    'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece',
+    'Hungary', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg',
+    'Malta', 'Netherlands', 'Poland', 'Portugal', 'Romania', 'Slovakia',
+    'Slovenia', 'Spain', 'Sweden',
+    // EEA Countries
+    'Iceland', 'Liechtenstein', 'Norway', 'Switzerland',
+    // Partner Countries
+    'Albania', 'Bosnia and Herzegovina', 'Georgia', 'Moldova', 'Montenegro',
+    'North Macedonia', 'Serbia', 'Turkey'
+  ];
+
+  const filteredCountries = useMemo(() => {
+    if (!countrySearch) return countries;
+    return countries.filter(country => 
+      country.toLowerCase().includes(countrySearch.toLowerCase())
+    );
+  }, [countrySearch]);
 
   const italianRegions = [
     'Abruzzo', 'Basilicata', 'Calabria', 'Campania', 'Emilia-Romagna',
@@ -351,57 +375,43 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                     <Label htmlFor="country" className="text-amber-800 font-medium">
                       {t('country')} *
                     </Label>
-                    <Select value={formData.country} onValueChange={(value) => updateFormData('country', value)}>
+                    <Select value={formData.country} onValueChange={(value) => {
+                      updateFormData('country', value);
+                      setCountrySearch(''); // Reset search when country is selected
+                    }}>
                       <SelectTrigger className="border-amber-200 focus:border-amber-500">
                         <SelectValue placeholder={t('select-country')} />
                       </SelectTrigger>
                       <SelectContent>
-                        {/* EU Member States */}
-                        <SelectItem value="Austria">Austria</SelectItem>
-                        <SelectItem value="Belgium">Belgium</SelectItem>
-                        <SelectItem value="Bulgaria">Bulgaria</SelectItem>
-                        <SelectItem value="Croatia">Croatia</SelectItem>
-                        <SelectItem value="Cyprus">Cyprus</SelectItem>
-                        <SelectItem value="Czech Republic">Czech Republic</SelectItem>
-                        <SelectItem value="Denmark">Denmark</SelectItem>
-                        <SelectItem value="Estonia">Estonia</SelectItem>
-                        <SelectItem value="Finland">Finland</SelectItem>
-                        <SelectItem value="France">France</SelectItem>
-                        <SelectItem value="Germany">Germany</SelectItem>
-                        <SelectItem value="Greece">Greece</SelectItem>
-                        <SelectItem value="Hungary">Hungary</SelectItem>
-                        <SelectItem value="Ireland">Ireland</SelectItem>
-                        <SelectItem value="Italy">Italy</SelectItem>
-                        <SelectItem value="Latvia">Latvia</SelectItem>
-                        <SelectItem value="Lithuania">Lithuania</SelectItem>
-                        <SelectItem value="Luxembourg">Luxembourg</SelectItem>
-                        <SelectItem value="Malta">Malta</SelectItem>
-                        <SelectItem value="Netherlands">Netherlands</SelectItem>
-                        <SelectItem value="Poland">Poland</SelectItem>
-                        <SelectItem value="Portugal">Portugal</SelectItem>
-                        <SelectItem value="Romania">Romania</SelectItem>
-                        <SelectItem value="Slovakia">Slovakia</SelectItem>
-                        <SelectItem value="Slovenia">Slovenia</SelectItem>
-                        <SelectItem value="Spain">Spain</SelectItem>
-                        <SelectItem value="Sweden">Sweden</SelectItem>
+                        {/* Search Input */}
+                        <div className="flex items-center px-3 py-2 border-b border-gray-200">
+                          <Search className="h-4 w-4 text-gray-400 mr-2" />
+                          <Input
+                            placeholder={language === 'it' ? 'Cerca paese...' : 'Search country...'}
+                            value={countrySearch}
+                            onChange={(e) => setCountrySearch(e.target.value)}
+                            className="border-0 p-0 h-8 focus-visible:ring-0 focus-visible:ring-offset-0"
+                            onClick={(e) => e.stopPropagation()}
+                          />
+                        </div>
                         
-                        {/* EEA Countries */}
-                        <SelectItem value="Iceland">Iceland</SelectItem>
-                        <SelectItem value="Liechtenstein">Liechtenstein</SelectItem>
-                        <SelectItem value="Norway">Norway</SelectItem>
-                        <SelectItem value="Switzerland">Switzerland</SelectItem>
+                        {/* Filtered Countries */}
+                        {filteredCountries.length > 0 ? (
+                          filteredCountries.map((country) => (
+                            <SelectItem key={country} value={country}>
+                              {country}
+                            </SelectItem>
+                          ))
+                        ) : (
+                          <div className="px-3 py-2 text-sm text-gray-500">
+                            {language === 'it' ? 'Nessun paese trovato' : 'No countries found'}
+                          </div>
+                        )}
                         
-                        {/* Partner Countries */}
-                        <SelectItem value="Albania">Albania</SelectItem>
-                        <SelectItem value="Bosnia and Herzegovina">Bosnia and Herzegovina</SelectItem>
-                        <SelectItem value="Georgia">Georgia</SelectItem>
-                        <SelectItem value="Moldova">Moldova</SelectItem>
-                        <SelectItem value="Montenegro">Montenegro</SelectItem>
-                        <SelectItem value="North Macedonia">North Macedonia</SelectItem>
-                        <SelectItem value="Serbia">Serbia</SelectItem>
-                        <SelectItem value="Turkey">Turkey</SelectItem>
-                        
-                        <SelectItem value="Other">{t('other')}</SelectItem>
+                        {/* "Other" option always at the bottom */}
+                        {!countrySearch && (
+                          <SelectItem value="Other">{t('other')}</SelectItem>
+                        )}
                       </SelectContent>
                     </Select>
                   </div>
