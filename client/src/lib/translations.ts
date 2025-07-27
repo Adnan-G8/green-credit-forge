@@ -258,6 +258,26 @@ export const translations = {
     'eufd-cta-text': 'Diventa parte del futuro della certificazione agricola sostenibile.',
     'eufd-cta-contact': 'Contattaci',
     'eufd-cta-back': 'Torna Indietro',
+    
+    // EUFD Blockchain Section
+    'eufd-blockchain-title': 'Tecnologia Blockchain',
+    'eufd-blockchain-mandate-title': 'Integrazione Blockchain Obbligatoria',
+    'eufd-blockchain-mandate-description': 'Il Regolamento UE 3012/2024 richiede l\'uso della tecnologia blockchain per l\'emissione di crediti di carbonio.',
+    'eufd-blockchain-intro': 'La tecnologia blockchain garantisce trasparenza, tracciabilità e immutabilità nella certificazione CO₂.',
+    'eufd-blockchain-benefit1': 'Tracciabilità completa di tutti i crediti di carbonio',
+    'eufd-blockchain-benefit2': 'Immutabilità dei record di certificazione',
+    'eufd-blockchain-benefit3': 'Trasparenza totale nel processo di verifica',
+    
+    // EUFD Regulatory Framework Section
+    'eufd-regulatory-title': 'Quadro Normativo',
+    'eufd-eu-regulation-title': 'Regolamento UE 3012/2024',
+    'eufd-eu-regulation-description': 'Questo regolamento stabilisce i requisiti per le piattaforme digitali basate su blockchain per l\'emissione di crediti di carbonio.',
+    'eufd-eu-regulation-requirements': 'Requisiti Principali',
+    'eufd-eu-regulation-req1': 'Piattaforme digitali basate su blockchain',
+    'eufd-eu-regulation-req2': 'Verificazione tramite smart contract',
+    'eufd-eu-regulation-req3': 'Conformità agli standard internazionali',
+    'eufd-iso-standards-title': 'Standard ISO 14064-1, 14064-2, 14064-3',
+    'eufd-iso-standards-description': 'Standard internazionali per la quantificazione, il monitoraggio e la verifica delle emissioni di gas serra.',
 
     // Introduction Section Keys
     'intro-title': 'Introduzione alla Piattaforma',
@@ -438,23 +458,7 @@ export const translations = {
     'security-blockchain-technical-point1': 'Audit trail immutabili per tracciabilità completa',
     'security-blockchain-technical-point2': 'Validazione smart contract per pratiche agricole',
 
-    // EUFD Standard Page Keys
-    'eufd-blockchain-title': 'Integrazione Blockchain Obbligatoria',
-    'eufd-blockchain-mandate-title': 'Obbligo Normativo Blockchain',
-    'eufd-blockchain-mandate-description': 'Il Regolamento UE 3012/2024 rende obbligatorio l\'uso della tecnologia blockchain per l\'emissione di crediti di carbonio',
-    'eufd-blockchain-intro': 'La tecnologia blockchain è parte integrante del standard EUFD2025-001',
-    'eufd-blockchain-benefit1': 'Tracciabilità immutabile dei crediti di carbonio',
-    'eufd-blockchain-benefit2': 'Prevenzione della doppia contabilizzazione',
-    'eufd-blockchain-benefit3': 'Trasparenza totale nelle transazioni',
-    'eufd-regulatory-title': 'Quadro Normativo',
-    'eufd-eu-regulation-title': 'Regolamento UE 3012/2024',
-    'eufd-eu-regulation-description': 'Normativa europea che disciplina le piattaforme digitali blockchain per crediti di carbonio',
-    'eufd-eu-regulation-requirements': 'Requisiti del regolamento:',
-    'eufd-eu-regulation-req1': 'Piattaforme digitali obbligatorie per l\'emissione di crediti',
-    'eufd-eu-regulation-req2': 'Tecnologia blockchain per garantire trasparenza',
-    'eufd-eu-regulation-req3': 'Conformità agli standard ISO 14064-1, 14064-2, 14064-3',
-    'eufd-iso-standards-title': 'Standard ISO 14064-1, 14064-2, 14064-3',
-    'eufd-iso-standards-description': 'Standard internazionali per la quantificazione e verifica dei gas serra',
+
 
     // Common
     'name': 'Nome',
@@ -728,6 +732,26 @@ export const translations = {
     'eufd-cta-text': 'Become part of the future of sustainable agricultural certification.',
     'eufd-cta-contact': 'Contact',
     'eufd-cta-back': 'Go Back',
+    
+    // EUFD Blockchain Section
+    'eufd-blockchain-title': 'Blockchain Technology',
+    'eufd-blockchain-mandate-title': 'Mandatory Blockchain Integration',
+    'eufd-blockchain-mandate-description': 'EU Regulation 3012/2024 requires the use of blockchain technology for carbon credit issuance.',
+    'eufd-blockchain-intro': 'Blockchain technology ensures transparency, traceability, and immutability in CO₂ certification.',
+    'eufd-blockchain-benefit1': 'Complete traceability of all carbon credits',
+    'eufd-blockchain-benefit2': 'Immutability of certification records',
+    'eufd-blockchain-benefit3': 'Total transparency in the verification process',
+    
+    // EUFD Regulatory Framework Section
+    'eufd-regulatory-title': 'Regulatory Framework',
+    'eufd-eu-regulation-title': 'EU Regulation 3012/2024',
+    'eufd-eu-regulation-description': 'This regulation establishes requirements for blockchain-based digital platforms for carbon credit issuance.',
+    'eufd-eu-regulation-requirements': 'Key Requirements',
+    'eufd-eu-regulation-req1': 'Blockchain-based digital platforms',
+    'eufd-eu-regulation-req2': 'Smart contract verification',
+    'eufd-eu-regulation-req3': 'Compliance with international standards',
+    'eufd-iso-standards-title': 'ISO 14064-1, 14064-2, 14064-3 Standards',
+    'eufd-iso-standards-description': 'International standards for quantification, monitoring, and verification of greenhouse gas emissions.',
 
     // Introduction Section Keys
     'intro-title': 'Platform Introduction',
@@ -908,23 +932,7 @@ export const translations = {
     'security-blockchain-technical-point1': 'Immutable audit trails for complete traceability',
     'security-blockchain-technical-point2': 'Smart contract validation for agricultural practices',
 
-    // EUFD Standard Page Keys
-    'eufd-blockchain-title': 'Mandatory Blockchain Integration',
-    'eufd-blockchain-mandate-title': 'Blockchain Regulatory Requirement',
-    'eufd-blockchain-mandate-description': 'EU Regulation 3012/2024 makes the use of blockchain technology mandatory for carbon credit issuance',
-    'eufd-blockchain-intro': 'Blockchain technology is an integral part of the EUFD2025-001 standard',
-    'eufd-blockchain-benefit1': 'Immutable traceability of carbon credits',
-    'eufd-blockchain-benefit2': 'Prevention of double counting',
-    'eufd-blockchain-benefit3': 'Total transparency in transactions',
-    'eufd-regulatory-title': 'Regulatory Framework',
-    'eufd-eu-regulation-title': 'EU Regulation 3012/2024',
-    'eufd-eu-regulation-description': 'European regulation governing blockchain digital platforms for carbon credits',
-    'eufd-eu-regulation-requirements': 'Regulation requirements:',
-    'eufd-eu-regulation-req1': 'Mandatory digital platforms for credit issuance',
-    'eufd-eu-regulation-req2': 'Blockchain technology to ensure transparency',
-    'eufd-eu-regulation-req3': 'Compliance with ISO 14064-1, 14064-2, 14064-3 standards',
-    'eufd-iso-standards-title': 'ISO 14064-1, 14064-2, 14064-3 Standards',
-    'eufd-iso-standards-description': 'International standards for greenhouse gas quantification and verification',
+
 
     // Common
     'name': 'Name',
