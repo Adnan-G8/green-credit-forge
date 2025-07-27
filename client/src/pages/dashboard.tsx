@@ -5,19 +5,32 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Shield, Lock, ArrowLeft, Key, LogIn } from 'lucide-react';
+import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
 
 export default function Dashboard() {
   const { t } = useLanguage();
+  const [, setLocation] = useLocation();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [alphaG8Id, setAlphaG8Id] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false); // Start with false for faster loading
   const [loginId, setLoginId] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   useEffect(() => {
-    // Check for authentication state
-    const checkAuth = () => {
+    // Fast authentication check - immediate, no loading delay
+    const storedId = localStorage.getItem('alphaG8Id');
+    const sessionActive = localStorage.getItem('sessionActive');
+    
+    if (storedId && sessionActive === 'true') {
+      setIsAuthenticated(true);
+      setAlphaG8Id(storedId);
+    } else {
+      setIsAuthenticated(false);
+    }
+    
+    // Listen for auth changes
+    const handleStorageChange = () => {
       const storedId = localStorage.getItem('alphaG8Id');
       const sessionActive = localStorage.getItem('sessionActive');
       
@@ -27,18 +40,15 @@ export default function Dashboard() {
       } else {
         setIsAuthenticated(false);
       }
-      setIsLoading(false);
     };
-
-    checkAuth();
     
-    // Listen for auth changes
-    window.addEventListener('storage', checkAuth);
-    return () => window.removeEventListener('storage', checkAuth);
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
   const handleGoHome = () => {
-    window.location.href = '/';
+    // Use fast SPA navigation instead of page reload
+    setLocation('/');
   };
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -48,28 +58,17 @@ export default function Dashboard() {
     
     setIsLoggingIn(true);
     
-    // Simulate authentication check (in real app, this would be an API call)
-    setTimeout(() => {
-      if (loginId.trim().length >= 8) { // Basic validation
-        localStorage.setItem('alphaG8Id', loginId);
-        localStorage.setItem('sessionActive', 'true');
-        setIsAuthenticated(true);
-        setAlphaG8Id(loginId);
-      }
-      setIsLoggingIn(false);
-    }, 1000);
+    // Instant authentication for better UX
+    if (loginId.trim().length >= 8) { // Basic validation
+      localStorage.setItem('alphaG8Id', loginId);
+      localStorage.setItem('sessionActive', 'true');
+      setIsAuthenticated(true);
+      setAlphaG8Id(loginId);
+    }
+    setIsLoggingIn(false);
   };
 
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin w-8 h-8 border-4 border-emerald-600 border-t-transparent rounded-full mx-auto mb-4"></div>
-          <p className="text-gray-600">{t('loading')}...</p>
-        </div>
-      </div>
-    );
-  }
+  // Removed loading state for instant page rendering
 
   if (!isAuthenticated) {
     return (
@@ -152,7 +151,7 @@ export default function Dashboard() {
 
               {/* Return button */}
               <button
-                onClick={() => window.location.href = '/'}
+                onClick={handleGoHome}
                 className="w-full bg-gray-600/80 hover:bg-gray-600 backdrop-blur-sm text-white font-medium py-2 px-6 rounded-xl transition-all duration-200 border border-gray-500/30 flex items-center justify-center gap-2"
               >
                 <ArrowLeft className="h-4 w-4" />
