@@ -4,7 +4,22 @@ import { useLanguage } from './language-provider';
 
 export function SessionExpiryHandler() {
   const { toast } = useToast();
-  const { t } = useLanguage();
+  
+  // Safe language hook usage with fallback
+  let t: (key: string) => string;
+  try {
+    const languageContext = useLanguage();
+    t = languageContext.t;
+  } catch (error) {
+    // Fallback if LanguageProvider is not available
+    t = (key: string) => {
+      const fallbacks: Record<string, string> = {
+        'session-expired': 'Session Expired',
+        'session-expired-desc': 'Please sign in again to continue.'
+      };
+      return fallbacks[key] || key;
+    };
+  }
 
   useEffect(() => {
     const handleSessionExpired = () => {
