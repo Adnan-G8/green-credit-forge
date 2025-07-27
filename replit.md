@@ -198,6 +198,16 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 27, 2025)
 
+- **Complete ALPHAG8 to FAGRI ID Format Migration** (July 27, 2025):
+  * **Automatic localStorage Migration**: Dashboard now automatically converts all old ALPHAG8- IDs to new FAGRI- format
+  * **Browser Cache Clearing**: First-time migration clears localStorage to ensure clean ID format conversion
+  * **Universal ID Conversion**: All components (Sign-In Modal, Dashboard, Storage) now handle automatic ID format conversion
+  * **Fixed Download Files**: All certificate and document downloads now use correct FAGRI- prefix format
+  * **Updated Placeholders**: All input placeholders and examples now show FAGRI-XXXXXXXX-XXXXXXXX-XX format
+  * **Background Image CSS Fix**: Resolved white stripes issue with proper backgroundSize: cover and backgroundRepeat: no-repeat
+  * **Translation Cleanup**: Removed duplicate translation keys that were causing build warnings
+  * **Seamless User Experience**: Users with old ALPHAG8- IDs automatically see updated FAGRI- format without manual intervention
+
 - **Official FAGRI Digital Pricing Integration** (July 27, 2025):
   * **Comprehensive Certification Pricing Modal**: Integrated official FAGRI Digital tariff structure from received PDF document
   * **Environmental Compensation Project Pricing**: Complete tiered pricing structure (€10/ha to €0.25/ha) based on project size from 1-1,000,000+ hectares
