@@ -53,6 +53,110 @@ export default function Security() {
               </p>
             </div>
 
+            {/* Three Main Security Cards */}
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {/* Three-Factor Authentication */}
+              <div className="bg-white rounded-xl p-8 border border-slate-200">
+                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Key className="text-blue-700 h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-medium text-slate-900 mb-4 text-center">
+                  {t('security-3fa-title')}
+                </h3>
+                <p className="text-slate-600 text-sm mb-6 text-center">
+                  {t('security-3fa-description')}
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-3fa-point1')}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-3fa-point2')}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-3fa-point3')}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-3fa-point4')}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Data Sovereignty */}
+              <div className="bg-white rounded-xl p-8 border border-slate-200">
+                <div className="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Globe className="text-emerald-700 h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-medium text-slate-900 mb-4 text-center">
+                  {t('security-data-title')}
+                </h3>
+                <p className="text-slate-600 text-sm mb-6 text-center">
+                  {t('security-data-description')}
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-data-point1')}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-data-point2')}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-data-point3')}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Alpine Data Centers */}
+              <div className="bg-white rounded-xl p-8 border border-slate-200">
+                <div className="w-16 h-16 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <Mountain className="text-amber-700 h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-medium text-slate-900 mb-4 text-center">
+                  {t('security-alpine-datacenters-title')}
+                </h3>
+                <p className="text-slate-600 text-sm mb-6 text-center">
+                  {t('security-alpine-datacenters-description')}
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-alpine-datacenters-point1')}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-alpine-datacenters-point2')}</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0" />
+                    <span className="text-slate-700 text-sm">{t('security-alpine-datacenters-point3')}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* KYC Digital Fingerprint Section */}
+            <div className="bg-slate-50 rounded-xl p-8 border border-slate-200 mb-16">
+              <h3 className="text-2xl font-light text-slate-900 mb-6">
+                {t('security-digital-fingerprint-title')}
+              </h3>
+              <p className="text-slate-600 mb-6 leading-relaxed">
+                {t('security-digital-fingerprint-description')}
+              </p>
+              
+              <div className="bg-white rounded-lg p-6 border border-slate-200">
+                <button className="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 px-4 rounded-lg transition-colors">
+                  {t('security-digital-fingerprint-kyc')}
+                </button>
+              </div>
+            </div>
+
             {/* Three-Tier Security Architecture */}
             <div className="grid lg:grid-cols-3 gap-8 mb-20">
               
