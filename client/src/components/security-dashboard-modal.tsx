@@ -313,7 +313,7 @@ Authorized by ALPHAG8 Switzerland Technology
                     <br /><span>{userProfile?.email || 'No email on file'}</span>
                   </div>
                   <div>
-                    <span className="font-medium text-slate-700">Company:</span>
+                    <span className="font-medium text-slate-700">{t('company')}:</span>
                     <br /><span>{userProfile?.company || 'No company specified'}</span>
                   </div>
                   <div>
@@ -325,13 +325,13 @@ Authorized by ALPHAG8 Switzerland Technology
                     <br /><span className="text-blue-600 font-medium">3FA Protected</span>
                   </div>
                   <div>
-                    <span className="font-medium text-slate-700">Location:</span>
+                    <span className="font-medium text-slate-700">{t('location')}:</span>
                     <br /><span>{userProfile?.city || 'Unknown'}, {userProfile?.country || 'Italy'}</span>
                   </div>
                   <div>
-                    <span className="font-medium text-slate-700">Status:</span>
+                    <span className="font-medium text-slate-700">{t('status')}:</span>
                     <br /><span className={`font-medium ${userProfile?.isActive ? 'text-green-600' : 'text-red-600'}`}>
-                      {userProfile?.isActive ? 'Active' : 'Inactive'}
+                      {userProfile?.isActive ? t('active') : t('inactive')}
                     </span>
                   </div>
                 </div>
@@ -341,37 +341,37 @@ Authorized by ALPHAG8 Switzerland Technology
               <div className="bg-green-50 border border-green-200 rounded-xl p-6">
                 <h4 className="font-medium text-green-900 mb-4 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-600" />
-                  Account Validity & Extension
+                  {t('account-validity-extension')}
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <div className="flex items-center gap-2 mb-3">
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <span className="text-green-800 font-medium">ID Verified</span>
+                      <span className="text-green-800 font-medium">{t('id-verified')}</span>
                     </div>
                     <div className="text-sm text-green-700 mb-2">
-                      <span className="font-medium">Valid for 1 Year</span>
+                      <span className="font-medium">{t('valid-for-1-year')}</span>
                     </div>
                     <div className="text-xs text-green-600">
-                      Expires: {new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toLocaleDateString()}
+                      {t('expires')}: 27.7.2026
                     </div>
                   </div>
                   <div className="text-right">
                     <Button
                       className="bg-green-600 hover:bg-green-700 text-white mb-2"
                       onClick={() => {
-                        // In real implementation, this would open payment modal
+                        // Account extension functionality with correct pricing
                         toast({
-                          title: "Account Extension",
-                          description: "Account extension payment portal would open here. Contact FAGRI Digital for renewal.",
+                          title: t('extend-account'),
+                          description: "Personal Account: €5 (Einrichtung) + €12 (1. Jahr) = €17 gesamt. Corporate Account: €12 (Einrichtung) + €30 (1. Jahr) = €42 gesamt.",
                         });
                       }}
                     >
                       <Clock className="h-4 w-4 mr-2" />
-                      Extend Account
+                      {t('extend-account')}
                     </Button>
                     <div className="text-xs text-green-600">
-                      Renewal: €17/year
+                      {t('renewal')}: €17{t('per-year')}
                     </div>
                   </div>
                 </div>
