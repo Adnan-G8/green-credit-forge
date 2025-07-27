@@ -1,6 +1,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/language-provider';
+import { useToast } from '@/hooks/use-toast';
 import { Key, Copy, Download, Shield, Calendar, Clock, User, Monitor, AlertTriangle, CheckCircle, LogOut, Eye, Settings } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -40,6 +41,7 @@ interface SessionInfo {
 
 export function SecurityDashboardModal({ isOpen, onClose, alphaG8Id }: SecurityDashboardModalProps) {
   const { t } = useLanguage();
+  const { toast } = useToast();
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState<'keycard' | 'security' | 'sessions'>('keycard');
   const [sessions, setSessions] = useState<SessionInfo[]>([]);
@@ -331,6 +333,46 @@ Authorized by ALPHAG8 Switzerland Technology
                     <br /><span className={`font-medium ${userProfile?.isActive ? 'text-green-600' : 'text-red-600'}`}>
                       {userProfile?.isActive ? 'Active' : 'Inactive'}
                     </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Account Validity and Extension */}
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                <h4 className="font-medium text-green-900 mb-4 flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  Account Validity & Extension
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <span className="text-green-800 font-medium">ID Verified</span>
+                    </div>
+                    <div className="text-sm text-green-700 mb-2">
+                      <span className="font-medium">Valid for 1 Year</span>
+                    </div>
+                    <div className="text-xs text-green-600">
+                      Expires: {new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toLocaleDateString()}
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <Button
+                      className="bg-green-600 hover:bg-green-700 text-white mb-2"
+                      onClick={() => {
+                        // In real implementation, this would open payment modal
+                        toast({
+                          title: "Account Extension",
+                          description: "Account extension payment portal would open here. Contact FAGRI Digital for renewal.",
+                        });
+                      }}
+                    >
+                      <Clock className="h-4 w-4 mr-2" />
+                      Extend Account
+                    </Button>
+                    <div className="text-xs text-green-600">
+                      Renewal: €17/year
+                    </div>
                   </div>
                 </div>
               </div>
