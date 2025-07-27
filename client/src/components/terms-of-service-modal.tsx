@@ -13,23 +13,30 @@ export function TermsOfServiceModal({ isOpen, onClose }: TermsOfServiceModalProp
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      // Add a small delay to prevent immediate event conflicts
+      const timer = setTimeout(() => {
+        document.body.style.overflow = 'hidden';
+      }, 50);
+      return () => {
+        clearTimeout(timer);
+        document.body.style.overflow = 'unset';
+      };
     } else {
       document.body.style.overflow = 'unset';
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [isOpen]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={onClose}
+        onClick={(e) => {
+          e.preventDefault();
+          onClose();
+        }}
       />
       
       {/* Modal */}
@@ -44,7 +51,8 @@ export function TermsOfServiceModal({ isOpen, onClose }: TermsOfServiceModalProp
               e.stopPropagation();
               onClose();
             }}
-            className="absolute top-6 right-8 w-10 h-10 rounded-full bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 flex items-center justify-center transition-all duration-200 shadow-sm z-10"
+            type="button"
+            className="absolute top-6 right-8 w-10 h-10 rounded-full bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 flex items-center justify-center transition-all duration-200 shadow-sm z-20"
           >
             <X className="h-5 w-5 text-slate-500" />
           </button>
@@ -74,7 +82,7 @@ export function TermsOfServiceModal({ isOpen, onClose }: TermsOfServiceModalProp
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto p-8">
+        <div className="flex-1 overflow-y-auto p-8" style={{ maxHeight: 'calc(90vh - 140px)' }}>
           {/* Security Notice */}
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
             <div className="flex items-start space-x-3">
