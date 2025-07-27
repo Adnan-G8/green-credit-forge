@@ -25,7 +25,7 @@ export function TermsOfServiceModal({ isOpen, onClose }: TermsOfServiceModalProp
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[10001] flex items-center justify-center">
+    <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
@@ -33,14 +33,18 @@ export function TermsOfServiceModal({ isOpen, onClose }: TermsOfServiceModalProp
       />
       
       {/* Modal */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] mx-4 bg-white rounded-3xl shadow-2xl overflow-hidden animate-in fade-in-0 zoom-in-95 duration-200"
+      <div className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-3xl shadow-2xl flex flex-col animate-in fade-in-0 zoom-in-95 duration-200"
            onClick={(e) => e.stopPropagation()}>
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-50 to-white border-b border-blue-200 px-8 py-6 relative">
+        <div className="bg-gradient-to-r from-blue-50 to-white border-b border-blue-200 px-8 py-6 relative flex-shrink-0">
           <button 
-            onClick={onClose}
-            className="absolute top-6 right-8 w-10 h-10 rounded-full bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 flex items-center justify-center transition-all duration-200 shadow-sm"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              onClose();
+            }}
+            className="absolute top-6 right-8 w-10 h-10 rounded-full bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 flex items-center justify-center transition-all duration-200 shadow-sm z-10"
           >
             <X className="h-5 w-5 text-slate-500" />
           </button>
@@ -70,7 +74,7 @@ export function TermsOfServiceModal({ isOpen, onClose }: TermsOfServiceModalProp
         </div>
 
         {/* Content */}
-        <div className="p-8 overflow-y-auto max-h-[calc(90vh-140px)]">
+        <div className="flex-1 overflow-y-auto p-8">
           {/* Security Notice */}
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
             <div className="flex items-start space-x-3">
