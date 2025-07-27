@@ -214,27 +214,70 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-      <main className="pt-20">
+      
+      {/* Beautiful Agricultural Hero Strip */}
+      <div 
+        className="relative h-48 bg-cover bg-center overflow-hidden"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundPosition: 'center 30%'
+        }}
+      >
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/70 via-emerald-800/50 to-transparent"></div>
+        
+        {/* Content overlay */}
+        <div className="absolute inset-0 flex items-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl font-light text-white mb-3">
+                {t('project-tracking-dashboard')}
+              </h1>
+              <p className="text-emerald-100 text-lg font-light mb-4">
+                {t('monitor-co2-certification-projects')}
+              </p>
+              <div className="flex items-center space-x-4">
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/30">
+                  <div className="flex items-center space-x-2">
+                    <Shield className="h-5 w-5 text-emerald-300" />
+                    <span className="text-white font-medium">{t('authenticated-session')}</span>
+                  </div>
+                </div>
+                <div className="bg-emerald-600/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-emerald-400/50">
+                  <div className="text-xs text-emerald-200 font-medium">ALPHAG8 ID</div>
+                  <div className="text-white font-mono text-sm">{alphaG8Id}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Photo credit */}
+        <div className="absolute bottom-2 right-4">
+          <p className="text-white/60 text-xs">
+            Foto By Gildo Cancelli
+          </p>
+        </div>
+      </div>
+
+      <main className="relative -mt-12">
         <div className="container mx-auto px-4 py-8">
-          {/* Header with Navigation Options */}
-          <div className="mb-8 bg-white rounded-lg border border-slate-200 p-6">
+          {/* Navigation Options Card */}
+          <div className="mb-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 p-8">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                  {t('project-tracking-dashboard')}
-                </h1>
-                <p className="text-gray-600">
-                  {t('monitor-co2-certification-projects')}
+                <h2 className="text-2xl font-light text-slate-900 mb-2">
+                  {t('platform-workspace')}
+                </h2>
+                <p className="text-slate-600">
+                  {t('access-co2-certification-tools')}
                 </p>
               </div>
               <div className="text-right">
-                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-2">
-                  <Shield className="h-4 w-4 inline mr-1" />
-                  {t('authenticated-session')}
+                <div className="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-xl text-sm font-medium mb-2 flex items-center">
+                  <Key className="h-4 w-4 mr-2" />
+                  {t('id-verified')}
                 </div>
-                <p className="text-sm text-gray-600 mb-1">
-                  ID: {alphaG8Id}
-                </p>
                 <p className="text-xs text-emerald-600 font-medium">
                   {t('valid-for-one-year')}
                 </p>
