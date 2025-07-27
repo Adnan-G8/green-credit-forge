@@ -69,6 +69,85 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
+            {/* Detailed Blockchain Content Section */}
+            <div className="mb-16">
+              <h2 className="text-4xl font-light text-slate-900 mb-8">
+                {t('eufd-detailed-title')}
+              </h2>
+              <div className="prose prose-lg text-slate-600 max-w-none mb-8">
+                <p className="mb-6 leading-relaxed">
+                  {t('eufd-intro-p1')}
+                </p>
+                <p className="mb-8 leading-relaxed">
+                  {t('eufd-intro-p2')}
+                </p>
+              </div>
+              
+              {/* Launch Vision Box */}
+              <div className="bg-blue-50 rounded-xl p-8 border border-blue-200 mb-12">
+                <h3 className="text-xl font-medium text-slate-900 mb-4">
+                  {t('eufd-launch-box-title')}
+                </h3>
+                <p className="text-slate-700 leading-relaxed">
+                  {t('eufd-launch-box-text')}
+                </p>
+              </div>
+
+              {/* Blockchain Features Grid */}
+              <h3 className="text-3xl font-light text-slate-900 mb-8">
+                {t('eufd-blockchain-features-title')}
+              </h3>
+              <div className="grid md:grid-cols-2 gap-8 mb-16">
+                <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
+                  <div className="flex items-center mb-4">
+                    <CheckCircle className="h-6 w-6 text-emerald-600 mr-3" />
+                    <h4 className="text-xl font-medium text-slate-900">
+                      {t('eufd-feature-double-counting-title')}
+                    </h4>
+                  </div>
+                  <p className="text-slate-700">
+                    {t('eufd-feature-double-counting-desc')}
+                  </p>
+                </div>
+                
+                <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
+                  <div className="flex items-center mb-4">
+                    <Shield className="h-6 w-6 text-blue-600 mr-3" />
+                    <h4 className="text-xl font-medium text-slate-900">
+                      {t('eufd-feature-greenwashing-title')}
+                    </h4>
+                  </div>
+                  <p className="text-slate-700">
+                    {t('eufd-feature-greenwashing-desc')}
+                  </p>
+                </div>
+                
+                <div className="bg-purple-50 rounded-xl p-8 border border-purple-200">
+                  <div className="flex items-center mb-4">
+                    <Globe className="h-6 w-6 text-purple-600 mr-3" />
+                    <h4 className="text-xl font-medium text-slate-900">
+                      {t('eufd-feature-clear-ownership-title')}
+                    </h4>
+                  </div>
+                  <p className="text-slate-700">
+                    {t('eufd-feature-clear-ownership-desc')}
+                  </p>
+                </div>
+                
+                <div className="bg-orange-50 rounded-xl p-8 border border-orange-200">
+                  <div className="flex items-center mb-4">
+                    <Users className="h-6 w-6 text-orange-600 mr-3" />
+                    <h4 className="text-xl font-medium text-slate-900">
+                      {t('eufd-feature-maximum-security-title')}
+                    </h4>
+                  </div>
+                  <p className="text-slate-700">
+                    {t('eufd-feature-maximum-security-desc')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Key Features */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-8">

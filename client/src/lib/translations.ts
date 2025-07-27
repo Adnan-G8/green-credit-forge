@@ -478,6 +478,29 @@ export const translations = {
     'eufd-iso-standards-title': 'Standard ISO 14064-1, 14064-2, 14064-3',
     'eufd-iso-standards-description': 'Standard internazionali per la quantificazione e verifica dei gas serra',
     'eufd-iso-standards-intro': 'Gli standard ISO 14064 forniscono il framework per la quantificazione accurata delle emissioni di gas serra.',
+    
+    // EUFD Detailed Content Restoration
+    'eufd-detailed-title': 'Pioniere dall\'Italia al Mondo: Il Nostro Standard Blockchain per i Certificati CO₂',
+    'eufd-intro-p1': 'In FAGRI.Digital, siamo orgogliosi di presentare il nostro nuovo standard innovativo: EUFD2025-001. Questo standard è il risultato di anni di ricerca e sviluppo intensivi, basato sulle ultime scoperte scientifiche e creato in stretta collaborazione con le principali università italiane.',
+    'eufd-intro-p2': 'La piattaforma FAGRI Digital che supporta lo standard EUFD2025-001 è progettata per inaugurare una nuova era di fiducia, efficienza e trasparenza nella certificazione e commercio di CO₂ — alimentata da tecnologia blockchain, protocolli avanzati di protezione dati e architettura di sicurezza 3FA.',
+    'eufd-launch-box-title': 'Stiamo lanciando EUFD2025-001 inizialmente in Italia, ma la nostra visione si estende molto oltre.',
+    'eufd-launch-box-text': 'Il nostro obiettivo è implementare progressivamente questo standard rivoluzionario in tutto il mondo, fornendo supporto cruciale per l\'azione climatica globale.',
+    'eufd-blockchain-features-title': 'EUFD2025-001: Scientifico, Trasparente, Accessibile e Sicuro con Blockchain',
+    'eufd-feature-double-counting-title': 'Eliminazione del Doppio Conteggio',
+    'eufd-feature-double-counting-desc': 'Ogni certificato è unico e immutabile grazie alla tecnologia blockchain.',
+    'eufd-feature-greenwashing-title': 'Prevenzione del Greenwashing',
+    'eufd-feature-greenwashing-desc': 'L\'intera catena del valore è trasparente e tracciabile.',
+    'eufd-feature-clear-ownership-title': 'Proprietà Chiara',
+    'eufd-feature-clear-ownership-desc': 'Le registrazioni digitali sono a prova di manomissione e permanenti.',
+    'eufd-feature-maximum-security-title': 'Sicurezza Massima',
+    'eufd-feature-maximum-security-desc': 'Impronta digitale unica e autenticazione a tre fattori (3FA).',
+    
+    // Vision and Trust Sections
+    'eufd-vision-title': 'Visione EUFD2025-001',
+    'eufd-vision-description': 'Il nostro standard rappresenta il futuro della certificazione agricola europea.',
+    'eufd-vision-subtitle': 'Tecnologie innovative per un futuro sostenibile.',
+    'eufd-trust-title': 'Fiducia e Affidabilità',
+    'eufd-trust-description': 'Il nostro network globale garantisce la massima affidabilità nella certificazione CO₂.',
 
     // Common
     'name': 'Nome',
@@ -971,6 +994,29 @@ export const translations = {
     'eufd-iso-standards-title': 'ISO 14064-1, 14064-2, 14064-3 Standards',
     'eufd-iso-standards-description': 'International standards for greenhouse gas quantification and verification',
     'eufd-iso-standards-intro': 'ISO 14064 standards provide the framework for accurate greenhouse gas emissions quantification.',
+    
+    // EUFD Detailed Content Restoration
+    'eufd-detailed-title': 'Pioneers from Italy to the World: Our Blockchain Standard for CO₂ Certificates',
+    'eufd-intro-p1': 'At FAGRI.Digital, we are proud to present our new innovative standard: EUFD2025-001. This standard is the result of years of intensive research and development, based on the latest scientific discoveries and created in close collaboration with leading Italian universities.',
+    'eufd-intro-p2': 'The FAGRI Digital platform supporting the EUFD2025-001 standard is designed to inaugurate a new era of trust, efficiency and transparency in CO₂ certification and trading — powered by blockchain technology, advanced data protection protocols and 3FA security architecture.',
+    'eufd-launch-box-title': 'We are launching EUFD2025-001 initially in Italy, but our vision extends far beyond.',
+    'eufd-launch-box-text': 'Our goal is to progressively implement this revolutionary standard worldwide, providing crucial support for global climate action.',
+    'eufd-blockchain-features-title': 'EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain',
+    'eufd-feature-double-counting-title': 'Elimination of Double Counting',
+    'eufd-feature-double-counting-desc': 'Every certificate is unique and immutable thanks to blockchain technology.',
+    'eufd-feature-greenwashing-title': 'Prevention of Greenwashing',
+    'eufd-feature-greenwashing-desc': 'The entire value chain is transparent and traceable.',
+    'eufd-feature-clear-ownership-title': 'Clear Ownership',
+    'eufd-feature-clear-ownership-desc': 'Digital registrations are tamper-proof and permanent.',
+    'eufd-feature-maximum-security-title': 'Maximum Security',
+    'eufd-feature-maximum-security-desc': 'Unique digital fingerprint and three-factor authentication (3FA).',
+    
+    // Vision and Trust Sections
+    'eufd-vision-title': 'EUFD2025-001 Vision',
+    'eufd-vision-description': 'Our standard represents the future of European agricultural certification.',
+    'eufd-vision-subtitle': 'Innovative technologies for a sustainable future.',
+    'eufd-trust-title': 'Trust and Reliability',
+    'eufd-trust-description': 'Our global network ensures maximum reliability in CO₂ certification.',
 
     // Common
     'name': 'Name',
