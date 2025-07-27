@@ -165,6 +165,18 @@ Powered by ALPHAG8 Switzerland Technology
                     {new Date().toLocaleDateString()}
                   </p>
                 </div>
+                <div>
+                  <p className="text-sm text-blue-600 font-medium">{t('valid-until')}</p>
+                  <p className="text-emerald-700 font-bold">
+                    {new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toLocaleDateString()}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-blue-600 font-medium">{t('validity-period')}</p>
+                  <Badge variant="secondary" className="bg-emerald-100 text-emerald-800 font-semibold">
+                    {t('one-year-valid')}
+                  </Badge>
+                </div>
               </div>
             </CardContent>
           </Card>

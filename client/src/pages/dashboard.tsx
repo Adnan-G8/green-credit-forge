@@ -4,7 +4,7 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Shield, Lock, ArrowLeft, Key, LogIn } from 'lucide-react';
+import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText } from 'lucide-react';
 import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
 
@@ -69,6 +69,27 @@ export default function Dashboard() {
   };
 
   // Removed loading state for instant page rendering
+
+  // Replace the empty second screen with functional dashboard navigation
+  const handleViewProjects = () => {
+    // Navigate to projects view
+    console.log('View Projects clicked');
+  };
+
+  const handleUploadProject = () => {
+    // Open project upload modal
+    console.log('Upload Project clicked');
+  };
+
+  const handleMyInformation = () => {
+    // Open user information modal
+    console.log('My Information clicked');
+  };
+
+  const handleViewKeyCard = () => {
+    // Display ALPHAG8 ID KEY with one-year validity
+    console.log('View Key Card clicked');
+  };
 
   if (!isAuthenticated) {
     return (
@@ -195,8 +216,9 @@ export default function Dashboard() {
       <Navigation />
       <main className="pt-20">
         <div className="container mx-auto px-4 py-8">
+          {/* Header with Navigation Options */}
           <div className="mb-8 bg-white rounded-lg border border-slate-200 p-6">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-6">
               <div>
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">
                   {t('project-tracking-dashboard')}
@@ -210,12 +232,51 @@ export default function Dashboard() {
                   <Shield className="h-4 w-4 inline mr-1" />
                   {t('authenticated-session')}
                 </div>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 mb-1">
                   ID: {alphaG8Id}
+                </p>
+                <p className="text-xs text-emerald-600 font-medium">
+                  {t('valid-for-one-year')}
                 </p>
               </div>
             </div>
+            
+            {/* Navigation Options */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <button
+                onClick={handleViewKeyCard}
+                className="flex items-center justify-center space-x-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-4 transition-all duration-200"
+              >
+                <Key className="h-5 w-5 text-blue-600" />
+                <span className="text-blue-800 font-medium">{t('view-id-key-card')}</span>
+              </button>
+              
+              <button
+                onClick={handleViewProjects}
+                className="flex items-center justify-center space-x-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl p-4 transition-all duration-200"
+              >
+                <Folder className="h-5 w-5 text-emerald-600" />
+                <span className="text-emerald-800 font-medium">{t('my-projects')}</span>
+              </button>
+              
+              <button
+                onClick={handleUploadProject}
+                className="flex items-center justify-center space-x-3 bg-green-50 hover:bg-green-100 border border-green-200 rounded-xl p-4 transition-all duration-200"
+              >
+                <FileText className="h-5 w-5 text-green-600" />
+                <span className="text-green-800 font-medium">{t('upload-new-project')}</span>
+              </button>
+              
+              <button
+                onClick={handleMyInformation}
+                className="flex items-center justify-center space-x-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl p-4 transition-all duration-200"
+              >
+                <User className="h-5 w-5 text-slate-600" />
+                <span className="text-slate-800 font-medium">{t('my-information')}</span>
+              </button>
+            </div>
           </div>
+          
           <ProjectTrackingDashboard userId={alphaG8Id} />
         </div>
       </main>

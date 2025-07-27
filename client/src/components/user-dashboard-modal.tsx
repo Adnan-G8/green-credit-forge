@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from './language-provider';
-import { X, User, Key, Shield, Copy, Download, LogOut, Settings } from 'lucide-react';
+import { X, User, Key, Shield, Copy, Download, LogOut, Settings, Navigation, Folder, FileText } from 'lucide-react';
 
 interface UserDashboardModalProps {
   isOpen: boolean;
@@ -150,9 +150,21 @@ Security: swiss-security@alphag8.digital`;
                       {alphaG8Id}
                     </div>
                     
+                    <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                      <div className="text-center">
+                        <p className="text-slate-500 mb-1">Issue Date</p>
+                        <p className="font-medium text-slate-700">{new Date().toLocaleDateString()}</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-slate-500 mb-1">Valid Until</p>
+                        <p className="font-medium text-emerald-600">{new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toLocaleDateString()}</p>
+                      </div>
+                    </div>
+                    
                     <div className="flex items-center justify-center space-x-3 text-sm text-slate-500 mb-8">
                       <Shield className="h-4 w-4" />
                       <span>Swiss Banking Security</span>
+                      <span className="text-emerald-600 font-medium">• Valid for 1 Year</span>
                     </div>
                     
                     <div className="grid grid-cols-2 gap-4">
@@ -181,22 +193,49 @@ Security: swiss-security@alphag8.digital`;
 
             {/* Sidebar */}
             <div className="lg:col-span-3 space-y-8">
-              {/* Quick Actions */}
+              {/* Navigation Options */}
               <div className="bg-white border border-slate-200/80 rounded-3xl p-8 shadow-lg">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl flex items-center justify-center shadow-sm">
-                    <Settings className="h-6 w-6 text-slate-600" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex items-center justify-center shadow-sm">
+                    <Navigation className="h-6 w-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900">Quick Actions</h3>
+                  <h3 className="text-lg font-medium text-slate-900">Platform Access</h3>
                 </div>
-                <Button
-                  onClick={handleLogout}
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] border-0"
-                >
-                  <LogOut className="h-5 w-5 mr-3" />
-                  Logout
-                </Button>
+                <div className="space-y-4">
+                  <Button
+                    onClick={() => window.location.href = '/dashboard'}
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <Folder className="h-5 w-5 mr-3" />
+                    My Projects
+                  </Button>
+                  <Button
+                    onClick={() => console.log('Upload new project')}
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <FileText className="h-5 w-5 mr-3" />
+                    Upload New Project
+                  </Button>
+                  <Button
+                    onClick={() => console.log('My Information')}
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-slate-300 hover:bg-slate-50 text-slate-700 font-medium"
+                  >
+                    <User className="h-5 w-5 mr-3" />
+                    My Information
+                  </Button>
+                  <Button
+                    onClick={handleLogout}
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <LogOut className="h-5 w-5 mr-3" />
+                    Logout
+                  </Button>
+                </div>
               </div>
 
               {/* User Profile */}
