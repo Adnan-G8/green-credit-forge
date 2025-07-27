@@ -109,6 +109,12 @@ export function Navigation() {
               >
                 {t('nav-contact')}
               </button>
+              <button
+                onClick={() => setLocation('/dashboard')}
+                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
+              >
+                {t('dashboard')}
+              </button>
 
             </div>
 

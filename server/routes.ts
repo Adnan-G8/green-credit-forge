@@ -6,7 +6,10 @@ import {
   insertMembershipApplicationSchema, 
   insertDocumentSchema,
   insertDocumentShareSchema,
-  insertDocumentVersionSchema 
+  insertDocumentVersionSchema,
+  insertCO2ProjectSchema,
+  insertProjectMilestoneSchema,
+  insertProjectActivitySchema
 } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -75,6 +78,151 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error fetching membership applications:", error);
       res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // CO2 Project Tracking API Routes
+  
+  // Get all projects for dashboard
+  app.get("/api/projects", async (req, res) => {
+    try {
+      const userId = req.query.userId as string;
+      const projects = await storage.getAllCO2Projects(userId);
+      
+      // Transform data for dashboard display
+      const dashboardProjects = projects.map(project => ({
+        id: project.id,
+        projectName: project.projectName,
+        projectType: project.projectType,
+        status: project.status,
+        progressPercentage: project.progressPercentage,
+        currentPhase: project.currentPhase,
+        estimatedCO2Reduction: project.estimatedCO2Reduction,
+        projectValue: project.projectValue,
+        nextMilestone: project.nextMilestone,
+        milestoneDate: project.milestoneDate?.toISOString().split('T')[0],
+        lastUpdated: project.lastUpdated?.toISOString().split('T')[0],
+        priority: project.priority,
+        complianceScore: project.complianceScore,
+        documentsSubmitted: project.documentsSubmitted,
+        documentsRequired: project.documentsRequired,
+        country: project.country,
+        city: project.city
+      }));
+      
+      res.json(dashboardProjects);
+    } catch (error) {
+      console.error("Error fetching projects:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Get project details
+  app.get("/api/projects/:id", async (req, res) => {
+    try {
+      const project = await storage.getCO2Project(req.params.id);
+      if (!project) {
+        return res.status(404).json({ message: "Project not found" });
+      }
+      res.json(project);
+    } catch (error) {
+      console.error("Error fetching project:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Create new project
+  app.post("/api/projects", async (req, res) => {
+    try {
+      const validatedData = insertCO2ProjectSchema.parse(req.body);
+      const project = await storage.createCO2Project(validatedData);
+      res.json(project);
+    } catch (error) {
+      console.error("Error creating project:", error);
+      res.status(400).json({ message: "Invalid project data" });
+    }
+  });
+
+  // Update project
+  app.patch("/api/projects/:id", async (req, res) => {
+    try {
+      const updates = req.body;
+      const project = await storage.updateCO2Project(req.params.id, updates);
+      if (!project) {
+        return res.status(404).json({ message: "Project not found" });
+      }
+      res.json(project);
+    } catch (error) {
+      console.error("Error updating project:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Get project milestones
+  app.get("/api/projects/milestones/:projectId", async (req, res) => {
+    try {
+      const milestones = await storage.getProjectMilestones(req.params.projectId);
+      
+      // Transform data for dashboard display
+      const dashboardMilestones = milestones.map(milestone => ({
+        id: milestone.id,
+        title: milestone.title,
+        status: milestone.status,
+        dueDate: milestone.dueDate?.toISOString().split('T')[0],
+        milestoneType: milestone.milestoneType,
+        priority: milestone.priority
+      }));
+      
+      res.json(dashboardMilestones);
+    } catch (error) {
+      console.error("Error fetching milestones:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Create project milestone
+  app.post("/api/projects/milestones", async (req, res) => {
+    try {
+      const validatedData = insertProjectMilestoneSchema.parse(req.body);
+      const milestone = await storage.createProjectMilestone(validatedData);
+      res.json(milestone);
+    } catch (error) {
+      console.error("Error creating milestone:", error);
+      res.status(400).json({ message: "Invalid milestone data" });
+    }
+  });
+
+  // Get project activities
+  app.get("/api/projects/activities/:projectId", async (req, res) => {
+    try {
+      const activities = await storage.getProjectActivities(req.params.projectId);
+      
+      // Transform data for dashboard display
+      const dashboardActivities = activities.map(activity => ({
+        id: activity.id,
+        title: activity.title,
+        description: activity.description,
+        activityType: activity.activityType,
+        timestamp: activity.timestamp?.toISOString().split('T')[0],
+        performedByName: activity.performedByName
+      }));
+      
+      res.json(dashboardActivities);
+    } catch (error) {
+      console.error("Error fetching activities:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Create project activity
+  app.post("/api/projects/activities", async (req, res) => {
+    try {
+      const validatedData = insertProjectActivitySchema.parse(req.body);
+      const activity = await storage.createProjectActivity(validatedData);
+      res.json(activity);
+    } catch (error) {
+      console.error("Error creating activity:", error);
+      res.status(400).json({ message: "Invalid activity data" });
     }
   });
 

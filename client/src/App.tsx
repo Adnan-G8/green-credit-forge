@@ -13,6 +13,7 @@ import Security from "@/pages/security";
 import EufdStandard from "@/pages/eufd-standard";
 import CO2Certification from "@/pages/co2-certification";
 import LegalDocumentation from "@/pages/legal-documentation";
+import Dashboard from "@/pages/dashboard";
 import NotFound from "@/pages/not-found";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
@@ -29,6 +30,7 @@ function ProtectedRouter() {
       <Route path="/eufd-standard" component={EufdStandard} />
       <Route path="/co2-certification" component={CO2Certification} />
       <Route path="/legal-documentation" component={LegalDocumentation} />
+      <Route path="/dashboard" component={Dashboard} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/gdpr" component={GDPR} />
