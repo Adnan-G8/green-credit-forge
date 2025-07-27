@@ -4,6 +4,7 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Shield, Lock, ArrowLeft } from 'lucide-react';
+import backgroundImage from '@assets/image_1753622736260.png';
 
 export default function Dashboard() {
   const { t } = useLanguage();
@@ -50,45 +51,88 @@ export default function Dashboard() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <Navigation />
-        <main className="pt-20 flex items-center justify-center min-h-[calc(100vh-5rem)]">
-          <div className="max-w-md w-full mx-4">
-            <div className="bg-white rounded-xl shadow-lg border border-slate-200 p-8 text-center">
-              <div className="mb-6">
-                <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                  <Lock className="h-8 w-8 text-red-600" />
+      <div 
+        className="min-h-screen relative flex items-center justify-center p-4"
+        style={{
+          backgroundImage: `url('${backgroundImage}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Background overlay for better readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        {/* Main content */}
+        <div className="relative z-10 w-full max-w-md">
+          {/* Glass morphism card */}
+          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-8">
+            {/* Header with logo styling */}
+            <div className="text-center mb-8">
+              <h1 className="text-3xl font-light text-white mb-2">
+                FAGRI.Digital
+              </h1>
+              <div className="w-16 h-0.5 bg-emerald-400 mx-auto mb-6"></div>
+              <h2 className="text-xl font-light text-white/90 mb-4">
+                {t('access-restricted')}
+              </h2>
+              <p className="text-white/80 text-sm leading-relaxed">
+                {t('dashboard-requires-authentication')}
+              </p>
+            </div>
+
+            {/* Access requirements */}
+            <div className="mb-8">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-emerald-500/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-emerald-400/30">
+                  <Lock className="h-8 w-8 text-emerald-400" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  {t('access-restricted')}
-                </h2>
-                <p className="text-gray-600 mb-6">
-                  {t('dashboard-requires-authentication')}
-                </p>
               </div>
               
-              <div className="space-y-4">
-                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                  <div className="flex items-center text-emerald-800 mb-2">
-                    <Shield className="h-5 w-5 mr-2" />
-                    <span className="font-medium">{t('required-access')}</span>
-                  </div>
-                  <p className="text-sm text-emerald-700">
-                    {t('valid-alphag8-id-required')}
-                  </p>
-                </div>
-                
-                <Button 
-                  onClick={handleGoHome}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white"
-                >
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  {t('return-home')}
-                </Button>
+              <div className="text-center mb-6">
+                <h3 className="text-white font-medium mb-2">{t('required-access')}</h3>
+                <p className="text-white/70 text-sm">
+                  {t('valid-alphag8-id-required')}
+                </p>
+              </div>
+
+              {/* Return button */}
+              <button
+                onClick={() => window.location.href = '/'}
+                className="w-full bg-emerald-600/80 hover:bg-emerald-600 backdrop-blur-sm text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 border border-emerald-500/30 flex items-center justify-center gap-2"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                {t('return-home')}
+              </button>
+            </div>
+
+            {/* Features showcase */}
+            <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="text-white/70">
+                <div className="text-xs font-medium text-emerald-400 mb-1">CO₂ Certification</div>
+                <div className="text-xs">EUFD2025-001</div>
+                <div className="text-xs">Standard</div>
+              </div>
+              <div className="text-white/70">
+                <div className="text-xs font-medium text-emerald-400 mb-1">Blockchain</div>
+                <div className="text-xs">Secure &</div>
+                <div className="text-xs">Transparent</div>
+              </div>
+              <div className="text-white/70">
+                <div className="text-xs font-medium text-emerald-400 mb-1">Global Network</div>
+                <div className="text-xs">Agricultural</div>
+                <div className="text-xs">Excellence</div>
               </div>
             </div>
           </div>
-        </main>
+
+          {/* Photo credit */}
+          <div className="mt-4 text-center">
+            <p className="text-white/60 text-xs">
+              Foto By Gildo Cancelli
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
