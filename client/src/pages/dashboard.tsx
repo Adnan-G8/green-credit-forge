@@ -4,7 +4,7 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Shield, Lock, ArrowLeft } from 'lucide-react';
-import backgroundImage from '@assets/image_1753622736260.png';
+import backgroundImage from '@assets/image_1753623059363.png';
 
 export default function Dashboard() {
   const { t } = useLanguage();
