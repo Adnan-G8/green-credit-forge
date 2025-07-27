@@ -2,8 +2,9 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Switch } from '@/components/ui/switch';
 import { useLanguage } from './language-provider';
-import { Key, Calendar, CreditCard, RefreshCw, Shield, CheckCircle, Clock, AlertCircle } from 'lucide-react';
+import { Key, Calendar, CreditCard, RefreshCw, Shield, CheckCircle, Clock, AlertCircle, Settings, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface KeyInfoModalProps {
@@ -15,13 +16,21 @@ interface KeyInfoModalProps {
 export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) {
   const { t } = useLanguage();
   const [showRenewalOptions, setShowRenewalOptions] = useState(false);
+  const [showAutoRenewalSettings, setShowAutoRenewalSettings] = useState(false);
   const [renewalMethod, setRenewalMethod] = useState<'auto' | 'manual'>('auto');
   const [paymentMethod, setPaymentMethod] = useState<'bank' | 'card'>('card');
+  const [autoRenewalEnabled, setAutoRenewalEnabled] = useState(true);
+  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
   // Calculate dates
   const issueDate = new Date();
   const expiryDate = new Date();
   expiryDate.setFullYear(expiryDate.getFullYear() + 1);
+
+  // Calculate days remaining
+  const today = new Date();
+  const timeDiff = expiryDate.getTime() - today.getTime();
+  const daysRemaining = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
   const formatDate = (date: Date) => {
     return date.toLocaleDateString(undefined, { 
@@ -31,11 +40,43 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
     });
   };
 
-  const handleRenewal = () => {
-    // Here would be the payment processing logic
-    console.log('Processing renewal with:', { renewalMethod, paymentMethod });
-    // For now, just close the modal
-    onClose();
+  const handleRenewal = async () => {
+    setIsProcessingPayment(true);
+    
+    try {
+      // Simulate payment processing
+      console.log('Processing renewal with:', { renewalMethod, paymentMethod });
+      
+      if (paymentMethod === 'card') {
+        // Stripe payment processing would go here
+        console.log('Processing Stripe payment for €12...');
+        // Simulate API call delay
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        console.log('Payment successful!');
+      } else {
+        // Bank transfer processing
+        console.log('Generating bank transfer details...');
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        console.log('Bank transfer instructions sent!');
+      }
+      
+      // Reset state and close modal
+      setShowRenewalOptions(false);
+      onClose();
+    } catch (error) {
+      console.error('Payment failed:', error);
+    } finally {
+      setIsProcessingPayment(false);
+    }
+  };
+
+  const handleManageAutoRenewal = () => {
+    setShowAutoRenewalSettings(true);
+  };
+
+  const handleSaveAutoRenewalSettings = () => {
+    console.log('Auto renewal settings saved:', autoRenewalEnabled);
+    setShowAutoRenewalSettings(false);
   };
 
   return (
@@ -87,6 +128,9 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                 <div>
                   <label className="text-sm font-medium text-gray-600">{t('expiry-date')}</label>
                   <p className="text-sm mt-1 font-medium">{formatDate(expiryDate)}</p>
+                  <p className="text-xs text-emerald-600 font-medium mt-1">
+                    {daysRemaining} {t('days-remaining')}
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -116,7 +160,7 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                     </div>
                     <Badge className="bg-emerald-600">
                       <Clock className="h-3 w-3 mr-1" />
-                      {t('expires-in-year')}
+                      {daysRemaining} {t('days-left')}
                     </Badge>
                   </div>
                   
@@ -128,8 +172,12 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                       <RefreshCw className="h-4 w-4 mr-2" />
                       {t('renew-now')}
                     </Button>
-                    <Button variant="outline" className="flex-1">
-                      <AlertCircle className="h-4 w-4 mr-2" />
+                    <Button 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={handleManageAutoRenewal}
+                    >
+                      <Settings className="h-4 w-4 mr-2" />
                       {t('manage-auto-renewal')}
                     </Button>
                   </div>
@@ -219,14 +267,23 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                   <div className="flex gap-3">
                     <Button 
                       onClick={handleRenewal}
+                      disabled={isProcessingPayment}
                       className="flex-1 bg-emerald-600 hover:bg-emerald-700"
                     >
-                      {t('proceed-with-renewal')}
+                      {isProcessingPayment ? (
+                        <>
+                          <div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full mr-2"></div>
+                          {t('processing')}...
+                        </>
+                      ) : (
+                        t('proceed-with-renewal')
+                      )}
                     </Button>
                     <Button 
                       variant="outline" 
                       onClick={() => setShowRenewalOptions(false)}
                       className="flex-1"
+                      disabled={isProcessingPayment}
                     >
                       {t('cancel')}
                     </Button>
@@ -236,18 +293,80 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
             </CardContent>
           </Card>
 
-          {/* Swiss Security Notice */}
-          <Card className="border-blue-200 bg-blue-50">
-            <CardContent className="pt-6">
-              <div className="flex items-start gap-3">
-                <Shield className="h-5 w-5 text-blue-600 mt-0.5" />
-                <div>
-                  <p className="font-medium text-blue-800 mb-1">{t('swiss-security-protection')}</p>
-                  <p className="text-sm text-blue-700">{t('key-protected-swiss-infrastructure')}</p>
+          {/* Auto Renewal Settings Modal */}
+          {showAutoRenewalSettings && (
+            <Card className="border-blue-200 bg-blue-50">
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Settings className="h-5 w-5 text-blue-600" />
+                    {t('auto-renewal-settings')}
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setShowAutoRenewalSettings(false)}
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-blue-800">{t('enable-auto-renewal')}</p>
+                    <p className="text-sm text-blue-700">{t('auto-renewal-description')}</p>
+                  </div>
+                  <Switch
+                    checked={autoRenewalEnabled}
+                    onCheckedChange={setAutoRenewalEnabled}
+                  />
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+                
+                {autoRenewalEnabled && (
+                  <div className="bg-white rounded-lg p-4 border border-blue-200">
+                    <p className="text-sm font-medium text-blue-800 mb-2">{t('auto-renewal-details')}</p>
+                    <ul className="text-sm text-blue-700 space-y-1">
+                      <li>• {t('auto-charge-12-euros')}</li>
+                      <li>• {t('notification-before-renewal')}</li>
+                      <li>• {t('cancel-anytime')}</li>
+                    </ul>
+                  </div>
+                )}
+
+                <div className="flex gap-3">
+                  <Button 
+                    onClick={handleSaveAutoRenewalSettings}
+                    className="flex-1 bg-blue-600 hover:bg-blue-700"
+                  >
+                    {t('save-settings')}
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    onClick={() => setShowAutoRenewalSettings(false)}
+                    className="flex-1"
+                  >
+                    {t('cancel')}
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Swiss Security Notice */}
+          {!showAutoRenewalSettings && (
+            <Card className="border-blue-200 bg-blue-50">
+              <CardContent className="pt-6">
+                <div className="flex items-start gap-3">
+                  <Shield className="h-5 w-5 text-blue-600 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-blue-800 mb-1">{t('swiss-security-protection')}</p>
+                    <p className="text-sm text-blue-700">{t('key-protected-swiss-infrastructure')}</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          )}
         </div>
       </DialogContent>
     </Dialog>
