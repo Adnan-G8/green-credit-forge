@@ -41,8 +41,6 @@ export default function Security() {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             
-
-
             {/* Security Overview */}
             <div className="text-center mb-16">
               <h2 className="text-4xl font-light text-slate-900 mb-6">
@@ -141,434 +139,121 @@ export default function Security() {
               </div>
             </div>
 
-            {/* KYC Digital Fingerprint Section */}
+            {/* Three-Factor Authentication (3FA) Detailed Section */}
+            <div className="bg-white rounded-xl p-8 border border-slate-200 mb-16">
+              <h3 className="text-2xl font-light text-slate-900 mb-6">
+                Three-Factor Authentication (3FA)
+              </h3>
+              <div className="mb-6">
+                <p className="text-slate-600 mb-4 leading-relaxed">
+                  Access to the platform is secured via:
+                </p>
+                <ul className="space-y-2 text-slate-600">
+                  <li className="flex items-start">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                    <span>Certified user identity</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                    <span>Authorized device (computer, smartphone, etc.)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                    <span>Active user session</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                    <span>Obligatory digital fingerprint for ecosystem of trust and respect</span>
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Obligatory Digital Fingerprint Section */}
+              <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
+                <h4 className="text-xl font-medium text-slate-900 mb-4">
+                  Obligatory Digital Fingerprint for Every User and Active Member
+                </h4>
+                <p className="text-slate-600 mb-4 leading-relaxed">
+                  For an ecosystem of trust and respect, every user and active member on the platform must provide their obligatory digital fingerprint. This ensures accountability, transparency, and a secure environment for all participants.
+                </p>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  has to go through a KYC process in order to create its digital fingerprint. After the Digital Fingerprint is issued the Data and all other informations are highly encrypted on a seperate server structurte to protect it against every and all misues. All this information are only used for legal and regulation processing and nothing else and not shared with any other organisation.
+                </p>
+                
+                <div className="bg-white rounded-lg p-4 border border-slate-200">
+                  <button className="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 px-4 rounded-lg transition-colors">
+                    Complete KYC Verification
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Data Sovereignty & Access Control Section */}
+            <div className="bg-white rounded-xl p-8 border border-slate-200 mb-16">
+              <h3 className="text-2xl font-light text-slate-900 mb-6">
+                Data Sovereignty & Access Control
+              </h3>
+              <p className="text-lg text-slate-700 font-medium mb-4">
+                Your Data. Our Fortress. Swiss Precision for a Global Platform.
+              </p>
+              <p className="text-slate-600 mb-6 leading-relaxed">
+                Our infrastructure is designed to connect nations worldwide and enable international applications. To ensure the highest data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                  <div>
+                    <span className="font-medium text-slate-900">Strictest Data Protection Laws:</span>
+                    <span className="text-slate-600"> subject to the New Federal Act on Data Protection (nFADP), one of the world's strictest data protection laws</span>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                  <div>
+                    <span className="font-medium text-slate-900">FINMA Standards:</span>
+                    <span className="text-slate-600"> infrastructure meets Swiss Financial Market Supervisory Authority requirements (FINMA-RS 18/3 compliance)</span>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                  <div>
+                    <span className="font-medium text-slate-900">Unrivalled Physical Security:</span>
+                    <span className="text-slate-600"> data centers in Alpine fortresses, former Swiss military bunkers repurposed into state-of-the-art data centers</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Alpine Data Centers Section */}
             <div className="bg-slate-50 rounded-xl p-8 border border-slate-200 mb-16">
               <h3 className="text-2xl font-light text-slate-900 mb-6">
-                {t('security-digital-fingerprint-title')}
+                Alpine Data Centers
               </h3>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                {t('security-digital-fingerprint-description')}
+                Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from both environmental and human threats.
               </p>
               
-              <div className="bg-white rounded-lg p-6 border border-slate-200">
-                <button className="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 px-4 rounded-lg transition-colors">
-                  {t('security-digital-fingerprint-kyc')}
-                </button>
-              </div>
-            </div>
-
-            {/* Three-Tier Security Architecture */}
-            <div className="grid lg:grid-cols-3 gap-8 mb-20">
-              
-              {/* Tier 1: Access Control */}
-              <div className="bg-white rounded-xl p-8 border border-slate-200">
-                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                  <Key className="text-blue-700 h-8 w-8" />
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                  <span className="text-slate-600">EMP-resistant military bunkers</span>
                 </div>
-                <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                  {t('security-3fa-title')}
-                </h3>
-                <p className="text-slate-600 mb-6">
-                  {t('security-3fa-description')}
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-3fa-point1')}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-3fa-point2')}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-3fa-point3')}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-3fa-point4')}</span>
-                  </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                  <span className="text-slate-600">Autonomous power and cooling systems</span>
                 </div>
-                
-                {/* Digital Fingerprint Section within 3FA */}
-                <div className="mt-8 pt-6 border-t border-slate-200">
-                  <h4 className="text-lg font-medium text-slate-900 mb-4">
-                    {t('security-digital-fingerprint-title')}
-                  </h4>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                    {t('security-digital-fingerprint-description')}
-                  </p>
-                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                    <p className="text-slate-700 text-sm leading-relaxed">
-                      {t('security-digital-fingerprint-kyc')}
-                    </p>
-                  </div>
+                <div className="flex items-start">
+                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
+                  <span className="text-slate-600">Multi-ton security doors with biometric access</span>
                 </div>
-              </div>
-
-              {/* Tier 2: Legal Framework */}
-              <div className="bg-white rounded-xl p-8 border border-slate-200">
-                <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
-                  <Globe className="text-emerald-700 h-8 w-8" />
-                </div>
-                <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                  {t('security-data-title')}
-                </h3>
-                <p className="text-slate-600 mb-6">
-                  {t('security-data-description')}
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-data-point1')}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-data-point2')}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-data-point3')}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Tier 3: Infrastructure */}
-              <div className="bg-white rounded-xl p-8 border border-slate-200">
-                <div className="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                  <Mountain className="text-amber-700 h-8 w-8" />
-                </div>
-                <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                  {t('security-alpine-datacenters-title')}
-                </h3>
-                <p className="text-slate-600 mb-6">
-                  {t('security-alpine-datacenters-description')}
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-alpine-datacenters-point1')}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-alpine-datacenters-point2')}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('security-alpine-datacenters-point3')}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
-            {/* Physical Infrastructure Security with Data Center Image */}
-            <div className="bg-slate-50 rounded-xl p-12 mb-16">
-              <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-                <div>
-                  <div className="w-20 h-20 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
-                    <Building className="text-amber-700 h-10 w-10" />
-                  </div>
-                  <h3 className="text-3xl font-medium text-slate-900 mb-4">
-                    {t('security-physical-title')}
-                  </h3>
-                  <p className="text-lg text-slate-600 leading-relaxed">
-                    {t('security-physical-description')}
-                  </p>
-                </div>
-                <div className="relative">
-                  <img 
-                    src={dataCenter} 
-                    alt="Secure data center infrastructure with professional server equipment"
-                    className="rounded-xl shadow-lg w-full h-auto"
-                  />
-                </div>
-              </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Shield className="text-red-700 h-8 w-8" />
-                  </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-military-standards-title')}</h4>
-                  <p className="text-slate-700 text-sm leading-relaxed">
-                    {t('security-physical-point1')}
-                  </p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Server className="text-blue-700 h-8 w-8" />
-                  </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-autonomous-operations-title')}</h4>
-                  <p className="text-slate-700 text-sm leading-relaxed">
-                    {t('security-physical-point2')}
-                  </p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Eye className="text-emerald-700 h-8 w-8" />
-                  </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-access-control-title')}</h4>
-                  <p className="text-slate-700 text-sm leading-relaxed">
-                    {t('security-physical-point3')}
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Mountain className="text-purple-700 h-8 w-8" />
-                  </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-disaster-recovery-title')}</h4>
-                  <p className="text-slate-700 text-sm leading-relaxed">
-                    {t('security-disaster-recovery-description')}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Technical Excellence */}
-            <div className="bg-white rounded-xl p-12 border border-slate-200 mb-16">
-              <div className="text-center mb-12">
-                <div className="w-20 h-20 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-6">
-                  <Lock className="text-purple-700 h-10 w-10" />
-                </div>
-                <h3 className="text-3xl font-medium text-slate-900 mb-4">
-                  {t('security-technical-title')}
-                </h3>
-                <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                  {t('security-technical-intro')}
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-12 mb-12">
-                <div>
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                      <Lock className="text-blue-700 h-6 w-6" />
-                    </div>
-                    <h4 className="text-xl font-medium text-slate-900">{t('security-encryption-title')}</h4>
-                  </div>
-                  <p className="text-slate-700 leading-relaxed">
-                    {t('security-encryption-description')}
-                  </p>
-                </div>
-                
-                <div>
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
-                      <Database className="text-emerald-700 h-6 w-6" />
-                    </div>
-                    <h4 className="text-xl font-medium text-slate-900">{t('security-redundancy-title')}</h4>
-                  </div>
-                  <p className="text-slate-700 leading-relaxed">
-                    {t('security-redundancy-description')}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Alpine Security Meets Global Blockchain Governance */}
-            <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-6 sm:p-8 lg:p-12 mb-16">
-              <div className="text-center mb-8 sm:mb-12">
-                <div className="w-16 sm:w-20 h-16 sm:h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                  <Mountain className="text-emerald-700 h-8 sm:h-10 w-8 sm:w-10" />
-                </div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 mb-4 sm:mb-6 px-2">
-                  {t('security-alpine-blockchain-title')}
-                </h3>
-                <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 px-4">
-                  <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
-                    {t('security-alpine-p1')}
-                  </p>
-                  <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
-                    {t('security-alpine-p2')}
-                  </p>
-                  <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-medium">
-                    {t('security-alpine-p3')}
-                  </p>
-                </div>
-              </div>
-
-              {/* Swiss Alps Visual Divider */}
-              <div className="relative mb-8 sm:mb-16 rounded-xl overflow-hidden">
-                <img 
-                  src={swissAlps} 
-                  alt="Swiss Alps representing the secure mountain data centers"
-                  className="w-full h-64 sm:h-80 lg:h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
-              </div>
-
-              {/* 100% CO₂ Neutral Section */}
-              <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-6 sm:p-8 lg:p-12 mb-8 sm:mb-16">
-                <div className="text-center mb-8 sm:mb-12">
-                  <div className="w-16 sm:w-20 h-16 sm:h-20 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4 sm:mb-6">
-                    <Leaf className="text-emerald-700 h-8 sm:h-10 w-8 sm:w-10" />
-                  </div>
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-900 mb-4 sm:mb-6 px-2">
-                    {t('security-co2-neutral-title')}
-                  </h3>
-                  <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 px-4">
-                    <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
-                      {t('security-co2-neutral-p1')}
-                    </p>
-                    <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
-                      {t('security-co2-neutral-p2')}
-                    </p>
-                    <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed font-medium">
-                      {t('security-co2-neutral-p3')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-                <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 text-center">
-                  <div className="w-12 sm:w-16 h-12 sm:h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <Server className="text-blue-700 h-6 sm:h-8 w-6 sm:w-8" />
-                  </div>
-                  <h4 className="text-lg sm:text-xl font-medium text-slate-900 mb-3 sm:mb-4">{t('security-blockchain-nodes-title')}</h4>
-                  <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
-                    {t('security-blockchain-nodes-description')}
-                  </p>
-                </div>
-                
-                <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 text-center">
-                  <div className="w-12 sm:w-16 h-12 sm:h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <Shield className="text-emerald-700 h-6 sm:h-8 w-6 sm:w-8" />
-                  </div>
-                  <h4 className="text-lg sm:text-xl font-medium text-slate-900 mb-3 sm:mb-4">{t('security-blockchain-dpos-title')}</h4>
-                  <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
-                    {t('security-blockchain-dpos-description')}
-                  </p>
-                </div>
-                
-                <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8 text-center">
-                  <div className="w-12 sm:w-16 h-12 sm:h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <Globe className="text-purple-700 h-6 sm:h-8 w-6 sm:w-8" />
-                  </div>
-                  <h4 className="text-lg sm:text-xl font-medium text-slate-900 mb-3 sm:mb-4">{t('security-blockchain-evm-title')}</h4>
-                  <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
-                    {t('security-blockchain-evm-description')}
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg p-4 sm:p-6 lg:p-8">
-                <h4 className="text-xl sm:text-2xl font-medium text-slate-900 mb-4 sm:mb-6 text-center">
-                  {t('security-blockchain-trust-title')}
-                </h4>
-                <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-                  <div>
-                    <h5 className="text-lg font-medium text-slate-900 mb-4">{t('security-blockchain-governance-title')}</h5>
-                    <p className="text-slate-700 leading-relaxed mb-4">
-                      {t('security-blockchain-governance-description')}
-                    </p>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-slate-700">{t('security-blockchain-governance-point1')}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-slate-700">{t('security-blockchain-governance-point2')}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-slate-700">{t('security-blockchain-governance-point3')}</span>
-                      </li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h5 className="text-lg font-medium text-slate-900 mb-4">{t('security-blockchain-technical-title')}</h5>
-                    <p className="text-slate-700 leading-relaxed mb-4">
-                      {t('security-blockchain-technical-description')}
-                    </p>
-                    <ul className="space-y-2">
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-slate-700">{t('security-blockchain-technical-point1')}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-slate-700">{t('security-blockchain-technical-point2')}</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-slate-700">{t('security-blockchain-technical-point3')}</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Certifications and Compliance */}
-            <div className="bg-slate-50 rounded-xl p-12 mb-16">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-medium text-slate-900 mb-4">
-                  {t('security-compliance-title')}
-                </h3>
-                <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                  Our comprehensive certification portfolio demonstrates our commitment to the highest security standards.
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white rounded-lg p-6 text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Server className="text-blue-700 h-8 w-8" />
-                  </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-tier-title')}</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {t('security-tier-description')}
-                  </p>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 text-center">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Shield className="text-emerald-700 h-8 w-8" />
-                  </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-iso-title')}</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {t('security-iso-description')}
-                  </p>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 text-center">
-                  <div className="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Globe className="text-amber-700 h-8 w-8" />
-                  </div>
-                  <h4 className="text-lg font-medium text-slate-900 mb-3">{t('security-cyber-title')}</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {t('security-cyber-description')}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Security Guarantee */}
-            <div className="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-12 text-center">
-              <h3 className="text-3xl font-medium text-slate-900 mb-6">
-                {t('security-conclusion-title')}
-              </h3>
-              <p className="text-lg text-slate-600 leading-relaxed max-w-4xl mx-auto mb-8">
-                {t('security-conclusion-description')}
-              </p>
-              <div className="inline-flex items-center px-8 py-4 bg-emerald-600 text-white rounded-lg">
-                <Shield className="mr-3 h-6 w-6" />
-                <span className="text-lg font-medium">{t('security-conclusion-guarantee')}</span>
               </div>
             </div>
 
           </div>
         </div>
       </section>
-
+      
       <Footer />
     </div>
   );
