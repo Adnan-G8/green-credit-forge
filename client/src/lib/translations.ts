@@ -136,6 +136,25 @@ export const translations = {
     'rejected': 'Rifiutato',
     'session-protected-swiss-security': 'La tua sessione è protetta dai protocolli di sicurezza svizzeri.',
 
+    // Hero Section
+    'hero-status-badge': 'PIATTAFORMA ATTIVA',
+    'hero-title1': 'FAGRI Digital',
+    'hero-title2': 'Certificazione CO₂',
+    'hero-title3': 'del Futuro',
+    'hero-tagline': 'Tecnologia Blockchain Svizzera per l\'Agricoltura Sostenibile',
+    'hero-subtitle': 'La prima piattaforma europea per la certificazione digitale delle emissioni di carbonio agricole',
+    'hero-description': 'Conformità agli standard ISO 14064-1/2/3 e EUFD2025-001 con tecnologia blockchain Swiss-Banking per trasparenza e sicurezza.',
+    'hero-trust-compliance': 'Conformità UE',
+    'hero-trust-network': 'Rete Globale',
+    'hero-trust-innovation': 'Innovazione Digitale',
+    'hero-cta-discover': 'Scopri di Più',
+    'hero-cta-join': 'Unisciti Ora',
+    'hero-ecosystem-privacy': 'Protezione Privacy',
+    'hero-ecosystem-blockchain': 'Blockchain Sicura',
+
+    // Trust indicators
+    'iso-14064-1-14064-2-14064-3': 'ISO 14064-1, 14064-2, 14064-3',
+
     // Common
     'name': 'Nome',
     'email': 'Email',
@@ -290,6 +309,25 @@ export const translations = {
     'approved': 'Approved',
     'rejected': 'Rejected',
     'session-protected-swiss-security': 'Your session is protected by Swiss security protocols.',
+
+    // Hero Section
+    'hero-status-badge': 'PLATFORM ACTIVE',
+    'hero-title1': 'FAGRI Digital',
+    'hero-title2': 'CO₂ Certification',
+    'hero-title3': 'of the Future',
+    'hero-tagline': 'Swiss Blockchain Technology for Sustainable Agriculture',
+    'hero-subtitle': 'The first European platform for digital certification of agricultural carbon emissions',
+    'hero-description': 'Compliance with ISO 14064-1/2/3 and EUFD2025-001 standards with Swiss-Banking blockchain technology for transparency and security.',
+    'hero-trust-compliance': 'EU Compliance',
+    'hero-trust-network': 'Global Network',
+    'hero-trust-innovation': 'Digital Innovation',
+    'hero-cta-discover': 'Discover More',
+    'hero-cta-join': 'Join Now',
+    'hero-ecosystem-privacy': 'Privacy Protection',
+    'hero-ecosystem-blockchain': 'Secure Blockchain',
+
+    // Trust indicators
+    'iso-14064-1-14064-2-14064-3': 'ISO 14064-1, 14064-2, 14064-3',
 
     // Common
     'name': 'Name',
