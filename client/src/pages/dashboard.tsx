@@ -285,37 +285,37 @@ export default function Dashboard() {
             </div>
             
             {/* Navigation Options */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <button
                 onClick={handleViewKeyCard}
-                className="flex items-center justify-center space-x-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-4 transition-all duration-200"
+                className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <Key className="h-5 w-5 text-blue-600" />
-                <span className="text-blue-800 font-medium">{t('view-id-key-card')}</span>
+                <Key className="h-6 w-6 text-blue-600 group-hover:scale-110 transition-transform" />
+                <span className="text-blue-800 font-medium text-center leading-tight">{t('view-id-key-card')}</span>
               </button>
               
               <button
                 onClick={handleViewProjects}
-                className="flex items-center justify-center space-x-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl p-4 transition-all duration-200"
+                className="flex flex-col items-center justify-center space-y-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <Folder className="h-5 w-5 text-emerald-600" />
-                <span className="text-emerald-800 font-medium">{t('my-projects')}</span>
+                <Folder className="h-6 w-6 text-emerald-600 group-hover:scale-110 transition-transform" />
+                <span className="text-emerald-800 font-medium text-center leading-tight">{t('my-projects')}</span>
               </button>
               
               <button
                 onClick={handleUploadProject}
-                className="flex items-center justify-center space-x-3 bg-green-50 hover:bg-green-100 border border-green-200 rounded-xl p-4 transition-all duration-200"
+                className="flex flex-col items-center justify-center space-y-3 bg-green-50 hover:bg-green-100 border border-green-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <FileText className="h-5 w-5 text-green-600" />
-                <span className="text-green-800 font-medium">{t('upload-new-project')}</span>
+                <FileText className="h-6 w-6 text-green-600 group-hover:scale-110 transition-transform" />
+                <span className="text-green-800 font-medium text-center leading-tight">{t('upload-new-project')}</span>
               </button>
               
               <button
                 onClick={handleMyInformation}
-                className="flex items-center justify-center space-x-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl p-4 transition-all duration-200"
+                className="flex flex-col items-center justify-center space-y-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <User className="h-5 w-5 text-slate-600" />
-                <span className="text-slate-800 font-medium">{t('my-information')}</span>
+                <User className="h-6 w-6 text-slate-600 group-hover:scale-110 transition-transform" />
+                <span className="text-slate-800 font-medium text-center leading-tight">{t('my-information')}</span>
               </button>
             </div>
           </div>
