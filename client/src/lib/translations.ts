@@ -880,9 +880,22 @@ export const translations = {
 
 
 
-    // Platform Section Keys
-    'platform-title': 'Certification Platform',
+    // Platform Section Keys - Updated Content
+    'platform-title': 'Certification Platform', 
     'platform-intro': 'Platform Introduction',
+    'platform-impact-title': 'Impatto Certificazione CO₂',
+    'platform-impact-description': 'Il nostro standard EUFD2025-001 consente alle imprese agricole di dimostrare un impatto climatico misurabile accedendo a opportunità di finanza sostenibile.',
+    'platform-carbon-credits': 'Crediti di Carbonio Verificati',
+    'platform-carbon-credits-desc': 'Certificazioni CO₂ validate e pronte per il mercato internazionale',
+    'platform-revenue-stream': 'Nuovi Flussi di Ricavi', 
+    'platform-revenue-stream-desc': 'Monetizzazione delle pratiche agricole sostenibili',
+    'platform-market-access': 'Accesso ai Mercati',
+    'platform-market-access-desc': 'Connessione diretta con mercati del carbonio e finanza verde',
+    'platform-standards-title': 'Standard di Certificazione',
+    'platform-impact-eufd': 'Conformità Standard UE',
+    'platform-impact-iso': 'Certificazione ISO 14064-1/2/3',
+    'platform-eu-standards-title': 'Standard UE per Certificazione CO₂',
+    'platform-eu-standards-description': 'Piena conformità agli standard europei: EU ETS (Sistema di Scambio delle Emissioni), preparazione per CBAM 2026 (Meccanismo di Adeguamento del Carbonio alle Frontiere), e integrazione con registri europei per il commercio internazionale di crediti di carbonio.',
 
     // Security Section Keys
     'security-title': 'Security and Data Protection',
@@ -1160,6 +1173,21 @@ export const translations = {
     'standard-global-feature2-description': 'Swiss banking-level data protection',
     'standard-global-feature3-title': 'Blockchain Transparency',
     'standard-global-feature3-description': 'Complete traceability through blockchain technology',
+
+    // Platform Section Keys - English Content 
+    'platform-impact-title': 'CO₂ Certification Impact',
+    'platform-impact-description': 'Our EUFD2025-001 standard enables agricultural enterprises to demonstrate measurable climate impact while accessing sustainable finance opportunities.',
+    'platform-carbon-credits': 'Verified Carbon Credits',
+    'platform-carbon-credits-desc': 'CO₂ certifications validated and ready for international markets',
+    'platform-revenue-stream': 'New Revenue Streams',
+    'platform-revenue-stream-desc': 'Monetization of sustainable agricultural practices',
+    'platform-market-access': 'Market Access',
+    'platform-market-access-desc': 'Direct connection to carbon markets and green finance',
+    'platform-standards-title': 'Certification Standards',
+    'platform-impact-eufd': 'EU Standard Compliance',
+    'platform-impact-iso': 'ISO 14064-1/2/3 Certification',
+    'platform-eu-standards-title': 'EU Standards for CO₂ Certification',
+    'platform-eu-standards-description': 'Full compliance with European standards: EU ETS (Emissions Trading System), preparation for CBAM 2026 (Carbon Border Adjustment Mechanism), and integration with European registries for international carbon credit trading.',
 
     // Common
     'name': 'Name',
