@@ -260,6 +260,8 @@ export const translations = {
     'eufd-cta-back': 'Torna Indietro',
 
     // Introduction Section Keys
+    'intro-title': 'Introduzione alla Piattaforma',
+    'intro-subtitle': 'Scopri il futuro della certificazione CO₂ agricola',
     'intro-stat1': 'Membri Attivi',
     'intro-stat2': 'Imprese Italiane', 
     'intro-stat3': 'Anni di Esperienza',
@@ -270,6 +272,10 @@ export const translations = {
     'intro-innovation-text': 'Utilizziamo tecnologie avanzate come IoT, blockchain e intelligenza artificiale per creare un ecosistema agricolo completamente digitalizzato e tracciabile.',
     'intro-sustainability-title': 'Sostenibilità Certificata',
     'intro-sustainability-text': 'I nostri protocolli di certificazione garantiscono che ogni credito di carbonio sia verificabile, misurabile e conforme agli standard internazionali più rigorosi.',
+    
+    // Transition Section Keys
+    'transition-title': 'Transizione Verso un Futuro Sostenibile',
+    'transition-subtitle': 'Unisciti alla rivoluzione della certificazione CO₂ agricola',
 
     // Opportunities Section Keys
     'opportunities-title': 'Opportunità per le imprese agricole, per le imprese agroforestali e per le imprese energetiche',
@@ -724,6 +730,8 @@ export const translations = {
     'eufd-cta-back': 'Go Back',
 
     // Introduction Section Keys
+    'intro-title': 'Platform Introduction',
+    'intro-subtitle': 'Discover the future of agricultural CO₂ certification',
     'intro-stat1': 'Active Members',
     'intro-stat2': 'Italian Companies',
     'intro-stat3': 'Years of Experience',
@@ -734,6 +742,10 @@ export const translations = {
     'intro-innovation-text': 'We use advanced technologies such as IoT, blockchain and artificial intelligence to create a fully digitized and traceable agricultural ecosystem.',
     'intro-sustainability-title': 'Certified Sustainability',
     'intro-sustainability-text': 'Our certification protocols ensure that every carbon credit is verifiable, measurable and compliant with the most rigorous international standards.',
+    
+    // Transition Section Keys
+    'transition-title': 'Transition to a Sustainable Future',
+    'transition-subtitle': 'Join the agricultural CO₂ certification revolution',
 
     // Opportunities Section Keys
     'opportunities-title': 'Opportunities for agricultural companies, agroforestry companies and energy companies',
