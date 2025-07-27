@@ -58,7 +58,14 @@ export default function EufdStandardPage() {
                 <p className="mb-6 leading-relaxed">
                   {t('eufd-intro-text2')}
                 </p>
-
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-6">
+                  <p className="text-slate-700 font-medium mb-2">
+                    {t('eufd-launch-info')}
+                  </p>
+                  <p className="text-slate-600 text-sm">
+                    {t('eufd-global-vision')}
+                  </p>
+                </div>
               </div>
             </div>
 
