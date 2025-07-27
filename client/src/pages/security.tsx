@@ -139,113 +139,106 @@ export default function Security() {
               </div>
             </div>
 
-            {/* Three-Factor Authentication (3FA) Detailed Section */}
-            <div className="bg-white rounded-xl p-8 border border-slate-200 mb-16">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">
-                Three-Factor Authentication (3FA)
-              </h3>
-              <div className="mb-6">
-                <p className="text-slate-600 mb-4 leading-relaxed">
+            {/* Three-Tier Security Architecture - Original Grid Layout */}
+            <div className="grid lg:grid-cols-3 gap-8 mb-20">
+              
+              {/* Tier 1: Three-Factor Authentication */}
+              <div className="bg-white rounded-xl p-8 border border-slate-200">
+                <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                  <Key className="text-blue-700 h-8 w-8" />
+                </div>
+                <h3 className="text-2xl font-medium text-slate-900 mb-4">
+                  Three-Factor Authentication (3FA)
+                </h3>
+                <p className="text-slate-600 mb-6">
                   Access to the platform is secured via:
                 </p>
-                <ul className="space-y-2 text-slate-600">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                    <span>Certified user identity</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                    <span>Authorized device (computer, smartphone, etc.)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                    <span>Active user session</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                    <span>Obligatory digital fingerprint for ecosystem of trust and respect</span>
-                  </li>
-                </ul>
-              </div>
-              
-              {/* Obligatory Digital Fingerprint Section */}
-              <div className="bg-slate-50 rounded-lg p-6 border border-slate-200">
-                <h4 className="text-xl font-medium text-slate-900 mb-4">
-                  Obligatory Digital Fingerprint for Every User and Active Member
-                </h4>
-                <p className="text-slate-600 mb-4 leading-relaxed">
-                  For an ecosystem of trust and respect, every user and active member on the platform must provide their obligatory digital fingerprint. This ensures accountability, transparency, and a secure environment for all participants.
-                </p>
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  has to go through a KYC process in order to create its digital fingerprint. After the Digital Fingerprint is issued the Data and all other informations are highly encrypted on a seperate server structurte to protect it against every and all misues. All this information are only used for legal and regulation processing and nothing else and not shared with any other organisation.
-                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">Certified user identity</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">Authorized device (computer, smartphone, etc.)</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">Active user session</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">Obligatory digital fingerprint for ecosystem of trust and respect</span>
+                  </div>
+                </div>
                 
-                <div className="bg-white rounded-lg p-4 border border-slate-200">
-                  <button className="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 px-4 rounded-lg transition-colors">
-                    Complete KYC Verification
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Data Sovereignty & Access Control Section */}
-            <div className="bg-white rounded-xl p-8 border border-slate-200 mb-16">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">
-                Data Sovereignty & Access Control
-              </h3>
-              <p className="text-lg text-slate-700 font-medium mb-4">
-                Your Data. Our Fortress. Swiss Precision for a Global Platform.
-              </p>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Our infrastructure is designed to connect nations worldwide and enable international applications. To ensure the highest data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                  <div>
-                    <span className="font-medium text-slate-900">Strictest Data Protection Laws:</span>
-                    <span className="text-slate-600"> subject to the New Federal Act on Data Protection (nFADP), one of the world's strictest data protection laws</span>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                  <div>
-                    <span className="font-medium text-slate-900">FINMA Standards:</span>
-                    <span className="text-slate-600"> infrastructure meets Swiss Financial Market Supervisory Authority requirements (FINMA-RS 18/3 compliance)</span>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                  <div>
-                    <span className="font-medium text-slate-900">Unrivalled Physical Security:</span>
-                    <span className="text-slate-600"> data centers in Alpine fortresses, former Swiss military bunkers repurposed into state-of-the-art data centers</span>
+                {/* Digital Fingerprint Section within 3FA */}
+                <div className="mt-8 pt-6 border-t border-slate-200">
+                  <h4 className="text-lg font-medium text-slate-900 mb-4">
+                    Obligatory Digital Fingerprint for Every User and Active Member
+                  </h4>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    For an ecosystem of trust and respect, every user and active member on the platform must provide their obligatory digital fingerprint. This ensures accountability, transparency, and a secure environment for all participants.
+                  </p>
+                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                    <p className="text-slate-700 text-sm leading-relaxed">
+                      has to go through a KYC process in order to create its digital fingerprint. After the Digital Fingerprint is issued the Data and all other informations are highly encrypted on a seperate server structurte to protect it against every and all misues. All this information are only used for legal and regulation processing and nothing else and not shared with any other organisation.
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Alpine Data Centers Section */}
-            <div className="bg-slate-50 rounded-xl p-8 border border-slate-200 mb-16">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">
-                Alpine Data Centers
-              </h3>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from both environmental and human threats.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                  <span className="text-slate-600">EMP-resistant military bunkers</span>
+              {/* Tier 2: Data Sovereignty & Access Control */}
+              <div className="bg-white rounded-xl p-8 border border-slate-200">
+                <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
+                  <Globe className="text-emerald-700 h-8 w-8" />
                 </div>
-                <div className="flex items-start">
-                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                  <span className="text-slate-600">Autonomous power and cooling systems</span>
+                <h3 className="text-2xl font-medium text-slate-900 mb-4">
+                  Data Sovereignty & Access Control
+                </h3>
+                <p className="text-slate-600 mb-6">
+                  Your Data. Our Fortress. Swiss Precision for a Global Platform. Our infrastructure is designed to connect nations worldwide and enable international applications. To ensure the highest data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">Strictest Data Protection Laws: subject to the New Federal Act on Data Protection (nFADP), one of the world's strictest data protection laws</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">FINMA Standards: infrastructure meets Swiss Financial Market Supervisory Authority requirements (FINMA-RS 18/3 compliance)</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">Unrivalled Physical Security: data centers in Alpine fortresses, former Swiss military bunkers repurposed into state-of-the-art data centers</span>
+                  </div>
                 </div>
-                <div className="flex items-start">
-                  <CheckCircle className="text-emerald-500 h-5 w-5 flex-shrink-0 mt-0.5 mr-3" />
-                  <span className="text-slate-600">Multi-ton security doors with biometric access</span>
+              </div>
+
+              {/* Tier 3: Alpine Data Centers */}
+              <div className="bg-white rounded-xl p-8 border border-slate-200">
+                <div className="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
+                  <Mountain className="text-amber-700 h-8 w-8" />
+                </div>
+                <h3 className="text-2xl font-medium text-slate-900 mb-4">
+                  Alpine Data Centers
+                </h3>
+                <p className="text-slate-600 mb-6">
+                  Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from both environmental and human threats.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">EMP-resistant military bunkers</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">Autonomous power and cooling systems</span>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-slate-700">Multi-ton security doors with biometric access</span>
+                  </div>
                 </div>
               </div>
             </div>
