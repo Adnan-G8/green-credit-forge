@@ -291,7 +291,7 @@ export default function Dashboard() {
                     {t('valid-for-one-year')}
                   </p>
                   <button
-                    onClick={() => setShowKeyInfo(true)}
+                    onClick={() => setShowSecurityDashboard(true)}
                     className="text-emerald-600 hover:text-emerald-700 transition-colors"
                   >
                     <Info className="h-4 w-4" />
