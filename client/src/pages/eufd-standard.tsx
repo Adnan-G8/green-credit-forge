@@ -204,33 +204,33 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* Blockchain Technology */}
+            {/* Blockchain Technology for Transparency and Security */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('eufd-blockchain-title')}
+                {t('eufd-blockchain-transparency-title')}
               </h2>
               <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200 mb-8">
                 <div className="bg-blue-600 text-white rounded-lg p-4 mb-6">
-                  <h3 className="text-xl font-medium mb-2">{t('eufd-blockchain-mandate-title')}</h3>
+                  <h3 className="text-xl font-medium mb-2">{t('eufd-blockchain-integration-title')}</h3>
                   <p className="text-blue-100">
-                    {t('eufd-blockchain-mandate-description')}
+                    {t('eufd-blockchain-integration-desc')}
                   </p>
                 </div>
                 <p className="text-slate-700 mb-6 leading-relaxed">
-                  {t('eufd-blockchain-intro')}
+                  {t('eufd-blockchain-strategic-use')}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('eufd-blockchain-benefit1')}</span>
+                    <span className="text-slate-700">{t('eufd-blockchain-benefit-1')}</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('eufd-blockchain-benefit2')}</span>
+                    <span className="text-slate-700">{t('eufd-blockchain-benefit-2')}</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('eufd-blockchain-benefit3')}</span>
+                    <span className="text-slate-700">{t('eufd-blockchain-benefit-3')}</span>
                   </div>
                 </div>
               </div>
@@ -239,7 +239,7 @@ export default function EufdStandardPage() {
             {/* Regulatory Framework */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
-                {t('eufd-regulatory-title')}
+                {t('eufd-framework-title')}
               </h2>
               
               {/* EU Regulation 3012/2024 Box */}
@@ -252,25 +252,25 @@ export default function EufdStandardPage() {
                     <h3 className="text-2xl font-medium text-slate-900 mb-3">
                       {t('eufd-eu-regulation-title')}
                     </h3>
-                    <p className="text-slate-700 leading-relaxed mb-4">
-                      {t('eufd-eu-regulation-description')}
+                    <p className="text-slate-600 mb-4 leading-relaxed">
+                      {t('eufd-eu-regulation-desc')}
                     </p>
                     <div className="bg-blue-50 rounded-lg p-4">
-                      <h4 className="font-medium text-blue-900 mb-2">{t('eufd-eu-regulation-requirements')}:</h4>
-                      <ul className="space-y-2 text-sm text-blue-800">
-                        <li className="flex items-start space-x-2">
+                      <h4 className="font-medium text-slate-900 mb-3">{t('eufd-key-requirements')}</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-start space-x-3">
                           <CheckCircle className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                          <span>{t('eufd-eu-regulation-req1')}</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
+                          <span className="text-slate-700 text-sm">{t('eufd-req-1')}</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
                           <CheckCircle className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                          <span>{t('eufd-eu-regulation-req2')}</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
+                          <span className="text-slate-700 text-sm">{t('eufd-req-2')}</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
                           <CheckCircle className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                          <span>{t('eufd-eu-regulation-req3')}</span>
-                        </li>
-                      </ul>
+                          <span className="text-slate-700 text-sm">{t('eufd-req-3')}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -284,32 +284,23 @@ export default function EufdStandardPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-2xl font-medium text-slate-900 mb-3">
-                      {t('eufd-iso-standards-title')}
+                      {t('eufd-iso-title')}
                     </h3>
-                    <p className="text-slate-700 leading-relaxed mb-4">
-                      {t('eufd-iso-standards-description')}
+                    <p className="text-slate-600 mb-6 leading-relaxed">
+                      {t('eufd-iso-desc')}
                     </p>
-                    
                     <div className="grid md:grid-cols-3 gap-4">
                       <div className="bg-emerald-50 rounded-lg p-4">
-                        <h4 className="font-medium text-emerald-900 mb-2">{t('eufd-iso-14064-1-title')}</h4>
-                        <p className="text-sm text-emerald-800">
-                          {t('eufd-iso-14064-1-description')}
-                        </p>
+                        <h4 className="font-medium text-slate-900 mb-2">{t('eufd-iso-14064-1')}</h4>
+                        <p className="text-slate-600 text-sm">{t('eufd-iso-14064-1-desc')}</p>
                       </div>
-                      
                       <div className="bg-emerald-50 rounded-lg p-4">
-                        <h4 className="font-medium text-emerald-900 mb-2">{t('eufd-iso-14064-2-title')}</h4>
-                        <p className="text-sm text-emerald-800">
-                          {t('eufd-iso-14064-2-description')}
-                        </p>
+                        <h4 className="font-medium text-slate-900 mb-2">{t('eufd-iso-14064-2')}</h4>
+                        <p className="text-slate-600 text-sm">{t('eufd-iso-14064-2-desc')}</p>
                       </div>
-                      
                       <div className="bg-emerald-50 rounded-lg p-4">
-                        <h4 className="font-medium text-emerald-900 mb-2">{t('eufd-iso-14064-3-title')}</h4>
-                        <p className="text-sm text-emerald-800">
-                          {t('eufd-iso-14064-3-description')}
-                        </p>
+                        <h4 className="font-medium text-slate-900 mb-2">{t('eufd-iso-14064-3')}</h4>
+                        <p className="text-slate-600 text-sm">{t('eufd-iso-14064-3-desc')}</p>
                       </div>
                     </div>
                   </div>
@@ -317,31 +308,31 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* Vision and Goals */}
+            {/* Our Vision: Efficiency and Equity */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('eufd-vision-title')}
+                {t('eufd-our-vision-title')}
               </h2>
               <div className="prose prose-lg text-slate-600 max-w-none">
                 <p className="mb-6 leading-relaxed">
-                  {t('eufd-vision-text1')}
+                  {t('eufd-vision-main-text')}
                 </p>
                 <p className="mb-6 leading-relaxed">
-                  {t('eufd-vision-text2')}
+                  {t('eufd-vision-guarantee')}
                 </p>
               </div>
             </div>
 
-            {/* Trust and Network */}
+            {/* Trust, Security and Global Reach */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('eufd-trust-title')}
+                {t('eufd-trust-global-title')}
               </h2>
               <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
                 <p className="text-slate-700 mb-8 leading-relaxed">
-                  {t('eufd-trust-text')}
+                  {t('eufd-trust-standard-desc')}
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                   <div>
                     <h4 className="text-3xl font-semibold text-emerald-600 mb-2">110,000+</h4>
                     <p className="text-slate-600 text-sm">{t('eufd-network-members')}</p>
@@ -361,10 +352,10 @@ export default function EufdStandardPage() {
             {/* Call to Action */}
             <div className="text-center bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-12 border border-slate-200">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('eufd-cta-title')}
+                {t('eufd-join-title')}
               </h2>
               <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                {t('eufd-cta-text')}
+                {t('eufd-join-desc')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
@@ -380,13 +371,13 @@ export default function EufdStandardPage() {
                     }, 100);
                   }}
                 >
-                  {t('eufd-cta-contact')}
+                  {t('eufd-contact-us')}
                 </a>
                 <Link 
                   href="/"
                   className="inline-flex items-center justify-center px-8 py-3 bg-white text-slate-700 rounded-lg border border-slate-300 hover:bg-slate-50 transition-colors font-medium"
                 >
-                  {t('eufd-cta-back')}
+                  {t('eufd-back-home')}
                 </Link>
               </div>
             </div>

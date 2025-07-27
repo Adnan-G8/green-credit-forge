@@ -501,6 +501,49 @@ export const translations = {
     'eufd-vision-subtitle': 'Tecnologie innovative per un futuro sostenibile.',
     'eufd-trust-title': 'Fiducia e Affidabilità',
     'eufd-trust-description': 'Il nostro network globale garantisce la massima affidabilità nella certificazione CO₂.',
+    
+    // Additional EUFD Content - Complete Sections
+    'eufd-blockchain-transparency-title': 'Tecnologia Blockchain per Trasparenza e Sicurezza',
+    'eufd-blockchain-integration-title': 'Integrazione Blockchain Obbligatoria',
+    'eufd-blockchain-integration-desc': 'EUFD2025-001 rende obbligatorio l\'uso della tecnologia Blockchain su una piattaforma digitale per l\'emissione e registrazione di crediti di carbonio certificati, garantendo tracciabilità, trasparenza e immutabilità.',
+    'eufd-blockchain-strategic-use': 'Al centro del nostro standard c\'è l\'uso strategico della tecnologia blockchain. Questo crea una trasparenza senza precedenti e risolve problemi critici nel mercato del carbonio:',
+    'eufd-blockchain-benefit-1': 'Il doppio conteggio è eliminato: ogni certificato è unico e immutabile.',
+    'eufd-blockchain-benefit-2': 'Il greenwashing è prevenuto: l\'intera catena del valore è trasparente e tracciabile.',
+    'eufd-blockchain-benefit-3': 'La proprietà chiara è garantita: le registrazioni digitali sono a prova di manomissione e permanenti.',
+    
+    // Framework Regulatory Content
+    'eufd-framework-title': 'Framework di Conformità Normativa',
+    'eufd-eu-regulation-desc': 'Questo regolamento dell\'Unione Europea stabilisce il quadro legale per la certificazione e il commercio di crediti di carbonio all\'interno dell\'UE. Rende obbligatorie le piattaforme digitali basate su blockchain per l\'emissione di crediti di carbonio, garantendo trasparenza e prevenendo il doppio conteggio tra gli stati membri.',
+    'eufd-key-requirements': 'Requisiti Chiave:',
+    'eufd-req-1': 'Registrazione su piattaforma digitale per tutte le transazioni di crediti di carbonio',
+    'eufd-req-2': 'Conservazione immutabile dei record basata su blockchain',
+    'eufd-req-3': 'Meccanismi di tracciabilità e trasparenza transfrontalieri',
+    'eufd-iso-title': 'Standard ISO 14064 (Parti 1, 2 e 3)',
+    'eufd-iso-desc': 'Gli standard completi di contabilità e verifica dei gas serra dell\'Organizzazione Internazionale per la Standardizzazione che costituiscono la base tecnica per la misurazione accurata dell\'impronta di carbonio e la certificazione.',
+    'eufd-iso-14064-1': 'ISO 14064-1',
+    'eufd-iso-14064-1-desc': 'Inventari di gas serra a livello organizzativo. Fornisce principi e requisiti per progettare, sviluppare e gestire inventari GHG.',
+    'eufd-iso-14064-2': 'ISO 14064-2',
+    'eufd-iso-14064-2-desc': 'Riduzioni delle emissioni di gas serra a livello di progetto e miglioramenti di rimozione. Si concentra sulla quantificazione e rendicontazione delle riduzioni delle emissioni.',
+    'eufd-iso-14064-3': 'ISO 14064-3',
+    'eufd-iso-14064-3-desc': 'Verifica e validazione delle asserzioni sui gas serra. Fornisce requisiti per verificare inventari GHG organizzativi o di progetto.',
+    
+    // Vision Section Content
+    'eufd-our-vision-title': 'La Nostra Visione: Efficienza e Equità per un Impatto Reale',
+    'eufd-vision-main-text': 'Il nostro obiettivo principale è semplificare drasticamente la richiesta e il riconoscimento delle iniziative di protezione climatica, specialmente nella certificazione CO₂.',
+    'eufd-vision-guarantee': 'Garantiamo che i ricavi dai certificati arrivino dove sono più necessari: con gli stakeholder che guidano la trasformazione sostenibile—dagli agricoltori e sviluppatori di progetti ai produttori di energia e partner di cooperazione.',
+    
+    // Trust and Global Reach
+    'eufd-trust-global-title': 'Fiducia, Sicurezza e Portata Globale',
+    'eufd-trust-standard-desc': 'Con EUFD2025-001, stabiliamo lo standard per fiducia, sicurezza, trasparenza ed efficienza. Attraverso 30 anni di lavoro dedicato nel settore agricolo, FAGRI ha costruito una rete unica con portata internazionale e cooperazione.',
+    'eufd-network-members': 'Membri della Rete',
+    'eufd-network-companies': 'Aziende Coinvolte',
+    'eufd-network-years': 'Anni di Esperienza',
+    
+    // Call to Action
+    'eufd-join-title': 'Unisciti a Noi per un Futuro più Verde',
+    'eufd-join-desc': 'Vuoi saperne di più su EUFD2025-001 o su come può aiutare le tue iniziative di protezione climatica? Contattaci oggi!',
+    'eufd-contact-us': 'Contattaci',
+    'eufd-back-home': 'Torna alla Home',
 
     // Common
     'name': 'Nome',
@@ -1017,6 +1060,49 @@ export const translations = {
     'eufd-vision-subtitle': 'Innovative technologies for a sustainable future.',
     'eufd-trust-title': 'Trust and Reliability',
     'eufd-trust-description': 'Our global network ensures maximum reliability in CO₂ certification.',
+    
+    // Additional EUFD Content - Complete Sections
+    'eufd-blockchain-transparency-title': 'Blockchain Technology for Transparency and Security',
+    'eufd-blockchain-integration-title': 'Mandatory Blockchain Integration',
+    'eufd-blockchain-integration-desc': 'EUFD2025-001 mandates the use of Blockchain technology on a digital platform for the issuance and registration of certified carbon credits, ensuring traceability, transparency and immutability.',
+    'eufd-blockchain-strategic-use': 'At the heart of our standard is the strategic use of blockchain technology. This creates unprecedented transparency and solves critical problems in the carbon market:',
+    'eufd-blockchain-benefit-1': 'Double counting is eliminated: every certificate is unique and immutable.',
+    'eufd-blockchain-benefit-2': 'Greenwashing is prevented: the entire value chain is transparent and traceable.',
+    'eufd-blockchain-benefit-3': 'Clear ownership is guaranteed: digital registrations are tamper-proof and permanent.',
+    
+    // Framework Regulatory Content
+    'eufd-framework-title': 'Regulatory Compliance Framework',
+    'eufd-eu-regulation-desc': 'This European Union regulation establishes the legal framework for certification and trading of carbon credits within the EU. It mandates blockchain-based digital platforms for carbon credit issuance, ensuring transparency and preventing double counting among member states.',
+    'eufd-key-requirements': 'Key Requirements:',
+    'eufd-req-1': 'Digital platform registration for all carbon credit transactions',
+    'eufd-req-2': 'Blockchain-based immutable record keeping',
+    'eufd-req-3': 'Cross-border traceability and transparency mechanisms',
+    'eufd-iso-title': 'ISO 14064 Standards (Parts 1, 2 and 3)',
+    'eufd-iso-desc': 'Comprehensive greenhouse gas accounting and verification standards from the International Organization for Standardization that form the technical basis for accurate carbon footprint measurement and certification.',
+    'eufd-iso-14064-1': 'ISO 14064-1',
+    'eufd-iso-14064-1-desc': 'Organizational-level greenhouse gas inventories. Provides principles and requirements for designing, developing and managing GHG inventories.',
+    'eufd-iso-14064-2': 'ISO 14064-2',
+    'eufd-iso-14064-2-desc': 'Project-level greenhouse gas emission reductions and removal enhancements. Focuses on quantification and reporting of emission reductions.',
+    'eufd-iso-14064-3': 'ISO 14064-3',
+    'eufd-iso-14064-3-desc': 'Verification and validation of greenhouse gas assertions. Provides requirements for verifying organizational or project GHG inventories.',
+    
+    // Vision Section Content
+    'eufd-our-vision-title': 'Our Vision: Efficiency and Equity for Real Impact',
+    'eufd-vision-main-text': 'Our main objective is to drastically simplify the application and recognition of climate protection initiatives, especially in CO₂ certification.',
+    'eufd-vision-guarantee': 'We guarantee that certificate revenues reach where they are most needed: with stakeholders driving sustainable transformation—from farmers and project developers to energy producers and cooperation partners.',
+    
+    // Trust and Global Reach
+    'eufd-trust-global-title': 'Trust, Security and Global Reach',
+    'eufd-trust-standard-desc': 'With EUFD2025-001, we establish the standard for trust, security, transparency and efficiency. Through 30 years of dedicated work in the agricultural sector, FAGRI has built a unique network with international reach and cooperation.',
+    'eufd-network-members': 'Network Members',
+    'eufd-network-companies': 'Companies Involved',
+    'eufd-network-years': 'Years of Experience',
+    
+    // Call to Action
+    'eufd-join-title': 'Join Us for a Greener Future',
+    'eufd-join-desc': 'Want to learn more about EUFD2025-001 or how it can help your climate protection initiatives? Contact us today!',
+    'eufd-contact-us': 'Contact Us',
+    'eufd-back-home': 'Back to Home',
 
     // Common
     'name': 'Name',
