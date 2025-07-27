@@ -229,6 +229,32 @@ export const translations = {
     'eufd-feature3-description': 'Piena conformità con le direttive europee',
     'eufd-feature4-title': 'Accesso Globale',
     'eufd-feature4-description': 'Standard riconosciuto a livello internazionale',
+    
+    // EUFD ISO Standards Section
+    'eufd-iso-14064-1-title': 'ISO 14064-1',
+    'eufd-iso-14064-1-description': 'Quantificazione e rendicontazione delle emissioni di gas serra',
+    'eufd-iso-14064-2-title': 'ISO 14064-2', 
+    'eufd-iso-14064-2-description': 'Progetti per la riduzione delle emissioni di gas serra',
+    'eufd-iso-14064-3-title': 'ISO 14064-3',
+    'eufd-iso-14064-3-description': 'Validazione e verifica delle dichiarazioni sui gas serra',
+    
+    // EUFD Vision Section
+    'eufd-vision-title': 'Visione EUFD2025-001',
+    'eufd-vision-text1': 'Il nostro standard rappresenta il futuro della certificazione agricola europea.',
+    'eufd-vision-text2': 'Tecnologie innovative per un futuro sostenibile.',
+    
+    // EUFD Trust Section
+    'eufd-trust-title': 'Fiducia e Affidabilità',
+    'eufd-trust-text': 'Il nostro network globale garantisce la massima affidabilità nella certificazione CO₂.',
+    'eufd-network-members': 'Membri della Rete',
+    'eufd-network-companies': 'Aziende Partner',
+    'eufd-network-years': 'Anni di Esperienza',
+    
+    // EUFD CTA Section
+    'eufd-cta-title': 'Unisciti al Network EUFD2025-001',
+    'eufd-cta-text': 'Diventa parte del futuro della certificazione agricola sostenibile.',
+    'eufd-cta-contact': 'Contattaci',
+    'eufd-cta-back': 'Torna Indietro',
 
     // Introduction Section Keys
     'intro-stat1': 'Membri Attivi',
@@ -664,6 +690,32 @@ export const translations = {
     'eufd-feature3-description': 'Full compliance with European directives',
     'eufd-feature4-title': 'Global Access',
     'eufd-feature4-description': 'Internationally recognized standard',
+    
+    // EUFD ISO Standards Section
+    'eufd-iso-14064-1-title': 'ISO 14064-1',
+    'eufd-iso-14064-1-description': 'Quantification and reporting of greenhouse gas emissions',
+    'eufd-iso-14064-2-title': 'ISO 14064-2',
+    'eufd-iso-14064-2-description': 'Projects for greenhouse gas emission reductions',
+    'eufd-iso-14064-3-title': 'ISO 14064-3',
+    'eufd-iso-14064-3-description': 'Validation and verification of greenhouse gas assertions',
+    
+    // EUFD Vision Section
+    'eufd-vision-title': 'EUFD2025-001 Vision',
+    'eufd-vision-text1': 'Our standard represents the future of European agricultural certification.',
+    'eufd-vision-text2': 'Innovative technologies for a sustainable future.',
+    
+    // EUFD Trust Section
+    'eufd-trust-title': 'Trust and Reliability',
+    'eufd-trust-text': 'Our global network ensures maximum reliability in CO₂ certification.',
+    'eufd-network-members': 'Network Members',
+    'eufd-network-companies': 'Partner Companies',
+    'eufd-network-years': 'Years of Experience',
+    
+    // EUFD CTA Section
+    'eufd-cta-title': 'Join the EUFD2025-001 Network',
+    'eufd-cta-text': 'Become part of the future of sustainable agricultural certification.',
+    'eufd-cta-contact': 'Contact',
+    'eufd-cta-back': 'Go Back',
 
     // Introduction Section Keys
     'intro-stat1': 'Active Members',
