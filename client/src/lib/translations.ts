@@ -137,6 +137,7 @@ export const translations = {
     'platform-impact-iso': 'Certificazione ISO 14064-1/2/3',
     'platform-eu-standards-title': 'Standard UE per Certificazione CO₂',
     'platform-eu-standards-description': 'Piena conformità agli standard europei: EU ETS (Sistema di Scambio delle Emissioni), preparazione per CBAM 2026 (Meccanismo di Adeguamento del Carbonio alle Frontiere), e integrazione con registri europei per il commercio internazionale di crediti di carbonio.',
+    'platform-learn-more': 'Scopri di Più',
 
     // Dashboard Keys
     'platform-workspace': 'Piattaforma Workspace',
@@ -677,6 +678,7 @@ export const translations = {
     'platform-impact-iso': 'ISO 14064-1/2/3 Certification',
     'platform-eu-standards-title': 'EU Standards for CO₂ Certification',
     'platform-eu-standards-description': 'Full compliance with European standards: EU ETS (Emissions Trading System), preparation for CBAM 2026 (Carbon Border Adjustment Mechanism), and integration with European registries for international carbon credit trading.',
+    'platform-learn-more': 'Learn More',
 
     // Dashboard Keys
     'platform-workspace': 'Platform Workspace',

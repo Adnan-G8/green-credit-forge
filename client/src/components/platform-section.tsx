@@ -1,5 +1,6 @@
 import { useLanguage } from './language-provider';
 import { CheckCircle, ArrowRight, Shield, Database, BarChart3 } from 'lucide-react';
+import { Link } from 'wouter';
 
 export function PlatformSection() {
   const { t } = useLanguage();
@@ -138,6 +139,16 @@ export function PlatformSection() {
                   </p>
                 </div>
               </div>
+            </div>
+            
+            {/* Learn More Button */}
+            <div className="text-center mt-8">
+              <Link href="/co2-certification">
+                <button className="inline-flex items-center px-8 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium">
+                  {t('platform-learn-more')}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
