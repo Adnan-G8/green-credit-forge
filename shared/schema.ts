@@ -178,6 +178,14 @@ export const co2Projects = pgTable("co2_projects", {
   communicationNotes: text("communication_notes"),
   priority: varchar("priority").default("medium"), // 'low', 'medium', 'high', 'urgent'
   
+  // Certification and Blockchain Integration
+  certificationStatus: varchar("certification_status", { length: 50 }).notNull().default("pending"), // pending, approved, certified, rejected
+  certificateNumber: varchar("certificate_number", { length: 100 }),
+  certificateIssueDate: timestamp("certificate_issue_date"),
+  blockchainRecorded: boolean("blockchain_recorded").default(false),
+  blockchainTxHash: varchar("blockchain_tx_hash", { length: 256 }),
+  blockchainTimestamp: timestamp("blockchain_timestamp"),
+  
   // Additional Metadata
   tags: text("tags").array(),
   metadata: jsonb("metadata"),

@@ -46,6 +46,11 @@ interface DashboardProject {
   documentsRequired: number;
   country: string;
   city: string;
+  certificationStatus: 'pending' | 'approved' | 'certified' | 'rejected';
+  certificateNumber?: string;
+  certificateIssueDate?: string;
+  blockchainRecorded: boolean;
+  blockchainTxHash?: string;
 }
 
 interface ProjectActivity {
@@ -66,7 +71,11 @@ interface ProjectMilestone {
   priority: 'low' | 'medium' | 'high' | 'urgent';
 }
 
-export function ProjectTrackingDashboard() {
+interface ProjectTrackingDashboardProps {
+  userId?: string;
+}
+
+export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardProps) {
   const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [filterStatus, setFilterStatus] = useState<string>('all');
