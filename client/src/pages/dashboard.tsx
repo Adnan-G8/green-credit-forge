@@ -400,7 +400,7 @@ export default function Dashboard() {
                 className="flex flex-col items-center justify-center space-y-3 bg-yellow-50 hover:bg-yellow-100 border border-yellow-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
                 <Lightbulb className="h-6 w-6 text-yellow-600 group-hover:scale-110 transition-transform" />
-                <span className="text-yellow-800 font-medium text-center leading-tight">Project Recommendations</span>
+                <span className="text-yellow-800 font-medium text-center leading-tight">{t('project-recommendations')}</span>
               </button>
               
               {/* Admin Panel - only show for Sales Team */}
