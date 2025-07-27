@@ -3,7 +3,8 @@ import { ProjectTrackingDashboard } from '@/components/project-tracking-dashboar
 import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Shield, Lock, ArrowLeft } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Shield, Lock, ArrowLeft, Key, LogIn } from 'lucide-react';
 import backgroundImage from '@assets/image_1753623059363.png';
 
 export default function Dashboard() {
@@ -11,6 +12,8 @@ export default function Dashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [alphaG8Id, setAlphaG8Id] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [loginId, setLoginId] = useState('');
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   useEffect(() => {
     // Check for authentication state
@@ -36,6 +39,25 @@ export default function Dashboard() {
 
   const handleGoHome = () => {
     window.location.href = '/';
+  };
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!loginId.trim()) return;
+    
+    setIsLoggingIn(true);
+    
+    // Simulate authentication check (in real app, this would be an API call)
+    setTimeout(() => {
+      if (loginId.trim().length >= 8) { // Basic validation
+        localStorage.setItem('alphaG8Id', loginId);
+        localStorage.setItem('sessionActive', 'true');
+        setIsAuthenticated(true);
+        setAlphaG8Id(loginId);
+      }
+      setIsLoggingIn(false);
+    }, 1000);
   };
 
   if (isLoading) {
@@ -92,14 +114,46 @@ export default function Dashboard() {
               <div className="text-center mb-6">
                 <h3 className="text-white font-medium mb-2">{t('required-access')}</h3>
                 <p className="text-white/70 text-sm">
-                  {t('valid-alphag8-id-required')}
+                  {t('enter-alphag8-id-key-to-access')}
                 </p>
               </div>
+
+              {/* Login Form */}
+              <form onSubmit={handleLogin} className="space-y-4 mb-6">
+                <div className="relative">
+                  <Key className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-emerald-400" />
+                  <Input
+                    type="text"
+                    placeholder="ALPHAG8 ID KEY"
+                    value={loginId}
+                    onChange={(e) => setLoginId(e.target.value)}
+                    className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/60 backdrop-blur-sm focus:border-emerald-400 focus:ring-emerald-400"
+                    disabled={isLoggingIn}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={isLoggingIn || !loginId.trim()}
+                  className="w-full bg-emerald-600/80 hover:bg-emerald-600 disabled:bg-gray-500/50 backdrop-blur-sm text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 border border-emerald-500/30 flex items-center justify-center gap-2"
+                >
+                  {isLoggingIn ? (
+                    <>
+                      <div className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"></div>
+                      {t('authenticating')}...
+                    </>
+                  ) : (
+                    <>
+                      <LogIn className="h-4 w-4" />
+                      {t('access-dashboard')}
+                    </>
+                  )}
+                </button>
+              </form>
 
               {/* Return button */}
               <button
                 onClick={() => window.location.href = '/'}
-                className="w-full bg-emerald-600/80 hover:bg-emerald-600 backdrop-blur-sm text-white font-medium py-3 px-6 rounded-xl transition-all duration-200 border border-emerald-500/30 flex items-center justify-center gap-2"
+                className="w-full bg-gray-600/80 hover:bg-gray-600 backdrop-blur-sm text-white font-medium py-2 px-6 rounded-xl transition-all duration-200 border border-gray-500/30 flex items-center justify-center gap-2"
               >
                 <ArrowLeft className="h-4 w-4" />
                 {t('return-home')}
