@@ -12,8 +12,6 @@ import { useLanguage } from './language-provider';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { X, Building, User, MapPin, Phone, Mail, Globe, Briefcase, CheckCircle, Search } from 'lucide-react';
-import { PrivacyPolicyModal } from './privacy-policy-modal';
-import { TermsOfServiceModal } from './terms-of-service-modal';
 import { FagriLogo } from '../assets/fagri-logo';
 
 interface MembershipModalProps {
@@ -24,11 +22,6 @@ interface MembershipModalProps {
 export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
   const { t, language } = useLanguage();
   const { toast } = useToast();
-  
-  // Modal states for legal documents
-  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
-  const [showTermsModal, setShowTermsModal] = useState(false);
-  
   // Country search state
   const [countrySearch, setCountrySearch] = useState('');
   
@@ -63,7 +56,6 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     
     // Agreements
     marketingConsent: false,
-    privacyPolicy: false,
     
     // Additional Information
     additionalNotes: ''
@@ -138,7 +130,6 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
         emailContact: false,
         phoneContact: false,
         marketingConsent: false,
-        privacyPolicy: false,
         additionalNotes: ''
       });
       onClose();
@@ -156,7 +147,7 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     // Validation
     if (!formData.membershipType || !formData.firstName || !formData.lastName || 
         !formData.email || !formData.phone || !formData.country || 
-        !formData.businessSector || !formData.privacyPolicy) {
+        !formData.businessSector) {
       toast({
         title: t('validation-error'),
         description: t('required-fields-missing'),
@@ -584,57 +575,6 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                   </Label>
                 </div>
                 
-                <div className="flex items-start space-x-2">
-                  <Checkbox
-                    id="privacyPolicy"
-                    checked={formData.privacyPolicy}
-                    onCheckedChange={(checked) => updateFormData('privacyPolicy', checked)}
-                  />
-                  <Label htmlFor="privacyPolicy" className="text-slate-700 leading-relaxed">
-                    {language === 'it' ? (
-                      <>
-                        Accetto la{' '}
-                        <button
-                          type="button"
-                          onClick={() => setShowPrivacyModal(true)}
-                          className="text-emerald-600 hover:text-emerald-700 underline font-medium"
-                        >
-                          Informativa sulla Privacy
-                        </button>
-                        {' '}e i{' '}
-                        <button
-                          type="button"
-                          onClick={() => setShowTermsModal(true)}
-                          className="text-emerald-600 hover:text-emerald-700 underline font-medium"
-                        >
-                          Termini di Servizio
-                        </button>
-                        {' '}*
-                      </>
-                    ) : (
-                      <>
-                        I agree to the{' '}
-                        <button
-                          type="button"
-                          onClick={() => setShowPrivacyModal(true)}
-                          className="text-emerald-600 hover:text-emerald-700 underline font-medium"
-                        >
-                          Privacy Policy
-                        </button>
-                        {' '}and{' '}
-                        <button
-                          type="button"
-                          onClick={() => setShowTermsModal(true)}
-                          className="text-emerald-600 hover:text-emerald-700 underline font-medium"
-                        >
-                          Terms of Service
-                        </button>
-                        {' '}*
-                      </>
-                    )}
-                  </Label>
-                </div>
-                
                 <div className="space-y-2">
                   <Label htmlFor="additionalNotes" className="text-slate-800 font-medium">
                     {t('additional-notes')}
@@ -675,17 +615,6 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
         </div>
         </DialogContent>
       </Dialog>
-      
-      {/* Legal Document Modals - Outside main dialog to avoid z-index conflicts */}
-      <PrivacyPolicyModal 
-        isOpen={showPrivacyModal} 
-        onClose={() => setShowPrivacyModal(false)} 
-      />
-      
-      <TermsOfServiceModal 
-        isOpen={showTermsModal} 
-        onClose={() => setShowTermsModal(false)} 
-      />
     </>
   );
 }

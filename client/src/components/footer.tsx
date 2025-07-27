@@ -1,18 +1,11 @@
-import { useState } from 'react';
 import { useLanguage } from './language-provider';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'wouter';
 import { ExternalLink } from 'lucide-react';
-import { PrivacyPolicyModal } from './privacy-policy-modal';
-import { TermsOfServiceModal } from './terms-of-service-modal';
 
 export function Footer() {
   const { t } = useLanguage();
   const [location, setLocation] = useLocation();
-  
-  // Modal states for legal documents
-  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
-  const [showTermsModal, setShowTermsModal] = useState(false);
 
   const navigateToSection = (sectionId: string) => {
     // If we're on the home page, scroll to section
@@ -89,18 +82,16 @@ export function Footer() {
             {/* Legal Links */}
             <h4 className="font-semibold mb-4 mt-8 text-white">{t('footer-legal')}</h4>
             <div className="space-y-2 text-sm text-gray-400">
-              <button
-                onClick={() => setShowPrivacyModal(true)}
-                className="hover:text-emerald-400 transition-colors cursor-pointer block text-left"
-              >
-                {t('footer-privacy')}
-              </button>
-              <button
-                onClick={() => setShowTermsModal(true)}
-                className="hover:text-emerald-400 transition-colors cursor-pointer block text-left"
-              >
-                {t('footer-terms')}
-              </button>
+              <Link href="/privacy">
+                <span className="hover:text-emerald-400 transition-colors cursor-pointer block">
+                  {t('footer-privacy')}
+                </span>
+              </Link>
+              <Link href="/terms">
+                <span className="hover:text-emerald-400 transition-colors cursor-pointer block">
+                  {t('footer-terms')}
+                </span>
+              </Link>
               <Link href="/gdpr">
                 <span className="hover:text-emerald-400 transition-colors cursor-pointer block">
                   {t('footer-gdpr')}
@@ -230,17 +221,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-      
-      {/* Legal Document Modals */}
-      <PrivacyPolicyModal 
-        isOpen={showPrivacyModal} 
-        onClose={() => setShowPrivacyModal(false)} 
-      />
-      
-      <TermsOfServiceModal 
-        isOpen={showTermsModal} 
-        onClose={() => setShowTermsModal(false)} 
-      />
     </footer>
   );
 }
