@@ -4,13 +4,14 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro, Settings } from 'lucide-react';
+import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro, Settings, Lightbulb } from 'lucide-react';
 import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
 import { SecurityDashboardModal } from '@/components/security-dashboard-modal';
 import { OrganizationInformationModal } from '@/components/organization-information-modal';
 import { CertificationPricingModal } from '@/components/certification-pricing-modal';
 import { AdminUserManagementModal } from '@/components/admin-user-management-modal';
+import { RenewableEnergyRecommendationsModal } from '@/components/renewable-energy-recommendations-modal';
 
 export default function Dashboard() {
   const { t } = useLanguage();
@@ -24,6 +25,7 @@ export default function Dashboard() {
   const [showOrganizationInfo, setShowOrganizationInfo] = useState(false);
   const [showPricingInfo, setShowPricingInfo] = useState(false);
   const [showAdminPanel, setShowAdminPanel] = useState(false);
+  const [showRecommendations, setShowRecommendations] = useState(false);
   const [currentUserRole, setCurrentUserRole] = useState('FAGRI Member');
 
   useEffect(() => {
@@ -100,6 +102,10 @@ export default function Dashboard() {
 
   const handleAdminPanel = () => {
     setShowAdminPanel(true);
+  };
+
+  const handleShowRecommendations = () => {
+    setShowRecommendations(true);
   };
 
   // Mock: determine user role based on FAGRI ID (in real app, this comes from backend)
@@ -267,6 +273,10 @@ export default function Dashboard() {
                     <span className="text-white font-medium">{t('authenticated-session')}</span>
                   </div>
                 </div>
+                <div className="bg-emerald-600/30 backdrop-blur-sm rounded-lg px-6 py-3 border border-emerald-400/50 w-full sm:w-auto sm:min-w-[280px]">
+                  <div className="text-xs text-emerald-200 font-medium">ALPHAG8 ID KEY</div>
+                  <div className="text-white font-mono text-sm">{alphaG8Id}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -313,7 +323,7 @@ export default function Dashboard() {
             </div>
             
             {/* Navigation Options */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
               <button
                 onClick={handleViewKeyCard}
                 className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
@@ -352,6 +362,14 @@ export default function Dashboard() {
               >
                 <Euro className="h-6 w-6 text-orange-600 group-hover:scale-110 transition-transform" />
                 <span className="text-orange-800 font-medium text-center leading-tight">{t('view-certification-pricing')}</span>
+              </button>
+
+              <button
+                onClick={handleShowRecommendations}
+                className="flex flex-col items-center justify-center space-y-3 bg-yellow-50 hover:bg-yellow-100 border border-yellow-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+              >
+                <Lightbulb className="h-6 w-6 text-yellow-600 group-hover:scale-110 transition-transform" />
+                <span className="text-yellow-800 font-medium text-center leading-tight">Project Recommendations</span>
               </button>
               
               {/* Admin Panel - only show for Sales Team */}
@@ -396,6 +414,19 @@ export default function Dashboard() {
         isOpen={showAdminPanel}
         onClose={() => setShowAdminPanel(false)}
         currentUserRole={currentUserRole}
+      />
+
+      {/* Renewable Energy Recommendations Modal */}
+      <RenewableEnergyRecommendationsModal
+        isOpen={showRecommendations}
+        onClose={() => setShowRecommendations(false)}
+        userProfile={{
+          fullName: 'Marco Rossi',
+          email: 'marco.rossi@agritech.it',
+          company: 'AgroTech Solutions S.r.l.',
+          city: 'Roma',
+          role: 'FAGRI Member'
+        }}
       />
     </div>
   );
