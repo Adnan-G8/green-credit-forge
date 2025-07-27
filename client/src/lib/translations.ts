@@ -208,6 +208,85 @@ export const translations = {
     'access-dashboard': 'Accedi alla Dashboard',
     'return-home': 'Torna alla Home',
 
+    // EUFD Standard Page Keys
+    'eufd-intro-title': 'Introduzione al Standard EUFD2025-001',
+    'eufd-intro-text1': 'Il Standard EUFD2025-001 rappresenta il nuovo quadro europeo per la certificazione CO₂ in agricoltura.',
+    'eufd-intro-text2': 'Sviluppato in collaborazione con la Commissione Europea e organismi internazionali.',
+    'eufd-launch-info': 'Informazioni di Lancio',
+    'eufd-global-vision': 'Visione Globale per la Sostenibilità Agricola',
+    'eufd-features-title': 'Caratteristiche del Standard',
+    'eufd-feature1-title': 'Certificazione Rigorosa',
+    'eufd-feature1-description': 'Processi di verifica conformi agli standard ISO 14064',
+    'eufd-feature2-title': 'Trasparenza Blockchain',
+    'eufd-feature2-description': 'Tracciabilità completa attraverso tecnologia blockchain',
+    'eufd-feature3-title': 'Conformità Europea',
+    'eufd-feature3-description': 'Piena conformità con le direttive europee',
+    'eufd-feature4-title': 'Accesso Globale',
+    'eufd-feature4-description': 'Standard riconosciuto a livello internazionale',
+
+    // Introduction Section Keys
+    'intro-stat1': 'Membri Attivi',
+    'intro-stat2': 'Imprese Italiane', 
+    'intro-stat3': 'Anni di Esperienza',
+    'intro-stat4': 'Uffici',
+    'intro-mission-title': 'La Nostra Missione',
+    'intro-mission': 'Con radici agricole solide, una visione internazionale e un\'indipendenza tecnica, offriamo uno strumento etico, funzionale e accessibile per supportare una partecipazione autentica alla transizione ecologica.',
+    'intro-innovation-title': 'Innovazione Digitale',
+    'intro-innovation-text': 'Utilizziamo tecnologie avanzate come IoT, blockchain e intelligenza artificiale per creare un ecosistema agricolo completamente digitalizzato e tracciabile.',
+    'intro-sustainability-title': 'Sostenibilità Certificata',
+    'intro-sustainability-text': 'I nostri protocolli di certificazione garantiscono che ogni credito di carbonio sia verificabile, misurabile e conforme agli standard internazionali più rigorosi.',
+
+    // Opportunities Section Keys
+    'opportunities-title': 'Opportunità per le imprese agricole, per le imprese agroforestali e per le imprese energetiche',
+    'opportunities-subtitle': 'L\'accordo di PARIGI del 2015 a cui hanno aderito ben 194 paesi della Terra, prevede il raggiungimento della neutralità climatica entro il 2050, attraverso progetti di mitigazione ambientale da Carbon farming finalizzati alla cattura della CO2 e progetti da fonti rinnovabili finalizzati al non immissione di CO2 in atmosfera.',
+    'opportunities-markets-title': 'Mercati del Carbonio',
+    'opportunities-market-voluntary': 'Mercati Volontari',
+    'opportunities-market-voluntary-desc': 'Crediti carbon per aziende private',
+    'opportunities-market-regulated': 'Mercati Regolamentati',
+    'opportunities-market-regulated-desc': 'Sistemi di scambio delle emissioni UE',
+
+    // Standard Section Keys
+    'standard-title': 'Standard di Certificazione',
+    'standard-subtitle': 'Conformità agli standard internazionali più rigorosi',
+    'standard-read-more': 'Leggi di Più',
+
+    // Platform Section Keys
+    'platform-title': 'Piattaforma di Certificazione',
+    'platform-intro': 'Introduzione alla Piattaforma',
+
+    // Security Section Keys
+    'security-title': 'Sicurezza e Protezione Dati',
+    'security-intro': 'Sicurezza a livello bancario svizzero',
+    'security-3fa-title': 'Autenticazione a Tre Fattori',
+    'security-3fa-summary': 'Sistema di sicurezza avanzato',
+    'security-data-title': 'Sovranità dei Dati',
+    'security-data-summary': 'Controllo completo sui tuoi dati',
+    'security-summary-title': 'Infrastruttura Sicura',
+    'security-infrastructure-summary': 'Data center alpini protetti',
+    'security-cta-title': 'Scopri la Nostra Sicurezza',
+    'security-cta-description': 'Tecnologia di sicurezza a livello bancario svizzero',
+    'security-cta-button': 'Visualizza Dettagli Sicurezza',
+
+    // Renewable Energy Section Keys
+    'renewable-title': 'Energia Rinnovabile',
+    'renewable-subtitle': 'Progetti di energia pulita certificati',
+
+    // Contact Section Keys
+    'contact-conclusion': 'Contattaci per maggiori informazioni',
+
+    // Footer Keys
+    'footer-platform': 'Piattaforma',
+    'footer-standard': 'Standard',
+    'footer-certification': 'Certificazione',
+    'footer-security': 'Sicurezza',
+    'footer-legal': 'Documentazione Legale',
+    'footer-privacy': 'Privacy Policy',
+    'footer-terms': 'Termini di Servizio',
+    'footer-gdpr': 'GDPR',
+    'footer-cookies': 'Cookie Policy',
+    'footer-description': 'Piattaforma digitale per la certificazione CO₂ agricola',
+    'footer-copyright': '© 2025 FAGRI DIGITAL S.r.l. Tutti i diritti riservati.',
+
     // Common
     'name': 'Nome',
     'email': 'Email',
@@ -434,6 +513,85 @@ export const translations = {
     'authenticating': 'Authenticating',
     'access-dashboard': 'Access Dashboard',
     'return-home': 'Return Home',
+
+    // EUFD Standard Page Keys
+    'eufd-intro-title': 'Introduction to EUFD2025-001 Standard',
+    'eufd-intro-text1': 'The EUFD2025-001 Standard represents the new European framework for CO₂ certification in agriculture.',
+    'eufd-intro-text2': 'Developed in collaboration with the European Commission and international bodies.',
+    'eufd-launch-info': 'Launch Information',
+    'eufd-global-vision': 'Global Vision for Agricultural Sustainability',
+    'eufd-features-title': 'Standard Features',
+    'eufd-feature1-title': 'Rigorous Certification',
+    'eufd-feature1-description': 'Verification processes compliant with ISO 14064 standards',
+    'eufd-feature2-title': 'Blockchain Transparency',
+    'eufd-feature2-description': 'Complete traceability through blockchain technology',
+    'eufd-feature3-title': 'European Compliance',
+    'eufd-feature3-description': 'Full compliance with European directives',
+    'eufd-feature4-title': 'Global Access',
+    'eufd-feature4-description': 'Internationally recognized standard',
+
+    // Introduction Section Keys
+    'intro-stat1': 'Active Members',
+    'intro-stat2': 'Italian Companies',
+    'intro-stat3': 'Years of Experience',
+    'intro-stat4': 'Offices',
+    'intro-mission-title': 'Our Mission',
+    'intro-mission': 'With solid agricultural roots, an international vision and technical independence, we offer an ethical, functional and accessible tool to support authentic participation in the ecological transition.',
+    'intro-innovation-title': 'Digital Innovation',
+    'intro-innovation-text': 'We use advanced technologies such as IoT, blockchain and artificial intelligence to create a fully digitized and traceable agricultural ecosystem.',
+    'intro-sustainability-title': 'Certified Sustainability',
+    'intro-sustainability-text': 'Our certification protocols ensure that every carbon credit is verifiable, measurable and compliant with the most rigorous international standards.',
+
+    // Opportunities Section Keys
+    'opportunities-title': 'Opportunities for agricultural companies, agroforestry companies and energy companies',
+    'opportunities-subtitle': 'The PARIS agreement of 2015, which 194 countries of the Earth have joined, provides for achieving climate neutrality by 2050, through environmental mitigation projects from Carbon farming aimed at capturing CO2 and renewable energy projects aimed at not releasing CO2 into the atmosphere.',
+    'opportunities-markets-title': 'Carbon Markets',
+    'opportunities-market-voluntary': 'Voluntary Markets',
+    'opportunities-market-voluntary-desc': 'Carbon credits for private companies',
+    'opportunities-market-regulated': 'Regulated Markets',
+    'opportunities-market-regulated-desc': 'EU emissions trading systems',
+
+    // Standard Section Keys
+    'standard-title': 'Certification Standards',
+    'standard-subtitle': 'Compliance with the most rigorous international standards',
+    'standard-read-more': 'Read More',
+
+    // Platform Section Keys
+    'platform-title': 'Certification Platform',
+    'platform-intro': 'Platform Introduction',
+
+    // Security Section Keys
+    'security-title': 'Security and Data Protection',
+    'security-intro': 'Swiss banking-level security',
+    'security-3fa-title': 'Three-Factor Authentication',
+    'security-3fa-summary': 'Advanced security system',
+    'security-data-title': 'Data Sovereignty',
+    'security-data-summary': 'Complete control over your data',
+    'security-summary-title': 'Secure Infrastructure',
+    'security-infrastructure-summary': 'Protected Alpine data centers',
+    'security-cta-title': 'Discover Our Security',
+    'security-cta-description': 'Swiss banking-level security technology',
+    'security-cta-button': 'View Security Details',
+
+    // Renewable Energy Section Keys
+    'renewable-title': 'Renewable Energy',
+    'renewable-subtitle': 'Certified clean energy projects',
+
+    // Contact Section Keys
+    'contact-conclusion': 'Contact us for more information',
+
+    // Footer Keys
+    'footer-platform': 'Platform',
+    'footer-standard': 'Standard',
+    'footer-certification': 'Certification',
+    'footer-security': 'Security',
+    'footer-legal': 'Legal Documentation',
+    'footer-privacy': 'Privacy Policy',
+    'footer-terms': 'Terms of Service',
+    'footer-gdpr': 'GDPR',
+    'footer-cookies': 'Cookie Policy',
+    'footer-description': 'Digital platform for agricultural CO₂ certification',
+    'footer-copyright': '© 2025 FAGRI DIGITAL S.r.l. All rights reserved.',
 
     // Common
     'name': 'Name',
