@@ -4,11 +4,12 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2 } from 'lucide-react';
+import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro } from 'lucide-react';
 import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
 import { KeyInfoModal } from '@/components/key-info-modal';
 import { OrganizationInformationModal } from '@/components/organization-information-modal';
+import { CertificationPricingModal } from '@/components/certification-pricing-modal';
 
 export default function Dashboard() {
   const { t } = useLanguage();
@@ -20,6 +21,7 @@ export default function Dashboard() {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [showKeyInfo, setShowKeyInfo] = useState(false);
   const [showOrganizationInfo, setShowOrganizationInfo] = useState(false);
+  const [showPricingInfo, setShowPricingInfo] = useState(false);
 
   useEffect(() => {
     // Fast authentication check - immediate, no loading delay
@@ -87,6 +89,10 @@ export default function Dashboard() {
 
   const handleOrganizationInformation = () => {
     setShowOrganizationInfo(true);
+  };
+
+  const handleViewPricing = () => {
+    setShowPricingInfo(true);
   };
 
   const handleViewKeyCard = () => {
@@ -296,7 +302,7 @@ export default function Dashboard() {
             </div>
             
             {/* Navigation Options */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               <button
                 onClick={handleViewKeyCard}
                 className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
@@ -328,6 +334,14 @@ export default function Dashboard() {
                 <Building2 className="h-6 w-6 text-slate-600 group-hover:scale-110 transition-transform" />
                 <span className="text-slate-800 font-medium text-center leading-tight">{t('organization-information')}</span>
               </button>
+              
+              <button
+                onClick={handleViewPricing}
+                className="flex flex-col items-center justify-center space-y-3 bg-orange-50 hover:bg-orange-100 border border-orange-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+              >
+                <Euro className="h-6 w-6 text-orange-600 group-hover:scale-110 transition-transform" />
+                <span className="text-orange-800 font-medium text-center leading-tight">{t('view-certification-pricing')}</span>
+              </button>
             </div>
           </div>
           
@@ -347,6 +361,12 @@ export default function Dashboard() {
         isOpen={showOrganizationInfo}
         onClose={() => setShowOrganizationInfo(false)}
         alphaG8Id={alphaG8Id}
+      />
+
+      {/* Certification Pricing Modal */}
+      <CertificationPricingModal
+        isOpen={showPricingInfo}
+        onClose={() => setShowPricingInfo(false)}
       />
     </div>
   );

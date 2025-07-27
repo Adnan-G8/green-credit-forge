@@ -198,6 +198,17 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 27, 2025)
 
+- **Official FAGRI Digital Pricing Integration** (July 27, 2025):
+  * **Comprehensive Certification Pricing Modal**: Integrated official FAGRI Digital tariff structure from received PDF document
+  * **Environmental Compensation Project Pricing**: Complete tiered pricing structure (€10/ha to €0.25/ha) based on project size from 1-1,000,000+ hectares
+  * **Renewable Energy Project Pricing**: Detailed kW-based pricing structure (€10/kW to €0.50/kW) for renewable energy carbon credit projects  
+  * **Official Company Information Display**: Added complete FAGRI DIGITAL S.r.l. contact details (Via Isonzo 38, Roma, emails)
+  * **Bank Transfer Payment Instructions**: Clear payment methodology via bank transfer to FAGRI DIGITAL certification system
+  * **22% VAT Integration**: All pricing includes proper Italian VAT structure as per official documentation
+  * **Dashboard Pricing Access**: New orange Euro button in dashboard for instant pricing access
+  * **Complete Bilingual Support**: Full Italian and English translations for all pricing terminology and official company information
+  * **Professional Pricing Display**: Banking-style tables with hover effects and clear tier breakdowns for easy project cost calculation
+
 - **Advanced Form Data Structure Enhancement**:
   * **Structured Address Fields**: Replaced free-text address with international standard fields (Street Address, City, Postal Code, Province/State) for better data export and mass email functionality
   * **Dynamic Renewable Energy Form Behavior**: When "Renewable Energy" project type is selected, hectares field automatically switches to renewable energy type dropdown with capacity specifications
