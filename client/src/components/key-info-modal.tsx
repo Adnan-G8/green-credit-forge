@@ -418,6 +418,10 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                   <Switch
                     checked={autoRenewalEnabled}
                     onCheckedChange={setAutoRenewalEnabled}
+                    className={`${autoRenewalEnabled 
+                      ? 'data-[state=checked]:bg-green-600' 
+                      : 'data-[state=unchecked]:bg-red-500'
+                    }`}
                   />
                 </div>
                 
