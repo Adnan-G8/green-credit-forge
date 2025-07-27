@@ -18,6 +18,10 @@ import {
   ProjectActivity,
   InsertProjectActivity
 } from "@shared/schema";
+import { 
+  OrganizationInformation, 
+  InsertOrganizationInformation 
+} from "@shared/organization-schema";
 
 export interface IStorage {
   // User operations
@@ -57,6 +61,11 @@ export interface IStorage {
   // Blockchain integration methods
   recordOnBlockchain(projectId: string, txHash: string): Promise<boolean>;
   updateCertificationStatus(projectId: string, status: 'pending' | 'approved' | 'certified' | 'rejected', certificateNumber?: string): Promise<boolean>;
+
+  // Organization information operations
+  createOrganizationInformation(info: InsertOrganizationInformation): Promise<OrganizationInformation>;
+  getOrganizationInformation(alphaG8Id: string): Promise<OrganizationInformation | undefined>;
+  updateOrganizationInformation(alphaG8Id: string, updates: Partial<OrganizationInformation>): Promise<OrganizationInformation | undefined>;
 }
 
 export class MemStorage implements IStorage {
@@ -69,6 +78,7 @@ export class MemStorage implements IStorage {
   private co2Projects: CO2Project[] = [];
   private projectMilestones: ProjectMilestone[] = [];
   private projectActivities: ProjectActivity[] = [];
+  private organizationInformation: OrganizationInformation[] = [];
 
   constructor() {
     this.populateSampleData();
@@ -547,6 +557,69 @@ export class MemStorage implements IStorage {
     ];
 
     this.projectActivities = sampleActivities;
+  }
+
+  // Organization Information operations
+  async createOrganizationInformation(info: InsertOrganizationInformation): Promise<OrganizationInformation> {
+    const newInfo: OrganizationInformation = {
+      ...info,
+      id: `org-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      submittedAt: new Date(),
+      updatedAt: new Date(),
+    };
+
+    this.organizationInformation.push(newInfo);
+    return newInfo;
+  }
+
+  async getOrganizationInformation(alphaG8Id: string): Promise<OrganizationInformation | undefined> {
+    return this.organizationInformation.find(info => info.alphaG8Id === alphaG8Id);
+  }
+
+  async updateOrganizationInformation(alphaG8Id: string, updates: Partial<OrganizationInformation>): Promise<OrganizationInformation | undefined> {
+    const index = this.organizationInformation.findIndex(info => info.alphaG8Id === alphaG8Id);
+    if (index === -1) {
+      return undefined;
+    }
+
+    const updatedInfo = {
+      ...this.organizationInformation[index],
+      ...updates,
+      updatedAt: new Date(),
+    };
+
+    this.organizationInformation[index] = updatedInfo;
+    return updatedInfo;
+  }
+
+  // Certification Status operations for Projects
+  async updateCertificationStatus(projectId: string, status: 'pending' | 'approved' | 'certified' | 'rejected', certificateNumber?: string): Promise<boolean> {
+    const project = this.co2Projects.find(p => p.id === projectId);
+    if (!project) {
+      return false;
+    }
+
+    project.certificationStatus = status;
+    if (certificateNumber) {
+      project.certificateNumber = certificateNumber;
+      project.issueDate = new Date();
+    }
+    project.updatedAt = new Date();
+    
+    return true;
+  }
+
+  // Blockchain integration
+  async recordOnBlockchain(projectId: string, txHash: string): Promise<boolean> {
+    const project = this.co2Projects.find(p => p.id === projectId);
+    if (!project) {
+      return false;
+    }
+    
+    project.blockchainTxHash = txHash;
+    project.updatedAt = new Date();
+    
+    return true;
   }
 }
 

@@ -11,6 +11,7 @@ import {
   insertProjectMilestoneSchema,
   insertProjectActivitySchema
 } from "@shared/schema";
+import { insertOrganizationInformationSchema, type InsertOrganizationInformation } from "@shared/organization-schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -223,6 +224,42 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error creating activity:", error);
       res.status(400).json({ message: "Invalid activity data" });
+    }
+  });
+
+  // Organization Information API endpoint
+  app.post("/api/organization-information", async (req, res) => {
+    try {
+      const validatedData = insertOrganizationInformationSchema.parse(req.body);
+      const organizationInfo = await storage.createOrganizationInformation(validatedData);
+      
+      console.log("Organization information saved:", organizationInfo);
+      
+      res.json({ 
+        success: true, 
+        message: "Organization information saved successfully",
+        id: organizationInfo.id 
+      });
+    } catch (error) {
+      console.error("Error saving organization information:", error);
+      res.status(400).json({ 
+        success: false, 
+        message: "Invalid organization information data" 
+      });
+    }
+  });
+
+  // Get organization information by ALPHAG8 ID
+  app.get("/api/organization-information/:alphaG8Id", async (req, res) => {
+    try {
+      const organizationInfo = await storage.getOrganizationInformation(req.params.alphaG8Id);
+      if (!organizationInfo) {
+        return res.status(404).json({ message: "Organization information not found" });
+      }
+      res.json(organizationInfo);
+    } catch (error) {
+      console.error("Error fetching organization information:", error);
+      res.status(500).json({ message: "Internal server error" });
     }
   });
 

@@ -4,10 +4,11 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info } from 'lucide-react';
+import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2 } from 'lucide-react';
 import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
 import { KeyInfoModal } from '@/components/key-info-modal';
+import { OrganizationInformationModal } from '@/components/organization-information-modal';
 
 export default function Dashboard() {
   const { t } = useLanguage();
@@ -18,6 +19,7 @@ export default function Dashboard() {
   const [loginId, setLoginId] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [showKeyInfo, setShowKeyInfo] = useState(false);
+  const [showOrganizationInfo, setShowOrganizationInfo] = useState(false);
 
   useEffect(() => {
     // Fast authentication check - immediate, no loading delay
@@ -83,9 +85,8 @@ export default function Dashboard() {
     console.log('Upload Project clicked');
   };
 
-  const handleMyInformation = () => {
-    // Open user information modal
-    console.log('My Information clicked');
+  const handleOrganizationInformation = () => {
+    setShowOrganizationInfo(true);
   };
 
   const handleViewKeyCard = () => {
@@ -321,11 +322,11 @@ export default function Dashboard() {
               </button>
               
               <button
-                onClick={handleMyInformation}
+                onClick={handleOrganizationInformation}
                 className="flex flex-col items-center justify-center space-y-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <User className="h-6 w-6 text-slate-600 group-hover:scale-110 transition-transform" />
-                <span className="text-slate-800 font-medium text-center leading-tight">{t('my-information')}</span>
+                <Building2 className="h-6 w-6 text-slate-600 group-hover:scale-110 transition-transform" />
+                <span className="text-slate-800 font-medium text-center leading-tight">{t('organization-information')}</span>
               </button>
             </div>
           </div>
@@ -338,6 +339,13 @@ export default function Dashboard() {
       <KeyInfoModal 
         isOpen={showKeyInfo}
         onClose={() => setShowKeyInfo(false)}
+        alphaG8Id={alphaG8Id}
+      />
+
+      {/* Organization Information Modal */}
+      <OrganizationInformationModal
+        isOpen={showOrganizationInfo}
+        onClose={() => setShowOrganizationInfo(false)}
         alphaG8Id={alphaG8Id}
       />
     </div>
