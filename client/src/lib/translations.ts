@@ -291,6 +291,8 @@ export const translations = {
     // Renewable Energy Section Keys
     'renewable-title': 'Energia Rinnovabile',
     'renewable-subtitle': 'Progetti di energia pulita certificati',
+    'download-eufd-standard': 'FAGRI DIGITAL STANDARD DI CERTIFICAZIONE',
+    'download-standard-desc': 'Scarica il documento completo EUFD2025-001',
 
     // Contact Section Keys
     'contact-conclusion': 'Contattaci per maggiori informazioni',
@@ -724,6 +726,8 @@ export const translations = {
     // Renewable Energy Section Keys
     'renewable-title': 'Renewable Energy',
     'renewable-subtitle': 'Certified clean energy projects',
+    'download-eufd-standard': 'FAGRI DIGITAL CERTIFICATION STANDARD',
+    'download-standard-desc': 'Download the complete EUFD2025-001 document',
 
     // Contact Section Keys
     'contact-conclusion': 'Contact us for more information',
