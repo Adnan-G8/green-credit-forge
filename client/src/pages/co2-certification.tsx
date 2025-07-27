@@ -15,178 +15,176 @@ export default function CO2Certification() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
-              CO₂ Certification
+              {t('co2-cert-title')}
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed font-light">
-              Certification system for carbon credits
+              {t('co2-cert-subtitle')}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Trusted Partner Section */}
-      <section className="py-16 bg-white">
+      {/* Main Content */}
+      <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-light text-slate-900 mb-6">
-              Your Trusted Partner for CO₂ Certification
-            </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              On the FAGRI.Digital platform, CO₂ certification is built on a foundation of scientific rigour, cutting-edge technology, and robust legal compliance.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Collaborative Framework */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto mb-12">
-            <h2 className="text-3xl font-light text-slate-900 mb-6">
-              Our Collaborative Framework
-            </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              Our CO₂ certification process operates under the EUFD2025-001 standard, developed over years of research with prominent Italian universities and our technology partner, ALPHAG8 Digital Solutions Switzerland.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Regulatory Framework */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-slate-50 rounded-xl p-8 border border-slate-200 mb-12">
+          <div className="max-w-5xl mx-auto space-y-12">
+            
+            {/* Collaborative Framework */}
+            <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                Regulatory Framework
+                {t('co2-cert-framework-title')}
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Our certification system complies with the most rigorous international standards
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                {t('co2-cert-framework-description')}
               </p>
+              
+              {/* Partners Grid */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Globe className="text-blue-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-partner-eu')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-partner-eu-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Shield className="text-green-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-partner-ministry')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-partner-ministry-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="text-amber-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-partner-gse')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-partner-gse-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Users className="text-purple-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-partner-iso')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-partner-iso-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <FileText className="text-emerald-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-partner-uni')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-partner-uni-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Lock className="text-cyan-700 h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-partner-suolo')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-partner-suolo-desc')}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            {/* Partners Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-lg p-6 border border-slate-200">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Globe className="text-blue-700 h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-slate-900 mb-2">European Commission</h3>
-                    <p className="text-slate-600 text-sm">Official partnership with European institutions</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-lg p-6 border border-slate-200">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Shield className="text-green-700 h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-slate-900 mb-2">Ministry of Environment</h3>
-                    <p className="text-slate-600 text-sm">Collaboration with the Italian government</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-lg p-6 border border-slate-200">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="text-amber-700 h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-slate-900 mb-2">GSE - Energy Services Manager</h3>
-                    <p className="text-slate-600 text-sm">Partnership with the national energy authority</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-lg p-6 border border-slate-200">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Users className="text-purple-700 h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-slate-900 mb-2">ISO Standards</h3>
-                    <p className="text-slate-600 text-sm">Compliance with international standards</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-lg p-6 border border-slate-200">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FileText className="text-emerald-700 h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-slate-900 mb-2">Universities</h3>
-                    <p className="text-slate-600 text-sm">Collaboration with academic institutions</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-white rounded-lg p-6 border border-slate-200">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Lock className="text-cyan-700 h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-slate-900 mb-2">SUOLO E SALUTE</h3>
-                    <p className="text-slate-600 text-sm">Organic certification body</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Additional detailed partner information */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="bg-white rounded-lg p-8 border border-slate-200">
-              <h3 className="text-xl font-medium text-slate-900 mb-4">European Commission</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Aligning with overarching EU climate policies and goals.
+            {/* Legal Framework */}
+            <div className="bg-white rounded-xl p-8 border border-slate-200">
+              <h2 className="text-3xl font-light text-slate-900 mb-6">
+                {t('co2-cert-legal-title')}
+              </h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                {t('co2-cert-legal-description')}
               </p>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-slate-50 rounded-lg p-6">
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-ets')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-ets-desc')}</p>
+                </div>
+                
+                <div className="bg-slate-50 rounded-lg p-6">
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-cbam')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-cbam-desc')}</p>
+                </div>
+                
+                <div className="bg-slate-50 rounded-lg p-6">
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-aml')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-aml-desc')}</p>
+                </div>
+                
+                <div className="bg-slate-50 rounded-lg p-6">
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-paris')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-paris-desc')}</p>
+                </div>
+                
+                <div className="bg-slate-50 rounded-lg p-6">
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-compliance-kyoto')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-kyoto-desc')}</p>
+                </div>
+              </div>
             </div>
-            
-            <div className="bg-white rounded-lg p-8 border border-slate-200">
-              <h3 className="text-xl font-medium text-slate-900 mb-4">Italian Ministry of Environment</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Ensuring compliance with national environmental regulations.
+
+            {/* Technology and Security */}
+            <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
+              <h2 className="text-3xl font-light text-slate-900 mb-6">
+                {t('co2-cert-technology-title')}
+              </h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                {t('co2-cert-technology-description')}
               </p>
-            </div>
-            
-            <div className="bg-white rounded-lg p-8 border border-slate-200">
-              <h3 className="text-xl font-medium text-slate-900 mb-4">GSE (Gestore dei Sistemi Energetici)</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Integrating with established energy and emissions management frameworks.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-lg p-8 border border-slate-200">
-              <h3 className="text-xl font-medium text-slate-900 mb-4">ISO (International Organization for Standardization)</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Upholding globally recognized quality and procedural benchmarks.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-lg p-8 border border-slate-200">
-              <h3 className="text-xl font-medium text-slate-900 mb-4">Università degli Studi di Viterbo La Tuscia</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Scientific partnership with this leading Italian university for research and validation of our EUFD2025-001 certification methodologies.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-lg p-8 border border-slate-200">
-              <h3 className="text-xl font-medium text-slate-900 mb-4">SUOLO E SALUTE</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Our dedicated certification body for independent verification and validation.
-              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Shield className="text-emerald-700 h-8 w-8" />
+                  </div>
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-tech-blockchain')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-tech-blockchain-desc')}</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Lock className="text-emerald-700 h-8 w-8" />
+                  </div>
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-tech-3fa')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-tech-3fa-desc')}</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="text-emerald-700 h-8 w-8" />
+                  </div>
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-tech-fingerprint')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-tech-fingerprint-desc')}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
