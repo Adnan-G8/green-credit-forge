@@ -167,7 +167,7 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
                 <div>
                   <label className="text-sm font-medium text-gray-600">{t('key-id')}</label>
                   <p className="font-mono text-sm bg-blue-600 text-white p-2 rounded border">
-                    FAGRI-{alphaG8Id.replace('ALPHAG8-', '')}
+                    {alphaG8Id.startsWith('FAGRI-') ? alphaG8Id : `FAGRI-${alphaG8Id.replace('ALPHAG8-', '')}`}
                   </p>
                 </div>
                 <div>

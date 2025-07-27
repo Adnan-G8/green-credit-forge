@@ -64,7 +64,7 @@ Powered by ALPHAG8 Switzerland Technology
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `ALPHAG8-ID-KEY-${alphaG8Id}.txt`;
+    a.download = `FAGRI-ID-KEY-${alphaG8Id}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

@@ -74,7 +74,7 @@ export function SignInModal({ isOpen, onClose }: SignInModalProps) {
                     id="signInId"
                     value={alphaG8Id}
                     onChange={(e) => setAlphaG8Id(e.target.value.toUpperCase())}
-                    placeholder="ALPHAG8-XXXXXXXX-XXXXXXXX-XX"
+                    placeholder="FAGRI-XXXXXXXX-XXXXXXXX-XX"
                     className="border-emerald-200 focus:border-emerald-500 font-mono"
                     maxLength={30}
                   />

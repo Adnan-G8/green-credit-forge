@@ -388,7 +388,7 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
                           <p><strong>IBAN:</strong> IT60 X054 2811 1010 0000 0123 456</p>
                           <p><strong>BIC/SWIFT:</strong> BPMIIT3XXXX</p>
                           <p><strong>{t('amount')}:</strong> €17.00</p>
-                          <p><strong>{t('reference')}:</strong> ALPHAG8-{formData.fullName?.replace(/\s+/g, '').toUpperCase() || 'REG'}</p>
+                          <p><strong>{t('reference')}:</strong> FAGRI-{formData.fullName?.replace(/\s+/g, '').toUpperCase() || 'REG'}</p>
                         </div>
                       </div>
                       <div className="bg-amber-50 p-3 rounded-lg border border-amber-200">

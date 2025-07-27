@@ -50,7 +50,7 @@ Security: swiss-security@alphag8.digital`;
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `ALPHAG8-Certificate-${alphaG8Id}.txt`;
+    a.download = `FAGRI-Certificate-${alphaG8Id}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

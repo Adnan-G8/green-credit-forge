@@ -247,10 +247,12 @@ export default function Dashboard() {
       
       {/* Beautiful Agricultural Hero Strip */}
       <div 
-        className="relative h-60 bg-cover bg-center overflow-hidden"
+        className="relative h-60 overflow-hidden"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundPosition: 'center 30%'
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat'
         }}
       >
         {/* Overlay for text readability */}
