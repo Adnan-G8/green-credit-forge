@@ -256,7 +256,7 @@ export function RegisterProjectModal({ isOpen, onClose }: RegisterProjectModalPr
                       type="text"
                       value={alphaG8Id}
                       onChange={(e) => setAlphaG8Id(e.target.value.toUpperCase())}
-                      placeholder="ALPHAG8-XXXXXXXX-XXXXXXXX-XX"
+                      placeholder="FAGRI-XXXXXXXX-XXXXXXXX-XX"
                       className="w-full text-center font-mono text-lg py-4 rounded-xl border-slate-300 focus:border-blue-500 focus:ring-blue-500"
                     />
                   </div>

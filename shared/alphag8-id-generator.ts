@@ -20,13 +20,13 @@ export function generateAlphaG8Id(): string {
   }
   const checksumHex = (checksum % 256).toString(16).toUpperCase().padStart(2, '0');
   
-  // Format: ALPHAG8-{timestamp}-{random}-{checksum}
-  return `ALPHAG8-${timestamp}-${randomPart}-${checksumHex}`;
+  // Format: FAGRI-{timestamp}-{random}-{checksum}
+  return `FAGRI-${timestamp}-${randomPart}-${checksumHex}`;
 }
 
 export function validateAlphaG8Id(id: string): boolean {
   // Basic format validation
-  const pattern = /^ALPHAG8-[A-Z0-9]+-[A-Z0-9]{8}-[A-F0-9]{2}$/;
+  const pattern = /^FAGRI-[A-Z0-9]+-[A-Z0-9]{8}-[A-F0-9]{2}$/;
   if (!pattern.test(id)) {
     return false;
   }
@@ -50,4 +50,4 @@ export function validateAlphaG8Id(id: string): boolean {
   return checksum === expectedChecksum;
 }
 
-// Example generated ID: ALPHAG8-1BKQE5C3-K9X2P4M7-A3
+// Example generated ID: FAGRI-1BKQE5C3-K9X2P4M7-A3

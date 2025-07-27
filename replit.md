@@ -209,6 +209,14 @@ Preferred communication style: Simple, everyday language.
   * **Complete Bilingual Support**: Full Italian and English translations for all pricing terminology and official company information
   * **Professional Pricing Display**: Banking-style tables with hover effects and clear tier breakdowns for easy project cost calculation
 
+- **FAGRI ID KEY Prefix Update** (July 27, 2025):
+  * **Updated ID Format**: All ALPHAG8 ID KEYs now use "FAGRI-" prefix instead of "ALPHAG8-" for brand consistency
+  * **Generator Update**: Modified alphag8-id-generator.ts to create IDs starting with "FAGRI-"
+  * **Validation Update**: Updated validation pattern to accept FAGRI- prefix format
+  * **UI Consistency**: Updated all placeholder text and examples to show FAGRI- format
+  * **System Branding**: Product name remains "ALPHAG8 ID KEY" but generated keys show FAGRI- prefix
+  * **Example Format**: FAGRI-1BKQE5C3-K9X2P4M7-A3 (instead of ALPHAG8-1BKQE5C3-K9X2P4M7-A3)
+
 - **Advanced Form Data Structure Enhancement**:
   * **Structured Address Fields**: Replaced free-text address with international standard fields (Street Address, City, Postal Code, Province/State) for better data export and mass email functionality
   * **Dynamic Renewable Energy Form Behavior**: When "Renewable Energy" project type is selected, hectares field automatically switches to renewable energy type dropdown with capacity specifications
