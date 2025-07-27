@@ -14,6 +14,7 @@ import { apiRequest } from '@/lib/queryClient';
 import { X, Building, User, MapPin, Phone, Mail, Globe, Briefcase, CheckCircle } from 'lucide-react';
 import { PrivacyPolicyModal } from './privacy-policy-modal';
 import { TermsOfServiceModal } from './terms-of-service-modal';
+import { FagriLogo } from './fagri-logo';
 
 interface MembershipModalProps {
   isOpen: boolean;
@@ -165,17 +166,28 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white">
         <DialogHeader className="pb-6">
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="p-3 bg-emerald-100 rounded-lg">
-              <Building className="h-8 w-8 text-emerald-700" />
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center space-x-3">
+              <div className="p-3 bg-emerald-100 rounded-lg">
+                <Building className="h-8 w-8 text-emerald-700" />
+              </div>
+              <div>
+                <DialogTitle className="text-2xl font-light text-slate-900">
+                  {t('fagri-membership-application')}
+                </DialogTitle>
+                <p className="text-slate-600 font-light">
+                  {t('professional-membership-desc')}
+                </p>
+              </div>
             </div>
-            <div>
-              <DialogTitle className="text-2xl font-light text-slate-900">
-                {t('fagri-membership-application')}
-              </DialogTitle>
-              <p className="text-slate-600 font-light">
-                {t('professional-membership-desc')}
-              </p>
+            
+            {/* FAGRI Logo */}
+            <div className="flex items-center space-x-3">
+              <FagriLogo size="lg" />
+              <div className="text-right">
+                <h3 className="text-xl font-bold text-emerald-700">FAGRI</h3>
+                <p className="text-xs text-emerald-600 font-medium">DIGITAL</p>
+              </div>
             </div>
           </div>
         </DialogHeader>

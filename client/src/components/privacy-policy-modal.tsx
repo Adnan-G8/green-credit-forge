@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLanguage } from './language-provider';
 import { X, Shield } from 'lucide-react';
+import { FagriLogo } from './fagri-logo';
 
 interface PrivacyPolicyModalProps {
   isOpen: boolean;
@@ -44,19 +45,30 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
             <X className="h-5 w-5 text-slate-500" />
           </button>
           
-          <div className="flex items-center space-x-4 pr-16">
-            <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-              <Shield className="h-6 w-6 text-emerald-600" />
+          <div className="flex items-center justify-between pr-16">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                <Shield className="h-6 w-6 text-emerald-600" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-emerald-700 mb-1">
+                  {language === 'it' ? 'Privacy Policy' : 'Privacy Policy'}
+                </h1>
+                <p className="text-slate-600">
+                  {language === 'it' 
+                    ? 'Ultima modifica: 19 luglio 2025' 
+                    : 'Last updated: July 19, 2025'}
+                </p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-2xl font-bold text-emerald-700 mb-1">
-                {language === 'it' ? 'Privacy Policy' : 'Privacy Policy'}
-              </h1>
-              <p className="text-slate-600">
-                {language === 'it' 
-                  ? 'Ultima modifica: 19 luglio 2025' 
-                  : 'Last updated: July 19, 2025'}
-              </p>
+            
+            {/* FAGRI Logo */}
+            <div className="flex items-center space-x-3">
+              <FagriLogo size="md" />
+              <div className="text-right">
+                <h3 className="text-lg font-bold text-emerald-700">FAGRI</h3>
+                <p className="text-xs text-emerald-600 font-medium">DIGITAL</p>
+              </div>
             </div>
           </div>
         </div>
