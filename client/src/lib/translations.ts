@@ -864,6 +864,22 @@ export const translations = {
     'standard-blockchain-title': 'Dall\'Applicazione CO₂ al Trading - Tutto Sotto Un Tetto su Blockchain',
     'standard-blockchain-description': 'Soluzione completa per certificazione, registrazione e trading di crediti di carbonio su piattaforma digitale sicura.',
 
+    // Introduction Section Keys - Italian Content
+    'intro-title': 'La Nostra Missione',
+    'intro-subtitle': 'Con solide radici agricole, una visione internazionale e un\'indipendenza tecnica, offriamo uno strumento etico, funzionale e accessibile per supportare una partecipazione autentica alla transizione ecologica.',
+    'intro-stat1': 'Membri Attivi',
+    'intro-stat2': 'Imprese Italiane',
+    'intro-stat3': 'Anni di Esperienza',
+    'intro-stat4': 'Uffici',
+    'intro-mission-title': 'La Nostra Missione',
+    'intro-mission': 'Con solide radici agricole, una visione internazionale e un\'indipendenza tecnica, offriamo uno strumento etico, funzionale e accessibile per supportare una partecipazione autentica alla transizione ecologica.',
+    'intro-innovation-title': 'Innovazione Digitale',
+    'intro-innovation-text': 'Utilizziamo tecnologie avanzate come IoT, blockchain e intelligenza artificiale per creare un ecosistema agricolo completamente digitalizzato e tracciabile.',
+    'intro-sustainability-title': 'Sostenibilità Certificata',
+    'intro-sustainability-text': 'I nostri protocolli di certificazione garantiscono che ogni credito di carbonio sia verificabile, misurabile e conforme agli standard internazionali più rigorosi.',
+
+
+
     // Platform Section Keys
     'platform-title': 'Certification Platform',
     'platform-intro': 'Platform Introduction',
@@ -1106,6 +1122,20 @@ export const translations = {
     'opportunities-voluntary-markets': 'Voluntary Markets',
     'opportunities-regulated-markets': 'Regulated Markets',
     'opportunities-multi-year-projects': 'Multi-year Projects',
+
+    // Introduction Section Keys - English Content
+    'intro-title': 'Our Mission',
+    'intro-subtitle': 'With strong agricultural roots, an international vision, and technical independence, we offer an ethical, functional, and accessible tool to support genuine participation in the ecological transition.',
+    'intro-stat1': 'Active Members',
+    'intro-stat2': 'Italian Enterprises',
+    'intro-stat3': 'Years of Experience',
+    'intro-stat4': 'Offices',
+    'intro-mission-title': 'Our Mission',
+    'intro-mission': 'With strong agricultural roots, an international vision, and technical independence, we offer an ethical, functional, and accessible tool to support genuine participation in the ecological transition.',
+    'intro-innovation-title': 'Digital Innovation',
+    'intro-innovation-text': 'We use advanced technologies such as IoT, blockchain and artificial intelligence to create a fully digitized and traceable agricultural ecosystem.',
+    'intro-sustainability-title': 'Certified Sustainability',
+    'intro-sustainability-text': 'Our certification protocols ensure that every carbon credit is verifiable, measurable and compliant with the most rigorous international standards.',
 
     // Standard Section Keys - English
     'standard-title': 'The New EUFD2025-001 Standard: Scientific, Practical, Accessible',
