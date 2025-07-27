@@ -14,7 +14,7 @@ import { apiRequest } from '@/lib/queryClient';
 import { X, Building, User, MapPin, Phone, Mail, Globe, Briefcase, CheckCircle } from 'lucide-react';
 import { PrivacyPolicyModal } from './privacy-policy-modal';
 import { TermsOfServiceModal } from './terms-of-service-modal';
-import { FagriLogo } from './fagri-logo';
+import { FagriLogo } from '../assets/fagri-logo';
 
 interface MembershipModalProps {
   isOpen: boolean;
@@ -182,12 +182,8 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
             </div>
             
             {/* FAGRI Logo */}
-            <div className="flex items-center space-x-3">
-              <FagriLogo size="lg" />
-              <div className="text-right">
-                <h3 className="text-xl font-bold text-emerald-700">FAGRI</h3>
-                <p className="text-xs text-emerald-600 font-medium">DIGITAL</p>
-              </div>
+            <div className="flex items-center">
+              <FagriLogo className="w-24 h-14" />
             </div>
           </div>
         </DialogHeader>

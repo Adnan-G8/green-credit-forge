@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLanguage } from './language-provider';
 import { X, FileText } from 'lucide-react';
-import { FagriLogo } from './fagri-logo';
+import { FagriLogo } from '../assets/fagri-logo';
 
 interface TermsOfServiceModalProps {
   isOpen: boolean;
@@ -63,12 +63,8 @@ export function TermsOfServiceModal({ isOpen, onClose }: TermsOfServiceModalProp
             </div>
             
             {/* FAGRI Logo */}
-            <div className="flex items-center space-x-3">
-              <FagriLogo size="md" />
-              <div className="text-right">
-                <h3 className="text-lg font-bold text-emerald-700">FAGRI</h3>
-                <p className="text-xs text-emerald-600 font-medium">DIGITAL</p>
-              </div>
+            <div className="flex items-center">
+              <FagriLogo className="w-20 h-12" />
             </div>
           </div>
         </div>
