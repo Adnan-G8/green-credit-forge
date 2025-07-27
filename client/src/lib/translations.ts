@@ -1,3 +1,8 @@
+// Translations system for FAGRI Digital Platform
+// This file contains all text content in Italian and English
+
+export type Language = 'it' | 'en';
+
 export const translations = {
   it: {
     // Navigation
@@ -60,6 +65,7 @@ export const translations = {
     'partners-title': 'Partnership',
     'partners-subtitle': 'I nostri partner tecnologici e istituzionali',
     'partners-institutional-title': 'Partnership Istituzionali',
+    'partners-technology-title': 'Partner Tecnologici',
     'partners-eu-title': 'Commissione Europea',
     'partners-eu-desc': 'Standard EUFD2025-001 e regolamentazione UE',
     'partners-ministry-title': 'Ministero Italiano',
@@ -490,8 +496,9 @@ export const translations = {
 
     // Partners Section Keys
     'partners-title': 'Partnerships',
-    'partners-subtitle': 'Our technological and institutional partners',
+    'partners-subtitle': 'Our technological and institutional partners',    
     'partners-institutional-title': 'Institutional Partnerships',
+    'partners-technology-title': 'Technology Partners',
     'partners-eu-title': 'European Commission',
     'partners-eu-desc': 'EUFD2025-001 standard and EU regulation',
     'partners-ministry-title': 'Italian Ministry',
