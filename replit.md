@@ -196,6 +196,18 @@ Preferred communication style: Simple, everyday language.
   * **Professional Project Interface**: Banking-style project selection with ISO standards and EUFD2025-001 compliance
   * **Complete Bilingual Support**: Full Italian and English translations for all new navigation and project functionality
 
+## Recent Changes (July 27, 2025)
+
+- **Advanced Form Data Structure Enhancement**:
+  * **Structured Address Fields**: Replaced free-text address with international standard fields (Street Address, City, Postal Code, Province/State) for better data export and mass email functionality
+  * **Dynamic Renewable Energy Form Behavior**: When "Renewable Energy" project type is selected, hectares field automatically switches to renewable energy type dropdown with capacity specifications
+  * **Comprehensive Renewable Energy Options**: Added professional dropdown with CO₂-focused technologies: Solar Photovoltaic, Solar Thermal, Wind Turbines, Hydroelectric, Biomass Energy, Biogas Production, Geothermal, Agrivoltaics, Energy Storage, Grid Integration, Green Hydrogen, and Other Renewable
+  * **Renewable Capacity Field**: Added dedicated field for MW/kW capacity specifications to capture technical project details
+  * **International Address Standards**: Implemented proper address structure that works across all EU countries for better data quality
+  * **Complete Bilingual Translation**: Added comprehensive Italian and English translations for all new structured fields and renewable energy terminology
+  * **Clean Translation Management**: Resolved all duplicate translation key errors and optimized translation file structure
+  * **Smart Form UX**: Dynamic field switching provides relevant input options based on project type selection, improving user experience and data accuracy
+
 ## System Architecture
 
 ### Frontend Architecture
