@@ -23,7 +23,7 @@ export function SignInModal({ isOpen, onClose, onSignInSuccess }: SignInModalPro
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [showDashboard, setShowDashboard] = useState(false);
 
-  const TEST_ID = 'ALPHAG8-1BKQE5C3-K9X2P4M7-15';
+  const TEST_ID = 'FAGRI-1BKQE5C3-K9X2P4M7-15';
 
   const handleAutoFill = () => {
     setAlphaG8Id(TEST_ID);
@@ -62,7 +62,7 @@ export function SignInModal({ isOpen, onClose, onSignInSuccess }: SignInModalPro
   return (
     <>
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-hidden z-[10004]">
+      <DialogContent className="max-w-2xl bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 shadow-2xl p-0 overflow-hidden z-[10004]" hideCloseButton>
         <DialogTitle className="sr-only">Sign In</DialogTitle>
         <DialogDescription className="sr-only">Enter your ALPHAG8 ID to sign in</DialogDescription>
         {/* Header Section */}
