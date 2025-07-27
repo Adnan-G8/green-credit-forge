@@ -12,6 +12,8 @@ import { useLanguage } from './language-provider';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { X, Building, User, MapPin, Phone, Mail, Globe, Briefcase, CheckCircle } from 'lucide-react';
+import { PrivacyPolicyModal } from './privacy-policy-modal';
+import { TermsOfServiceModal } from './terms-of-service-modal';
 
 interface MembershipModalProps {
   isOpen: boolean;
@@ -21,6 +23,10 @@ interface MembershipModalProps {
 export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
   const { t, language } = useLanguage();
   const { toast } = useToast();
+  
+  // Modal states for legal documents
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
   
   const [formData, setFormData] = useState({
     // Membership Type
@@ -527,7 +533,47 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                     onCheckedChange={(checked) => updateFormData('privacyPolicy', checked)}
                   />
                   <Label htmlFor="privacyPolicy" className="text-slate-700 leading-relaxed">
-                    {t('privacy-policy-agreement')} *
+                    {language === 'it' ? (
+                      <>
+                        Accetto la{' '}
+                        <button
+                          type="button"
+                          onClick={() => setShowPrivacyModal(true)}
+                          className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                        >
+                          Privacy Policy
+                        </button>
+                        {' '}e i{' '}
+                        <button
+                          type="button"
+                          onClick={() => setShowTermsModal(true)}
+                          className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                        >
+                          Termini di Servizio
+                        </button>
+                        {' '}*
+                      </>
+                    ) : (
+                      <>
+                        I agree to the{' '}
+                        <button
+                          type="button"
+                          onClick={() => setShowPrivacyModal(true)}
+                          className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                        >
+                          Privacy Policy
+                        </button>
+                        {' '}and{' '}
+                        <button
+                          type="button"
+                          onClick={() => setShowTermsModal(true)}
+                          className="text-emerald-600 hover:text-emerald-700 underline font-medium"
+                        >
+                          Terms of Service
+                        </button>
+                        {' '}*
+                      </>
+                    )}
                   </Label>
                 </div>
                 
@@ -570,6 +616,17 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
           )}
         </div>
       </DialogContent>
+      
+      {/* Legal Document Modals */}
+      <PrivacyPolicyModal 
+        isOpen={showPrivacyModal} 
+        onClose={() => setShowPrivacyModal(false)} 
+      />
+      
+      <TermsOfServiceModal 
+        isOpen={showTermsModal} 
+        onClose={() => setShowTermsModal(false)} 
+      />
     </Dialog>
   );
 }
