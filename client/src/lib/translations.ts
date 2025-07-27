@@ -215,6 +215,9 @@ export const translations = {
     'return-home': 'Torna alla Home',
 
     // EUFD Standard Page Keys
+    'eufd-hero-title': 'Standard EUFD2025-001',
+    'eufd-hero-subtitle': 'Il quadro europeo per la certificazione CO₂ agricola',
+    'eufd-status': 'Certificato UE',
     'eufd-intro-title': 'Introduzione al Standard EUFD2025-001',
     'eufd-intro-text1': 'Il Standard EUFD2025-001 rappresenta il nuovo quadro europeo per la certificazione CO₂ in agricoltura.',
     'eufd-intro-text2': 'Sviluppato in collaborazione con la Commissione Europea e organismi internazionali.',
@@ -676,6 +679,9 @@ export const translations = {
     'return-home': 'Return Home',
 
     // EUFD Standard Page Keys
+    'eufd-hero-title': 'EUFD2025-001 Standard',
+    'eufd-hero-subtitle': 'The European framework for agricultural CO₂ certification',
+    'eufd-status': 'EU Certified',
     'eufd-intro-title': 'Introduction to EUFD2025-001 Standard',
     'eufd-intro-text1': 'The EUFD2025-001 Standard represents the new European framework for CO₂ certification in agriculture.',
     'eufd-intro-text2': 'Developed in collaboration with the European Commission and international bodies.',
