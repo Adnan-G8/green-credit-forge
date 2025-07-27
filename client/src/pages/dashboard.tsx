@@ -237,15 +237,15 @@ export default function Dashboard() {
                 {t('monitor-co2-certification-projects')}
               </p>
               <div className="flex items-center space-x-4">
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/30">
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/30 min-w-0 flex-1 max-w-xs">
                   <div className="flex items-center space-x-2">
-                    <Shield className="h-5 w-5 text-emerald-300" />
-                    <span className="text-white font-medium">{t('authenticated-session')}</span>
+                    <Shield className="h-5 w-5 text-emerald-300 flex-shrink-0" />
+                    <span className="text-white font-medium truncate">{t('authenticated-session')}</span>
                   </div>
                 </div>
-                <div className="bg-emerald-600/30 backdrop-blur-sm rounded-lg px-4 py-2 border border-emerald-400/50">
-                  <div className="text-xs text-emerald-200 font-medium">ALPHAG8 ID</div>
-                  <div className="text-white font-mono text-sm">{alphaG8Id}</div>
+                <div className="bg-emerald-600/30 backdrop-blur-sm rounded-lg px-6 py-3 border border-emerald-400/50 min-w-0 flex-1 max-w-xs">
+                  <div className="text-xs text-emerald-200 font-medium">FAGRI ID KEY</div>
+                  <div className="text-white font-mono text-sm truncate">FAGRI-{alphaG8Id.replace('ALPHAG8-', '')}</div>
                 </div>
               </div>
             </div>
