@@ -31,6 +31,10 @@ export function SignInModal({ isOpen, onClose, onSignInSuccess }: SignInModalPro
 
   const handleSignIn = () => {
     if (validateAlphaG8Id(alphaG8Id)) {
+      // Store the authenticated ID
+      localStorage.setItem('alphaG8Id', alphaG8Id);
+      localStorage.setItem('sessionActive', 'true');
+      
       setIsSignedIn(true);
       toast({
         title: t('sign-in-successful'),

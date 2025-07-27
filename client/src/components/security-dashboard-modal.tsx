@@ -37,7 +37,7 @@ export function SecurityDashboardModal({ isOpen, onClose, alphaG8Id }: SecurityD
       {
         id: 'session-001',
         userId: alphaG8Id,
-        userName: 'Current User',
+        userName: 'FAGRI Member User',
         userRole: 'FAGRI Member',
         loginTime: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
         lastActivity: new Date(Date.now() - 5 * 60 * 1000), // 5 minutes ago
@@ -50,7 +50,7 @@ export function SecurityDashboardModal({ isOpen, onClose, alphaG8Id }: SecurityD
       {
         id: 'session-002',
         userId: alphaG8Id,
-        userName: 'Current User',
+        userName: 'FAGRI Member User',
         userRole: 'FAGRI Member',
         loginTime: new Date(Date.now() - 24 * 60 * 60 * 1000), // 24 hours ago
         lastActivity: new Date(Date.now() - 22 * 60 * 60 * 1000), // 22 hours ago
