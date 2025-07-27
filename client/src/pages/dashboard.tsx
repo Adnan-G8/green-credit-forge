@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro } from 'lucide-react';
 import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
-import { KeyInfoModal } from '@/components/key-info-modal';
+import { SecurityDashboardModal } from '@/components/security-dashboard-modal';
 import { OrganizationInformationModal } from '@/components/organization-information-modal';
 import { CertificationPricingModal } from '@/components/certification-pricing-modal';
 
@@ -19,7 +19,7 @@ export default function Dashboard() {
   const [isLoading, setIsLoading] = useState(false); // Start with false for faster loading
   const [loginId, setLoginId] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
-  const [showKeyInfo, setShowKeyInfo] = useState(false);
+  const [showSecurityDashboard, setShowSecurityDashboard] = useState(false);
   const [showOrganizationInfo, setShowOrganizationInfo] = useState(false);
   const [showPricingInfo, setShowPricingInfo] = useState(false);
 
@@ -96,8 +96,7 @@ export default function Dashboard() {
   };
 
   const handleViewKeyCard = () => {
-    // Display ALPHAG8 ID KEY with one-year validity
-    console.log('View Key Card clicked');
+    setShowSecurityDashboard(true);
   };
 
   if (!isAuthenticated) {
@@ -307,8 +306,8 @@ export default function Dashboard() {
                 onClick={handleViewKeyCard}
                 className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <Key className="h-6 w-6 text-blue-600 group-hover:scale-110 transition-transform" />
-                <span className="text-blue-800 font-medium text-center leading-tight">{t('view-id-key-card')}</span>
+                <Shield className="h-6 w-6 text-blue-600 group-hover:scale-110 transition-transform" />
+                <span className="text-blue-800 font-medium text-center leading-tight">{t('security-id-key-card')}</span>
               </button>
               
               <button
@@ -349,10 +348,10 @@ export default function Dashboard() {
         </div>
       </main>
 
-      {/* Key Info Modal */}
-      <KeyInfoModal 
-        isOpen={showKeyInfo}
-        onClose={() => setShowKeyInfo(false)}
+      {/* Security Dashboard Modal */}
+      <SecurityDashboardModal
+        isOpen={showSecurityDashboard}
+        onClose={() => setShowSecurityDashboard(false)}
         alphaG8Id={alphaG8Id}
       />
 
