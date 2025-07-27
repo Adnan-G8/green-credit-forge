@@ -244,7 +244,7 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div className="bg-emerald-600/30 backdrop-blur-sm rounded-lg px-6 py-3 border border-emerald-400/50 min-w-0 flex-1 max-w-xs">
-                  <div className="text-xs text-emerald-200 font-medium">FAGRI ID KEY</div>
+                  <div className="text-xs text-emerald-200 font-medium">ALPHAG8 ID KEY</div>
                   <div className="text-white font-mono text-sm truncate">FAGRI-{alphaG8Id.replace('ALPHAG8-', '')}</div>
                 </div>
               </div>
