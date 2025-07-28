@@ -1547,6 +1547,9 @@ export const translations = {
     'contact-conclusion': 'We will be happy to receive your message – let\'s build a sustainable future together.',
     'form-submit': 'Send Message',
 
+    // Security section titles
+    'security-summary-title': 'Swiss Security and Compliance',
+
     // Platform section matching Italian source
 
     'platform-step1-title': 'Guided Procedures',
