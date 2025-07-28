@@ -1285,6 +1285,14 @@ export const translations = {
   },
   en: {
     // Navigation
+    'nav-home': 'Home',
+    'nav-standard': 'Standard',
+    'nav-opportunities': 'Opportunities',
+    'nav-partnerships': 'Partnerships',
+    'nav-platform': 'Platform',
+    'nav-security': 'Security',
+    'nav-contact': 'Contact',
+    'nav-join': 'Become Member',
     'home': 'Home',
     'standard': 'Standard',
     'platform': 'Platform',
@@ -1293,6 +1301,7 @@ export const translations = {
     'dashboard': 'Dashboard',
 
     // Hero section
+    'hero-status-badge': 'CERTIFIED CO₂ PLATFORM',
     'hero-title1': 'Digitalization.',
     'hero-title2': 'Responsibility.',
     'hero-title3': 'Climate.',
