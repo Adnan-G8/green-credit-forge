@@ -41,6 +41,10 @@ export interface IStorage {
   getDocument(id: string): Promise<Document | undefined>;
   updateDocument(id: string, updates: Partial<Document>): Promise<Document | undefined>;
   deleteDocument(id: string): Promise<boolean>;
+  getSharedDocuments(userId: string): Promise<Document[]>;
+  shareDocument(share: InsertDocumentShare): Promise<DocumentShare>;
+  createDocumentVersion(version: InsertDocumentVersion): Promise<DocumentVersion>;
+  getDocumentVersions(documentId: string): Promise<DocumentVersion[]>;
 
   // CO2 Project operations with authentication
   createCO2Project(project: InsertCO2Project): Promise<CO2Project>;
@@ -170,6 +174,35 @@ export class MemStorage implements IStorage {
     if (index === -1) return false;
     this.documents.splice(index, 1);
     return true;
+  }
+
+  async getSharedDocuments(userId: string): Promise<Document[]> {
+    const sharedDocumentIds = this.documentShares
+      .filter(share => share.sharedWithUserId === userId)
+      .map(share => share.documentId);
+    return this.documents.filter(doc => sharedDocumentIds.includes(doc.id));
+  }
+
+  async shareDocument(shareData: InsertDocumentShare): Promise<DocumentShare> {
+    const share: DocumentShare = {
+      ...shareData,
+      sharedDate: new Date(),
+    };
+    this.documentShares.push(share);
+    return share;
+  }
+
+  async createDocumentVersion(versionData: InsertDocumentVersion): Promise<DocumentVersion> {
+    const version: DocumentVersion = {
+      ...versionData,
+      createdDate: new Date(),
+    };
+    this.documentVersions.push(version);
+    return version;
+  }
+
+  async getDocumentVersions(documentId: string): Promise<DocumentVersion[]> {
+    return this.documentVersions.filter(version => version.documentId === documentId);
   }
 
   // CO2 Project operations with authentication

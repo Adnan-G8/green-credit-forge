@@ -63,7 +63,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get contact requests (for admin purposes)
   app.get("/api/contact", async (req, res) => {
     try {
-      const requests = await storage.getContactRequests();
+      const requests = await storage.getAllContactRequests();
       res.json(requests);
     } catch (error) {
       console.error("Error fetching contact requests:", error);
@@ -74,7 +74,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get membership applications (for admin purposes)
   app.get("/api/membership", async (req, res) => {
     try {
-      const applications = await storage.getMembershipApplications();
+      const applications = await storage.getAllMembershipApplications();
       res.json(applications);
     } catch (error) {
       console.error("Error fetching membership applications:", error);
