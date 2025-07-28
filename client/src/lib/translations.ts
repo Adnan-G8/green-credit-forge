@@ -1513,6 +1513,23 @@ export const translations = {
     'form-privacy-end': 'of FAGRI Digital',
     'form-send-message': 'Send Message',
 
+    // Platform section matching Italian source
+    'platform-availability': 'The platform will be available soon and will include:',
+    'platform-step1-title': 'Guided Procedures',
+    'platform-step1-text': 'for the presentation of environmental compensation projects',
+    'platform-step2-title': 'Complete Traceability', 
+    'platform-step2-text': 'of documentation and project status',
+    'platform-step3-title': 'VVB Entity Integration',
+    'platform-step3-text': 'and European registers for transparent processes',
+    'platform-step4-title': 'Clear Cost Structure',
+    'platform-step4-text': 'fair and predictable pricing',
+
+    // Platform impact cards
+    'platform-carbon-credits': 'Verified Carbon Credits',
+    
+    // Security title translation
+    'security-title': 'Member Protection, Digital Responsibility and Access Security',
+
     // Security section main (original updated)
     'security-intro': 'Trust is at the center of every digital process on FAGRI.Digital. This is why we have chosen a security model based on transparency, personal control and technical traceability:',
     'security-3fa-title': 'Three-Factor Authentication (3FA)',
