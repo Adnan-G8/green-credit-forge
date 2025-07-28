@@ -437,17 +437,17 @@ export default function Security() {
                       <Leaf className="text-green-700 h-8 w-8" />
                     </div>
                     <h2 className="text-3xl font-light text-slate-900 mb-8">
-                      {t('co2-neutral-title')}
+                      100% CO₂ Neutral – Sustainable Technology for a New Era of Digital Infrastructure
                     </h2>
                     <div className="space-y-6 max-w-4xl mx-auto">
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        {t('co2-neutral-paragraph1')}
+                        All our data centers and digital services operate on a fully CO₂-neutral basis. Located in the Swiss Alps, within repurposed military bunkers, our infrastructure is powered entirely by 100% certified Swiss hydropower.
                       </p>
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        {t('co2-neutral-paragraph2')}
+                        The naturally cool climate of the mountain region significantly reduces the need for energy-intensive cooling, lowering overall power consumption without compromising on performance or security.
                       </p>
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        {t('co2-neutral-paragraph3')}
+                        FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members, and future generations.
                       </p>
                     </div>
                   </div>
