@@ -359,7 +359,9 @@ export default function Dashboard() {
                 onClick={handleViewKeyCard}
                 className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <Shield className="h-6 w-6 text-blue-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-8 w-8">
+                  <Shield className="h-6 w-6 text-blue-600 group-hover:scale-110 transition-transform" />
+                </div>
                 <span className="text-blue-800 font-medium text-center leading-tight">{t('security-id-key-card')}</span>
               </button>
               
@@ -367,7 +369,9 @@ export default function Dashboard() {
                 onClick={handleViewProjects}
                 className="flex flex-col items-center justify-center space-y-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <Folder className="h-6 w-6 text-emerald-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-8 w-8">
+                  <Folder className="h-6 w-6 text-emerald-600 group-hover:scale-110 transition-transform" />
+                </div>
                 <span className="text-emerald-800 font-medium text-center leading-tight">{t('my-projects')}</span>
               </button>
               
@@ -375,7 +379,9 @@ export default function Dashboard() {
                 onClick={handleUploadProject}
                 className="flex flex-col items-center justify-center space-y-3 bg-green-50 hover:bg-green-100 border border-green-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <FileText className="h-6 w-6 text-green-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-8 w-8">
+                  <FileText className="h-6 w-6 text-green-600 group-hover:scale-110 transition-transform" />
+                </div>
                 <span className="text-green-800 font-medium text-center leading-tight">{t('upload-new-project')}</span>
               </button>
               
@@ -383,7 +389,9 @@ export default function Dashboard() {
                 onClick={handleOrganizationInformation}
                 className="flex flex-col items-center justify-center space-y-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <Building2 className="h-6 w-6 text-slate-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-8 w-8">
+                  <Building2 className="h-6 w-6 text-slate-600 group-hover:scale-110 transition-transform" />
+                </div>
                 <span className="text-slate-800 font-medium text-center leading-tight">{t('organization-information')}</span>
               </button>
               
@@ -391,7 +399,9 @@ export default function Dashboard() {
                 onClick={handleViewPricing}
                 className="flex flex-col items-center justify-center space-y-3 bg-orange-50 hover:bg-orange-100 border border-orange-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <Euro className="h-6 w-6 text-orange-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-8 w-8">
+                  <Euro className="h-7 w-7 text-orange-600 group-hover:scale-110 transition-transform" />
+                </div>
                 <span className="text-orange-800 font-medium text-center leading-tight">{t('view-certification-pricing')}</span>
               </button>
 
@@ -399,7 +409,9 @@ export default function Dashboard() {
                 onClick={handleShowRecommendations}
                 className="flex flex-col items-center justify-center space-y-3 bg-yellow-50 hover:bg-yellow-100 border border-yellow-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
-                <Lightbulb className="h-6 w-6 text-yellow-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-8 w-8">
+                  <Lightbulb className="h-6 w-6 text-yellow-600 group-hover:scale-110 transition-transform" />
+                </div>
                 <span className="text-yellow-800 font-medium text-center leading-tight">{t('project-recommendations')}</span>
               </button>
               
@@ -409,7 +421,9 @@ export default function Dashboard() {
                   onClick={handleAdminPanel}
                   className="flex flex-col items-center justify-center space-y-3 bg-purple-50 hover:bg-purple-100 border border-purple-200 rounded-xl p-6 h-32 transition-all duration-200 group"
                 >
-                  <Settings className="h-6 w-6 text-purple-600 group-hover:scale-110 transition-transform" />
+                  <div className="flex items-center justify-center h-8 w-8">
+                    <Settings className="h-6 w-6 text-purple-600 group-hover:scale-110 transition-transform" />
+                  </div>
                   <span className="text-purple-800 font-medium text-center leading-tight">Admin Panel</span>
                 </button>
               )}
