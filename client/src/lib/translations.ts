@@ -1523,6 +1523,11 @@ export const translations = {
     'form-privacy-end': 'of FAGRI Digital',
     'form-send-message': 'Send Message',
 
+    // Dashboard translations
+    'view-certification-pricing': 'View Certification Pricing',
+    'security-id-key-card': 'Security & ID KEY Card',
+    'project-recommendations': 'Project Recommendations',
+
     // Platform section matching Italian source
 
     'platform-step1-title': 'Guided Procedures',
