@@ -307,6 +307,44 @@ export default function Security() {
               </div>
             </section>
 
+            {/* Alpine Security Meets Blockchain Section */}
+            <section className="py-20 bg-emerald-50">
+              <div className="container mx-auto px-6">
+                <div className="max-w-6xl mx-auto">
+                  
+                  {/* Header */}
+                  <div className="text-center mb-16">
+                    <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                      <Mountain className="text-emerald-700 h-8 w-8" />
+                    </div>
+                    <h2 className="text-3xl font-light text-slate-900 mb-6">
+                      Alpine Security Meets Global Blockchain Governance
+                    </h2>
+                    <div className="space-y-4 max-w-4xl mx-auto">
+                      <p className="text-lg text-slate-600 leading-relaxed">
+                        For the first time, blockchain validators are jointly operated by institutions, social organizations, and partners from multiple countries — all with equal rights and shared responsibilities.
+                      </p>
+                      <p className="text-lg text-slate-600 leading-relaxed">
+                        Housed in Swiss mountain data centers with bank-level security, our 51-node blockchain ensures data integrity, resilience, and sovereignty.
+                      </p>
+                      <p className="text-lg text-slate-600 leading-relaxed">
+                        FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and trustworthy infrastructure for CO₂ certification and agricultural data for the world of tomorrow.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Swiss Alps Image */}
+                  <div className="relative">
+                    <img 
+                      src="/attached_assets/image_1753694170930.png" 
+                      alt="Swiss Alps representing the secure mountain data centers"
+                      className="rounded-xl shadow-lg w-full h-auto"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
           </div>
         </div>
       </section>
