@@ -1533,6 +1533,11 @@ export const translations = {
     'security-data-summary': 'Swiss data protection laws and FINMA banking compliance for unmatched data sovereignty.',
     'security-infrastructure-summary': 'Alpine fortress data centers with military-grade security and blockchain infrastructure.',
 
+    // Download and Form translations
+    'download-standard-desc': 'Download the complete FAGRI DIGITAL - EUFD2025-001 document for CO₂ certification',
+    'contact-conclusion': 'We will be happy to receive your message – let\'s build a sustainable future together.',
+    'form-submit': 'Send Message',
+
     // Platform section matching Italian source
 
     'platform-step1-title': 'Guided Procedures',
