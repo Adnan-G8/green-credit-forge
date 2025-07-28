@@ -8,6 +8,7 @@ import italianGovernment from '@assets/image_1753122095811.png';
 import swissAlps from '@assets/image_1753202443401.png';
 import swissBunker from '@assets/image_1753694170930.png';
 import serverRack from '@assets/image_1753694751730.png';
+import swissAlpsLake from '@assets/image_1753695152431.png';
 
 export default function Security() {
   const { t } = useLanguage();
@@ -422,11 +423,11 @@ export default function Security() {
               <div className="container mx-auto px-6">
                 <div className="max-w-6xl mx-auto">
                   
-                  {/* Server Rack Image at top */}
+                  {/* Swiss Alps Lake Image at top */}
                   <div className="relative mb-16">
                     <img 
-                      src={serverRack} 
-                      alt="Swiss data center server infrastructure powered by renewable energy"
+                      src={swissAlpsLake} 
+                      alt="Swiss Alps with turquoise lake representing clean hydropower energy"
                       className="rounded-xl shadow-lg w-full h-64 object-cover"
                     />
                   </div>
