@@ -173,13 +173,13 @@ export default function Security() {
                         <Building className="text-orange-700 h-8 w-8" />
                       </div>
                       <h2 className="text-3xl font-light text-slate-900 mb-6">
-                        Unrivalled Physical Security: Data in Alpine Fortresses
+                        {t('unrivalled-physical-security-title')}
                       </h2>
                       <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                        Our data centers use former Swiss military bunkers, repurposed into state-of-the-art data centers, offering a level of physical protection far beyond conventional data centers.
+                        {t('data-centers-swiss-military')}
                       </p>
                       <p className="text-sm text-slate-500 mb-8">
-                        Secure data center infrastructure with professional server equipment
+                        {t('secure-infrastructure-equipment')}
                       </p>
                     </div>
 
@@ -202,10 +202,10 @@ export default function Security() {
                         <Shield className="text-red-700 h-6 w-6" />
                       </div>
                       <h3 className="text-lg font-medium text-slate-900 mb-3">
-                        Military Standards
+                        {t('military-standards-physical-title')}
                       </h3>
                       <p className="text-sm text-slate-600">
-                        Military Standard: built to withstand conventional attacks, chemical/biological threats, and electromagnetic pulses (EMPs)
+                        {t('military-standard-physical-built')}
                       </p>
                     </div>
 
@@ -215,10 +215,10 @@ export default function Security() {
                         <Database className="text-blue-700 h-6 w-6" />
                       </div>
                       <h3 className="text-lg font-medium text-slate-900 mb-3">
-                        Autonomous Operations
+                        {t('autonomous-operations-physical-title')}
                       </h3>
                       <p className="text-sm text-slate-600">
-                        Autonomous Operability: independent power supply systems and autonomous ventilation for operational continuity even during disasters
+                        {t('autonomous-operability-physical-power')}
                       </p>
                     </div>
 
@@ -228,10 +228,10 @@ export default function Security() {
                         <Eye className="text-emerald-700 h-6 w-6" />
                       </div>
                       <h3 className="text-lg font-medium text-slate-900 mb-3">
-                        Access Control
+                        {t('access-control-physical-title')}
                       </h3>
                       <p className="text-sm text-slate-600">
-                        Strict Access Controls: multi-ton security doors, biometric scanners, and 24/7 video surveillance
+                        {t('strict-access-controls-physical-multi-ton')}
                       </p>
                     </div>
 
@@ -241,10 +241,10 @@ export default function Security() {
                         <Mountain className="text-purple-700 h-6 w-6" />
                       </div>
                       <h3 className="text-lg font-medium text-slate-900 mb-3">
-                        Disaster Recovery
+                        {t('disaster-recovery-physical-title')}
                       </h3>
                       <p className="text-sm text-slate-600">
-                        Dedicated Alpine recovery site with triple backup systems across geographically dispersed Swiss locations.
+                        {t('dedicated-alpine-recovery-physical-site')}
                       </p>
                     </div>
                   </div>
@@ -263,10 +263,10 @@ export default function Security() {
                       <Lock className="text-purple-700 h-8 w-8" />
                     </div>
                     <h2 className="text-3xl font-light text-slate-900 mb-6">
-                      Technical Excellence and Operational Resilience
+                      {t('technical-excellence-operational-title')}
                     </h2>
                     <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                      Beyond impressive physical security, we integrate cutting-edge technical measures and comprehensive redundancies to ensure data protection and availability.
+                      {t('beyond-impressive-physical-security')}
                     </p>
                   </div>
 
@@ -281,10 +281,10 @@ export default function Security() {
                         </div>
                         <div>
                           <h3 className="text-xl font-medium text-slate-900 mb-4">
-                            Multi-Layer Encryption
+                            {t('multi-layer-encryption-title')}
                           </h3>
                           <p className="text-slate-600 leading-relaxed">
-                            Data is protected with internationally recognized encryption standards such as AES-256 and RSA-4096. A "Zero-Knowledge Architecture" ensures that only you can decrypt your files.
+                            {t('data-protected-encryption-standards')}
                           </p>
                         </div>
                       </div>
@@ -298,10 +298,10 @@ export default function Security() {
                         </div>
                         <div>
                           <h3 className="text-xl font-medium text-slate-900 mb-4">
-                            Robust Redundancy
+                            {t('robust-redundancy-title')}
                           </h3>
                           <p className="text-slate-600 leading-relaxed">
-                            Customer data is triple-backed up, with each file stored simultaneously in different, geographically dispersed locations within Switzerland. A dedicated "Disaster Recovery Site" deep in the Swiss Alps offers maximum protection.
+                            {t('customer-data-triple-backed')}
                           </p>
                         </div>
                       </div>

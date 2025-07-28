@@ -1211,7 +1211,25 @@ export const translations = {
     'your-data-fortress-swiss': 'I Tuoi Dati. La Nostra Fortezza. Precisione Svizzera per una Piattaforma Globale. La nostra infrastruttura è progettata per collegare le nazioni a livello mondiale e abilitare applicazioni internazionali. Per garantire la massima sovranità dei dati e neutralità, ci affidiamo a un fornitore di servizi svizzero specializzato per la gestione sicura dei dati.',
     'strictest-data-protection-laws': 'Leggi di Protezione Dati più Rigorose: soggette alla Nuova Legge Federale sulla Protezione dei Dati (nFADP), una delle normative sulla protezione dei dati più rigorose al mondo',
     'finma-banking-compliance-desc': 'Conformità Bancaria FINMA: conforme ai requisiti dell\'Autorità Federale di Vigilanza sui Mercati Finanziari (FINMA-RS 18/3)',
-    'bank-level-security-platforms': 'Sicurezza di livello bancario con accesso controllato tramite piattaforme conformi al settore bancario'
+    'bank-level-security-platforms': 'Sicurezza di livello bancario con accesso controllato tramite piattaforme conformi al settore bancario',
+    // Physical Security and Technical Excellence Sections
+    'unrivalled-physical-security-title': 'Sicurezza Fisica Ineguagliabile: Dati nelle Fortezze Alpine',
+    'data-centers-swiss-military': 'I nostri centri dati utilizzano ex bunker militari svizzeri, riproposti in centri dati all\'avanguardia, offrendo un livello di protezione fisica ben oltre i centri dati convenzionali.',
+    'secure-infrastructure-equipment': 'Infrastruttura sicura del centro dati con attrezzature server professionali',
+    'military-standards-physical-title': 'Standard Militari',
+    'military-standard-physical-built': 'Standard Militare: costruito per resistere ad attacchi convenzionali, minacce chimiche/biologiche e impulsi elettromagnetici (EMP)',
+    'autonomous-operations-physical-title': 'Operazioni Autonome',
+    'autonomous-operability-physical-power': 'Operabilità Autonoma: sistemi di alimentazione indipendenti e ventilazione autonoma per continuità operativa anche durante i disastri',
+    'access-control-physical-title': 'Controllo degli Accessi',
+    'strict-access-controls-physical-multi-ton': 'Controlli di Accesso Rigorosi: porte di sicurezza da più tonnellate, scanner biometrici e sorveglianza video 24/7',
+    'disaster-recovery-physical-title': 'Recupero dai Disastri',
+    'dedicated-alpine-recovery-physical-site': 'Sito di recupero alpino dedicato con sistemi di backup tripli distribuiti geograficamente in località svizzere disperse',
+    'technical-excellence-operational-title': 'Eccellenza Tecnica e Resilienza Operativa',
+    'beyond-impressive-physical-security': 'Oltre l\'impressionante sicurezza fisica, integriamo misure tecniche all\'avanguardia e ridondanze complete per garantire protezione e disponibilità dei dati.',
+    'multi-layer-encryption-title': 'Crittografia Multi-Livello',
+    'data-protected-encryption-standards': 'I dati sono protetti con standard di crittografia riconosciuti internazionalmente come AES-256 e RSA-4096. Un\'architettura "Zero-Knowledge" garantisce che solo tu possa decrittare i tuoi file.',
+    'robust-redundancy-title': 'Ridondanza Robusta',
+    'customer-data-triple-backed': 'I dati del cliente sono sottoposti a backup triplo, con ogni file memorizzato simultaneamente in località diverse e geograficamente disperse all\'interno della Svizzera. Un "Sito di Recupero da Disastri" dedicato nelle profondità delle Alpi svizzere offre la massima protezione.'
   },
   en: {
     // Navigation
