@@ -31,10 +31,10 @@ export default function Security() {
         <div className="relative container mx-auto px-6 pt-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-light text-white mb-8">
-              Digital Security
+              {t('security-page-title')}
             </h1>
             <p className="text-xl text-white/90 leading-relaxed font-light max-w-3xl mx-auto">
-              The security and reliability of our infrastructure represent the foundation of trust you place in FAGRI Digital.
+              {t('security-page-subtitle')}
             </p>
           </div>
         </div>
@@ -48,10 +48,10 @@ export default function Security() {
             {/* Security Overview */}
             <div className="text-center mb-16">
               <h2 className="text-4xl font-light text-slate-900 mb-6">
-                Security Overview
+                {t('security-overview-title')}
               </h2>
               <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                Our multi-layered security architecture ensures maximum protection for your agricultural data.
+                {t('security-overview-desc')}
               </p>
             </div>
 

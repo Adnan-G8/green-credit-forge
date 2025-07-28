@@ -1170,7 +1170,13 @@ export const translations = {
     'eufd-join-title': 'Unisciti alla Rivoluzione della Certificazione CO₂',
     'eufd-join-desc': 'Diventa parte del futuro dell\'agricoltura sostenibile con la certificazione blockchain più avanzata d\'Europa.',
     'eufd-contact-us': 'Contattaci',
-    'eufd-back-home': 'Torna alla Home'
+    'eufd-back-home': 'Torna alla Home',
+
+    // Security Page - Italian
+    'security-page-title': 'Sicurezza Digitale',
+    'security-page-subtitle': 'La sicurezza e l\'affidabilità della nostra infrastruttura rappresentano il fondamento della fiducia che riponi in FAGRI Digital.',
+    'security-overview-title': 'Panoramica Sicurezza',
+    'security-overview-desc': 'La nostra architettura di sicurezza multi-livello garantisce la massima protezione per i tuoi dati agricoli.'
   },
   en: {
     // Navigation
@@ -1351,7 +1357,13 @@ export const translations = {
     'eufd-join-title': 'Join the CO₂ Certification Revolution',
     'eufd-join-desc': 'Become part of the future of sustainable agriculture with Europe\'s most advanced blockchain certification.',
     'eufd-contact-us': 'Contact Us',
-    'eufd-back-home': 'Back to Home'
+    'eufd-back-home': 'Back to Home',
+
+    // Security Page - English
+    'security-page-title': 'Digital Security',
+    'security-page-subtitle': 'The security and reliability of our infrastructure represent the foundation of trust you place in FAGRI Digital.',
+    'security-overview-title': 'Security Overview',
+    'security-overview-desc': 'Our multi-layered security architecture ensures maximum protection for your agricultural data.'
   }
 };
 // Add missing project registration translations
