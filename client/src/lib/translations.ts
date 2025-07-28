@@ -1116,77 +1116,190 @@ export const translations = {
     'footer-about': 'Chi Siamo',
     'footer-mission': 'Missione',
     'footer-contact': 'Contatti',
-    'footer-news': 'Notizie'
+    'footer-news': 'Notizie',
+
+    // EUFD Standard Page - Italian
+    'eufd-detailed-title': 'EUFD2025-001: Scientifico, Trasparente, Accessibile e Sicuro con Blockchain',
+    'eufd-intro-p1': 'Lo standard EUFD2025-001 rappresenta un approccio rivoluzionario alla certificazione CO₂ agricola, combinando metodologie scientifiche rigorose con tecnologia blockchain all\'avanguardia. Sviluppato attraverso un\'ampia collaborazione con le principali istituzioni di ricerca europee e validato da organismi di certificazione indipendenti, questo standard garantisce che ogni credito di carbonio emesso sia scientificamente valido, completamente trasparente e legalmente conforme.',
+    'eufd-intro-p2': 'Il nostro framework completo affronta la crescente necessità di contabilizzazione del carbonio standardizzata e verificabile in agricoltura, mantenendo la flessibilità per adattarsi a diversi sistemi agricoli in Europa e oltre.',
+
+    // Launch Box - Italian
+    'eufd-launch-box-title': 'Standard EUFD2025-001 Disponibile Ora',
+    'eufd-launch-box-text': 'Accedi alla documentazione completa dello standard di certificazione EUFD2025-001. Questa guida completa fornisce metodologie dettagliate, specifiche tecniche e linee guida per l\'implementazione della certificazione CO₂ agricola.',
+
+    // Blockchain Features - Italian
+    'eufd-blockchain-features-title': 'Integrazione Tecnologia Blockchain',
+    'eufd-feature-double-counting-title': 'Prevenzione Doppio Conteggio',
+    'eufd-feature-double-counting-desc': 'Algoritmi crittografici avanzati garantiscono che ogni credito di carbonio possa essere emesso e scambiato solo una volta, eliminando frodi e doppio conteggio attraverso record blockchain immutabili.',
+    'eufd-feature-greenwashing-title': 'Protezione Greenwashing',
+    'eufd-feature-greenwashing-desc': 'Trasparenza completa attraverso verifica blockchain pubblica consente agli stakeholder di verificare indipendentemente l\'autenticità e l\'impatto ambientale di ogni credito di carbonio.',
+    'eufd-feature-clear-ownership-title': 'Verifica Proprietà Chiara',
+    'eufd-feature-clear-ownership-desc': 'I contratti intelligenti stabiliscono e trasferiscono automaticamente i diritti di proprietà, fornendo certezza legale e riducendo i costi di transazione nei mercati dei crediti di carbonio.',
+    'eufd-feature-maximum-security-title': 'Standard di Sicurezza Massimi',
+    'eufd-feature-maximum-security-desc': 'Crittografia di grado militare e protocolli di sicurezza a livello bancario svizzero proteggono tutti i dati, garantendo riservatezza mantenendo la trasparenza dove richiesto.',
+
+    // EU Regulation Box - Italian
+    'eu-regulation-box-title': 'Regolamento UE 3012/2024: Mandato Blockchain',
+    'eu-regulation-box-content': 'Sotto il nuovo Regolamento UE 3012/2024, tutta l\'emissione di crediti di carbonio per progetti agricoli deve utilizzare piattaforme digitali basate su blockchain per garantire trasparenza, prevenire doppio conteggio e mantenere record immutabili. Questo regolamento, efficace da gennaio 2025, rende obbligatoria la tecnologia blockchain per tutti i sistemi di certificazione del carbonio conformi all\'UE. Lo standard EUFD2025-001 è pienamente conforme a questi requisiti, posizionando FAGRI.Digital come piattaforma leader per la generazione di crediti di carbonio conformi alle normative.',
+
+    // ISO Standards Box - Italian
+    'iso-standards-box-title': 'Standard ISO 14064-1, 14064-2, 14064-3',
+    'iso-standards-box-content': 'Lo standard EUFD2025-001 è costruito sui riconosciuti a livello internazionale standard della serie ISO 14064, che forniscono i principi fondamentali per la contabilizzazione e verifica dei gas serra. ISO 14064-1 stabilisce inventari GHG a livello organizzativo, ISO 14064-2 si concentra sulla quantificazione e reporting a livello di progetto, e ISO 14064-3 definisce i requisiti di validazione e verifica. La nostra implementazione estende questi standard specificamente per applicazioni agricole mantenendo piena compatibilità internazionale.'
   },
   en: {
     // Navigation
-    // Security Page
+    'home': 'Home',
+    'standard': 'Standard',
+    'platform': 'Platform',
+    'security': 'Security',
+    'contact': 'Contact',
+    'dashboard': 'Dashboard',
+
     // Hero section
+    'hero-title': 'Agricultural Digitalization',
+    'hero-subtitle': 'Climate Responsibility',
+    'hero-description': 'The first blockchain-based platform for agricultural CO₂ certification according to the European EUFD2025-001 standard. Transforming agriculture into a pillar of sustainability through cutting-edge technology.',
+    'hero-cta': 'Apply for Membership',
+    'hero-learn-more': 'Learn More',
+
+    // Trust indicators
+    'trust-members': 'Members',
+    'trust-hectares': 'Hectares Certified',
+    'trust-co2-reduced': 'CO₂ Reduced',
+
     // Introduction
-    // Password Protection
-    // User Role System
-    // ALPHAG8 ID KEY Legal Protection
-    // EUFD Standard Download
-    // Banking KYC Form Fields
-  // Project Registration Modal
-    // User Role Selection Buttons
-    // User Role Features
-    // Membership Application Form
-    // Agricultural Sectors
-    // Renewable Energy Types
-    // Project Tracking Dashboard
-    // Form Validation
-    // FAGRI Member Registration
-    // ALPHAG8 ID Display
-    // Document Management
-    'category': 'Category',
-    'description': 'Description',
-    'tags': 'Tags',
-    'view': 'View',
-    'download': 'Download',
-    'share': 'Share',
-    'edit': 'Edit',
-    'public': 'Public',
-    // Opportunities section
+    'intro-title': 'Building the Future of CO₂ Certification',
+    'intro-description': 'Fagri.Digital represents a revolutionary approach to agricultural sustainability. Our platform combines the precision of Swiss banking technology with the transparency of blockchain to create the world\'s most trusted CO₂ certification system.',
+    'intro-blockchain-title': 'Blockchain-Powered Transparency',
+    'intro-blockchain-description': 'Every certification is immutably recorded on our secure blockchain network, ensuring complete transparency and eliminating double counting.',
+    'intro-standards-title': 'European Standard Compliance',
+    'intro-standards-description': 'Full compliance with EUFD2025-001 and ISO 14064-1, 14064-2, 14064-3 standards for international recognition.',
+    'intro-security-title': 'Swiss Banking Security',
+    'intro-security-description': 'Military-grade security infrastructure hosted in Swiss Alpine data centers with banking-level encryption.',
+
     // Standard section
-    // Standard section details
-    // Partnerships
-    // Transition Section
-    // Platform
-    // Partnership component translations - duplicate key section to override
-    // Platform section translations
-    // EU Standards Focus
-    // EUFD Regulatory Framework
-    // Security Page - Alpine Blockchain Section (English) - SIMPLIFIED
-    // CO₂ Neutral Infrastructure Section (English)
-    // Digital Fingerprint Section (English)
-    // Alpine Data Centers (English)
-    // Physical Security Pillars (English)
-    // Alpine Blockchain Section (English)
-    // Agricultural Trust Visual Section (English)
-    // Security Main Section Summaries
-    // Security Conclusion Section
-    // Renewable energy section translations
-    // Read more button
-    // Legal Documentation (Italian)
-    'legal-doc-title': 'Documentazione Legale',
-    'legal-doc-subtitle': 'Guida completa alla nostra piattaforma di certificazione CO₂ basata su blockchain',
-    'legal-doc-executive-summary': 'Riassunto Esecutivo',
-    'legal-doc-regulatory-framework': 'Quadro Normativo Globale',
-    'legal-doc-market-problems': 'Problemi di Mercato Attuali',
-    'legal-doc-fagri-solution': 'La Soluzione FAGRI.Digital',
-    'legal-doc-implementation': 'Strategia di Implementazione',
-    'legal-doc-technical-architecture': 'Architettura Tecnica',
-    // Partners section
-    // EUFD Standard page translations
-    // Security
-    // Mission
-    // Contact
-    // Hero Ecosystem Trust Indicators  
-    // Forms
-    // CO2 Certification
-    // Modal
+    'standard-title': 'EUFD2025-001 Standard',
+    'standard-subtitle': 'The European Framework for Agricultural CO₂ Certification',
+    'standard-description': 'The EUFD2025-001 standard represents the pinnacle of agricultural CO₂ certification methodology, developed through extensive collaboration with leading European institutions and refined through rigorous scientific validation.',
+    'standard-cta': 'Read More',
+
+    // Standard features
+    'standard-feature-1-title': 'Scientific Validation',
+    'standard-feature-1-desc': 'Peer-reviewed methodologies validated by leading European agricultural research institutions',
+    'standard-feature-2-title': 'Blockchain Integration',
+    'standard-feature-2-desc': 'Immutable record-keeping through advanced blockchain technology for complete transparency',
+    'standard-feature-3-title': 'Legal Compliance',
+    'standard-feature-3-desc': 'Full compliance with EU regulations and international carbon accounting standards',
+    'standard-feature-4-title': 'Process Efficiency',
+    'standard-feature-4-desc': 'Streamlined certification process designed for agricultural enterprises of all sizes',
+
+    // Platform section
+    'platform-title': 'Comprehensive CO₂ Certification Platform',
+    'platform-subtitle': 'End-to-End Solutions for Agricultural Sustainability',
+    'platform-description': 'Our integrated platform provides everything needed for complete CO₂ certification, from initial assessment to blockchain-verified carbon credits.',
+
+    // Platform features
+    'platform-feature-1-title': 'Agricultural Assessment',
+    'platform-feature-1-desc': 'Comprehensive evaluation of farming practices and carbon sequestration potential',
+    'platform-feature-2-title': 'Documentation Management',
+    'platform-feature-2-desc': 'Secure, blockchain-backed storage of all certification documents and evidence',
+    'platform-feature-3-title': 'Verification Process',
+    'platform-feature-3-desc': 'Independent third-party verification following international standards',
+    'platform-feature-4-title': 'Carbon Credit Issuance',
+    'platform-feature-4-desc': 'Automated issuance of verified carbon credits upon successful certification',
+
+    // Security section
+    'security-title': 'Swiss Banking-Level Security',
+    'security-subtitle': 'Military-Grade Protection for Your Data',
+    'security-description': 'Your certification data is protected by the same security standards used by Swiss financial institutions, ensuring absolute confidentiality and integrity.',
+
+    // Security features
+    'security-feature-1-title': '3-Factor Authentication',
+    'security-feature-1-desc': 'Advanced authentication system combining biometric, digital, and knowledge factors',
+    'security-feature-2-title': 'Data Sovereignty',
+    'security-feature-2-desc': 'Complete control over your data with Swiss data protection laws',
+    'security-feature-3-title': 'Alpine Infrastructure',
+    'security-feature-3-desc': 'Data centers located in secure Swiss mountain facilities',
+
+    // Partnerships section
+    'partnerships-title': 'Trusted by Leading Organizations',
+    'partnerships-subtitle': 'Building Tomorrow\'s Sustainable Agriculture',
+    'partnerships-description': 'Our platform is backed by strategic partnerships with technology leaders and institutional supporters who share our vision for sustainable agriculture.',
+
+    // Partners
+    'partner-alphag8-title': 'ALPHAG8 Digital Solutions',
+    'partner-alphag8-desc': 'Swiss technology partner providing banking-grade infrastructure and blockchain expertise',
+    'partner-g8chain-title': 'G8Chain Blockchain',
+    'partner-g8chain-desc': 'Advanced blockchain technology ensuring immutable and transparent record-keeping',
+    'partner-eu-title': 'European Commission',
+    'partner-eu-desc': 'Institutional support for European agricultural digitalization initiatives',
+    'partner-ministry-title': 'Italian Ministry of Environment',
+    'partner-ministry-desc': 'Government partnership ensuring regulatory compliance and standards alignment',
+    'partner-iso-title': 'ISO Standards Organization',
+    'partner-iso-desc': 'Certification methodology aligned with international quality standards',
+    'partner-university-title': 'Italian Universities',
+    'partner-university-desc': 'Research collaboration with leading academic institutions for scientific validation',
+
+    // Contact section
+    'contact-title': 'Start Your CO₂ Certification Journey',
+    'contact-subtitle': 'Connect with Agricultural Sustainability Experts',
+    'contact-description': 'Ready to transform your agricultural practices and generate verified carbon credits? Our team of experts is here to guide you through every step of the certification process.',
+    'contact-name': 'Full Name',
+    'contact-email': 'Email Address',
+    'contact-phone': 'Phone Number',
+    'contact-company': 'Company/Farm Name',
+    'contact-message': 'Message',
+    'contact-submit': 'Send Message',
+    'contact-form-success': 'Thank you for your message! We will respond as soon as possible.',
+
     // Footer
+    'footer-description': 'Digital platform for CO₂ certification and sustainable agriculture. Building a responsible future together.',
+    'footer-platform': 'Platform',
+    'footer-standard': 'EUFD2025-001 Standard',
+    'footer-certification': 'CO₂ Certification',
+    'footer-security': 'Digital Security',
+    'footer-partnerships': 'Partnerships',
+    'footer-company': 'Organization',
+    'footer-legal': 'Legal',
+    'footer-privacy': 'Privacy Policy',
+    'footer-terms': 'Terms and Conditions',
+    'footer-gdpr': 'GDPR Information',
+    'footer-cookies': 'Cookie Policy',
+    'footer-copyright': '© 2025 Fagri Digital S.r.l. All rights reserved.',
+    'footer-partners': 'Technology Partners',
+    'footer-powered-by': 'Website Concept and Design by',
+    'footer-about': 'About Us',
+    'footer-mission': 'Mission',
+    'footer-contact': 'Contact',
+    'footer-news': 'News',
+
+    // EUFD Standard Page
+    'eufd-detailed-title': 'EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain',
+    'eufd-intro-p1': 'The EUFD2025-001 standard represents a groundbreaking approach to agricultural CO₂ certification, combining rigorous scientific methodology with cutting-edge blockchain technology. Developed through extensive collaboration with leading European research institutions and validated by independent certification bodies, this standard ensures that every carbon credit issued is scientifically sound, completely transparent, and legally compliant.',
+    'eufd-intro-p2': 'Our comprehensive framework addresses the growing need for standardized, verifiable carbon accounting in agriculture while maintaining the flexibility to accommodate diverse farming systems across Europe and beyond.',
+
+    // Launch Box
+    'eufd-launch-box-title': 'EUFD2025-001 Standard Available Now',
+    'eufd-launch-box-text': 'Access the complete EUFD2025-001 certification standard documentation. This comprehensive guide provides detailed methodologies, technical specifications, and implementation guidelines for agricultural CO₂ certification.',
+
+    // Blockchain Features
+    'eufd-blockchain-features-title': 'Blockchain Technology Integration',
+    'eufd-feature-double-counting-title': 'Double-Counting Prevention',
+    'eufd-feature-double-counting-desc': 'Advanced cryptographic algorithms ensure each carbon credit can only be issued and traded once, eliminating fraud and double counting through immutable blockchain records.',
+    'eufd-feature-greenwashing-title': 'Greenwashing Protection',
+    'eufd-feature-greenwashing-desc': 'Complete transparency through public blockchain verification allows stakeholders to independently verify the authenticity and environmental impact of every carbon credit.',
+    'eufd-feature-clear-ownership-title': 'Clear Ownership Verification',
+    'eufd-feature-clear-ownership-desc': 'Smart contracts automatically establish and transfer ownership rights, providing legal certainty and reducing transaction costs in carbon credit markets.',
+    'eufd-feature-maximum-security-title': 'Maximum Security Standards',
+    'eufd-feature-maximum-security-desc': 'Military-grade encryption and Swiss banking-level security protocols protect all data, ensuring confidentiality while maintaining transparency where required.',
+
+    // EU Regulation Box
+    'eu-regulation-box-title': 'EU Regulation 3012/2024: Blockchain Mandate',
+    'eu-regulation-box-content': 'Under the new EU Regulation 3012/2024, all carbon credit issuance for agricultural projects must utilize blockchain-based digital platforms to ensure transparency, prevent double counting, and maintain immutable records. This regulation, effective from January 2025, makes blockchain technology mandatory for all EU-compliant carbon certification systems. The EUFD2025-001 standard fully complies with these requirements, positioning FAGRI.Digital as a leading platform for regulatory-compliant carbon credit generation.',
+
+    // ISO Standards Box
+    'iso-standards-box-title': 'ISO 14064-1, 14064-2, 14064-3 Standards',
+    'iso-standards-box-content': 'The EUFD2025-001 standard is built upon the internationally recognized ISO 14064 series, which provides the foundational principles for greenhouse gas accounting and verification. ISO 14064-1 establishes organizational-level GHG inventories, ISO 14064-2 focuses on project-level quantification and reporting, and ISO 14064-3 defines validation and verification requirements. Our implementation extends these standards specifically for agricultural applications while maintaining full international compatibility.'
   }
 };
 // Add missing project registration translations
