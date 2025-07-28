@@ -1242,7 +1242,36 @@ export const translations = {
     // Alpine Data Centers Meet Blockchain Section
     'alpine-blockchain-title': 'I Centri Dati Alpini Incontrano l\'Innovazione Blockchain',
     'swiss-mountain-blockchain-desc': 'I nostri centri dati di montagna svizzeri forniscono la base di sicurezza fisica, mentre la nostra rete blockchain a 51 nodi garantisce l\'integrità crittografica. Questa combinazione crea un livello di protezione senza precedenti per i tuoi dati agricoli, con gli stessi standard di sicurezza utilizzati dalle banche svizzere e dalle istituzioni governative.',
-    'swiss-security-guarantee': 'Garanzia di Sicurezza Svizzera'
+    'swiss-security-guarantee': 'Garanzia di Sicurezza Svizzera',
+    // Alpine Security Meets Global Blockchain Governance Section
+    'alpine-security-global-blockchain': 'Sicurezza Alpina Incontra la Governance Blockchain Globale',
+    'first-time-blockchain-validators': 'Per la prima volta, i validatori blockchain sono gestiti congiuntamente da istituzioni, organizzazioni sociali e partner di più paesi — tutti con pari diritti e responsabilità condivise.',
+    'housed-swiss-mountain-data': 'Ospitata nei centri dati di montagna svizzeri con sicurezza di livello bancario, la nostra blockchain a 51 nodi garantisce integrità, resilienza e sovranità dei dati.',
+    'fagri-digital-combines-physical': 'FAGRI.Digital combina la protezione fisica con la governance decentralizzata, creando un\'infrastruttura trasparente e affidabile per la certificazione CO₂ e i dati agricoli per il mondo di domani.',
+    // Blockchain Technical Cards
+    'validator-nodes-51': '51 Nodi Validatori',
+    'each-partner-organization-controls': 'Ogni organizzazione partner controlla un nodo validatore singolo, garantendo nessun singolo punto di guasto e creando una struttura di governance veramente decentralizzata tra enti sociali e aziendali.',
+    'dpos-consensus': 'Consenso DPoS',
+    'delegated-proof-stake-ensures': 'La Proof of Stake Delegata garantisce efficienza energetica mantenendo la sicurezza. I validatori sono scelti attraverso partecipazione democratica, creando responsabilità e fiducia.',
+    'evm-compatibility': 'Compatibilità EVM',
+    'full-ethereum-virtual-machine': 'La piena compatibilità con Ethereum Virtual Machine garantisce interoperabilità con i protocolli DeFi esistenti mantenendo il nostro focus agricolo specializzato.',
+    // Diversified Trust Network Section
+    'diversified-trust-network': 'Rete di Fiducia Diversificata',
+    'multi-stakeholder-governance': 'Governance Multi-Stakeholder',
+    'blockchain-brings-together-agricultural': 'La nostra blockchain riunisce cooperative agricole, organizzazioni ambientali, istituzioni finanziarie e partner tecnologici. Questa diversificazione garantisce che nessuna singola entità possa manipolare la rete.',
+    'agricultural-cooperatives-farmers': 'Cooperative agricole e sindacati contadini',
+    'environmental-certification-bodies': 'Organismi di certificazione ambientale',
+    'financial-institutions-impact': 'Istituzioni finanziarie e investitori d\'impatto',
+    'technical-security-features': 'Caratteristiche di Sicurezza Tecnica',
+    'advanced-cryptographic-mechanisms': 'Meccanismi crittografici avanzati garantiscono integrità dei dati e prevengono doppi conteggi o manipolazioni di crediti di carbonio e certificazioni agricole.',
+    'immutable-audit-trails': 'Tracce di audit immutabili per tutte le transazioni',
+    'smart-contract-validation': 'Validazione di contratti intelligenti delle metriche di sostenibilità',
+    'cryptographic-proof-agricultural': 'Prova crittografica delle pratiche agricole',
+    // 100% CO2 Neutral Section
+    'co2-neutral-sustainable-technology': '100% CO₂ Neutrale – Tecnologia Sostenibile per una Nuova Era dell\'Infrastruttura Digitale',
+    'all-data-centers-operate': 'Tutti i nostri centri dati e servizi digitali operano su base completamente CO₂-neutrale. Situati nelle Alpi svizzere, all\'interno di bunker militari riproposti, la nostra infrastruttura è alimentata interamente da idroelettrico svizzero certificato al 100%.',
+    'naturally-cool-climate': 'Il clima naturalmente fresco della regione montana riduce significativamente la necessità di raffreddamento ad alta intensità energetica, abbassando il consumo energetico complessivo senza compromettere prestazioni o sicurezza.',
+    'fagri-digital-represents-ecosystem': 'FAGRI.Digital rappresenta un ecosistema digitale che non è solo sicuro e sovrano, ma anche ecologicamente responsabile. Ogni processo di dati, ogni certificazione, ogni transazione è condotta in modo climaticamente neutrale – un impegno verso i nostri partner, membri e generazioni future.'
   },
   en: {
     // Navigation

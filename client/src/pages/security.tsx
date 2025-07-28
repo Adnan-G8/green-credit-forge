@@ -373,17 +373,17 @@ export default function Security() {
                       <Mountain className="text-emerald-700 h-8 w-8" />
                     </div>
                     <h2 className="text-3xl font-light text-slate-900 mb-6">
-                      Alpine Security Meets Global Blockchain Governance
+                      {t('alpine-security-global-blockchain')}
                     </h2>
                     <div className="space-y-4 max-w-4xl mx-auto">
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        For the first time, blockchain validators are jointly operated by institutions, social organizations, and partners from multiple countries — all with equal rights and shared responsibilities.
+                        {t('first-time-blockchain-validators')}
                       </p>
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        Housed in Swiss mountain data centers with bank-level security, our 51-node blockchain ensures data integrity, resilience, and sovereignty.
+                        {t('housed-swiss-mountain-data')}
                       </p>
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and trustworthy infrastructure for CO₂ certification and agricultural data for the world of tomorrow.
+                        {t('fagri-digital-combines-physical')}
                       </p>
                     </div>
                   </div>
@@ -409,58 +409,58 @@ export default function Security() {
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                     <div className="bg-blue-50 p-8 rounded-xl text-center">
                       <Database className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                      <h3 className="text-xl font-medium text-slate-900 mb-4">51 Validator Nodes</h3>
-                      <p className="text-slate-600 leading-relaxed">Each partner organization controls one validator node, ensuring no single point of failure and creating a truly decentralized governance structure across social and corporate entities.</p>
+                      <h3 className="text-xl font-medium text-slate-900 mb-4">{t('validator-nodes-51')}</h3>
+                      <p className="text-slate-600 leading-relaxed">{t('each-partner-organization-controls')}</p>
                     </div>
                     <div className="bg-green-50 p-8 rounded-xl text-center">
                       <Shield className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                      <h3 className="text-xl font-medium text-slate-900 mb-4">DPoS Consensus</h3>
-                      <p className="text-slate-600 leading-relaxed">Delegated Proof of Stake ensures energy efficiency while maintaining security. Validators are chosen through democratic participation, creating accountability and trust.</p>
+                      <h3 className="text-xl font-medium text-slate-900 mb-4">{t('dpos-consensus')}</h3>
+                      <p className="text-slate-600 leading-relaxed">{t('delegated-proof-stake-ensures')}</p>
                     </div>
                     <div className="bg-purple-50 p-8 rounded-xl text-center">
                       <Globe className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                      <h3 className="text-xl font-medium text-slate-900 mb-4">EVM Compatibility</h3>
-                      <p className="text-slate-600 leading-relaxed">Full Ethereum Virtual Machine compatibility ensures interoperability with existing DeFi protocols while maintaining our specialized agricultural focus.</p>
+                      <h3 className="text-xl font-medium text-slate-900 mb-4">{t('evm-compatibility')}</h3>
+                      <p className="text-slate-600 leading-relaxed">{t('full-ethereum-virtual-machine')}</p>
                     </div>
                   </div>
 
                   {/* Diversified Trust Network */}
                   <div className="bg-slate-50 p-8 rounded-xl">
-                    <h2 className="text-3xl font-light text-slate-900 mb-8 text-center">Diversified Trust Network</h2>
+                    <h2 className="text-3xl font-light text-slate-900 mb-8 text-center">{t('diversified-trust-network')}</h2>
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h3 className="text-xl font-medium text-slate-900 mb-4">Multi-Stakeholder Governance</h3>
-                        <p className="text-slate-600 leading-relaxed mb-6">Our blockchain brings together agricultural cooperatives, environmental organizations, financial institutions, and technology partners. This diversification ensures no single entity can manipulate the network.</p>
+                        <h3 className="text-xl font-medium text-slate-900 mb-4">{t('multi-stakeholder-governance')}</h3>
+                        <p className="text-slate-600 leading-relaxed mb-6">{t('blockchain-brings-together-agricultural')}</p>
                         <ul className="space-y-3">
                           <li className="flex items-center">
                             <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                            <span className="text-slate-600">Agricultural cooperatives and farmers' unions</span>
+                            <span className="text-slate-600">{t('agricultural-cooperatives-farmers')}</span>
                           </li>
                           <li className="flex items-center">
                             <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                            <span className="text-slate-600">Environmental certification bodies</span>
+                            <span className="text-slate-600">{t('environmental-certification-bodies')}</span>
                           </li>
                           <li className="flex items-center">
                             <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                            <span className="text-slate-600">Financial institutions and impact investors</span>
+                            <span className="text-slate-600">{t('financial-institutions-impact')}</span>
                           </li>
                         </ul>
                       </div>
                       <div>
-                        <h3 className="text-xl font-medium text-slate-900 mb-4">Technical Security Features</h3>
-                        <p className="text-slate-600 leading-relaxed mb-6">Advanced cryptographic mechanisms ensure data integrity and prevent double-counting or manipulation of carbon credits and agricultural certifications.</p>
+                        <h3 className="text-xl font-medium text-slate-900 mb-4">{t('technical-security-features')}</h3>
+                        <p className="text-slate-600 leading-relaxed mb-6">{t('advanced-cryptographic-mechanisms')}</p>
                         <ul className="space-y-3">
                           <li className="flex items-center">
                             <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                            <span className="text-slate-600">Immutable audit trails for all transactions</span>
+                            <span className="text-slate-600">{t('immutable-audit-trails')}</span>
                           </li>
                           <li className="flex items-center">
                             <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                            <span className="text-slate-600">Smart contract validation of sustainability metrics</span>
+                            <span className="text-slate-600">{t('smart-contract-validation')}</span>
                           </li>
                           <li className="flex items-center">
                             <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                            <span className="text-slate-600">Cryptographic proof of agricultural practices</span>
+                            <span className="text-slate-600">{t('cryptographic-proof-agricultural')}</span>
                           </li>
                         </ul>
                       </div>
@@ -490,17 +490,17 @@ export default function Security() {
                       <Leaf className="text-green-700 h-8 w-8" />
                     </div>
                     <h2 className="text-3xl font-light text-slate-900 mb-8">
-                      100% CO₂ Neutral – Sustainable Technology for a New Era of Digital Infrastructure
+                      {t('co2-neutral-sustainable-technology')}
                     </h2>
                     <div className="space-y-6 max-w-4xl mx-auto">
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        All our data centers and digital services operate on a fully CO₂-neutral basis. Located in the Swiss Alps, within repurposed military bunkers, our infrastructure is powered entirely by 100% certified Swiss hydropower.
+                        {t('all-data-centers-operate')}
                       </p>
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        The naturally cool climate of the mountain region significantly reduces the need for energy-intensive cooling, lowering overall power consumption without compromising on performance or security.
+                        {t('naturally-cool-climate')}
                       </p>
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members, and future generations.
+                        {t('fagri-digital-represents-ecosystem')}
                       </p>
                     </div>
                   </div>
