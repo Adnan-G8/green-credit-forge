@@ -157,6 +157,97 @@ export default function Security() {
               </div>
             </div>
 
+            {/* Unrivalled Physical Security Section */}
+            <section className="py-20 bg-slate-50">
+              <div className="container mx-auto px-6">
+                <div className="max-w-6xl mx-auto">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    
+                    {/* Content */}
+                    <div>
+                      <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                        <Building className="text-orange-700 h-8 w-8" />
+                      </div>
+                      <h2 className="text-3xl font-light text-slate-900 mb-6">
+                        Unrivalled Physical Security: Data in Alpine Fortresses
+                      </h2>
+                      <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Our data centers use former Swiss military bunkers, repurposed into state-of-the-art data centers, offering a level of physical protection far beyond conventional data centers.
+                      </p>
+                      <p className="text-sm text-slate-500 mb-8">
+                        Secure data center infrastructure with professional server equipment
+                      </p>
+                    </div>
+
+                    {/* Server Image */}
+                    <div className="relative">
+                      <img 
+                        src="/attached_assets/image_1753693840325.png" 
+                        alt="Professional data center with server infrastructure"
+                        className="rounded-xl shadow-lg w-full h-auto"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Four Security Pillars */}
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                    
+                    {/* Military Standards */}
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+                      <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <Shield className="text-red-700 h-6 w-6" />
+                      </div>
+                      <h3 className="text-lg font-medium text-slate-900 mb-3">
+                        Military Standards
+                      </h3>
+                      <p className="text-sm text-slate-600">
+                        Military Standard: built to withstand conventional attacks, chemical/biological threats, and electromagnetic pulses (EMPs)
+                      </p>
+                    </div>
+
+                    {/* Autonomous Operations */}
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <Database className="text-blue-700 h-6 w-6" />
+                      </div>
+                      <h3 className="text-lg font-medium text-slate-900 mb-3">
+                        Autonomous Operations
+                      </h3>
+                      <p className="text-sm text-slate-600">
+                        Autonomous Operability: independent power supply systems and autonomous ventilation for operational continuity even during disasters
+                      </p>
+                    </div>
+
+                    {/* Access Control */}
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+                      <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                        <Eye className="text-emerald-700 h-6 w-6" />
+                      </div>
+                      <h3 className="text-lg font-medium text-slate-900 mb-3">
+                        Access Control
+                      </h3>
+                      <p className="text-sm text-slate-600">
+                        Strict Access Controls: multi-ton security doors, biometric scanners, and 24/7 video surveillance
+                      </p>
+                    </div>
+
+                    {/* Disaster Recovery */}
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <Mountain className="text-purple-700 h-6 w-6" />
+                      </div>
+                      <h3 className="text-lg font-medium text-slate-900 mb-3">
+                        Disaster Recovery
+                      </h3>
+                      <p className="text-sm text-slate-600">
+                        Dedicated Alpine recovery site with triple backup systems across geographically dispersed Swiss locations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
           </div>
         </div>
       </section>
