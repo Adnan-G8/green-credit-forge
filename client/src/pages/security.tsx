@@ -346,6 +346,44 @@ export default function Security() {
               </div>
             </section>
 
+            {/* 100% CO₂ Neutral Section */}
+            <section className="py-20 bg-slate-50">
+              <div className="container mx-auto px-6">
+                <div className="max-w-6xl mx-auto">
+                  
+                  {/* Swiss Alps Image at top */}
+                  <div className="relative mb-16">
+                    <img 
+                      src={swissBunker} 
+                      alt="Swiss Alps mountain infrastructure for CO₂ neutral data centers"
+                      className="rounded-xl shadow-lg w-full h-64 object-cover"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                      <Leaf className="text-green-700 h-8 w-8" />
+                    </div>
+                    <h2 className="text-3xl font-light text-slate-900 mb-8">
+                      100% CO₂ Neutral – Sustainable Technology for a New Era of Digital Infrastructure
+                    </h2>
+                    <div className="space-y-6 max-w-4xl mx-auto">
+                      <p className="text-lg text-slate-600 leading-relaxed">
+                        All our data centers and digital services operate on a fully CO₂-neutral basis. Located in the Swiss Alps, within repurposed military bunkers, our infrastructure is powered entirely by 100% certified Swiss hydropower.
+                      </p>
+                      <p className="text-lg text-slate-600 leading-relaxed">
+                        The naturally cool climate of the mountain region significantly reduces the need for energy-intensive cooling, lowering overall power consumption without compromising on performance or security.
+                      </p>
+                      <p className="text-lg text-slate-600 leading-relaxed">
+                        FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members, and future generations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
           </div>
         </div>
       </section>
