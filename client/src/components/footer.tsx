@@ -82,12 +82,12 @@ export function Footer() {
             {/* Legal Links */}
             <h4 className="font-semibold mb-4 mt-8 text-white">{t('footer-legal')}</h4>
             <div className="space-y-2 text-sm text-gray-400">
-              <Link href="/privacy">
+              <Link href="/privacy-policy">
                 <span className="hover:text-emerald-400 transition-colors cursor-pointer block">
                   {t('footer-privacy')}
                 </span>
               </Link>
-              <Link href="/terms">
+              <Link href="/terms-of-service">
                 <span className="hover:text-emerald-400 transition-colors cursor-pointer block">
                   {t('footer-terms')}
                 </span>
