@@ -1283,11 +1283,16 @@ export const translations = {
     'dashboard': 'Dashboard',
 
     // Hero section
-    'hero-title': 'Agricultural Digitalization',
-    'hero-subtitle': 'Climate Responsibility',
-    'hero-description': 'The first blockchain-based platform for agricultural CO₂ certification according to the European EUFD2025-001 standard. Transforming agriculture into a pillar of sustainability through cutting-edge technology.',
-    'hero-cta': 'Apply for Membership',
-    'hero-learn-more': 'Learn More',
+    'hero-title1': 'Digitalization.',
+    'hero-title2': 'Responsibility.',
+    'hero-title3': 'Climate.',
+    'hero-tagline': 'Together we build the future.',
+    'hero-subtitle': 'Agricultural Transformation Platform - Connect producers, SMEs, cooperatives and communities through sustainability',
+    'hero-description': 'FAGRI.Digital, born within FAGRI, is a Certification System with a global digital platform for the carbon market and blockchain certifications in agriculture. In a world marked by climate change, technological transformations, and an ever-evolving regulatory framework, FAGRI.Digital proposes a unique new approach that combines the concreteness of agricultural experience with modern digital tools, for fair and transparent participation in environmental and climate programs – particularly in CO₂ certification.',
+    'hero-cta1': 'Discover EUFD2025-001',
+    'hero-cta2': 'Join the Network',
+    'hero-cta-discover': 'Discover EUFD2025-001',
+    'hero-cta-join': 'Join the Network',
 
     // Trust indicators
     'trust-members': 'Members',
