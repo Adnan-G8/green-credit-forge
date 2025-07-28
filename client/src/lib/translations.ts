@@ -1144,7 +1144,33 @@ export const translations = {
 
     // ISO Standards Box - Italian
     'iso-standards-box-title': 'Standard ISO 14064-1, 14064-2, 14064-3',
-    'iso-standards-box-content': 'Lo standard EUFD2025-001 è costruito sui riconosciuti a livello internazionale standard della serie ISO 14064, che forniscono i principi fondamentali per la contabilizzazione e verifica dei gas serra. ISO 14064-1 stabilisce inventari GHG a livello organizzativo, ISO 14064-2 si concentra sulla quantificazione e reporting a livello di progetto, e ISO 14064-3 definisce i requisiti di validazione e verifica. La nostra implementazione estende questi standard specificamente per applicazioni agricole mantenendo piena compatibilità internazionale.'
+    'iso-standards-box-content': 'Lo standard EUFD2025-001 è costruito sui riconosciuti a livello internazionale standard della serie ISO 14064, che forniscono i principi fondamentali per la contabilizzazione e verifica dei gas serra. ISO 14064-1 stabilisce inventari GHG a livello organizzativo, ISO 14064-2 si concentra sulla quantificazione e reporting a livello di progetto, e ISO 14064-3 definisce i requisiti di validazione e verifica. La nostra implementazione estende questi standard specificamente per applicazioni agricole mantenendo piena compatibilità internazionale.',
+
+    // Additional EUFD Standard Page Content - Italian
+    'eufd-blockchain-transparency-title': 'Trasparenza Blockchain Totale',
+    'eufd-blockchain-integration-title': 'Integrazione Blockchain Avanzata',
+    'eufd-blockchain-integration-desc': 'Tecnologia blockchain integrata per garantire massima trasparenza e immutabilità dei record di certificazione',
+    'eufd-blockchain-strategic-use': 'La nostra piattaforma utilizza strategicamente la tecnologia blockchain per risolvere i principali problemi del mercato dei crediti di carbonio: doppio conteggio, greenwashing e mancanza di trasparenza.',
+    'eufd-blockchain-benefit-1': 'Prevenzione automatica del doppio conteggio attraverso algoritmi crittografici avanzati',
+    'eufd-blockchain-benefit-2': 'Trasparenza completa con verifica pubblica di tutti i crediti di carbonio emessi',
+    'eufd-blockchain-benefit-3': 'Proprietà chiara e trasferimento sicuro dei diritti sui crediti di carbonio',
+    'eufd-framework-title': 'Framework Normativo Europeo',
+    'eufd-eu-regulation-desc': 'Conformità completa al nuovo Regolamento UE 3012/2024 per la certificazione del carbonio',
+    'eufd-key-requirements': 'Requisiti Chiave del Regolamento',
+    'eufd-req-1': 'Utilizzo obbligatorio di piattaforme blockchain per progetti agricoli',
+    'eufd-req-2': 'Record immutabili per prevenire frodi e doppio conteggio',
+    'eufd-req-3': 'Trasparenza pubblica per verifica indipendente da parte degli stakeholder',
+    'eufd-iso-title': 'Standard ISO 14064 Integrati',
+    'eufd-iso-desc': 'Implementazione completa degli standard internazionali per contabilizzazione gas serra',
+    'eufd-our-vision-title': 'La Nostra Visione per l\'Agricoltura Sostenibile',
+    'eufd-vision-main-text': 'FAGRI.Digital sta trasformando l\'agricoltura italiana attraverso la certificazione CO₂ basata su blockchain, creando opportunità economiche concrete per gli agricoltori mentre contribuiamo agli obiettivi climatici europei.',
+    'eufd-vision-guarantee': 'Garantiamo trasparenza, sicurezza e conformità normativa completa per ogni progetto di certificazione.',
+    'eufd-trust-global-title': 'Fiducia e Riconoscimento Globale',
+    'eufd-trust-standard-desc': 'Lo standard EUFD2025-001 è riconosciuto a livello internazionale e compatibile con i principali mercati dei crediti di carbonio.',
+    'eufd-join-title': 'Unisciti alla Rivoluzione della Certificazione CO₂',
+    'eufd-join-desc': 'Diventa parte del futuro dell\'agricoltura sostenibile con la certificazione blockchain più avanzata d\'Europa.',
+    'eufd-contact-us': 'Contattaci',
+    'eufd-back-home': 'Torna alla Home'
   },
   en: {
     // Navigation
@@ -1299,7 +1325,33 @@ export const translations = {
 
     // ISO Standards Box
     'iso-standards-box-title': 'ISO 14064-1, 14064-2, 14064-3 Standards',
-    'iso-standards-box-content': 'The EUFD2025-001 standard is built upon the internationally recognized ISO 14064 series, which provides the foundational principles for greenhouse gas accounting and verification. ISO 14064-1 establishes organizational-level GHG inventories, ISO 14064-2 focuses on project-level quantification and reporting, and ISO 14064-3 defines validation and verification requirements. Our implementation extends these standards specifically for agricultural applications while maintaining full international compatibility.'
+    'iso-standards-box-content': 'The EUFD2025-001 standard is built upon the internationally recognized ISO 14064 series, which provides the foundational principles for greenhouse gas accounting and verification. ISO 14064-1 establishes organizational-level GHG inventories, ISO 14064-2 focuses on project-level quantification and reporting, and ISO 14064-3 defines validation and verification requirements. Our implementation extends these standards specifically for agricultural applications while maintaining full international compatibility.',
+
+    // Additional EUFD Standard Page Content - English
+    'eufd-blockchain-transparency-title': 'Complete Blockchain Transparency',
+    'eufd-blockchain-integration-title': 'Advanced Blockchain Integration',
+    'eufd-blockchain-integration-desc': 'Integrated blockchain technology to ensure maximum transparency and immutability of certification records',
+    'eufd-blockchain-strategic-use': 'Our platform strategically uses blockchain technology to solve the major problems of carbon credit markets: double counting, greenwashing, and lack of transparency.',
+    'eufd-blockchain-benefit-1': 'Automatic prevention of double counting through advanced cryptographic algorithms',
+    'eufd-blockchain-benefit-2': 'Complete transparency with public verification of all issued carbon credits',
+    'eufd-blockchain-benefit-3': 'Clear ownership and secure transfer of carbon credit rights',
+    'eufd-framework-title': 'European Regulatory Framework',
+    'eufd-eu-regulation-desc': 'Full compliance with the new EU Regulation 3012/2024 for carbon certification',
+    'eufd-key-requirements': 'Key Regulatory Requirements',
+    'eufd-req-1': 'Mandatory use of blockchain platforms for agricultural projects',
+    'eufd-req-2': 'Immutable records to prevent fraud and double counting',
+    'eufd-req-3': 'Public transparency for independent stakeholder verification',
+    'eufd-iso-title': 'Integrated ISO 14064 Standards',
+    'eufd-iso-desc': 'Complete implementation of international standards for greenhouse gas accounting',
+    'eufd-our-vision-title': 'Our Vision for Sustainable Agriculture',
+    'eufd-vision-main-text': 'FAGRI.Digital is transforming Italian agriculture through blockchain-based CO₂ certification, creating concrete economic opportunities for farmers while contributing to European climate goals.',
+    'eufd-vision-guarantee': 'We guarantee transparency, security, and complete regulatory compliance for every certification project.',
+    'eufd-trust-global-title': 'Global Trust and Recognition',
+    'eufd-trust-standard-desc': 'The EUFD2025-001 standard is internationally recognized and compatible with major carbon credit markets.',
+    'eufd-join-title': 'Join the CO₂ Certification Revolution',
+    'eufd-join-desc': 'Become part of the future of sustainable agriculture with Europe\'s most advanced blockchain certification.',
+    'eufd-contact-us': 'Contact Us',
+    'eufd-back-home': 'Back to Home'
   }
 };
 // Add missing project registration translations
