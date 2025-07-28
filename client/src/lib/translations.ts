@@ -1229,7 +1229,20 @@ export const translations = {
     'multi-layer-encryption-title': 'Crittografia Multi-Livello',
     'data-protected-encryption-standards': 'I dati sono protetti con standard di crittografia riconosciuti internazionalmente come AES-256 e RSA-4096. Un\'architettura "Zero-Knowledge" garantisce che solo tu possa decrittare i tuoi file.',
     'robust-redundancy-title': 'Ridondanza Robusta',
-    'customer-data-triple-backed': 'I dati del cliente sono sottoposti a backup triplo, con ogni file memorizzato simultaneamente in località diverse e geograficamente disperse all\'interno della Svizzera. Un "Sito di Recupero da Disastri" dedicato nelle profondità delle Alpi svizzere offre la massima protezione.'
+    'customer-data-triple-backed': 'I dati del cliente sono sottoposti a backup triplo, con ogni file memorizzato simultaneamente in località diverse e geograficamente disperse all\'interno della Svizzera. Un "Sito di Recupero da Disastri" dedicato nelle profondità delle Alpi svizzere offre la massima protezione.',
+    // Certifications and Compliance Section
+    'certifications-compliance-title': 'Certificazioni e Conformità: I più Alti Standard per la Tua Sicurezza',
+    'comprehensive-certification-portfolio': 'Il nostro portafoglio completo di certificazioni dimostra il nostro impegno per i più alti standard di sicurezza.',
+    'highest-availability-title': 'Massima Disponibilità',
+    'data-centers-comply-uptime': 'I centri dati sono conformi alle più alte Classificazioni Tier dell\'Uptime Institute (Tier III/IV), garantendo manutenibilità concorrente e tolleranza ai guasti.',
+    'iso-iec-pci-title': 'ISO/IEC 27001 & PCI DSS',
+    'internationally-recognized-standards': 'Standard riconosciuti internazionalmente per la gestione sistematica delle informazioni aziendali sensibili e la protezione dei dati di pagamento.',
+    'national-cyber-resilience-title': 'Resilienza Cyber Nazionale',
+    'integrated-switzerland-cyber': 'Integrato nella strategia nazionale di resilienza cyber della Svizzera con reporting obbligatorio 24 ore su 24 di attacchi cyber al National Cyber Security Centre (NCSC).',
+    // Alpine Data Centers Meet Blockchain Section
+    'alpine-blockchain-title': 'I Centri Dati Alpini Incontrano l\'Innovazione Blockchain',
+    'swiss-mountain-blockchain-desc': 'I nostri centri dati di montagna svizzeri forniscono la base di sicurezza fisica, mentre la nostra rete blockchain a 51 nodi garantisce l\'integrità crittografica. Questa combinazione crea un livello di protezione senza precedenti per i tuoi dati agricoli, con gli stessi standard di sicurezza utilizzati dalle banche svizzere e dalle istituzioni governative.',
+    'swiss-security-guarantee': 'Garanzia di Sicurezza Svizzera'
   },
   en: {
     // Navigation
