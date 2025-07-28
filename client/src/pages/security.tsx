@@ -9,6 +9,7 @@ import swissAlps from '@assets/image_1753202443401.png';
 import swissBunker from '@assets/image_1753694170930.png';
 import serverRack from '@assets/image_1753694751730.png';
 import swissAlpsLake from '@assets/image_1753695152431.png';
+import dataCenterCorridor from '@assets/image_1753695626105.png';
 
 export default function Security() {
   const { t } = useLanguage();
@@ -185,7 +186,7 @@ export default function Security() {
                     {/* Server Image */}
                     <div className="relative">
                       <img 
-                        src="/attached_assets/image_1753693840325.png" 
+                        src={dataCenterCorridor} 
                         alt="Professional data center with server infrastructure"
                         className="rounded-xl shadow-lg w-full h-auto"
                       />
