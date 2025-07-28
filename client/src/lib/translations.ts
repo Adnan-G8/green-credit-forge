@@ -1299,8 +1299,13 @@ export const translations = {
     'trust-hectares': 'Hectares Certified',
     'trust-co2-reduced': 'CO₂ Reduced',
 
+    // Transition Section  
+    'transition-title': 'From Field to Future',
+    'transition-subtitle': 'Digital innovation for sustainable Italian agriculture',
+
     // Introduction
     'intro-title': 'Building the Future of CO₂ Certification',
+    'intro-subtitle': 'FAGRI.Digital is not a commercial platform, but a solid infrastructure designed to build a shared, transparent and decentralized network that allows stakeholders to receive tangible recognition for their environmental contribution.',
     'intro-description': 'Fagri.Digital represents a revolutionary approach to agricultural sustainability. Our platform combines the precision of Swiss banking technology with the transparency of blockchain to create the world\'s most trusted CO₂ certification system.',
     'intro-blockchain-title': 'Blockchain-Powered Transparency',
     'intro-blockchain-description': 'Every certification is immutably recorded on our secure blockchain network, ensuring complete transparency and eliminating double counting.',
