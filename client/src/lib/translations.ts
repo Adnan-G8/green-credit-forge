@@ -93,6 +93,14 @@ export const translations = {
     'standard-blockchain-description': 'Soluzione completa per certificazione, registrazione e commercio di crediti di carbonio su piattaforma digitale sicura.',
     'standard-eu-certified': 'Certificato UE',
     'standard-global-standard': 'Standard Globale',
+    'standard-global-title': 'Standard Globale EUFD2025-001',
+    'standard-global-subtitle': 'Metodologia avanzata per la certificazione di crediti di carbonio agricoli e energetici',
+    'standard-global-feature1-title': 'Certificazione Internazionale',
+    'standard-global-feature1-description': 'Riconoscimento globale per progetti di compensazione ambientale conformi agli standard ISO',
+    'standard-global-feature2-title': 'Blockchain Sicura',
+    'standard-global-feature2-description': 'Registrazione immutabile e trasparente di tutti i crediti di carbonio certificati',
+    'standard-global-feature3-title': 'Conformità Normativa',
+    'standard-global-feature3-description': 'Piena conformità con le normative europee e internazionali per il mercato del carbonio',
 
     // Partners Section
     'partners-title': 'Partner Istituzionali e Tecnologici',
@@ -229,6 +237,14 @@ export const translations = {
     'standard-blockchain-description': 'Complete solution for certification, registration and trading of carbon credits on a secure digital platform.',
     'standard-eu-certified': 'EU Certified',
     'standard-global-standard': 'Global Standard',
+    'standard-global-title': 'Global Standard EUFD2025-001',
+    'standard-global-subtitle': 'Advanced methodology for agricultural and energy carbon credit certification',
+    'standard-global-feature1-title': 'International Certification',
+    'standard-global-feature1-description': 'Global recognition for environmental compensation projects compliant with ISO standards',
+    'standard-global-feature2-title': 'Secure Blockchain',
+    'standard-global-feature2-description': 'Immutable and transparent registration of all certified carbon credits',
+    'standard-global-feature3-title': 'Regulatory Compliance',
+    'standard-global-feature3-description': 'Full compliance with European and international regulations for the carbon market',
 
     // Partners Section
     'partners-title': 'Institutional and Technology Partners',
