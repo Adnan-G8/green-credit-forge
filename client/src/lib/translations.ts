@@ -1528,6 +1528,11 @@ export const translations = {
     'security-id-key-card': 'Security & ID KEY Card',
     'project-recommendations': 'Project Recommendations',
 
+    // Security Main Section Summaries
+    'security-3fa-summary': 'Protected access through certified user identity, authorized devices and active sessions.',
+    'security-data-summary': 'Swiss data protection laws and FINMA banking compliance for unmatched data sovereignty.',
+    'security-infrastructure-summary': 'Alpine fortress data centers with military-grade security and blockchain infrastructure.',
+
     // Platform section matching Italian source
 
     'platform-step1-title': 'Guided Procedures',
