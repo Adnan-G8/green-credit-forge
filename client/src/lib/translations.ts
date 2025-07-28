@@ -176,6 +176,14 @@ export const translations = {
     'eufd-iso-14064-2-description': 'Riduzioni delle emissioni di gas serra a livello di progetto e miglioramenti di rimozione. Si concentra sulla quantificazione e rendicontazione delle riduzioni delle emissioni.',
     'eufd-iso-14064-3-title': 'ISO 14064-3',
     'eufd-iso-14064-3-description': 'Verifica e validazione delle asserzioni sui gas serra. Fornisce requisiti per verificare inventari GHG organizzativi o di progetto.',
+    
+    // ISO standard keys that match component usage
+    'eufd-iso-14064-1': 'ISO 14064-1',
+    'eufd-iso-14064-1-desc': 'Inventari di gas serra a livello organizzativo. Fornisce principi e requisiti per progettare, sviluppare e gestire inventari GHG.',
+    'eufd-iso-14064-2': 'ISO 14064-2', 
+    'eufd-iso-14064-2-desc': 'Riduzioni delle emissioni di gas serra a livello di progetto e miglioramenti di rimozione. Si concentra sulla quantificazione e rendicontazione delle riduzioni delle emissioni.',
+    'eufd-iso-14064-3': 'ISO 14064-3',
+    'eufd-iso-14064-3-desc': 'Verifica e validazione delle asserzioni sui gas serra. Fornisce requisiti per verificare inventari GHG organizzativi o di progetto.',
     // Security Page - Alpine Blockchain Section (Italian) - SIMPLIFIED
     'security-page-overview-title': 'Panoramica Sicurezza',
     'security-page-overview-subtitle': 'La nostra architettura di sicurezza a più livelli garantisce la massima protezione per i tuoi dati agricoli.',
@@ -1635,6 +1643,14 @@ export const translations = {
     // ISO Standards Box
     'iso-standards-box-title': 'ISO 14064-1, 14064-2, 14064-3 Standards',
     'iso-standards-box-content': 'The EUFD2025-001 standard is built upon the internationally recognized ISO 14064 series, which provides the foundational principles for greenhouse gas accounting and verification. ISO 14064-1 establishes organizational-level GHG inventories, ISO 14064-2 focuses on project-level quantification and reporting, and ISO 14064-3 defines validation and verification requirements. Our implementation extends these standards specifically for agricultural applications while maintaining full international compatibility.',
+
+    // ISO standard keys that match component usage  
+    'eufd-iso-14064-1': 'ISO 14064-1',
+    'eufd-iso-14064-1-desc': 'Organizational level greenhouse gas inventories. Provides principles and requirements for designing, developing and managing GHG inventories.',
+    'eufd-iso-14064-2': 'ISO 14064-2', 
+    'eufd-iso-14064-2-desc': 'Project level greenhouse gas emission reductions and removal enhancements. Focuses on quantification and reporting of emission reductions.',
+    'eufd-iso-14064-3': 'ISO 14064-3',
+    'eufd-iso-14064-3-desc': 'Verification and validation of greenhouse gas assertions. Provides requirements for verifying organizational or project GHG inventories.',
 
     // Additional EUFD Standard Page Content - English
     'eufd-blockchain-transparency-title': 'Complete Blockchain Transparency',
