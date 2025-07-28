@@ -41,11 +41,8 @@ export function PlatformSection() {
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               {t('platform-title')}
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light mb-4">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
               {t('platform-intro')}
-            </p>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
-              {t('platform-intro-description')}
             </p>
           </div>
 
