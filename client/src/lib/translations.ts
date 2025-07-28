@@ -912,6 +912,7 @@ export const translations = {
     'platform-step3-text': 'e registri europei per processi trasparenti',
     'platform-step4-title': 'Struttura dei Costi Chiara',
     'platform-step4-text': 'equa e prezzo prevedibile',
+    'platform-learn-more': 'Scopri di Più',
     'platform-goal': 'Il nostro obiettivo è garantire che le prestazioni climatiche siano valutate rigorosamente, certificate accuratamente e rese accessibili anche alle piccole e medie imprese.',
     // Security Page
     'security-page-title': 'Sicurezza Digitale',
@@ -1523,6 +1524,7 @@ export const translations = {
     'platform-step3-text': 'and European registers for transparent processes',
     'platform-step4-title': 'Clear Cost Structure',
     'platform-step4-text': 'fair and predictable pricing',
+    'platform-learn-more': 'Learn More',
 
     // Platform impact cards
     'platform-carbon-credits': 'Verified Carbon Credits',
