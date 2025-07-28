@@ -248,6 +248,65 @@ export default function Security() {
               </div>
             </section>
 
+            {/* Technical Excellence Section */}
+            <section className="py-20">
+              <div className="container mx-auto px-6">
+                <div className="max-w-6xl mx-auto">
+                  
+                  {/* Header */}
+                  <div className="text-center mb-16">
+                    <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                      <Lock className="text-purple-700 h-8 w-8" />
+                    </div>
+                    <h2 className="text-3xl font-light text-slate-900 mb-6">
+                      Technical Excellence and Operational Resilience
+                    </h2>
+                    <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                      Beyond impressive physical security, we integrate cutting-edge technical measures and comprehensive redundancies to ensure data protection and availability.
+                    </p>
+                  </div>
+
+                  {/* Two-Column Technical Features */}
+                  <div className="grid lg:grid-cols-2 gap-12">
+                    
+                    {/* Multi-Layer Encryption */}
+                    <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Lock className="text-blue-700 h-6 w-6" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-medium text-slate-900 mb-4">
+                            Multi-Layer Encryption
+                          </h3>
+                          <p className="text-slate-600 leading-relaxed">
+                            Data is protected with internationally recognized encryption standards such as AES-256 and RSA-4096. A "Zero-Knowledge Architecture" ensures that only you can decrypt your files.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Robust Redundancy */}
+                    <div className="bg-white rounded-xl p-8 shadow-sm border border-slate-200">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Database className="text-emerald-700 h-6 w-6" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-medium text-slate-900 mb-4">
+                            Robust Redundancy
+                          </h3>
+                          <p className="text-slate-600 leading-relaxed">
+                            Customer data is triple-backed up, with each file stored simultaneously in different, geographically dispersed locations within Switzerland. A dedicated "Disaster Recovery Site" deep in the Swiss Alps offers maximum protection.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
           </div>
         </div>
       </section>
