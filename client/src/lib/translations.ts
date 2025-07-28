@@ -1550,6 +1550,9 @@ export const translations = {
     // Security section titles
     'security-summary-title': 'Swiss Security and Compliance',
 
+    // Navigation buttons
+    'nav-login': 'Sign In',
+
     // Platform section matching Italian source
 
     'platform-step1-title': 'Guided Procedures',
