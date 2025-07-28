@@ -347,6 +347,76 @@ export default function Security() {
               </div>
             </section>
 
+            {/* Detailed Blockchain Architecture Section */}
+            <section className="py-20 bg-white">
+              <div className="container mx-auto px-6">
+                <div className="max-w-6xl mx-auto">
+                  
+                  {/* Three Feature Cards */}
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                    <div className="bg-blue-50 p-8 rounded-xl text-center">
+                      <Database className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                      <h3 className="text-xl font-medium text-slate-900 mb-4">51 Validator Nodes</h3>
+                      <p className="text-slate-600 leading-relaxed">Each partner organization controls one validator node, ensuring no single point of failure and creating a truly decentralized governance structure across social and corporate entities.</p>
+                    </div>
+                    <div className="bg-green-50 p-8 rounded-xl text-center">
+                      <Shield className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                      <h3 className="text-xl font-medium text-slate-900 mb-4">DPoS Consensus</h3>
+                      <p className="text-slate-600 leading-relaxed">Delegated Proof of Stake ensures energy efficiency while maintaining security. Validators are chosen through democratic participation, creating accountability and trust.</p>
+                    </div>
+                    <div className="bg-purple-50 p-8 rounded-xl text-center">
+                      <Globe className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+                      <h3 className="text-xl font-medium text-slate-900 mb-4">EVM Compatibility</h3>
+                      <p className="text-slate-600 leading-relaxed">Full Ethereum Virtual Machine compatibility ensures interoperability with existing DeFi protocols while maintaining our specialized agricultural focus.</p>
+                    </div>
+                  </div>
+
+                  {/* Diversified Trust Network */}
+                  <div className="bg-slate-50 p-8 rounded-xl">
+                    <h2 className="text-3xl font-light text-slate-900 mb-8 text-center">Diversified Trust Network</h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="text-xl font-medium text-slate-900 mb-4">Multi-Stakeholder Governance</h3>
+                        <p className="text-slate-600 leading-relaxed mb-6">Our blockchain brings together agricultural cooperatives, environmental organizations, financial institutions, and technology partners. This diversification ensures no single entity can manipulate the network.</p>
+                        <ul className="space-y-3">
+                          <li className="flex items-center">
+                            <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                            <span className="text-slate-600">Agricultural cooperatives and farmers' unions</span>
+                          </li>
+                          <li className="flex items-center">
+                            <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                            <span className="text-slate-600">Environmental certification bodies</span>
+                          </li>
+                          <li className="flex items-center">
+                            <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                            <span className="text-slate-600">Financial institutions and impact investors</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-medium text-slate-900 mb-4">Technical Security Features</h3>
+                        <p className="text-slate-600 leading-relaxed mb-6">Advanced cryptographic mechanisms ensure data integrity and prevent double-counting or manipulation of carbon credits and agricultural certifications.</p>
+                        <ul className="space-y-3">
+                          <li className="flex items-center">
+                            <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                            <span className="text-slate-600">Immutable audit trails for all transactions</span>
+                          </li>
+                          <li className="flex items-center">
+                            <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                            <span className="text-slate-600">Smart contract validation of sustainability metrics</span>
+                          </li>
+                          <li className="flex items-center">
+                            <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
+                            <span className="text-slate-600">Cryptographic proof of agricultural practices</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* 100% CO₂ Neutral Section */}
             <section className="py-20 bg-slate-50">
               <div className="container mx-auto px-6">
