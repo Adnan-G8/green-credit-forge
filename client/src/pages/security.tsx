@@ -31,10 +31,10 @@ export default function Security() {
         <div className="relative container mx-auto px-6 pt-12">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-light text-white mb-8">
-              {t('security-page-title')}
+              {t('security-page-hero-title')}
             </h1>
             <p className="text-xl text-white/90 leading-relaxed font-light max-w-3xl mx-auto">
-              {t('security-page-subtitle')}
+              {t('security-page-hero-subtitle')}
             </p>
           </div>
         </div>
@@ -48,10 +48,10 @@ export default function Security() {
             {/* Security Overview */}
             <div className="text-center mb-16">
               <h2 className="text-4xl font-light text-slate-900 mb-6">
-                {t('security-overview-title')}
+                {t('security-overview-main-title')}
               </h2>
               <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                {t('security-overview-desc')}
+                {t('security-overview-main-desc')}
               </p>
             </div>
 
@@ -66,41 +66,41 @@ export default function Security() {
                   <Key className="text-blue-700 h-8 w-8" />
                 </div>
                 <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                  Three-Factor Authentication (3FA)
+                  {t('three-factor-auth-title')}
                 </h3>
                 <p className="text-slate-600 mb-6">
-                  Access to the platform is secured via:
+                  {t('access-platform-secured')}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Certified user identity</span>
+                    <span className="text-slate-700">{t('certified-user-identity')}</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Authorized device (computer, smartphone, etc.)</span>
+                    <span className="text-slate-700">{t('authorized-device')}</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Active user session</span>
+                    <span className="text-slate-700">{t('active-user-session')}</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Obligatory digital fingerprint for ecosystem of trust and respect</span>
+                    <span className="text-slate-700">{t('obligatory-digital-fingerprint')}</span>
                   </div>
                 </div>
                 
                 {/* Digital Fingerprint Section within 3FA */}
                 <div className="mt-8 pt-6 border-t border-slate-200">
                   <h4 className="text-lg font-medium text-slate-900 mb-4">
-                    Obligatory Digital Fingerprint for Every User and Active Member
+                    {t('digital-fingerprint-kyc-title')}
                   </h4>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                    For an ecosystem of trust and respect, every user and active member on the platform must provide their obligatory digital fingerprint. This ensures accountability, transparency, and a secure environment for all participants.
+                    {t('digital-fingerprint-ecosystem-desc')}
                   </p>
                   <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                     <p className="text-slate-700 text-sm leading-relaxed">
-                      has to go through a KYC process in order to create its digital fingerprint. After the Digital Fingerprint is issued the Data and all other informations are highly encrypted on a seperate server structurte to protect it against every and all misues. All this information are only used for legal and regulation processing and nothing else and not shared with any other organisation.
+                      {t('kyc-process-encryption-desc')}
                     </p>
                   </div>
                 </div>
@@ -112,23 +112,23 @@ export default function Security() {
                   <Globe className="text-emerald-700 h-8 w-8" />
                 </div>
                 <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                  Data Sovereignty & Access Control
+                  {t('data-sovereignty-access-title')}
                 </h3>
                 <p className="text-slate-600 mb-6">
-                  Your Data. Our Fortress. Swiss Precision for a Global Platform. Our infrastructure is designed to connect nations worldwide and enable international applications. To ensure the highest data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management.
+                  {t('your-data-fortress-swiss')}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Strictest Data Protection Laws: subject to the New Federal Act on Data Protection (nFADP), one of the world's strictest data protection laws</span>
+                    <span className="text-slate-700">{t('strictest-data-protection-laws')}</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">FINMA Standards: infrastructure meets Swiss Financial Market Supervisory Authority requirements (FINMA-RS 18/3 compliance)</span>
+                    <span className="text-slate-700">{t('finma-banking-compliance-desc')}</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Unrivalled Physical Security: data centers in Alpine fortresses, former Swiss military bunkers repurposed into state-of-the-art data centers</span>
+                    <span className="text-slate-700">{t('bank-level-security-platforms')}</span>
                   </div>
                 </div>
               </div>
@@ -139,23 +139,23 @@ export default function Security() {
                   <Mountain className="text-amber-700 h-8 w-8" />
                 </div>
                 <h3 className="text-2xl font-medium text-slate-900 mb-4">
-                  Alpine Data Centers
+                  {t('alpine-data-centers-title')}
                 </h3>
                 <p className="text-slate-600 mb-6">
-                  Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from both environmental and human threats.
+                  {t('primary-data-centers-located')}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">EMP-resistant military bunkers</span>
+                    <span className="text-slate-700">{t('emp-resistant-bunkers')}</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Autonomous power and cooling systems</span>
+                    <span className="text-slate-700">{t('autonomous-power-cooling')}</span>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">Multi-ton security doors with biometric access</span>
+                    <span className="text-slate-700">{t('multi-ton-security-doors')}</span>
                   </div>
                 </div>
               </div>
