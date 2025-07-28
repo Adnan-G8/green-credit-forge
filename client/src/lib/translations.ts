@@ -1530,6 +1530,11 @@ export const translations = {
     // Security title translation
     'security-title': 'Member Protection, Digital Responsibility and Access Security',
 
+    // Hero trust indicators
+    'hero-trust-compliance': 'Compliance',
+    'hero-trust-network': 'Network', 
+    'hero-trust-innovation': 'Innovation',
+
     // Security section main (original updated)
     'security-intro': 'Trust is at the center of every digital process on FAGRI.Digital. This is why we have chosen a security model based on transparency, personal control and technical traceability:',
     'security-3fa-title': 'Three-Factor Authentication (3FA)',
