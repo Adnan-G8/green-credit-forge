@@ -193,8 +193,8 @@ export default function Security() {
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
                     
                     {/* Military Standards */}
-                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
-                      <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 text-center">
+                      <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
                         <Shield className="text-red-700 h-6 w-6" />
                       </div>
                       <h3 className="text-lg font-medium text-slate-900 mb-3">
@@ -206,8 +206,8 @@ export default function Security() {
                     </div>
 
                     {/* Autonomous Operations */}
-                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 text-center">
+                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
                         <Database className="text-blue-700 h-6 w-6" />
                       </div>
                       <h3 className="text-lg font-medium text-slate-900 mb-3">
@@ -219,8 +219,8 @@ export default function Security() {
                     </div>
 
                     {/* Access Control */}
-                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
-                      <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 text-center">
+                      <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
                         <Eye className="text-emerald-700 h-6 w-6" />
                       </div>
                       <h3 className="text-lg font-medium text-slate-900 mb-3">
@@ -232,8 +232,8 @@ export default function Security() {
                     </div>
 
                     {/* Disaster Recovery */}
-                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
-                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 text-center">
+                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
                         <Mountain className="text-purple-700 h-6 w-6" />
                       </div>
                       <h3 className="text-lg font-medium text-slate-900 mb-3">
