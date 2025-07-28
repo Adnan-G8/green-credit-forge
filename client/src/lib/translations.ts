@@ -1343,7 +1343,7 @@ export const translations = {
     // Platform section
     'platform-title': 'Comprehensive CO₂ Certification Platform',
     'platform-subtitle': 'End-to-End Solutions for Agricultural Sustainability',
-    'platform-description': 'Our integrated platform provides everything needed for complete CO₂ certification, from initial assessment to blockchain-verified carbon credits.',
+    'platform-description': 'FAGRI.Digital has developed a digital platform that covers the entire carbon credit certification process - from initial application to validation, issuance and commercialization.',
 
     // Platform features
     'platform-feature-1-title': 'Agricultural Assessment',
@@ -1400,6 +1400,80 @@ export const translations = {
     'standard-step1-description': 'Analysis of the agricultural company and preliminary data to determine the carbon credit certification potential',
     'standard-step2-title': 'Implementation',
     'standard-step2-description': 'Application of EUFD2025-001 methodologies with continuous monitoring and detailed documentation of sustainable practices',
+    'standard-step3-title': 'Certification',
+    'standard-step3-description': 'Independent verification by accredited entities and official issuance of certified carbon credits',
+
+    // Renewable Energy Global Section
+    'standard-global-title': 'The New European Standard for a Transparent and Fair Global CO₂ Ecosystem',
+    'standard-global-subtitle': 'Open to all countries to participate in building a sustainable future based on blockchain, transparency and climate justice.',
+    'standard-global-feature1-title': 'Global Inclusion',
+    'standard-global-feature1-description': 'European standard designed to welcome the participation of all countries in the fight against climate change',
+    'standard-global-feature2-title': 'Blockchain Transparency',
+    'standard-global-feature2-description': 'Blockchain technology guarantees complete traceability and prevention of double counting at world level',
+    'standard-global-feature3-title': 'Equity and Accessibility',
+    'standard-global-feature3-description': 'Fair-trade framework to ensure that benefits reach those who really drive sustainable transformation',
+
+    // Partners section
+    'partners-title': 'Technology and Institutional Partnerships',
+    'partners-subtitle': 'The FAGRI Digital platform is supported by a solid ecosystem of technological and institutional partners that guarantee maximum credibility and security.',
+    'partners-tech-title': 'Technology Partners',
+    'partners-institutional-title': 'Institutional Partners',
+    'partners-alphag8-title': 'ALPHAG8 Digital Solutions',
+    'partners-alphag8-desc': 'Swiss technology partner for complete security, platform and digital infrastructure design',
+    'partners-g8chain-title': 'G8Chain Blockchain',
+    'partners-g8chain-desc': 'Dedicated Federated Enterprise Blockchain for certificate traceability and immutability',
+    'partners-eu-title': 'European Commission',
+    'partners-eu-desc': 'Alignment with climate policies and EU objectives',
+    'partners-ministry-title': 'Ministry of Environment and Energy Security',
+    'partners-ministry-desc': 'National regulatory alignment',
+    'partners-gse-title': 'GSE (Energy Services Manager)',
+    'partners-gse-desc': 'Integration with national energy and emissions registers',
+    'partners-non-eu-title': 'Extra-EU Governments',
+    'partners-non-eu-desc': 'Alignment with global climate objectives',
+    'partners-iso-uni-title': 'ISO / UNI Standards',
+    'partners-iso-uni-desc': 'Adoption of international and Italian technical standards',
+    'partners-suolo-title': 'SUOLO E SALUTE',
+    'partners-suolo-desc': 'Independent and accredited certification body',
+    'partners-universities-title': 'University of Studies of Viterbo La Tuscia',
+    'partners-universities-desc': 'Scientific partnership for research and validation of EUFD2025-001 certification methodologies',
+
+    // Platform section extended
+    'platform-intro-description': 'The platform will be available soon and will include:',
+    'platform-feature1-title': 'Guided Procedures',
+    'platform-feature1-description': 'for the presentation of environmental compensation projects',
+    'platform-feature2-title': 'Complete Traceability',
+    'platform-feature2-description': 'of documentation and project status',
+    'platform-feature3-title': 'VVB Entity Integration',
+    'platform-feature3-description': 'and European registers for transparent processes',
+    'platform-feature4-title': 'Clear Cost Structure',
+    'platform-feature4-description': 'fair and predictable pricing',
+
+    // Platform impact section
+    'platform-impact-title': 'CO₂ Certification Impact',
+    'platform-impact-description': 'Our EUFD2025-001 standard allows agricultural enterprises to demonstrate measurable climate impact accessing sustainable finance opportunities.',
+    'platform-carbon-credits-title': 'Verified Carbon Credits',
+    'platform-carbon-credits-desc': 'CO₂ certifications validated and ready for international market',
+    'platform-revenue-stream': 'New Revenue Streams',
+    'platform-revenue-stream-desc': 'Monetization of sustainable agricultural practices',
+    'platform-market-access': 'Market Access',
+    'platform-market-access-desc': 'Direct connection with carbon markets and green finance',
+    'platform-standards-title': 'Certification Standards',
+    'platform-impact-eufd': 'EU Standard Compliance',
+    'platform-impact-iso': 'ISO 14064-1/2/3 Certification',
+
+    // EU Standards Focus  
+    'platform-eu-standards-title': 'EU Standards for CO₂ Certification',
+    'platform-eu-standards-description': 'Complete compliance with European standards: EU ETS (Emissions Trading System), preparation for CBAM 2026 (Carbon Border Adjustment Mechanism), and integration with European registers for international carbon credit trading.',
+    'platform-blockchain-mandate': 'Mandatory Blockchain Integration',
+    'platform-blockchain-description': 'EUFD2025-001 makes the use of blockchain technology mandatory for the issuance and registration of certified carbon credits, ensuring traceability, transparency and immutability. This aligns with EU Regulation 3012/2024 and ISO 14064-1, 14064-2 and 14064-3 standards.',
+
+    // EUFD Regulatory Framework
+    'eufd-blockchain-mandate-title': 'Mandatory Blockchain Integration',
+    'eufd-blockchain-mandate-description': 'EUFD2025-001 makes the use of Blockchain technology on a digital platform mandatory for the issuance and registration of certified carbon credits, ensuring traceability, transparency and immutability.',
+    'eufd-regulatory-title': 'Regulatory Compliance Framework',
+    'eufd-eu-regulation-title': 'EU Regulation 3012/2024',
+    'eufd-eu-regulation-description': 'This European Union regulation establishes the legal framework for the certification and trading of carbon credits within the EU. It makes blockchain-based digital platforms mandatory for carbon credit issuance, ensuring transparency and preventing double counting between member states.',
+    'eufd-eu-regulation-requirements': 'Key Requirements',
 
     // Security section
     'security-title': 'Swiss Banking-Level Security',
