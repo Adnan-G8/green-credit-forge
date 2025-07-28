@@ -866,6 +866,12 @@ export const translations = {
     'standard-blockchain-title': 'Dall\'Applicazione CO₂ al Trading - Tutto Sotto Un Tetto su Blockchain',
     'standard-blockchain-description': 'Soluzione completa per certificazione, registrazione e trading di crediti di carbonio su piattaforma digitale sicura.',
 
+    // CO₂ Neutral Section Keys - Italian
+    'co2-neutral-title': '100% CO₂ Neutrale – Tecnologia Sostenibile per una Nuova Era dell\'Infrastruttura Digitale',
+    'co2-neutral-paragraph1': 'Tutti i nostri data center e servizi digitali operano su base completamente CO₂-neutrale. Situati nelle Alpi svizzere, all\'interno di bunker militari riconvertiti, la nostra infrastruttura è alimentata interamente da energia idroelettrica svizzera 100% certificata.',
+    'co2-neutral-paragraph2': 'Il clima naturalmente fresco della regione montana riduce significativamente la necessità di raffreddamento ad alta intensità energetica, riducendo il consumo energetico complessivo senza compromettere prestazioni o sicurezza.',
+    'co2-neutral-paragraph3': 'FAGRI.Digital rappresenta un ecosistema digitale che non è solo sicuro e sovrano, ma anche ecologicamente responsabile. Ogni processo di dati, ogni certificazione, ogni transazione viene condotta in modo climaticamente neutrale – un impegno verso i nostri partner, membri e generazioni future.',
+
     // Introduction Section Keys - Italian Content
     'intro-title': 'La Nostra Missione',
     'intro-subtitle': 'Con solide radici agricole, una visione internazionale e un\'indipendenza tecnica, offriamo uno strumento etico, funzionale e accessibile per supportare una partecipazione autentica alla transizione ecologica.',
@@ -1199,6 +1205,12 @@ export const translations = {
     'standard-global-feature2-description': 'Swiss banking-level data protection',
     'standard-global-feature3-title': 'Blockchain Transparency',
     'standard-global-feature3-description': 'Complete traceability through blockchain technology',
+
+    // CO₂ Neutral Section Keys - English
+    'co2-neutral-title': '100% CO₂ Neutral – Sustainable Technology for a New Era of Digital Infrastructure',
+    'co2-neutral-paragraph1': 'All our data centers and digital services operate on a fully CO₂-neutral basis. Located in the Swiss Alps, within repurposed military bunkers, our infrastructure is powered entirely by 100% certified Swiss hydropower.',
+    'co2-neutral-paragraph2': 'The naturally cool climate of the mountain region significantly reduces the need for energy-intensive cooling, lowering overall power consumption without compromising on performance or security.',
+    'co2-neutral-paragraph3': 'FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members, and future generations.',
 
 
 

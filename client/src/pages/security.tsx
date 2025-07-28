@@ -7,6 +7,7 @@ import agriculturalLandscape from '@assets/image_1753121514850.png';
 import italianGovernment from '@assets/image_1753122095811.png';
 import swissAlps from '@assets/image_1753202443401.png';
 import swissBunker from '@assets/image_1753694170930.png';
+import serverRack from '@assets/image_1753694751730.png';
 
 export default function Security() {
   const { t } = useLanguage();
@@ -351,11 +352,11 @@ export default function Security() {
               <div className="container mx-auto px-6">
                 <div className="max-w-6xl mx-auto">
                   
-                  {/* Swiss Alps Image at top */}
+                  {/* Server Rack Image at top */}
                   <div className="relative mb-16">
                     <img 
-                      src={swissBunker} 
-                      alt="Swiss Alps mountain infrastructure for CO₂ neutral data centers"
+                      src={serverRack} 
+                      alt="Swiss data center server infrastructure powered by renewable energy"
                       className="rounded-xl shadow-lg w-full h-64 object-cover"
                     />
                   </div>
@@ -366,17 +367,17 @@ export default function Security() {
                       <Leaf className="text-green-700 h-8 w-8" />
                     </div>
                     <h2 className="text-3xl font-light text-slate-900 mb-8">
-                      100% CO₂ Neutral – Sustainable Technology for a New Era of Digital Infrastructure
+                      {t('co2-neutral-title')}
                     </h2>
                     <div className="space-y-6 max-w-4xl mx-auto">
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        All our data centers and digital services operate on a fully CO₂-neutral basis. Located in the Swiss Alps, within repurposed military bunkers, our infrastructure is powered entirely by 100% certified Swiss hydropower.
+                        {t('co2-neutral-paragraph1')}
                       </p>
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        The naturally cool climate of the mountain region significantly reduces the need for energy-intensive cooling, lowering overall power consumption without compromising on performance or security.
+                        {t('co2-neutral-paragraph2')}
                       </p>
                       <p className="text-lg text-slate-600 leading-relaxed">
-                        FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members, and future generations.
+                        {t('co2-neutral-paragraph3')}
                       </p>
                     </div>
                   </div>
