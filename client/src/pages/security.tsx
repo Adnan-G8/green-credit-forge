@@ -6,6 +6,7 @@ import dataCenter from '@assets/image_1753120952664.png';
 import agriculturalLandscape from '@assets/image_1753121514850.png';
 import italianGovernment from '@assets/image_1753122095811.png';
 import swissAlps from '@assets/image_1753202443401.png';
+import swissBunker from '@assets/image_1753694170930.png';
 
 export default function Security() {
   const { t } = useLanguage();
@@ -336,7 +337,7 @@ export default function Security() {
                   {/* Swiss Alps Image */}
                   <div className="relative">
                     <img 
-                      src="/attached_assets/image_1753694170930.png" 
+                      src={swissBunker} 
                       alt="Swiss Alps representing the secure mountain data centers"
                       className="rounded-xl shadow-lg w-full h-auto"
                     />
