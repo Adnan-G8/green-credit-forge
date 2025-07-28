@@ -310,6 +310,57 @@ export default function Security() {
               </div>
             </section>
 
+            {/* Certifications and Compliance Section */}
+            <section className="py-20 bg-white">
+              <div className="container mx-auto px-6">
+                <div className="max-w-6xl mx-auto">
+                  
+                  {/* Header */}
+                  <div className="text-center mb-16">
+                    <h2 className="text-3xl font-light text-slate-900 mb-4">
+                      Certifications and Compliance: The Highest Standards for Your Security
+                    </h2>
+                    <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                      Our comprehensive certification portfolio demonstrates our commitment to the highest security standards.
+                    </p>
+                  </div>
+
+                  {/* Three Certification Cards */}
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                    <div className="bg-blue-50 p-8 rounded-xl text-center">
+                      <Database className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                      <h3 className="text-xl font-medium text-slate-900 mb-4">Highest Availability</h3>
+                      <p className="text-slate-600 leading-relaxed">Data centers comply with the highest Uptime Institute Tier Classifications (Tier III/IV), ensuring concurrent maintainability and fault tolerance.</p>
+                    </div>
+                    <div className="bg-green-50 p-8 rounded-xl text-center">
+                      <Shield className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                      <h3 className="text-xl font-medium text-slate-900 mb-4">ISO/IEC 27001 & PCI DSS</h3>
+                      <p className="text-slate-600 leading-relaxed">Internationally recognized standards for systematic management of sensitive corporate information and payment data protection.</p>
+                    </div>
+                    <div className="bg-orange-50 p-8 rounded-xl text-center">
+                      <Globe className="h-12 w-12 text-orange-600 mx-auto mb-4" />
+                      <h3 className="text-xl font-medium text-slate-900 mb-4">National Cyber Resilience</h3>
+                      <p className="text-slate-600 leading-relaxed">Integrated into Switzerland's national cyber resilience strategy with mandatory 24-hour cyberattack reporting to the National Cyber Security Centre (NCSC).</p>
+                    </div>
+                  </div>
+
+                  {/* Alpine Data Centers Summary */}
+                  <div className="bg-green-50 p-8 rounded-xl text-center">
+                    <h3 className="text-2xl font-light text-slate-900 mb-6">
+                      Alpine Data Centers Meet Blockchain Innovation
+                    </h3>
+                    <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-4xl mx-auto">
+                      Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.
+                    </p>
+                    <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center mx-auto">
+                      <Shield className="h-5 w-5 mr-2" />
+                      Swiss Security Guarantee
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* Alpine Security Meets Blockchain Section */}
             <section className="py-20 bg-emerald-50">
               <div className="container mx-auto px-6">
