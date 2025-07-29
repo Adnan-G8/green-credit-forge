@@ -33,11 +33,11 @@ export function PlatformSection() {
   ];
 
   return (
-    <section id="platform" className="py-12 bg-white">
+    <section id="platform" className="py-8 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Clean Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               {t('platform-title')}
             </h2>
@@ -47,7 +47,7 @@ export function PlatformSection() {
           </div>
 
           {/* Professional Process Steps */}
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-12">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-8">
             {steps.map((step, index) => (
               <div key={index} className="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200">
                 <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
@@ -73,8 +73,8 @@ export function PlatformSection() {
           </div>
 
           {/* Impact and Value Proposition */}
-          <div className="bg-gradient-to-br from-slate-50 to-white rounded-xl p-8 border border-slate-200">
-            <div className="text-center mb-8">
+          <div className="bg-gradient-to-br from-slate-50 to-white rounded-xl p-6 border border-slate-200">
+            <div className="text-center mb-6">
               <h3 className="text-3xl font-light text-slate-900 mb-4">
                 {t('platform-impact-title')}
               </h3>
@@ -83,7 +83,7 @@ export function PlatformSection() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div className="text-center">
                 <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BarChart3 className="text-emerald-700 h-8 w-8" />

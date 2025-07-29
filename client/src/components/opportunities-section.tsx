@@ -5,11 +5,11 @@ export default function OpportunitiesSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="opportunities" className="py-12 bg-white">
+    <section id="opportunities" className="py-8 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-900 mb-6 leading-tight">
               {t('opportunities-title')}
             </h2>
