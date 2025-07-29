@@ -184,18 +184,34 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
 
           {/* Payment Information */}
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-            <h4 className="font-medium text-slate-900 mb-4">{t('payment-information')}</h4>
+            <h4 className="font-medium text-slate-900 mb-4">Informazioni di Pagamento</h4>
             <div className="space-y-3 text-sm text-slate-600">
-              <p>{t('payment-method-bank-transfer')}</p>
+              <p>Pagamento da effettuare tramite bonifico bancario al Sistema di Certificazione FAGRI DIGITAL</p>
               <div className="bg-white rounded-lg p-4 border border-slate-200">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="font-medium text-slate-700">{t('company-name')}:</span>
+                    <span className="font-medium text-slate-700">Nome Azienda:</span>
                     <br />FAGRI DIGITAL S.r.l.
                   </div>
                   <div>
-                    <span className="font-medium text-slate-700">{t('address')}:</span>
+                    <span className="font-medium text-slate-700">Indirizzo:</span>
                     <br />Via Isonzo n. 38 – 00198 Roma
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">IBAN:</span>
+                    <br />IT14 U031 2403 2730 0000 0230 152
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">SWIFT/BIC:</span>
+                    <br />BAFUITRR
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">Banca:</span>
+                    <br />BANCA DEL FUCINO - Filiale di Roma
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">Codice Fiscale/P.IVA:</span>
+                    <br />17843431002
                   </div>
                   <div>
                     <span className="font-medium text-slate-700">Email:</span>
