@@ -71,6 +71,7 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
     try {
       const storedProjects = JSON.parse(localStorage.getItem('userProjects') || '[]');
       const mappedProjects = storedProjects.map((project: any) => ({
+        ...project, // Keep all original project data
         id: project.id,
         projectName: project.projectName,
         projectType: project.projectType,
@@ -327,13 +328,25 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
                     </div>
                   </div>
                   
-                  {/* Progress bar */}
+                  {/* Progress bar with status-based colors */}
                   <div className="mt-3">
                     <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
                       <span>Progresso Certificazione</span>
                       <span>{project.progressPercentage}%</span>
                     </div>
-                    <Progress value={project.progressPercentage} className="h-2" />
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div 
+                        className={cn(
+                          "h-2 rounded-full transition-all duration-500",
+                          project.status === 'approved' && "bg-gradient-to-r from-green-400 to-green-600",
+                          project.status === 'in-progress' && "bg-gradient-to-r from-blue-400 to-blue-600", 
+                          project.status === 'under-review' && "bg-gradient-to-r from-yellow-400 to-yellow-600",
+                          project.status === 'completed' && "bg-gradient-to-r from-emerald-400 to-emerald-600",
+                          !['approved', 'in-progress', 'under-review', 'completed'].includes(project.status) && "bg-gradient-to-r from-gray-400 to-gray-600"
+                        )}
+                        style={{ width: `${project.progressPercentage}%` }}
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
