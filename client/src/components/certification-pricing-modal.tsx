@@ -207,24 +207,24 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
               <div className="bg-white rounded-lg p-4 border border-slate-200">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="font-medium text-slate-700">Nome Azienda:</span>
-                    <br />FAGRI DIGITAL S.r.l.
-                  </div>
-                  <div>
-                    <span className="font-medium text-slate-700">Indirizzo:</span>
-                    <br />Via Isonzo n. 38 – 00198 Roma
+                    <span className="font-medium text-slate-700">Intestazione Conto Corrente:</span>
+                    <br />FAGRI DIGITAL SRL<br />VIA ISONZO, 38 - 00198 ROMA
                   </div>
                   <div>
                     <span className="font-medium text-slate-700">IBAN:</span>
                     <br />IT14 U031 2403 2730 0000 0230 152
                   </div>
                   <div>
-                    <span className="font-medium text-slate-700">SWIFT/BIC:</span>
+                    <span className="font-medium text-slate-700">CODICE SWIFT/BIC:</span>
                     <br />BAFUITRR
                   </div>
                   <div>
-                    <span className="font-medium text-slate-700">Banca:</span>
-                    <br />BANCA DEL FUCINO - Filiale di Roma
+                    <span className="font-medium text-slate-700">Istituto di Credito:</span>
+                    <br />BANCA DEL FUCINO - FILIALE DI ROMA (ITALIA)
+                  </div>
+                  <div>
+                    <span className="font-medium text-slate-700">Codice Fiscale e Partita IVA:</span>
+                    <br />17843431002
                   </div>
                   <div>
                     <span className="font-medium text-slate-700">Codice Fiscale/P.IVA:</span>

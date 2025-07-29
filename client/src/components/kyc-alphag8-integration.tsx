@@ -521,21 +521,21 @@ export default function KYCAlphaG8Integration({
                       <h5 className="font-semibold text-blue-800 mb-3">Dati Bancari per Bonifico:</h5>
                       <div className="space-y-2 text-sm text-blue-700">
                         <div>
-                          <strong>Intestatario:</strong><br />
-                          FAGRI DIGITAL S.r.l.<br />
-                          Via Isonzo, 38 - 00198 ROMA
+                          <strong>Intestazione Conto Corrente:</strong><br />
+                          FAGRI DIGITAL SRL<br />
+                          VIA ISONZO, 38 - 00198 ROMA
                         </div>
                         <div>
                           <strong>IBAN:</strong> IT14 U031 2403 2730 0000 0230 152
                         </div>
                         <div>
-                          <strong>SWIFT/BIC:</strong> BAFUITRR
+                          <strong>CODICE SWIFT/BIC:</strong> BAFUITRR
                         </div>
                         <div>
-                          <strong>Banca:</strong> BANCA DEL FUCINO - Filiale di Roma
+                          <strong>Istituto di Credito:</strong> BANCA DEL FUCINO - FILIALE DI ROMA (ITALIA)
                         </div>
                         <div>
-                          <strong>Codice Fiscale/P.IVA:</strong> 17843431002
+                          <strong>Codice Fiscale e Partita IVA:</strong> 17843431002
                         </div>
                         <div>
                           <strong>Email:</strong> Contact@fagri.digital

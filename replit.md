@@ -33,6 +33,13 @@ Preferred communication style: Simple, everyday language.
 - **Enhanced Footer Navigation**: Added CO2 certification link to footer platform section for improved discoverability
 - **Removed Generic Partnerships Section**: Eliminated empty "Institutional Partnerships" section from home page since specific partners are already detailed in CO2 certification subpage
 - **Updated Footer Partner Links**: Replaced social media icons with ALPHAG8 and g8Chain technology partner links, added "Powered by ALPHAG8 Switzerland" credit
+- **FAGRI DIGITAL Banking Information Update** (July 29, 2025): Updated all banking details across platform with official FAGRI DIGITAL data:
+  * **Intestazione Conto Corrente**: FAGRI DIGITAL SRL, VIA ISONZO, 38 - 00198 ROMA
+  * **IBAN**: IT14 U031 2403 2730 0000 0230 152
+  * **CODICE SWIFT/BIC**: BAFUITRR
+  * **Istituto di Credito**: BANCA DEL FUCINO - FILIALE DI ROMA (ITALIA)
+  * **Codice Fiscale e Partita IVA**: 17843431002
+  * **Complete Integration**: Updated certification pricing modal, individual KYC registration, company KYC registration with correct banking information
 - **Standardized Navigation**: All subpages now use consistent full Navigation component instead of mixed approaches (some had "back" buttons, others full nav)
 - **Enhanced User Experience**: Users can now access language switching and full navigation from any page without returning to home first
 - **Technology & Institutional Partners Showcase**: Added comprehensive partner section displaying ALPHAG8, G8Chain, EU Commission, Italian Ministry, ISO, and Italian Universities with professional banking-style design

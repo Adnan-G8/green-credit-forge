@@ -397,11 +397,12 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
                       <div className="bg-blue-50 p-3 rounded-lg">
                         <p className="font-medium text-blue-800 mb-2">{t('transfer-details')}:</p>
                         <div className="space-y-1 text-blue-700">
-                          <p><strong>{t('recipient')}:</strong> FAGRI DIGITAL S.r.l.</p>
+                          <p><strong>Intestazione Conto Corrente:</strong> FAGRI DIGITAL SRL</p>
+                          <p><strong>Indirizzo:</strong> VIA ISONZO, 38 - 00198 ROMA</p>
                           <p><strong>IBAN:</strong> IT14 U031 2403 2730 0000 0230 152</p>
-                          <p><strong>BIC/SWIFT:</strong> BAFUITRR</p>
-                          <p><strong>Banca:</strong> BANCA DEL FUCINO - FILIALE DI ROMA</p>
-                          <p><strong>Codice Fiscale/P.IVA:</strong> 17843431002</p>
+                          <p><strong>CODICE SWIFT/BIC:</strong> BAFUITRR</p>
+                          <p><strong>Istituto di Credito:</strong> BANCA DEL FUCINO - FILIALE DI ROMA (ITALIA)</p>
+                          <p><strong>Codice Fiscale e Partita IVA:</strong> 17843431002</p>
                           <p><strong>Email:</strong> Contact@fagri.digital</p>
                           <p><strong>PEC:</strong> fagridigital@legalmail.it</p>
                           <p><strong>{t('amount')}:</strong> €20.74</p>
