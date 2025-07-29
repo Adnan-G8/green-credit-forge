@@ -46,7 +46,7 @@ export function SecurityDashboardModal({ isOpen, onClose, alphaG8Id }: SecurityD
   const [activeTab, setActiveTab] = useState<'keycard' | 'security' | 'sessions'>('keycard');
   const [sessions, setSessions] = useState<SessionInfo[]>([]);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
-  const [sessionVerificationCheck, setSessionVerificationCheck] = useState(false);
+
   const [accountAccessCheck, setAccountAccessCheck] = useState(false);
 
   // Mock user profiles and session data - in real implementation this would come from backend
@@ -171,17 +171,7 @@ Authorized by ALPHAG8 Switzerland Technology
     }
   };
 
-  const handleSessionVerification = () => {
-    setSessionVerificationCheck(true);
-    // Simulate Swiss security protocol verification
-    setTimeout(() => {
-      setSessionVerificationCheck(false);
-      toast({
-        title: t('verification-complete'),
-        description: t('session-security-verified'),
-      });
-    }, 2000);
-  };
+
 
   const handleAccountAccessVerification = () => {
     setAccountAccessCheck(true);
@@ -402,36 +392,7 @@ Authorized by ALPHAG8 Switzerland Technology
                 </div>
               </div>
 
-              {/* Real-time Verification */}
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-                <h4 className="font-medium text-emerald-900 mb-4 flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-emerald-600" />
-                  {t('real-time-verification')}
-                </h4>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-emerald-700 mb-1">{t('session-protected-swiss-security')}</p>
-                    <p className="text-xs text-emerald-600">Swiss Alps Security Bunker - 001</p>
-                  </div>
-                  <Button
-                    onClick={handleSessionVerification}
-                    disabled={sessionVerificationCheck}
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white"
-                  >
-                    {sessionVerificationCheck ? (
-                      <div className="flex items-center gap-2">
-                        <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
-                        {t('verifying')}
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-2">
-                        <Eye className="h-4 w-4" />
-                        {t('verify-now')}
-                      </div>
-                    )}
-                  </Button>
-                </div>
-              </div>
+
 
               {/* Current Session Details */}
               <div className="bg-white border border-slate-200 rounded-xl p-6">
