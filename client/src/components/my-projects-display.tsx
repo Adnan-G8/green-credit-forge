@@ -76,8 +76,10 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
     const loadProjects = () => {
       try {
         const storedProjects = JSON.parse(localStorage.getItem('userProjects') || '[]');
+        
         // Filter projects for current user
         const userProjects = storedProjects.filter((project: Project) => project.ownerId === userId);
+        
         setProjects(userProjects);
       } catch (error) {
         console.error('Error loading projects:', error);
@@ -284,14 +286,20 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
                 <div className="flex items-center gap-2">
                   {getProjectTypeIcon(project.projectType)}
                   <div>
-                    <CardTitle className="text-lg">{project.projectName}</CardTitle>
+                    <CardTitle className="text-lg">
+                      {project.projectName || `Progetto ${getProjectTypeLabel(project.projectType)} #${project.id.slice(-6)}`}
+                    </CardTitle>
                     <CardDescription className="flex items-center gap-2 mt-1">
                       {getProjectTypeLabel(project.projectType)}
-                      <span className="text-gray-400">•</span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="h-3 w-3" />
-                        {project.projectLocation}
-                      </span>
+                      {project.projectLocation && (
+                        <>
+                          <span className="text-gray-400">•</span>
+                          <span className="flex items-center gap-1">
+                            <MapPin className="h-3 w-3" />
+                            {project.projectLocation}
+                          </span>
+                        </>
+                      )}
                     </CardDescription>
                   </div>
                 </div>
@@ -306,19 +314,23 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-sm text-gray-600 line-clamp-2">
-                {project.projectDescription}
+                {project.projectDescription || `Progetto ${getProjectTypeLabel(project.projectType)} in fase di completamento`}
               </p>
 
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center gap-2">
                   <Euro className="h-4 w-4 text-gray-400" />
                   <span className="text-gray-600">Investimento:</span>
-                  <span className="font-medium">{formatCurrency(project.investmentCapacity)}</span>
+                  <span className="font-medium">
+                    {project.investmentCapacity ? formatCurrency(project.investmentCapacity) : 'Da definire'}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4 text-gray-400" />
                   <span className="text-gray-600">Durata:</span>
-                  <span className="font-medium">{project.projectDuration} anni</span>
+                  <span className="font-medium">
+                    {project.projectDuration ? `${project.projectDuration} anni` : 'Da definire'}
+                  </span>
                 </div>
               </div>
 
