@@ -348,7 +348,7 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
                   <h4 className="font-semibold text-blue-900 mb-3">{t('total-amount')}</h4>
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-blue-700">Digitaler Fingerprint</span>
+                      <span className="text-blue-700">Impronta Digitale</span>
                       <span className="font-medium text-blue-900">€5.00</span>
                     </div>
                     <div className="flex justify-between">
@@ -357,21 +357,21 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
                     </div>
                     <div className="border-t border-blue-200 pt-2">
                       <div className="flex justify-between">
-                        <span className="text-blue-700">Zwischensumme</span>
+                        <span className="text-blue-700">Subtotale</span>
                         <span className="font-medium text-blue-900">€17.00</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-blue-700">Deutsche MwSt (22%)</span>
+                        <span className="text-blue-700">IVA italiana (22%)</span>
                         <span className="font-medium text-blue-900">€3.74</span>
                       </div>
                     </div>
                     <div className="border-t border-blue-300 pt-2 flex justify-between">
-                      <span className="font-semibold text-blue-900">Gesamtbetrag</span>
+                      <span className="font-semibold text-blue-900">Importo Totale</span>
                       <span className="font-bold text-blue-900 text-xl">€20.74</span>
                     </div>
                   </div>
                   <div className="text-xs text-blue-600 mt-2 bg-blue-50 p-2 rounded">
-                    <strong>Hinweis:</strong> Individual Accounts - für persönliche Nutzung
+                    <strong>Nota:</strong> Account Individuali - per uso personale
                   </div>
                 </div>
 

@@ -462,7 +462,7 @@ export default function KYCAlphaG8Integration({
                     }`}
                   >
                     <CreditCard className="h-6 w-6 text-green-600" />
-                    <span className="font-medium">Kreditkarte</span>
+                    <span className="font-medium">Carta di Credito</span>
                   </button>
                   <button
                     onClick={() => setPaymentMethod('bank')}
@@ -473,15 +473,15 @@ export default function KYCAlphaG8Integration({
                     }`}
                   >
                     <Banknote className="h-6 w-6 text-green-600" />
-                    <span className="font-medium">Banküberweisung</span>
+                    <span className="font-medium">Bonifico Bancario</span>
                   </button>
                 </div>
 
                 <div className="bg-slate-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-slate-800 mb-3">Gebührenübersicht:</h4>
+                  <h4 className="font-semibold text-slate-800 mb-3">Riepilogo Costi:</h4>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600">Fingerprint + Registrierung</span>
+                      <span className="text-slate-600">Impronta + Registrazione</span>
                       <span className="text-slate-800">€12.00</span>
                     </div>
                     <div className="flex justify-between items-center">
@@ -490,38 +490,38 @@ export default function KYCAlphaG8Integration({
                     </div>
                     <div className="border-t border-slate-200 pt-2">
                       <div className="flex justify-between items-center">
-                        <span className="text-slate-600">Zwischensumme</span>
+                        <span className="text-slate-600">Subtotale</span>
                         <span className="text-slate-800">€42.00</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-slate-600">Deutsche MwSt (22%)</span>
+                        <span className="text-slate-600">IVA italiana (22%)</span>
                         <span className="text-slate-800">€9.24</span>
                       </div>
                     </div>
                     <div className="border-t border-slate-300 pt-2">
                       <div className="flex justify-between items-center">
-                        <span className="font-semibold text-slate-800">Gesamtbetrag</span>
+                        <span className="font-semibold text-slate-800">Importo Totale</span>
                         <span className="font-bold text-lg text-green-600">€51.24</span>
                       </div>
                     </div>
                   </div>
                   <div className="text-sm text-slate-500 mt-3">
                     {paymentMethod === 'card' 
-                      ? 'Sichere Kreditkartenzahlung über Stripe'
-                      : 'Banküberweisung an FAGRI DIGITAL S.r.l.'
+                      ? 'Pagamento sicuro con carta di credito tramite Stripe'
+                      : 'Bonifico bancario a FAGRI DIGITAL S.r.l.'
                     }
                   </div>
                   <div className="text-xs text-blue-600 mt-2 bg-blue-50 p-2 rounded">
-                    <strong>Hinweis:</strong> Der Preis beinhaltet 1 Projekt. Zusätzliche Projekte kosten €14.64 pro Jahr (€12.00 + 22% MwSt)
+                    <strong>Nota:</strong> Il prezzo include 1 progetto. Progetti aggiuntivi costano €14.64 all'anno (€12.00 + IVA 22%)
                   </div>
 
                   {/* Bank Transfer Information */}
                   {paymentMethod === 'bank' && (
                     <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                      <h5 className="font-semibold text-blue-800 mb-3">Bankdaten für Überweisung:</h5>
+                      <h5 className="font-semibold text-blue-800 mb-3">Dati Bancari per Bonifico:</h5>
                       <div className="space-y-2 text-sm text-blue-700">
                         <div>
-                          <strong>Kontoinhaber:</strong><br />
+                          <strong>Intestatario:</strong><br />
                           FAGRI DIGITAL S.r.l.<br />
                           Via Isonzo, 38 - 00198 ROMA
                         </div>
@@ -532,10 +532,10 @@ export default function KYCAlphaG8Integration({
                           <strong>SWIFT/BIC:</strong> BAFUITRR
                         </div>
                         <div>
-                          <strong>Bank:</strong> BANCA DEL FUCINO - Filiale di Roma (Italien)
+                          <strong>Banca:</strong> BANCA DEL FUCINO - Filiale di Roma
                         </div>
                         <div>
-                          <strong>Steuer-Nr./MwSt-Nr.:</strong> 17843431002
+                          <strong>Codice Fiscale/P.IVA:</strong> 17843431002
                         </div>
                         <div>
                           <strong>Email:</strong> Contact@fagri.digital
