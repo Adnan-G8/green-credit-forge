@@ -1616,6 +1616,37 @@ export const translations = {
     'first-time-blockchain-validators': 'For the first time, blockchain validators are managed jointly by institutions, social organizations and partners from multiple countries — all with equal rights and shared responsibilities.',
     'housed-swiss-mountain-data': 'Hosted in Swiss mountain data centers with banking-level security, our 51-node blockchain ensures integrity, resilience and data sovereignty.',
     'fagri-digital-combines-physical': 'FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and reliable infrastructure for CO₂ certification and agricultural data for tomorrow\'s world.',
+    
+    // Missing Data Protection English Translations
+    'strictest-data-protection-laws': 'Strictest Data Protection Laws: subject to the new Federal Data Protection Act (nFADP), one of the world\'s most rigorous data protection regulations',
+    'finma-banking-compliance-desc': 'Banking FINMA Compliance: compliant with Federal Financial Market Supervisory Authority requirements (FINMA-RS 18/3)',
+    
+    // Blockchain Validator Network English Translations
+    'validator-nodes-51': '51 Validator Nodes',
+    'each-partner-organization-controls': 'Each partner organization controls a single validator node, ensuring no single point of failure and creating a truly decentralized governance structure among social and corporate entities.',
+    'dpos-consensus': 'DPoS Consensus',
+    'evm-compatibility': 'EVM Compatibility',
+    'diversified-trust-network': 'Diversified Trust Network',
+    
+    // Blockchain Technical Features English Translations
+    'delegated-proof-stake-ensures': 'Delegated Proof of Stake ensures energy efficiency while maintaining security. Validators are chosen through democratic participation, creating shared responsibility and trust.',
+    'full-ethereum-virtual-machine': 'Full Ethereum Virtual Machine compatibility guarantees interoperability with existing DeFi protocols while maintaining our specialized agricultural focus.',
+    'multi-stakeholder-governance': 'Multi-Stakeholder Governance',
+    'blockchain-brings-together-agricultural': 'Our blockchain brings together agricultural cooperatives, environmental organizations, financial institutions and technology partners. This diversification ensures that no single entity can manipulate the network.',
+    'agricultural-cooperatives-farmers': 'Agricultural cooperatives and farmers\' unions',
+    'environmental-certification-bodies': 'Environmental certification bodies',
+    'financial-institutions-impact': 'Financial institutions and impact investors',
+    'technical-security-features': 'Technical Security Features',
+    'advanced-cryptographic-mechanisms': 'Advanced cryptographic mechanisms guarantee data integrity and prevent double counting or manipulation of carbon credits and agricultural certifications.',
+    'immutable-audit-trails': 'Immutable audit trails for all transactions',
+    'smart-contract-validation': 'Smart contract validation of sustainability metrics',
+    'cryptographic-proof-agricultural': 'Cryptographic proof of agricultural practices',
+    
+    // CO2 Neutral Infrastructure English Translations
+    'co2-neutral-sustainable-technology': '100% CO₂ Neutral – Sustainable Technology for a New Era of Digital Infrastructure',
+    'all-data-centers-operate': 'All our data centers and digital services operate on a completely CO₂-neutral basis. Located in the Swiss Alps, within repurposed military bunkers, our infrastructure is powered entirely by certified 100% Swiss hydropower.',
+    'naturally-cool-climate': 'The naturally cool climate of the mountain region significantly reduces the need for high-intensity energy cooling, lowering overall energy consumption without compromising performance or security.',
+    'fagri-digital-represents-ecosystem': 'FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members and future generations.',
     'renewable-download-description': 'Download the complete FAGRI DIGITAL - EUFD2025-001 document for CO₂ certification',
 
     // Contact section
