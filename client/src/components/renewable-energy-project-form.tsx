@@ -87,11 +87,39 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
     }
   }, [energyType, electricalCapacity, historicalYears]);
 
+  const processFiles = async (fileList: FileList | null): Promise<any[]> => {
+    if (!fileList) return [];
+    
+    const processedFiles = [];
+    for (let i = 0; i < fileList.length; i++) {
+      const file = fileList[i];
+      const base64Content = await new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.readAsDataURL(file);
+      });
+      
+      processedFiles.push({
+        name: file.name,
+        type: file.type,
+        size: file.size,
+        uploadDate: new Date().toISOString(),
+        category: file.type.startsWith('image/') ? 'image' : 'document',
+        content: base64Content
+      });
+    }
+    return processedFiles;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
+      // Process all uploaded files
+      const equipmentDocuments = await processFiles(equipmentPurchase);
+      const installationImages = await processFiles(installationPhotos);
+      
       const projectData = {
         id: `PROJ-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
         ownerId: alphaG8Id,
@@ -115,9 +143,18 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
         installedCapacity: parseFloat(electricalCapacity), // Legacy compatibility
         expectedCO2Reduction: parseFloat(expectedCO2Reduction),
         energyLocation: projectLocation,
-        // Documentation
+        // Documentation fields
         installationDate,
-        technicalSpecs
+        technicalSpecs,
+        // Document storage
+        documents: {
+          technologyPurchase: equipmentDocuments,
+          installationPhotos: installationImages,
+          // Placeholder for additional renewable energy documents
+          buildingPermits: [],
+          commissioningDocs: [],
+          productionRecords: []
+        }
       };
 
       const existingProjects = JSON.parse(localStorage.getItem('userProjects') || '[]');

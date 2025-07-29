@@ -8,6 +8,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useLanguage } from '@/components/language-provider';
+import { DocumentDisplay } from '@/components/document-display';
 import {
   FileText,
   Calculator,
@@ -23,7 +24,9 @@ import {
   Trees,
   Wheat,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  FileImage,
+  Paperclip
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -387,59 +390,100 @@ export function ProjectDetailsModal({ isOpen, onClose, project }: ProjectDetails
             </Button>
             
             {expandedSections.documentation && (
-              <div className="p-4 border-t">
+              <div className="p-4 border-t space-y-4">
                 <div className="text-sm text-gray-600 mb-3">
                   Documenti richiesti secondo EUFD2025-001 Sezioni 5.6, 6.2, 7.1
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {project.projectType === 'carbon-farming' && (
-                    <>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <span className="text-sm">Documenti Acquisto Semi/Piante</span>
-                        <Eye className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <span className="text-sm">Foto Piantagione</span>
-                        <Eye className="h-4 w-4 text-blue-600" />
-                      </div>
-                    </>
-                  )}
-                  
-                  {project.projectType === 'renewable-energy' && (
-                    <>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <span className="text-sm">Documenti Acquisto Tecnologia</span>
-                        <Eye className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <span className="text-sm">Permessi Costruzione</span>
-                        <Eye className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <span className="text-sm">Documenti Collaudo</span>
-                        <Eye className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <span className="text-sm">Registrazioni Produzione (5 anni)</span>
-                        <Eye className="h-4 w-4 text-blue-600" />
-                      </div>
-                    </>
-                  )}
-                  
-                  {project.projectType === 'forestation' && (
-                    <>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <span className="text-sm">Documenti Acquisto Piantine</span>
-                        <Eye className="h-4 w-4 text-blue-600" />
-                      </div>
-                      <div className="flex items-center justify-between p-3 border rounded">
-                        <span className="text-sm">Foto Imboschimento</span>
-                        <Eye className="h-4 w-4 text-blue-600" />
-                      </div>
-                    </>
-                  )}
-                </div>
+                {/* Carbon Farming Documents */}
+                {project.projectType === 'carbon-farming' && project.documents && (
+                  <div className="space-y-4">
+                    {project.documents.seedPurchaseDocuments && project.documents.seedPurchaseDocuments.length > 0 && (
+                      <DocumentDisplay
+                        documents={project.documents.seedPurchaseDocuments}
+                        title="Documenti Acquisto Semi/Piante"
+                        category="seed-purchase"
+                      />
+                    )}
+                    {project.documents.plantingPhotos && project.documents.plantingPhotos.length > 0 && (
+                      <DocumentDisplay
+                        documents={project.documents.plantingPhotos}
+                        title="Foto Piantagione"
+                        category="planting-photos"
+                      />
+                    )}
+                  </div>
+                )}
+
+                {/* Renewable Energy Documents */}
+                {project.projectType === 'renewable-energy' && project.documents && (
+                  <div className="space-y-4">
+                    {project.documents.technologyPurchase && project.documents.technologyPurchase.length > 0 && (
+                      <DocumentDisplay
+                        documents={project.documents.technologyPurchase}
+                        title="Documenti Acquisto Tecnologia"
+                        category="technology-purchase"
+                      />
+                    )}
+                    {project.documents.buildingPermits && project.documents.buildingPermits.length > 0 && (
+                      <DocumentDisplay
+                        documents={project.documents.buildingPermits}
+                        title="Permessi Costruzione"
+                        category="building-permits"
+                      />
+                    )}
+                    {project.documents.commissioningDocs && project.documents.commissioningDocs.length > 0 && (
+                      <DocumentDisplay
+                        documents={project.documents.commissioningDocs}
+                        title="Documenti Collaudo"
+                        category="commissioning"
+                      />
+                    )}
+                    {project.documents.installationPhotos && project.documents.installationPhotos.length > 0 && (
+                      <DocumentDisplay
+                        documents={project.documents.installationPhotos}
+                        title="Foto Installazione"
+                        category="installation-photos"
+                      />
+                    )}
+                    {project.documents.productionRecords && project.documents.productionRecords.length > 0 && (
+                      <DocumentDisplay
+                        documents={project.documents.productionRecords}
+                        title="Registrazioni Produzione (5 anni)"
+                        category="production-records"
+                      />
+                    )}
+                  </div>
+                )}
+
+                {/* Forestation Documents */}
+                {project.projectType === 'forestation' && project.documents && (
+                  <div className="space-y-4">
+                    {project.documents.forestSeedlings && project.documents.forestSeedlings.length > 0 && (
+                      <DocumentDisplay
+                        documents={project.documents.forestSeedlings}
+                        title="Documenti Acquisto Piantine"
+                        category="forest-seedlings"
+                      />
+                    )}
+                    {project.documents.forestPhotos && project.documents.forestPhotos.length > 0 && (
+                      <DocumentDisplay
+                        documents={project.documents.forestPhotos}
+                        title="Foto Imboschimento"
+                        category="forest-photos"
+                      />
+                    )}
+                  </div>
+                )}
+
+                {/* No Documents Message */}
+                {(!project.documents || Object.keys(project.documents).length === 0) && (
+                  <div className="text-center py-8 text-gray-500">
+                    <Paperclip className="h-12 w-12 mx-auto mb-3 text-gray-300" />
+                    <p className="text-sm">Nessun documento caricato per questo progetto</p>
+                    <p className="text-xs text-gray-400 mt-1">I documenti verranno visualizzati qui una volta caricati</p>
+                  </div>
+                )}
               </div>
             )}
           </div>

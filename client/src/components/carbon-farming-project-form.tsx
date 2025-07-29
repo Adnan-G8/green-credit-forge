@@ -40,11 +40,39 @@ export function CarbonFarmingProjectForm({ onBack, alphaG8Id, onProjectCreated }
   
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const processFiles = async (fileList: FileList | null): Promise<any[]> => {
+    if (!fileList) return [];
+    
+    const processedFiles = [];
+    for (let i = 0; i < fileList.length; i++) {
+      const file = fileList[i];
+      const base64Content = await new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.readAsDataURL(file);
+      });
+      
+      processedFiles.push({
+        name: file.name,
+        type: file.type,
+        size: file.size,
+        uploadDate: new Date().toISOString(),
+        category: file.type.startsWith('image/') ? 'image' : 'document',
+        content: base64Content
+      });
+    }
+    return processedFiles;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
+      // Process all uploaded files
+      const seedDocuments = await processFiles(seedPurchaseDocuments);
+      const plantingImages = await processFiles(plantingPhotos);
+      
       const projectData = {
         id: `PROJ-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
         ownerId: alphaG8Id,
@@ -65,9 +93,14 @@ export function CarbonFarmingProjectForm({ onBack, alphaG8Id, onProjectCreated }
         farmingMethod,
         cultivatedArea: parseFloat(cultivatedArea),
         expectedCO2Sequestration: parseFloat(expectedCO2Sequestration),
-        // Documentation
+        // Documentation fields
         plantingDate,
-        seedQuantity
+        seedQuantity,
+        // Document storage
+        documents: {
+          seedPurchaseDocuments: seedDocuments,
+          plantingPhotos: plantingImages
+        }
       };
 
       const existingProjects = JSON.parse(localStorage.getItem('userProjects') || '[]');
