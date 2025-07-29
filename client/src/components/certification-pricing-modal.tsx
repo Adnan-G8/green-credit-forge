@@ -151,7 +151,11 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
                         <span className="font-bold text-xl text-blue-900">€20.74</span>
                       </div>
                     </div>
-                    <p className="text-xs text-blue-500 italic mt-2">Per uso personale senza progetti aggiuntivi</p>
+                    <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                      <p className="text-xs text-blue-800"><strong>Per uso personale</strong></p>
+                      <p className="text-xs text-blue-800"><strong>Costi annuali di rinnovo:</strong> €14.64 all'anno (€12.00 + IVA 22%)</p>
+                      <p className="text-xs text-blue-700 mt-1 font-medium">Dopo il primo anno, il rinnovo annuale costa €14.64.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -186,8 +190,9 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
                     </div>
                     <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded-lg">
                       <p className="text-xs text-amber-800"><strong>Incluso:</strong> 1 progetto compreso</p>
+                      <p className="text-xs text-amber-800"><strong>Costi annuali di rinnovo:</strong> €36.60 all'anno (€30.00 + IVA 22%)</p>
                       <p className="text-xs text-amber-800"><strong>Ogni progetto aggiuntivo:</strong> €14.64 all'anno (€12.00 + IVA 22%)</p>
-                      <p className="text-xs text-amber-700 mt-1 font-medium">I progetti aggiuntivi vengono fatturati separatamente e addebitati annualmente.</p>
+                      <p className="text-xs text-amber-700 mt-1 font-medium">Dopo il primo anno, il rinnovo annuale costa €36.60. I progetti aggiuntivi vengono fatturati separatamente.</p>
                     </div>
                   </div>
                 </div>
