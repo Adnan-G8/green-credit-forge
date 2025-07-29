@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from './language-provider';
-import { X, Building2, MapPin, Phone, Mail, FileText, Users, Calculator, Upload, Save } from 'lucide-react';
+import { X, Building2, MapPin, Phone, Mail, FileText, Users, Calculator, Upload, Save, Plus, Trash2, Wrench, Home, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -50,9 +50,59 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
   const [agriculturalLandArea, setAgriculturalLandArea] = useState('');
   const [forestLandArea, setForestLandArea] = useState('');
   const [irrigatedArea, setIrrigatedArea] = useState('');
-  const [machineryDescription, setMachineryDescription] = useState('');
-  const [buildingsDescription, setBuildingsDescription] = useState('');
-  const [renewableEnergyInstallations, setRenewableEnergyInstallations] = useState('');
+  // Dynamic Asset Lists
+  const [machineryList, setMachineryList] = useState([{ type: '', model: '', capacity: '', description: '' }]);
+  const [buildingsList, setBuildingsList] = useState([{ type: '', size: '', purpose: '', description: '' }]);
+  const [renewableEnergyList, setRenewableEnergyList] = useState([{ type: '', capacity: '', productionCapacity: '', location: '', description: '' }]);
+
+  // Dynamic List Management Functions
+  const addMachinery = () => {
+    setMachineryList([...machineryList, { type: '', model: '', capacity: '', description: '' }]);
+  };
+
+  const removeMachinery = (index: number) => {
+    if (machineryList.length > 1) {
+      setMachineryList(machineryList.filter((_, i) => i !== index));
+    }
+  };
+
+  const updateMachinery = (index: number, field: string, value: string) => {
+    const updatedList = [...machineryList];
+    updatedList[index] = { ...updatedList[index], [field]: value };
+    setMachineryList(updatedList);
+  };
+
+  const addBuilding = () => {
+    setBuildingsList([...buildingsList, { type: '', size: '', purpose: '', description: '' }]);
+  };
+
+  const removeBuilding = (index: number) => {
+    if (buildingsList.length > 1) {
+      setBuildingsList(buildingsList.filter((_, i) => i !== index));
+    }
+  };
+
+  const updateBuilding = (index: number, field: string, value: string) => {
+    const updatedList = [...buildingsList];
+    updatedList[index] = { ...updatedList[index], [field]: value };
+    setBuildingsList(updatedList);
+  };
+
+  const addRenewableEnergy = () => {
+    setRenewableEnergyList([...renewableEnergyList, { type: '', capacity: '', productionCapacity: '', location: '', description: '' }]);
+  };
+
+  const removeRenewableEnergy = (index: number) => {
+    if (renewableEnergyList.length > 1) {
+      setRenewableEnergyList(renewableEnergyList.filter((_, i) => i !== index));
+    }
+  };
+
+  const updateRenewableEnergy = (index: number, field: string, value: string) => {
+    const updatedList = [...renewableEnergyList];
+    updatedList[index] = { ...updatedList[index], [field]: value };
+    setRenewableEnergyList(updatedList);
+  };
 
   // Certification and Compliance
   const [isocertifications, setIsoCertifications] = useState('');
@@ -88,9 +138,9 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
         agriculturalLandArea,
         forestLandArea,
         irrigatedArea,
-        machineryDescription,
-        buildingsDescription,
-        renewableEnergyInstallations,
+        machineryList,
+        buildingsList,
+        renewableEnergyList,
         isocertifications,
         organicCertification,
         environmentalCertifications,
@@ -456,40 +506,290 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
         </div>
       </div>
 
+      {/* Dynamic Machinery & Equipment Inventory */}
       <div className="space-y-4">
-        <div>
-          <Label htmlFor="machineryDescription">{t('machinery-equipment-inventory')} *</Label>
-          <Textarea
-            id="machineryDescription"
-            value={machineryDescription}
-            onChange={(e) => setMachineryDescription(e.target.value)}
-            placeholder={t('describe-agricultural-machinery')}
-            rows={3}
-            required
-          />
+        <div className="flex items-center justify-between">
+          <Label className="text-lg font-medium flex items-center">
+            <Wrench className="h-5 w-5 mr-2 text-orange-600" />
+            {t('machinery-equipment-inventory')} *
+          </Label>
+          <Button
+            type="button"
+            onClick={addMachinery}
+            className="bg-orange-600 hover:bg-orange-700 text-white"
+            size="sm"
+          >
+            <Plus className="h-4 w-4 mr-1" />
+            {t('add-machinery')}
+          </Button>
         </div>
-
-        <div>
-          <Label htmlFor="buildingsDescription">{t('buildings-structures-inventory')} *</Label>
-          <Textarea
-            id="buildingsDescription"
-            value={buildingsDescription}
-            onChange={(e) => setBuildingsDescription(e.target.value)}
-            placeholder={t('describe-buildings-structures')}
-            rows={3}
-            required
-          />
+        
+        <div className="space-y-3">
+          {machineryList.map((machinery, index) => (
+            <div key={index} className="bg-orange-50 p-4 rounded-lg border border-orange-200 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-orange-900">
+                  {t('machinery-item')} {index + 1}
+                </span>
+                {machineryList.length > 1 && (
+                  <Button
+                    type="button"
+                    onClick={() => removeMachinery(index)}
+                    variant="ghost"
+                    size="sm"
+                    className="text-red-600 hover:text-red-700 hover:bg-red-100"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                )}
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <Label>{t('machinery-type')}</Label>
+                  <Select 
+                    value={machinery.type} 
+                    onValueChange={(value) => updateMachinery(index, 'type', value)}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder={t('select-machinery-type')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="tractor">{t('tractor')}</SelectItem>
+                      <SelectItem value="harvester">{t('harvester')}</SelectItem>
+                      <SelectItem value="planter">{t('planter')}</SelectItem>
+                      <SelectItem value="sprayer">{t('sprayer')}</SelectItem>
+                      <SelectItem value="cultivator">{t('cultivator')}</SelectItem>
+                      <SelectItem value="irrigation-system">{t('irrigation-system')}</SelectItem>
+                      <SelectItem value="other-machinery">{t('other-machinery')}</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div>
+                  <Label>{t('model-brand')}</Label>
+                  <Input
+                    value={machinery.model}
+                    onChange={(e) => updateMachinery(index, 'model', e.target.value)}
+                    placeholder={t('enter-model-brand')}
+                  />
+                </div>
+                
+                <div>
+                  <Label>{t('capacity-power')}</Label>
+                  <Input
+                    value={machinery.capacity}
+                    onChange={(e) => updateMachinery(index, 'capacity', e.target.value)}
+                    placeholder={t('enter-capacity-power')}
+                  />
+                </div>
+                
+                <div>
+                  <Label>{t('additional-description')}</Label>
+                  <Input
+                    value={machinery.description}
+                    onChange={(e) => updateMachinery(index, 'description', e.target.value)}
+                    placeholder={t('enter-additional-info')}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <div>
-          <Label htmlFor="renewableEnergyInstallations">{t('renewable-energy-installations')}</Label>
-          <Textarea
-            id="renewableEnergyInstallations"
-            value={renewableEnergyInstallations}
-            onChange={(e) => setRenewableEnergyInstallations(e.target.value)}
-            placeholder={t('describe-renewable-energy-systems')}
-            rows={3}
-          />
+      {/* Dynamic Buildings & Structures Inventory */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <Label className="text-lg font-medium flex items-center">
+            <Home className="h-5 w-5 mr-2 text-blue-600" />
+            {t('buildings-structures-inventory')} *
+          </Label>
+          <Button
+            type="button"
+            onClick={addBuilding}
+            className="bg-blue-600 hover:bg-blue-700 text-white"
+            size="sm"
+          >
+            <Plus className="h-4 w-4 mr-1" />
+            {t('add-building')}
+          </Button>
+        </div>
+        
+        <div className="space-y-3">
+          {buildingsList.map((building, index) => (
+            <div key={index} className="bg-blue-50 p-4 rounded-lg border border-blue-200 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-blue-900">
+                  {t('building-item')} {index + 1}
+                </span>
+                {buildingsList.length > 1 && (
+                  <Button
+                    type="button"
+                    onClick={() => removeBuilding(index)}
+                    variant="ghost"
+                    size="sm"
+                    className="text-red-600 hover:text-red-700 hover:bg-red-100"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                )}
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div>
+                  <Label>{t('building-type')}</Label>
+                  <Select 
+                    value={building.type} 
+                    onValueChange={(value) => updateBuilding(index, 'type', value)}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder={t('select-building-type')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="warehouse">{t('warehouse')}</SelectItem>
+                      <SelectItem value="stable">{t('stable')}</SelectItem>
+                      <SelectItem value="greenhouse">{t('greenhouse')}</SelectItem>
+                      <SelectItem value="storage-silo">{t('storage-silo')}</SelectItem>
+                      <SelectItem value="processing-facility">{t('processing-facility')}</SelectItem>
+                      <SelectItem value="office-building">{t('office-building')}</SelectItem>
+                      <SelectItem value="other-building">{t('other-building')}</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div>
+                  <Label>{t('size-area')}</Label>
+                  <Input
+                    value={building.size}
+                    onChange={(e) => updateBuilding(index, 'size', e.target.value)}
+                    placeholder={t('enter-size-area')}
+                  />
+                </div>
+                
+                <div>
+                  <Label>{t('purpose-use')}</Label>
+                  <Input
+                    value={building.purpose}
+                    onChange={(e) => updateBuilding(index, 'purpose', e.target.value)}
+                    placeholder={t('enter-purpose-use')}
+                  />
+                </div>
+                
+                <div className="md:col-span-3">
+                  <Label>{t('additional-description')}</Label>
+                  <Input
+                    value={building.description}
+                    onChange={(e) => updateBuilding(index, 'description', e.target.value)}
+                    placeholder={t('enter-additional-info')}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dynamic Renewable Energy Installations */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <Label className="text-lg font-medium flex items-center">
+            <Zap className="h-5 w-5 mr-2 text-green-600" />
+            {t('renewable-energy-installations')}
+          </Label>
+          <Button
+            type="button"
+            onClick={addRenewableEnergy}
+            className="bg-green-600 hover:bg-green-700 text-white"
+            size="sm"
+          >
+            <Plus className="h-4 w-4 mr-1" />
+            {t('add-renewable-energy')}
+          </Button>
+        </div>
+        
+        <div className="space-y-3">
+          {renewableEnergyList.map((renewable, index) => (
+            <div key={index} className="bg-green-50 p-4 rounded-lg border border-green-200 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-green-900">
+                  {t('renewable-energy-item')} {index + 1}
+                </span>
+                {renewableEnergyList.length > 1 && (
+                  <Button
+                    type="button"
+                    onClick={() => removeRenewableEnergy(index)}
+                    variant="ghost"
+                    size="sm"
+                    className="text-red-600 hover:text-red-700 hover:bg-red-100"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                )}
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <Label>{t('renewable-energy-type')}</Label>
+                  <Select 
+                    value={renewable.type} 
+                    onValueChange={(value) => updateRenewableEnergy(index, 'type', value)}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder={t('select-renewable-type')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="solar-photovoltaic">{t('solar-photovoltaic')}</SelectItem>
+                      <SelectItem value="solar-thermal">{t('solar-thermal')}</SelectItem>
+                      <SelectItem value="wind-turbines">{t('wind-turbines')}</SelectItem>
+                      <SelectItem value="hydroelectric">{t('hydroelectric')}</SelectItem>
+                      <SelectItem value="biomass-energy">{t('biomass-energy')}</SelectItem>
+                      <SelectItem value="biogas-production">{t('biogas-production')}</SelectItem>
+                      <SelectItem value="geothermal">{t('geothermal')}</SelectItem>
+                      <SelectItem value="agrivoltaics">{t('agrivoltaics')}</SelectItem>
+                      <SelectItem value="other-renewable">{t('other-renewable')}</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div>
+                  <Label>{t('installed-capacity')}</Label>
+                  <Input
+                    value={renewable.capacity}
+                    onChange={(e) => updateRenewableEnergy(index, 'capacity', e.target.value)}
+                    placeholder={t('enter-installed-capacity')}
+                  />
+                </div>
+                
+                <div>
+                  <Label>{t('production-capacity')}</Label>
+                  <Input
+                    value={renewable.productionCapacity}
+                    onChange={(e) => updateRenewableEnergy(index, 'productionCapacity', e.target.value)}
+                    placeholder={t('enter-production-capacity')}
+                  />
+                </div>
+                
+                <div>
+                  <Label>{t('location-area')}</Label>
+                  <Input
+                    value={renewable.location}
+                    onChange={(e) => updateRenewableEnergy(index, 'location', e.target.value)}
+                    placeholder={t('enter-location-area')}
+                  />
+                </div>
+                
+                <div className="md:col-span-2">
+                  <Label>{t('additional-description')}</Label>
+                  <Input
+                    value={renewable.description}
+                    onChange={(e) => updateRenewableEnergy(index, 'description', e.target.value)}
+                    placeholder={t('enter-additional-info')}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
