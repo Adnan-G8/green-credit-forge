@@ -356,12 +356,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Photo credit */}
-          <div className="mt-4 text-center">
-            <p className="text-white/60 text-xs">
-              Foto By Gildo Cancelli
-            </p>
-          </div>
+
         </div>
       </div>
     );
@@ -410,12 +405,7 @@ export default function Dashboard() {
           </div>
         </div>
         
-        {/* Photo credit */}
-        <div className="absolute bottom-2 right-4">
-          <p className="text-white/60 text-xs">
-            Foto By Gildo Cancelli
-          </p>
-        </div>
+
       </div>
 
       <main className="relative -mt-12 sm:-mt-16">
