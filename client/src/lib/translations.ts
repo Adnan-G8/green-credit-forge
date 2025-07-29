@@ -1720,6 +1720,19 @@ export const translations = {
     'access-co2-certification-tools': 'Access CO₂ certification tools',
     'total-co2-reduction': 'Total CO₂ Reduction',
 
+    // Security Dashboard English translations
+    'current-account-holder': 'Current Account Holder',
+    'account-name': 'Account Name',
+    'company': 'Company',
+    'role': 'Role',
+    'location': 'Location',
+    'access-level': 'Access Level',
+    'status': 'Status',
+    'current-session-details': 'Current Session Details',
+    'login-time': 'Login Time',
+    'device': 'Device',
+    'account-role': 'Account Role',
+
     // Contact section missing English translations
     'contact-general-title': 'General Inquiries',
     'contact-membership-title': 'Join F.AGR.I. - Filiera Agricola Italiana',
