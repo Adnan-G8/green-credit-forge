@@ -1990,6 +1990,30 @@ export const translations = {
     'view-certification-pricing': 'View Certification Pricing',
     'security-id-key-card': 'Security & ID KEY Card',
 
+    // Organization Information Modal English
+    'org-info-title': 'Organization Information',
+    'org-complete-documentation': 'Complete legal entity documentation according to UNI/PdR guidelines',
+    'org-step-1-of-3': 'Step 1 of 3',
+    'org-legal-entity-info': 'Legal Entity Information',
+    'org-enter-mandatory-data': 'Enter mandatory legal organization data according to UNI/PdR FAGRI Digital standards',
+    'org-legal-form': 'Legal Form',
+    'org-select-legal-form': 'Select legal form',
+    'org-company-name': 'Company Name',
+    'org-enter-company-name': 'Enter company name',
+    'org-vat-number': 'VAT Number',
+    'org-tax-code': 'Tax Code',
+    'org-enter-tax-code': 'Enter tax code',
+    'org-chamber-registration': 'Chamber of Commerce Registration',
+    'org-enter-registration': 'Enter registration number',
+    'org-legal-address': 'Legal Address',
+    'org-enter-legal-address': 'Enter complete legal address',
+    'org-operational-address': 'Operational Address',
+    'org-enter-operational-address': 'Enter operational address (if different from legal)',
+    'org-phone-number': 'Phone Number',
+    'org-email-address': 'Email Address',
+    'org-previous': 'Previous',
+    'org-next': 'Next',
+
 
     // Security Main Section Summaries
     'security-3fa-summary': 'Protected access through certified user identity, authorized devices and active sessions.',

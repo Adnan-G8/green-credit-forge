@@ -117,17 +117,17 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
       <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
         <h3 className="font-semibold text-blue-900 mb-2 flex items-center">
           <Building2 className="h-5 w-5 mr-2" />
-          {t('legal-entity-information')}
+          {t('org-legal-entity-info')}
         </h3>
-        <p className="text-sm text-blue-800">{t('legal-entity-description')}</p>
+        <p className="text-sm text-blue-800">{t('org-enter-mandatory-data')}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="legalForm">{t('legal-form')} *</Label>
+          <Label htmlFor="legalForm">{t('org-legal-form')} *</Label>
           <Select value={legalForm} onValueChange={setLegalForm}>
             <SelectTrigger>
-              <SelectValue placeholder={t('select-legal-form')} />
+              <SelectValue placeholder={t('org-select-legal-form')} />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="srl">S.r.l. - Società a Responsabilità Limitata</SelectItem>
@@ -142,18 +142,18 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
         </div>
 
         <div>
-          <Label htmlFor="companyName">{t('company-name')} *</Label>
+          <Label htmlFor="companyName">{t('org-company-name')} *</Label>
           <Input
             id="companyName"
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
-            placeholder={t('enter-company-name')}
+            placeholder={t('org-enter-company-name')}
             required
           />
         </div>
 
         <div>
-          <Label htmlFor="vatNumber">{t('vat-number')} *</Label>
+          <Label htmlFor="vatNumber">{t('org-vat-number')} *</Label>
           <Input
             id="vatNumber"
             value={vatNumber}
@@ -164,23 +164,23 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
         </div>
 
         <div>
-          <Label htmlFor="fiscalCode">{t('fiscal-code')} *</Label>
+          <Label htmlFor="fiscalCode">{t('org-tax-code')} *</Label>
           <Input
             id="fiscalCode"
             value={fiscalCode}
             onChange={(e) => setFiscalCode(e.target.value)}
-            placeholder={t('enter-fiscal-code')}
+            placeholder={t('org-enter-tax-code')}
             required
           />
         </div>
 
         <div>
-          <Label htmlFor="registrationNumber">{t('chamber-commerce-registration')} *</Label>
+          <Label htmlFor="registrationNumber">{t('org-chamber-registration')} *</Label>
           <Input
             id="registrationNumber"
             value={registrationNumber}
             onChange={(e) => setRegistrationNumber(e.target.value)}
-            placeholder={t('enter-registration-number')}
+            placeholder={t('org-enter-registration')}
             required
           />
         </div>
@@ -188,24 +188,24 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
 
       <div className="space-y-4">
         <div>
-          <Label htmlFor="legalAddress">{t('legal-registered-address')} *</Label>
+          <Label htmlFor="legalAddress">{t('org-legal-address')} *</Label>
           <Textarea
             id="legalAddress"
             value={legalAddress}
             onChange={(e) => setLegalAddress(e.target.value)}
-            placeholder={t('enter-complete-legal-address')}
+            placeholder={t('org-enter-legal-address')}
             rows={2}
             required
           />
         </div>
 
         <div>
-          <Label htmlFor="operationalAddress">{t('operational-headquarters-address')}</Label>
+          <Label htmlFor="operationalAddress">{t('org-operational-address')}</Label>
           <Textarea
             id="operationalAddress"
             value={operationalAddress}
             onChange={(e) => setOperationalAddress(e.target.value)}
-            placeholder={t('enter-operational-address')}
+            placeholder={t('org-enter-operational-address')}
             rows={2}
           />
         </div>
@@ -213,7 +213,7 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="phoneNumber">{t('phone-number')} *</Label>
+          <Label htmlFor="phoneNumber">{t('org-phone-number')} *</Label>
           <Input
             id="phoneNumber"
             value={phoneNumber}
@@ -224,7 +224,7 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
         </div>
 
         <div>
-          <Label htmlFor="emailAddress">{t('email-address')} *</Label>
+          <Label htmlFor="emailAddress">{t('org-email-address')} *</Label>
           <Input
             id="emailAddress"
             type="email"
@@ -505,8 +505,8 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
         <div className="bg-gradient-to-r from-blue-600 to-emerald-600 text-white p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-light">{t('organization-information')}</h2>
-              <p className="text-blue-100 text-sm">{t('complete-legal-entity-documentation')}</p>
+              <h2 className="text-2xl font-light">{t('org-info-title')}</h2>
+              <p className="text-blue-100 text-sm">{t('org-complete-documentation')}</p>
             </div>
             <Button
               onClick={onClose}
@@ -530,8 +530,8 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
             ))}
           </div>
           <div className="mt-2 text-sm text-blue-100">
-            {t('step')} {currentSection} {t('of')} 3: {
-              currentSection === 1 ? t('legal-entity-information') :
+            {t('org-step-1-of-3')}: {
+              currentSection === 1 ? t('org-legal-entity-info') :
               currentSection === 2 ? t('agricultural-assets-facilities') :
               t('certifications-compliance')
             }
@@ -553,7 +553,7 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
               variant="outline"
               disabled={currentSection === 1}
             >
-              {t('previous')}
+              {t('org-previous')}
             </Button>
             
             <div className="flex space-x-3">
@@ -562,7 +562,7 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
                   onClick={() => setCurrentSection(currentSection + 1)}
                   className="bg-blue-600 hover:bg-blue-700"
                 >
-                  {t('next')}
+                  {t('org-next')}
                 </Button>
               ) : (
                 <Button
