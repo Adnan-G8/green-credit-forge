@@ -1600,6 +1600,13 @@ export const translations = {
     'data-sovereignty-access-title': 'Data Sovereignty and Access Control',
     'digital-fingerprint-ecosystem-desc': 'For an ecosystem of trust and respect, every user and active member on the platform must provide their mandatory digital fingerprint. This ensures accountability, transparency and a secure environment for all participants.',
     'kyc-process-encryption-desc': 'must undergo a KYC process to create their digital fingerprint. After the Digital Fingerprint is issued, Data and all other information are highly encrypted on a separate server structure to protect them from any and all abuse. All this information is used only for legal and regulatory processing and nothing else and is not shared with any other organization.',
+    
+    // Alpine Data Centers Section English
+    'alpine-data-centers-title': 'Alpine Data Centers',
+    'primary-data-centers-located': 'Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from environmental and human threats.',
+    'emp-resistant-bunkers': 'EMP-resistant military bunkers',
+    'autonomous-power-cooling': 'Autonomous power and cooling systems',
+    'multi-ton-security-doors': 'Multi-ton security doors with biometric access',
     'renewable-download-description': 'Download the complete FAGRI DIGITAL - EUFD2025-001 document for CO₂ certification',
 
     // Contact section
