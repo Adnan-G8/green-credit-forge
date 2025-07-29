@@ -13,7 +13,7 @@ import { CertificationPricingModal } from '@/components/certification-pricing-mo
 import { AdminUserManagementModal } from '@/components/admin-user-management-modal';
 import { ProjectCreationModal } from '@/components/project-creation-modal';
 import { MyProjectsDisplay } from '@/components/my-projects-display';
-import { KycUploadSection } from '@/components/kyc-upload-section';
+import KYCUploadSectionRedesigned from '@/components/kyc-upload-section-redesigned';
 import { PaymentStatusSection } from '@/components/payment-status-section';
 import { AuditTrailDisplay } from '@/components/audit-trail-display';
 
@@ -525,32 +525,11 @@ export default function Dashboard() {
         }}
       />
 
-      {/* KYC Upload Section Modal */}
-      {showKycSection && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg shadow-xl w-full max-w-6xl h-[90vh] overflow-hidden">
-            <div className="flex items-center justify-between p-6 border-b">
-              <h2 className="text-2xl font-bold text-gray-900">KYC - Know Your Customer</h2>
-              <Button
-                variant="outline"
-                onClick={() => setShowKycSection(false)}
-                className="flex items-center gap-2"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                Torna al Dashboard
-              </Button>
-            </div>
-            <div className="p-6 overflow-y-auto h-full">
-              <KycUploadSection 
-                fagriIdKey={alphaG8Id}
-                userRole={currentUserRole}
-                kycStatus={kycStatus}
-                onKycUpdate={handleKycUpdate}
-              />
-            </div>
-          </div>
-        </div>
-      )}
+      {/* KYC Upload Section Redesigned Modal */}
+      <KYCUploadSectionRedesigned 
+        isOpen={showKycSection}
+        onClose={() => setShowKycSection(false)}
+      />
 
       {/* Payment Status Section Modal */}
       {showPaymentSection && (
