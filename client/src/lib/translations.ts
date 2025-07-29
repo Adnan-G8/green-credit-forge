@@ -1861,6 +1861,13 @@ export const translations = {
     '10001-to-100000-kw': 'from 10,001 to 100,000 kW',
     'over-100000-kw': 'over 100,000 kW',
     
+    // Payment Information English
+    'payment-information': 'Payment Information',
+    'payment-method-bank-transfer': 'Payment to be made by bank transfer to the FAGRI DIGITAL Certification System',
+    'company-name': 'Company Name',
+    'address': 'Address',
+    'download-official-tariff': 'Download Official Tariff',
+    
     'pricing-breakdown': 'Pricing Breakdown',
     'annual-extension-fee': 'Annual Extension Fee',
     'vat': 'VAT',
