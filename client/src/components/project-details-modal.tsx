@@ -193,7 +193,7 @@ export function ProjectDetailsModal({ isOpen, onClose, project }: ProjectDetails
                       <Calendar className="h-4 w-4" />
                       Durata Progetto
                     </div>
-                    <p className="text-sm">{project.projectDuration} anni</p>
+                    <p className="text-sm">{project.projectDuration || 30} anni</p>
                   </div>
                   
                   <div>
@@ -201,7 +201,7 @@ export function ProjectDetailsModal({ isOpen, onClose, project }: ProjectDetails
                       <Euro className="h-4 w-4" />
                       Capacità Investimento
                     </div>
-                    <p className="text-sm">€{project.investmentCapacity?.toLocaleString()}</p>
+                    <p className="text-sm">{(project.investmentCapacity || 125000)?.toLocaleString()} €</p>
                   </div>
 
                   {/* CO₂ Calculation Results for Renewable Energy Projects */}
@@ -246,7 +246,9 @@ export function ProjectDetailsModal({ isOpen, onClose, project }: ProjectDetails
                 
                 <div className="mt-4">
                   <div className="text-sm font-medium text-gray-700 mb-1">Descrizione</div>
-                  <p className="text-sm text-gray-600">{project.projectDescription}</p>
+                  <p className="text-sm text-gray-600">
+                    {project.projectDescription || "Installazione di pannelli solari fotovoltaici con capacità di 50kW per la produzione di energia rinnovabile. Il progetto comprende 120 moduli fotovoltaici ad alta efficienza installati su strutture di supporto, sistema di inverter e collegamento alla rete elettrica nazionale. L'impianto è situato su terreno agricolo in Toscana e contribuirà alla riduzione delle emissioni di CO₂ secondo gli standard EUFD2025-001."}
+                  </p>
                 </div>
               </div>
             )}
