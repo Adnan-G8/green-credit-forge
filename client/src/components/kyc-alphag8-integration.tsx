@@ -122,33 +122,28 @@ export default function KYCAlphaG8Integration({
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-blue-50 to-white">
         <DialogHeader className="border-b border-slate-200 pb-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                {currentStep === 'completion' ? <Key className="h-6 w-6 text-white" /> : <Shield className="h-6 w-6 text-white" />}
-              </div>
-              <div>
-                <DialogTitle className="text-2xl font-light text-slate-800">
-                  {currentStep === 'completion' 
-                    ? 'ALPHAG8 ID KEY Erstellt' 
-                    : currentStep === 'payment' 
-                      ? 'Bezahlung - €17 Account Gebühr'
-                      : 'KYC - Know Your Customer'
-                  }
-                </DialogTitle>
-                <DialogDescription className="text-slate-600 mt-1">
-                  {currentStep === 'completion' 
-                    ? 'Ihr ALPHAG8 ID KEY wurde erfolgreich erstellt'
-                    : currentStep === 'payment' 
-                      ? 'Bezahlen Sie €17 für die Account-Erstellung'
-                      : 'Identitätsverifikation nach EUFD2025-001 Standard'
-                  }
-                </DialogDescription>
-              </div>
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+              {currentStep === 'completion' ? <Key className="h-6 w-6 text-white" /> : <Shield className="h-6 w-6 text-white" />}
             </div>
-            <Button variant="ghost" size="sm" onClick={handleClose} className="text-slate-400 hover:text-slate-600">
-              <X className="h-5 w-5" />
-            </Button>
+            <div>
+              <DialogTitle className="text-2xl font-light text-slate-800">
+                {currentStep === 'completion' 
+                  ? 'ALPHAG8 ID KEY Erstellt' 
+                  : currentStep === 'payment' 
+                    ? 'Bezahlung - €17 Account Gebühr'
+                    : 'KYC - Know Your Customer'
+                }
+              </DialogTitle>
+              <DialogDescription className="text-slate-600 mt-1">
+                {currentStep === 'completion' 
+                  ? 'Ihr ALPHAG8 ID KEY wurde erfolgreich erstellt'
+                  : currentStep === 'payment' 
+                    ? 'Bezahlen Sie €17 für die Account-Erstellung'
+                    : 'Identitätsverifikation nach EUFD2025-001 Standard'
+                }
+              </DialogDescription>
+            </div>
           </div>
         </DialogHeader>
 
