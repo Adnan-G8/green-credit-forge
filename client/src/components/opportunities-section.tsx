@@ -5,11 +5,11 @@ export default function OpportunitiesSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="opportunities" className="py-20 bg-white">
+    <section id="opportunities" className="py-12 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-900 mb-6 leading-tight">
               {t('opportunities-title')}
             </h2>
@@ -20,7 +20,7 @@ export default function OpportunitiesSection() {
           </div>
 
           {/* What Are Carbon Credits Section */}
-          <div className="bg-gradient-to-r from-emerald-900 to-slate-900 rounded-2xl p-8 mb-16 text-white">
+          <div className="bg-gradient-to-r from-emerald-900 to-slate-900 rounded-2xl p-8 mb-12 text-white">
             <div className="text-center mb-8">
               <div className="inline-flex p-3 bg-emerald-500 rounded-full mb-4">
                 <Award className="h-8 w-8 text-white" />
@@ -52,7 +52,7 @@ export default function OpportunitiesSection() {
           </div>
 
           {/* Paris Agreement Context */}
-          <div className="bg-slate-50 rounded-2xl p-8 mb-16 border border-slate-100">
+          <div className="bg-slate-50 rounded-2xl p-8 mb-12 border border-slate-100">
             <div className="flex items-start space-x-4 mb-6">
               <div className="p-3 bg-emerald-100 rounded-full">
                 <Globe className="h-6 w-6 text-emerald-600" />
@@ -65,7 +65,7 @@ export default function OpportunitiesSection() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
             
             {/* Agricultural & Agroforestry Companies */}
             <div className="group">

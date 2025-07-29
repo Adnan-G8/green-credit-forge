@@ -6,11 +6,11 @@ export function SecurityMainSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="security-main" className="py-20 bg-slate-50">
+    <section id="security-main" className="py-12 bg-slate-50">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               {t('security-title')}
             </h2>

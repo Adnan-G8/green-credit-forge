@@ -17,11 +17,11 @@ export function RenewableEnergySection() {
   };
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-12 bg-slate-50">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               {t('renewable-title')}
             </h2>
@@ -62,7 +62,7 @@ export function RenewableEnergySection() {
           </div>
 
           {/* FAGRI DIGITAL CERTIFICATION STANDARD Download Button */}
-          <div className="mt-16 text-center">
+          <div className="mt-12 text-center">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-slate-200 max-w-2xl mx-auto">
               <button
                 onClick={handleDownloadStandard}
