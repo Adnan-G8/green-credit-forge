@@ -110,6 +110,53 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
             </div>
           </div>
 
+          {/* FAGRI Platform ID Costs */}
+          <div className="bg-white border border-slate-200 rounded-xl p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                <FileText className="h-6 w-6 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-medium text-slate-900">{t('blockchain-account-costs')}</h3>
+                <p className="text-slate-600">FAGRI Platform ID Registration Costs</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Individual Accounts */}
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <h4 className="text-lg font-medium text-blue-900 mb-4">{t('individual-accounts')}</h4>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between items-center">
+                    <span className="text-blue-800 font-medium">{t('total-opening-cost-individual')}</span>
+                  </div>
+                  <div className="bg-white border border-blue-200 rounded-lg p-4 space-y-2">
+                    <p className="text-blue-700">{t('one-time-registration-fee')}</p>
+                    <p className="text-blue-700">{t('monthly-usage-fee-individual')}</p>
+                    <p className="text-sm text-blue-600 mt-2">{t('individual-fee-coverage')}</p>
+                    <p className="text-sm text-blue-600 font-medium">{t('from-second-year-individual')}</p>
+                    <p className="text-xs text-blue-500 italic">{t('collaborators-need-id')}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Corporate Accounts */}
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                <h4 className="text-lg font-medium text-green-900 mb-4">{t('corporate-accounts')}</h4>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between items-center">
+                    <span className="text-green-800 font-medium">{t('total-opening-cost-corporate')}</span>
+                  </div>
+                  <div className="bg-white border border-green-200 rounded-lg p-4 space-y-2">
+                    <p className="text-green-700">{t('corporate-registration-fee')}</p>
+                    <p className="text-green-700">{t('monthly-usage-fee-corporate')}</p>
+                    <p className="text-sm text-green-600 mt-2">{t('corporate-fee-coverage')}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Payment Information */}
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
             <h4 className="font-medium text-slate-900 mb-4">{t('payment-information')}</h4>
