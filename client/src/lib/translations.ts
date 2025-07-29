@@ -1553,20 +1553,53 @@ export const translations = {
     'renewable-wind': 'Wind Energy',
     'renewable-download-title': 'FAGRI DIGITAL CERTIFICATION STANDARD',
     
-    // Security Page - Data Sovereignty English
-    'security-data-title': 'Data Sovereignty and Access Control',
-    'security-data-description': 'Your data. Our fortress. Swiss precision for a global platform. Our infrastructure is designed to connect nations worldwide and enable international applications. To ensure maximum data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management.',
-    'security-data-point1': 'Strictest data protection laws: subject to the new Federal Data Protection Act (nFADP), one of the world\'s most rigorous laws',
-    'security-data-point2': 'FINMA standards: infrastructure compliant with Swiss Financial Market Supervisory Authority requirements (FINMA-RS 18/3)',
-    'security-data-point3': 'Unrivaled physical security: data centers in alpine fortresses, former Swiss military bunkers repurposed as state-of-the-art data centers',
-    
-    // Security Page - Technical Excellence English  
-    'security-technical-title': 'Technical Excellence and Operational Resilience',
-    'security-technical-intro': 'Beyond impressive physical security, we integrate cutting-edge technical measures and complete redundancies to ensure data protection and availability.',
-    'security-encryption-title': 'Multi-Layer Encryption',
-    'security-encryption-description': 'Data is protected with internationally recognized encryption standards such as AES-256 and RSA-4096. A "Zero-Knowledge" architecture ensures that only you can decrypt your files.',
-    'security-redundancy-title': 'Robust Redundancy',
     'security-redundancy-description': 'Customer data is triple-backed up, with each file stored simultaneously in different geographically dispersed locations within Switzerland. A dedicated "Disaster Recovery Site" in the Swiss Alps offers maximum protection.',
+    
+    // Alpine Security Blockchain Section English
+    'security-alpine-blockchain-title': 'Alpine Security Meets Global Blockchain Governance',
+    'security-alpine-p1': 'For the first time, blockchain validators are managed jointly by institutions, social organizations and partners from multiple countries — all with equal rights and shared responsibilities.',
+    'security-alpine-p2': 'Hosted in Swiss mountain data centers with banking-level security, our 51-node blockchain ensures integrity, resilience and data sovereignty.',
+    'security-alpine-p3': 'FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and reliable infrastructure for CO₂ certification and agricultural data for tomorrow\'s world.',
+    
+    // Physical Security Infrastructure English
+    'unrivalled-physical-security-title': 'Unrivaled Physical Security: Data in Alpine Fortresses',
+    'data-centers-swiss-military': 'Our data centers utilize former Swiss military bunkers, repurposed as state-of-the-art data centers, offering a level of physical protection far beyond conventional data centers.',
+    'secure-infrastructure-equipment': 'Secure data center infrastructure with professional server equipment',
+    
+    // Digital Fingerprint Section English
+    'security-digital-fingerprint-title': 'Mandatory Digital Fingerprint for Every User and Active Member',
+    'security-digital-fingerprint-description': 'For an ecosystem of trust and respect, every user and active member on the platform must provide their mandatory digital fingerprint. This ensures accountability, transparency and a secure environment for all participants.',
+    'security-digital-fingerprint-kyc': 'must undergo a KYC process to create their digital fingerprint. After issuing the Digital Fingerprint, Data and all other information are highly encrypted on a separate server structure to protect them from any and all abuse. All this information is used only for legal and regulatory processing and nothing else and is not shared with any other organization.',
+    
+    // CO2 Neutral Infrastructure English
+    'security-co2-neutral-title': '100% CO₂ Neutral – Sustainable Technology for a New Era of Digital Infrastructure',
+    'security-co2-neutral-p1': 'All our data centers and digital services operate on a completely CO₂-neutral basis. Located in the Swiss Alps, inside repurposed military bunkers, our infrastructure is powered entirely by 100% certified Swiss hydropower.',
+    'security-co2-neutral-p2': 'The naturally cool climate of the mountain region significantly reduces the need for energy-intensive cooling, lowering overall energy consumption without compromising performance or security.',
+    'security-co2-neutral-p3': 'FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted in a climate-neutral manner – a commitment to our partners, members and future generations.',
+    
+    // Digital Fingerprint Mandatory Section English
+    'digital-fingerprint-kyc-title': 'Mandatory Digital Fingerprint for Every User and Active Member',
+    'digital-fingerprint-mandatory-desc': 'For an ecosystem of trust and respect, every user and active member on the platform must provide their mandatory digital fingerprint. This ensures accountability, transparency and a secure environment for all participants.',
+    
+    // Data Protection Laws English
+    'strictest-data-protection': 'Strictest Data Protection Laws: subject to the new Federal Data Protection Act (nFADP), one of the world\'s most rigorous data protection regulations',
+    'finma-banking-compliance': 'FINMA Banking Compliance: compliant with Federal Financial Market Supervisory Authority requirements (FINMA-RS 18/3)',
+    'bank-level-security-platforms': 'Banking-level security with controlled access through banking sector-compliant platforms',
+    
+    // Security Page Hero and Main Sections English
+    'security-page-hero-title': 'Digital Security',
+    'security-page-hero-subtitle': 'Security and reliability of our infrastructure represent the foundation of trust you place in FAGRI Digital.',
+    'security-overview-main-title': 'Security Overview', 
+    'security-overview-main-desc': 'Our multi-level security architecture ensures maximum protection for your agricultural data.',
+    'three-factor-auth-title': 'Three-Factor Authentication (3FA)',
+    'access-platform-secured': 'Platform access is secured through:',
+    'certified-user-identity': 'Certified user identity',
+    'authorized-device': 'Authorized device (computer, smartphone, etc.)',
+    'active-user-session': 'Active user session',
+    'obligatory-digital-fingerprint': 'Mandatory digital fingerprint for trust and respect ecosystem',
+    'data-sovereignty-access-title': 'Data Sovereignty and Access Control',
+    'digital-fingerprint-ecosystem-desc': 'For an ecosystem of trust and respect, every user and active member on the platform must provide their mandatory digital fingerprint. This ensures accountability, transparency and a secure environment for all participants.',
+    'kyc-process-encryption-desc': 'must undergo a KYC process to create their digital fingerprint. After the Digital Fingerprint is issued, Data and all other information are highly encrypted on a separate server structure to protect them from any and all abuse. All this information is used only for legal and regulatory processing and nothing else and is not shared with any other organization.',
     'renewable-download-description': 'Download the complete FAGRI DIGITAL - EUFD2025-001 document for CO₂ certification',
 
     // Contact section
@@ -1676,9 +1709,7 @@ export const translations = {
     'security-3fa-point3': 'Active user session',
     'security-3fa-point4': 'Mandatory digital fingerprint for trust and respect ecosystem',
     'security-3fa-guarantee': 'Every action – request, project, comment or modification – is uniquely traceable. Anonymous actions are not allowed.',
-    'security-data-title': 'Data Sovereignty and Access Control',
-    'security-data-description': 'Your data. Our fortress. Swiss precision for a global platform. Our infrastructure is designed to connect nations around the world and enable international applications. To ensure maximum data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management.',
-    'security-data-point1': 'Most severe data protection laws: subject to the new Federal Data Protection Act (nFADP), one of the most stringent laws in the world',
+
     'security-swiss-title': 'Swiss Security and Compliance',
     'security-swiss-description': 'Alpine fortress data centers with military-grade security and blockchain infrastructure.',
     'security-cta-title': 'Discover Our Complete Security Architecture',
