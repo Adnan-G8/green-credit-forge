@@ -586,10 +586,12 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
                 
                 <div>
                   <Label>{t('additional-description')}</Label>
-                  <Input
+                  <Textarea
                     value={machinery.description}
                     onChange={(e) => updateMachinery(index, 'description', e.target.value)}
                     placeholder={t('enter-additional-info')}
+                    rows={2}
+                    className="resize-y"
                   />
                 </div>
               </div>
@@ -678,10 +680,12 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
                 
                 <div className="md:col-span-3">
                   <Label>{t('additional-description')}</Label>
-                  <Input
+                  <Textarea
                     value={building.description}
                     onChange={(e) => updateBuilding(index, 'description', e.target.value)}
                     placeholder={t('enter-additional-info')}
+                    rows={2}
+                    className="resize-y"
                   />
                 </div>
               </div>
@@ -781,10 +785,12 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
                 
                 <div className="md:col-span-2">
                   <Label>{t('additional-description')}</Label>
-                  <Input
+                  <Textarea
                     value={renewable.description}
                     onChange={(e) => updateRenewableEnergy(index, 'description', e.target.value)}
                     placeholder={t('enter-additional-info')}
+                    rows={2}
+                    className="resize-y"
                   />
                 </div>
               </div>
