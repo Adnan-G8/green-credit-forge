@@ -267,7 +267,7 @@ export default function KYCAlphaG8Integration({
               <CardHeader className="pb-4">
                 <CardTitle className="text-xl text-slate-800 font-light flex items-center">
                   <CreditCard className="h-5 w-5 mr-2 text-green-500" />
-                  Bezahlung - €17 Account Gebühr
+                  Bezahlung - €20.74 (inkl. 22% MwSt)
                 </CardTitle>
                 <CardDescription className="text-slate-600">
                   Wählen Sie Ihre bevorzugte Zahlungsmethode für die ALPHAG8 ID Erstellung
@@ -300,16 +300,41 @@ export default function KYCAlphaG8Integration({
                 </div>
 
                 <div className="bg-slate-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-slate-800 mb-2">Gebührenübersicht:</h4>
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-600">ALPHAG8 ID Account Erstellung</span>
-                    <span className="font-bold text-lg">€17.00</span>
+                  <h4 className="font-semibold text-slate-800 mb-3">Gebührenübersicht:</h4>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-600">Digitaler Fingerprint Erstellung</span>
+                      <span className="text-slate-800">€5.00</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-600">Erste Jahresgebühr</span>
+                      <span className="text-slate-800">€12.00</span>
+                    </div>
+                    <div className="border-t border-slate-200 pt-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-600">Zwischensumme</span>
+                        <span className="text-slate-800">€17.00</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-600">Italienische MwSt (22%)</span>
+                        <span className="text-slate-800">€3.74</span>
+                      </div>
+                    </div>
+                    <div className="border-t border-slate-300 pt-2">
+                      <div className="flex justify-between items-center">
+                        <span className="font-semibold text-slate-800">Gesamtbetrag</span>
+                        <span className="font-bold text-lg text-green-600">€20.74</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-sm text-slate-500 mt-2">
+                  <div className="text-sm text-slate-500 mt-3">
                     {paymentMethod === 'card' 
                       ? 'Sichere Kreditkartenzahlung über Stripe'
                       : 'Banküberweisung an FAGRI DIGITAL S.r.l.'
                     }
+                  </div>
+                  <div className="text-xs text-blue-600 mt-2 bg-blue-50 p-2 rounded">
+                    <strong>Hinweis:</strong> Jedes Folgejahr beträgt die Gebühr €14.64 (€12.00 + 22% MwSt)
                   </div>
                 </div>
               </CardContent>
