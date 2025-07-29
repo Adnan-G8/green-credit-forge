@@ -218,10 +218,7 @@ export default function Dashboard() {
 
   // Replace the empty second screen with functional dashboard navigation
   // Removed handleViewProjects - projects are now integrated in ProjectTrackingDashboard
-
-  const handleUploadProject = () => {
-    setShowProjectCreation(true);
-  };
+  // Removed handleUploadProject - consolidated with direct setShowProjectCreation calls
 
   const handleOrganizationInformation = () => {
     setShowOrganizationInfo(true);
@@ -465,16 +462,6 @@ export default function Dashboard() {
                   <FileText className="h-6 w-6 text-emerald-600 group-hover:scale-110 transition-transform" />
                 </div>
                 <span className="text-emerald-800 font-medium text-center leading-tight">Nuovo Progetto</span>
-              </button>
-              
-              <button
-                onClick={handleUploadProject}
-                className="flex flex-col items-center justify-center space-y-3 bg-green-50 hover:bg-green-100 border border-green-200 rounded-xl p-6 h-32 transition-all duration-200 group"
-              >
-                <div className="flex items-center justify-center h-8 w-8">
-                  <Plus className="h-6 w-6 text-green-600 group-hover:scale-110 transition-transform" />
-                </div>
-                <span className="text-green-800 font-medium text-center leading-tight">Carica Nuovo Progetto</span>
               </button>
               
               <button
