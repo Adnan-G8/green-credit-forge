@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/language-provider';
 import { useToast } from '@/hooks/use-toast';
+import { AccountExtensionModal } from './account-extension-modal';
 import { Key, Copy, Download, Shield, Calendar, Clock, User, Monitor, AlertTriangle, CheckCircle, LogOut, Eye, Settings } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -48,6 +49,7 @@ export function SecurityDashboardModal({ isOpen, onClose, alphaG8Id }: SecurityD
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
 
   const [accountAccessCheck, setAccountAccessCheck] = useState(false);
+  const [showExtensionModal, setShowExtensionModal] = useState(false);
 
   // Mock user profiles and session data - in real implementation this would come from backend
   useEffect(() => {
@@ -374,13 +376,7 @@ Authorized by ALPHAG8 Switzerland Technology
                   <div className="text-right">
                     <Button
                       className="bg-green-600 hover:bg-green-700 text-white mb-2"
-                      onClick={() => {
-                        // Account extension functionality with correct pricing
-                        toast({
-                          title: t('extend-account'),
-                          description: "Personal Account: €5 (Einrichtung) + €12 (1. Jahr) = €17 gesamt. Corporate Account: €12 (Einrichtung) + €30 (1. Jahr) = €42 gesamt.",
-                        });
-                      }}
+                      onClick={() => setShowExtensionModal(true)}
                     >
                       <Clock className="h-4 w-4 mr-2" />
                       {t('extend-account')}
@@ -583,6 +579,13 @@ Authorized by ALPHAG8 Switzerland Technology
           </div>
         </div>
       </DialogContent>
+
+      {/* Account Extension Modal */}
+      <AccountExtensionModal
+        isOpen={showExtensionModal}
+        onClose={() => setShowExtensionModal(false)}
+        fagriId={alphaG8Id}
+      />
     </Dialog>
   );
 }
