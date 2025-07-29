@@ -1554,6 +1554,9 @@ export const translations = {
     'sign-in': 'Sign In',
 
     // EUFD Standard Page translations
+    'eufd-hero-title': 'The EUFD2025-001 Standard',
+    'eufd-hero-subtitle': 'Scientific, concrete, accessible.',
+    'eufd-status': 'Global Pioneer Standard',
     'eufd-intro-title': 'Pioneers from Italy to the World: Our Blockchain Standard for CO₂ Certificates',
     'eufd-intro-text1': 'At FAGRI.Digital, we are proud to present our new innovative standard: EUFD2025-001. This standard is the result of years of intensive research and development, based on the latest scientific discoveries and created in close collaboration with leading Italian universities.',
     'eufd-intro-text2': 'The FAGRI Digital platform that supports the EUFD2025-001 standard is designed to usher in a new era of trust, efficiency and transparency in CO₂ certification and trading — powered by blockchain technology, advanced data protection protocols and 3FA security architecture.',
