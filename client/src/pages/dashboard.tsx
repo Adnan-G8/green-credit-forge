@@ -421,7 +421,7 @@ export default function Dashboard() {
       <main className="relative -mt-12 sm:-mt-16">
         <div className="container mx-auto px-4 py-6 sm:py-8">
           {/* Navigation Options Card - Mobile Responsive */}
-          <div className="mb-6 sm:mb-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 p-4 sm:p-8">
+          <div className="mb-6 sm:mb-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 p-4 sm:p-8 mt-16 sm:mt-20">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-4">
               <div className="flex-1">
                 <h2 className="text-xl sm:text-2xl font-light text-slate-900 mb-1 sm:mb-2">
