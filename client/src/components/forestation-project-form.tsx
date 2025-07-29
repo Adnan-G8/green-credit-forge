@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -39,6 +39,40 @@ export function ForestationProjectForm({ onBack, alphaG8Id, onProjectCreated }: 
   const [forestPlantingDate, setForestPlantingDate] = useState('');
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Calculate CO2 sequestration based on EUFD2025-001 methodology for forestration
+  useEffect(() => {
+    if (forestType && forestArea && treeDensity && projectDuration) {
+      const area = parseFloat(forestArea);
+      const density = parseFloat(treeDensity);
+      const duration = parseFloat(projectDuration);
+      
+      if (area > 0 && density > 0 && duration > 0) {
+        // EUFD2025-001 Section 7.2 - Forestration CO2 sequestration rates
+        const forestTypeFactors = {
+          'deciduous': 8.5,     // tonnes CO2/hectare/year for deciduous forests
+          'coniferous': 12.2,   // tonnes CO2/hectare/year for coniferous forests
+          'mixed': 10.1,        // tonnes CO2/hectare/year for mixed forests
+          'fruit-trees': 6.8,   // tonnes CO2/hectare/year for fruit orchards
+          'agroforestry': 7.5   // tonnes CO2/hectare/year for agroforestry
+        };
+        
+        // Density factor (trees per hectare affects CO2 sequestration)
+        let densityMultiplier = 1.0;
+        if (density >= 2500) densityMultiplier = 1.3;      // High density bonus
+        else if (density >= 1500) densityMultiplier = 1.2; // Medium density bonus
+        else if (density >= 1000) densityMultiplier = 1.1; // Standard density bonus
+        
+        // Get base sequestration rate
+        const baseRate = forestTypeFactors[forestType as keyof typeof forestTypeFactors] || 10.1;
+        
+        // EUFD2025-001 formula: CO2 = Area × Base_Rate × Density_Factor × Duration
+        const totalForestCO2 = area * baseRate * densityMultiplier * duration;
+        
+        setExpectedForestCO2(totalForestCO2.toFixed(2));
+      }
+    }
+  }, [forestType, forestArea, treeDensity, projectDuration]);
 
   const processFiles = async (fileList: FileList | null): Promise<any[]> => {
     if (!fileList) return [];

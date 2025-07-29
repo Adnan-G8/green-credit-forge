@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -39,6 +39,47 @@ export function CarbonFarmingProjectForm({ onBack, alphaG8Id, onProjectCreated }
   const [seedQuantity, setSeedQuantity] = useState('');
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Calculate CO2 sequestration based on EUFD2025-001 methodology
+  useEffect(() => {
+    if (cropType && farmingMethod && cultivatedArea && projectDuration) {
+      const area = parseFloat(cultivatedArea);
+      const duration = parseFloat(projectDuration);
+      
+      if (area > 0 && duration > 0) {
+        let baseSequestrationRate = 0; // tonnes CO2/hectare/year
+        
+        // EUFD2025-001 Section 5.3 - Carbon Farming sequestration rates
+        const cropFactors = {
+          'cereals': 2.2,
+          'legumes': 3.1,
+          'tree-crops': 4.8,
+          'vegetables': 1.6,
+          'forage': 2.9,
+          'mixed': 2.5
+        };
+        
+        const methodFactors = {
+          'organic': 1.4,      // 40% bonus for organic
+          'cover-crops': 1.3,  // 30% bonus for cover crops
+          'conservation': 1.2, // 20% bonus for conservation tillage
+          'integrated': 1.1,   // 10% bonus for integrated farming
+          'conventional': 1.0  // baseline
+        };
+        
+        // Get base rate from crop type
+        baseSequestrationRate = cropFactors[cropType as keyof typeof cropFactors] || 2.5;
+        
+        // Apply farming method multiplier
+        const methodMultiplier = methodFactors[farmingMethod as keyof typeof methodFactors] || 1.0;
+        
+        // EUFD2025-001 formula: CO2 = Area × Base_Rate × Method_Factor × Duration
+        const totalCO2Sequestration = area * baseSequestrationRate * methodMultiplier * duration;
+        
+        setExpectedCO2Sequestration(totalCO2Sequestration.toFixed(2));
+      }
+    }
+  }, [cropType, farmingMethod, cultivatedArea, projectDuration]);
 
   const processFiles = async (fileList: FileList | null): Promise<any[]> => {
     if (!fileList) return [];
