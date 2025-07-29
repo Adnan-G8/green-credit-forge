@@ -61,83 +61,109 @@ export function CalculationSummaryModal({ isOpen, onClose, projectData }: Calcul
   const calculateCO2Values = () => {
     let baseCO2 = 0;
     let calculationDetails = '';
+    let algorithm = '';
 
     switch (projectData.projectType) {
       case 'carbon-farming':
-        const areaFactor = projectData.cultivatedArea || 0;
-        const cropFactors = {
-          'herbaceous-crops': 3.2,
-          'tree-crops': 8.7,
-          'agroforestry': 12.5,
-          'pasture-grassland': 2.1
-        };
-        const methodFactors = {
-          'conventional': 0.8,
-          'organic': 1.2,
-          'conservation': 1.4,
-          'regenerative': 1.8
-        };
+        // Algoritmo SOC UNI-PdR
+        const area = projectData.cultivatedArea || 0;
+        const SOC_ref = 45; // t C/ha
+        const FLU_baseline = 1.0;
+        const FLU_project = 1.2;
+        const FMG_baseline = 1.0;
+        const FMG_project = 1.15;
+        const FI_baseline = 1.0;
+        const FI_project = 1.1;
+        const DD = 20; // anni (default IPCC)
         
-        const cropFactor = cropFactors[projectData.cropType as keyof typeof cropFactors] || 3.2;
-        const methodFactor = methodFactors[projectData.farmingMethod as keyof typeof methodFactors] || 1.0;
+        const SOC_baseline = SOC_ref * FLU_baseline * FMG_baseline * FI_baseline;
+        const SOC_project = SOC_ref * FLU_project * FMG_project * FI_project;
+        const deltaSOC = (SOC_project - SOC_baseline) / DD;
+        const CO2_per_ha_yr = deltaSOC * 3.67; // conversione C → CO₂
         
-        baseCO2 = areaFactor * cropFactor * methodFactor;
-        calculationDetails = `${areaFactor} ha × ${cropFactor} (${projectData.cropType}) × ${methodFactor} (${projectData.farmingMethod})`;
+        baseCO2 = area * CO2_per_ha_yr;
+        algorithm = 'Algoritmo SOC UNI-PdR';
+        calculationDetails = `SOC_baseline: ${SOC_ref}×${FLU_baseline}×${FMG_baseline}×${FI_baseline} = ${SOC_baseline.toFixed(2)} t C/ha
+SOC_project: ${SOC_ref}×${FLU_project}×${FMG_project}×${FI_project} = ${SOC_project.toFixed(2)} t C/ha
+ΔSOC: (${SOC_project.toFixed(2)}-${SOC_baseline.toFixed(2)})÷${DD} = ${deltaSOC.toFixed(3)} t C/ha/anno
+CO₂eq: ${deltaSOC.toFixed(3)}×3.67 = ${CO2_per_ha_yr.toFixed(3)} t CO₂/ha/anno
+Totale: ${area} ha × ${CO2_per_ha_yr.toFixed(3)} = ${baseCO2.toFixed(2)} t CO₂/anno`;
         break;
 
       case 'renewable-energy':
+        // Algoritmo Energie Rinnovabili UNI-PdR
         const capacity = projectData.installedCapacity || 0;
-        const energyFactors = {
-          'solar-photovoltaic': 1400,
-          'solar-thermal': 1200,
-          'wind-turbines': 2200,
-          'hydroelectric': 4300,
-          'biomass-energy': 1800,
-          'biogas-production': 1600,
-          'geothermal': 6500
+        const capacityFactors = {
+          'solar-photovoltaic': 0.18,
+          'solar-thermal': 0.20,
+          'wind-turbines': 0.25,
+          'hydroelectric': 0.45,
+          'biomass-energy': 0.70,
+          'biogas-production': 0.85,
+          'geothermal': 0.90
         };
         
-        const annualProduction = energyFactors[projectData.energyType as keyof typeof energyFactors] || 1400;
-        const emissionFactor = 0.35; // kg CO₂/kWh rete italiana
+        const CF = capacityFactors[projectData.energyType as keyof typeof capacityFactors] || 0.18;
+        const EF_grid = 0.35; // kg CO₂/kWh rete italiana
+        const hoursPerYear = 8760;
         
-        baseCO2 = (capacity * annualProduction * emissionFactor) / 1000; // conversione kg -> t
-        calculationDetails = `${capacity} kW × ${annualProduction} ore/anno × ${emissionFactor} kg CO₂/kWh ÷ 1000`;
+        const production_kWh = capacity * CF * hoursPerYear;
+        baseCO2 = (production_kWh * EF_grid) / 1000; // kg → t
+        
+        algorithm = 'Algoritmo Rinnovabili UNI-PdR (Allegato C)';
+        calculationDetails = `Capacità: ${capacity} kW
+Capacity Factor: ${CF} (${(CF*100).toFixed(0)}%)
+Produzione: ${capacity}×${CF}×${hoursPerYear} = ${production_kWh.toFixed(0)} kWh/anno
+CO₂ evitata: ${production_kWh.toFixed(0)}×${EF_grid}÷1000 = ${baseCO2.toFixed(2)} t CO₂/anno`;
         break;
 
       case 'forestation':
+        // Algoritmo Chave 2014 UNI-PdR
         const forestArea = projectData.forestArea || 0;
-        const density = projectData.treeDensity || 1000;
-        const speciesFactors = {
-          'oak': 45,
-          'beech': 38,
-          'pine': 35,
-          'spruce': 42,
-          'chestnut': 40,
-          'poplar': 25,
-          'willow': 22,
-          'mixed-native': 38
-        };
+        const density = projectData.treeDensity || 1000; // alberi/ha
+        const wood_density = 0.6; // t/m³
+        const diameter = 0.30; // 30 cm DBH
+        const height = 15; // 15 m
+        const root_shoot_ratio = 0.28;
+        const carbon_fraction = 0.47;
         
-        const speciesFactor = speciesFactors[projectData.treeSpecies as keyof typeof speciesFactors] || 38;
-        const growthRate = 0.85;
+        // Equazione Chave 2014
+        const AGB_kg_per_tree = 0.0673 * Math.pow(wood_density * diameter * diameter * height * 10000, 0.976);
+        const AGB_t_per_tree = AGB_kg_per_tree / 1000;
+        const BGB_t_per_tree = AGB_t_per_tree * root_shoot_ratio;
+        const biomass_total_per_tree = AGB_t_per_tree + BGB_t_per_tree;
+        const carbon_per_tree = biomass_total_per_tree * carbon_fraction;
+        const CO2_per_tree = carbon_per_tree * 3.67;
+        const CO2_per_ha = CO2_per_tree * density;
         
-        baseCO2 = (forestArea * density * speciesFactor * growthRate) / 1000; // conversione kg -> t
-        calculationDetails = `${forestArea} ha × ${density} alberi/ha × ${speciesFactor} kg CO₂/albero × ${growthRate} crescita ÷ 1000`;
+        baseCO2 = forestArea * CO2_per_ha;
+        algorithm = 'Algoritmo Chave 2014 UNI-PdR';
+        calculationDetails = `Parametri albero: ρ=${wood_density} t/m³, D=${diameter}m, H=${height}m
+AGB: 0.0673×(${wood_density}×${diameter}²×${height}×10000)^0.976 = ${AGB_kg_per_tree.toFixed(0)} kg/albero
+BGB: ${AGB_t_per_tree.toFixed(3)}×${root_shoot_ratio} = ${BGB_t_per_tree.toFixed(3)} t/albero
+Biomassa totale: ${biomass_total_per_tree.toFixed(3)} t/albero
+Carbonio: ${biomass_total_per_tree.toFixed(3)}×${carbon_fraction} = ${carbon_per_tree.toFixed(3)} t C/albero
+CO₂: ${carbon_per_tree.toFixed(3)}×3.67 = ${CO2_per_tree.toFixed(3)} t CO₂/albero
+Per ettaro: ${CO2_per_tree.toFixed(3)}×${density} = ${CO2_per_ha.toFixed(2)} t CO₂/ha/anno
+Totale: ${forestArea} ha × ${CO2_per_ha.toFixed(2)} = ${baseCO2.toFixed(2)} t CO₂/anno`;
         break;
     }
 
-    const guaranteeFund = baseCO2 * 0.15; // 15% buffer
-    const netCO2 = baseCO2 - guaranteeFund;
-    const totalProjectValue = baseCO2 * projectData.projectDuration;
-    const annualFundContribution = (guaranteeFund * projectData.projectDuration) / projectData.projectDuration;
+    // Applicazione algoritmo UNI-PdR per Fondo Garanzia
+    const safetyFactor = 0.02; // 2% UNI-PdR
+    const Y = baseCO2 * (1 - safetyFactor);
+    const guaranteeFund = Y * 0.17; // 17% UNI-PdR
+    const netCO2 = Y * (1 - 0.17); // QP.A. = Y × (1-17%)
+    const totalProjectValue = netCO2 * projectData.projectDuration;
 
     return {
       baseCO2: baseCO2.toFixed(2),
+      Y: Y.toFixed(2),
       guaranteeFund: guaranteeFund.toFixed(2),
       netCO2: netCO2.toFixed(2),
       totalProjectValue: totalProjectValue.toFixed(2),
-      annualFundContribution: annualFundContribution.toFixed(2),
-      calculationDetails
+      calculationDetails,
+      algorithm
     };
   };
 
@@ -145,33 +171,60 @@ export function CalculationSummaryModal({ isOpen, onClose, projectData }: Calcul
 
   const downloadCalculationSheet = () => {
     const content = `
-FAGRI DIGITAL - SCHEDA CALCOLO CO₂
-Standard UNI-PdR EUFD2025-001
-ISO 14064-1, 14064-2, 14064-3
+═══════════════════════════════════════════════════════════════
+FAGRI DIGITAL - SCHEDA CALCOLO CO₂ CERTIFICATA
+Standard UNI-PdR EUFD2025-001 | ISO 14064-1, 14064-2, 14064-3
+═══════════════════════════════════════════════════════════════
 
-PROGETTO: ${projectData.projectName}
-TIPO: ${projectData.projectType}
-DURATA: ${projectData.projectDuration} anni
+DATI PROGETTO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Nome Progetto: ${projectData.projectName}
+• Tipo Progetto: ${projectData.projectType}
+• Durata: ${projectData.projectDuration} anni
+• Investimento: €${projectData.investmentCapacity.toLocaleString()}
 
-CALCOLI PRINCIPALI:
+ALGORITMO UTILIZZATO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+${calculations.algorithm}
+
+CALCOLO DETTAGLIATO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ${calculations.calculationDetails}
-= ${calculations.baseCO2} t CO₂/anno
 
-FONDO DI GARANZIA (15%):
-${calculations.baseCO2} × 0.15 = ${calculations.guaranteeFund} t CO₂/anno
+RISULTATO BASE: ${calculations.baseCO2} t CO₂/anno
 
-CO₂ NETTA CERTIFICABILE:
-${calculations.baseCO2} - ${calculations.guaranteeFund} = ${calculations.netCO2} t CO₂/anno
+APPLICAZIONE FATTORI UNI-PdR:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Safety Factor (2%): ${calculations.baseCO2} × (1-2%) = ${calculations.Y} t CO₂/anno
+2. Fondo Garanzia (17%): ${calculations.Y} × 17% = ${calculations.guaranteeFund} t CO₂/anno
+3. CO₂ Disponibile Progetto: ${calculations.Y} × (1-17%) = ${calculations.netCO2} t CO₂/anno
 
 VALORE TOTALE PROGETTO:
-${calculations.netCO2} × ${projectData.projectDuration} anni = ${calculations.totalProjectValue} t CO₂
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CO₂ Certificabile: ${calculations.netCO2} × ${projectData.projectDuration} anni = ${calculations.totalProjectValue} t CO₂
 
-CONFORMITÀ NORMATIVA:
-✓ EU Regulation 3012/2024 - Blockchain obbligatoria
-✓ ISO 14064-1 - Quantificazione emissioni GHG
-✓ ISO 14064-2 - Progetti di riduzione emissioni  
-✓ ISO 14064-3 - Validazione e verifica
-✓ UNI-PdR EUFD2025-001 - Standard FAGRI Digital
+CONFORMITÀ NORMATIVA E ALGORITMICA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ EU Regulation 3012/2024 - Blockchain Technology Mandated
+✓ ISO 14064-1 - GHG Quantification and Reporting
+✓ ISO 14064-2 - Project-level GHG Emission Reductions  
+✓ ISO 14064-3 - Validation and Verification Standards
+✓ UNI-PdR EUFD2025-001 - FAGRI Digital Official Standard
+✓ University of Tuscia Validation - Third-party Certification
+${projectData.projectType === 'forestation' ? '✓ Chave 2014 Equation - Above Ground Biomass Algorithm' : ''}
+${projectData.projectType === 'carbon-farming' ? '✓ IPCC SOC Methodology - Soil Organic Carbon Changes' : ''}
+${projectData.projectType === 'renewable-energy' ? '✓ Renewable Energy CO₂ Avoidance Methodology' : ''}
+
+PARAMETRI TECNICI:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Safety Factor applicato: 2% (come da UNI-PdR)
+• Percentuale Fondo Garanzia: 17% (obbligatoria UNI-PdR)
+• Periodo di riferimento IPCC: 20 anni (default)
+• Fattore conversione C→CO₂: 3.67
+
+Documento generato automaticamente dal sistema FAGRI DIGITAL
+Conforme agli standard internazionali e certificato UNI-PdR
+═══════════════════════════════════════════════════════════════
 
 Data: ${new Date().toLocaleDateString('it-IT')}
 `;
@@ -234,7 +287,7 @@ Data: ${new Date().toLocaleDateString('it-IT')}
                   <div className="bg-white p-4 rounded border">
                     <div className="flex items-center gap-2 mb-2">
                       <Shield className="h-4 w-4 text-orange-600" />
-                      <span className="text-sm font-medium">Fondo Garanzia (15%)</span>
+                      <span className="text-sm font-medium">Fondo Garanzia UNI-PdR (17%)</span>
                     </div>
                     <p className="text-2xl font-bold text-orange-700">{calculations.guaranteeFund}</p>
                     <p className="text-xs text-gray-600">tonnellate CO₂/anno</p>
@@ -251,10 +304,34 @@ Data: ${new Date().toLocaleDateString('it-IT')}
                 </div>
 
                 <div className="bg-white p-4 rounded border">
-                  <h4 className="font-medium mb-2">Formula di Calcolo:</h4>
-                  <p className="font-mono text-sm bg-gray-50 p-2 rounded">
-                    {calculations.calculationDetails}
-                  </p>
+                  <h4 className="font-medium mb-2 text-blue-700">{calculations.algorithm}</h4>
+                  <div className="bg-blue-50 p-3 rounded border">
+                    <pre className="text-xs text-blue-800 whitespace-pre-wrap font-mono leading-relaxed">
+                      {calculations.calculationDetails}
+                    </pre>
+                  </div>
+                </div>
+
+                <div className="bg-white p-4 rounded border">
+                  <h4 className="font-medium mb-2 text-purple-700">Applicazione Fattori UNI-PdR:</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between items-center p-2 bg-purple-50 rounded">
+                      <span>1. CO₂ Base (risultato algoritmo):</span>
+                      <span className="font-mono font-bold">{calculations.baseCO2} t CO₂/anno</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 bg-purple-50 rounded">
+                      <span>2. Safety Factor (2% riduzione):</span>
+                      <span className="font-mono font-bold">{calculations.Y} t CO₂/anno</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 bg-orange-50 rounded">
+                      <span>3. Fondo Garanzia (17% deposito):</span>
+                      <span className="font-mono font-bold">{calculations.guaranteeFund} t CO₂/anno</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 bg-green-50 rounded border-2 border-green-200">
+                      <span className="font-medium">4. CO₂ Disponibile Progetto (QP.A.):</span>
+                      <span className="font-mono font-bold text-green-700">{calculations.netCO2} t CO₂/anno</span>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             )}
@@ -286,7 +363,7 @@ Data: ${new Date().toLocaleDateString('it-IT')}
                     <span className="font-medium">Scopo del Fondo di Garanzia</span>
                   </div>
                   <p className="text-sm text-gray-700 mb-3">
-                    Il 15% di riserva garantisce la permanenza del sequestro CO₂ proteggendo da:
+                    Il 17% di riserva UNI-PdR garantisce la permanenza del sequestro CO₂ proteggendo da:
                   </p>
                   <ul className="text-sm space-y-1 text-gray-600">
                     <li>• Variabilità climatiche e condizioni meteo avverse</li>
