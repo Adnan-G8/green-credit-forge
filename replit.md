@@ -198,13 +198,20 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 29, 2025)
 
-- **CO₂ Emission Factor Correction**: Fixed inconsistency between UI display and calculations - corrected from 0.53 to 0.397 kg CO₂/kWh throughout system (July 29, 2025):
-  * **Calculator Logic**: Updated core CO₂ calculation library to use correct EUFD2025-001 emission factor of 0.397 kg CO₂/kWh
-  * **UI Consistency**: Corrected all display text in forms, project details, and information boxes to show accurate 0.397 factor
-  * **Database Schema**: Updated default emission factor in database schema to match EUFD2025-001 standard
-  * **Complete Documentation Update**: All comments and documentation now reference correct emission factor from EUFD2025-001 Section 6.2
-  * **User Interface Updates**: Fixed all hardcoded emission factor displays in project forms, calculation results, and methodology explanations
-  * **Data Integrity Maintained**: Ensured all existing and new CO₂ calculations use authentic Italian emission factors per user-provided specifications
+- **CO₂ Emission Factor Correction**: Fixed inconsistency and restored correct Italian standard of 0.53 kg CO₂/kWh throughout entire system (July 29, 2025):
+  * **Calculator Logic**: Restored core CO₂ calculation library to use correct Italian standard emission factor of 0.53 kg CO₂/kWh
+  * **UI Consistency**: Corrected all display text in forms, project details, and information boxes to show accurate 0.53 factor
+  * **Database Schema**: Updated default emission factor in database schema to match Italian standard (0.53)
+  * **Complete Documentation Update**: All comments and documentation now reference correct Italian emission factor of 0.53 kg CO₂/kWh
+  * **User Interface Updates**: Fixed all hardcoded emission factor displays throughout project forms, calculation results, and methodology explanations
+  * **Data Integrity Maintained**: Ensured all existing and new CO₂ calculations use authentic Italian emission factors per guideline specifications
+
+- **Renewable Energy Types Standardization**: Implemented all 7 required renewable energy types with German-Italian bilingual display (July 29, 2025):
+  * **Complete Energy Type List**: Added all specified types - Windenergie, Solarenergie, Wasserkraft, Biomasseenergie, Geothermie, Meeresenergie, Wasserstoffenergie
+  * **Bilingual Display**: All energy types show German primary name with Italian translation in parentheses
+  * **Capacity Factor Integration**: Each energy type has appropriate capacity factors for accurate CO₂ calculations
+  * **Form Consistency**: Updated all dropdown menus and calculation displays to use new standardized energy type naming
+  * **Switch Case Updates**: Enhanced calculation logic to handle all 7 energy types with proper emission factors
 
 - **Dashboard UX Consolidation Completed**: Successfully eliminated "My Projects" redundancy and integrated unified project management (July 29, 2025):
   * **Removed Redundant "My Projects" Button**: Eliminated separate "My Projects" modal that duplicated dashboard functionality

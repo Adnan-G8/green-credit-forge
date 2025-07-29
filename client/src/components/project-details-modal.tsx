@@ -229,7 +229,7 @@ export function ProjectDetailsModal({ isOpen, onClose, project }: ProjectDetails
                           CO₂ Evitata/30 Anni
                         </div>
                         <p className="text-sm font-semibold text-green-800">{(Number(project.co2SavedLifetime) / 1000).toFixed(2)} t CO₂</p>
-                        <p className="text-xs text-gray-500">EUFD2025-001: 0.397 kg CO₂/kWh</p>
+                        <p className="text-xs text-gray-500">Standard Italiano: 0.53 kg CO₂/kWh</p>
                       </div>
                     </>
                   )}

@@ -41,16 +41,16 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  // CO₂ Calculation States (EUFD2025-001 Standard: 0.397 kg CO₂/kWh)
+  // CO₂ Calculation States (Italian Standard: 0.53 kg CO₂/kWh)
   const [annualKwhProduction, setAnnualKwhProduction] = useState('');
   const [co2SavedPerYear, setCo2SavedPerYear] = useState('');
   const [co2SavedLifetime, setCo2SavedLifetime] = useState('');
 
-  // Calculate CO2 reduction based on EUFD2025-001 methodology (0.397 kg CO₂/kWh)
+  // Calculate CO2 reduction based on Italian methodology (0.53 kg CO₂/kWh)
   useEffect(() => {
     if (annualKwhProduction && !isNaN(Number(annualKwhProduction))) {
       const kwhValue = Number(annualKwhProduction);
-      const italianEmissionFactor = 0.397; // kg CO₂/kWh for Italy (EUFD2025-001)
+      const italianEmissionFactor = 0.53; // kg CO₂/kWh for Italy
       const solarLifetime = 30; // years
       
       const yearlyReduction = kwhValue * italianEmissionFactor;
@@ -75,31 +75,35 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
       let emissionFactor = 0.4; // Default EU grid emission factor (kg CO2/kWh)
       let capacityFactor = 0.25; // Default capacity factor
       
-      // EUFD2025-001 specific emission factors
+      // Italian standard emission factors (0.53 kg CO₂/kWh)
       switch (energyType) {
-        case 'solar-pv':
-          emissionFactor = 0.397; // kg CO2/kWh replaced
-          capacityFactor = 0.18; // 18% capacity factor for solar PV in Italy
+        case 'solar':
+          emissionFactor = 0.53; // kg CO2/kWh Italian standard
+          capacityFactor = 0.18; // 18% capacity factor for solar in Italy
           break;
         case 'wind':
-          emissionFactor = 0.397;
+          emissionFactor = 0.53;
           capacityFactor = 0.27; // 27% capacity factor for wind in Italy
           break;
         case 'hydro':
-          emissionFactor = 0.397;
+          emissionFactor = 0.53;
           capacityFactor = 0.45; // 45% capacity factor for small hydro
           break;
         case 'biomass':
-          emissionFactor = 0.397;
+          emissionFactor = 0.53;
           capacityFactor = 0.75; // 75% capacity factor for biomass
           break;
-        case 'biogas':
-          emissionFactor = 0.397;
-          capacityFactor = 0.80; // 80% capacity factor for biogas
-          break;
         case 'geothermal':
-          emissionFactor = 0.397;
+          emissionFactor = 0.53;
           capacityFactor = 0.90; // 90% capacity factor for geothermal
+          break;
+        case 'marine':
+          emissionFactor = 0.53;
+          capacityFactor = 0.30; // 30% capacity factor for marine energy
+          break;
+        case 'hydrogen':
+          emissionFactor = 0.53;
+          capacityFactor = 0.70; // 70% capacity factor for hydrogen production
           break;
       }
       
@@ -168,11 +172,11 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
         installedCapacity: parseFloat(electricalCapacity), // Legacy compatibility
         expectedCO2Reduction: parseFloat(expectedCO2Reduction),
         energyLocation: projectLocation,
-        // CO₂ Calculation Data (EUFD2025-001 Standard: 0.397 kg CO₂/kWh)
+        // CO₂ Calculation Data (Italian Standard: 0.53 kg CO₂/kWh)
         annualKwhProduction: Number(annualKwhProduction) || 0,
         co2SavedPerYear: co2SavedPerYear,
         co2SavedLifetime: co2SavedLifetime,
-        emissionFactor: "0.397",
+        emissionFactor: "0.53",
         // Documentation fields
         installationDate,
         technicalSpecs,
@@ -319,7 +323,7 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
         <div className="bg-green-50 p-6 rounded-lg border border-green-200">
           <h2 className="text-xl font-semibold text-green-900 mb-4 flex items-center gap-2">
             <Calculator className="h-5 w-5" />
-            Calcolo CO₂ Evitata (EUFD2025-001: 0.397 kg CO₂/kWh)
+            Calcolo CO₂ Evitata (Standard Italiano: 0.53 kg CO₂/kWh)
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -353,7 +357,7 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
                 </div>
               </div>
               <div className="text-xs text-green-600 mt-2 text-center">
-                * Calcolo basato su fattore EUFD2025-001: 0.397 kg CO₂/kWh
+                * Calcolo basato su fattore di emissione italiano: 0.53 kg CO₂/kWh
               </div>
             </div>
           )}
@@ -374,17 +378,13 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
                   <SelectValue placeholder="Seleziona tipo energia" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="solar-pv">Solare Fotovoltaico</SelectItem>
-                  <SelectItem value="solar-thermal">Solare Termico</SelectItem>
-                  <SelectItem value="wind">Eolico</SelectItem>
-                  <SelectItem value="hydro">Idroelettrico</SelectItem>
-                  <SelectItem value="biomass">Biomasse</SelectItem>
-                  <SelectItem value="biogas">Biogas</SelectItem>
-                  <SelectItem value="geothermal">Geotermico</SelectItem>
-                  <SelectItem value="agrivoltaics">Agrivoltaico</SelectItem>
-                  <SelectItem value="storage">Energy Storage</SelectItem>
-                  <SelectItem value="green-hydrogen">Idrogeno Verde</SelectItem>
-                  <SelectItem value="marine">Energia Marina</SelectItem>
+                  <SelectItem value="wind">Windenergie (energia eolica)</SelectItem>
+                  <SelectItem value="solar">Solarenergie (energia solare)</SelectItem>
+                  <SelectItem value="hydro">Wasserkraft (energia idroelettrica)</SelectItem>
+                  <SelectItem value="biomass">Biomasseenergie (energia da biomasse)</SelectItem>
+                  <SelectItem value="geothermal">Geothermie (energia geotermica)</SelectItem>
+                  <SelectItem value="marine">Meeresenergie (energia marina)</SelectItem>
+                  <SelectItem value="hydrogen">Wasserstoffenergie (energia idrogeno)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -447,12 +447,13 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
               <p className="text-xs text-blue-600 mt-1">
                 Calcolato con fattori emissione EUFD2025-001: {energyType && (
                   <>
-                    {energyType === 'solar-pv' && '0.397 kg CO₂/kWh, 18% capacity factor'}
-                    {energyType === 'wind' && '0.397 kg CO₂/kWh, 27% capacity factor'}
-                    {energyType === 'hydro' && '0.397 kg CO₂/kWh, 45% capacity factor'}
-                    {energyType === 'biomass' && '0.397 kg CO₂/kWh, 75% capacity factor'}
-                    {energyType === 'biogas' && '0.397 kg CO₂/kWh, 80% capacity factor'}
-                    {energyType === 'geothermal' && '0.397 kg CO₂/kWh, 90% capacity factor'}
+                    {energyType === 'solar' && '0.53 kg CO₂/kWh, 18% capacity factor'}
+                    {energyType === 'wind' && '0.53 kg CO₂/kWh, 27% capacity factor'}
+                    {energyType === 'hydro' && '0.53 kg CO₂/kWh, 45% capacity factor'}
+                    {energyType === 'biomass' && '0.53 kg CO₂/kWh, 75% capacity factor'}
+                    {energyType === 'geothermal' && '0.53 kg CO₂/kWh, 90% capacity factor'}
+                    {energyType === 'marine' && '0.53 kg CO₂/kWh, 30% capacity factor'}
+                    {energyType === 'hydrogen' && '0.53 kg CO₂/kWh, H₂ production'}
                   </>
                 )}
               </p>
@@ -467,7 +468,7 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
                 <div className="font-medium text-blue-900 mb-1">Metodologia EUFD2025-001 (Sez. 6.2)</div>
                 <div className="text-blue-700 space-y-1">
                   <div>• Baseline: Media emissioni grid nazionale ultimi {historicalYears || 'X'} anni</div>
-                  <div>• Fattore emissione: 0.397 kg CO₂/kWh (grid italiano 2023)</div>
+                  <div>• Fattore emissione: 0.53 kg CO₂/kWh (grid italiano standard)</div>
                   <div>• Addizionalità: Verifica che impianto non sia già previsto</div>
                   <div>• Permanenza: Garanzia funzionamento per durata progetto</div>
                 </div>
