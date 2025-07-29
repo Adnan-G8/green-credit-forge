@@ -152,8 +152,8 @@ Totale: ${forestArea} ha × ${CO2_per_ha.toFixed(2)} = ${baseCO2.toFixed(2)} t C
     // Applicazione algoritmo UNI-PdR per Fondo Garanzia
     const safetyFactor = 0.02; // 2% UNI-PdR
     const Y = baseCO2 * (1 - safetyFactor);
-    const guaranteeFund = Y * 0.17; // 17% UNI-PdR
-    const netCO2 = Y * (1 - 0.17); // QP.A. = Y × (1-17%)
+    const guaranteeFund = Y * 0.05; // 5% EUFD2025-001 Standard Buffer
+    const netCO2 = Y * (1 - 0.05); // QP.A. = Y × (1-5%)
     const totalProjectValue = netCO2 * projectData.projectDuration;
 
     return {
@@ -196,8 +196,8 @@ RISULTATO BASE: ${calculations.baseCO2} t CO₂/anno
 APPLICAZIONE FATTORI UNI-PdR:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 1. Safety Factor (2%): ${calculations.baseCO2} × (1-2%) = ${calculations.Y} t CO₂/anno
-2. Fondo Garanzia (17%): ${calculations.Y} × 17% = ${calculations.guaranteeFund} t CO₂/anno
-3. CO₂ Disponibile Progetto: ${calculations.Y} × (1-17%) = ${calculations.netCO2} t CO₂/anno
+2. Fondo Garanzia (5%): ${calculations.Y} × 5% = ${calculations.guaranteeFund} t CO₂/anno
+3. CO₂ Disponibile Progetto: ${calculations.Y} × (1-5%) = ${calculations.netCO2} t CO₂/anno
 
 VALORE TOTALE PROGETTO:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -218,7 +218,7 @@ ${projectData.projectType === 'renewable-energy' ? '✓ Renewable Energy CO₂ A
 PARAMETRI TECNICI:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 • Safety Factor applicato: 2% (come da UNI-PdR)
-• Percentuale Fondo Garanzia: 17% (obbligatoria UNI-PdR)
+• Percentuale Fondo Garanzia: 5% (obbligatoria EUFD2025-001 Standard)
 • Periodo di riferimento IPCC: 20 anni (default)
 • Fattore conversione C→CO₂: 3.67
 
@@ -287,7 +287,7 @@ Data: ${new Date().toLocaleDateString('it-IT')}
                   <div className="bg-white p-4 rounded border">
                     <div className="flex items-center gap-2 mb-2">
                       <Shield className="h-4 w-4 text-orange-600" />
-                      <span className="text-sm font-medium">Fondo Garanzia UNI-PdR (17%)</span>
+                      <span className="text-sm font-medium">Fondo Garanzia EUFD2025-001 (5%)</span>
                     </div>
                     <p className="text-2xl font-bold text-orange-700">{calculations.guaranteeFund}</p>
                     <p className="text-xs text-gray-600">tonnellate CO₂/anno</p>
@@ -324,7 +324,7 @@ Data: ${new Date().toLocaleDateString('it-IT')}
                       <span className="font-mono font-bold">{calculations.Y} t CO₂/anno</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-orange-50 rounded">
-                      <span>3. Fondo Garanzia (17% deposito):</span>
+                      <span>3. Fondo Garanzia (5% deposito):</span>
                       <span className="font-mono font-bold">{calculations.guaranteeFund} t CO₂/anno</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-green-50 rounded border-2 border-green-200">
@@ -363,7 +363,7 @@ Data: ${new Date().toLocaleDateString('it-IT')}
                     <span className="font-medium">Scopo del Fondo di Garanzia</span>
                   </div>
                   <p className="text-sm text-gray-700 mb-3">
-                    Il 17% di riserva UNI-PdR garantisce la permanenza del sequestro CO₂ proteggendo da:
+                    Il 5% di riserva EUFD2025-001 garantisce la permanenza del sequestro CO₂ proteggendo da:
                   </p>
                   <ul className="text-sm space-y-1 text-gray-600">
                     <li>• Variabilità climatiche e condizioni meteo avverse</li>

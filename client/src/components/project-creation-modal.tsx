@@ -52,11 +52,27 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
   const [cultivatedArea, setCultivatedArea] = useState('');
   const [expectedCO2Sequestration, setExpectedCO2Sequestration] = useState('');
   
-  // Renewable Energy specific
+  // Renewable Energy specific (EUFD2025-001)
   const [energyType, setEnergyType] = useState('');
-  const [installedCapacity, setInstalledCapacity] = useState('');
+  const [historicalYears, setHistoricalYears] = useState('');
+  const [electricalCapacity, setElectricalCapacity] = useState('');
+  const [thermalCapacity, setThermalCapacity] = useState('');
   const [expectedCO2Reduction, setExpectedCO2Reduction] = useState('');
   const [energyLocation, setEnergyLocation] = useState('');
+  
+  // Documentation fields (EUFD2025-001 Sez. 5.6 & 6.2)
+  const [seedPurchaseDocuments, setSeedPurchaseDocuments] = useState<FileList | null>(null);
+  const [plantingPhotos, setPlantingPhotos] = useState<FileList | null>(null);
+  const [plantingDate, setPlantingDate] = useState('');
+  const [seedQuantity, setSeedQuantity] = useState('');
+  const [technologyPurchase, setTechnologyPurchase] = useState<FileList | null>(null);
+  const [buildingPermits, setBuildingPermits] = useState<FileList | null>(null);
+  const [commissioningDocs, setCommissioningDocs] = useState<FileList | null>(null);
+  const [installationPhotos, setInstallationPhotos] = useState<FileList | null>(null);
+  const [productionRecords, setProductionRecords] = useState<FileList | null>(null);
+  const [forestSeedlings, setForestSeedlings] = useState<FileList | null>(null);
+  const [forestPhotos, setForestPhotos] = useState<FileList | null>(null);
+  const [forestPlantingDate, setForestPlantingDate] = useState('');
 
   // Forestation specific
   const [forestType, setForestType] = useState('');
@@ -87,7 +103,9 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
     setCultivatedArea('');
     setExpectedCO2Sequestration('');
     setEnergyType('');
-    setInstalledCapacity('');
+    setHistoricalYears('');
+    setElectricalCapacity('');
+    setThermalCapacity('');
     setExpectedCO2Reduction('');
     setEnergyLocation('');
     setForestType('');
@@ -98,6 +116,19 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
     setInvestmentCapacity('');
     setProjectStartDate('');
     setEstimatedCompletionDate('');
+    // Reset documentation fields
+    setSeedPurchaseDocuments(null);
+    setPlantingPhotos(null);
+    setPlantingDate('');
+    setSeedQuantity('');
+    setTechnologyPurchase(null);
+    setBuildingPermits(null);
+    setCommissioningDocs(null);
+    setInstallationPhotos(null);
+    setProductionRecords(null);
+    setForestSeedlings(null);
+    setForestPhotos(null);
+    setForestPlantingDate('');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -130,7 +161,9 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
         }),
         ...(projectType === 'renewable-energy' && {
           energyType,
-          installedCapacity: parseFloat(installedCapacity),
+          historicalYears: parseInt(historicalYears),
+          electricalCapacity: parseFloat(electricalCapacity),
+          thermalCapacity: parseFloat(thermalCapacity),
           expectedCO2Reduction: parseFloat(expectedCO2Reduction),
           energyLocation,
         }),
@@ -283,9 +316,10 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
 
           {projectType && (
             <Tabs defaultValue="basic" className="w-full">
-              <TabsList className="grid w-full grid-cols-3">
+              <TabsList className="grid w-full grid-cols-4">
                 <TabsTrigger value="basic">{t('project-basic-info')}</TabsTrigger>
                 <TabsTrigger value="technical">{t('project-technical-details')}</TabsTrigger>
+                <TabsTrigger value="documents">Documentazione EUFD2025-001</TabsTrigger>
                 <TabsTrigger value="investment">{t('project-investment-timeline')}</TabsTrigger>
               </TabsList>
 
@@ -417,37 +451,84 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
 
                 {projectType === 'renewable-energy' && (
                   <>
+                    <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Info className="h-4 w-4 text-blue-600" />
+                        <span className="font-medium text-blue-700">Requisiti Standard EUFD2025-001</span>
+                      </div>
+                      <ul className="text-sm text-blue-600 space-y-1">
+                        <li>• Potenza minima: 5 kWp (come da Art. 6 Standard)</li>
+                        <li>• Possibili carbon credits fino a 5 anni precedenti</li>
+                        <li>• Separazione KW elettrici e KW termici obbligatoria</li>
+                      </ul>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="energyType">{t('project-energy-type')} *</Label>
+                        <Label htmlFor="energyType">Tipo Energia Rinnovabile (Art. 6 EUFD2025-001) *</Label>
                         <Select value={energyType} onValueChange={setEnergyType}>
                           <SelectTrigger>
-                            <SelectValue placeholder={t('project-select-energy')} />
+                            <SelectValue placeholder="Seleziona tipo energia" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="solar-photovoltaic">{t('project-solar-pv')}</SelectItem>
-                            <SelectItem value="solar-thermal">{t('project-solar-thermal')}</SelectItem>
-                            <SelectItem value="wind-turbines">{t('project-wind')}</SelectItem>
-                            <SelectItem value="hydroelectric">{t('project-hydro')}</SelectItem>
-                            <SelectItem value="biomass-energy">{t('project-biomass')}</SelectItem>
-                            <SelectItem value="biogas-production">{t('project-biogas')}</SelectItem>
-                            <SelectItem value="geothermal">{t('project-geothermal')}</SelectItem>
+                            <SelectItem value="eolica">Energia Eolica</SelectItem>
+                            <SelectItem value="solare">Energia Solare</SelectItem>
+                            <SelectItem value="idroelettrica">Energia Idroelettrica</SelectItem>
+                            <SelectItem value="biomasse">Energia da Biomasse</SelectItem>
+                            <SelectItem value="geotermica">Energia Geotermica</SelectItem>
+                            <SelectItem value="marina">Energia Marina</SelectItem>
+                            <SelectItem value="idrogeno">Energia Idrogeno</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
 
                       <div>
-                        <Label htmlFor="installedCapacity">{t('project-capacity-kw')} *</Label>
+                        <Label htmlFor="historicalYears">Anni Produzione Storica Disponibili</Label>
+                        <Select value={historicalYears} onValueChange={setHistoricalYears}>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Anni dati disponibili" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="0">Nuovo impianto - nessun dato storico</SelectItem>
+                            <SelectItem value="1">1 anno di produzione</SelectItem>
+                            <SelectItem value="2">2 anni di produzione</SelectItem>
+                            <SelectItem value="3">3 anni di produzione</SelectItem>
+                            <SelectItem value="4">4 anni di produzione</SelectItem>
+                            <SelectItem value="5">5 anni di produzione (max retroattivo EUFD2025-001)</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <p className="text-xs text-blue-600 mt-1">Standard permette carbon credits fino a 5 anni precedenti</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="electricalCapacity">Potenza Elettrica (kW) *</Label>
                         <Input
-                          id="installedCapacity"
+                          id="electricalCapacity"
                           type="number"
-                          value={installedCapacity}
-                          onChange={(e) => setInstalledCapacity(e.target.value)}
-                          placeholder={t('project-enter-capacity')}
-                          min="1"
+                          value={electricalCapacity}
+                          onChange={(e) => setElectricalCapacity(e.target.value)}
+                          placeholder="es. 100 kW (min. 5 kWp)"
+                          min="5"
                           step="0.1"
                           required
                         />
+                        <p className="text-xs text-gray-600">Minimo 5 kWp richiesto da EUFD2025-001</p>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="thermalCapacity">Potenza Termica (kW)</Label>
+                        <Input
+                          id="thermalCapacity"
+                          type="number"
+                          value={thermalCapacity}
+                          onChange={(e) => setThermalCapacity(e.target.value)}
+                          placeholder="es. 50 kW (se applicabile)"
+                          min="0"
+                          step="0.1"
+                        />
+                        <p className="text-xs text-gray-600">Solo per: biomasse, geotermico, idrogeno</p>
                       </div>
                     </div>
 
@@ -564,6 +645,197 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
                     </div>
                   </>
                 )}
+              </TabsContent>
+
+              <TabsContent value="documents" className="space-y-4">
+                <div className="bg-amber-50 p-4 rounded-lg border border-amber-200 mb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <AlertCircle className="h-4 w-4 text-amber-600" />
+                    <span className="font-medium text-amber-700">Documentazione Obbligatoria Standard EUFD2025-001</span>
+                  </div>
+                  <p className="text-sm text-amber-600">
+                    Come richiesto nelle Sezioni 5.6 e 6.2 del Standard EUFD2025-001, 
+                    è necessario fornire la documentazione completa per la certificazione del progetto.
+                  </p>
+                </div>
+
+                {projectType === 'carbon-farming' && (
+                  <div className="space-y-6">
+                    <h4 className="text-lg font-medium text-emerald-700">Documentazione Carbon Farming (Sez. 5.6)</h4>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="seedPurchaseDocuments">Documenti Acquisto Semi/Piante *</Label>
+                        <Input
+                          id="seedPurchaseDocuments"
+                          type="file"
+                          multiple
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
+                        />
+                        <p className="text-xs text-gray-600">Bolle consegna, fatture, scontrini acquisto semi/piante</p>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="plantingPhotos">Documentazione Fotografica *</Label>
+                        <Input
+                          id="plantingPhotos"
+                          type="file"
+                          multiple
+                          accept=".jpg,.jpeg,.png"
+                          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
+                        />
+                        <p className="text-xs text-gray-600">Foto colture al momento domanda inserimento progetti</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="plantingDate">Data Semina/Piantumazione *</Label>
+                        <Input
+                          id="plantingDate"
+                          type="date"
+                          required
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="seedQuantity">Quantità Semi/Piante</Label>
+                        <Input
+                          id="seedQuantity"
+                          type="text"
+                          placeholder="es. 50 kg semi frumento / 100 piante olivo"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {projectType === 'renewable-energy' && (
+                  <div className="space-y-6">
+                    <h4 className="text-lg font-medium text-blue-700">Documentazione Energie Rinnovabili (Sez. 6.2)</h4>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="technologyPurchase">Documenti Acquisto Tecnologia *</Label>
+                        <Input
+                          id="technologyPurchase"
+                          type="file"
+                          multiple
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                        />
+                        <p className="text-xs text-gray-600">Fatture, bolle consegna tecnologia/componenti impianto</p>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="buildingPermits">Autorizzazioni e Permessi *</Label>
+                        <Input
+                          id="buildingPermits"
+                          type="file"
+                          multiple
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                        />
+                        <p className="text-xs text-gray-600">Autorizzazioni costruzione, permessi ente pubblico</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="commissioningDocs">Documenti Collaudo/Messa in Produzione *</Label>
+                        <Input
+                          id="commissioningDocs"
+                          type="file"
+                          multiple
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                        />
+                        <p className="text-xs text-gray-600">Certificati collaudo, verbali messa in produzione</p>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="installationPhotos">Documentazione Fotografica Impianto *</Label>
+                        <Input
+                          id="installationPhotos"
+                          type="file"
+                          multiple
+                          accept=".jpg,.jpeg,.png"
+                          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                        />
+                        <p className="text-xs text-gray-600">Foto impianto installato e funzionante</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="productionRecords">Registri Produzione Energetica (fino a 5 anni) *</Label>
+                      <Input
+                        id="productionRecords"
+                        type="file"
+                        multiple
+                        accept=".pdf,.xlsx,.csv"
+                        className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                      />
+                      <p className="text-xs text-gray-600">
+                        Documenti KW elettrici/termici prodotti e/o immessi in rete ogni anno 
+                        (massimo 5 anni precedenti per carbon credits retroattivi)
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {projectType === 'forestation' && (
+                  <div className="space-y-6">
+                    <h4 className="text-lg font-medium text-green-700">Documentazione Forestazione (Sez. 5.6)</h4>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="forestSeedlings">Documenti Acquisto Piantine Forestali *</Label>
+                        <Input
+                          id="forestSeedlings"
+                          type="file"
+                          multiple
+                          accept=".pdf,.jpg,.jpeg,.png"
+                          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                        />
+                        <p className="text-xs text-gray-600">Fatture, bolle consegna piante madri forestali</p>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="forestPhotos">Documentazione Fotografica Forestazione *</Label>
+                        <Input
+                          id="forestPhotos"
+                          type="file"
+                          multiple
+                          accept=".jpg,.jpeg,.png"
+                          className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                        />
+                        <p className="text-xs text-gray-600">Foto aree forestali al momento domanda</p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="forestPlantingDate">Data/Epoca Piantumazione *</Label>
+                      <Input
+                        id="forestPlantingDate"
+                        type="date"
+                        required
+                      />
+                    </div>
+                  </div>
+                )}
+
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Info className="h-4 w-4 text-blue-600" />
+                    <span className="font-medium text-blue-700">Conservazione Documentazione</span>
+                  </div>
+                  <p className="text-sm text-blue-600">
+                    Tutti i documenti devono essere conservati per un tempo minimo pari alla durata 
+                    del progetto di cattura CO₂. Saranno registrate in Blockchain le informazioni 
+                    fondamentali per garantire trasparenza e verificabilità.
+                  </p>
+                </div>
               </TabsContent>
 
               <TabsContent value="investment" className="space-y-4">
@@ -689,7 +961,7 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
             cropType,
             farmingMethod,
             expectedCO2Sequestration: parseFloat(expectedCO2Sequestration) || 0,
-            installedCapacity: parseFloat(installedCapacity) || 0,
+            electricalCapacity: parseFloat(electricalCapacity) || 0,
             energyType,
             expectedCO2Reduction: parseFloat(expectedCO2Reduction) || 0,
             forestArea: parseFloat(forestArea) || 0,
