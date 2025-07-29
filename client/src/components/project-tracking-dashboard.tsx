@@ -24,7 +24,8 @@ import {
   Bell,
   Filter,
   Search,
-  RefreshCw
+  RefreshCw,
+  Eye
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -75,8 +76,13 @@ interface ProjectTrackingDashboardProps {
   userId?: string;
 }
 
+// Import ProjectDetailsModal
+import { ProjectDetailsModal } from './project-details-modal';
+
 export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardProps) {
   const { t } = useLanguage();
+  const [showProjectDetails, setShowProjectDetails] = useState(false);
+  const [selectedProjectForDetails, setSelectedProjectForDetails] = useState<DashboardProject | null>(null);
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [filterStatus, setFilterStatus] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -297,6 +303,19 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
                             {t(project.priority)}
                           </Badge>
                           <div className={cn("w-3 h-3 rounded-full", getStatusColor(project.status))} />
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setSelectedProjectForDetails(project);
+                              setShowProjectDetails(true);
+                            }}
+                            className="ml-2"
+                          >
+                            <Eye className="h-3 w-3 mr-1" />
+                            Dettagli
+                          </Button>
                         </div>
                       </div>
 
@@ -468,6 +487,18 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
           )}
         </div>
       </div>
+      
+      {/* Project Details Modal */}
+      {selectedProjectForDetails && (
+        <ProjectDetailsModal
+          isOpen={showProjectDetails}
+          onClose={() => {
+            setShowProjectDetails(false);
+            setSelectedProjectForDetails(null);
+          }}
+          project={selectedProjectForDetails}
+        />
+      )}
     </div>
   );
 }

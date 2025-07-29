@@ -4,7 +4,7 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro, Settings } from 'lucide-react';
+import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro, Settings, Plus } from 'lucide-react';
 import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
 import { SecurityDashboardModal } from '@/components/security-dashboard-modal';
@@ -31,7 +31,7 @@ export default function Dashboard() {
   const [showPricingInfo, setShowPricingInfo] = useState(false);
   const [showAdminPanel, setShowAdminPanel] = useState(false);
   const [showProjectCreation, setShowProjectCreation] = useState(false);
-  const [showMyProjects, setShowMyProjects] = useState(false);
+  // Removed showMyProjects state - projects are now integrated in ProjectTrackingDashboard
   const [showKycSection, setShowKycSection] = useState(false);
   const [showPaymentSection, setShowPaymentSection] = useState(false);
   const [showAuditTrail, setShowAuditTrail] = useState(false);
@@ -153,9 +153,7 @@ export default function Dashboard() {
   // Removed loading state for instant page rendering
 
   // Replace the empty second screen with functional dashboard navigation
-  const handleViewProjects = () => {
-    setShowMyProjects(true);
-  };
+  // Removed handleViewProjects - projects are now integrated in ProjectTrackingDashboard
 
   const handleUploadProject = () => {
     setShowProjectCreation(true);
@@ -396,13 +394,13 @@ export default function Dashboard() {
               </button>
               
               <button
-                onClick={handleViewProjects}
+                onClick={() => setShowProjectCreation(true)}
                 className="flex flex-col items-center justify-center space-y-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
                 <div className="flex items-center justify-center h-8 w-8">
-                  <Folder className="h-6 w-6 text-emerald-600 group-hover:scale-110 transition-transform" />
+                  <FileText className="h-6 w-6 text-emerald-600 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-emerald-800 font-medium text-center leading-tight">{t('my-projects')}</span>
+                <span className="text-emerald-800 font-medium text-center leading-tight">Nuovo Progetto</span>
               </button>
               
               <button
@@ -519,7 +517,6 @@ export default function Dashboard() {
         onProjectCreated={() => {
           // Refresh projects list when new project is created
           setShowProjectCreation(false);
-          setShowMyProjects(true);
           // Dispatch custom event to refresh projects
           window.dispatchEvent(new Event('projectsUpdated'));
         }}
@@ -588,33 +585,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      {/* My Projects Display Modal */}
-      {showMyProjects && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg shadow-xl w-full max-w-6xl h-[90vh] overflow-hidden">
-            <div className="flex items-center justify-between p-6 border-b">
-              <h2 className="text-2xl font-bold text-gray-900">{t('my-projects')}</h2>
-              <Button
-                variant="outline"
-                onClick={() => setShowMyProjects(false)}
-                className="flex items-center gap-2"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                {t('back-to-dashboard')}
-              </Button>
-            </div>
-            <div className="p-6 overflow-y-auto h-[calc(100%-4rem)] pb-8">
-              <MyProjectsDisplay 
-                userId={alphaG8Id}
-                onCreateNew={() => {
-                  setShowMyProjects(false);
-                  setShowProjectCreation(true);
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Projects are now integrated directly in ProjectTrackingDashboard */}
 
     </div>
   );
