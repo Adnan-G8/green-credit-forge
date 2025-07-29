@@ -472,9 +472,9 @@ export default function Dashboard() {
                 className="flex flex-col items-center justify-center space-y-3 bg-green-50 hover:bg-green-100 border border-green-200 rounded-xl p-6 h-32 transition-all duration-200 group"
               >
                 <div className="flex items-center justify-center h-8 w-8">
-                  <FileText className="h-6 w-6 text-green-600 group-hover:scale-110 transition-transform" />
+                  <Plus className="h-6 w-6 text-green-600 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-green-800 font-medium text-center leading-tight">{t('upload-new-project')}</span>
+                <span className="text-green-800 font-medium text-center leading-tight">Carica Nuovo Progetto</span>
               </button>
               
               <button
