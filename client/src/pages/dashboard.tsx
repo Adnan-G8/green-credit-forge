@@ -371,9 +371,9 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gray-50">
       <Navigation />
       
-      {/* Beautiful Agricultural Hero Strip */}
+      {/* Beautiful Agricultural Hero Strip - Mobile Responsive */}
       <div 
-        className="relative h-60 overflow-hidden"
+        className="relative h-48 sm:h-60 overflow-hidden"
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
@@ -384,26 +384,26 @@ export default function Dashboard() {
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/70 via-emerald-800/50 to-transparent"></div>
         
-        {/* Content overlay */}
+        {/* Content overlay - Mobile Responsive */}
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl">
-              <h1 className="text-4xl font-light text-white mb-3">
+              <h1 className="text-2xl sm:text-4xl font-light text-white mb-2 sm:mb-3">
                 {t('project-tracking-dashboard')}
               </h1>
-              <p className="text-emerald-100 text-lg font-light mb-4">
+              <p className="text-emerald-100 text-sm sm:text-lg font-light mb-3 sm:mb-4">
                 {t('monitor-co2-certification-projects')}
               </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/30">
+              <div className="flex flex-col gap-2 sm:gap-4 sm:flex-row sm:items-center">
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 sm:px-6 sm:py-3 border border-white/30">
                   <div className="flex items-center space-x-2">
-                    <Shield className="h-5 w-5 text-emerald-300 flex-shrink-0" />
-                    <span className="text-white font-medium">{t('authenticated-session')}</span>
+                    <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-300 flex-shrink-0" />
+                    <span className="text-white font-medium text-sm sm:text-base">{t('authenticated-session')}</span>
                   </div>
                 </div>
-                <div className="bg-emerald-600/30 backdrop-blur-sm rounded-lg px-6 py-3 border border-emerald-400/50 w-full sm:w-auto sm:min-w-[280px]">
+                <div className="bg-emerald-600/30 backdrop-blur-sm rounded-lg px-3 py-2 sm:px-6 sm:py-3 border border-emerald-400/50 w-full sm:w-auto sm:min-w-[280px]">
                   <div className="text-xs text-emerald-200 font-medium">ALPHAG8 ID KEY</div>
-                  <div className="text-white font-mono text-sm">{alphaG8Id}</div>
+                  <div className="text-white font-mono text-xs sm:text-sm truncate">{alphaG8Id}</div>
                 </div>
               </div>
             </div>
@@ -418,22 +418,22 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <main className="relative -mt-16">
-        <div className="container mx-auto px-4 py-8">
-          {/* Navigation Options Card */}
-          <div className="mb-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 p-8">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <h2 className="text-2xl font-light text-slate-900 mb-2">
+      <main className="relative -mt-12 sm:-mt-16">
+        <div className="container mx-auto px-4 py-6 sm:py-8">
+          {/* Navigation Options Card - Mobile Responsive */}
+          <div className="mb-6 sm:mb-8 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 p-4 sm:p-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-4">
+              <div className="flex-1">
+                <h2 className="text-xl sm:text-2xl font-light text-slate-900 mb-1 sm:mb-2">
                   {t('platform-workspace')}
                 </h2>
-                <p className="text-slate-600">
+                <p className="text-sm sm:text-base text-slate-600">
                   {t('access-co2-certification-tools')}
                 </p>
               </div>
-              <div className="text-right">
-                <div className="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-xl text-sm font-medium mb-2 flex items-center">
-                  <Key className="h-4 w-4 mr-2" />
+              <div className="text-left sm:text-right">
+                <div className="bg-emerald-100 text-emerald-800 px-3 py-2 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-medium mb-2 flex items-center w-fit sm:ml-auto">
+                  <Key className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
                   {t('id-verified')}
                 </div>
                 <div className="text-xs text-emerald-600 font-medium">
@@ -442,88 +442,88 @@ export default function Dashboard() {
               </div>
             </div>
             
-            {/* Navigation Options */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {/* Navigation Options - Mobile Responsive */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-6">
               <button
                 onClick={handleViewKeyCard}
-                className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+                className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-3 sm:p-6 h-24 sm:h-32 transition-all duration-200 group"
               >
-                <div className="flex items-center justify-center h-8 w-8">
-                  <Shield className="h-6 w-6 text-blue-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8">
+                  <Shield className="h-4 w-4 sm:h-6 sm:w-6 text-blue-600 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-blue-800 font-medium text-center leading-tight">{t('security-id-key-card')}</span>
+                <span className="text-blue-800 font-medium text-center leading-tight text-xs sm:text-sm">{t('security-id-key-card')}</span>
               </button>
               
               <button
                 onClick={() => setShowProjectCreation(true)}
-                className="flex flex-col items-center justify-center space-y-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+                className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-xl p-3 sm:p-6 h-24 sm:h-32 transition-all duration-200 group"
               >
-                <div className="flex items-center justify-center h-8 w-8">
-                  <FileText className="h-6 w-6 text-emerald-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8">
+                  <FileText className="h-4 w-4 sm:h-6 sm:w-6 text-emerald-600 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-emerald-800 font-medium text-center leading-tight">Nuovo Progetto</span>
+                <span className="text-emerald-800 font-medium text-center leading-tight text-xs sm:text-sm">Nuovo Progetto</span>
               </button>
               
               <button
                 onClick={handleOrganizationInformation}
-                className="flex flex-col items-center justify-center space-y-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+                className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl p-3 sm:p-6 h-24 sm:h-32 transition-all duration-200 group"
               >
-                <div className="flex items-center justify-center h-8 w-8">
-                  <Building2 className="h-6 w-6 text-slate-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8">
+                  <Building2 className="h-4 w-4 sm:h-6 sm:w-6 text-slate-600 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-slate-800 font-medium text-center leading-tight">{t('organization-information')}</span>
+                <span className="text-slate-800 font-medium text-center leading-tight text-xs sm:text-sm">{t('organization-information')}</span>
               </button>
               
               <button
                 onClick={handleViewPricing}
-                className="flex flex-col items-center justify-center space-y-3 bg-orange-50 hover:bg-orange-100 border border-orange-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+                className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 bg-orange-50 hover:bg-orange-100 border border-orange-200 rounded-xl p-3 sm:p-6 h-24 sm:h-32 transition-all duration-200 group"
               >
-                <div className="flex items-center justify-center h-8 w-8">
-                  <Euro className="h-7 w-7 text-orange-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8">
+                  <Euro className="h-5 w-5 sm:h-7 sm:w-7 text-orange-600 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-orange-800 font-medium text-center leading-tight">{t('view-certification-pricing')}</span>
+                <span className="text-orange-800 font-medium text-center leading-tight text-xs sm:text-sm">{t('view-certification-pricing')}</span>
               </button>
 
               <button
                 onClick={() => setShowKycSection(true)}
-                className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+                className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-3 sm:p-6 h-24 sm:h-32 transition-all duration-200 group"
               >
-                <div className="flex items-center justify-center h-8 w-8">
-                  <Shield className="h-6 w-6 text-blue-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8">
+                  <Shield className="h-4 w-4 sm:h-6 sm:w-6 text-blue-600 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-blue-800 font-medium text-center leading-tight">KYC Verifica</span>
+                <span className="text-blue-800 font-medium text-center leading-tight text-xs sm:text-sm">KYC Verifica</span>
               </button>
 
               <button
                 onClick={() => setShowPaymentSection(true)}
-                className="flex flex-col items-center justify-center space-y-3 bg-green-50 hover:bg-green-100 border border-green-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+                className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 bg-green-50 hover:bg-green-100 border border-green-200 rounded-xl p-3 sm:p-6 h-24 sm:h-32 transition-all duration-200 group"
               >
-                <div className="flex items-center justify-center h-8 w-8">
-                  <Euro className="h-6 w-6 text-green-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8">
+                  <Euro className="h-4 w-4 sm:h-6 sm:w-6 text-green-600 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-green-800 font-medium text-center leading-tight">Pagamenti</span>
+                <span className="text-green-800 font-medium text-center leading-tight text-xs sm:text-sm">Pagamenti</span>
               </button>
 
               <button
                 onClick={() => setShowAuditTrail(true)}
-                className="flex flex-col items-center justify-center space-y-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+                className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-3 sm:p-6 h-24 sm:h-32 transition-all duration-200 group"
               >
-                <div className="flex items-center justify-center h-8 w-8">
-                  <FileText className="h-6 w-6 text-gray-600 group-hover:scale-110 transition-transform" />
+                <div className="flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8">
+                  <FileText className="h-4 w-4 sm:h-6 sm:w-6 text-gray-600 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-gray-800 font-medium text-center leading-tight">Cronologia</span>
+                <span className="text-gray-800 font-medium text-center leading-tight text-xs sm:text-sm">Cronologia</span>
               </button>
               
               {/* Admin Panel - only show for Sales Team */}
               {currentUserRole === 'FAGRI Sales Team' && (
                 <button
                   onClick={handleAdminPanel}
-                  className="flex flex-col items-center justify-center space-y-3 bg-purple-50 hover:bg-purple-100 border border-purple-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+                  className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 bg-purple-50 hover:bg-purple-100 border border-purple-200 rounded-xl p-3 sm:p-6 h-24 sm:h-32 transition-all duration-200 group"
                 >
-                  <div className="flex items-center justify-center h-8 w-8">
-                    <Settings className="h-6 w-6 text-purple-600 group-hover:scale-110 transition-transform" />
+                  <div className="flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8">
+                    <Settings className="h-4 w-4 sm:h-6 sm:w-6 text-purple-600 group-hover:scale-110 transition-transform" />
                   </div>
-                  <span className="text-purple-800 font-medium text-center leading-tight">Admin Panel</span>
+                  <span className="text-purple-800 font-medium text-center leading-tight text-xs sm:text-sm">Admin Panel</span>
                 </button>
               )}
             </div>

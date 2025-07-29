@@ -150,14 +150,14 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
   }
 
   return (
-    <div className="space-y-6 p-6">
-      {/* Dashboard Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+    <div className="space-y-4 sm:space-y-6 p-3 sm:p-6">
+      {/* Dashboard Header - Mobile Responsive */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-start sm:gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Dashboard Monitoraggio Progetti</h1>
-          <p className="text-gray-600">Monitora in tempo reale lo stato dei tuoi progetti di certificazione CO₂</p>
+          <h1 className="text-xl sm:text-3xl font-bold text-gray-900">Dashboard Monitoraggio Progetti</h1>
+          <p className="text-sm sm:text-base text-gray-600">Monitora in tempo reale lo stato dei tuoi progetti di certificazione CO₂</p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <Button variant="outline" size="sm" onClick={handleRefresh}>
             <RefreshCw className="h-4 w-4 mr-2" />
             Aggiorna
@@ -169,77 +169,77 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
         </div>
       </div>
 
-      {/* Quick Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {/* Quick Stats - Mobile Responsive */}
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         <Card>
-          <CardContent className="p-4">
+          <CardContent className="p-3 sm:p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Progetti Totali</p>
-                <p className="text-2xl font-bold">{projects.length}</p>
+                <p className="text-xs sm:text-sm text-gray-600">Progetti Totali</p>
+                <p className="text-lg sm:text-2xl font-bold">{projects.length}</p>
               </div>
-              <Factory className="h-8 w-8 text-emerald-600" />
+              <Factory className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
             </div>
           </CardContent>
         </Card>
 
         <Card>
-          <CardContent className="p-4">
+          <CardContent className="p-3 sm:p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Progetti Attivi</p>
-                <p className="text-2xl font-bold">
+                <p className="text-xs sm:text-sm text-gray-600">Progetti Attivi</p>
+                <p className="text-lg sm:text-2xl font-bold">
                   {projects.filter((p: DashboardProject) => ['in-progress', 'under-review'].includes(p.status)).length}
                 </p>
               </div>
-              <TrendingUp className="h-8 w-8 text-blue-600" />
+              <TrendingUp className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
             </div>
           </CardContent>
         </Card>
 
         <Card>
-          <CardContent className="p-4">
+          <CardContent className="p-3 sm:p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Progetti Completati</p>
-                <p className="text-2xl font-bold">
+                <p className="text-xs sm:text-sm text-gray-600">Progetti Completati</p>
+                <p className="text-lg sm:text-2xl font-bold">
                   {projects.filter((p: DashboardProject) => ['approved', 'completed'].includes(p.status)).length}
                 </p>
               </div>
-              <CheckCircle className="h-8 w-8 text-green-600" />
+              <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-green-600" />
             </div>
           </CardContent>
         </Card>
 
         <Card>
-          <CardContent className="p-4">
+          <CardContent className="p-3 sm:p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Riduzione CO₂ Totale</p>
-                <p className="text-2xl font-bold">
+                <p className="text-xs sm:text-sm text-gray-600">Riduzione CO₂ Totale</p>
+                <p className="text-lg sm:text-2xl font-bold">
                   {projects.reduce((sum, p) => sum + parseFloat(p.estimatedCO2Reduction), 0).toFixed(1)}t
                 </p>
               </div>
-              <Leaf className="h-8 w-8 text-emerald-600" />
+              <Leaf className="h-6 w-6 sm:h-8 sm:w-8 text-emerald-600" />
             </div>
           </CardContent>
         </Card>
       </div>
 
-      {/* Project Management Section */}
+      {/* Project Management Section - Mobile Responsive */}
       <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
+        <CardHeader className="p-4 sm:p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <CardTitle className="flex items-center gap-2">
-                <FileText className="h-5 w-5" />
+              <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                <FileText className="h-4 w-4 sm:h-5 sm:w-5" />
                 Panoramica Progetti
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-sm">
                 Monitora in tempo reale lo stato dei tuoi progetti di certificazione CO₂
               </CardDescription>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-2">
               <div className="flex items-center gap-2">
                 <Search className="h-4 w-4 text-gray-400" />
                 <input
@@ -247,13 +247,13 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
                   placeholder="Cerca progetti..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full sm:w-auto"
                 />
               </div>
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 w-full sm:w-auto"
               >
                 <option value="all">Tutti gli stati</option>
                 <option value="draft">Bozza</option>
@@ -267,40 +267,44 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
             </div>
           </div>
         </CardHeader>
-        <CardContent>
+        <CardContent className="p-3 sm:p-6">
           {filteredProjects.length === 0 ? (
-            <div className="text-center py-12">
-              <FileText className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Seleziona un Progetto</h3>
-              <p className="text-gray-600">Scegli un progetto dalla lista per vedere i dettagli completi</p>
+            <div className="text-center py-8 sm:py-12">
+              <FileText className="h-10 w-10 sm:h-12 sm:w-12 text-gray-400 mx-auto mb-4" />
+              <h3 className="text-base sm:text-lg font-medium text-gray-900 mb-2">Seleziona un Progetto</h3>
+              <p className="text-sm sm:text-base text-gray-600">Scegli un progetto dalla lista per vedere i dettagli completi</p>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors"
+                  className="border border-gray-200 rounded-lg p-3 sm:p-4 hover:bg-gray-50 transition-colors"
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        {getProjectTypeIcon(project.projectType)}
-                        <h3 className="text-lg font-semibold text-gray-900">{project.projectName}</h3>
-                        <Badge 
-                          variant="outline" 
-                          className={cn("text-white", getStatusColor(project.status))}
-                        >
-                          {project.status.replace('-', ' ')}
-                        </Badge>
-                        {project.blockchainRecorded && (
-                          <Badge variant="outline" className="text-emerald-600 border-emerald-200">
-                            Blockchain ✓
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+                        <div className="flex items-center gap-2">
+                          {getProjectTypeIcon(project.projectType)}
+                          <h3 className="text-base sm:text-lg font-semibold text-gray-900 truncate">{project.projectName}</h3>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          <Badge 
+                            variant="outline" 
+                            className={cn("text-white text-xs", getStatusColor(project.status))}
+                          >
+                            {project.status.replace('-', ' ')}
                           </Badge>
-                        )}
+                          {project.blockchainRecorded && (
+                            <Badge variant="outline" className="text-emerald-600 border-emerald-200 text-xs">
+                              Blockchain ✓
+                            </Badge>
+                          )}
+                        </div>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm text-gray-600">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
                         <div>
-                          <span className="font-medium">Località:</span> {project.city}, {project.country}
+                          <span className="font-medium">Località:</span> <span className="block sm:inline">{project.city}, {project.country}</span>
                         </div>
                         <div>
                           <span className="font-medium">CO₂ Riduzione:</span> {project.estimatedCO2Reduction}t
@@ -313,7 +317,7 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 ml-4">
+                    <div className="flex items-center gap-2 mt-2 sm:mt-0 sm:ml-4">
                       <Button
                         variant="outline"
                         size="sm"
@@ -321,6 +325,7 @@ export function ProjectTrackingDashboard({ userId }: ProjectTrackingDashboardPro
                           setSelectedProjectForDetails(project);
                           setShowProjectDetails(true);
                         }}
+                        className="w-full sm:w-auto"
                       >
                         <Eye className="h-4 w-4 mr-1" />
                         Dettagli
