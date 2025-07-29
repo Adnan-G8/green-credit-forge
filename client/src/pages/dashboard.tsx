@@ -78,6 +78,70 @@ export default function Dashboard() {
       localStorage.setItem('fagri-migration-done', 'true');
     }
     
+    // Create test projects for design demonstration
+    const testProjects = [
+      {
+        id: "PROJ-TEST-001",
+        alphaG8Id: "FAGRI-TEST001-TEST001-T1",
+        projectName: "Impianto Solare Fotovoltaico - Toscana",
+        projectType: "renewable-energy",
+        projectDescription: "Installazione di pannelli solari fotovoltaici con capacità di 50kW per la produzione di energia rinnovabile",
+        projectLocation: "Firenze, Toscana, Italia",
+        energyType: "solar",
+        electricalCapacity: "50",
+        historicalYears: "3",
+        expectedCO2Reduction: "125.6",
+        annualKwhProduction: "75000",
+        co2SavedPerYear: "39750",
+        co2SavedLifetime: "1192500",
+        emissionFactor: "0.53",
+        status: "approved",
+        certificationStatus: "approved",
+        blockchainRecorded: true,
+        certificateNumber: "CERT-2025-001",
+        certificateIssueDate: "2025-07-25",
+        blockchainTxHash: "0x1a2b3c4d5e6f789...",
+        createdAt: "2025-07-29T12:00:00Z"
+      },
+      {
+        id: "PROJ-TEST-002",
+        alphaG8Id: "FAGRI-TEST001-TEST001-T1",  
+        projectName: "Parco Eolico - Puglia",
+        projectType: "renewable-energy",
+        projectDescription: "Installazione di turbine eoliche per la produzione di energia rinnovabile",
+        projectLocation: "Bari, Puglia, Italia",
+        energyType: "wind",
+        electricalCapacity: "150",
+        historicalYears: "5",
+        expectedCO2Reduction: "580.3",
+        annualKwhProduction: "200000",
+        co2SavedPerYear: "106000",
+        co2SavedLifetime: "3180000",
+        emissionFactor: "0.53",
+        status: "in-progress",
+        certificationStatus: "pending",
+        blockchainRecorded: false,
+        createdAt: "2025-07-28T10:00:00Z"
+      },
+      {
+        id: "PROJ-TEST-003",
+        alphaG8Id: "FAGRI-TEST001-TEST001-T1",
+        projectName: "Carbon Farming - Emilia Romagna", 
+        projectType: "farming",
+        projectDescription: "Progetto di agricoltura rigenerativa per il sequestro di carbonio nel suolo",
+        projectLocation: "Bologna, Emilia Romagna, Italia",
+        hectares: "25",
+        expectedCO2Reduction: "95.2",
+        status: "under-review",
+        certificationStatus: "pending",
+        blockchainRecorded: false,
+        createdAt: "2025-07-27T08:00:00Z"
+      }
+    ];
+    
+    // Store test projects in localStorage for immediate dashboard display
+    localStorage.setItem('userProjects', JSON.stringify(testProjects));
+    
     // Fast authentication check - immediate, no loading delay
     let storedId = localStorage.getItem('alphaG8Id');
     const sessionActive = localStorage.getItem('sessionActive');
