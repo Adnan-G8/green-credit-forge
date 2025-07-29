@@ -6,6 +6,7 @@ import { useLanguage } from '@/components/language-provider';
 import { 
   Tractor, 
   Wind, 
+  Trees,
   Calendar, 
   MapPin, 
   Euro,
@@ -20,12 +21,13 @@ import {
   Plus
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ProjectDetailsModal } from './project-details-modal';
 
 interface Project {
   id: string;
   ownerId: string;
   projectName: string;
-  projectType: 'carbon-farming' | 'renewable-energy';
+  projectType: 'carbon-farming' | 'renewable-energy' | 'forestation';
   projectDescription: string;
   projectLocation: string;
   projectDuration: number;
@@ -41,11 +43,20 @@ interface Project {
   farmingMethod?: string;
   cultivatedArea?: number;
   expectedCO2Sequestration?: number;
-  // Renewable energy specific
+  // Renewable energy specific (EUFD2025-001)
   energyType?: string;
-  installedCapacity?: number;
+  historicalYears?: number;
+  electricalCapacity?: number;
+  thermalCapacity?: number;
+  installedCapacity?: number; // Legacy field compatibility
   expectedCO2Reduction?: number;
   energyLocation?: string;
+  // Forestation specific
+  forestType?: string;
+  treeSpecies?: string;
+  forestArea?: number;
+  treeDensity?: number;
+  expectedForestCO2?: number;
 }
 
 interface MyProjectsDisplayProps {
@@ -57,6 +68,8 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
   const { t } = useLanguage();
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showDetailsModal, setShowDetailsModal] = useState(false);
 
   useEffect(() => {
     // Load projects from localStorage
@@ -95,6 +108,7 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
     switch (type) {
       case 'carbon-farming': return <Tractor className="h-5 w-5" />;
       case 'renewable-energy': return <Wind className="h-5 w-5" />;
+      case 'forestation': return <Trees className="h-5 w-5" />;
       default: return <Leaf className="h-5 w-5" />;
     }
   };
@@ -103,6 +117,7 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
     switch (type) {
       case 'carbon-farming': return t('project-carbon-farming');
       case 'renewable-energy': return t('project-renewable-energy');
+      case 'forestation': return t('project-forestation');
       default: return type;
     }
   };
@@ -144,6 +159,11 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('it-IT');
+  };
+
+  const handleViewDetails = (project: Project) => {
+    setSelectedProject(project);
+    setShowDetailsModal(true);
   };
 
   if (isLoading) {
@@ -338,7 +358,11 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
                       Blockchain
                     </Badge>
                   )}
-                  <Button variant="outline" size="sm">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => handleViewDetails(project)}
+                  >
                     <Eye className="h-3 w-3 mr-1" />
                     Dettagli
                   </Button>
@@ -348,6 +372,13 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
           </Card>
         ))}
       </div>
+      
+      {/* Project Details Modal */}
+      <ProjectDetailsModal
+        isOpen={showDetailsModal}
+        onClose={() => setShowDetailsModal(false)}
+        project={selectedProject}
+      />
     </div>
   );
 }
