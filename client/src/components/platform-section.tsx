@@ -33,11 +33,11 @@ export function PlatformSection() {
   ];
 
   return (
-    <section id="platform" className="py-20 bg-white">
+    <section id="platform" className="py-12 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Clean Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
               {t('platform-title')}
             </h2>
@@ -47,7 +47,7 @@ export function PlatformSection() {
           </div>
 
           {/* Professional Process Steps */}
-          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-16">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-12">
             {steps.map((step, index) => (
               <div key={index} className="bg-slate-50 rounded-xl p-6 sm:p-8 border border-slate-200">
                 <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">

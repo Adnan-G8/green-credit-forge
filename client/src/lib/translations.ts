@@ -1359,10 +1359,9 @@ export const translations = {
     'standard-feature-4-title': 'Process Efficiency',
     'standard-feature-4-desc': 'Streamlined certification process designed for agricultural enterprises of all sizes',
 
-    // Platform section
+    // Platform section  
     'platform-title': 'Comprehensive CO₂ Certification Platform',
-    'platform-subtitle': 'End-to-End Solutions for Agricultural Sustainability',
-    'platform-description': 'FAGRI.Digital has developed a digital platform that covers the entire carbon credit certification process - from initial application to validation, issuance and commercialization.',
+    'platform-intro': 'FAGRI.Digital has developed a digital platform that covers the entire carbon credit certification process – from initial application to validation, issuance and commercialization.',
 
     // Platform features
     'platform-feature-1-title': 'Agricultural Assessment',
@@ -1582,6 +1581,10 @@ export const translations = {
     'platform-step3-text': 'and European registers for transparent processes',
     'platform-step4-title': 'Clear Cost Structure',
     'platform-step4-text': 'fair and predictable pricing',
+    
+    // EUFD Platform section English
+    'eufd-platform-title': 'Comprehensive CO₂ Certification Platform',
+    'eufd-platform-intro': 'FAGRI.Digital has developed a digital platform that covers the entire carbon credit certification process – from initial application to validation, issuance and commercialization.',
     'platform-learn-more': 'Learn More',
 
     // Platform impact cards
