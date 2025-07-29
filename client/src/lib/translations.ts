@@ -1666,6 +1666,31 @@ export const translations = {
     'co2-cert-partner-uni-desc': 'Scientific partnership with this important Italian university for research and validation of our EUFD2025-001 certification methodologies.',
     'co2-cert-partner-soil': 'SOIL AND HEALTH',
     'co2-cert-partner-soil-desc': 'Our dedicated certification body for verification and independent validation.',
+    'co2-cert-partner-suolo': 'SOIL AND HEALTH',
+    'co2-cert-partner-suolo-desc': 'Our dedicated certification body for verification and independent validation.',
+
+    // Legal and Technology Section English translations
+    'co2-cert-legal-title': 'Legal and Technological Foundation',
+    'co2-cert-legal-description': 'Our certification process is firmly rooted in a comprehensive legal and technological framework.',
+    'co2-cert-compliance-ets': 'EU Emissions Trading System (EU ETS)',
+    'co2-cert-compliance-ets-desc': 'Ensuring compliance with the cornerstone of EU climate policy.',
+    'co2-cert-compliance-cbam': 'Carbon Border Adjustment Mechanism (CBAM)',
+    'co2-cert-compliance-cbam-desc': 'Proactively addressing future reporting requirements and embedded emissions.',
+    'co2-cert-compliance-aml': 'Anti-Money Laundering (AML) and Know Your Customer (KYC) Framework',
+    'co2-cert-compliance-aml-desc': 'Implementation of rigorous due diligence for all participants.',
+    'co2-cert-compliance-paris': 'Paris Agreement (Article 6)',
+    'co2-cert-compliance-paris-desc': 'Supporting mechanisms for Internationally Transferable Mitigation Results.',
+    'co2-cert-compliance-kyoto': 'Kyoto Protocol',
+    'co2-cert-compliance-kyoto-desc': 'Based on established international accounting principles.',
+    
+    'co2-cert-technology-title': 'Technology and Security',
+    'co2-cert-technology-description': 'Our platform uses blockchain technology for immutable document storage, creating unparalleled transparency and eliminating issues like double counting and greenwashing.',
+    'co2-cert-tech-blockchain': 'Blockchain Technology',
+    'co2-cert-tech-blockchain-desc': 'Immutable storage and complete transparency of documents.',
+    'co2-cert-tech-3fa': 'Three-Factor Authentication (3FA)',
+    'co2-cert-tech-3fa-desc': 'Unparalleled secure and reliable environment for all participants.',
+    'co2-cert-tech-fingerprint': 'Unique Digital Fingerprint',
+    'co2-cert-tech-fingerprint-desc': 'Secure identification and clear ownership for every user.',
 
     // Contact section missing English translations
     'contact-general-title': 'General Inquiries',
