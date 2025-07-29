@@ -349,16 +349,23 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
                   <div className="space-y-2">
                     <div className="flex justify-between">
                       <span className="text-blue-700">{t('account-creation-fee')}</span>
-                      <span className="font-medium text-blue-900">€5</span>
+                      <span className="font-medium text-blue-900">€5.00</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-blue-700">{t('first-year-fee')}</span>
-                      <span className="font-medium text-blue-900">€12</span>
+                      <span className="font-medium text-blue-900">€16.00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-blue-700">IVA italiana (22%)</span>
+                      <span className="font-medium text-blue-900">€4.62</span>
                     </div>
                     <div className="border-t border-blue-200 pt-2 flex justify-between">
                       <span className="font-semibold text-blue-900">Total</span>
-                      <span className="font-bold text-blue-900 text-xl">€17</span>
+                      <span className="font-bold text-blue-900 text-xl">€25.62</span>
                     </div>
+                  </div>
+                  <div className="text-xs text-blue-600 mt-2 bg-blue-50 p-2 rounded">
+                    <strong>Nota:</strong> Account individuali - uso personale senza progetti aggiuntivi
                   </div>
                 </div>
 
@@ -389,7 +396,9 @@ export function AlphaG8RegistrationModal({ isOpen, onClose, userRole }: AlphaG8R
                           <p><strong>BIC/SWIFT:</strong> BAFUITRR</p>
                           <p><strong>Banca:</strong> BANCA DEL FUCINO - FILIALE DI ROMA</p>
                           <p><strong>Codice Fiscale/P.IVA:</strong> 17843431002</p>
-                          <p><strong>{t('amount')}:</strong> €20.74</p>
+                          <p><strong>Email:</strong> Contact@fagri.digital</p>
+                          <p><strong>PEC:</strong> fagridigital@legalmail.it</p>
+                          <p><strong>{t('amount')}:</strong> €25.62</p>
                           <p><strong>{t('reference')}:</strong> FAGRI-{formData.fullName?.replace(/\s+/g, '').toUpperCase() || 'REG'}</p>
                         </div>
                       </div>

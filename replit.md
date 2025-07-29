@@ -206,6 +206,15 @@ Preferred communication style: Simple, everyday language.
   * **User Interface Updates**: Fixed all hardcoded emission factor displays throughout project forms, calculation results, and methodology explanations
   * **Data Integrity Maintained**: Ensured all existing and new CO₂ calculations use authentic Italian emission factors per guideline specifications
 
+- **Complete Pricing System Update with Banking Integration** (July 29, 2025):
+  * **Company Account Pricing**: €51.24 total opening cost (€12 registration + €30 usage for 12 months + €9.24 VAT) includes 1 project
+  * **Individual Account Pricing**: €25.62 total opening cost (€5 registration + €16 usage for 12 months + €4.62 VAT) for personal use only
+  * **Additional Projects**: €14.64 per project per year (€12.00 + 22% VAT) for company accounts
+  * **Complete Banking Information Integration**: Added FAGRI DIGITAL S.r.l. banking details including IBAN IT14 U031 2403 2730 0000 0230 152, SWIFT BAFUITRR, fiscal code 17843431002
+  * **Bank Transfer Payment Option**: Full banking details displayed when users select bank transfer payment method including contact emails
+  * **Professional Payment Structure**: Clear breakdown showing registration fee, usage fee, VAT calculation, and total amount
+  * **KYC System Update**: Both company and individual KYC registration modals updated with correct pricing and complete banking information
+
 - **Renewable Energy Types Standardization**: Implemented all 7 required renewable energy types with German-Italian bilingual display (July 29, 2025):
   * **Complete Energy Type List**: Added all specified types - Windenergie, Solarenergie, Wasserkraft, Biomasseenergie, Geothermie, Meeresenergie, Wasserstoffenergie
   * **Bilingual Display**: All energy types show German primary name with Italian translation in parentheses

@@ -481,27 +481,27 @@ export default function KYCAlphaG8Integration({
                   <h4 className="font-semibold text-slate-800 mb-3">Gebührenübersicht:</h4>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600">Digitaler Fingerprint Erstellung</span>
-                      <span className="text-slate-800">€5.00</span>
+                      <span className="text-slate-600">Registrierungsgebühr (einmalig)</span>
+                      <span className="text-slate-800">€12.00</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600">Erste Jahresgebühr</span>
-                      <span className="text-slate-800">€12.00</span>
+                      <span className="text-slate-600">Nutzungsgebühr (12 Monate)</span>
+                      <span className="text-slate-800">€30.00</span>
                     </div>
                     <div className="border-t border-slate-200 pt-2">
                       <div className="flex justify-between items-center">
                         <span className="text-slate-600">Zwischensumme</span>
-                        <span className="text-slate-800">€17.00</span>
+                        <span className="text-slate-800">€42.00</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-slate-600">Italienische MwSt (22%)</span>
-                        <span className="text-slate-800">€3.74</span>
+                        <span className="text-slate-800">€9.24</span>
                       </div>
                     </div>
                     <div className="border-t border-slate-300 pt-2">
                       <div className="flex justify-between items-center">
                         <span className="font-semibold text-slate-800">Gesamtbetrag</span>
-                        <span className="font-bold text-lg text-green-600">€20.74</span>
+                        <span className="font-bold text-lg text-green-600">€51.24</span>
                       </div>
                     </div>
                   </div>
@@ -512,8 +512,40 @@ export default function KYCAlphaG8Integration({
                     }
                   </div>
                   <div className="text-xs text-blue-600 mt-2 bg-blue-50 p-2 rounded">
-                    <strong>Hinweis:</strong> Jedes Folgejahr beträgt die Gebühr €14.64 (€12.00 + 22% MwSt)
+                    <strong>Hinweis:</strong> Der Preis beinhaltet 1 Projekt. Zusätzliche Projekte kosten €14.64 pro Jahr (€12.00 + 22% MwSt)
                   </div>
+
+                  {/* Bank Transfer Information */}
+                  {paymentMethod === 'bank' && (
+                    <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                      <h5 className="font-semibold text-blue-800 mb-3">Bankdaten für Überweisung:</h5>
+                      <div className="space-y-2 text-sm text-blue-700">
+                        <div>
+                          <strong>Kontoinhaber:</strong><br />
+                          FAGRI DIGITAL S.r.l.<br />
+                          Via Isonzo, 38 - 00198 ROMA
+                        </div>
+                        <div>
+                          <strong>IBAN:</strong> IT14 U031 2403 2730 0000 0230 152
+                        </div>
+                        <div>
+                          <strong>SWIFT/BIC:</strong> BAFUITRR
+                        </div>
+                        <div>
+                          <strong>Bank:</strong> BANCA DEL FUCINO - Filiale di Roma (Italien)
+                        </div>
+                        <div>
+                          <strong>Steuer-Nr./MwSt-Nr.:</strong> 17843431002
+                        </div>
+                        <div>
+                          <strong>Email:</strong> Contact@fagri.digital
+                        </div>
+                        <div>
+                          <strong>PEC:</strong> fagridigital@legalmail.it
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -596,7 +628,7 @@ export default function KYCAlphaG8Integration({
             {currentStep === 'payment' && (
               <>
                 <div className="text-sm text-slate-600">
-                  Schritt 2 von 3: Bezahlung €17
+                  Schritt 2 von 3: Bezahlung €51.24
                 </div>
                 <div className="space-x-3">
                   <Button variant="outline" onClick={() => setCurrentStep('kyc')} className="border-slate-300 text-slate-600 hover:bg-slate-50">
@@ -613,7 +645,7 @@ export default function KYCAlphaG8Integration({
                         Zahlung wird verarbeitet...
                       </>
                     ) : (
-                      `Bezahlen €17 - ${paymentMethod === 'card' ? 'Karte' : 'Bank'}`
+                      `Bezahlen €51.24 - ${paymentMethod === 'card' ? 'Karte' : 'Bank'}`
                     )}
                   </Button>
                 </div>

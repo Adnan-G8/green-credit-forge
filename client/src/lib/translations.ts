@@ -2149,6 +2149,17 @@ export const translations = {
     'select-photo': 'Seleziona Foto',
     'remove-photo': 'Rimuovi Foto',
     'issued-to': 'Rilasciato a',
+    'company-account-pricing': 'Per account aziendali',
+    'total-opening-cost': 'Costo totale all\'apertura: €51.24',
+    'registration-fee-one-time': 'Quota di registrazione una tantum: €14.64',
+    'monthly-usage-12-months': 'Quota mensile di utilizzo: €3.05 al mese, fatturati anticipatamente per 12 mesi',
+    'includes-one-project': 'Include tutte le funzioni come gestione dei documenti, firme digitali ed emissione e gestione dei certificati CO₂ - senza costi aggiuntivi per documento o per singola transazione. Il prezzo include 1 progetto.',
+    'additional-projects-cost': 'Progetti aggiuntivi: €14.64 per progetto all\'anno (€12.00 + 22% IVA)',
+    'individual-account-pricing': 'Per account individuali',
+    'individual-total-cost': 'Costo totale all\'apertura: €25.62',
+    'individual-registration-fee': 'Quota di registrazione una tantum: €6.10',
+    'individual-monthly-usage': 'Quota mensile di utilizzo: €1.63 al mese, fatturati anticipatamente per 12 mesi',
+    'individual-includes-functions': 'Include tutte le funzioni per uso personale - senza costi aggiuntivi per documento o per singola transazione.',
     'select-payment-method': 'Select Payment Method',
     'credit-card': 'Credit Card',
     'instant-payment': 'Instant payment',
@@ -2666,6 +2677,7 @@ export const translations = {
     'kyc-security-notice-description': 'Your documents are encrypted with Swiss banking standards and protected with military-grade infrastructure.',
     'kyc-documents-uploaded': 'Documents uploaded',
     'kyc-submit-verification': 'Submit for Verification',
+
   }
 };
 // Add missing project registration translations
