@@ -76,20 +76,11 @@ export function ProjectDetailsModal({ isOpen, onClose, project }: ProjectDetails
         break;
         
       case 'renewable-energy':
-        // EUFD2025-001 Section 6.1 - Renewable Energy calculations
-        const emissionFactors = {
-          'eolica': 0.45,
-          'solare': 0.41,
-          'idroelettrica': 0.39,
-          'biomasse': 0.35,
-          'geotermica': 0.38,
-          'marina': 0.43,
-          'idrogeno': 0.37
-        };
-        const factor_re = emissionFactors[project.energyType as keyof typeof emissionFactors] || 0.40;
+        // EUFD2025-001 Section 6.1 - Renewable Energy calculations using Italian Standard
+        const ITALIAN_EMISSION_FACTOR = 0.53; // Official Italian grid emission factor
         const averageHours = 2500; // Average annual production hours
-        baseCO2 = (project.electricalCapacity || 0) * averageHours * factor_re / 1000;
-        calculationDetails = `Potenza: ${project.electricalCapacity || 0} kW × ${averageHours} ore/anno × Fattore emissione ${project.energyType}: ${factor_re} = ${baseCO2.toFixed(2)} t CO₂/anno`;
+        baseCO2 = (project.electricalCapacity || 0) * averageHours * ITALIAN_EMISSION_FACTOR / 1000;
+        calculationDetails = `Potenza: ${project.electricalCapacity || 0} kW × ${averageHours} ore/anno × Fattore emissione Italia: 0.53 = ${baseCO2.toFixed(2)} t CO₂/anno`;
         break;
         
       case 'forestation':
