@@ -14,6 +14,7 @@ interface AlphaG8IdDisplayModalProps {
   userEmail: string;
   userName: string;
   userRole: string;
+  profilePhoto?: string;
 }
 
 export function AlphaG8IdDisplayModal({ 
@@ -22,7 +23,8 @@ export function AlphaG8IdDisplayModal({
   alphaG8Id, 
   userEmail, 
   userName,
-  userRole 
+  userRole,
+  profilePhoto 
 }: AlphaG8IdDisplayModalProps) {
   const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
@@ -143,39 +145,42 @@ Powered by ALPHAG8 Switzerland Technology
                 </div>
               </div>
 
-              {/* User Information */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-sm text-blue-600 font-medium">{t('name')}</p>
-                  <p className="text-blue-900 font-semibold">{userName}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-blue-600 font-medium">{t('email')}</p>
-                  <p className="text-blue-900 font-semibold">{userEmail}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-blue-600 font-medium">{t('role')}</p>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                    {userRole}
-                  </Badge>
-                </div>
-                <div>
-                  <p className="text-sm text-blue-600 font-medium">{t('issue-date')}</p>
-                  <p className="text-blue-900 font-semibold">
-                    {new Date().toLocaleDateString()}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-blue-600 font-medium">{t('valid-until')}</p>
-                  <p className="text-emerald-700 font-bold">
-                    {new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toLocaleDateString()}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-blue-600 font-medium">{t('validity-period')}</p>
-                  <Badge variant="secondary" className="bg-emerald-100 text-emerald-800 font-semibold">
-                    {t('one-year-valid')}
-                  </Badge>
+              {/* User Information with Profile Photo */}
+              <div className="flex items-center space-x-4 p-3 bg-white rounded-lg border border-blue-200">
+                {profilePhoto ? (
+                  <img 
+                    src={profilePhoto}
+                    alt="Profile"
+                    className="w-16 h-16 rounded-full object-cover border-2 border-blue-200"
+                  />
+                ) : (
+                  <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                    <Key className="h-8 w-8 text-blue-600" />
+                  </div>
+                )}
+                <div className="flex-1">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-sm text-blue-600 font-medium">{t('issued-to')}</p>
+                      <p className="text-blue-900 font-semibold">{userName}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-blue-600 font-medium">{t('email')}</p>
+                      <p className="text-blue-900 font-semibold">{userEmail}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-blue-600 font-medium">{t('role')}</p>
+                      <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                        {userRole}
+                      </Badge>
+                    </div>
+                    <div>
+                      <p className="text-sm text-blue-600 font-medium">{t('issue-date')}</p>
+                      <p className="text-blue-900 font-semibold">
+                        {new Date().toLocaleDateString()}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </CardContent>

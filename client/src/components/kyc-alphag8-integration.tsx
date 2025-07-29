@@ -6,8 +6,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { User, Building2, X, Shield, Lock, CreditCard, Banknote, Key, CheckCircle2 } from 'lucide-react';
+import { User, Building2, X, Shield, Lock, CreditCard, Banknote, Key, CheckCircle2, Camera, Upload } from 'lucide-react';
 import personalKycImage from '@assets/image_1753788790320.png';
+import { AlphaG8IdDisplayModal } from './alphag8-id-display-modal';
 // Import the ALPHAG8 ID generator function
 const generateAlphaG8Id = () => {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -24,6 +25,7 @@ interface EmployeeKYCData {
   email: string;
   province: string;
   codiceFiscale: string;
+  profilePhoto?: string;
 }
 
 interface KYCAlphaG8IntegrationProps {
@@ -47,11 +49,43 @@ export default function KYCAlphaG8Integration({
     phone: '',
     email: '',
     province: '',
-    codiceFiscale: ''
+    codiceFiscale: '',
+    profilePhoto: ''
   });
+  const [photoFile, setPhotoFile] = useState<File | null>(null);
+  const photoInputRef = useState<HTMLInputElement | null>(null);
+
+  const handlePhotoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+        alert('La foto deve essere inferiore a 5MB');
+        return;
+      }
+      
+      setPhotoFile(file);
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setEmployeeData({
+          ...employeeData,
+          profilePhoto: e.target?.result as string
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const removePhoto = () => {
+    setPhotoFile(null);
+    setEmployeeData({
+      ...employeeData,
+      profilePhoto: ''
+    });
+  };
   const [paymentMethod, setPaymentMethod] = useState<'card' | 'bank'>('card');
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [generatedIdKey, setGeneratedIdKey] = useState<string>('');
+  const [showIdModal, setShowIdModal] = useState(false);
 
   const isEmployee = userRole === 'FAGRI Sales Team';
 
@@ -230,16 +264,113 @@ export default function KYCAlphaG8Integration({
                         <SelectValue placeholder="Provinz auswählen" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="roma">Roma</SelectItem>
-                        <SelectItem value="milano">Milano</SelectItem>
-                        <SelectItem value="napoli">Napoli</SelectItem>
-                        <SelectItem value="torino">Torino</SelectItem>
-                        <SelectItem value="palermo">Palermo</SelectItem>
-                        <SelectItem value="genova">Genova</SelectItem>
-                        <SelectItem value="bologna">Bologna</SelectItem>
-                        <SelectItem value="firenze">Firenze</SelectItem>
+                        <SelectItem value="agrigento">Agrigento</SelectItem>
+                        <SelectItem value="alessandria">Alessandria</SelectItem>
+                        <SelectItem value="ancona">Ancona</SelectItem>
+                        <SelectItem value="aosta">Aosta</SelectItem>
+                        <SelectItem value="arezzo">Arezzo</SelectItem>
+                        <SelectItem value="ascoli-piceno">Ascoli Piceno</SelectItem>
+                        <SelectItem value="asti">Asti</SelectItem>
+                        <SelectItem value="avellino">Avellino</SelectItem>
                         <SelectItem value="bari">Bari</SelectItem>
+                        <SelectItem value="barletta-andria-trani">Barletta-Andria-Trani</SelectItem>
+                        <SelectItem value="belluno">Belluno</SelectItem>
+                        <SelectItem value="benevento">Benevento</SelectItem>
+                        <SelectItem value="bergamo">Bergamo</SelectItem>
+                        <SelectItem value="biella">Biella</SelectItem>
+                        <SelectItem value="bologna">Bologna</SelectItem>
+                        <SelectItem value="bolzano">Bolzano</SelectItem>
+                        <SelectItem value="brescia">Brescia</SelectItem>
+                        <SelectItem value="brindisi">Brindisi</SelectItem>
+                        <SelectItem value="cagliari">Cagliari</SelectItem>
+                        <SelectItem value="caltanissetta">Caltanissetta</SelectItem>
+                        <SelectItem value="campobasso">Campobasso</SelectItem>
+                        <SelectItem value="carbonia-iglesias">Carbonia-Iglesias</SelectItem>
+                        <SelectItem value="caserta">Caserta</SelectItem>
                         <SelectItem value="catania">Catania</SelectItem>
+                        <SelectItem value="catanzaro">Catanzaro</SelectItem>
+                        <SelectItem value="chieti">Chieti</SelectItem>
+                        <SelectItem value="como">Como</SelectItem>
+                        <SelectItem value="cosenza">Cosenza</SelectItem>
+                        <SelectItem value="cremona">Cremona</SelectItem>
+                        <SelectItem value="crotone">Crotone</SelectItem>
+                        <SelectItem value="cuneo">Cuneo</SelectItem>
+                        <SelectItem value="enna">Enna</SelectItem>
+                        <SelectItem value="fermo">Fermo</SelectItem>
+                        <SelectItem value="ferrara">Ferrara</SelectItem>
+                        <SelectItem value="firenze">Firenze</SelectItem>
+                        <SelectItem value="foggia">Foggia</SelectItem>
+                        <SelectItem value="forli-cesena">Forlì-Cesena</SelectItem>
+                        <SelectItem value="frosinone">Frosinone</SelectItem>
+                        <SelectItem value="genova">Genova</SelectItem>
+                        <SelectItem value="gorizia">Gorizia</SelectItem>
+                        <SelectItem value="grosseto">Grosseto</SelectItem>
+                        <SelectItem value="imperia">Imperia</SelectItem>
+                        <SelectItem value="isernia">Isernia</SelectItem>
+                        <SelectItem value="la-spezia">La Spezia</SelectItem>
+                        <SelectItem value="laquila">L'Aquila</SelectItem>
+                        <SelectItem value="latina">Latina</SelectItem>
+                        <SelectItem value="lecce">Lecce</SelectItem>
+                        <SelectItem value="lecco">Lecco</SelectItem>
+                        <SelectItem value="livorno">Livorno</SelectItem>
+                        <SelectItem value="lodi">Lodi</SelectItem>
+                        <SelectItem value="lucca">Lucca</SelectItem>
+                        <SelectItem value="macerata">Macerata</SelectItem>
+                        <SelectItem value="mantova">Mantova</SelectItem>
+                        <SelectItem value="massa-carrara">Massa-Carrara</SelectItem>
+                        <SelectItem value="matera">Matera</SelectItem>
+                        <SelectItem value="messina">Messina</SelectItem>
+                        <SelectItem value="milano">Milano</SelectItem>
+                        <SelectItem value="modena">Modena</SelectItem>
+                        <SelectItem value="monza-brianza">Monza e della Brianza</SelectItem>
+                        <SelectItem value="napoli">Napoli</SelectItem>
+                        <SelectItem value="novara">Novara</SelectItem>
+                        <SelectItem value="nuoro">Nuoro</SelectItem>
+                        <SelectItem value="oristano">Oristano</SelectItem>
+                        <SelectItem value="padova">Padova</SelectItem>
+                        <SelectItem value="palermo">Palermo</SelectItem>
+                        <SelectItem value="parma">Parma</SelectItem>
+                        <SelectItem value="pavia">Pavia</SelectItem>
+                        <SelectItem value="perugia">Perugia</SelectItem>
+                        <SelectItem value="pesaro-urbino">Pesaro e Urbino</SelectItem>
+                        <SelectItem value="pescara">Pescara</SelectItem>
+                        <SelectItem value="piacenza">Piacenza</SelectItem>
+                        <SelectItem value="pisa">Pisa</SelectItem>
+                        <SelectItem value="pistoia">Pistoia</SelectItem>
+                        <SelectItem value="pordenone">Pordenone</SelectItem>
+                        <SelectItem value="potenza">Potenza</SelectItem>
+                        <SelectItem value="prato">Prato</SelectItem>
+                        <SelectItem value="ragusa">Ragusa</SelectItem>
+                        <SelectItem value="ravenna">Ravenna</SelectItem>
+                        <SelectItem value="reggio-calabria">Reggio Calabria</SelectItem>
+                        <SelectItem value="reggio-emilia">Reggio Emilia</SelectItem>
+                        <SelectItem value="rieti">Rieti</SelectItem>
+                        <SelectItem value="rimini">Rimini</SelectItem>
+                        <SelectItem value="roma">Roma</SelectItem>
+                        <SelectItem value="rovigo">Rovigo</SelectItem>
+                        <SelectItem value="salerno">Salerno</SelectItem>
+                        <SelectItem value="sassari">Sassari</SelectItem>
+                        <SelectItem value="savona">Savona</SelectItem>
+                        <SelectItem value="siena">Siena</SelectItem>
+                        <SelectItem value="siracusa">Siracusa</SelectItem>
+                        <SelectItem value="sondrio">Sondrio</SelectItem>
+                        <SelectItem value="taranto">Taranto</SelectItem>
+                        <SelectItem value="teramo">Teramo</SelectItem>
+                        <SelectItem value="terni">Terni</SelectItem>
+                        <SelectItem value="torino">Torino</SelectItem>
+                        <SelectItem value="trapani">Trapani</SelectItem>
+                        <SelectItem value="trento">Trento</SelectItem>
+                        <SelectItem value="treviso">Treviso</SelectItem>
+                        <SelectItem value="trieste">Trieste</SelectItem>
+                        <SelectItem value="udine">Udine</SelectItem>
+                        <SelectItem value="varese">Varese</SelectItem>
+                        <SelectItem value="venezia">Venezia</SelectItem>
+                        <SelectItem value="verbano-cusio-ossola">Verbano-Cusio-Ossola</SelectItem>
+                        <SelectItem value="vercelli">Vercelli</SelectItem>
+                        <SelectItem value="verona">Verona</SelectItem>
+                        <SelectItem value="vibo-valentia">Vibo Valentia</SelectItem>
+                        <SelectItem value="vicenza">Vicenza</SelectItem>
+                        <SelectItem value="viterbo">Viterbo</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -253,6 +384,53 @@ export default function KYCAlphaG8Integration({
                       placeholder="RSSMRA85M01H501Z"
                       maxLength={16}
                     />
+                  </div>
+                  
+                  {/* Profile Photo Upload */}
+                  <div className="space-y-2">
+                    <Label className="text-slate-700 font-medium flex items-center">
+                      <Camera className="h-4 w-4 mr-2" />
+                      {t('profile-photo')}
+                    </Label>
+                    <div className="flex items-center space-x-4">
+                      {employeeData.profilePhoto ? (
+                        <div className="relative">
+                          <img 
+                            src={employeeData.profilePhoto} 
+                            alt="Profile" 
+                            className="w-20 h-20 rounded-full object-cover border-2 border-slate-200"
+                          />
+                          <button
+                            type="button"
+                            onClick={removePhoto}
+                            className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition-colors"
+                          >
+                            <X className="h-3 w-3" />
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="w-20 h-20 rounded-full bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center">
+                          <Camera className="h-8 w-8 text-slate-400" />
+                        </div>
+                      )}
+                      <div className="flex-1">
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handlePhotoUpload}
+                          className="hidden"
+                          id="profile-photo-input"
+                        />
+                        <label
+                          htmlFor="profile-photo-input"
+                          className="inline-flex items-center px-4 py-2 border border-slate-300 rounded-lg text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 cursor-pointer transition-colors"
+                        >
+                          <Upload className="h-4 w-4 mr-2" />
+                          {employeeData.profilePhoto ? t('remove-photo') : t('select-photo')}
+                        </label>
+                        <p className="text-xs text-slate-500 mt-1">{t('photo-upload-optional')}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -449,8 +627,15 @@ export default function KYCAlphaG8Integration({
                 </div>
                 <div className="space-x-3">
                   <Button 
-                    onClick={handleClose}
+                    onClick={() => setShowIdModal(true)}
                     className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white shadow-md"
+                  >
+                    ID KEY Anzeigen
+                  </Button>
+                  <Button 
+                    onClick={handleClose}
+                    variant="outline"
+                    className="border-slate-300 text-slate-600 hover:bg-slate-50"
                   >
                     Zum Dashboard
                   </Button>
@@ -460,6 +645,17 @@ export default function KYCAlphaG8Integration({
           </div>
         </DialogFooter>
       </DialogContent>
+
+      {/* ALPHAG8 ID Display Modal with Profile Photo */}
+      <AlphaG8IdDisplayModal
+        isOpen={showIdModal}
+        onClose={() => setShowIdModal(false)}
+        alphaG8Id={generatedIdKey}
+        userName={`${employeeData.firstName} ${employeeData.lastName}`}
+        userEmail={employeeData.email}
+        userRole={userRole}
+        profilePhoto={employeeData.profilePhoto}
+      />
     </Dialog>
   );
 }
