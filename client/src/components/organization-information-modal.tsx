@@ -24,8 +24,21 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
   const [vatNumber, setVatNumber] = useState('');
   const [fiscalCode, setFiscalCode] = useState('');
   const [registrationNumber, setRegistrationNumber] = useState('');
-  const [legalAddress, setLegalAddress] = useState('');
-  const [operationalAddress, setOperationalAddress] = useState('');
+  // Legal Address Fields
+  const [legalStreet, setLegalStreet] = useState('');
+  const [legalStreet2, setLegalStreet2] = useState('');
+  const [legalCity, setLegalCity] = useState('');
+  const [legalPostalCode, setLegalPostalCode] = useState('');
+  const [legalProvince, setLegalProvince] = useState('');
+  const [legalCountry, setLegalCountry] = useState('Italia');
+  
+  // Operational Address Fields
+  const [operationalStreet, setOperationalStreet] = useState('');
+  const [operationalStreet2, setOperationalStreet2] = useState('');
+  const [operationalCity, setOperationalCity] = useState('');
+  const [operationalPostalCode, setOperationalPostalCode] = useState('');
+  const [operationalProvince, setOperationalProvince] = useState('');
+  const [operationalCountry, setOperationalCountry] = useState('Italia');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [emailAddress, setEmailAddress] = useState('');
   const [pecAddress, setPecAddress] = useState('');
@@ -186,27 +199,134 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
         </div>
       </div>
 
+      {/* Legal Address Section */}
       <div className="space-y-4">
+        <h4 className="font-medium text-gray-900 dark:text-gray-100">{t('org-legal-address')} *</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="legalStreet">{t('org-street-address')} *</Label>
+            <Input
+              id="legalStreet"
+              value={legalStreet}
+              onChange={(e) => setLegalStreet(e.target.value)}
+              placeholder={t('org-enter-street-address')}
+              required
+            />
+          </div>
+          <div>
+            <Label htmlFor="legalStreet2">{t('org-address-line-2')}</Label>
+            <Input
+              id="legalStreet2"
+              value={legalStreet2}
+              onChange={(e) => setLegalStreet2(e.target.value)}
+              placeholder={t('org-enter-address-line-2')}
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <Label htmlFor="legalCity">{t('org-city')} *</Label>
+            <Input
+              id="legalCity"
+              value={legalCity}
+              onChange={(e) => setLegalCity(e.target.value)}
+              placeholder={t('org-enter-city')}
+              required
+            />
+          </div>
+          <div>
+            <Label htmlFor="legalPostalCode">{t('org-postal-code')} *</Label>
+            <Input
+              id="legalPostalCode"
+              value={legalPostalCode}
+              onChange={(e) => setLegalPostalCode(e.target.value)}
+              placeholder={t('org-enter-postal-code')}
+              required
+            />
+          </div>
+          <div>
+            <Label htmlFor="legalProvince">{t('org-province-state')} *</Label>
+            <Input
+              id="legalProvince"
+              value={legalProvince}
+              onChange={(e) => setLegalProvince(e.target.value)}
+              placeholder={t('org-enter-province-state')}
+              required
+            />
+          </div>
+        </div>
         <div>
-          <Label htmlFor="legalAddress">{t('org-legal-address')} *</Label>
-          <Textarea
-            id="legalAddress"
-            value={legalAddress}
-            onChange={(e) => setLegalAddress(e.target.value)}
-            placeholder={t('org-enter-legal-address')}
-            rows={2}
+          <Label htmlFor="legalCountry">{t('org-country')} *</Label>
+          <Input
+            id="legalCountry"
+            value={legalCountry}
+            onChange={(e) => setLegalCountry(e.target.value)}
+            placeholder={t('org-enter-country')}
             required
           />
         </div>
+      </div>
 
+      {/* Operational Address Section */}
+      <div className="space-y-4">
+        <h4 className="font-medium text-gray-900 dark:text-gray-100">{t('org-operational-address')}</h4>
+        <p className="text-sm text-gray-600 dark:text-gray-400">{t('org-operational-address-note')}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <Label htmlFor="operationalStreet">{t('org-street-address')}</Label>
+            <Input
+              id="operationalStreet"
+              value={operationalStreet}
+              onChange={(e) => setOperationalStreet(e.target.value)}
+              placeholder={t('org-enter-street-address')}
+            />
+          </div>
+          <div>
+            <Label htmlFor="operationalStreet2">{t('org-address-line-2')}</Label>
+            <Input
+              id="operationalStreet2"
+              value={operationalStreet2}
+              onChange={(e) => setOperationalStreet2(e.target.value)}
+              placeholder={t('org-enter-address-line-2')}
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <Label htmlFor="operationalCity">{t('org-city')}</Label>
+            <Input
+              id="operationalCity"
+              value={operationalCity}
+              onChange={(e) => setOperationalCity(e.target.value)}
+              placeholder={t('org-enter-city')}
+            />
+          </div>
+          <div>
+            <Label htmlFor="operationalPostalCode">{t('org-postal-code')}</Label>
+            <Input
+              id="operationalPostalCode"
+              value={operationalPostalCode}
+              onChange={(e) => setOperationalPostalCode(e.target.value)}
+              placeholder={t('org-enter-postal-code')}
+            />
+          </div>
+          <div>
+            <Label htmlFor="operationalProvince">{t('org-province-state')}</Label>
+            <Input
+              id="operationalProvince"
+              value={operationalProvince}
+              onChange={(e) => setOperationalProvince(e.target.value)}
+              placeholder={t('org-enter-province-state')}
+            />
+          </div>
+        </div>
         <div>
-          <Label htmlFor="operationalAddress">{t('org-operational-address')}</Label>
-          <Textarea
-            id="operationalAddress"
-            value={operationalAddress}
-            onChange={(e) => setOperationalAddress(e.target.value)}
-            placeholder={t('org-enter-operational-address')}
-            rows={2}
+          <Label htmlFor="operationalCountry">{t('org-country')}</Label>
+          <Input
+            id="operationalCountry"
+            value={operationalCountry}
+            onChange={(e) => setOperationalCountry(e.target.value)}
+            placeholder={t('org-enter-country')}
           />
         </div>
       </div>
