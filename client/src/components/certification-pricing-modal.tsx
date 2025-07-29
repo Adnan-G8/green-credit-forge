@@ -154,7 +154,6 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
                     <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                       <p className="text-xs text-blue-800"><strong>Per uso personale</strong></p>
                       <p className="text-xs text-blue-800"><strong>Costi annuali di rinnovo:</strong> €14.64 all'anno (€12.00 + IVA 22%)</p>
-                      <p className="text-xs text-blue-700 mt-1 font-medium">Dopo il primo anno, il rinnovo annuale costa €14.64.</p>
                     </div>
                   </div>
                 </div>
