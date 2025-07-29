@@ -1649,6 +1649,10 @@ export const translations = {
     'fagri-digital-represents-ecosystem': 'FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members and future generations.',
     'renewable-download-description': 'Download the complete FAGRI DIGITAL - EUFD2025-001 document for CO₂ certification',
 
+    // Contact section missing English translations
+    'contact-general-title': 'General Inquiries',
+    'contact-membership-title': 'Join Italian Agricultural Supply Chain',
+
     // Contact section
     'contact-info-title': 'Contact Information',
     'contact-send-message': 'Send a Message',
