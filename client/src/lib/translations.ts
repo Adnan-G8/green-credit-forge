@@ -2011,6 +2011,12 @@ export const translations = {
     'org-enter-operational-address': 'Enter operational address (if different from legal)',
     'org-phone-number': 'Phone Number',
     'org-email-address': 'Email Address',
+    'org-pec-address': 'PEC Address',
+    'org-legal-representative': 'Legal Representative',
+    'org-technical-manager': 'Technical Manager',
+    'org-enter-pec-address': 'Enter PEC email address',
+    'org-enter-legal-representative': 'Enter full name of legal representative',
+    'org-enter-technical-manager': 'Enter full name of technical manager',
     'org-previous': 'Previous',
     'org-next': 'Next',
 

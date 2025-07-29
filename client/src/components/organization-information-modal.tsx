@@ -236,13 +236,13 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
         </div>
 
         <div>
-          <Label htmlFor="pecAddress">{t('pec-address')} *</Label>
+          <Label htmlFor="pecAddress">{t('org-pec-address')} *</Label>
           <Input
             id="pecAddress"
             type="email"
             value={pecAddress}
             onChange={(e) => setPecAddress(e.target.value)}
-            placeholder="company@pec.it"
+            placeholder={t('org-enter-pec-address')}
             required
           />
         </div>
@@ -250,23 +250,23 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <Label htmlFor="legalRepresentative">{t('legal-representative')} *</Label>
+          <Label htmlFor="legalRepresentative">{t('org-legal-representative')} *</Label>
           <Input
             id="legalRepresentative"
             value={legalRepresentative}
             onChange={(e) => setLegalRepresentative(e.target.value)}
-            placeholder={t('full-name-legal-representative')}
+            placeholder={t('org-enter-legal-representative')}
             required
           />
         </div>
 
         <div>
-          <Label htmlFor="technicalManager">{t('technical-manager')} *</Label>
+          <Label htmlFor="technicalManager">{t('org-technical-manager')} *</Label>
           <Input
             id="technicalManager"
             value={technicalManager}
             onChange={(e) => setTechnicalManager(e.target.value)}
-            placeholder={t('full-name-technical-manager')}
+            placeholder={t('org-enter-technical-manager')}
             required
           />
         </div>
