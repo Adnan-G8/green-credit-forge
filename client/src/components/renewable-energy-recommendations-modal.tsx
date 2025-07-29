@@ -266,26 +266,18 @@ export function RenewableEnergyRecommendationsModal({ isOpen, onClose, userProfi
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-6xl max-h-[90vh] bg-white border-2 border-slate-200 overflow-hidden">
         <DialogHeader className="border-b border-slate-200 pb-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                <Zap className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <DialogTitle className="text-2xl font-light text-slate-900">
-                  Renewable Energy Recommendations
-                </DialogTitle>
-                <p className="text-slate-600 text-sm">
-                  Personalized project suggestions for {userProfile?.fullName || 'your profile'}
-                </p>
-              </div>
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+              <Zap className="h-6 w-6 text-white" />
             </div>
-            <button 
-              onClick={onClose}
-              className="text-slate-400 hover:text-slate-600 transition-colors"
-            >
-              <X className="h-6 w-6" />
-            </button>
+            <div>
+              <DialogTitle className="text-2xl font-light text-slate-900">
+                Renewable Energy Recommendations
+              </DialogTitle>
+              <p className="text-slate-600 text-sm">
+                Personalized project suggestions for {userProfile?.fullName || 'your profile'}
+              </p>
+            </div>
           </div>
         </DialogHeader>
 
@@ -299,30 +291,31 @@ export function RenewableEnergyRecommendationsModal({ isOpen, onClose, userProfi
                     variant={filterType === 'all' ? 'default' : 'outline'}
                     size="sm"
                     onClick={() => setFilterType('all')}
+                    className={filterType === 'all' ? 'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-600' : 'border-slate-300 text-slate-700 hover:bg-slate-50'}
                   >
                     All Projects
                   </Button>
                   <Button
-                    variant={filterType === 'high' ? 'default' : 'outline'}
+                    variant="outline"
                     size="sm"
                     onClick={() => setFilterType('high')}
-                    className="text-green-700"
+                    className={filterType === 'high' ? 'bg-green-600 hover:bg-green-700 text-white border-green-600' : 'border-green-300 text-green-700 hover:bg-green-50'}
                   >
                     Highly Suitable
                   </Button>
                   <Button
-                    variant={filterType === 'medium' ? 'default' : 'outline'}
+                    variant="outline"
                     size="sm"
                     onClick={() => setFilterType('medium')}
-                    className="text-blue-700"
+                    className={filterType === 'medium' ? 'bg-blue-600 hover:bg-blue-700 text-white border-blue-600' : 'border-blue-300 text-blue-700 hover:bg-blue-50'}
                   >
                     Suitable
                   </Button>
                   <Button
-                    variant={filterType === 'low' ? 'default' : 'outline'}
+                    variant="outline"
                     size="sm"
                     onClick={() => setFilterType('low')}
-                    className="text-orange-700"
+                    className={filterType === 'low' ? 'bg-orange-600 hover:bg-orange-700 text-white border-orange-600' : 'border-orange-300 text-orange-700 hover:bg-orange-50'}
                   >
                     Explore All
                   </Button>
@@ -355,7 +348,7 @@ export function RenewableEnergyRecommendationsModal({ isOpen, onClose, userProfi
                         <Button
                           onClick={() => setSelectedProject(project)}
                           variant="outline"
-                          className="flex items-center gap-1"
+                          className="flex items-center gap-1 border-emerald-300 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-400"
                         >
                           View Details
                           <ArrowRight className="h-3 w-3" />
@@ -404,6 +397,7 @@ export function RenewableEnergyRecommendationsModal({ isOpen, onClose, userProfi
                   onClick={() => setSelectedProject(null)}
                   variant="outline"
                   size="sm"
+                  className="border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400"
                 >
                   ← Back to Recommendations
                 </Button>
@@ -506,7 +500,7 @@ export function RenewableEnergyRecommendationsModal({ isOpen, onClose, userProfi
                     </Button>
                     <Button
                       variant="outline"
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 border-blue-300 text-blue-700 hover:bg-blue-50 hover:border-blue-400"
                     >
                       <Euro className="h-4 w-4" />
                       Get Quote
