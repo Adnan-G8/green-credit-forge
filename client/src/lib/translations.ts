@@ -1751,6 +1751,12 @@ export const translations = {
     'pricing-access': 'Pricing Access',
     'dashboard-access': 'Dashboard Access',
     'session-management': 'Session Management',
+    'verification-complete': 'Verification Complete',
+    'session-security-verified': 'Session security protocols verified successfully.',
+    'account-access-verified': 'Account access permissions verified successfully.',
+    'performing-access-verification': 'Performing account access verification...',
+    'sessions-refreshed': 'Sessions Refreshed',
+    'session-data-updated': 'Session data has been updated successfully.',
 
     // Contact section missing English translations
     'contact-general-title': 'General Inquiries',

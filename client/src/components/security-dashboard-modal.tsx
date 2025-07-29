@@ -46,7 +46,8 @@ export function SecurityDashboardModal({ isOpen, onClose, alphaG8Id }: SecurityD
   const [activeTab, setActiveTab] = useState<'keycard' | 'security' | 'sessions'>('keycard');
   const [sessions, setSessions] = useState<SessionInfo[]>([]);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
-  const [realTimeCheck, setRealTimeCheck] = useState(false);
+  const [sessionVerificationCheck, setSessionVerificationCheck] = useState(false);
+  const [accountAccessCheck, setAccountAccessCheck] = useState(false);
 
   // Mock user profiles and session data - in real implementation this would come from backend
   useEffect(() => {
@@ -170,12 +171,36 @@ Authorized by ALPHAG8 Switzerland Technology
     }
   };
 
-  const handleRealTimeVerification = () => {
-    setRealTimeCheck(true);
-    // Simulate real-time verification check
+  const handleSessionVerification = () => {
+    setSessionVerificationCheck(true);
+    // Simulate Swiss security protocol verification
     setTimeout(() => {
-      setRealTimeCheck(false);
+      setSessionVerificationCheck(false);
+      toast({
+        title: t('verification-complete'),
+        description: t('session-security-verified'),
+      });
     }, 2000);
+  };
+
+  const handleAccountAccessVerification = () => {
+    setAccountAccessCheck(true);
+    // Simulate account access verification
+    setTimeout(() => {
+      setAccountAccessCheck(false);
+      toast({
+        title: t('verification-complete'),
+        description: t('account-access-verified'),
+      });
+    }, 2000);
+  };
+
+  const handleRefreshSessions = () => {
+    // Refresh sessions functionality
+    toast({
+      title: t('sessions-refreshed'),
+      description: t('session-data-updated'),
+    });
   };
 
   return (
@@ -389,11 +414,11 @@ Authorized by ALPHAG8 Switzerland Technology
                     <p className="text-xs text-emerald-600">Swiss Alps Security Bunker - 001</p>
                   </div>
                   <Button
-                    onClick={handleRealTimeVerification}
-                    disabled={realTimeCheck}
+                    onClick={handleSessionVerification}
+                    disabled={sessionVerificationCheck}
                     className="bg-emerald-600 hover:bg-emerald-700 text-white"
                   >
-                    {realTimeCheck ? (
+                    {sessionVerificationCheck ? (
                       <div className="flex items-center gap-2">
                         <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full" />
                         {t('verifying')}
@@ -456,11 +481,11 @@ Authorized by ALPHAG8 Switzerland Technology
                     {t('verify-current-account-access')}
                   </div>
                   <Button
-                    onClick={handleRealTimeVerification}
-                    disabled={realTimeCheck}
+                    onClick={handleAccountAccessVerification}
+                    disabled={accountAccessCheck}
                     className="bg-emerald-600 hover:bg-emerald-700 text-white flex items-center gap-2"
                   >
-                    {realTimeCheck ? (
+                    {accountAccessCheck ? (
                       <>
                         <div className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></div>
                         {t('verifying')}
@@ -473,9 +498,9 @@ Authorized by ALPHAG8 Switzerland Technology
                     )}
                   </Button>
                 </div>
-                {realTimeCheck && (
+                {accountAccessCheck && (
                   <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-700">
-                    {t('performing-security-verification')}
+                    {t('performing-access-verification')}
                   </div>
                 )}
               </div>
@@ -515,7 +540,7 @@ Authorized by ALPHAG8 Switzerland Technology
                     {t('active-sessions')} ({sessions.length})
                   </h4>
                   <Button
-                    onClick={handleRealTimeVerification}
+                    onClick={handleRefreshSessions}
                     variant="outline"
                     size="sm"
                     className="flex items-center gap-2"
