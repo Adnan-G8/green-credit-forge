@@ -10,6 +10,8 @@ import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { FormulaDisplay } from '@/components/formula-display';
+import { CalculationSummaryModal } from '@/components/calculation-summary-modal';
 import { 
   Tractor, 
   TreePine, 
@@ -22,7 +24,8 @@ import {
   Minus,
   Info,
   AlertCircle,
-  CheckCircle
+  CheckCircle,
+  Calculator
 } from 'lucide-react';
 
 interface ProjectCreationModalProps {
@@ -38,7 +41,7 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
   
   // Project basic information
   const [projectName, setProjectName] = useState('');
-  const [projectType, setProjectType] = useState<'carbon-farming' | 'renewable-energy' | ''>('');
+  const [projectType, setProjectType] = useState<'carbon-farming' | 'renewable-energy' | 'forestation' | ''>('');
   const [projectDescription, setProjectDescription] = useState('');
   const [projectLocation, setProjectLocation] = useState('');
   const [projectDuration, setProjectDuration] = useState('');
@@ -54,6 +57,13 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
   const [installedCapacity, setInstalledCapacity] = useState('');
   const [expectedCO2Reduction, setExpectedCO2Reduction] = useState('');
   const [energyLocation, setEnergyLocation] = useState('');
+
+  // Forestation specific
+  const [forestType, setForestType] = useState('');
+  const [treeSpecies, setTreeSpecies] = useState('');
+  const [forestArea, setForestArea] = useState('');
+  const [treeDensity, setTreeDensity] = useState('');
+  const [expectedForestCO2, setExpectedForestCO2] = useState('');
   
   // Investment and timeline
   const [investmentCapacity, setInvestmentCapacity] = useState('');
@@ -61,6 +71,10 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
   const [estimatedCompletionDate, setEstimatedCompletionDate] = useState('');
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Formula display and calculation summary states
+  const [showFormulaFor, setShowFormulaFor] = useState<string>('');
+  const [showCalculationSummary, setShowCalculationSummary] = useState(false);
 
   const resetForm = () => {
     setProjectName('');
@@ -76,6 +90,11 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
     setInstalledCapacity('');
     setExpectedCO2Reduction('');
     setEnergyLocation('');
+    setForestType('');
+    setTreeSpecies('');
+    setForestArea('');
+    setTreeDensity('');
+    setExpectedForestCO2('');
     setInvestmentCapacity('');
     setProjectStartDate('');
     setEstimatedCompletionDate('');
@@ -115,6 +134,13 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
           expectedCO2Reduction: parseFloat(expectedCO2Reduction),
           energyLocation,
         }),
+        ...(projectType === 'forestation' && {
+          forestType,
+          treeSpecies,
+          forestArea: parseFloat(forestArea),
+          treeDensity: parseFloat(treeDensity),
+          expectedForestCO2: parseFloat(expectedForestCO2),
+        }),
       };
 
       // Store project in localStorage (following current storage pattern)
@@ -148,6 +174,7 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
     switch (type) {
       case 'carbon-farming': return <Tractor className="h-5 w-5" />;
       case 'renewable-energy': return <Wind className="h-5 w-5" />;
+      case 'forestation': return <TreePine className="h-5 w-5" />;
       default: return <Leaf className="h-5 w-5" />;
     }
   };
@@ -173,7 +200,7 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
               {t('project-type-selection')}
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Card 
                 className={`cursor-pointer transition-all ${
                   projectType === 'carbon-farming' 
@@ -221,6 +248,32 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
                   <div className="mt-2">
                     <Badge variant="outline" className="text-blue-700 border-blue-200">
                       UNI-PdR 2025 - {t('project-co2-reduction')}
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card 
+                className={`cursor-pointer transition-all ${
+                  projectType === 'forestation' 
+                    ? 'ring-2 ring-green-500 bg-green-50' 
+                    : 'hover:bg-gray-50'
+                }`}
+                onClick={() => setProjectType('forestation')}
+              >
+                <CardHeader className="pb-3">
+                  <CardTitle className="flex items-center gap-2 text-green-700">
+                    <TreePine className="h-5 w-5" />
+                    {t('project-forestation')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600">
+                    {t('project-forestation-desc')}
+                  </p>
+                  <div className="mt-2">
+                    <Badge variant="outline" className="text-green-700 border-green-200">
+                      UNI-PdR 2025 - {t('project-co2-sequestration')}
                     </Badge>
                   </div>
                 </CardContent>
@@ -338,7 +391,7 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
                         />
                       </div>
 
-                      <div>
+                      <div className="space-y-2">
                         <Label htmlFor="expectedCO2Sequestration">{t('project-co2-sequestration-expected')} *</Label>
                         <Input
                           id="expectedCO2Sequestration"
@@ -349,6 +402,13 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
                           min="0.1"
                           step="0.1"
                           required
+                        />
+                        <FormulaDisplay
+                          projectType="carbon-farming"
+                          fieldType="co2-sequestration"
+                          value={parseFloat(expectedCO2Sequestration) || 0}
+                          showCalculation={showFormulaFor === 'carbon-co2'}
+                          onToggleCalculation={() => setShowFormulaFor(showFormulaFor === 'carbon-co2' ? '' : 'carbon-co2')}
                         />
                       </div>
                     </div>
@@ -413,6 +473,91 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
                           value={energyLocation}
                           onChange={(e) => setEnergyLocation(e.target.value)}
                           placeholder={t('project-enter-installation')}
+                          required
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {projectType === 'forestation' && (
+                  <>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="forestType">{t('project-forest-type')} *</Label>
+                        <Select value={forestType} onValueChange={setForestType}>
+                          <SelectTrigger>
+                            <SelectValue placeholder={t('project-select-forest-type')} />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="mixed-forest">{t('project-mixed-forest')}</SelectItem>
+                            <SelectItem value="deciduous-forest">{t('project-deciduous-forest')}</SelectItem>
+                            <SelectItem value="coniferous-forest">{t('project-coniferous-forest')}</SelectItem>
+                            <SelectItem value="mediterranean-forest">{t('project-mediterranean-forest')}</SelectItem>
+                            <SelectItem value="riparian-forest">{t('project-riparian-forest')}</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="treeSpecies">{t('project-tree-species')} *</Label>
+                        <Select value={treeSpecies} onValueChange={setTreeSpecies}>
+                          <SelectTrigger>
+                            <SelectValue placeholder={t('project-select-species')} />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="oak">{t('project-oak')}</SelectItem>
+                            <SelectItem value="beech">{t('project-beech')}</SelectItem>
+                            <SelectItem value="pine">{t('project-pine')}</SelectItem>
+                            <SelectItem value="spruce">{t('project-spruce')}</SelectItem>
+                            <SelectItem value="chestnut">{t('project-chestnut')}</SelectItem>
+                            <SelectItem value="poplar">{t('project-poplar')}</SelectItem>
+                            <SelectItem value="willow">{t('project-willow')}</SelectItem>
+                            <SelectItem value="mixed-native">{t('project-mixed-native')}</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div>
+                        <Label htmlFor="forestArea">{t('project-forest-area-hectares')} *</Label>
+                        <Input
+                          id="forestArea"
+                          type="number"
+                          value={forestArea}
+                          onChange={(e) => setForestArea(e.target.value)}
+                          placeholder={t('project-enter-forest-area')}
+                          min="0.1"
+                          step="0.1"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <Label htmlFor="treeDensity">{t('project-tree-density-ha')} *</Label>
+                        <Input
+                          id="treeDensity"
+                          type="number"
+                          value={treeDensity}
+                          onChange={(e) => setTreeDensity(e.target.value)}
+                          placeholder={t('project-enter-density')}
+                          min="100"
+                          step="50"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <Label htmlFor="expectedForestCO2">{t('project-forest-co2-sequestration')} *</Label>
+                        <Input
+                          id="expectedForestCO2"
+                          type="number"
+                          value={expectedForestCO2}
+                          onChange={(e) => setExpectedForestCO2(e.target.value)}
+                          placeholder={t('project-enter-forest-co2')}
+                          min="0.1"
+                          step="0.1"
                           required
                         />
                       </div>
@@ -491,15 +636,27 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
             </Tabs>
           )}
 
-          <div className="flex justify-end space-x-2 pt-4 border-t">
+          <div className="flex justify-between items-center pt-4 border-t">
             <Button 
               type="button" 
               variant="outline" 
-              onClick={onClose}
-              disabled={isSubmitting}
+              onClick={() => setShowCalculationSummary(true)}
+              disabled={!projectType || !projectName}
+              className="text-blue-600 border-blue-200 hover:bg-blue-50"
             >
-              {t('project-cancel')}
+              <Calculator className="h-4 w-4 mr-2" />
+              {t('view-full-calculations')}
             </Button>
+            
+            <div className="flex space-x-2">
+              <Button 
+                type="button" 
+                variant="outline" 
+                onClick={onClose}
+                disabled={isSubmitting}
+              >
+                {t('project-cancel')}
+              </Button>
             <Button 
               type="submit" 
               disabled={isSubmitting || !projectType}
@@ -517,8 +674,33 @@ export function ProjectCreationModal({ isOpen, onClose, alphaG8Id, onProjectCrea
                 </>
               )}
             </Button>
+            </div>
           </div>
         </form>
+
+        {/* Calculation Summary Modal */}
+        <CalculationSummaryModal
+          isOpen={showCalculationSummary}
+          onClose={() => setShowCalculationSummary(false)}
+          projectData={{
+            projectType: projectType as 'carbon-farming' | 'renewable-energy' | 'forestation',
+            projectName,
+            cultivatedArea: parseFloat(cultivatedArea) || 0,
+            cropType,
+            farmingMethod,
+            expectedCO2Sequestration: parseFloat(expectedCO2Sequestration) || 0,
+            installedCapacity: parseFloat(installedCapacity) || 0,
+            energyType,
+            expectedCO2Reduction: parseFloat(expectedCO2Reduction) || 0,
+            forestArea: parseFloat(forestArea) || 0,
+            forestType,
+            treeSpecies,
+            treeDensity: parseFloat(treeDensity) || 0,
+            expectedForestCO2: parseFloat(expectedForestCO2) || 0,
+            investmentCapacity: parseFloat(investmentCapacity) || 0,
+            projectDuration: parseFloat(projectDuration) || 1
+          }}
+        />
       </DialogContent>
     </Dialog>
   );
