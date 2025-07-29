@@ -13,6 +13,9 @@ import { CertificationPricingModal } from '@/components/certification-pricing-mo
 import { AdminUserManagementModal } from '@/components/admin-user-management-modal';
 import { ProjectCreationModal } from '@/components/project-creation-modal';
 import { MyProjectsDisplay } from '@/components/my-projects-display';
+import { KycUploadSection } from '@/components/kyc-upload-section';
+import { PaymentStatusSection } from '@/components/payment-status-section';
+import { AuditTrailDisplay } from '@/components/audit-trail-display';
 
 
 export default function Dashboard() {
@@ -29,8 +32,41 @@ export default function Dashboard() {
   const [showAdminPanel, setShowAdminPanel] = useState(false);
   const [showProjectCreation, setShowProjectCreation] = useState(false);
   const [showMyProjects, setShowMyProjects] = useState(false);
+  const [showKycSection, setShowKycSection] = useState(false);
+  const [showPaymentSection, setShowPaymentSection] = useState(false);
+  const [showAuditTrail, setShowAuditTrail] = useState(false);
 
   const [currentUserRole, setCurrentUserRole] = useState('FAGRI Member');
+  const [kycStatus, setKycStatus] = useState('pending');
+  const [userProjects, setUserProjects] = useState<any[]>([]);
+
+  const loadUserData = (fagriId: string) => {
+    try {
+      // Load user profile data
+      const storedProfiles = JSON.parse(localStorage.getItem('userProfiles') || '[]');
+      const userProfile = storedProfiles.find((profile: any) => profile.fagriIdKey === fagriId);
+      
+      if (userProfile) {
+        setCurrentUserRole(userProfile.userRole || 'FAGRI Member');
+        setKycStatus(userProfile.kycStatus || 'pending');
+      }
+
+      // Load user projects
+      const storedProjects = JSON.parse(localStorage.getItem('userProjects') || '[]');
+      const projects = storedProjects.filter((project: any) => project.alphaG8Id === fagriId);
+      setUserProjects(projects);
+    } catch (error) {
+      console.error('Error loading user data:', error);
+    }
+  };
+
+  const handleKycUpdate = () => {
+    loadUserData(alphaG8Id);
+  };
+
+  const handlePaymentUpdate = () => {
+    loadUserData(alphaG8Id);
+  };
 
   useEffect(() => {
     // Clear all old data and force refresh for ID format conversion
@@ -56,6 +92,7 @@ export default function Dashboard() {
     if (storedId && sessionActive === 'true') {
       setIsAuthenticated(true);
       setAlphaG8Id(storedId);
+      loadUserData(storedId);
     } else {
       setIsAuthenticated(false);
     }
@@ -75,6 +112,7 @@ export default function Dashboard() {
       if (storedId && sessionActive === 'true') {
         setIsAuthenticated(true);
         setAlphaG8Id(storedId);
+        loadUserData(storedId);
       } else {
         setIsAuthenticated(false);
       }
@@ -346,7 +384,7 @@ export default function Dashboard() {
             </div>
             
             {/* Navigation Options */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
               <button
                 onClick={handleViewKeyCard}
                 className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
@@ -397,7 +435,35 @@ export default function Dashboard() {
                 <span className="text-orange-800 font-medium text-center leading-tight">{t('view-certification-pricing')}</span>
               </button>
 
+              <button
+                onClick={() => setShowKycSection(true)}
+                className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+              >
+                <div className="flex items-center justify-center h-8 w-8">
+                  <Shield className="h-6 w-6 text-blue-600 group-hover:scale-110 transition-transform" />
+                </div>
+                <span className="text-blue-800 font-medium text-center leading-tight">KYC Verifica</span>
+              </button>
 
+              <button
+                onClick={() => setShowPaymentSection(true)}
+                className="flex flex-col items-center justify-center space-y-3 bg-green-50 hover:bg-green-100 border border-green-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+              >
+                <div className="flex items-center justify-center h-8 w-8">
+                  <Euro className="h-6 w-6 text-green-600 group-hover:scale-110 transition-transform" />
+                </div>
+                <span className="text-green-800 font-medium text-center leading-tight">Pagamenti</span>
+              </button>
+
+              <button
+                onClick={() => setShowAuditTrail(true)}
+                className="flex flex-col items-center justify-center space-y-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-6 h-32 transition-all duration-200 group"
+              >
+                <div className="flex items-center justify-center h-8 w-8">
+                  <FileText className="h-6 w-6 text-gray-600 group-hover:scale-110 transition-transform" />
+                </div>
+                <span className="text-gray-800 font-medium text-center leading-tight">Cronologia</span>
+              </button>
               
               {/* Admin Panel - only show for Sales Team */}
               {currentUserRole === 'FAGRI Sales Team' && (
@@ -458,6 +524,85 @@ export default function Dashboard() {
           window.dispatchEvent(new Event('projectsUpdated'));
         }}
       />
+
+      {/* KYC Upload Section Modal */}
+      {showKycSection && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-6xl h-[90vh] overflow-hidden">
+            <div className="flex items-center justify-between p-6 border-b">
+              <h2 className="text-2xl font-bold text-gray-900">KYC - Know Your Customer</h2>
+              <Button
+                variant="outline"
+                onClick={() => setShowKycSection(false)}
+                className="flex items-center gap-2"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Torna al Dashboard
+              </Button>
+            </div>
+            <div className="p-6 overflow-y-auto h-full">
+              <KycUploadSection 
+                fagriIdKey={alphaG8Id}
+                userRole={currentUserRole}
+                kycStatus={kycStatus}
+                onKycUpdate={handleKycUpdate}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Payment Status Section Modal */}
+      {showPaymentSection && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-6xl h-[90vh] overflow-hidden">
+            <div className="flex items-center justify-between p-6 border-b">
+              <h2 className="text-2xl font-bold text-gray-900">Gestione Pagamenti</h2>
+              <Button
+                variant="outline"
+                onClick={() => setShowPaymentSection(false)}
+                className="flex items-center gap-2"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Torna al Dashboard
+              </Button>
+            </div>
+            <div className="p-6 overflow-y-auto h-full">
+              <PaymentStatusSection 
+                fagriIdKey={alphaG8Id}
+                userRole={currentUserRole}
+                projects={userProjects}
+                onPaymentUpdate={handlePaymentUpdate}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Audit Trail Display Modal */}
+      {showAuditTrail && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-6xl h-[90vh] overflow-hidden">
+            <div className="flex items-center justify-between p-6 border-b">
+              <h2 className="text-2xl font-bold text-gray-900">Cronologia Attività</h2>
+              <Button
+                variant="outline"
+                onClick={() => setShowAuditTrail(false)}
+                className="flex items-center gap-2"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Torna al Dashboard
+              </Button>
+            </div>
+            <div className="p-6 overflow-y-auto h-full">
+              <AuditTrailDisplay 
+                fagriIdKey={alphaG8Id}
+                userRole={currentUserRole}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* My Projects Display Modal */}
       {showMyProjects && (

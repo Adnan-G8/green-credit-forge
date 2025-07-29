@@ -26,6 +26,13 @@ export const userProfiles = pgTable("user_profiles", {
   fiscalCode: varchar("fiscal_code"),
   isActive: boolean("is_active").notNull().default(true),
   lastLogin: timestamp("last_login"),
+  // KYC Status Fields
+  kycStatus: varchar("kyc_status").notNull().default("pending"), // pending, under-review, approved, rejected
+  kycCompletedBy: varchar("kyc_completed_by"), // employee ID if done by staff, null if self-completed
+  kycCompletedDate: timestamp("kyc_completed_date"),
+  kycApprovedBy: varchar("kyc_approved_by"), // admin who approved
+  kycApprovedDate: timestamp("kyc_approved_date"),
+  kycNotes: text("kyc_notes"), // internal notes for review process
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
@@ -41,6 +48,61 @@ export const userSessions = pgTable("user_sessions", {
   loginTime: timestamp("login_time").defaultNow().notNull(),
   lastActivity: timestamp("last_activity").defaultNow().notNull(),
   isActive: boolean("is_active").notNull().default(true),
+});
+
+// KYC Documents Management
+export const kycDocuments = pgTable("kyc_documents", {
+  id: serial("id").primaryKey(),
+  fagriIdKey: varchar("fagri_id_key").notNull(),
+  documentType: varchar("document_type").notNull(), // 'personal_id_front', 'personal_id_back', 'address_proof', 'company_registration', 'business_license', 'management_id', 'authorization_letter'
+  entityType: varchar("entity_type").notNull(), // 'individual', 'company', 'management'
+  entityName: varchar("entity_name"), // For company/management person name
+  fileName: varchar("file_name").notNull(),
+  fileSize: integer("file_size").notNull(),
+  mimeType: varchar("mime_type").notNull(),
+  fileData: text("file_data").notNull(), // Base64 encoded file data
+  uploadedBy: varchar("uploaded_by").notNull(), // 'self' or employee FAGRI ID
+  uploadedByEmployee: varchar("uploaded_by_employee"), // Employee FAGRI ID if uploaded by staff
+  verificationStatus: varchar("verification_status").notNull().default("pending"), // pending, verified, rejected
+  verificationNotes: text("verification_notes"),
+  verifiedBy: varchar("verified_by"), // Admin who verified
+  verifiedDate: timestamp("verified_date"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+// Payment Tracking for Projects
+export const projectPayments = pgTable("project_payments", {
+  id: serial("id").primaryKey(),
+  fagriIdKey: varchar("fagri_id_key").notNull(),
+  projectId: varchar("project_id").notNull(),
+  paymentType: varchar("payment_type").notNull(), // 'first_project', 'additional_project'
+  amount: integer("amount").notNull(), // Amount in cents (EUR)
+  vatAmount: integer("vat_amount").notNull(), // VAT in cents
+  totalAmount: integer("total_amount").notNull(), // Total with VAT in cents
+  paymentStatus: varchar("payment_status").notNull().default("pending"), // pending, received, verified, failed
+  paymentMethod: varchar("payment_method"), // 'bank_transfer', 'credit_card'
+  transactionReference: varchar("transaction_reference"),
+  paymentDate: timestamp("payment_date"),
+  verifiedBy: varchar("verified_by"), // Employee who verified payment
+  verifiedDate: timestamp("verified_date"),
+  paymentNotes: text("payment_notes"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+// Audit Trail for all KYC and Payment activities
+export const auditTrail = pgTable("audit_trail", {
+  id: serial("id").primaryKey(),
+  fagriIdKey: varchar("fagri_id_key").notNull(),
+  actionType: varchar("action_type").notNull(), // 'kyc_upload', 'kyc_approval', 'payment_received', 'project_review', 'document_verification'
+  actionDetails: text("action_details").notNull(), // JSON string with action details
+  performedBy: varchar("performed_by").notNull(), // FAGRI ID of who performed action
+  performedByType: varchar("performed_by_type").notNull(), // 'user', 'employee', 'admin'
+  relatedId: varchar("related_id"), // Related project, document, or payment ID
+  ipAddress: varchar("ip_address"),
+  userAgent: varchar("user_agent"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const contactRequests = pgTable("contact_requests", {
@@ -112,6 +174,31 @@ export type UserProfile = typeof userProfiles.$inferSelect;
 export type InsertUserProfile = z.infer<typeof insertUserProfileSchema>;
 export type UserSession = typeof userSessions.$inferSelect;
 export type InsertUserSession = z.infer<typeof insertUserSessionSchema>;
+
+// KYC and Payment schemas
+export const insertKycDocumentSchema = createInsertSchema(kycDocuments).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export const insertProjectPaymentSchema = createInsertSchema(projectPayments).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export const insertAuditTrailSchema = createInsertSchema(auditTrail).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type KycDocument = typeof kycDocuments.$inferSelect;
+export type InsertKycDocument = z.infer<typeof insertKycDocumentSchema>;
+export type ProjectPayment = typeof projectPayments.$inferSelect;
+export type InsertProjectPayment = z.infer<typeof insertProjectPaymentSchema>;
+export type AuditTrail = typeof auditTrail.$inferSelect;
+export type InsertAuditTrail = z.infer<typeof insertAuditTrailSchema>;
 
 // Document Management System Tables
 export const documents = pgTable("documents", {
@@ -202,6 +289,13 @@ export const co2Projects = pgTable("co2_projects", {
   estimatedCO2Reduction: varchar("estimated_co2_reduction"), // Tons of CO₂
   certificationStandard: varchar("certification_standard").default("EUFD2025-001"),
   isoStandards: text("iso_standards").array(), // ['ISO 14064-1', 'ISO 14064-2', 'ISO 14064-3']
+  
+  // Payment & KYC Integration
+  paymentStatus: varchar("payment_status").notNull().default("pending"), // pending, received, verified
+  paymentAmount: integer("payment_amount"), // Total amount in cents
+  paymentReference: varchar("payment_reference"),
+  requiresKyc: boolean("requires_kyc").notNull().default(true),
+  kycRequiredFor: varchar("kyc_required_for").notNull().default("user"), // user, company, both
   
   // Timeline Tracking
   applicationDate: timestamp("application_date").defaultNow(),
