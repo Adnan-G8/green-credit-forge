@@ -481,11 +481,11 @@ export default function KYCAlphaG8Integration({
                   <h4 className="font-semibold text-slate-800 mb-3">Gebührenübersicht:</h4>
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600">Registrierungsgebühr (einmalig)</span>
+                      <span className="text-slate-600">Fingerprint + Registrierung</span>
                       <span className="text-slate-800">€12.00</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-600">Nutzungsgebühr (12 Monate)</span>
+                      <span className="text-slate-600">Blockchain</span>
                       <span className="text-slate-800">€30.00</span>
                     </div>
                     <div className="border-t border-slate-200 pt-2">
@@ -494,7 +494,7 @@ export default function KYCAlphaG8Integration({
                         <span className="text-slate-800">€42.00</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-slate-600">Italienische MwSt (22%)</span>
+                        <span className="text-slate-600">Deutsche MwSt (22%)</span>
                         <span className="text-slate-800">€9.24</span>
                       </div>
                     </div>

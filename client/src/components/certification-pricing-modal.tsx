@@ -125,32 +125,57 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Individual Accounts */}
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                <h4 className="text-lg font-medium text-blue-900 mb-4">{t('individual-accounts')}</h4>
+                <h4 className="text-lg font-medium text-blue-900 mb-4">Individual Accounts</h4>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-blue-800 font-medium">{t('total-opening-cost-individual')}</span>
+                    <span className="text-blue-800 font-medium">Gesamtkosten Eröffnung: €20.74</span>
                   </div>
                   <div className="bg-white border border-blue-200 rounded-lg p-4 space-y-2">
-                    <p className="text-blue-700">{t('one-time-registration-fee')}</p>
-                    <p className="text-blue-700">{t('monthly-usage-fee-individual')}</p>
-                    <p className="text-sm text-blue-600 mt-2">{t('individual-fee-coverage')}</p>
-                    <p className="text-sm text-blue-600 font-medium">{t('from-second-year-individual')}</p>
-                    <p className="text-xs text-blue-500 italic">{t('collaborators-need-id')}</p>
+                    <div className="flex justify-between">
+                      <span className="text-blue-700">Digitaler Fingerprint</span>
+                      <span className="text-blue-800 font-medium">€5.00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-blue-700">Blockchain</span>
+                      <span className="text-blue-800 font-medium">€12.00</span>
+                    </div>
+                    <div className="border-t border-blue-200 pt-2">
+                      <div className="flex justify-between">
+                        <span className="text-blue-600 text-xs">Deutsche MwSt (22%)</span>
+                        <span className="text-blue-800 font-medium">€3.74</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-blue-500 italic">Für persönliche Nutzung ohne zusätzliche Projekte</p>
                   </div>
                 </div>
               </div>
 
               {/* Corporate Accounts */}
               <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                <h4 className="text-lg font-medium text-green-900 mb-4">{t('corporate-accounts')}</h4>
+                <h4 className="text-lg font-medium text-green-900 mb-4">Company Accounts</h4>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-green-800 font-medium">{t('total-opening-cost-corporate')}</span>
+                    <span className="text-green-800 font-medium">Gesamtkosten Eröffnung: €51.24</span>
                   </div>
                   <div className="bg-white border border-green-200 rounded-lg p-4 space-y-2">
-                    <p className="text-green-700">{t('corporate-registration-fee')}</p>
-                    <p className="text-green-700">{t('monthly-usage-fee-corporate')}</p>
-                    <p className="text-sm text-green-600 mt-2">{t('corporate-fee-coverage')}</p>
+                    <div className="flex justify-between">
+                      <span className="text-green-700">Fingerprint + Registrierung</span>
+                      <span className="text-green-800 font-medium">€12.00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-green-700">Blockchain</span>
+                      <span className="text-green-800 font-medium">€30.00</span>
+                    </div>
+                    <div className="border-t border-green-200 pt-2">
+                      <div className="flex justify-between">
+                        <span className="text-green-600 text-xs">Deutsche MwSt (22%)</span>
+                        <span className="text-green-800 font-medium">€9.24</span>
+                      </div>
+                    </div>
+                    <div className="border-t border-green-300 pt-2 mt-2">
+                      <p className="text-xs text-green-600"><strong>Inklusive:</strong> 1 Projekt enthalten</p>
+                      <p className="text-xs text-green-600"><strong>Zusätzliche Projekte:</strong> €14.64 pro Jahr (€12.00 + 22% MwSt)</p>
+                    </div>
                   </div>
                 </div>
               </div>
