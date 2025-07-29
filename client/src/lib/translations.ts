@@ -2061,7 +2061,18 @@ export const translations = {
     'describe-buildings-structures': 'Describe agricultural buildings, warehouses, stables, greenhouses and other structures',
     'renewable-energy-installations': 'Renewable Energy Installations',
     'describe-renewable-energy-systems': 'Describe photovoltaic, wind, biomass and other existing renewable systems',
-
+    'certifications-compliance': 'Certifications and Compliance',
+    'certifications-compliance-description': 'Document existing certifications and regulatory compliance according to UNI/PdR requirements',
+    'iso-certifications': 'ISO Certifications',
+    'list-iso-certifications': 'List ISO 9001, 14001, 45001 and other ISO certifications',
+    'organic-bio-certifications': 'Organic/Bio Certifications',
+    'list-organic-certifications': 'List organic, biodynamic and other environmental certifications',
+    'environmental-certifications': 'Environmental Certifications',
+    'list-environmental-certifications': 'List environmental, sustainability and social responsibility certifications',
+    'compliance-documentation': 'Compliance Documentation',
+    'describe-compliance-documentation': 'Describe documentation for audits and regulatory compliance',
+    'co2-project-capacity': 'CO₂ Project Capacity',
+    'co2-project-capacity-description': 'Define project capacity for CO₂ certification projects',
 
     // Security Main Section Summaries
     'security-3fa-summary': 'Protected access through certified user identity, authorized devices and active sessions.',
