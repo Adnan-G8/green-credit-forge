@@ -1259,6 +1259,11 @@ export const translations = {
     'contact-legal-office': 'Sede Legale',
     'contact-general-description': 'Per informazioni sulla piattaforma e collaborazioni',
     'contact-membership-info': 'Per aderire alla Filiera Agricola Italiana',
+    // Projects Display Translation Keys
+    'projects-summary-description': 'Panoramica dei progetti di certificazione CO₂ in corso e completati',
+    'no-projects-yet': 'Nessun progetto ancora',
+    'create-first-project-description': 'Crea il tuo primo progetto di certificazione CO₂ per iniziare il monitoraggio delle emissioni',
+    
     // Forms
     'form-name': 'Nome',
     'form-surname': 'Cognome',

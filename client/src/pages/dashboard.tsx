@@ -603,7 +603,7 @@ export default function Dashboard() {
                 {t('back-to-dashboard')}
               </Button>
             </div>
-            <div className="p-6 overflow-y-auto h-full">
+            <div className="p-6 overflow-y-auto h-[calc(100%-4rem)] pb-8">
               <MyProjectsDisplay 
                 userId={alphaG8Id}
                 onCreateNew={() => {

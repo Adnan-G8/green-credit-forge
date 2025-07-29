@@ -195,7 +195,7 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
             {t('my-projects')}
           </CardTitle>
           <CardDescription>
-            {t('projects-summary-description')}
+            Panoramica dei progetti di certificazione CO₂ in corso e completati
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -204,10 +204,10 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
               <Plus className="h-8 w-8 text-emerald-600" />
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">
-              {t('no-projects-yet')}
+              Nessun progetto ancora
             </h3>
             <p className="text-gray-600 mb-6">
-              {t('create-first-project-description')}
+              Crea il tuo primo progetto di certificazione CO₂ per iniziare il monitoraggio delle emissioni
             </p>
             {onCreateNew && (
               <Button onClick={onCreateNew} className="bg-emerald-600 hover:bg-emerald-700">
@@ -239,7 +239,7 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
             )}
           </CardTitle>
           <CardDescription>
-            {t('projects-summary-description')}
+            Panoramica dei progetti di certificazione CO₂ in corso e completati  
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -278,7 +278,7 @@ export function MyProjectsDisplay({ userId, onCreateNew }: MyProjectsDisplayProp
       </Card>
 
       {/* Projects List */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-12">
         {projects.map((project) => (
           <Card key={project.id} className="hover:shadow-md transition-shadow">
             <CardHeader className="pb-3">
