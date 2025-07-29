@@ -337,22 +337,14 @@ export default function Dashboard() {
                   <Key className="h-4 w-4 mr-2" />
                   {t('id-verified')}
                 </div>
-                <div className="flex items-center space-x-2">
-                  <p className="text-xs text-emerald-600 font-medium">
-                    {t('valid-for-one-year')}
-                  </p>
-                  <button
-                    onClick={() => setShowSecurityDashboard(true)}
-                    className="text-emerald-600 hover:text-emerald-700 transition-colors"
-                  >
-                    <Info className="h-4 w-4" />
-                  </button>
+                <div className="text-xs text-emerald-600 font-medium">
+                  {t('valid-for-one-year')}
                 </div>
               </div>
             </div>
             
             {/* Navigation Options */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
               <button
                 onClick={handleViewKeyCard}
                 className="flex flex-col items-center justify-center space-y-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-6 h-32 transition-all duration-200 group"
