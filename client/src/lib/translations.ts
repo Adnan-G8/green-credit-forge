@@ -2049,6 +2049,18 @@ export const translations = {
     'org-enter-technical-manager': 'Enter full name of technical manager',
     'org-previous': 'Previous',
     'org-next': 'Next',
+    'agricultural-assets-facilities': 'Agricultural Assets and Facilities',
+    'agricultural-assets-description': 'Detailed description of agricultural assets, machinery and organizational structures',
+    'total-land-area-hectares': 'Total Land Area (hectares)',
+    'agricultural-land-hectares': 'Agricultural Land (hectares)',
+    'forest-agroforest-hectares': 'Forest/Agroforest Area (hectares)',
+    'irrigated-area-hectares': 'Irrigated Area (hectares)',
+    'machinery-equipment-inventory': 'Machinery and Equipment Inventory',
+    'describe-agricultural-machinery': 'Describe agricultural machinery, tractors, equipment and technical means',
+    'buildings-structures-inventory': 'Buildings and Structures Inventory',
+    'describe-buildings-structures': 'Describe agricultural buildings, warehouses, stables, greenhouses and other structures',
+    'renewable-energy-installations': 'Renewable Energy Installations',
+    'describe-renewable-energy-systems': 'Describe photovoltaic, wind, biomass and other existing renewable systems',
 
 
     // Security Main Section Summaries
