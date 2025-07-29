@@ -198,6 +198,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (July 29, 2025)
 
+- **Complete Pricing System Correction for Company Accounts**: Fixed all erroneous €17 references to correct €51.24 for Company KYC registration (July 29, 2025):
+  * **Translation Files**: Updated 'total-amount' translation key from €17 to €51.24 for company accounts
+  * **Company KYC Modal Headers**: Fixed dialog titles and descriptions showing incorrect €17 instead of €51.24
+  * **Payment Flow Consistency**: All company account pricing now correctly displays €51.24 across entire registration process
+  * **Individual vs Company Distinction**: Clear separation maintained - Individual accounts €20.74, Company accounts €51.24
+  * **Banking Information**: Complete FAGRI DIGITAL banking details integrated with correct pricing structure
+  * **Italian Language Consistency**: All pricing modals now properly display in Italian with correct company account pricing
+
 - **CO₂ Emission Factor Correction**: Fixed inconsistency and restored correct Italian standard of 0.53 kg CO₂/kWh throughout entire system (July 29, 2025):
   * **Calculator Logic**: Restored core CO₂ calculation library to use correct Italian standard emission factor of 0.53 kg CO₂/kWh
   * **UI Consistency**: Corrected all display text in forms, project details, and information boxes to show accurate 0.53 factor

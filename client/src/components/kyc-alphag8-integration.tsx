@@ -165,7 +165,7 @@ export default function KYCAlphaG8Integration({
                 {currentStep === 'completion' 
                   ? 'ALPHAG8 ID KEY Erstellt' 
                   : currentStep === 'payment' 
-                    ? 'Bezahlung - €17 Account Gebühr'
+                    ? 'Bezahlung - €51.24 Account Gebühr'
                     : 'KYC - Know Your Customer'
                 }
               </DialogTitle>
@@ -173,7 +173,7 @@ export default function KYCAlphaG8Integration({
                 {currentStep === 'completion' 
                   ? 'Ihr ALPHAG8 ID KEY wurde erfolgreich erstellt'
                   : currentStep === 'payment' 
-                    ? 'Bezahlen Sie €17 für die Account-Erstellung'
+                    ? 'Bezahlen Sie €51.24 für die Account-Erstellung'
                     : 'Identitätsverifikation nach EUFD2025-001 Standard'
                 }
               </DialogDescription>

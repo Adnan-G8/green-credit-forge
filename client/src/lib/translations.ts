@@ -395,7 +395,7 @@ export const translations = {
     'expiry-date': 'Data Scadenza',
     'cvv': 'CVV',
     'payment-note': 'Il pagamento deve provenire dallo stesso account o la carta deve essere intestata allo stesso nome del titolare dell\'account per il KYC bancario.',
-    'total-amount': 'Importo Totale: €17',
+    'total-amount': 'Importo Totale: €51.24',
     'account-creation-fee': 'Creazione Account: €5',
     'first-year-fee': 'Primo Anno: €12',
     'proceed-payment': 'Procedi al Pagamento',
