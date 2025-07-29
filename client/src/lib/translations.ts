@@ -765,7 +765,7 @@ export const translations = {
     'download-official-tariff': 'Scarica Tariffario Ufficiale',
     'view-certification-pricing': 'Visualizza Tariffario Certificazione',
     'security-id-key-card': 'Sicurezza & ID KEY Card',
-    'project-recommendations': 'Raccomandazioni Progetti',
+
     'id-key-card': 'ID KEY Card',
     'security-dashboard': 'Dashboard Sicurezza',
     'active-sessions': 'Sessioni Attive',
@@ -1989,7 +1989,7 @@ export const translations = {
     // Dashboard translations
     'view-certification-pricing': 'View Certification Pricing',
     'security-id-key-card': 'Security & ID KEY Card',
-    'project-recommendations': 'Project Recommendations',
+
 
     // Security Main Section Summaries
     'security-3fa-summary': 'Protected access through certified user identity, authorized devices and active sessions.',

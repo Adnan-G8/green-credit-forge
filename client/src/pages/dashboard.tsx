@@ -4,14 +4,14 @@ import { useLanguage } from '@/components/language-provider';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro, Settings, Lightbulb } from 'lucide-react';
+import { Shield, Lock, ArrowLeft, Key, LogIn, User, Folder, FileText, Info, Building2, Euro, Settings } from 'lucide-react';
 import { useLocation } from 'wouter';
 import backgroundImage from '@assets/image_1753623059363.png';
 import { SecurityDashboardModal } from '@/components/security-dashboard-modal';
 import { OrganizationInformationModal } from '@/components/organization-information-modal';
 import { CertificationPricingModal } from '@/components/certification-pricing-modal';
 import { AdminUserManagementModal } from '@/components/admin-user-management-modal';
-import { RenewableEnergyRecommendationsModal } from '@/components/renewable-energy-recommendations-modal';
+
 
 export default function Dashboard() {
   const { t } = useLanguage();
@@ -25,7 +25,7 @@ export default function Dashboard() {
   const [showOrganizationInfo, setShowOrganizationInfo] = useState(false);
   const [showPricingInfo, setShowPricingInfo] = useState(false);
   const [showAdminPanel, setShowAdminPanel] = useState(false);
-  const [showRecommendations, setShowRecommendations] = useState(false);
+
   const [currentUserRole, setCurrentUserRole] = useState('FAGRI Member');
 
   useEffect(() => {
@@ -133,9 +133,7 @@ export default function Dashboard() {
     setShowAdminPanel(true);
   };
 
-  const handleShowRecommendations = () => {
-    setShowRecommendations(true);
-  };
+
 
   // Mock: determine user role based on FAGRI ID (in real app, this comes from backend)
   useEffect(() => {
@@ -405,15 +403,7 @@ export default function Dashboard() {
                 <span className="text-orange-800 font-medium text-center leading-tight">{t('view-certification-pricing')}</span>
               </button>
 
-              <button
-                onClick={handleShowRecommendations}
-                className="flex flex-col items-center justify-center space-y-3 bg-yellow-50 hover:bg-yellow-100 border border-yellow-200 rounded-xl p-6 h-32 transition-all duration-200 group"
-              >
-                <div className="flex items-center justify-center h-8 w-8">
-                  <Lightbulb className="h-6 w-6 text-yellow-600 group-hover:scale-110 transition-transform" />
-                </div>
-                <span className="text-yellow-800 font-medium text-center leading-tight">{t('project-recommendations')}</span>
-              </button>
+
               
               {/* Admin Panel - only show for Sales Team */}
               {currentUserRole === 'FAGRI Sales Team' && (
@@ -461,18 +451,7 @@ export default function Dashboard() {
         currentUserRole={currentUserRole}
       />
 
-      {/* Renewable Energy Recommendations Modal */}
-      <RenewableEnergyRecommendationsModal
-        isOpen={showRecommendations}
-        onClose={() => setShowRecommendations(false)}
-        userProfile={{
-          fullName: 'Marco Rossi',
-          email: 'marco.rossi@agritech.it',
-          company: 'AgroTech Solutions S.r.l.',
-          city: 'Roma',
-          role: 'FAGRI Member'
-        }}
-      />
+
     </div>
   );
 }
