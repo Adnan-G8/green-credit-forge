@@ -1732,6 +1732,13 @@ export const translations = {
     'login-time': 'Login Time',
     'device': 'Device',
     'account-role': 'Account Role',
+    'security-dashboard': 'Security Dashboard',
+    'active-sessions': 'Active Sessions',
+    'issued': 'Issued',
+    'valid-until': 'Valid Until',
+    'copy-id-key': 'Copy ID KEY',
+    'download-certificate': 'Download Certificate',
+    'close': 'Close',
 
     // Contact section missing English translations
     'contact-general-title': 'General Inquiries',
