@@ -1651,14 +1651,14 @@ export const translations = {
 
     // Contact section missing English translations
     'contact-general-title': 'General Inquiries',
-    'contact-membership-title': 'Join Italian Agricultural Supply Chain',
+    'contact-membership-title': 'Join F.AGR.I. - Filiera Agricola Italiana',
 
     // Contact section
     'contact-info-title': 'Contact Information',
     'contact-send-message': 'Send a Message',
     'contact-legal-office': 'Legal Office',
     'contact-general-description': 'For platform information and collaborations',
-    'contact-membership-info': 'To join the Italian Agricultural Supply Chain',
+    'contact-membership-info': 'For membership applications and agricultural network access',
     'contact-membership-action': 'Become a Member',
     'contact-join-filiera': 'Join the Italian Agricultural Supply Chain',
     'contact-membership-description': 'Fill out the form to receive membership information and be contacted by our team.',
