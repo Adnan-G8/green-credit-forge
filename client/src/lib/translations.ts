@@ -1493,12 +1493,80 @@ export const translations = {
     'eufd-eu-regulation-description': 'This European Union regulation establishes the legal framework for the certification and trading of carbon credits within the EU. It makes blockchain-based digital platforms mandatory for carbon credit issuance, ensuring transparency and preventing double counting between member states.',
     'eufd-eu-regulation-requirements': 'Key Requirements',
 
+    // Security Page English Translations (from Italian source)
+    'security-page-overview-title': 'Security Overview',
+    'security-page-overview-subtitle': 'Our multi-level security architecture ensures maximum protection for your agricultural data.',
+    
+    // Alpine Data Centers
+    'security-alpine-datacenters-title': 'Alpine Data Centers',
+    'security-alpine-datacenters-description': 'Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from environmental and human threats.',
+    'security-alpine-datacenters-point1': 'EMP-resistant military bunkers',
+    'security-alpine-datacenters-point2': 'Autonomous power and cooling systems',
+    'security-alpine-datacenters-point3': 'Multi-ton security doors with biometric access',
+    
+    // Physical Security Pillars
+    'security-military-standards-title': 'Military Standards',
+    'security-autonomous-operations-title': 'Autonomous Operations',
+    'security-access-control-title': 'Access Control',
+    'security-disaster-recovery-title': 'Disaster Recovery',
+    'security-disaster-recovery-description': 'Dedicated alpine recovery site with triple backup systems geographically distributed across Swiss locations.',
+    
+    // Physical Security Details
+    'security-physical-title': 'Unrivaled Physical Security: Data in Alpine Fortresses',
+    'security-physical-description': 'Our data centers utilize former Swiss military bunkers, repurposed as state-of-the-art data centers, offering a level of physical protection far beyond conventional data centers.',
+    'military-standards-physical-title': 'Military Standards',
+    'military-standard-physical-built': 'Military Standard: built to withstand conventional attacks, chemical/biological threats and electromagnetic pulses (EMP)',
+    'autonomous-operations-physical-title': 'Autonomous Operations',
+    'autonomous-operability-physical-power': 'Autonomous Operability: independent power systems and autonomous ventilation for operational continuity even during disasters',
+    'access-control-physical-title': 'Access Control',
+    'strict-access-controls-physical-multi-ton': 'Rigorous Access Controls: multi-ton security doors, biometric scanners and 24/7 video surveillance',
+    'disaster-recovery-physical-title': 'Disaster Recovery',
+    'dedicated-alpine-recovery-physical-site': 'Dedicated alpine recovery site with triple backup systems geographically distributed across dispersed Swiss locations',
+    
+    // Technical Excellence
+    'technical-excellence-operational-title': 'Technical Excellence and Operational Resilience',
+    'beyond-impressive-physical-security': 'Beyond impressive physical security, we integrate cutting-edge technical measures and complete redundancies to ensure data protection and availability.',
+    'multi-layer-encryption-title': 'Multi-Layer Encryption',
+    'data-protected-encryption-standards': 'Data is protected with internationally recognized encryption standards such as AES-256 and RSA-4096. A "Zero-Knowledge" architecture ensures that only you can decrypt your files.',
+    'robust-redundancy-title': 'Robust Redundancy',
+    'customer-data-triple-backed': 'Customer data is triple-backed up, with each file stored simultaneously in different and geographically dispersed locations within Switzerland. A dedicated "Disaster Recovery Site" in the depths of the Swiss Alps offers maximum protection.',
+    
+    // Certifications and Compliance
+    'certifications-compliance-title': 'Certifications and Compliance: The Highest Standards for Your Security',
+    'comprehensive-certification-portfolio': 'Our comprehensive certification portfolio demonstrates our commitment to the highest security standards.',
+    'highest-availability-title': 'Maximum Availability',
+    'data-centers-comply-uptime': 'Data centers comply with the highest Uptime Institute Tier Classifications (Tier III/IV), ensuring concurrent maintainability and fault tolerance.',
+    'iso-iec-pci-title': 'ISO/IEC 27001 & PCI DSS',
+    'internationally-recognized-standards': 'Internationally recognized standards for systematic management of sensitive business information and payment data protection.',
+    'national-cyber-resilience-title': 'National Cyber Resilience',
+    'integrated-switzerland-cyber': 'Integrated into Switzerland\'s national cyber resilience strategy with mandatory 24-hour cyber attack reporting to the National Cyber Security Centre (NCSC).',
+    
+    // Alpine Blockchain Integration
+    'alpine-blockchain-title': 'Alpine Data Centers Meet Blockchain Innovation',
+    'swiss-mountain-blockchain-desc': 'Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.',
+    'swiss-security-guarantee': 'Swiss Security Guarantee',
+
     // Renewable Energy section
     'renewable-title': 'Renewable Energy & Sustainability',
     'renewable-subtitle': 'FAGRI Digital certifies carbon credits for both sustainable agriculture and renewable energy projects, creating an integrated ecosystem for the fight against climate change.',
     'renewable-solar': 'Solar Energy',
     'renewable-wind': 'Wind Energy',
     'renewable-download-title': 'FAGRI DIGITAL CERTIFICATION STANDARD',
+    
+    // Security Page - Data Sovereignty English
+    'security-data-title': 'Data Sovereignty and Access Control',
+    'security-data-description': 'Your data. Our fortress. Swiss precision for a global platform. Our infrastructure is designed to connect nations worldwide and enable international applications. To ensure maximum data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management.',
+    'security-data-point1': 'Strictest data protection laws: subject to the new Federal Data Protection Act (nFADP), one of the world\'s most rigorous laws',
+    'security-data-point2': 'FINMA standards: infrastructure compliant with Swiss Financial Market Supervisory Authority requirements (FINMA-RS 18/3)',
+    'security-data-point3': 'Unrivaled physical security: data centers in alpine fortresses, former Swiss military bunkers repurposed as state-of-the-art data centers',
+    
+    // Security Page - Technical Excellence English  
+    'security-technical-title': 'Technical Excellence and Operational Resilience',
+    'security-technical-intro': 'Beyond impressive physical security, we integrate cutting-edge technical measures and complete redundancies to ensure data protection and availability.',
+    'security-encryption-title': 'Multi-Layer Encryption',
+    'security-encryption-description': 'Data is protected with internationally recognized encryption standards such as AES-256 and RSA-4096. A "Zero-Knowledge" architecture ensures that only you can decrypt your files.',
+    'security-redundancy-title': 'Robust Redundancy',
+    'security-redundancy-description': 'Customer data is triple-backed up, with each file stored simultaneously in different geographically dispersed locations within Switzerland. A dedicated "Disaster Recovery Site" in the Swiss Alps offers maximum protection.',
     'renewable-download-description': 'Download the complete FAGRI DIGITAL - EUFD2025-001 document for CO₂ certification',
 
     // Contact section
