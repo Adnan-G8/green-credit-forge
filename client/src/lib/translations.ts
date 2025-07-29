@@ -1557,6 +1557,17 @@ export const translations = {
     'eufd-intro-title': 'Pioneers from Italy to the World: Our Blockchain Standard for CO₂ Certificates',
     'eufd-intro-text1': 'At FAGRI.Digital, we are proud to present our new innovative standard: EUFD2025-001. This standard is the result of years of intensive research and development, based on the latest scientific discoveries and created in close collaboration with leading Italian universities.',
     'eufd-intro-text2': 'The FAGRI Digital platform that supports the EUFD2025-001 standard is designed to usher in a new era of trust, efficiency and transparency in CO₂ certification and trading — powered by blockchain technology, advanced data protection protocols and 3FA security architecture.',
+    
+    // EUFD Features Section
+    'eufd-features-title': 'EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain',
+    'eufd-feature1-title': 'Elimination of Double Counting',  
+    'eufd-feature1-description': 'Each certificate is unique and immutable thanks to blockchain technology.',
+    'eufd-feature2-title': 'Prevention of Greenwashing',
+    'eufd-feature2-description': 'The entire value chain is transparent and traceable.',
+    'eufd-feature3-title': 'Clear Ownership',
+    'eufd-feature3-description': 'Digital registrations are tamper-proof and permanent.',
+    'eufd-feature4-title': 'Maximum Security',
+    'eufd-feature4-description': 'Unique digital fingerprint and three-factor authentication (3FA).',
 
     // Platform section matching Italian source
 
