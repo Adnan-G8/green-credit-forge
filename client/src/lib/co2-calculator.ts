@@ -1,5 +1,5 @@
 // CO₂ Calculator for Italian Renewable Energy Projects
-// Based on official Italian emission factor: 0.53 kg CO₂/kWh
+// Based on official Italian emission factor: 0.397 kg CO₂/kWh (EUFD2025-001 Sec. 6.2)
 
 export interface CO2Calculation {
   annualKWh: number;
@@ -10,7 +10,8 @@ export interface CO2Calculation {
 }
 
 // Italian emission factor for avoided CO₂ emissions
-const ITALIAN_EMISSION_FACTOR = 0.53; // kg CO₂/kWh
+// Source: EUFD2025-001 Standard, Section 6.2 - Media emissioni grid nazionale
+const ITALIAN_EMISSION_FACTOR = 0.397; // kg CO₂/kWh
 const SOLAR_LIFETIME_YEARS = 30; // Standard solar panel lifetime
 
 /**

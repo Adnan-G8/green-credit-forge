@@ -196,6 +196,24 @@ Preferred communication style: Simple, everyday language.
   * **Professional Project Interface**: Banking-style project selection with ISO standards and EUFD2025-001 compliance
   * **Complete Bilingual Support**: Full Italian and English translations for all new navigation and project functionality
 
+## Recent Changes (July 29, 2025)
+
+- **CO₂ Emission Factor Correction**: Fixed inconsistency between UI display and calculations - corrected from 0.53 to 0.397 kg CO₂/kWh throughout system (July 29, 2025):
+  * **Calculator Logic**: Updated core CO₂ calculation library to use correct EUFD2025-001 emission factor of 0.397 kg CO₂/kWh
+  * **UI Consistency**: Corrected all display text in forms, project details, and information boxes to show accurate 0.397 factor
+  * **Database Schema**: Updated default emission factor in database schema to match EUFD2025-001 standard
+  * **Complete Documentation Update**: All comments and documentation now reference correct emission factor from EUFD2025-001 Section 6.2
+  * **User Interface Updates**: Fixed all hardcoded emission factor displays in project forms, calculation results, and methodology explanations
+  * **Data Integrity Maintained**: Ensured all existing and new CO₂ calculations use authentic Italian emission factors per user-provided specifications
+
+- **Dashboard UX Consolidation Completed**: Successfully eliminated "My Projects" redundancy and integrated unified project management (July 29, 2025):
+  * **Removed Redundant "My Projects" Button**: Eliminated separate "My Projects" modal that duplicated dashboard functionality
+  * **Integrated View-Details Buttons**: Added direct "Dettagli" buttons to each project in the main dashboard project list
+  * **Unified Project Display**: Dashboard now shows project statistics (Total, Active, Completed) AND detailed project list in single cohesive interface
+  * **Enhanced Project Access**: Users can now view project details directly from dashboard without navigating through separate modal
+  * **Streamlined Navigation**: Replaced "My Projects" with "Nuovo Progetto" button for cleaner user flow
+  * **Container Overflow Fix**: Resolved UI container issues while implementing consolidated project management
+
 ## Recent Changes (July 28, 2025)
 
 - **Complete English Translation System Restoration** (July 28, 2025):
