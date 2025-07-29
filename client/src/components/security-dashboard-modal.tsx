@@ -382,7 +382,7 @@ Authorized by ALPHAG8 Switzerland Technology
                       {t('extend-account')}
                     </Button>
                     <div className="text-xs text-green-600">
-                      {t('renewal')}: €17{t('per-year')}
+                      {t('renewal')}: €12 + VAT {t('per-year')}
                     </div>
                   </div>
                 </div>

@@ -1849,7 +1849,6 @@ export const translations = {
     'pricing-note-ext': 'Pricing Note',
     'first-time-creation-fee': 'First-time account creation fee',
     'only-applies-initial': 'only applies to initial registration',
-    'extensions-cost': 'Account extensions cost',
     'per-year-ext': 'per year',
     'select-payment-method-ext': 'Select Payment Method',
     'credit-card-ext': 'Credit Card',
