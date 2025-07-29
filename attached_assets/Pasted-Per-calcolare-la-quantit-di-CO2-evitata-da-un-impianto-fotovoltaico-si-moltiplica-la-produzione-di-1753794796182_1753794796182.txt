@@ -1,0 +1,36 @@
+Per calcolare la quantità di CO2 evitata da un impianto fotovoltaico, si moltiplica la produzione di energia
+(kWh) per un fattore di emissione medio che rappresenta la quantità di CO2 emessa per produrre un kWh
+di energia da fonti non rinnovabili. Questo fattore, in Italia, si aggira intorno a 0.53 kg di CO2 per kWh.
+Quindi, per stimare le emissioni evitate, si moltiplica la produzione annua di kWh dell'impianto fotovoltaico
+per questo fattore. 
+Calcolo dettagliato:
+ Determinare la produzione di energia: Si calcola la quantità di energia elettrica (kWh) prodotta 
+annualmente dall'impianto fotovoltaico.
+ Fattore di emissione: Si utilizza un fattore di emissione medio per la produzione di energia elettrica 
+da fonti non rinnovabili, che in Italia è di circa 0.53 kg di CO	2  per kWh.
+ Calcolo delle emissioni evitate: Si moltiplica la produzione annua di kWh per il fattore di emissione. 
+Esempio:
+Se un impianto fotovoltaico produce 3000 kWh all'anno, le emissioni di CO	2  evitate sarebbero:
+3000 kWh * 0.53 kg CO2/kWh = 1590 kg di CO2, o 1.59 tonnellate di CO	2 . 
+Importante:   Questo   è   un   calcolo   semplificato.   Esistono   approcci   più   precisi   che   tengono   conto   del   mix
+energetico specifico di una data regione e del ciclo di vita dell'impianto fotovoltaico, inclusa la produzione
+dei   pannelli.   Tuttavia,   il   metodo   descritto   sopra   fornisce   una   stima   utile   per   comprendere   l'impatto
+ambientale positivo del fotovoltaico. 
+Altri fattori da considerare:
+Impronta carbonica dei pannelli:
+ I   pannelli   fotovoltaici,   come   tutti   i   prodotti,   hanno   un'impronta   carbonica   legata   alla   loro
+produzione, trasporto e installazione. Tuttavia, il lungo ciclo di vita di un impianto solare (circa 30
+anni) fa sì che queste emissioni iniziali siano ampiamente compensate dai benefici a lungo termine. 
+ Efficienza dell'impianto:
+ La   quantità   di   energia   prodotta   da   un   impianto   fotovoltaico   dipende   da   vari   fattori,   tra   cui
+l'irraggiamento solare, l'orientamento e l'inclinazione dei pannelli, e l'efficienza dei pannelli stessi. 
+ Fattore di emissione specifico:
+ Il fattore di emissione può variare a seconda del mix energetico della rete elettrica locale. Alcuni
+studi   utilizzano   un   approccio   "market-based"   che   considera   il   mix   energetico   netto   delle   fonti
+rinnovabili. 
+ In sintesi, il calcolo delle emissioni di CO2 evitate da un impianto fotovoltaico è un processo che
+tiene conto della produzione di energia, del fattore di emissione e, potenzialmente, di altri fattori
+specifici.​
+Q.ta Energia prodotta kWh
+Fattore moltiplicativo per la determinazione della CO2
+CO2 risparmiata
