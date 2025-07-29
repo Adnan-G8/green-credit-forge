@@ -113,7 +113,7 @@ export function Navigation() {
                 onClick={() => setLocation('/dashboard')}
                 className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
-                {t('dashboard')}
+                Dashboard
               </button>
 
             </div>
@@ -263,6 +263,16 @@ export function Navigation() {
                   className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
                   {t('nav-contact')}
+                </button>
+                
+                <button
+                  onClick={() => {
+                    setLocation('/dashboard');
+                    setIsOpen(false);
+                  }}
+                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
+                >
+                  Dashboard
                 </button>
                 
                 {/* Clean Mobile Navigation */}
