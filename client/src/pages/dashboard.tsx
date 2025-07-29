@@ -11,6 +11,8 @@ import { SecurityDashboardModal } from '@/components/security-dashboard-modal';
 import { OrganizationInformationModal } from '@/components/organization-information-modal';
 import { CertificationPricingModal } from '@/components/certification-pricing-modal';
 import { AdminUserManagementModal } from '@/components/admin-user-management-modal';
+import { ProjectCreationModal } from '@/components/project-creation-modal';
+import { MyProjectsDisplay } from '@/components/my-projects-display';
 
 
 export default function Dashboard() {
@@ -25,6 +27,8 @@ export default function Dashboard() {
   const [showOrganizationInfo, setShowOrganizationInfo] = useState(false);
   const [showPricingInfo, setShowPricingInfo] = useState(false);
   const [showAdminPanel, setShowAdminPanel] = useState(false);
+  const [showProjectCreation, setShowProjectCreation] = useState(false);
+  const [showMyProjects, setShowMyProjects] = useState(false);
 
   const [currentUserRole, setCurrentUserRole] = useState('FAGRI Member');
 
@@ -112,13 +116,11 @@ export default function Dashboard() {
 
   // Replace the empty second screen with functional dashboard navigation
   const handleViewProjects = () => {
-    // Navigate to projects view
-    console.log('View Projects clicked');
+    setShowMyProjects(true);
   };
 
   const handleUploadProject = () => {
-    // Open project upload modal
-    console.log('Upload Project clicked');
+    setShowProjectCreation(true);
   };
 
   const handleOrganizationInformation = () => {
@@ -443,6 +445,47 @@ export default function Dashboard() {
         currentUserRole={currentUserRole}
       />
 
+      {/* Project Creation Modal */}
+      <ProjectCreationModal
+        isOpen={showProjectCreation}
+        onClose={() => setShowProjectCreation(false)}
+        alphaG8Id={alphaG8Id}
+        onProjectCreated={() => {
+          // Refresh projects list when new project is created
+          setShowProjectCreation(false);
+          setShowMyProjects(true);
+          // Dispatch custom event to refresh projects
+          window.dispatchEvent(new Event('projectsUpdated'));
+        }}
+      />
+
+      {/* My Projects Display Modal */}
+      {showMyProjects && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-6xl h-[90vh] overflow-hidden">
+            <div className="flex items-center justify-between p-6 border-b">
+              <h2 className="text-2xl font-bold text-gray-900">{t('my-projects')}</h2>
+              <Button
+                variant="outline"
+                onClick={() => setShowMyProjects(false)}
+                className="flex items-center gap-2"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                {t('back-to-dashboard')}
+              </Button>
+            </div>
+            <div className="p-6 overflow-y-auto h-full">
+              <MyProjectsDisplay 
+                userId={alphaG8Id}
+                onCreateNew={() => {
+                  setShowMyProjects(false);
+                  setShowProjectCreation(true);
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
