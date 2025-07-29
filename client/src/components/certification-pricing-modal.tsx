@@ -174,7 +174,7 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
                   </div>
                   <div>
                     <span className="font-medium text-slate-700">Email:</span>
-                    <br />fagridigital@gmail.com
+                    <br />Contact@fagri.digital
                   </div>
                   <div>
                     <span className="font-medium text-slate-700">PEC:</span>
