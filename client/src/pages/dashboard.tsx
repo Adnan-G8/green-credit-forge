@@ -13,7 +13,7 @@ import { CertificationPricingModal } from '@/components/certification-pricing-mo
 import { AdminUserManagementModal } from '@/components/admin-user-management-modal';
 import { ProjectCreationModal } from '@/components/project-creation-modal';
 import { MyProjectsDisplay } from '@/components/my-projects-display';
-import KYCUploadSectionRedesigned from '@/components/kyc-upload-section-redesigned';
+import KYCAlphaG8Integration from '@/components/kyc-alphag8-integration';
 import { PaymentStatusSection } from '@/components/payment-status-section';
 import { AuditTrailDisplay } from '@/components/audit-trail-display';
 
@@ -525,10 +525,15 @@ export default function Dashboard() {
         }}
       />
 
-      {/* KYC Upload Section Redesigned Modal */}
-      <KYCUploadSectionRedesigned 
+      {/* KYC ALPHAG8 Integration Modal */}
+      <KYCAlphaG8Integration 
         isOpen={showKycSection}
         onClose={() => setShowKycSection(false)}
+        userRole={currentUserRole}
+        onIdKeyGenerated={(idKey) => {
+          setAlphaG8Id(idKey);
+          loadUserData(idKey);
+        }}
       />
 
       {/* Payment Status Section Modal */}
