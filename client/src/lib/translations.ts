@@ -1739,6 +1739,18 @@ export const translations = {
     'copy-id-key': 'Copy ID KEY',
     'download-certificate': 'Download Certificate',
     'close': 'Close',
+    'session-protected-swiss-security': 'Your session is protected by Swiss banking-level security protocols.',
+    'verify-now': 'Verify Now',
+    '3fa-status': '3FA Status',
+    'active-verified': 'Active - Verified',
+    'full-platform-access': 'Full platform access',
+    'verify-current-account-access': 'Verify who currently has access to this account',
+    'current-permissions': 'Current Permissions',
+    'view-projects': 'View Projects',
+    'create-projects': 'Create Projects',
+    'pricing-access': 'Pricing Access',
+    'dashboard-access': 'Dashboard Access',
+    'session-management': 'Session Management',
 
     // Contact section missing English translations
     'contact-general-title': 'General Inquiries',
