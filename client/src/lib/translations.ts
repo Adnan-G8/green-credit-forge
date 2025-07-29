@@ -1649,6 +1649,24 @@ export const translations = {
     'fagri-digital-represents-ecosystem': 'FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members and future generations.',
     'renewable-download-description': 'Download the complete FAGRI DIGITAL - EUFD2025-001 document for CO₂ certification',
 
+    // CO2 Certification English translations
+    'co2-cert-title': 'Your Trusted Partner for CO₂ Certification',
+    'co2-cert-subtitle': 'On the FAGRI.Digital platform, CO₂ certification is built on foundations of scientific rigor, cutting-edge technology and solid legal compliance.',
+    'co2-cert-framework-title': 'Our Collaborative Framework',
+    'co2-cert-framework-description': 'Our CO₂ certification process operates under the EUFD2025-001 standard, developed over years of research with important Italian universities and our technology partner, ALPHAG8 Digital Solutions Switzerland.',
+    'co2-cert-partner-eu': 'European Commission',
+    'co2-cert-partner-eu-desc': 'Alignment with the EU\'s comprehensive climate policies and objectives.',
+    'co2-cert-partner-ministry': 'Italian Ministry of Environment',
+    'co2-cert-partner-ministry-desc': 'Ensuring compliance with national environmental regulations.',
+    'co2-cert-partner-gse': 'GSE (Energy Systems Operator)',
+    'co2-cert-partner-gse-desc': 'Integration with established energy and emissions management frameworks.',
+    'co2-cert-partner-iso': 'ISO (International Organization for Standardization)',
+    'co2-cert-partner-iso-desc': 'Maintaining globally recognized quality and procedural benchmarks.',
+    'co2-cert-partner-uni': 'University of Tuscia at Viterbo',
+    'co2-cert-partner-uni-desc': 'Scientific partnership with this important Italian university for research and validation of our EUFD2025-001 certification methodologies.',
+    'co2-cert-partner-soil': 'SOIL AND HEALTH',
+    'co2-cert-partner-soil-desc': 'Our dedicated certification body for verification and independent validation.',
+
     // Contact section missing English translations
     'contact-general-title': 'General Inquiries',
     'contact-membership-title': 'Join F.AGR.I. - Filiera Agricola Italiana',
