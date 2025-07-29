@@ -1607,6 +1607,15 @@ export const translations = {
     'emp-resistant-bunkers': 'EMP-resistant military bunkers',
     'autonomous-power-cooling': 'Autonomous power and cooling systems',
     'multi-ton-security-doors': 'Multi-ton security doors with biometric access',
+    
+    // Data Sovereignty Main Description English
+    'your-data-fortress-swiss': 'Your Data. Our Fortress. Swiss Precision for a Global Platform. Our infrastructure is designed to connect nations worldwide and enable international applications. To ensure maximum data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management.',
+    
+    // Alpine Security Blockchain Section English
+    'alpine-security-global-blockchain': 'Alpine Security Meets Global Blockchain Governance',
+    'first-time-blockchain-validators': 'For the first time, blockchain validators are managed jointly by institutions, social organizations and partners from multiple countries — all with equal rights and shared responsibilities.',
+    'housed-swiss-mountain-data': 'Hosted in Swiss mountain data centers with banking-level security, our 51-node blockchain ensures integrity, resilience and data sovereignty.',
+    'fagri-digital-combines-physical': 'FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and reliable infrastructure for CO₂ certification and agricultural data for tomorrow\'s world.',
     'renewable-download-description': 'Download the complete FAGRI DIGITAL - EUFD2025-001 document for CO₂ certification',
 
     // Contact section
