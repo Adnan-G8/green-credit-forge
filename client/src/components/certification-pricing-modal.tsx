@@ -125,14 +125,14 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Individual Accounts */}
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                <h4 className="text-lg font-medium text-blue-900 mb-4">Individual Accounts</h4>
+                <h4 className="text-lg font-medium text-blue-900 mb-4">Account Individuali</h4>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-blue-800 font-medium">Gesamtkosten Eröffnung: €20.74</span>
+                    <span className="text-blue-800 font-medium">Costo totale all'apertura: €20.74</span>
                   </div>
                   <div className="bg-white border border-blue-200 rounded-lg p-4 space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-blue-700">Digitaler Fingerprint</span>
+                      <span className="text-blue-700">Impronta Digitale</span>
                       <span className="text-blue-800 font-medium">€5.00</span>
                     </div>
                     <div className="flex justify-between">
@@ -141,31 +141,31 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
                     </div>
                     <div className="border-t border-blue-200 pt-2">
                       <div className="flex justify-between">
-                        <span className="text-blue-600 text-xs">Deutsche MwSt (22%)</span>
+                        <span className="text-blue-600 text-xs">IVA italiana (22%)</span>
                         <span className="text-blue-800 font-medium">€3.74</span>
                       </div>
                     </div>
                     <div className="border-t border-blue-300 pt-2 mt-2 bg-blue-100 -mx-4 px-4 py-2 rounded">
                       <div className="flex justify-between items-center">
-                        <span className="font-bold text-blue-900">GESAMTBETRAG ZU ÜBERWEISEN:</span>
+                        <span className="font-bold text-blue-900">IMPORTO TOTALE DA VERSARE:</span>
                         <span className="font-bold text-xl text-blue-900">€20.74</span>
                       </div>
                     </div>
-                    <p className="text-xs text-blue-500 italic mt-2">Für persönliche Nutzung ohne zusätzliche Projekte</p>
+                    <p className="text-xs text-blue-500 italic mt-2">Per uso personale senza progetti aggiuntivi</p>
                   </div>
                 </div>
               </div>
 
               {/* Corporate Accounts */}
               <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                <h4 className="text-lg font-medium text-green-900 mb-4">Company Accounts</h4>
+                <h4 className="text-lg font-medium text-green-900 mb-4">Account Aziendali</h4>
                 <div className="space-y-3 text-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-green-800 font-medium">Gesamtkosten Eröffnung: €51.24</span>
+                    <span className="text-green-800 font-medium">Costo totale all'apertura: €51.24</span>
                   </div>
                   <div className="bg-white border border-green-200 rounded-lg p-4 space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-green-700">Fingerprint + Registrierung</span>
+                      <span className="text-green-700">Impronta + Registrazione</span>
                       <span className="text-green-800 font-medium">€12.00</span>
                     </div>
                     <div className="flex justify-between">
@@ -174,20 +174,20 @@ export function CertificationPricingModal({ isOpen, onClose }: CertificationPric
                     </div>
                     <div className="border-t border-green-200 pt-2">
                       <div className="flex justify-between">
-                        <span className="text-green-600 text-xs">Deutsche MwSt (22%)</span>
+                        <span className="text-green-600 text-xs">IVA italiana (22%)</span>
                         <span className="text-green-800 font-medium">€9.24</span>
                       </div>
                     </div>
                     <div className="border-t border-green-300 pt-2 mt-2 bg-green-100 -mx-4 px-4 py-2 rounded">
                       <div className="flex justify-between items-center">
-                        <span className="font-bold text-green-900">GESAMTBETRAG ZU ÜBERWEISEN:</span>
+                        <span className="font-bold text-green-900">IMPORTO TOTALE DA VERSARE:</span>
                         <span className="font-bold text-xl text-green-900">€51.24</span>
                       </div>
                     </div>
                     <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded-lg">
-                      <p className="text-xs text-amber-800"><strong>Inklusive:</strong> 1 Projekt enthalten</p>
-                      <p className="text-xs text-amber-800"><strong>Jedes weitere Projekt:</strong> €14.64 pro Jahr (€12.00 + 22% MwSt)</p>
-                      <p className="text-xs text-amber-700 mt-1 font-medium">Zusätzliche Projekte werden separat in Rechnung gestellt und jährlich abgerechnet.</p>
+                      <p className="text-xs text-amber-800"><strong>Incluso:</strong> 1 progetto compreso</p>
+                      <p className="text-xs text-amber-800"><strong>Ogni progetto aggiuntivo:</strong> €14.64 all'anno (€12.00 + IVA 22%)</p>
+                      <p className="text-xs text-amber-700 mt-1 font-medium">I progetti aggiuntivi vengono fatturati separatamente e addebitati annualmente.</p>
                     </div>
                   </div>
                 </div>
