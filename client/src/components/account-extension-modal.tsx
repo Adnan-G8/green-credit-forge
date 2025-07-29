@@ -236,7 +236,7 @@ This is an official receipt for tax purposes.
   if (currentStep === 'receipt' && receipt) {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-2xl font-light text-green-900">
               <Check className="h-6 w-6 text-green-600" />
@@ -317,17 +317,17 @@ This is an official receipt for tax purposes.
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl">
-        <DialogHeader>
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader className="sticky top-0 bg-white z-10 pb-4 border-b border-slate-200">
           <DialogTitle className="flex items-center gap-2 text-2xl font-light text-slate-900">
             <Clock className="h-6 w-6 text-green-600" />
             {t('extend-account')}
           </DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-6">
+        <div className="space-y-4 py-4">
           {/* Current Status */}
-          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
             <h4 className="font-semibold text-slate-900 mb-4 flex items-center gap-2">
               <Calendar className="h-5 w-5 text-blue-600" />
               {t('current-account-status')}
@@ -355,7 +355,7 @@ This is an official receipt for tax purposes.
           </div>
 
           {/* Pricing Information */}
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
             <h4 className="font-semibold text-blue-900 mb-4 flex items-center gap-2">
               <Euro className="h-5 w-5 text-blue-600" />
               {t('pricing-breakdown')}
@@ -376,7 +376,7 @@ This is an official receipt for tax purposes.
                 </div>
               </div>
             </div>
-            <div className="mt-4 p-3 bg-blue-100 rounded-lg">
+            <div className="mt-3 p-2 bg-blue-100 rounded-lg">
               <p className="text-xs text-blue-800">
                 <strong>{t('pricing-note')}:</strong> {t('first-time-creation-fee')} (€5) {t('only-applies-initial')}. 
                 {t('extensions-cost')} €12 {t('per-year')} + VAT.
@@ -386,7 +386,7 @@ This is an official receipt for tax purposes.
 
           {/* Step Content */}
           {currentStep === 'selection' && (
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
+            <div className="bg-white border border-slate-200 rounded-xl p-4">
               <h4 className="font-semibold text-slate-900 mb-4">
                 {t('select-payment-method-ext')}
               </h4>
@@ -419,8 +419,8 @@ This is an official receipt for tax purposes.
 
           {/* Credit Card Form */}
           {currentStep === 'card-form' && (
-            <div className="space-y-6">
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
+            <div className="space-y-4">
+              <div className="bg-white border border-slate-200 rounded-xl p-4">
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="font-semibold text-slate-900 flex items-center gap-2">
                     <CreditCard className="h-5 w-5 text-green-600" />
@@ -437,7 +437,7 @@ This is an official receipt for tax purposes.
                   </Button>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div>
                     <Label htmlFor="cardholderName">{t('cardholder-name')} *</Label>
                     <Input
@@ -528,7 +528,7 @@ This is an official receipt for tax purposes.
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
                   <div className="flex items-start gap-3">
                     <AlertCircle className="h-5 w-5 text-amber-600 mt-0.5" />
                     <div>
@@ -540,7 +540,7 @@ This is an official receipt for tax purposes.
                   </div>
                 </div>
 
-                <div className="mt-6 flex gap-4">
+                <div className="mt-4 flex gap-4">
                   <Button
                     onClick={processCardPayment}
                     disabled={!validateCardForm()}
@@ -556,8 +556,8 @@ This is an official receipt for tax purposes.
 
           {/* Bank Transfer Form */}
           {currentStep === 'bank-form' && (
-            <div className="space-y-6">
-              <div className="bg-white border border-slate-200 rounded-xl p-6">
+            <div className="space-y-4">
+              <div className="bg-white border border-slate-200 rounded-xl p-4">
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="font-semibold text-slate-900 flex items-center gap-2">
                     <Building className="h-5 w-5 text-blue-600" />
@@ -574,7 +574,7 @@ This is an official receipt for tax purposes.
                   </Button>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3">
                   <div>
                     <Label htmlFor="accountHolderName">{t('account-holder-name')} *</Label>
                     <Input
@@ -624,7 +624,7 @@ This is an official receipt for tax purposes.
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                   <h5 className="font-medium text-blue-900 mb-2">{t('bank-transfer-instructions')}</h5>
                   <div className="text-sm text-blue-800 space-y-1">
                     <p><strong>{t('recipient')}:</strong> FAGRI DIGITAL S.r.l.</p>
@@ -634,7 +634,7 @@ This is an official receipt for tax purposes.
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+                <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
                   <div className="flex items-start gap-3">
                     <AlertCircle className="h-5 w-5 text-amber-600 mt-0.5" />
                     <div>
@@ -646,7 +646,7 @@ This is an official receipt for tax purposes.
                   </div>
                 </div>
 
-                <div className="mt-6 flex gap-4">
+                <div className="mt-4 flex gap-4">
                   <Button
                     onClick={processBankTransfer}
                     disabled={!validateBankForm()}
@@ -662,7 +662,7 @@ This is an official receipt for tax purposes.
 
           {/* Processing Screen */}
           {currentStep === 'processing' && (
-            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-8 text-center">
+            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6 text-center">
               <div className="flex items-center justify-center gap-2 text-yellow-800">
                 <div className="animate-spin h-6 w-6 border-3 border-yellow-600 border-t-transparent rounded-full" />
                 <span className="font-medium text-lg">{t('processing-payment')}</span>
