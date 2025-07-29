@@ -285,6 +285,12 @@ export const co2Projects = pgTable("co2_projects", {
   renewableEnergyType: varchar("renewable_energy_type"), // For renewable energy projects
   renewableCapacity: varchar("renewable_capacity"), // MW/kW capacity
   
+  // CO₂ Calculation Fields for Renewable Energy (Italian Standard: 0.53 kg CO₂/kWh)
+  annualKwhProduction: integer("annual_kwh_production"), // Annual energy production in kWh
+  co2SavedPerYear: varchar("co2_saved_per_year"), // kg CO₂ saved per year as string
+  co2SavedLifetime: varchar("co2_saved_lifetime"), // kg CO₂ saved over 30 years as string
+  emissionFactor: varchar("emission_factor").default("0.53"), // Italian factor: 0.53 kg CO₂/kWh
+  
   // Certification Details
   estimatedCO2Reduction: varchar("estimated_co2_reduction"), // Tons of CO₂
   certificationStandard: varchar("certification_standard").default("EUFD2025-001"),

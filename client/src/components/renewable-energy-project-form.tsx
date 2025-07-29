@@ -40,6 +40,31 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
   const [technicalSpecs, setTechnicalSpecs] = useState('');
   
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // CO₂ Calculation States (Italian Standard: 0.53 kg CO₂/kWh)
+  const [annualKwhProduction, setAnnualKwhProduction] = useState('');
+  const [co2SavedPerYear, setCo2SavedPerYear] = useState('');
+  const [co2SavedLifetime, setCo2SavedLifetime] = useState('');
+
+  // Calculate CO2 reduction based on Italian methodology (0.53 kg CO₂/kWh)
+  useEffect(() => {
+    if (annualKwhProduction && !isNaN(Number(annualKwhProduction))) {
+      const kwhValue = Number(annualKwhProduction);
+      const italianEmissionFactor = 0.53; // kg CO₂/kWh for Italy
+      const solarLifetime = 30; // years
+      
+      const yearlyReduction = kwhValue * italianEmissionFactor;
+      const lifetimeReduction = yearlyReduction * solarLifetime;
+      
+      setCo2SavedPerYear(yearlyReduction.toFixed(2));
+      setCo2SavedLifetime(lifetimeReduction.toFixed(2));
+      setExpectedCO2Reduction((lifetimeReduction / 1000).toFixed(2)); // Convert to tons
+    } else {
+      setCo2SavedPerYear('');
+      setCo2SavedLifetime('');
+      setExpectedCO2Reduction('');
+    }
+  }, [annualKwhProduction]);
 
   // Calculate CO2 reduction based on EUFD2025-001 methodology
   useEffect(() => {
@@ -143,6 +168,11 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
         installedCapacity: parseFloat(electricalCapacity), // Legacy compatibility
         expectedCO2Reduction: parseFloat(expectedCO2Reduction),
         energyLocation: projectLocation,
+        // CO₂ Calculation Data (Italian Standard: 0.53 kg CO₂/kWh)
+        annualKwhProduction: Number(annualKwhProduction) || 0,
+        co2SavedPerYear: co2SavedPerYear,
+        co2SavedLifetime: co2SavedLifetime,
+        emissionFactor: "0.53",
         // Documentation fields
         installationDate,
         technicalSpecs,
@@ -283,6 +313,50 @@ export function RenewableEnergyProjectForm({ onBack, alphaG8Id, onProjectCreated
               required
             />
           </div>
+        </div>
+
+        {/* CO₂ Calculation Section (Italian Standard) */}
+        <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+          <h2 className="text-xl font-semibold text-green-900 mb-4 flex items-center gap-2">
+            <Calculator className="h-5 w-5" />
+            Calcolo CO₂ Evitata (Standard Italiano: 0.53 kg CO₂/kWh)
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <Label htmlFor="annualKwh">Produzione Annua Energia (kWh) *</Label>
+              <Input
+                id="annualKwh"
+                type="number"
+                value={annualKwhProduction}
+                onChange={(e) => setAnnualKwhProduction(e.target.value)}
+                placeholder="Es. 3000"
+                className="border-green-300 focus:border-green-500"
+              />
+              <p className="text-xs text-green-600 mt-1">
+                Inserisci la produzione energetica annuale stimata in kWh
+              </p>
+            </div>
+          </div>
+
+          {co2SavedPerYear && (
+            <div className="bg-white p-4 rounded-lg border border-green-300">
+              <h3 className="font-semibold text-green-800 mb-3">Risultati Calcolo CO₂:</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="text-center p-3 bg-green-100 rounded-lg">
+                  <div className="text-2xl font-bold text-green-700">{co2SavedPerYear} kg</div>
+                  <div className="text-sm text-green-600">CO₂ Evitata/Anno</div>
+                </div>
+                <div className="text-center p-3 bg-green-100 rounded-lg">
+                  <div className="text-2xl font-bold text-green-700">{(Number(co2SavedLifetime) / 1000).toFixed(2)} t</div>
+                  <div className="text-sm text-green-600">CO₂ Evitata/30 Anni</div>
+                </div>
+              </div>
+              <div className="text-xs text-green-600 mt-2 text-center">
+                * Calcolo basato su fattore di emissione italiano: 0.53 kg CO₂/kWh
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Renewable Energy Specific Fields (EUFD2025-001) */}

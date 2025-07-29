@@ -202,6 +202,37 @@ export function ProjectDetailsModal({ isOpen, onClose, project }: ProjectDetails
                     </div>
                     <p className="text-sm">€{project.investmentCapacity?.toLocaleString()}</p>
                   </div>
+
+                  {/* CO₂ Calculation Results for Renewable Energy Projects */}
+                  {project.projectType === 'renewable-energy' && project.co2SavedPerYear && (
+                    <>
+                      <div>
+                        <div className="flex items-center gap-2 text-sm font-medium text-green-700 mb-1">
+                          <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-green-100 text-green-600 text-xs">⚡</span>
+                          Produzione Annua
+                        </div>
+                        <p className="text-sm">{project.annualKwhProduction?.toLocaleString()} kWh/anno</p>
+                      </div>
+                      
+                      <div>
+                        <div className="flex items-center gap-2 text-sm font-medium text-green-700 mb-1">
+                          <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-green-100 text-green-600 text-xs">🌱</span>
+                          CO₂ Evitata/Anno
+                        </div>
+                        <p className="text-sm font-semibold text-green-800">{project.co2SavedPerYear} kg CO₂</p>
+                        <p className="text-xs text-gray-500">({(Number(project.co2SavedPerYear) / 1000).toFixed(2)} tonnellate)</p>
+                      </div>
+                      
+                      <div>
+                        <div className="flex items-center gap-2 text-sm font-medium text-green-700 mb-1">
+                          <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-green-100 text-green-600 text-xs">🔄</span>
+                          CO₂ Evitata/30 Anni
+                        </div>
+                        <p className="text-sm font-semibold text-green-800">{(Number(project.co2SavedLifetime) / 1000).toFixed(2)} t CO₂</p>
+                        <p className="text-xs text-gray-500">Standard Italiano: 0.53 kg CO₂/kWh</p>
+                      </div>
+                    </>
+                  )}
                   
                   <div>
                     <div className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-1">
