@@ -95,12 +95,12 @@ export function ContactSection() {
                   </h3>
                   
                   <div className="mb-6 p-4 bg-slate-50 rounded-lg border">
-                    <h4 className="font-semibold text-fagri-green mb-3">{t('contact-legal-office')}</h4>
+                    <h4 className="font-medium text-fagri-green mb-3">{t('contact-legal-office')}</h4>
                     <div className="text-sm text-gray-700 space-y-1">
-                      <p className="font-medium">Fagri Digital S.r.l.</p>
-                      <p>Via Isonzo 38, 00198 Roma (RM) – Italia</p>
-                      <p>C.F./P.IVA: 17843431002</p>
-                      <p>REA RM-1745329</p>
+                      <p className="font-normal">Fagri Digital S.r.l.</p>
+                      <p className="font-normal">Via Isonzo 38, 00198 Roma (RM) – Italia</p>
+                      <p className="font-normal">C.F./P.IVA: 17843431002</p>
+                      <p className="font-normal">REA RM-1745329</p>
                     </div>
                   </div>
                   
@@ -110,11 +110,11 @@ export function ContactSection() {
                         <Mail className="text-white h-6 w-6" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-fagri-green mb-2">
+                        <h4 className="font-medium text-fagri-green mb-2">
                           {t('contact-general-title')}
                         </h4>
-                        <p className="text-gray-700 font-mono">Contact@fagri.digital</p>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <p className="text-gray-700 font-normal">Contact@fagri.digital</p>
+                        <p className="text-sm text-gray-600 mt-1 font-normal">
                           {t('contact-general-description')}
                         </p>
                       </div>
@@ -124,11 +124,11 @@ export function ContactSection() {
                         <Users className="text-white h-6 w-6" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-fagri-green mb-2">
+                        <h4 className="font-medium text-fagri-green mb-2">
                           {t('contact-membership-title')}
                         </h4>
-                        <p className="text-gray-700 font-mono">Member@fagri.digital</p>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <p className="text-gray-700 font-normal">Member@fagri.digital</p>
+                        <p className="text-sm text-gray-600 mt-1 font-normal">
                           {t('contact-membership-info')}
                         </p>
                       </div>
@@ -136,7 +136,7 @@ export function ContactSection() {
                   </div>
 
                   <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h4 className="font-semibold text-fagri-green mb-4">{t('contact-membership-action')}</h4>
+                    <h4 className="font-medium text-fagri-green mb-4">{t('contact-membership-action')}</h4>
                     <Button
                       onClick={() => setShowMembershipModal(true)}
                       className="w-full bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-4 rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-3"
@@ -144,7 +144,7 @@ export function ContactSection() {
                       <Users className="h-5 w-5" />
                       <span>{t('contact-join-filiera')}</span>
                     </Button>
-                    <p className="text-sm text-gray-600 mt-3 text-center">
+                    <p className="text-sm text-gray-600 mt-3 text-center font-normal">
                       {t('contact-membership-description')}
                     </p>
                   </div>
