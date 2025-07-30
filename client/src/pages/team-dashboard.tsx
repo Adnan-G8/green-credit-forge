@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useToast } from '@/hooks/use-toast';
+import { Label } from '@/components/ui/label';
 import { useState, useEffect } from 'react';
 import { 
   Users, 
@@ -29,7 +30,10 @@ import {
   Send,
   CheckCircle,
   Clock,
-  AlertTriangle
+  AlertTriangle,
+  Camera,
+  Upload,
+  Image
 } from 'lucide-react';
 
 export default function TeamDashboard() {
@@ -39,9 +43,11 @@ export default function TeamDashboard() {
   // State management
   const [activeTab, setActiveTab] = useState<'dashboard' | 'profile' | 'messages' | 'todo'>('dashboard');
   const [showProfileEdit, setShowProfileEdit] = useState(false);
+  const [showPhotoUpload, setShowPhotoUpload] = useState(false);
   const [newTodoItem, setNewTodoItem] = useState('');
   const [newMessage, setNewMessage] = useState('');
   const [selectedConversation, setSelectedConversation] = useState<string | null>(null);
+  const [profilePhoto, setProfilePhoto] = useState<string | null>(null);
   
   // Profile data
   const [profileData, setProfileData] = useState({
@@ -435,26 +441,58 @@ export default function TeamDashboard() {
                           <User className="h-5 w-5" />
                           <span>{language === 'it' ? 'Il Mio Profilo' : 'My Profile'}</span>
                         </CardTitle>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => setShowProfileEdit(true)}
-                        >
-                          <Edit className="h-4 w-4 mr-2" />
-                          {language === 'it' ? 'Modifica' : 'Edit'}
-                        </Button>
+                        <div className="flex space-x-2">
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            onClick={() => setShowPhotoUpload(true)}
+                          >
+                            <Image className="h-4 w-4 mr-2" />
+                            {language === 'it' ? 'Cambia Foto' : 'Change Photo'}
+                          </Button>
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            disabled
+                            className="opacity-50 cursor-not-allowed"
+                            title={language === 'it' ? 'Solo amministratori possono modificare i dati del profilo' : 'Only administrators can edit profile data'}
+                          >
+                            <Edit className="h-4 w-4 mr-2" />
+                            {language === 'it' ? 'Modifica Dati' : 'Edit Data'}
+                          </Button>
+                        </div>
                       </div>
                     </CardHeader>
                     <CardContent className="space-y-6">
                       {/* Basic Info */}
                       <div className="flex items-center space-x-4">
-                        <div className="h-20 w-20 bg-blue-100 rounded-full flex items-center justify-center">
-                          <User className="h-10 w-10 text-blue-600" />
+                        <div className="relative">
+                          <div className="h-20 w-20 bg-blue-100 rounded-full flex items-center justify-center overflow-hidden">
+                            {profilePhoto ? (
+                              <img 
+                                src={profilePhoto} 
+                                alt="Profile" 
+                                className="h-full w-full object-cover"
+                              />
+                            ) : (
+                              <User className="h-10 w-10 text-blue-600" />
+                            )}
+                          </div>
+                          <Button
+                            size="sm"
+                            className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full p-0 bg-blue-600 hover:bg-blue-700"
+                            onClick={() => setShowPhotoUpload(true)}
+                          >
+                            <Camera className="h-3 w-3" />
+                          </Button>
                         </div>
                         <div>
                           <h3 className="text-xl font-semibold text-slate-800">{profileData.name}</h3>
                           <p className="text-slate-600">{profileData.role}</p>
                           <p className="text-sm text-slate-500">{profileData.department}</p>
+                          <Badge className="mt-1 bg-green-100 text-green-800 border-green-200">
+                            {language === 'it' ? 'Team Member' : 'Team Member'}
+                          </Badge>
                         </div>
                       </div>
                       
@@ -876,6 +914,133 @@ export default function TeamDashboard() {
                 </div>
               </div>
             )}
+
+            {/* Photo Upload Modal */}
+            <Dialog open={showPhotoUpload} onOpenChange={setShowPhotoUpload}>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center space-x-2">
+                    <Camera className="h-5 w-5" />
+                    <span>{language === 'it' ? 'Cambia Foto Profilo' : 'Change Profile Photo'}</span>
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4">
+                  {/* Current Photo Preview */}
+                  <div className="flex justify-center">
+                    <div className="h-32 w-32 bg-blue-100 rounded-full flex items-center justify-center overflow-hidden border-4 border-slate-200">
+                      {profilePhoto ? (
+                        <img 
+                          src={profilePhoto} 
+                          alt="Profile Preview" 
+                          className="h-full w-full object-cover"
+                        />
+                      ) : (
+                        <User className="h-16 w-16 text-blue-600" />
+                      )}
+                    </div>
+                  </div>
+                  
+                  {/* Upload Options */}
+                  <div className="space-y-3">
+                    <Label className="text-sm font-medium">
+                      {language === 'it' ? 'Scegli nuova foto:' : 'Choose new photo:'}
+                    </Label>
+                    
+                    <div className="grid grid-cols-2 gap-3">
+                      <Button
+                        variant="outline"
+                        className="flex flex-col items-center p-4 h-auto"
+                        onClick={() => {
+                          const input = document.createElement('input');
+                          input.type = 'file';
+                          input.accept = 'image/*';
+                          input.onchange = (e) => {
+                            const file = (e.target as HTMLInputElement).files?.[0];
+                            if (file) {
+                              const reader = new FileReader();
+                              reader.onload = (e) => {
+                                setProfilePhoto(e.target?.result as string);
+                                toast({
+                                  title: language === 'it' ? 'Foto Caricata' : 'Photo Uploaded',
+                                  description: language === 'it' ? 'La tua foto profilo è stata aggiornata' : 'Your profile photo has been updated',
+                                });
+                                setShowPhotoUpload(false);
+                              };
+                              reader.readAsDataURL(file);
+                            }
+                          };
+                          input.click();
+                        }}
+                      >
+                        <Upload className="h-6 w-6 mb-2" />
+                        <span className="text-xs">
+                          {language === 'it' ? 'Carica File' : 'Upload File'}
+                        </span>
+                      </Button>
+                      
+                      <Button
+                        variant="outline"
+                        className="flex flex-col items-center p-4 h-auto"
+                        onClick={() => {
+                          // Demo photos for testing
+                          const demoPhotos = [
+                            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
+                            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+                            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face'
+                          ];
+                          const randomPhoto = demoPhotos[Math.floor(Math.random() * demoPhotos.length)];
+                          setProfilePhoto(randomPhoto);
+                          toast({
+                            title: language === 'it' ? 'Foto Demo Selezionata' : 'Demo Photo Selected',
+                            description: language === 'it' ? 'Foto demo impostata come profilo' : 'Demo photo set as profile',
+                          });
+                          setShowPhotoUpload(false);
+                        }}
+                      >
+                        <Image className="h-6 w-6 mb-2" />
+                        <span className="text-xs">
+                          {language === 'it' ? 'Foto Demo' : 'Demo Photo'}
+                        </span>
+                      </Button>
+                    </div>
+                    
+                    {profilePhoto && (
+                      <Button
+                        variant="destructive"
+                        className="w-full"
+                        onClick={() => {
+                          setProfilePhoto(null);
+                          toast({
+                            title: language === 'it' ? 'Foto Rimossa' : 'Photo Removed',
+                            description: language === 'it' ? 'Foto profilo rimossa' : 'Profile photo removed',
+                          });
+                          setShowPhotoUpload(false);
+                        }}
+                      >
+                        <X className="h-4 w-4 mr-2" />
+                        {language === 'it' ? 'Rimuovi Foto' : 'Remove Photo'}
+                      </Button>
+                    )}
+                  </div>
+                  
+                  {/* Guidelines */}
+                  <div className="text-xs text-slate-600 space-y-1">
+                    <p>{language === 'it' ? 'Linee guida:' : 'Guidelines:'}</p>
+                    <ul className="list-disc list-inside space-y-1 text-xs">
+                      <li>{language === 'it' ? 'Formato: JPG, PNG o GIF' : 'Format: JPG, PNG or GIF'}</li>
+                      <li>{language === 'it' ? 'Dimensione massima: 5MB' : 'Max size: 5MB'}</li>
+                      <li>{language === 'it' ? 'Foto professionale consigliata' : 'Professional photo recommended'}</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="flex justify-end space-x-2">
+                    <Button variant="outline" onClick={() => setShowPhotoUpload(false)}>
+                      {language === 'it' ? 'Annulla' : 'Cancel'}
+                    </Button>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
