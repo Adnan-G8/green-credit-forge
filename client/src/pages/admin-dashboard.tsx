@@ -74,8 +74,11 @@ export function AdminDashboard() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRequest, setSelectedRequest] = useState<AuthorizationRequest | null>(null);
   const [showRequestModal, setShowRequestModal] = useState(false);
-  const [activeTab, setActiveTab] = useState<'requests' | 'activities' | 'users' | 'system'>('requests');
+  const [activeTab, setActiveTab] = useState<'requests' | 'activities' | 'team' | 'applications' | 'certifications' | 'system'>('requests');
   const [loading, setLoading] = useState(true);
+  const [teamMembers, setTeamMembers] = useState<any[]>([]);
+  const [applications, setApplications] = useState<any[]>([]);
+  const [certifications, setCertifications] = useState<any[]>([]);
 
   useEffect(() => {
     loadDashboardData();
@@ -104,6 +107,27 @@ export function AdminDashboard() {
       if (metricsResponse.ok) {
         const metricsData = await metricsResponse.json();
         setSystemMetrics(metricsData.metrics || null);
+      }
+
+      // Load team members
+      const teamResponse = await fetch('/api/admin/team-members');
+      if (teamResponse.ok) {
+        const teamData = await teamResponse.json();
+        setTeamMembers(teamData.members || []);
+      }
+
+      // Load applications
+      const appsResponse = await fetch('/api/admin/applications');
+      if (appsResponse.ok) {
+        const appsData = await appsResponse.json();
+        setApplications(appsData.applications || []);
+      }
+
+      // Load certifications
+      const certsResponse = await fetch('/api/admin/certifications');
+      if (certsResponse.ok) {
+        const certsData = await certsResponse.json();
+        setCertifications(certsData.certifications || []);
       }
 
     } catch (error) {
@@ -159,6 +183,24 @@ export function AdminDashboard() {
   const filteredActivities = userActivities.filter(activity =>
     activity.fagriId.toLowerCase().includes(searchTerm.toLowerCase()) ||
     activity.action.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredTeamMembers = teamMembers.filter(member =>
+    member.fagriId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    member.fullName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    member.email?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredApplications = applications.filter(app =>
+    app.fagriId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    app.projectName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    app.projectType?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredCertifications = certifications.filter(cert =>
+    cert.fagriId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    cert.projectName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    cert.certificateNumber?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   if (loading) {
@@ -317,11 +359,25 @@ export function AdminDashboard() {
                   {language === 'it' ? 'Attività' : 'Activities'}
                 </Button>
                 <Button
-                  variant={activeTab === 'users' ? 'default' : 'outline'}
-                  onClick={() => setActiveTab('users')}
+                  variant={activeTab === 'team' ? 'default' : 'outline'}
+                  onClick={() => setActiveTab('team')}
                   size="sm"
                 >
-                  {language === 'it' ? 'Utenti' : 'Users'}
+                  {language === 'it' ? 'Team' : 'Team'}
+                </Button>
+                <Button
+                  variant={activeTab === 'applications' ? 'default' : 'outline'}
+                  onClick={() => setActiveTab('applications')}
+                  size="sm"
+                >
+                  {language === 'it' ? 'Applicazioni' : 'Applications'}
+                </Button>
+                <Button
+                  variant={activeTab === 'certifications' ? 'default' : 'outline'}
+                  onClick={() => setActiveTab('certifications')}
+                  size="sm"
+                >
+                  {language === 'it' ? 'Certificazioni' : 'Certifications'}
                 </Button>
                 <Button
                   variant={activeTab === 'system' ? 'default' : 'outline'}
@@ -468,6 +524,207 @@ export function AdminDashboard() {
                 </CardContent>
               </Card>
             )}
+
+            {activeTab === 'team' && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Users className="h-5 w-5" />
+                    <span>{language === 'it' ? 'Gestione Team' : 'Team Management'}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {filteredTeamMembers.length === 0 ? (
+                    <div className="text-center py-8">
+                      <Users className="h-12 w-12 text-slate-400 mx-auto mb-4" />
+                      <p className="text-slate-600">
+                        {language === 'it' ? 'Nessun membro del team trovato' : 'No team members found'}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {filteredTeamMembers.map((member) => (
+                        <div key={member.id} className="border rounded-lg p-4 hover:bg-slate-50 transition-colors">
+                          <div className="flex items-center justify-between">
+                            <div className="space-y-1">
+                              <div className="flex items-center space-x-3">
+                                <h3 className="font-medium text-slate-800">{member.fullName}</h3>
+                                <Badge className="bg-blue-100 text-blue-800 border-blue-200">
+                                  {member.role}
+                                </Badge>
+                                <Badge
+                                  className={
+                                    member.status === 'active' ? 'bg-green-100 text-green-800 border-green-200' :
+                                    member.status === 'inactive' ? 'bg-gray-100 text-gray-800 border-gray-200' : 
+                                    'bg-orange-100 text-orange-800 border-orange-200'
+                                  }
+                                >
+                                  {member.status === 'active' && (language === 'it' ? 'Attivo' : 'Active')}
+                                  {member.status === 'inactive' && (language === 'it' ? 'Inattivo' : 'Inactive')}
+                                  {member.status === 'suspended' && (language === 'it' ? 'Sospeso' : 'Suspended')}
+                                </Badge>
+                              </div>
+                              <p className="text-sm text-slate-600">ALPHAG8 ID: {member.fagriId}</p>
+                              <p className="text-sm text-slate-600">Email: {member.email}</p>
+                              <p className="text-sm text-slate-600">{language === 'it' ? 'Ultimo accesso' : 'Last login'}: {new Date(member.lastLogin).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}</p>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <Button size="sm" variant="outline">
+                                <Eye className="h-4 w-4 mr-1" />
+                                {language === 'it' ? 'Dettagli' : 'Details'}
+                              </Button>
+                              <Button size="sm" variant="outline">
+                                <Settings className="h-4 w-4 mr-1" />
+                                {language === 'it' ? 'Gestisci' : 'Manage'}
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            )}
+
+            {activeTab === 'applications' && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <FileText className="h-5 w-5" />
+                    <span>{language === 'it' ? 'Gestione Applicazioni' : 'Application Management'}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {filteredApplications.length === 0 ? (
+                    <div className="text-center py-8">
+                      <FileText className="h-12 w-12 text-slate-400 mx-auto mb-4" />
+                      <p className="text-slate-600">
+                        {language === 'it' ? 'Nessuna applicazione trovata' : 'No applications found'}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {filteredApplications.map((app) => (
+                        <div key={app.id} className="border rounded-lg p-4 hover:bg-slate-50 transition-colors">
+                          <div className="flex items-center justify-between">
+                            <div className="space-y-1">
+                              <div className="flex items-center space-x-3">
+                                <h3 className="font-medium text-slate-800">{app.projectName}</h3>
+                                <Badge className="bg-purple-100 text-purple-800 border-purple-200">
+                                  {app.projectType}
+                                </Badge>
+                                <Badge
+                                  className={
+                                    app.status === 'approved' ? 'bg-green-100 text-green-800 border-green-200' :
+                                    app.status === 'rejected' ? 'bg-red-100 text-red-800 border-red-200' : 
+                                    'bg-orange-100 text-orange-800 border-orange-200'
+                                  }
+                                >
+                                  {app.status === 'pending' && (language === 'it' ? 'In Attesa' : 'Pending')}
+                                  {app.status === 'approved' && (language === 'it' ? 'Approvato' : 'Approved')}
+                                  {app.status === 'rejected' && (language === 'it' ? 'Rifiutato' : 'Rejected')}
+                                </Badge>
+                              </div>
+                              <p className="text-sm text-slate-600">ALPHAG8 ID: {app.fagriId}</p>
+                              <p className="text-sm text-slate-600">{language === 'it' ? 'Sottomesso' : 'Submitted'}: {new Date(app.submittedAt).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}</p>
+                              <p className="text-sm text-slate-600">CO₂ {language === 'it' ? 'Stimato' : 'Estimated'}: {app.estimatedCO2}t</p>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <Button size="sm" variant="outline">
+                                <Eye className="h-4 w-4 mr-1" />
+                                {language === 'it' ? 'Dettagli' : 'Details'}
+                              </Button>
+                              {app.status === 'pending' && (
+                                <>
+                                  <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                                    <CheckCircle className="h-4 w-4 mr-1" />
+                                    {language === 'it' ? 'Approva' : 'Approve'}
+                                  </Button>
+                                  <Button size="sm" variant="destructive">
+                                    <XCircle className="h-4 w-4 mr-1" />
+                                    {language === 'it' ? 'Rifiuta' : 'Reject'}
+                                  </Button>
+                                </>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            )}
+
+            {activeTab === 'certifications' && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Shield className="h-5 w-5" />
+                    <span>{language === 'it' ? 'Gestione Certificazioni' : 'Certification Management'}</span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {filteredCertifications.length === 0 ? (
+                    <div className="text-center py-8">
+                      <Shield className="h-12 w-12 text-slate-400 mx-auto mb-4" />
+                      <p className="text-slate-600">
+                        {language === 'it' ? 'Nessuna certificazione trovata' : 'No certifications found'}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {filteredCertifications.map((cert) => (
+                        <div key={cert.id} className="border rounded-lg p-4 hover:bg-slate-50 transition-colors">
+                          <div className="flex items-center justify-between">
+                            <div className="space-y-1">
+                              <div className="flex items-center space-x-3">
+                                <h3 className="font-medium text-slate-800">{cert.projectName}</h3>
+                                <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200">
+                                  {cert.certificateNumber}
+                                </Badge>
+                                <Badge
+                                  className={
+                                    cert.status === 'valid' ? 'bg-green-100 text-green-800 border-green-200' :
+                                    cert.status === 'expired' ? 'bg-red-100 text-red-800 border-red-200' : 
+                                    'bg-orange-100 text-orange-800 border-orange-200'
+                                  }
+                                >
+                                  {cert.status === 'valid' && (language === 'it' ? 'Valido' : 'Valid')}
+                                  {cert.status === 'expired' && (language === 'it' ? 'Scaduto' : 'Expired')}
+                                  {cert.status === 'pending' && (language === 'it' ? 'In Elaborazione' : 'Processing')}
+                                </Badge>
+                              </div>
+                              <p className="text-sm text-slate-600">ALPHAG8 ID: {cert.fagriId}</p>
+                              <p className="text-sm text-slate-600">{language === 'it' ? 'Emesso' : 'Issued'}: {new Date(cert.issuedAt).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}</p>
+                              <p className="text-sm text-slate-600">{language === 'it' ? 'Scadenza' : 'Expires'}: {new Date(cert.expiresAt).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}</p>
+                              <p className="text-sm text-slate-600">CO₂ {language === 'it' ? 'Certificato' : 'Certified'}: {cert.certifiedCO2}t</p>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <Button size="sm" variant="outline">
+                                <Eye className="h-4 w-4 mr-1" />
+                                {language === 'it' ? 'Dettagli' : 'Details'}
+                              </Button>
+                              <Button size="sm" variant="outline">
+                                <Download className="h-4 w-4 mr-1" />
+                                {language === 'it' ? 'Scarica' : 'Download'}
+                              </Button>
+                              {cert.status === 'valid' && (
+                                <Button size="sm" variant="outline">
+                                  <Lock className="h-4 w-4 mr-1" />
+                                  {language === 'it' ? 'Revoca' : 'Revoke'}
+                                </Button>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            )}
           </div>
 
           {/* Right Column - System Controls */}
@@ -480,9 +737,32 @@ export function AdminDashboard() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="outline" className="w-full justify-start" size="sm">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start" 
+                  size="sm"
+                  onClick={() => setActiveTab('team')}
+                >
                   <Users className="h-4 w-4 mr-2" />
-                  {language === 'it' ? 'Gestione Utenti' : 'User Management'}
+                  {language === 'it' ? 'Team Management' : 'Team Management'}
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start" 
+                  size="sm"
+                  onClick={() => setActiveTab('applications')}
+                >
+                  <FileText className="h-4 w-4 mr-2" />
+                  {language === 'it' ? 'Application Management' : 'Application Management'}
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start" 
+                  size="sm"
+                  onClick={() => setActiveTab('certifications')}
+                >
+                  <Shield className="h-4 w-4 mr-2" />
+                  {language === 'it' ? 'Certification Management' : 'Certification Management'}
                 </Button>
                 <Button variant="outline" className="w-full justify-start" size="sm">
                   <Database className="h-4 w-4 mr-2" />
@@ -490,11 +770,7 @@ export function AdminDashboard() {
                 </Button>
                 <Button variant="outline" className="w-full justify-start" size="sm">
                   <BarChart3 className="h-4 w-4 mr-2" />
-                  {language === 'it' ? 'Report Sistema' : 'System Reports'}
-                </Button>
-                <Button variant="outline" className="w-full justify-start" size="sm">
-                  <Shield className="h-4 w-4 mr-2" />
-                  {language === 'it' ? 'Configurazione Sicurezza' : 'Security Configuration'}
+                  {language === 'it' ? 'System Reports' : 'System Reports'}
                 </Button>
               </CardContent>
             </Card>
