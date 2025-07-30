@@ -64,11 +64,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/co2-certification">
-                  <span className="hover:text-emerald-400 transition-colors cursor-pointer">
-                    {t('footer-certification')}
-                  </span>
-                </Link>
+                <button 
+                  onClick={() => navigateToSection('platform')}
+                  className="hover:text-emerald-400 transition-colors cursor-pointer text-left"
+                >
+                  {t('footer-certification')}
+                </button>
               </li>
               <li>
                 <Link href="/security">
