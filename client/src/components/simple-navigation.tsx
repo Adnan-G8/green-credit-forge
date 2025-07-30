@@ -11,6 +11,9 @@ export function SimpleNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [location, navigate] = useLocation();
+  
+  // Force scrolled appearance on subpages
+  const forceScrolledAppearance = location !== '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +52,7 @@ export function SimpleNavigation() {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
+        (isScrolled || forceScrolledAppearance)
           ? 'bg-white/95 backdrop-blur-sm shadow-lg border-b border-slate-200' 
           : 'bg-transparent'
       }`}>
@@ -58,7 +61,7 @@ export function SimpleNavigation() {
             {/* Logo */}
             <div className="flex items-center space-x-4">
               <img 
-                src={isScrolled ? fagriGreenLogoPath : fagriWhiteLogoPath} 
+                src={(isScrolled || forceScrolledAppearance) ? fagriGreenLogoPath : fagriWhiteLogoPath} 
                 alt="FAGRI DIGITAL" 
                 className="h-20 w-auto transition-all duration-300"
               />
@@ -77,7 +80,7 @@ export function SimpleNavigation() {
                     }
                   }}
                   className={`text-sm font-light transition-colors duration-300 hover:text-emerald-400 ${
-                    isScrolled ? 'text-slate-700' : 'text-white'
+                    (isScrolled || forceScrolledAppearance) ? 'text-slate-700' : 'text-white'
                   }`}
                 >
                   {item.label}
@@ -88,7 +91,7 @@ export function SimpleNavigation() {
               <button
                 onClick={handleLanguageToggle}
                 className={`px-3 py-1 text-sm font-medium rounded-full border transition-all duration-300 ${
-                  isScrolled 
+                  (isScrolled || forceScrolledAppearance)
                     ? 'text-slate-700 border-slate-300 hover:bg-slate-100' 
                     : 'text-white border-white/50 hover:bg-white/10'
                 }`}
@@ -123,7 +126,7 @@ export function SimpleNavigation() {
               <button
                 onClick={handleLanguageToggle}
                 className={`px-2 py-1 text-xs font-medium rounded border transition-all duration-300 ${
-                  isScrolled 
+                  (isScrolled || forceScrolledAppearance)
                     ? 'text-slate-700 border-slate-300' 
                     : 'text-white border-white/50'
                 }`}
@@ -134,7 +137,7 @@ export function SimpleNavigation() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`p-2 rounded-lg transition-colors duration-300 ${
-                  isScrolled 
+                  (isScrolled || forceScrolledAppearance)
                     ? 'text-slate-700 hover:bg-slate-100' 
                     : 'text-white hover:bg-white/10'
                 }`}
