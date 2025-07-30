@@ -30,7 +30,12 @@ import {
   FileText,
   Lock,
   Unlock,
-  Download
+  Download,
+  MessageSquare,
+  Send,
+  User,
+  UserCog,
+  Building
 } from 'lucide-react';
 
 interface AuthorizationRequest {
@@ -88,6 +93,9 @@ export function AdminDashboard() {
   const [certifications, setCertifications] = useState<any[]>([]);
   const [selectedApplication, setSelectedApplication] = useState<any>(null);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
+  const [newComment, setNewComment] = useState('');
+  const [messageRecipient, setMessageRecipient] = useState<'team_member' | 'certification_authority' | 'project_owner'>('team_member');
+  const [newMessage, setNewMessage] = useState('');
 
   useEffect(() => {
     loadDashboardData();
@@ -1057,6 +1065,239 @@ export function AdminDashboard() {
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* Communication Center */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {/* Project Comments */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center space-x-2">
+                        <MessageSquare className="h-5 w-5" />
+                        <span>{language === 'it' ? 'Commenti Progetto' : 'Project Comments'}</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      {/* Comment History */}
+                      <div className="space-y-3 max-h-64 overflow-y-auto">
+                        {[
+                          {
+                            id: 1,
+                            user: 'ADMIN-001',
+                            userName: 'Admin Sistema',
+                            comment: language === 'it' ? 'Progetto necessita revisione documenti ISO 14064-2 entro venerdì.' : 'Project requires ISO 14064-2 document review by Friday.',
+                            timestamp: new Date(Date.now() - 2*60*60*1000).toISOString(),
+                            type: 'admin'
+                          },
+                          {
+                            id: 2,
+                            user: 'TM-001',
+                            userName: 'Alessandro Rossi',
+                            comment: language === 'it' ? 'Documenti rivisti - contattato cliente per calcoli aggiuntivi.' : 'Documents reviewed - contacted client for additional calculations.',
+                            timestamp: new Date(Date.now() - 1*60*60*1000).toISOString(),
+                            type: 'team_member'
+                          },
+                          {
+                            id: 3,
+                            user: 'CA-003',
+                            userName: 'Dr. Maria Bianchi',
+                            comment: language === 'it' ? 'Metodologia conforme agli standard. Approvazione certificazione prevista entro 48h.' : 'Methodology compliant with standards. Certification approval expected within 48h.',
+                            timestamp: new Date(Date.now() - 30*60*1000).toISOString(),
+                            type: 'certification'
+                          }
+                        ].map((comment) => (
+                          <div 
+                            key={comment.id} 
+                            className={`p-3 rounded-lg border-l-4 ${
+                              comment.type === 'admin' ? 'border-purple-400 bg-purple-50' :
+                              comment.type === 'team_member' ? 'border-blue-400 bg-blue-50' :
+                              'border-emerald-400 bg-emerald-50'
+                            }`}
+                          >
+                            <div className="flex justify-between items-start mb-2">
+                              <div className="flex items-center space-x-2">
+                                <div className={`w-2 h-2 rounded-full ${
+                                  comment.type === 'admin' ? 'bg-purple-500' :
+                                  comment.type === 'team_member' ? 'bg-blue-500' :
+                                  'bg-emerald-500'
+                                }`}></div>
+                                <span className="text-sm font-medium">{comment.userName}</span>
+                                <span className="text-xs text-slate-500">({comment.user})</span>
+                              </div>
+                              <span className="text-xs text-slate-500">
+                                {new Date(comment.timestamp).toLocaleString(language === 'it' ? 'it-IT' : 'en-US')}
+                              </span>
+                            </div>
+                            <p className="text-sm text-slate-700">{comment.comment}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Add New Comment */}
+                      <div className="border-t pt-4">
+                        <div className="space-y-3">
+                          <textarea
+                            placeholder={language === 'it' ? 'Aggiungi commento al progetto...' : 'Add project comment...'}
+                            value={newComment}
+                            onChange={(e) => setNewComment(e.target.value)}
+                            className="w-full p-3 border rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            rows={3}
+                          />
+                          <Button 
+                            className="w-full"
+                            onClick={() => {
+                              if (newComment.trim()) {
+                                toast({
+                                  title: language === 'it' ? 'Commento Aggiunto' : 'Comment Added',
+                                  description: language === 'it' ? 'Il commento è stato aggiunto al progetto' : 'Comment has been added to the project',
+                                });
+                                setNewComment('');
+                              }
+                            }}
+                          >
+                            <MessageSquare className="h-4 w-4 mr-2" />
+                            {language === 'it' ? 'Aggiungi Commento' : 'Add Comment'}
+                          </Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Direct Messages */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center space-x-2">
+                        <Send className="h-5 w-5" />
+                        <span>{language === 'it' ? 'Messaggi Diretti' : 'Direct Messages'}</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      {/* Recipient Selection */}
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-slate-700">
+                          {language === 'it' ? 'Invia messaggio a:' : 'Send message to:'}
+                        </label>
+                        <div className="grid grid-cols-1 gap-2">
+                          <button
+                            onClick={() => setMessageRecipient('team_member')}
+                            className={`p-3 border rounded-lg text-left transition-colors ${
+                              messageRecipient === 'team_member' ? 'border-blue-500 bg-blue-50' : 'border-slate-200 hover:bg-slate-50'
+                            }`}
+                          >
+                            <div className="flex items-center space-x-3">
+                              <UserCog className="h-4 w-4 text-blue-500" />
+                              <div>
+                                <p className="text-sm font-medium">{language === 'it' ? 'Team Member' : 'Team Member'}</p>
+                                <p className="text-xs text-slate-500">Alessandro Rossi (alessandro.rossi@fagri.digital)</p>
+                              </div>
+                            </div>
+                          </button>
+                          
+                          <button
+                            onClick={() => setMessageRecipient('certification_authority')}
+                            className={`p-3 border rounded-lg text-left transition-colors ${
+                              messageRecipient === 'certification_authority' ? 'border-emerald-500 bg-emerald-50' : 'border-slate-200 hover:bg-slate-50'
+                            }`}
+                          >
+                            <div className="flex items-center space-x-3">
+                              <Shield className="h-4 w-4 text-emerald-500" />
+                              <div>
+                                <p className="text-sm font-medium">{language === 'it' ? 'Autorità Certificazione' : 'Certification Authority'}</p>
+                                <p className="text-xs text-slate-500">Dr. Maria Bianchi (maria.bianchi@certification.eu)</p>
+                              </div>
+                            </div>
+                          </button>
+                          
+                          <button
+                            onClick={() => setMessageRecipient('project_owner')}
+                            className={`p-3 border rounded-lg text-left transition-colors ${
+                              messageRecipient === 'project_owner' ? 'border-orange-500 bg-orange-50' : 'border-slate-200 hover:bg-slate-50'
+                            }`}
+                          >
+                            <div className="flex items-center space-x-3">
+                              <Building className="h-4 w-4 text-orange-500" />
+                              <div>
+                                <p className="text-sm font-medium">{language === 'it' ? 'Proprietario Progetto' : 'Project Owner'}</p>
+                                <p className="text-xs text-slate-500">{selectedApplication?.fagriId} (cliente@azienda.it)</p>
+                              </div>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Message Composition */}
+                      <div className="space-y-3">
+                        <textarea
+                          placeholder={
+                            messageRecipient === 'team_member' 
+                              ? (language === 'it' ? 'Messaggio per il team member...' : 'Message for team member...')
+                              : messageRecipient === 'certification_authority'
+                              ? (language === 'it' ? 'Messaggio per autorità certificazione...' : 'Message for certification authority...')
+                              : (language === 'it' ? 'Messaggio per proprietario progetto...' : 'Message for project owner...')
+                          }
+                          value={newMessage}
+                          onChange={(e) => setNewMessage(e.target.value)}
+                          className="w-full p-3 border rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          rows={4}
+                        />
+                        <Button 
+                          className={`w-full ${
+                            messageRecipient === 'team_member' ? 'bg-blue-600 hover:bg-blue-700' :
+                            messageRecipient === 'certification_authority' ? 'bg-emerald-600 hover:bg-emerald-700' :
+                            'bg-orange-600 hover:bg-orange-700'
+                          }`}
+                          onClick={() => {
+                            if (newMessage.trim()) {
+                              const recipientName = 
+                                messageRecipient === 'team_member' ? 'Alessandro Rossi' :
+                                messageRecipient === 'certification_authority' ? 'Dr. Maria Bianchi' :
+                                'Proprietario Progetto';
+                              
+                              toast({
+                                title: language === 'it' ? 'Messaggio Inviato' : 'Message Sent',
+                                description: `${language === 'it' ? 'Messaggio inviato a' : 'Message sent to'} ${recipientName}`,
+                              });
+                              setNewMessage('');
+                            }
+                          }}
+                        >
+                          <Send className="h-4 w-4 mr-2" />
+                          {language === 'it' ? 'Invia Messaggio' : 'Send Message'}
+                        </Button>
+                      </div>
+
+                      {/* Recent Messages */}
+                      <div className="border-t pt-4">
+                        <h4 className="text-sm font-medium text-slate-700 mb-3">
+                          {language === 'it' ? 'Messaggi Recenti' : 'Recent Messages'}
+                        </h4>
+                        <div className="space-y-2 max-h-32 overflow-y-auto">
+                          {[
+                            {
+                              recipient: 'Alessandro Rossi',
+                              message: language === 'it' ? 'Per favore priorità su documenti ISO' : 'Please prioritize ISO documents',
+                              timestamp: new Date(Date.now() - 30*60*1000).toISOString(),
+                              type: 'team_member'
+                            },
+                            {
+                              recipient: 'Dr. Maria Bianchi', 
+                              message: language === 'it' ? 'Quando prevista certificazione finale?' : 'When is final certification expected?',
+                              timestamp: new Date(Date.now() - 60*60*1000).toISOString(),
+                              type: 'certification'
+                            }
+                          ].map((msg, index) => (
+                            <div key={index} className="text-xs text-slate-600 p-2 bg-slate-50 rounded">
+                              <div className="flex justify-between">
+                                <span className="font-medium">{language === 'it' ? 'A:' : 'To:'} {msg.recipient}</span>
+                                <span>{new Date(msg.timestamp).toLocaleTimeString()}</span>
+                              </div>
+                              <p className="mt-1">{msg.message}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             )}
           </DialogContent>
