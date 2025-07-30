@@ -21,6 +21,7 @@ import { UserDashboard } from "@/pages/user-dashboard";
 import { AdminAuthorizationDashboard } from "@/pages/admin-authorization-dashboard";
 import { EmployeeProfile } from "@/pages/employee-profile";
 import ProjectDetails from "@/pages/project-details";
+import RegisterProject from "@/pages/register-project";
 import NotFound from "@/pages/not-found";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
@@ -60,6 +61,7 @@ function ProtectedRouter() {
       <Route path="/employee-profile/:id">
         {(params) => <EmployeeProfile employeeId={params.id} />}
       </Route>
+      <Route path="/register-project" component={RegisterProject} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/gdpr" component={GDPR} />

@@ -53,23 +53,26 @@ export default function TeamDashboard() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [showProjectDetails, setShowProjectDetails] = useState(false);
   
-  // Handler function to navigate to project registration dashboard
+  // Handler function to open project registration directly
   const handleNewProject = () => {
-    // Navigate to the main dashboard with project creation mode
-    setLocation('/dashboard');
+    // Instead of navigating to dashboard, let's use the register project modal directly
+    // This avoids authentication issues
+    const registerModal = document.querySelector('[data-register-project-modal]');
+    if (registerModal) {
+      // If register project modal exists, trigger it
+      const event = new CustomEvent('openRegisterProject');
+      document.dispatchEvent(event);
+    } else {
+      // Fallback: navigate to a dedicated project registration page
+      setLocation('/register-project');
+    }
     
-    // After a short delay, trigger the project creation modal
-    setTimeout(() => {
-      // Set project creation mode in localStorage so dashboard can open the project creation section
-      localStorage.setItem('openProjectCreation', 'true');
-      
-      toast({
-        title: language === 'it' ? 'Navigazione Dashboard' : 'Dashboard Navigation',
-        description: language === 'it' 
-          ? 'Apertura dashboard per creazione nuovo progetto...' 
-          : 'Opening dashboard for new project creation...',
-      });
-    }, 100);
+    toast({
+      title: language === 'it' ? 'Registrazione Progetto' : 'Project Registration',
+      description: language === 'it' 
+        ? 'Apertura modulo registrazione progetto...' 
+        : 'Opening project registration form...',
+    });
   };
 
   // Profile data
