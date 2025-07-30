@@ -40,15 +40,24 @@ export function Navigation() {
       const sessionActive = localStorage.getItem('sessionActive');
       const alphaG8Id = localStorage.getItem('alphaG8Id');
       
-      // Also check if we're on team dashboard - that means user is already authenticated
-      const isOnTeamDashboard = window.location.pathname === '/team-dashboard';
-      const isOnUserDashboard = window.location.pathname === '/user-dashboard';
-      const isOnAdminDashboard = window.location.pathname === '/admin-dashboard';
+      // Check if we're on any authenticated dashboard pages
+      const authenticatedPaths = [
+        '/team-dashboard',
+        '/user-dashboard', 
+        '/admin-dashboard',
+        '/certification-dashboard',
+        '/admin-authorization',
+        '/employee-profile',
+        '/project/'
+      ];
+      const isOnAuthenticatedPage = authenticatedPaths.some(path => 
+        window.location.pathname === path || window.location.pathname.startsWith(path)
+      );
       
-      if ((sessionActive === 'true' && alphaG8Id) || isOnTeamDashboard || isOnUserDashboard || isOnAdminDashboard) {
+      if ((sessionActive === 'true' && alphaG8Id) || isOnAuthenticatedPage) {
         setIsSignedIn(true);
         // If on dashboard but no stored ID, create a temporary one
-        if (!alphaG8Id && (isOnTeamDashboard || isOnUserDashboard || isOnAdminDashboard)) {
+        if (!alphaG8Id && isOnAuthenticatedPage) {
           setSignedInAlphaG8Id('FAGRI-TEAM-MEMBER-AUTHENTICATED');
         } else {
           setSignedInAlphaG8Id(alphaG8Id || 'FAGRI-AUTHENTICATED-USER');
