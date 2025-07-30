@@ -1654,6 +1654,12 @@ export const translations = {
     'co2-cert-benefit3-desc': 'Accesso diretto ai mercati globali dei crediti di carbonio',
     'co2-cert-benefit4-title': 'Supporto Dedicato',
     'co2-cert-benefit4-desc': 'Assistenza esperta durante tutto il processo di certificazione',
+    'co2-cert-benefit5-title': 'Sicurezza Svizzera',
+    'co2-cert-benefit5-desc': 'Protezione dati a livello bancario nell\'infrastruttura alpina',
+    'co2-cert-benefit6-title': 'Governance Collaborativa',
+    'co2-cert-benefit6-desc': 'Processo decisionale e validazione multi-stakeholder',
+    'co2-cert-benefit7-title': 'Finanza Sostenibile',
+    'co2-cert-benefit7-desc': 'Accesso a finanziamenti verdi e opportunità di investimento sostenibili',
     'form-success': 'Grazie per il tuo messaggio! Ti risponderemo al più presto.',
     // Modal
     'modal-title': 'Adesione Fagri Filiera Agricola Italiana',
@@ -2281,6 +2287,12 @@ export const translations = {
     'co2-cert-benefit3-desc': 'Direct access to global carbon credit markets',
     'co2-cert-benefit4-title': 'Dedicated Support',
     'co2-cert-benefit4-desc': 'Expert assistance throughout the certification process',
+    'co2-cert-benefit5-title': 'Swiss Security',
+    'co2-cert-benefit5-desc': 'Banking-level data protection in Alpine infrastructure',
+    'co2-cert-benefit6-title': 'Collaborative Governance',
+    'co2-cert-benefit6-desc': 'Multi-stakeholder decision making and validation',
+    'co2-cert-benefit7-title': 'Sustainable Finance',
+    'co2-cert-benefit7-desc': 'Access to green financing and sustainable investment opportunities',
 
     // Dashboard English translations
     'monitor-co2-certification-projects': 'Monitor your CO₂ certification projects',

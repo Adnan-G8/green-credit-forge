@@ -229,24 +229,24 @@ export default function SimpleCO2Certification() {
                   <div className="flex items-start space-x-3 mb-4">
                     <Check className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-medium text-slate-900 mb-1">Complete Transparency</h3>
-                      <p className="text-slate-600 text-sm">Full audit trail and blockchain verification for all transactions</p>
+                      <h3 className="font-medium text-slate-900 mb-1">{t('co2-cert-benefit1-title')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-benefit1-desc')}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-3 mb-4">
                     <Check className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-medium text-slate-900 mb-1">Regulatory Compliance</h3>
-                      <p className="text-slate-600 text-sm">EUFD2025-001 and ISO 14064 standards compliance</p>
+                      <h3 className="font-medium text-slate-900 mb-1">{t('co2-cert-benefit2-title')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-benefit2-desc')}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-3">
                     <Check className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-medium text-slate-900 mb-1">Market Access</h3>
-                      <p className="text-slate-600 text-sm">Direct access to European carbon credit markets</p>
+                      <h3 className="font-medium text-slate-900 mb-1">{t('co2-cert-benefit3-title')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-benefit3-desc')}</p>
                     </div>
                   </div>
                 </div>
@@ -255,24 +255,24 @@ export default function SimpleCO2Certification() {
                   <div className="flex items-start space-x-3 mb-4">
                     <Check className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-medium text-slate-900 mb-1">Swiss Security</h3>
-                      <p className="text-slate-600 text-sm">Banking-level data protection in Alpine infrastructure</p>
+                      <h3 className="font-medium text-slate-900 mb-1">{t('co2-cert-benefit5-title')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-benefit5-desc')}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-3 mb-4">
                     <Check className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-medium text-slate-900 mb-1">Collaborative Governance</h3>
-                      <p className="text-slate-600 text-sm">Multi-stakeholder decision making and validation</p>
+                      <h3 className="font-medium text-slate-900 mb-1">{t('co2-cert-benefit6-title')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-benefit6-desc')}</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-3">
                     <Check className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-medium text-slate-900 mb-1">Sustainable Finance</h3>
-                      <p className="text-slate-600 text-sm">Access to green financing and sustainable investment opportunities</p>
+                      <h3 className="font-medium text-slate-900 mb-1">{t('co2-cert-benefit7-title')}</h3>
+                      <p className="text-slate-600 text-sm">{t('co2-cert-benefit7-desc')}</p>
                     </div>
                   </div>
                 </div>
