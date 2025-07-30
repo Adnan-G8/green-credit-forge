@@ -29,7 +29,8 @@ import {
   TrendingUp,
   FileText,
   Lock,
-  Unlock
+  Unlock,
+  Download
 } from 'lucide-react';
 
 interface AuthorizationRequest {
@@ -569,11 +570,19 @@ export function AdminDashboard() {
                               <p className="text-sm text-slate-600">{language === 'it' ? 'Ultimo accesso' : 'Last login'}: {new Date(member.lastLogin).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}</p>
                             </div>
                             <div className="flex items-center space-x-2">
-                              <Button size="sm" variant="outline">
+                              <Button 
+                                size="sm" 
+                                variant="outline"
+                                onClick={() => window.open(`/employee-profile?id=${member.id}`, '_blank')}
+                              >
                                 <Eye className="h-4 w-4 mr-1" />
                                 {language === 'it' ? 'Dettagli' : 'Details'}
                               </Button>
-                              <Button size="sm" variant="outline">
+                              <Button 
+                                size="sm" 
+                                variant="outline"
+                                onClick={() => window.open(`/employee-profile?id=${member.id}`, '_blank')}
+                              >
                                 <Settings className="h-4 w-4 mr-1" />
                                 {language === 'it' ? 'Gestisci' : 'Manage'}
                               </Button>

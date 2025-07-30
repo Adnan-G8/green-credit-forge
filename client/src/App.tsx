@@ -19,6 +19,7 @@ import CertificationDashboard from "@/pages/certification-dashboard";
 import { AdminDashboard } from "@/pages/admin-dashboard";
 import { UserDashboard } from "@/pages/user-dashboard";
 import { AdminAuthorizationDashboard } from "@/pages/admin-authorization-dashboard";
+import { EmployeeProfile } from "@/pages/employee-profile";
 import NotFound from "@/pages/not-found";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
@@ -47,6 +48,13 @@ function ProtectedRouter() {
       <Route path="/certification-dashboard" component={CertificationDashboard} />
       <Route path="/admin-dashboard" component={AdminDashboard} />
       <Route path="/admin-authorization" component={AdminAuthorizationDashboard} />
+      <Route path="/employee-profile">
+        {() => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const employeeId = urlParams.get('id') || '';
+          return employeeId ? <EmployeeProfile employeeId={employeeId} /> : <NotFound />;
+        }}
+      </Route>
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/gdpr" component={GDPR} />

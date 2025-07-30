@@ -184,6 +184,237 @@ const mockCertifications = [
   }
 ];
 
+// Extended employee profiles with more details
+const mockEmployeeProfiles = {
+  'tm-001': {
+    id: 'tm-001',
+    fagriId: 'FAGRI-1BKQE5C3-K9X2P4M7-15',
+    fullName: 'Alessandro Bianchi',
+    email: 'alessandro.bianchi@fagri.it',
+    phone: '+39 342 123 4567',
+    role: 'Corporate Farmer',
+    status: 'active',
+    avatar: '/api/placeholder/avatar/alessandro',
+    department: 'Agricultural Operations',
+    joinDate: '2024-01-15T00:00:00Z',
+    lastLogin: new Date(Date.now() - 3600000).toISOString(),
+    totalProjects: 8,
+    approvedProjects: 6,
+    pendingProjects: 1,
+    rejectedProjects: 1
+  },
+  'tm-002': {
+    id: 'tm-002',
+    fagriId: 'FAGRI-2DKRE8F4-L7Y3Q6N8-22',
+    fullName: 'Maria Rossi',
+    email: 'maria.rossi@fagri.it',
+    phone: '+39 345 987 6543',
+    role: 'FAGRI Team',
+    status: 'active',
+    avatar: '/api/placeholder/avatar/maria',
+    department: 'Project Management',
+    joinDate: '2023-11-20T00:00:00Z',
+    lastLogin: new Date(Date.now() - 7200000).toISOString(),
+    totalProjects: 12,
+    approvedProjects: 10,
+    pendingProjects: 2,
+    rejectedProjects: 0
+  },
+  'tm-003': {
+    id: 'tm-003',
+    fagriId: 'FAGRI-3FLTH9G5-M8Z4R7P9-31',
+    fullName: 'Giovanni Verdi',
+    email: 'giovanni.verdi@fagri.it',
+    phone: '+39 338 555 7777',
+    role: 'Administration',
+    status: 'active',
+    avatar: '/api/placeholder/avatar/giovanni',
+    department: 'Administration',
+    joinDate: '2023-06-10T00:00:00Z',
+    lastLogin: new Date(Date.now() - 86400000).toISOString(),
+    totalProjects: 5,
+    approvedProjects: 5,
+    pendingProjects: 0,
+    rejectedProjects: 0
+  },
+  'tm-004': {
+    id: 'tm-004',
+    fagriId: 'FAGRI-4GMUI0H6-N9A5S8Q0-42',
+    fullName: 'Lucia Ferrari',
+    email: 'lucia.ferrari@fagri.it',
+    phone: '+39 347 222 8888',
+    role: 'Certification Control',
+    status: 'suspended',
+    avatar: '/api/placeholder/avatar/lucia',
+    department: 'Quality Control',
+    joinDate: '2024-03-01T00:00:00Z',
+    lastLogin: new Date(Date.now() - 259200000).toISOString(),
+    totalProjects: 3,
+    approvedProjects: 1,
+    pendingProjects: 0,
+    rejectedProjects: 2
+  }
+};
+
+// Employee projects with quality issues and certification notes
+const mockEmployeeProjects = {
+  'tm-001': [
+    {
+      id: 'proj-001',
+      projectName: 'Organic Farm CO₂ Reduction Phase 1',
+      projectType: 'Farming',
+      status: 'approved',
+      submittedAt: '2024-06-15T10:30:00Z',
+      estimatedCO2: 150.5,
+      certificationNotes: 'Excellent implementation of sustainable farming practices. Project meets all ISO 14064-2 requirements.',
+      qualityIssues: [],
+      certificationStatus: 'issued',
+      certificateNumber: 'EUFD-2024-087'
+    },
+    {
+      id: 'proj-002',
+      projectName: 'Precision Agriculture Implementation',
+      projectType: 'Farming',
+      status: 'pending',
+      submittedAt: '2024-07-20T14:45:00Z',
+      estimatedCO2: 89.3,
+      certificationNotes: 'Under review by certification authority. Additional documentation requested.',
+      qualityIssues: ['Missing soil analysis data for Q2 2024', 'Incomplete fertilizer usage logs'],
+      certificationStatus: 'pending'
+    },
+    {
+      id: 'proj-003',
+      projectName: 'Solar Panel Installation - Field B',
+      projectType: 'Renewable Energy',
+      status: 'rejected',
+      submittedAt: '2024-05-10T09:15:00Z',
+      estimatedCO2: 245.8,
+      certificationNotes: 'Project rejected due to insufficient baseline measurements and improper installation documentation.',
+      qualityIssues: [
+        'Baseline energy consumption data incomplete',
+        'Installation certificates not provided',
+        'Environmental impact assessment missing'
+      ],
+      certificationStatus: 'rejected'
+    }
+  ],
+  'tm-002': [
+    {
+      id: 'proj-004',
+      projectName: 'Wind Farm Development - Zone A',
+      projectType: 'Renewable Energy',
+      status: 'approved',
+      submittedAt: '2024-04-12T11:20:00Z',
+      estimatedCO2: 412.8,
+      certificationNotes: 'Outstanding project execution. Exceeds expected CO₂ reduction targets.',
+      qualityIssues: [],
+      certificationStatus: 'issued',
+      certificateNumber: 'EUFD-2024-065'
+    },
+    {
+      id: 'proj-005',
+      projectName: 'Reforestation Project - Mountain Area',
+      projectType: 'Forest',
+      status: 'under_review',
+      submittedAt: '2024-07-25T16:00:00Z',
+      estimatedCO2: 298.4,
+      certificationNotes: 'Certification authority requesting additional tree survival rate documentation.',
+      qualityIssues: ['Tree mortality rate higher than expected in zone C'],
+      certificationStatus: 'pending'
+    }
+  ],
+  'tm-003': [
+    {
+      id: 'proj-006',
+      projectName: 'Administrative Building Energy Efficiency',
+      projectType: 'Renewable Energy',
+      status: 'approved',
+      submittedAt: '2024-03-08T13:30:00Z',
+      estimatedCO2: 67.2,
+      certificationNotes: 'Successful implementation of energy efficiency measures.',
+      qualityIssues: [],
+      certificationStatus: 'issued',
+      certificateNumber: 'EUFD-2024-041'
+    }
+  ],
+  'tm-004': [
+    {
+      id: 'proj-007',
+      projectName: 'Biomass Energy Project',
+      projectType: 'Renewable Energy',
+      status: 'rejected',
+      submittedAt: '2024-07-01T08:45:00Z',
+      estimatedCO2: 178.4,
+      certificationNotes: 'Project does not meet sustainability criteria due to questionable biomass sourcing.',
+      qualityIssues: [
+        'Biomass sourcing documentation insufficient',
+        'Sustainability impact assessment rejected',
+        'Carbon neutrality calculations disputed'
+      ],
+      certificationStatus: 'rejected'
+    }
+  ]
+};
+
+// Chat messages for employees
+const mockChatMessages = {
+  'tm-001': [
+    {
+      id: 'msg-001',
+      senderId: 'admin',
+      senderName: 'Administrator',
+      message: 'Hi Alessandro, I noticed some issues with your recent project submission. Can you provide the missing soil analysis data?',
+      timestamp: '2024-07-29T14:30:00Z',
+      isAdmin: true
+    },
+    {
+      id: 'msg-002',
+      senderId: 'tm-001',
+      senderName: 'Alessandro Bianchi',
+      message: 'Hello! Yes, I can provide that data. The lab results were delayed but I should have them by tomorrow.',
+      timestamp: '2024-07-29T15:45:00Z',
+      isAdmin: false
+    },
+    {
+      id: 'msg-003',
+      senderId: 'admin',
+      senderName: 'Administrator',
+      message: 'Perfect, please upload them to the project portal when ready. The certification authority is waiting for this data.',
+      timestamp: '2024-07-29T16:00:00Z',
+      isAdmin: true
+    }
+  ],
+  'tm-002': [
+    {
+      id: 'msg-004',
+      senderId: 'admin',
+      senderName: 'Administrator',
+      message: 'Maria, excellent work on the wind farm project! The certification authority was very impressed.',
+      timestamp: '2024-07-28T10:00:00Z',
+      isAdmin: true
+    },
+    {
+      id: 'msg-005',
+      senderId: 'tm-002',
+      senderName: 'Maria Rossi',
+      message: 'Thank you! The team worked really hard on this one. Looking forward to the next challenge.',
+      timestamp: '2024-07-28T11:30:00Z',
+      isAdmin: false
+    }
+  ],
+  'tm-003': [],
+  'tm-004': [
+    {
+      id: 'msg-006',
+      senderId: 'admin',
+      senderName: 'Administrator',
+      message: 'Lucia, we need to discuss the issues with your recent project submissions. Please schedule a meeting.',
+      timestamp: '2024-07-26T09:00:00Z',
+      isAdmin: true
+    }
+  ]
+};
+
 // Get all authorization requests
 router.get('/authorization-requests', (req, res) => {
   try {
@@ -363,6 +594,104 @@ router.get('/certifications', (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Error fetching certifications'
+    });
+  }
+});
+
+// Get employee profile details
+router.get('/employee/:id', (req, res) => {
+  try {
+    const employeeId = req.params.id;
+    const employee = mockEmployeeProfiles[employeeId];
+    
+    if (!employee) {
+      return res.status(404).json({
+        success: false,
+        message: 'Employee not found'
+      });
+    }
+
+    res.json({
+      success: true,
+      employee
+    });
+  } catch (error) {
+    console.error('Error fetching employee profile:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error fetching employee profile'
+    });
+  }
+});
+
+// Get employee projects
+router.get('/employee/:id/projects', (req, res) => {
+  try {
+    const employeeId = req.params.id;
+    const projects = mockEmployeeProjects[employeeId] || [];
+
+    res.json({
+      success: true,
+      projects
+    });
+  } catch (error) {
+    console.error('Error fetching employee projects:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error fetching employee projects'
+    });
+  }
+});
+
+// Get employee chat messages
+router.get('/employee/:id/chat', (req, res) => {
+  try {
+    const employeeId = req.params.id;
+    const messages = mockChatMessages[employeeId] || [];
+
+    res.json({
+      success: true,
+      messages
+    });
+  } catch (error) {
+    console.error('Error fetching chat messages:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error fetching chat messages'
+    });
+  }
+});
+
+// Send chat message to employee
+router.post('/employee/:id/chat', (req, res) => {
+  try {
+    const employeeId = req.params.id;
+    const { message, senderId, senderName } = req.body;
+
+    if (!mockChatMessages[employeeId]) {
+      mockChatMessages[employeeId] = [];
+    }
+
+    const newMessage = {
+      id: `msg-${Date.now()}`,
+      senderId,
+      senderName,
+      message,
+      timestamp: new Date().toISOString(),
+      isAdmin: senderId === 'admin'
+    };
+
+    mockChatMessages[employeeId].push(newMessage);
+
+    res.json({
+      success: true,
+      message: newMessage
+    });
+  } catch (error) {
+    console.error('Error sending chat message:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error sending chat message'
     });
   }
 });
