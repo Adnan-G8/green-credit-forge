@@ -84,13 +84,13 @@ export default function Security() {
       cyberDesc: "Integrated into Switzerland's national cyber resilience strategy with mandatory 24-hour cyber attack reporting to the National Cyber Security Centre (NCSC).",
       
       blockchainTitle: "Alpine Data Centers Meet Blockchain Innovation",
-      blockchainDesc: "Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.",
+      blockchainDesc: "Our Swiss mountain data centers provide the physical security foundation, while our decentralized blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.",
       
       guaranteeTitle: "Swiss Security Guarantee",
       guaranteeSubtitle: "Alpine Security Meets Global Blockchain Governance",
-      guaranteeDesc: "For the first time, blockchain validators are managed jointly by institutions, social organizations and partners from multiple countries — all with equal rights and shared responsibilities. Hosted in Swiss mountain data centers with banking-level security, our 51-node blockchain ensures integrity, resilience and data sovereignty. FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and reliable infrastructure for CO₂ certification and agricultural data for tomorrow's world.",
+      guaranteeDesc: "Blockchain validators are managed jointly by institutions, social organizations and partners from multiple countries — all with equal rights and shared responsibilities. Hosted in Swiss mountain data centers with banking-level security, our decentralized blockchain ensures integrity, resilience and data sovereignty. FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and reliable infrastructure for CO₂ certification and agricultural data for tomorrow's world.",
       
-      nodes51Title: "51 Validator Nodes",
+      nodes51Title: "Decentralized Blockchain Network",
       nodes51Desc: "Each partner organization controls a single validator node, ensuring no single point of failure and creating a truly decentralized governance structure among social and corporate entities.",
       
       dposTitle: "DPoS Consensus",
@@ -183,14 +183,14 @@ export default function Security() {
       cyberDesc: "Integrato nella strategia nazionale svizzera di resilienza cyber con segnalazione obbligatoria di attacchi cyber entro 24 ore al Centro Nazionale per la Cybersicurezza (NCSC).",
       
       blockchainTitle: "I Data Center Alpini Incontrano l'Innovazione Blockchain",
-      blockchainDesc: "I nostri data center di montagna svizzeri forniscono la base di sicurezza fisica, mentre la nostra rete blockchain a 51 nodi garantisce l'integrità crittografica. Questa combinazione crea un livello di protezione senza precedenti per i vostri dati agricoli, con gli stessi standard di sicurezza utilizzati dalle banche svizzere e dalle istituzioni governative.",
+      blockchainDesc: "I nostri data center di montagna svizzeri forniscono la base di sicurezza fisica, mentre la nostra rete blockchain decentralizzata garantisce l'integrità crittografica. Questa combinazione crea un livello di protezione senza precedenti per i vostri dati agricoli, con gli stessi standard di sicurezza utilizzati dalle banche svizzere e dalle istituzioni governative.",
       
       guaranteeTitle: "Garanzia di Sicurezza Svizzera",
       guaranteeSubtitle: "La Sicurezza Alpina Incontra la Governance Blockchain Globale",
-      guaranteeDesc: "Per la prima volta, i validatori blockchain sono gestiti congiuntamente da istituzioni, organizzazioni sociali e partner di più paesi — tutti con pari diritti e responsabilità condivise. Ospitata in data center di montagna svizzeri con sicurezza di livello bancario, la nostra blockchain a 51 nodi garantisce integrità, resilienza e sovranità dei dati. FAGRI.Digital combina protezione fisica con governance decentralizzata, creando un'infrastruttura trasparente e affidabile per la certificazione CO₂ e i dati agricoli del mondo di domani.",
+      guaranteeDesc: "I validatori blockchain sono gestiti congiuntamente da istituzioni, organizzazioni sociali e partner di più paesi — tutti con pari diritti e responsabilità condivise. Ospitata in data center di montagna svizzeri con sicurezza di livello bancario, la nostra blockchain decentralizzata garantisce integrità, resilienza e sovranità dei dati. FAGRI.Digital combina protezione fisica con governance decentralizzata, creando un'infrastruttura trasparente e affidabile per la certificazione CO₂ e i dati agricoli del mondo di domani.",
       
-      nodes51Title: "51 Nodi Validatori",
-      nodes51Desc: "Ogni organizzazione partner controlla un singolo nodo validatore, garantendo nessun singolo punto di fallimento e creando una struttura di governance veramente decentralizzata tra entità sociali e aziendali.",
+      nodes51Title: "Rete Blockchain Decentralizzata",
+      nodes51Desc: "Ogni organizzazione partner partecipa alla governance distribuita, garantendo nessun singolo punto di fallimento e creando una struttura veramente decentralizzata tra entità sociali e aziendali.",
       
       dposTitle: "Consenso DPoS",
       dposDesc: "Il Delegated Proof of Stake garantisce efficienza energetica mantenendo la sicurezza. I validatori sono scelti attraverso partecipazione democratica, creando responsabilità condivisa e fiducia.",
@@ -247,7 +247,7 @@ export default function Security() {
 
 
       {/* Three-Factor Authentication */}
-      <section className="py-16 bg-gradient-to-br from-emerald-50 to-blue-50">
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -260,37 +260,37 @@ export default function Security() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-emerald-100 hover:shadow-xl transition-shadow">
-                <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-5 h-5 text-white" />
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-5 h-5 text-slate-600" />
                 </div>
                 <h3 className="text-lg font-medium text-slate-900">{t.access1}</h3>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-shadow">
-                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
-                  <Key className="w-5 h-5 text-white" />
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                  <Key className="w-5 h-5 text-slate-600" />
                 </div>
                 <h3 className="text-lg font-medium text-slate-900">{t.access2}</h3>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-green-100 hover:shadow-xl transition-shadow">
-                <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-5 h-5 text-white" />
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-5 h-5 text-slate-600" />
                 </div>
                 <h3 className="text-lg font-medium text-slate-900">{t.access3}</h3>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-purple-100 hover:shadow-xl transition-shadow">
-                <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
-                  <Eye className="w-5 h-5 text-white" />
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                  <Eye className="w-5 h-5 text-slate-600" />
                 </div>
                 <h3 className="text-lg font-medium text-slate-900">{t.access4}</h3>
               </div>
             </div>
 
-            {/* Digital Fingerprint Section - Compact */}
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-emerald-100">
+            {/* Digital Fingerprint Section - Banking Style */}
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
               <h3 className="text-xl font-medium text-slate-900 mb-4">{t.fingerprintTitle}</h3>
               <p className="text-base text-slate-600 leading-relaxed mb-4">{t.fingerprintDesc}</p>
               <p className="text-sm text-slate-600 leading-relaxed">{t.fingerprintKyc}</p>
@@ -316,55 +316,55 @@ export default function Security() {
             </div>
 
             {/* Combined Alpine + Data Sovereignty Features */}
-            <div className="grid lg:grid-cols-3 gap-8 mb-16">
-              <div className="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl border border-red-200">
-                <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-white" />
+            <div className="grid lg:grid-cols-3 gap-8 mb-12">
+              <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-slate-600" />
                 </div>
                 <h4 className="text-lg font-medium text-slate-900 mb-3">Swiss Data Protection</h4>
-                <p className="text-slate-700 leading-relaxed">{t.dataPoint1}</p>
+                <p className="text-slate-600 leading-relaxed">{t.dataPoint1}</p>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200">
-                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
-                  <Building className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Building className="w-6 h-6 text-slate-600" />
                 </div>
                 <h4 className="text-lg font-medium text-slate-900 mb-3">FINMA Banking Compliance</h4>
-                <p className="text-slate-700 leading-relaxed">{t.dataPoint2}</p>
+                <p className="text-slate-600 leading-relaxed">{t.dataPoint2}</p>
               </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border border-green-200">
-                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6">
-                  <Lock className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Lock className="w-6 h-6 text-slate-600" />
                 </div>
                 <h4 className="text-lg font-medium text-slate-900 mb-3">Banking-Level Security</h4>
-                <p className="text-slate-700 leading-relaxed">{t.dataPoint3}</p>
+                <p className="text-slate-600 leading-relaxed">{t.dataPoint3}</p>
               </div>
             </div>
 
             {/* Alpine Infrastructure */}
-            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-12 rounded-xl border border-emerald-200">
+            <div className="bg-white p-12 rounded-lg border border-slate-200 shadow-sm">
               <h3 className="text-2xl font-light text-slate-900 mb-6">{t.alpineTitle}</h3>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">{t.alpineDesc}</p>
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-white" />
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-slate-600" />
                   </div>
-                  <span className="text-slate-800 font-medium">{t.alpine1}</span>
+                  <span className="text-slate-700 font-medium">{t.alpine1}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                    <Server className="w-4 h-4 text-white" />
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <Server className="w-4 h-4 text-slate-600" />
                   </div>
-                  <span className="text-slate-800 font-medium">{t.alpine2}</span>
+                  <span className="text-slate-700 font-medium">{t.alpine2}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-                    <Lock className="w-4 h-4 text-white" />
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <Lock className="w-4 h-4 text-slate-600" />
                   </div>
-                  <span className="text-slate-800 font-medium">{t.alpine3}</span>
+                  <span className="text-slate-700 font-medium">{t.alpine3}</span>
                 </div>
               </div>
             </div>
@@ -373,7 +373,7 @@ export default function Security() {
       </section>
 
       {/* Physical Security Pillars */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -387,7 +387,7 @@ export default function Security() {
 
             {/* Swiss Alps Image */}
             <div className="mb-12">
-              <div className="relative rounded-xl overflow-hidden shadow-xl max-w-3xl mx-auto">
+              <div className="relative rounded-lg overflow-hidden shadow-sm border border-slate-200 max-w-3xl mx-auto">
                 <img 
                   src={swissAlps} 
                   alt="Swiss Alps data center location"
@@ -397,33 +397,33 @@ export default function Security() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-red-200 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar1Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar1Desc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-blue-200 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
-                  <Server className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Server className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar2Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar2Desc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-green-200 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6">
-                  <Eye className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Eye className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar3Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar3Desc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-purple-200 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
-                  <Mountain className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Mountain className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar4Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar4Desc}</p>
@@ -434,41 +434,41 @@ export default function Security() {
       </section>
 
       {/* Technical Excellence */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-light text-slate-900 mb-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-light text-slate-900 mb-4">
                 {t.technicalTitle}
               </h2>
-              <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
                 {t.technicalDesc}
               </p>
             </div>
 
             {/* Data Center Image */}
-            <div className="mb-16">
-              <div className="relative rounded-xl overflow-hidden shadow-xl max-w-4xl mx-auto">
+            <div className="mb-12">
+              <div className="relative rounded-lg overflow-hidden shadow-sm border border-slate-200 max-w-3xl mx-auto">
                 <img 
                   src={dataCenterCorridor} 
                   alt="Data center technical infrastructure"
-                  className="w-full h-64 md:h-80 object-cover object-center"
+                  className="w-full h-48 md:h-64 object-cover object-center"
                 />
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-8 rounded-xl border border-emerald-200 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mb-6">
-                  <Lock className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Lock className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.encryptionTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.encryptionDesc}</p>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
-                  <Database className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Database className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.redundancyTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.redundancyDesc}</p>
@@ -479,38 +479,38 @@ export default function Security() {
       </section>
 
       {/* Certifications and Compliance */}
-      <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-light text-slate-900 mb-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-light text-slate-900 mb-4">
                 {t.complianceTitle}
               </h2>
-              <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
                 {t.complianceDesc}
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-green-200 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6">
-                  <CheckCircle className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <CheckCircle className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.tierTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.tierDesc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-blue-200 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
-                  <Globe className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Globe className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.isoTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.isoDesc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-red-200 hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-white" />
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.cyberTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.cyberDesc}</p>
@@ -521,44 +521,44 @@ export default function Security() {
       </section>
 
       {/* Blockchain Innovation */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-light text-slate-900 mb-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-light text-slate-900 mb-4">
                 {t.blockchainTitle}
               </h2>
-              <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
                 {t.blockchainDesc}
               </p>
             </div>
 
-            <div className="bg-slate-50 p-12 rounded-xl mb-16">
-              <h3 className="text-2xl font-light text-slate-900 mb-4">{t.guaranteeTitle}</h3>
-              <h4 className="text-xl text-emerald-600 font-medium mb-6">{t.guaranteeSubtitle}</h4>
-              <p className="text-lg text-slate-600 leading-relaxed">{t.guaranteeDesc}</p>
+            <div className="bg-slate-50 p-8 rounded-lg mb-12 shadow-sm border border-slate-200">
+              <h3 className="text-2xl font-light text-slate-900 mb-3">{t.guaranteeTitle}</h3>
+              <h4 className="text-lg text-slate-700 font-medium mb-4">{t.guaranteeSubtitle}</h4>
+              <p className="text-base text-slate-600 leading-relaxed">{t.guaranteeDesc}</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                  <Server className="w-6 h-6 text-emerald-600" />
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Server className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.nodes51Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.nodes51Desc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <CheckCircle className="w-6 h-6 text-blue-600" />
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <CheckCircle className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.dposTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.dposDesc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <Globe className="w-6 h-6 text-purple-600" />
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
+                  <Globe className="w-6 h-6 text-slate-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.evmTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.evmDesc}</p>
@@ -566,27 +566,27 @@ export default function Security() {
             </div>
 
             {/* Trust Network */}
-            <div className="bg-slate-50 p-12 rounded-xl mb-16">
-              <h3 className="text-2xl font-light text-slate-900 mb-4">{t.trustTitle}</h3>
-              <h4 className="text-xl text-emerald-600 font-medium mb-6">{t.trustSubtitle}</h4>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">{t.trustDesc}</p>
+            <div className="bg-slate-50 p-8 rounded-lg mb-12 shadow-sm border border-slate-200">
+              <h3 className="text-2xl font-light text-slate-900 mb-3">{t.trustTitle}</h3>
+              <h4 className="text-lg text-slate-700 font-medium mb-4">{t.trustSubtitle}</h4>
+              <p className="text-base text-slate-600 leading-relaxed mb-6">{t.trustDesc}</p>
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <CheckCircle className="w-4 h-4 text-slate-600" />
                   </div>
                   <span className="text-slate-700">{t.trust1}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <Leaf className="w-4 h-4 text-emerald-600" />
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <Leaf className="w-4 h-4 text-slate-600" />
                   </div>
                   <span className="text-slate-700">{t.trust2}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Building className="w-4 h-4 text-blue-600" />
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <Building className="w-4 h-4 text-slate-600" />
                   </div>
                   <span className="text-slate-700">{t.trust3}</span>
                 </div>
@@ -594,26 +594,26 @@ export default function Security() {
             </div>
 
             {/* Technical Security Features */}
-            <div className="bg-white p-12 rounded-xl border border-slate-100">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">{t.technicalSecTitle}</h3>
-              <p className="text-lg text-slate-600 leading-relaxed mb-8">{t.technicalSecDesc}</p>
+            <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
+              <h3 className="text-2xl font-light text-slate-900 mb-4">{t.technicalSecTitle}</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-6">{t.technicalSecDesc}</p>
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <Lock className="w-4 h-4 text-emerald-600" />
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <Lock className="w-4 h-4 text-slate-600" />
                   </div>
                   <span className="text-slate-700">{t.techSec1}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <CheckCircle className="w-4 h-4 text-slate-600" />
                   </div>
                   <span className="text-slate-700">{t.techSec2}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-green-600" />
+                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-slate-600" />
                   </div>
                   <span className="text-slate-700">{t.techSec3}</span>
                 </div>
@@ -624,13 +624,13 @@ export default function Security() {
       </section>
 
       {/* CO₂ Neutral Section */}
-      <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Image on left */}
               <div>
-                <div className="relative rounded-xl overflow-hidden shadow-xl">
+                <div className="relative rounded-lg overflow-hidden shadow-sm border border-slate-200">
                   <img 
                     src={swissAlpsLake} 
                     alt="Swiss Alps with turquoise lake representing clean hydropower energy"
@@ -644,7 +644,7 @@ export default function Security() {
                 <h2 className="text-3xl font-light text-slate-900 mb-6">
                   {t.neutralTitle}
                 </h2>
-                <div className="bg-white p-8 rounded-xl shadow-lg border border-green-200">
+                <div className="bg-slate-50 p-8 rounded-lg shadow-sm border border-slate-200">
                   <p className="text-base text-slate-600 leading-relaxed">{t.neutralDesc}</p>
                 </div>
               </div>
