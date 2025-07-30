@@ -83,7 +83,7 @@ export function Navigation() {
               </button>
             </div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - Simplified */}
             <div className="hidden md:flex space-x-8">
               <button
                 onClick={() => navigateToSection('home')}
@@ -92,43 +92,11 @@ export function Navigation() {
                 {t('nav-home')}
               </button>
               <button
-                onClick={() => setLocation('/eufd-standard')}
-                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
-              >
-                {t('nav-standard')}
-              </button>
-
-              <button
-                onClick={() => navigateToSection('platform')}
-                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
-              >
-                {t('nav-platform')}
-              </button>
-              <button
-                onClick={() => setLocation('/security')}
-                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
-              >
-                {t('nav-security')}
-              </button>
-              <button
                 onClick={() => navigateToSection('contact')}
                 className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
                 {t('nav-contact')}
               </button>
-              <button
-                onClick={() => setLocation('/dashboard')}
-                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
-              >
-                User Dashboard
-              </button>
-              <button
-                onClick={() => setLocation('/admin-authorization')}
-                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
-              >
-                Admin
-              </button>
-
             </div>
 
             {/* Language Switcher & Mobile Menu */}
@@ -157,7 +125,7 @@ export function Navigation() {
                 </button>
               </div>
 
-              {/* Clean Navigation Buttons */}
+              {/* Simplified Smart Navigation Buttons */}
               {!isSignedIn ? (
                 <>
                   <Button
@@ -171,7 +139,7 @@ export function Navigation() {
                     className="hidden md:flex items-center px-4 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
                   >
                     <LogIn className="h-4 w-4 mr-2" />
-                    {t('sign-in')}
+                    {language === 'it' ? 'Accedi' : 'Sign In'}
                   </Button>
                   
                   <Button
@@ -184,26 +152,23 @@ export function Navigation() {
                     className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
                   >
                     <UserPlus className="h-4 w-4 mr-2" />
-                    {t('create-digital-identity')}
+                    {language === 'it' ? 'Crea Identità' : 'Create Digital Identity'}
                   </Button>
                 </>
               ) : (
                 <>
-                  <span className="hidden md:flex items-center px-3 py-2 bg-green-100 text-green-800 rounded-lg text-sm font-medium">
-                    <User className="h-4 w-4 mr-2" />
-                    Signed In
-                  </span>
-                  
+                  {/* Show My ID KEY for FAGRI Team members */}
                   <Button
                     onClick={() => {
-                      console.log('Register Project clicked for user:', signedInAlphaG8Id);
-                      setShowRegisterProjectModal(true);
+                      navigator.clipboard.writeText(signedInAlphaG8Id);
+                      // Show toast notification
                     }}
+                    variant="outline"
                     size="sm"
-                    className="hidden md:flex items-center px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white transition-colors duration-200"
+                    className="hidden md:flex items-center px-4 py-2 text-blue-700 border-blue-700 hover:bg-blue-50 transition-colors duration-200"
                   >
-                    <FileText className="h-4 w-4 mr-2" />
-                    {language === 'it' ? 'Registra Progetto' : 'Register Project'}
+                    <Key className="h-4 w-4 mr-2" />
+                    {language === 'it' ? 'La Mia ID KEY' : 'My ID KEY'}
                   </Button>
                   
                   <Button
@@ -247,57 +212,13 @@ export function Navigation() {
                   {t('nav-home')}
                 </button>
                 <button
-                  onClick={() => {
-                    setLocation('/eufd-standard');
-                    setIsOpen(false);
-                  }}
-                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
-                >
-                  {t('nav-standard')}
-                </button>
-
-                <button
-                  onClick={() => navigateToSection('platform')}
-                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
-                >
-                  {t('nav-platform')}
-                </button>
-                <button
-                  onClick={() => {
-                    setLocation('/security');
-                    setIsOpen(false);
-                  }}
-                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
-                >
-                  {t('nav-security')}
-                </button>
-                <button
                   onClick={() => navigateToSection('contact')}
                   className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
                   {t('nav-contact')}
                 </button>
                 
-                <button
-                  onClick={() => {
-                    setLocation('/dashboard');
-                    setIsOpen(false);
-                  }}
-                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
-                >
-                  User Dashboard
-                </button>
-                <button
-                  onClick={() => {
-                    setLocation('/admin-authorization');
-                    setIsOpen(false);
-                  }}
-                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
-                >
-                  Admin
-                </button>
-                
-                {/* Clean Mobile Navigation */}
+                {/* Simplified Mobile Navigation */}
                 {!isSignedIn ? (
                   <>
                     <button
@@ -310,7 +231,7 @@ export function Navigation() {
                       className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
                     >
                       <LogIn className="h-4 w-4 mr-2" />
-                      {t('sign-in')}
+                      {language === 'it' ? 'Accedi' : 'Sign In'}
                     </button>
                     
                     <button
@@ -323,26 +244,20 @@ export function Navigation() {
                       className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
                     >
                       <UserPlus className="h-4 w-4 mr-2" />
-                      {t('create-digital-identity')}
+                      {language === 'it' ? 'Crea Identità' : 'Create Digital Identity'}
                     </button>
                   </>
                 ) : (
                   <>
-                    <div className="flex items-center text-green-700 font-medium py-2">
-                      <User className="h-4 w-4 mr-2" />
-                      Signed In
-                    </div>
-                    
                     <button
                       onClick={() => {
-                        console.log('Mobile Register Project clicked for user:', signedInAlphaG8Id);
-                        setShowRegisterProjectModal(true);
+                        navigator.clipboard.writeText(signedInAlphaG8Id);
                         setIsOpen(false);
                       }}
-                      className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
+                      className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
                     >
-                      <FileText className="h-4 w-4 mr-2" />
-                      {language === 'it' ? 'Registra Progetto' : 'Register Project'}
+                      <Key className="h-4 w-4 mr-2" />
+                      {language === 'it' ? 'La Mia ID KEY' : 'My ID KEY'}
                     </button>
                     
                     <button
