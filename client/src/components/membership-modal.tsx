@@ -329,7 +329,7 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
           </DialogHeader>
           
           {/* Agricultural Landscape Image */}
-          <div className="relative h-48 overflow-hidden rounded-lg mb-6 shadow-lg">
+          <div className="relative h-64 overflow-hidden rounded-lg mb-6 shadow-lg">
             <img 
               src={agriculturalLandscapeImg} 
               alt="Beautiful agricultural landscape with cow in pastoral setting"
