@@ -86,6 +86,8 @@ export function AdminDashboard() {
   const [teamMembers, setTeamMembers] = useState<any[]>([]);
   const [applications, setApplications] = useState<any[]>([]);
   const [certifications, setCertifications] = useState<any[]>([]);
+  const [selectedApplication, setSelectedApplication] = useState<any>(null);
+  const [showApplicationModal, setShowApplicationModal] = useState(false);
 
   useEffect(() => {
     loadDashboardData();
@@ -678,7 +680,14 @@ export function AdminDashboard() {
                               <p className="text-sm text-slate-600">CO₂ {language === 'it' ? 'Stimato' : 'Estimated'}: {app.estimatedCO2}t</p>
                             </div>
                             <div className="flex items-center space-x-2">
-                              <Button size="sm" variant="outline">
+                              <Button 
+                                size="sm" 
+                                variant="outline"
+                                onClick={() => {
+                                  setSelectedApplication(app);
+                                  setShowApplicationModal(true);
+                                }}
+                              >
                                 <Eye className="h-4 w-4 mr-1" />
                                 {language === 'it' ? 'Dettagli' : 'Details'}
                               </Button>
@@ -857,6 +866,201 @@ export function AdminDashboard() {
             </Card>
           </div>
         </div>
+
+        {/* Application Details Modal */}
+        <Dialog open={showApplicationModal} onOpenChange={setShowApplicationModal}>
+          <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="flex items-center space-x-2">
+                <FileText className="h-5 w-5" />
+                <span>{language === 'it' ? 'Dettagli Progetto Completi' : 'Complete Project Details'}</span>
+              </DialogTitle>
+            </DialogHeader>
+            {selectedApplication && (
+              <div className="space-y-6">
+                {/* Project Overview */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">{language === 'it' ? 'Informazioni Progetto' : 'Project Information'}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      <div>
+                        <label className="text-sm font-medium text-slate-600">{language === 'it' ? 'Nome Progetto' : 'Project Name'}</label>
+                        <p className="bg-slate-100 p-2 rounded text-sm">{selectedApplication.projectName}</p>
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-slate-600">{language === 'it' ? 'Tipo Progetto' : 'Project Type'}</label>
+                        <p className="bg-slate-100 p-2 rounded text-sm">{selectedApplication.projectType}</p>
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-slate-600">ALPHAG8 ID</label>
+                        <p className="font-mono bg-slate-100 p-2 rounded text-sm">{selectedApplication.fagriId}</p>
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-slate-600">{language === 'it' ? 'Data Sottomissione' : 'Submission Date'}</label>
+                        <p className="bg-slate-100 p-2 rounded text-sm">{new Date(selectedApplication.submittedAt).toLocaleString(language === 'it' ? 'it-IT' : 'en-US')}</p>
+                      </div>
+                      <div>
+                        <label className="text-sm font-medium text-slate-600">CO₂ {language === 'it' ? 'Stimato' : 'Estimated'}</label>
+                        <p className="bg-slate-100 p-2 rounded text-sm font-semibold text-emerald-600">{selectedApplication.estimatedCO2}t</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Responsibility Assignment */}
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center space-x-2">
+                        <Users className="h-5 w-5" />
+                        <span>{language === 'it' ? 'Responsabilità Assegnate' : 'Assigned Responsibilities'}</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="border rounded-lg p-3 bg-blue-50">
+                        <h4 className="font-medium text-blue-800 mb-2">{language === 'it' ? 'Team Member Responsabile' : 'Responsible Team Member'}</h4>
+                        <div className="space-y-1">
+                          <p className="text-sm"><strong>{language === 'it' ? 'Nome:' : 'Name:'}</strong> {selectedApplication.assignedTeamMember || 'Alessandro Rossi'}</p>
+                          <p className="text-sm"><strong>Email:</strong> alessandro.rossi@fagri.digital</p>
+                          <p className="text-sm"><strong>ID:</strong> TM-001</p>
+                          <p className="text-sm"><strong>{language === 'it' ? 'Assegnato:' : 'Assigned:'}</strong> {new Date(selectedApplication.submittedAt).toLocaleDateString()}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="border rounded-lg p-3 bg-emerald-50">
+                        <h4 className="font-medium text-emerald-800 mb-2">{language === 'it' ? 'Autorità di Certificazione' : 'Certification Authority'}</h4>
+                        <div className="space-y-1">
+                          <p className="text-sm"><strong>{language === 'it' ? 'Nome:' : 'Name:'}</strong> Dr. Maria Bianchi</p>
+                          <p className="text-sm"><strong>Email:</strong> maria.bianchi@certification.eu</p>
+                          <p className="text-sm"><strong>ID:</strong> CA-003</p>
+                          <p className="text-sm"><strong>{language === 'it' ? 'Livello:' : 'Level:'}</strong> Senior Auditor ISO 14064</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Activity Logs */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center space-x-2">
+                      <Activity className="h-5 w-5" />
+                      <span>{language === 'it' ? 'Log Attività Completi (Ordinati per Data - Più Vecchi Prima)' : 'Complete Activity Logs (Sorted by Date - Oldest First)'}</span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {[
+                        { 
+                          timestamp: selectedApplication.submittedAt, 
+                          action: language === 'it' ? 'Progetto sottomesso' : 'Project submitted', 
+                          user: selectedApplication.fagriId,
+                          details: language === 'it' ? 'Prima sottomissione con documenti iniziali' : 'Initial submission with documents',
+                          type: 'submission'
+                        },
+                        { 
+                          timestamp: new Date(new Date(selectedApplication.submittedAt).getTime() + 24*60*60*1000).toISOString(), 
+                          action: language === 'it' ? 'Assegnazione team member' : 'Team member assignment', 
+                          user: 'ADMIN-001',
+                          details: language === 'it' ? 'Progetto assegnato ad Alessandro Rossi per revisione iniziale' : 'Project assigned to Alessandro Rossi for initial review',
+                          type: 'assignment'
+                        },
+                        { 
+                          timestamp: new Date(new Date(selectedApplication.submittedAt).getTime() + 48*60*60*1000).toISOString(), 
+                          action: language === 'it' ? 'Revisione documenti' : 'Document review', 
+                          user: 'TM-001',
+                          details: language === 'it' ? 'Documenti CO₂ rivisti - richieste integrazioni specifiche' : 'CO₂ documents reviewed - specific integrations requested',
+                          type: 'review'
+                        },
+                        { 
+                          timestamp: new Date(new Date(selectedApplication.submittedAt).getTime() + 72*60*60*1000).toISOString(), 
+                          action: language === 'it' ? 'Comunicazione cliente' : 'Client communication', 
+                          user: 'TM-001',
+                          details: language === 'it' ? 'Email inviata al cliente per documenti aggiuntivi ISO 14064-2' : 'Email sent to client for additional ISO 14064-2 documents',
+                          type: 'communication'
+                        },
+                        { 
+                          timestamp: new Date(new Date(selectedApplication.submittedAt).getTime() + 96*60*60*1000).toISOString(), 
+                          action: language === 'it' ? 'Escalation a certificazione' : 'Escalation to certification', 
+                          user: 'TM-001',
+                          details: language === 'it' ? 'Progetto escalato a Dr. Maria Bianchi per valutazione tecnica approfondita' : 'Project escalated to Dr. Maria Bianchi for technical evaluation',
+                          type: 'escalation'
+                        }
+                      ].map((log, index) => (
+                        <div 
+                          key={index} 
+                          className={`border-l-4 pl-4 py-2 ${
+                            log.type === 'submission' ? 'border-purple-400 bg-purple-50' :
+                            log.type === 'assignment' ? 'border-blue-400 bg-blue-50' :
+                            log.type === 'review' ? 'border-orange-400 bg-orange-50' :
+                            log.type === 'communication' ? 'border-green-400 bg-green-50' :
+                            'border-red-400 bg-red-50'
+                          }`}
+                        >
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <p className="font-medium text-slate-800">{log.action}</p>
+                              <p className="text-sm text-slate-600">{log.details}</p>
+                              <p className="text-xs text-slate-500">{language === 'it' ? 'Utente:' : 'User:'} {log.user}</p>
+                            </div>
+                            <span className="text-xs font-mono text-slate-500">
+                              {new Date(log.timestamp).toLocaleString(language === 'it' ? 'it-IT' : 'en-US')}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Document History */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center space-x-2">
+                      <FileText className="h-5 w-5" />
+                      <span>{language === 'it' ? 'Cronologia Documenti' : 'Document History'}</span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {[
+                        { name: 'Piano_CO2_Riduzione_v1.pdf', uploadedBy: selectedApplication.fagriId, date: selectedApplication.submittedAt, status: 'approved' },
+                        { name: 'Calcoli_Emissioni_v2.xlsx', uploadedBy: selectedApplication.fagriId, date: new Date(new Date(selectedApplication.submittedAt).getTime() + 24*60*60*1000).toISOString(), status: 'under_review' },
+                        { name: 'Certificazione_ISO_14064.pdf', uploadedBy: 'TM-001', date: new Date(new Date(selectedApplication.submittedAt).getTime() + 48*60*60*1000).toISOString(), status: 'pending' }
+                      ].map((doc, index) => (
+                        <div key={index} className="flex items-center justify-between p-3 border rounded-lg hover:bg-slate-50">
+                          <div className="flex items-center space-x-3">
+                            <FileText className="h-4 w-4 text-slate-400" />
+                            <div>
+                              <p className="text-sm font-medium">{doc.name}</p>
+                              <p className="text-xs text-slate-500">{language === 'it' ? 'Caricato da:' : 'Uploaded by:'} {doc.uploadedBy} • {new Date(doc.date).toLocaleDateString()}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <Badge 
+                              className={
+                                doc.status === 'approved' ? 'bg-green-100 text-green-800' :
+                                doc.status === 'under_review' ? 'bg-orange-100 text-orange-800' :
+                                'bg-blue-100 text-blue-800'
+                              }
+                            >
+                              {doc.status === 'approved' && (language === 'it' ? 'Approvato' : 'Approved')}
+                              {doc.status === 'under_review' && (language === 'it' ? 'In Revisione' : 'Under Review')}
+                              {doc.status === 'pending' && (language === 'it' ? 'In Attesa' : 'Pending')}
+                            </Badge>
+                            <Button size="sm" variant="outline">
+                              <Download className="h-3 w-3" />
+                            </Button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
 
         {/* Request Details Modal */}
         <Dialog open={showRequestModal} onOpenChange={setShowRequestModal}>
