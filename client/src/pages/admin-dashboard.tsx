@@ -613,19 +613,16 @@ export function AdminDashboard() {
                             <div className="flex items-center space-x-2">
                               <Button 
                                 size="sm" 
-                                variant="outline"
-                                onClick={() => window.open(`/employee-profile?id=${member.id}`, '_blank')}
-                              >
-                                <Eye className="h-4 w-4 mr-1" />
-                                {language === 'it' ? 'Dettagli' : 'Details'}
-                              </Button>
-                              <Button 
-                                size="sm" 
-                                variant="outline"
-                                onClick={() => window.open(`/employee-profile?id=${member.id}`, '_blank')}
+                                className="bg-blue-600 hover:bg-blue-700 text-white"
+                                onClick={() => {
+                                  // Navigate to employee profile with team member data
+                                  localStorage.setItem('selectedEmployeeId', member.id);
+                                  localStorage.setItem('selectedEmployeeData', JSON.stringify(member));
+                                  window.location.href = `/employee-profile/${member.id}`;
+                                }}
                               >
                                 <Settings className="h-4 w-4 mr-1" />
-                                {language === 'it' ? 'Gestisci' : 'Manage'}
+                                {language === 'it' ? 'Profil Verwalten' : 'Manage Profile'}
                               </Button>
                             </div>
                           </div>
