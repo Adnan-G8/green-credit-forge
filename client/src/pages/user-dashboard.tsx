@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useLanguage } from '@/components/language-provider';
 import { 
   User, 
@@ -41,6 +42,8 @@ export function UserDashboard({ fagriId }: UserDashboardProps) {
   const [user, setUser] = useState<any>(null);
   const [authorizations, setAuthorizations] = useState<Authorization[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showStatusModal, setShowStatusModal] = useState(false);
+  const [requestedAccountType, setRequestedAccountType] = useState('');
 
   useEffect(() => {
     const loadUserData = async () => {
@@ -156,6 +159,10 @@ Contact: support@fagri.digital
         setAuthorizations(userAuthorizations);
       }
 
+      // Set the requested account type and show detailed status modal
+      setRequestedAccountType(displayName);
+      setShowStatusModal(true);
+      
       toast({
         title: language === 'it' ? 'Richiesta Inviata' : 'Request Submitted',
         description: language === 'it' 
@@ -226,7 +233,7 @@ Contact: support@fagri.digital
           <CardHeader>
             <CardTitle className="flex items-center text-emerald-800">
               <Key className="h-6 w-6 mr-3" />
-              ALPHAG8 ID KEY
+              ALPHAG8 ID KEY - {user?.firstName || ''} {user?.lastName || ''}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -413,6 +420,59 @@ Contact: support@fagri.digital
             </CardContent>
           </Card>
         )}
+        
+        {/* Status Information Modal */}
+        <Dialog open={showStatusModal} onOpenChange={setShowStatusModal}>
+          <DialogContent className="max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-center text-emerald-800">
+                {language === 'it' ? 'Richiesta Inviata' : 'Request Submitted'}
+              </DialogTitle>
+            </DialogHeader>
+            <div className="text-center space-y-4">
+              <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-200">
+                <CheckCircle className="h-12 w-12 mx-auto mb-3 text-emerald-600" />
+                <h3 className="font-medium text-emerald-800 mb-2">
+                  ALPHAG8 ID KEY - {user?.firstName || ''} {user?.lastName || ''}
+                </h3>
+                <p className="text-sm text-emerald-700 font-mono bg-white px-3 py-1 rounded border">
+                  {fagriId}
+                </p>
+              </div>
+              
+              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <h4 className="font-medium text-blue-800 mb-2">
+                  {language === 'it' 
+                    ? `Sie haben einen Antrag gestellt für die Aufnahme in die ${requestedAccountType} Gruppe`
+                    : `You have submitted an application for the ${requestedAccountType} group`}
+                </h4>
+                <p className="text-sm text-blue-700">
+                  {language === 'it' 
+                    ? 'Die Freigabe wird in Kürze erfolgen. Bitte überprüfen Sie den Status in Kürze.'
+                    : 'Approval will follow shortly. Please check the status soon.'}
+                </p>
+              </div>
+              
+              <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                <h4 className="font-medium text-yellow-800 mb-2">
+                  {language === 'it' ? 'Importante' : 'Important'}
+                </h4>
+                <p className="text-sm text-yellow-700">
+                  {language === 'it' 
+                    ? 'Falls Sie innerhalb von 24 Stunden nicht den Zugang erhalten haben, dann informieren Sie die FAGRI Digital Administration.'
+                    : 'If you have not received access within 24 hours, please inform the FAGRI Digital Administration.'}
+                </p>
+              </div>
+              
+              <Button 
+                onClick={() => setShowStatusModal(false)}
+                className="w-full bg-emerald-600 hover:bg-emerald-700"
+              >
+                {language === 'it' ? 'Verstanden' : 'Understood'}
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
