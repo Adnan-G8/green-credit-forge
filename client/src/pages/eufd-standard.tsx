@@ -297,39 +297,39 @@ export default function EufdStandardPage() {
                 {t.scientificTitle}
               </h2>
               
-              <div className="space-y-6">
-                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">
+              <div className="space-y-4">
+                <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
                     {t.eliminationTitle}
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 text-lg">
                     {t.eliminationDesc}
                   </p>
                 </div>
                 
-                <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">
+                <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
                     {t.preventionTitle}
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 text-lg">
                     {t.preventionDesc}
                   </p>
                 </div>
                 
-                <div className="bg-purple-50 rounded-xl p-6 border border-purple-200">
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">
+                <div className="bg-purple-50 rounded-xl p-8 border border-purple-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
                     {t.clearOwnershipTitle}
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 text-lg">
                     {t.clearOwnershipDesc}
                   </p>
                 </div>
                 
-                <div className="bg-orange-50 rounded-xl p-6 border border-orange-200">
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">
+                <div className="bg-orange-50 rounded-xl p-8 border border-orange-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
                     {t.maxSecurityTitle}
                   </h3>
-                  <p className="text-slate-600">
+                  <p className="text-slate-600 text-lg">
                     {t.maxSecurityDesc}
                   </p>
                 </div>
