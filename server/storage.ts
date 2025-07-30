@@ -1,414 +1,726 @@
-import type { User, InsertUser, ContactRequest, InsertContactRequest, MembershipApplication, InsertMembershipApplication, CO2Project, InsertCO2Project, ProjectMilestone, InsertProjectMilestone, ProjectActivity, InsertProjectActivity } from "@shared/schema";
+import { 
+  users, 
+  accountTypes, 
+  userAuthorizations, 
+  clients, 
+  applications, 
+  auditLogs,
+  type User,
+  type InsertUser,
+  type AccountType,
+  type InsertAccountType,
+  type UserAuthorization,
+  type InsertUserAuthorization,
+  type Client,
+  type InsertClient,
+  type Application,
+  type InsertApplication,
+  type AuditLog,
+  type InsertAuditLog
+} from "../shared/schema";
+import { db } from "./db";
+import { eq, and, desc } from "drizzle-orm";
 
+// Storage interface for the comprehensive audit-ready system
 export interface IStorage {
-  // User operations
-  getUser(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(insertUser: InsertUser): Promise<User>;
-
-  // Contact operations
-  createContactRequest(contactRequest: InsertContactRequest): Promise<ContactRequest>;
-
-  // Membership operations
-  createMembershipApplication(application: InsertMembershipApplication): Promise<MembershipApplication>;
+  // User management
+  createUser(user: InsertUser): Promise<User>;
+  getUserByFagriId(fagriIdKey: string): Promise<User | undefined>;
+  updateUser(fagriIdKey: string, updates: Partial<User>): Promise<User>;
   
-  // Placeholder methods for existing functionality
-  getContactRequests(): Promise<ContactRequest[]>;
-  getMembershipApplications(): Promise<MembershipApplication[]>;
-
-  // CO2 Project operations
-  createCO2Project(project: InsertCO2Project): Promise<CO2Project>;
-  getAllCO2Projects(userId?: string): Promise<CO2Project[]>;
-  getCO2Project(id: string): Promise<CO2Project | undefined>;
-  updateCO2Project(id: string, updates: Partial<CO2Project>): Promise<CO2Project | undefined>;
-  deleteCO2Project(id: string): Promise<boolean>;
-
-  // Project Milestone operations
-  createProjectMilestone(milestone: InsertProjectMilestone): Promise<ProjectMilestone>;
-  getProjectMilestones(projectId: string): Promise<ProjectMilestone[]>;
-  updateProjectMilestone(id: string, updates: Partial<ProjectMilestone>): Promise<ProjectMilestone | undefined>;
-
-  // Project Activity operations
-  createProjectActivity(activity: InsertProjectActivity): Promise<ProjectActivity>;
-  getProjectActivities(projectId: string): Promise<ProjectActivity[]>;
+  // Account types management
+  getAccountTypes(): Promise<AccountType[]>;
+  createAccountType(accountType: InsertAccountType): Promise<AccountType>;
+  
+  // Authorization management
+  requestAuthorization(authorization: InsertUserAuthorization): Promise<UserAuthorization>;
+  getPendingAuthorizations(): Promise<UserAuthorization[]>;
+  getUserAuthorizations(userId: string): Promise<UserAuthorization[]>;
+  approveAuthorization(authId: string, reviewerId: string, reviewerName: string, notes?: string): Promise<UserAuthorization>;
+  rejectAuthorization(authId: string, reviewerId: string, reviewerName: string, notes?: string): Promise<UserAuthorization>;
+  
+  // Client management
+  createClient(client: InsertClient): Promise<Client>;
+  getClientsByTeamMember(teamMemberId: string): Promise<Client[]>;
+  updateClient(clientId: string, updates: Partial<Client>): Promise<Client>;
+  
+  // Application management
+  createApplication(application: InsertApplication): Promise<Application>;
+  getApplicationsByTeamMember(teamMemberId: string): Promise<Application[]>;
+  getApplicationsByClient(clientId: string): Promise<Application[]>;
+  updateApplicationStatus(appId: string, status: string, reviewerId?: string): Promise<Application>;
+  
+  // Audit logging
+  createAuditLog(auditLog: InsertAuditLog): Promise<AuditLog>;
+  getAuditLogsByUser(userId: string): Promise<AuditLog[]>;
+  getAuditLogsByEntity(entityType: string, entityId: string): Promise<AuditLog[]>;
 }
 
-// In-memory storage implementation
+export class DatabaseStorage implements IStorage {
+  
+  // User management
+  async createUser(user: InsertUser): Promise<User> {
+    const [newUser] = await db.insert(users).values(user).returning();
+    
+    // Create audit log
+    await this.createAuditLog({
+      userId: newUser.id,
+      userName: `${newUser.firstName} ${newUser.lastName}`,
+      userRole: 'new-user',
+      action: 'create',
+      entityType: 'user',
+      entityId: newUser.id,
+      newValues: newUser,
+      description: `New user account created with FAGRI ID: ${newUser.fagriIdKey}`,
+    });
+    
+    return newUser;
+  }
+  
+  async getUserByFagriId(fagriIdKey: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.fagriIdKey, fagriIdKey));
+    return user;
+  }
+  
+  async updateUser(fagriIdKey: string, updates: Partial<User>): Promise<User> {
+    const oldUser = await this.getUserByFagriId(fagriIdKey);
+    const [updatedUser] = await db
+      .update(users)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(eq(users.fagriIdKey, fagriIdKey))
+      .returning();
+    
+    // Create audit log
+    if (oldUser) {
+      await this.createAuditLog({
+        userId: updatedUser.id,
+        userName: `${updatedUser.firstName} ${updatedUser.lastName}`,
+        userRole: 'user',
+        action: 'update',
+        entityType: 'user',
+        entityId: updatedUser.id,
+        oldValues: oldUser,
+        newValues: updatedUser,
+        description: `User profile updated for FAGRI ID: ${updatedUser.fagriIdKey}`,
+      });
+    }
+    
+    return updatedUser;
+  }
+  
+  // Account types management
+  async getAccountTypes(): Promise<AccountType[]> {
+    return await db.select().from(accountTypes);
+  }
+  
+  async createAccountType(accountType: InsertAccountType): Promise<AccountType> {
+    const [newAccountType] = await db.insert(accountTypes).values(accountType).returning();
+    return newAccountType;
+  }
+  
+  // Authorization management
+  async requestAuthorization(authorization: InsertUserAuthorization): Promise<UserAuthorization> {
+    const [newAuth] = await db.insert(userAuthorizations).values(authorization).returning();
+    
+    // Create audit log
+    const user = await db.select().from(users).where(eq(users.id, authorization.userId));
+    if (user[0]) {
+      await this.createAuditLog({
+        userId: authorization.userId,
+        userName: `${user[0].firstName} ${user[0].lastName}`,
+        userRole: 'user',
+        action: 'request',
+        entityType: 'authorization',
+        entityId: newAuth.id,
+        newValues: newAuth,
+        description: `Authorization requested for account type`,
+      });
+    }
+    
+    return newAuth;
+  }
+  
+  async getPendingAuthorizations(): Promise<UserAuthorization[]> {
+    return await db
+      .select()
+      .from(userAuthorizations)
+      .where(eq(userAuthorizations.status, 'pending'))
+      .orderBy(desc(userAuthorizations.requestedAt));
+  }
+  
+  async getUserAuthorizations(userId: string): Promise<UserAuthorization[]> {
+    return await db
+      .select()
+      .from(userAuthorizations)
+      .where(eq(userAuthorizations.userId, userId))
+      .orderBy(desc(userAuthorizations.requestedAt));
+  }
+  
+  async approveAuthorization(authId: string, reviewerId: string, reviewerName: string, notes?: string): Promise<UserAuthorization> {
+    const [updatedAuth] = await db
+      .update(userAuthorizations)
+      .set({
+        status: 'approved',
+        reviewedAt: new Date(),
+        reviewedBy: reviewerId,
+        reviewerName,
+        reviewNotes: notes,
+      })
+      .where(eq(userAuthorizations.id, authId))
+      .returning();
+    
+    // Create audit log
+    const user = await db.select().from(users).where(eq(users.id, updatedAuth.userId));
+    if (user[0]) {
+      await this.createAuditLog({
+        userId: reviewerId,
+        userName: reviewerName,
+        userRole: 'admin',
+        action: 'approve',
+        entityType: 'authorization',
+        entityId: authId,
+        newValues: updatedAuth,
+        description: `Authorization approved by ${reviewerName} for user ${user[0].firstName} ${user[0].lastName}`,
+      });
+    }
+    
+    return updatedAuth;
+  }
+  
+  async rejectAuthorization(authId: string, reviewerId: string, reviewerName: string, notes?: string): Promise<UserAuthorization> {
+    const [updatedAuth] = await db
+      .update(userAuthorizations)
+      .set({
+        status: 'rejected',
+        reviewedAt: new Date(),
+        reviewedBy: reviewerId,
+        reviewerName,
+        reviewNotes: notes,
+      })
+      .where(eq(userAuthorizations.id, authId))
+      .returning();
+    
+    // Create audit log
+    const user = await db.select().from(users).where(eq(users.id, updatedAuth.userId));
+    if (user[0]) {
+      await this.createAuditLog({
+        userId: reviewerId,
+        userName: reviewerName,
+        userRole: 'admin',
+        action: 'reject',
+        entityType: 'authorization',
+        entityId: authId,
+        newValues: updatedAuth,
+        description: `Authorization rejected by ${reviewerName} for user ${user[0].firstName} ${user[0].lastName}. Reason: ${notes || 'No reason provided'}`,
+      });
+    }
+    
+    return updatedAuth;
+  }
+  
+  // Client management
+  async createClient(client: InsertClient): Promise<Client> {
+    const [newClient] = await db.insert(clients).values(client).returning();
+    
+    // Create audit log
+    const teamMember = await db.select().from(users).where(eq(users.id, client.teamMemberId));
+    if (teamMember[0]) {
+      await this.createAuditLog({
+        userId: client.teamMemberId,
+        userName: `${teamMember[0].firstName} ${teamMember[0].lastName}`,
+        userRole: 'team-member',
+        action: 'create',
+        entityType: 'client',
+        entityId: newClient.id,
+        newValues: newClient,
+        description: `New client created: ${newClient.name} (${newClient.pecEmail})`,
+      });
+    }
+    
+    return newClient;
+  }
+  
+  async getClientsByTeamMember(teamMemberId: string): Promise<Client[]> {
+    return await db
+      .select()
+      .from(clients)
+      .where(eq(clients.teamMemberId, teamMemberId))
+      .orderBy(desc(clients.createdAt));
+  }
+  
+  async updateClient(clientId: string, updates: Partial<Client>): Promise<Client> {
+    const [updatedClient] = await db
+      .update(clients)
+      .set({ ...updates, updatedAt: new Date() })
+      .where(eq(clients.id, clientId))
+      .returning();
+    
+    return updatedClient;
+  }
+  
+  // Application management
+  async createApplication(application: InsertApplication): Promise<Application> {
+    const [newApp] = await db.insert(applications).values(application).returning();
+    
+    // Create audit log
+    const teamMember = await db.select().from(users).where(eq(users.id, application.teamMemberId));
+    if (teamMember[0]) {
+      await this.createAuditLog({
+        userId: application.teamMemberId,
+        userName: `${teamMember[0].firstName} ${teamMember[0].lastName}`,
+        userRole: 'team-member',
+        action: 'create',
+        entityType: 'application',
+        entityId: newApp.id,
+        newValues: newApp,
+        description: `New application created: ${newApp.applicationNumber}`,
+      });
+    }
+    
+    return newApp;
+  }
+  
+  async getApplicationsByTeamMember(teamMemberId: string): Promise<Application[]> {
+    return await db
+      .select()
+      .from(applications)
+      .where(eq(applications.teamMemberId, teamMemberId))
+      .orderBy(desc(applications.createdAt));
+  }
+  
+  async getApplicationsByClient(clientId: string): Promise<Application[]> {
+    return await db
+      .select()
+      .from(applications)
+      .where(eq(applications.clientId, clientId))
+      .orderBy(desc(applications.createdAt));
+  }
+  
+  async updateApplicationStatus(appId: string, status: string, reviewerId?: string): Promise<Application> {
+    const updateData: any = { status, updatedAt: new Date() };
+    
+    if (status === 'under-review' && reviewerId) {
+      updateData.reviewedAt = new Date();
+      updateData.reviewedBy = reviewerId;
+    } else if (status === 'certified' && reviewerId) {
+      updateData.certifiedAt = new Date();
+      updateData.certifiedBy = reviewerId;
+    }
+    
+    const [updatedApp] = await db
+      .update(applications)
+      .set(updateData)
+      .where(eq(applications.id, appId))
+      .returning();
+    
+    // Create audit log
+    if (reviewerId) {
+      const reviewer = await db.select().from(users).where(eq(users.id, reviewerId));
+      if (reviewer[0]) {
+        await this.createAuditLog({
+          userId: reviewerId,
+          userName: `${reviewer[0].firstName} ${reviewer[0].lastName}`,
+          userRole: 'reviewer',
+          action: 'update_status',
+          entityType: 'application',
+          entityId: appId,
+          newValues: { status },
+          description: `Application ${updatedApp.applicationNumber} status changed to: ${status}`,
+        });
+      }
+    }
+    
+    return updatedApp;
+  }
+  
+  // Audit logging
+  async createAuditLog(auditLog: InsertAuditLog): Promise<AuditLog> {
+    const [newLog] = await db.insert(auditLogs).values(auditLog).returning();
+    return newLog;
+  }
+  
+  async getAuditLogsByUser(userId: string): Promise<AuditLog[]> {
+    return await db
+      .select()
+      .from(auditLogs)
+      .where(eq(auditLogs.userId, userId))
+      .orderBy(desc(auditLogs.createdAt));
+  }
+  
+  async getAuditLogsByEntity(entityType: string, entityId: string): Promise<AuditLog[]> {
+    return await db
+      .select()
+      .from(auditLogs)
+      .where(and(eq(auditLogs.entityType, entityType), eq(auditLogs.entityId, entityId)))
+      .orderBy(desc(auditLogs.createdAt));
+  }
+}
+
+// In-memory storage implementation for immediate functionality
 export class MemStorage implements IStorage {
   private users: User[] = [];
-  private contactRequests: ContactRequest[] = [];
-  private membershipApplications: MembershipApplication[] = [];
-  private co2Projects: CO2Project[] = [];
-  private projectMilestones: ProjectMilestone[] = [];
-  private projectActivities: ProjectActivity[] = [];
-  private currentUserId = 1;
-  private currentContactId = 1;
-  private currentMembershipId = 1;
+  private userAuthorizations: UserAuthorization[] = [];
+  private clients: Client[] = [];
+  private applications: Application[] = [];
+  private auditLogs: AuditLog[] = [];
 
-  async getUser(id: number): Promise<User | undefined> {
-    return this.users.find(user => user.id === id);
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return this.users.find(user => user.username === username);
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
+  // User management
+  async createUser(userData: InsertUser): Promise<User> {
     const user: User = {
-      id: this.currentUserId++,
-      ...insertUser,
+      id: `user_${Date.now()}`,
+      fagriIdKey: userData.fagriIdKey,
+      firstName: userData.firstName,
+      lastName: userData.lastName,
+      email: userData.email,
+      socialSecurityNumber: userData.socialSecurityNumber,
+      telephone: userData.telephone,
+      streetAddress: userData.streetAddress,
+      city: userData.city,
+      postalCode: userData.postalCode,
+      province: userData.province,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
+
     this.users.push(user);
+    
+    // Create audit log
+    await this.createAuditLog({
+      userId: user.id,
+      userName: `${user.firstName} ${user.lastName}`,
+      userRole: 'new-user',
+      action: 'create',
+      entityType: 'user',
+      entityId: user.id,
+      newValues: user,
+      description: `New user account created with FAGRI ID: ${user.fagriIdKey}`,
+    });
+
     return user;
   }
 
-  async createContactRequest(contactRequest: InsertContactRequest): Promise<ContactRequest> {
-    const request: ContactRequest = {
-      id: this.currentContactId++,
-      ...contactRequest,
-      createdAt: new Date(),
-    };
-    this.contactRequests.push(request);
-    return request;
+  async getUserByFagriId(fagriIdKey: string): Promise<User | undefined> {
+    return this.users.find(user => user.fagriIdKey === fagriIdKey);
   }
 
-  async createMembershipApplication(application: InsertMembershipApplication): Promise<MembershipApplication> {
-    const app: MembershipApplication = {
-      id: this.currentMembershipId++,
-      ...application,
-      createdAt: new Date(),
+  async updateUser(fagriIdKey: string, updates: Partial<User>): Promise<User> {
+    const userIndex = this.users.findIndex(user => user.fagriIdKey === fagriIdKey);
+    if (userIndex === -1) throw new Error('User not found');
+
+    const oldUser = { ...this.users[userIndex] };
+    this.users[userIndex] = {
+      ...this.users[userIndex],
+      ...updates,
+      updatedAt: new Date(),
     };
-    this.membershipApplications.push(app);
-    return app;
+
+    // Create audit log
+    await this.createAuditLog({
+      userId: this.users[userIndex].id,
+      userName: `${this.users[userIndex].firstName} ${this.users[userIndex].lastName}`,
+      userRole: 'user',
+      action: 'update',
+      entityType: 'user',
+      entityId: this.users[userIndex].id,
+      oldValues: oldUser,
+      newValues: this.users[userIndex],
+      description: `User profile updated for FAGRI ID: ${this.users[userIndex].fagriIdKey}`,
+    });
+
+    return this.users[userIndex];
   }
 
-  // CO2 Project operations
-  async createCO2Project(project: InsertCO2Project): Promise<CO2Project> {
-    const newProject: CO2Project = {
-      ...project,
-      applicationDate: new Date(),
-      lastUpdated: new Date(),
-      progressPercentage: project.progressPercentage || 0,
-      currentPhase: project.currentPhase || 'application',
-      priority: project.priority || 'medium',
-      documentsSubmitted: project.documentsSubmitted || 0,
-      documentsRequired: project.documentsRequired || 0,
-      complianceScore: project.complianceScore || 0,
-      certificationStandard: project.certificationStandard || 'EUFD2025-001',
-      status: project.status || 'draft',
-    };
-    this.co2Projects.push(newProject);
-    return newProject;
+  // Account types management
+  async getAccountTypes(): Promise<AccountType[]> {
+    return [
+      { id: 'fagri-member', name: 'FAGRI Member', description: 'Basic platform access', permissions: ['view_projects'] },
+      { id: 'fagri-team', name: 'FAGRI Team', description: 'Client and application management', permissions: ['manage_clients', 'create_applications'] },
+      { id: 'audit-certification', name: 'Audit & Certification', description: 'Review and certification', permissions: ['review_applications', 'certify_projects'] },
+      { id: 'administration', name: 'Administration', description: 'Full system control', permissions: ['manage_users', 'approve_authorizations', 'system_config'] }
+    ];
   }
 
-  async getAllCO2Projects(userId?: string): Promise<CO2Project[]> {
-    if (userId) {
-      return this.co2Projects.filter(project => project.userId === userId);
+  async createAccountType(accountType: InsertAccountType): Promise<AccountType> {
+    return accountType as AccountType;
+  }
+
+  // Authorization management
+  async requestAuthorization(authData: InsertUserAuthorization): Promise<UserAuthorization> {
+    const authorization: UserAuthorization = {
+      id: `auth_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      userId: authData.userId,
+      accountTypeId: authData.accountTypeId,
+      status: 'pending',
+      requestedAt: new Date(),
+      reviewedAt: null,
+      reviewedBy: null,
+      reviewerName: null,
+      reviewNotes: null,
+    };
+
+    this.userAuthorizations.push(authorization);
+
+    // Create audit log
+    const user = this.users.find(u => u.id === authData.userId);
+    if (user) {
+      await this.createAuditLog({
+        userId: authData.userId,
+        userName: `${user.firstName} ${user.lastName}`,
+        userRole: 'user',
+        action: 'request',
+        entityType: 'authorization',
+        entityId: authorization.id,
+        newValues: authorization,
+        description: `Authorization requested for account type`,
+      });
     }
-    return [...this.co2Projects];
+
+    return authorization;
   }
 
-  async getCO2Project(id: string): Promise<CO2Project | undefined> {
-    return this.co2Projects.find(project => project.id === id);
+  async getPendingAuthorizations(): Promise<UserAuthorization[]> {
+    return this.userAuthorizations.filter(auth => auth.status === 'pending');
   }
 
-  async updateCO2Project(id: string, updates: Partial<CO2Project>): Promise<CO2Project | undefined> {
-    const index = this.co2Projects.findIndex(project => project.id === id);
-    if (index === -1) return undefined;
-    
-    this.co2Projects[index] = {
-      ...this.co2Projects[index],
-      ...updates,
-      lastUpdated: new Date(),
+  async getUserAuthorizations(userId: string): Promise<UserAuthorization[]> {
+    return this.userAuthorizations.filter(auth => auth.userId === userId);
+  }
+
+  async approveAuthorization(authId: string, reviewerId: string, reviewerName: string, notes?: string): Promise<UserAuthorization> {
+    const authIndex = this.userAuthorizations.findIndex(auth => auth.id === authId);
+    if (authIndex === -1) throw new Error('Authorization not found');
+
+    this.userAuthorizations[authIndex] = {
+      ...this.userAuthorizations[authIndex],
+      status: 'approved',
+      reviewedAt: new Date(),
+      reviewedBy: reviewerId,
+      reviewerName,
+      reviewNotes: notes || null,
     };
-    return this.co2Projects[index];
+
+    // Create audit log
+    const user = this.users.find(u => u.id === this.userAuthorizations[authIndex].userId);
+    if (user) {
+      await this.createAuditLog({
+        userId: reviewerId,
+        userName: reviewerName,
+        userRole: 'admin',
+        action: 'approve',
+        entityType: 'authorization',
+        entityId: authId,
+        newValues: this.userAuthorizations[authIndex],
+        description: `Authorization approved by ${reviewerName} for user ${user.firstName} ${user.lastName}`,
+      });
+    }
+
+    return this.userAuthorizations[authIndex];
   }
 
-  async deleteCO2Project(id: string): Promise<boolean> {
-    const index = this.co2Projects.findIndex(project => project.id === id);
-    if (index === -1) return false;
-    this.co2Projects.splice(index, 1);
-    return true;
+  async rejectAuthorization(authId: string, reviewerId: string, reviewerName: string, notes?: string): Promise<UserAuthorization> {
+    const authIndex = this.userAuthorizations.findIndex(auth => auth.id === authId);
+    if (authIndex === -1) throw new Error('Authorization not found');
+
+    this.userAuthorizations[authIndex] = {
+      ...this.userAuthorizations[authIndex],
+      status: 'rejected',
+      reviewedAt: new Date(),
+      reviewedBy: reviewerId,
+      reviewerName,
+      reviewNotes: notes || null,
+    };
+
+    // Create audit log
+    const user = this.users.find(u => u.id === this.userAuthorizations[authIndex].userId);
+    if (user) {
+      await this.createAuditLog({
+        userId: reviewerId,
+        userName: reviewerName,
+        userRole: 'admin',
+        action: 'reject',
+        entityType: 'authorization',
+        entityId: authId,
+        newValues: this.userAuthorizations[authIndex],
+        description: `Authorization rejected by ${reviewerName} for user ${user.firstName} ${user.lastName}. Reason: ${notes || 'No reason provided'}`,
+      });
+    }
+
+    return this.userAuthorizations[authIndex];
   }
 
-  // Project Milestone operations
-  async createProjectMilestone(milestone: InsertProjectMilestone): Promise<ProjectMilestone> {
-    const newMilestone: ProjectMilestone = {
-      ...milestone,
+  // Client management
+  async createClient(clientData: InsertClient): Promise<Client> {
+    const client: Client = {
+      id: `client_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      teamMemberId: clientData.teamMemberId,
+      name: clientData.name,
+      contactPerson: clientData.contactPerson,
+      email: clientData.email,
+      telephone: clientData.telephone,
+      address: clientData.address,
+      pecEmail: clientData.pecEmail,
+      vatNumber: clientData.vatNumber,
+      legalRepresentative: clientData.legalRepresentative,
+      bankingInfo: clientData.bankingInfo,
+      status: 'active',
       createdAt: new Date(),
       updatedAt: new Date(),
-      status: milestone.status || 'pending',
-      priority: milestone.priority || 'medium',
     };
-    this.projectMilestones.push(newMilestone);
-    return newMilestone;
+
+    this.clients.push(client);
+
+    // Create audit log
+    const teamMember = this.users.find(u => u.id === clientData.teamMemberId);
+    if (teamMember) {
+      await this.createAuditLog({
+        userId: clientData.teamMemberId,
+        userName: `${teamMember.firstName} ${teamMember.lastName}`,
+        userRole: 'team-member',
+        action: 'create',
+        entityType: 'client',
+        entityId: client.id,
+        newValues: client,
+        description: `New client created: ${client.name} (${client.pecEmail})`,
+      });
+    }
+
+    return client;
   }
 
-  async getProjectMilestones(projectId: string): Promise<ProjectMilestone[]> {
-    return this.projectMilestones.filter(milestone => milestone.projectId === projectId);
+  async getClientsByTeamMember(teamMemberId: string): Promise<Client[]> {
+    return this.clients.filter(client => client.teamMemberId === teamMemberId);
   }
 
-  async updateProjectMilestone(id: string, updates: Partial<ProjectMilestone>): Promise<ProjectMilestone | undefined> {
-    const index = this.projectMilestones.findIndex(milestone => milestone.id === id);
-    if (index === -1) return undefined;
-    
-    this.projectMilestones[index] = {
-      ...this.projectMilestones[index],
+  async updateClient(clientId: string, updates: Partial<Client>): Promise<Client> {
+    const clientIndex = this.clients.findIndex(client => client.id === clientId);
+    if (clientIndex === -1) throw new Error('Client not found');
+
+    this.clients[clientIndex] = {
+      ...this.clients[clientIndex],
       ...updates,
       updatedAt: new Date(),
     };
-    return this.projectMilestones[index];
+
+    return this.clients[clientIndex];
   }
 
-  // Project Activity operations
-  async createProjectActivity(activity: InsertProjectActivity): Promise<ProjectActivity> {
-    const newActivity: ProjectActivity = {
-      ...activity,
-      timestamp: new Date(),
+  // Application management
+  async createApplication(appData: InsertApplication): Promise<Application> {
+    const application: Application = {
+      id: `app_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      teamMemberId: appData.teamMemberId,
+      clientId: appData.clientId,
+      applicationNumber: `APP-${Date.now()}`,
+      projectType: appData.projectType,
+      projectName: appData.projectName,
+      projectDescription: appData.projectDescription,
+      hectares: appData.hectares,
+      estimatedCo2: appData.estimatedCo2,
+      status: 'draft',
+      submittedAt: null,
+      reviewedAt: null,
+      reviewedBy: null,
+      certifiedAt: null,
+      certifiedBy: null,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
-    this.projectActivities.push(newActivity);
-    return newActivity;
+
+    this.applications.push(application);
+
+    // Create audit log
+    const teamMember = this.users.find(u => u.id === appData.teamMemberId);
+    if (teamMember) {
+      await this.createAuditLog({
+        userId: appData.teamMemberId,
+        userName: `${teamMember.firstName} ${teamMember.lastName}`,
+        userRole: 'team-member',
+        action: 'create',
+        entityType: 'application',
+        entityId: application.id,
+        newValues: application,
+        description: `New application created: ${application.applicationNumber}`,
+      });
+    }
+
+    return application;
   }
 
-  async getProjectActivities(projectId: string): Promise<ProjectActivity[]> {
-    return this.projectActivities
-      .filter(activity => activity.projectId === projectId)
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+  async getApplicationsByTeamMember(teamMemberId: string): Promise<Application[]> {
+    return this.applications.filter(app => app.teamMemberId === teamMemberId);
   }
 
-  // Helper method to populate with sample data
-  populateSampleData() {
-    // Sample CO2 projects
-    const sampleProjects: CO2Project[] = [
-      {
-        id: 'proj-001',
-        userId: 'user-001',
-        alphaG8Id: 'AG8-USER-001',
-        projectType: 'farming',
-        projectName: 'Organic Wheat Farm CO₂ Reduction',
-        description: 'Sustainable farming practices to reduce carbon emissions through organic wheat cultivation.',
-        status: 'in-progress',
-        country: 'Italy',
-        region: 'Tuscany',
-        city: 'Florence',
-        streetAddress: 'Via dei Campi 123',
-        postalCode: '50100',
-        province: 'FI',
-        hectares: '25',
-        estimatedCO2Reduction: '45.5',
-        certificationStandard: 'EUFD2025-001',
-        isoStandards: ['ISO 14064-1', 'ISO 14064-2'],
-        applicationDate: new Date('2024-01-15'),
-        reviewStartDate: new Date('2024-02-01'),
-        lastUpdated: new Date(),
-        progressPercentage: 65,
-        currentPhase: 'verification',
-        nextMilestone: 'Field Verification Complete',
-        milestoneDate: new Date('2024-08-15'),
-        projectValue: '12500',
-        carbonCreditPrice: '275',
-        expectedRevenue: '12512',
-        documentsSubmitted: 8,
-        documentsRequired: 12,
-        complianceScore: 87,
-        lastCommunication: new Date('2024-07-20'),
-        priority: 'high',
-        tags: ['organic', 'wheat', 'sustainable'],
-        metadata: null,
-        renewableEnergyType: null,
-        renewableCapacity: null,
-        communicationNotes: null,
-        approvalDate: null,
-        completionDate: null,
-        carbonCreditPrice: null,
-        expectedRevenue: null
-      },
-      {
-        id: 'proj-002',
-        userId: 'user-001',
-        alphaG8Id: 'AG8-USER-001',
-        projectType: 'renewable-energy',
-        projectName: 'Solar Farm Installation',
-        description: '200 kW solar photovoltaic installation for clean energy generation.',
-        status: 'under-review',
-        country: 'Italy',
-        region: 'Lombardy',
-        city: 'Milan',
-        streetAddress: 'Via Energia 456',
-        postalCode: '20100',
-        province: 'MI',
-        renewableEnergyType: 'solar-photovoltaic',
-        renewableCapacity: '200 kW',
-        estimatedCO2Reduction: '120.0',
-        certificationStandard: 'EUFD2025-001',
-        isoStandards: ['ISO 14064-1', 'ISO 14064-3'],
-        applicationDate: new Date('2024-03-01'),
-        reviewStartDate: new Date('2024-03-15'),
-        lastUpdated: new Date(),
-        progressPercentage: 35,
-        currentPhase: 'documentation',
-        nextMilestone: 'Technical Review Complete',
-        milestoneDate: new Date('2024-08-30'),
-        projectValue: '35000',
-        carbonCreditPrice: '290',
-        expectedRevenue: '34800',
-        documentsSubmitted: 6,
-        documentsRequired: 15,
-        complianceScore: 73,
-        lastCommunication: new Date('2024-07-25'),
-        priority: 'medium',
-        tags: ['solar', 'renewable', 'clean-energy'],
-        metadata: null,
-        hectares: null,
-        communicationNotes: null,
-        approvalDate: null,
-        completionDate: null
-      },
-      {
-        id: 'proj-003',
-        userId: 'user-001',
-        alphaG8Id: 'AG8-USER-001',
-        projectType: 'forest',
-        projectName: 'Reforestation Project',
-        description: 'Native tree species reforestation for carbon sequestration.',
-        status: 'approved',
-        country: 'Italy',
-        region: 'Umbria',
-        city: 'Perugia',
-        streetAddress: 'Località Bosco Verde',
-        postalCode: '06100',
-        province: 'PG',
-        hectares: '15',
-        estimatedCO2Reduction: '75.2',
-        certificationStandard: 'EUFD2025-001',
-        isoStandards: ['ISO 14064-1', 'ISO 14064-2', 'ISO 14064-3'],
-        applicationDate: new Date('2024-01-10'),
-        reviewStartDate: new Date('2024-01-25'),
-        approvalDate: new Date('2024-06-15'),
-        lastUpdated: new Date(),
-        progressPercentage: 90,
-        currentPhase: 'certification',
-        nextMilestone: 'Final Certification',
-        milestoneDate: new Date('2024-08-10'),
-        projectValue: '18750',
-        carbonCreditPrice: '250',
-        expectedRevenue: '18800',
-        documentsSubmitted: 12,
-        documentsRequired: 12,
-        complianceScore: 96,
-        lastCommunication: new Date('2024-07-27'),
-        priority: 'high',
-        tags: ['reforestation', 'native-species', 'carbon-sequestration'],
-        metadata: null,
-        renewableEnergyType: null,
-        renewableCapacity: null,
-        communicationNotes: null,
-        completionDate: null
+  async getApplicationsByClient(clientId: string): Promise<Application[]> {
+    return this.applications.filter(app => app.clientId === clientId);
+  }
+
+  async updateApplicationStatus(appId: string, status: string, reviewerId?: string): Promise<Application> {
+    const appIndex = this.applications.findIndex(app => app.id === appId);
+    if (appIndex === -1) throw new Error('Application not found');
+
+    const updateData: any = { status, updatedAt: new Date() };
+    
+    if (status === 'under-review' && reviewerId) {
+      updateData.reviewedAt = new Date();
+      updateData.reviewedBy = reviewerId;
+    } else if (status === 'certified' && reviewerId) {
+      updateData.certifiedAt = new Date();
+      updateData.certifiedBy = reviewerId;
+    }
+
+    this.applications[appIndex] = {
+      ...this.applications[appIndex],
+      ...updateData,
+    };
+
+    // Create audit log
+    if (reviewerId) {
+      const reviewer = this.users.find(u => u.id === reviewerId);
+      if (reviewer) {
+        await this.createAuditLog({
+          userId: reviewerId,
+          userName: `${reviewer.firstName} ${reviewer.lastName}`,
+          userRole: 'reviewer',
+          action: 'update_status',
+          entityType: 'application',
+          entityId: appId,
+          newValues: { status },
+          description: `Application ${this.applications[appIndex].applicationNumber} status changed to: ${status}`,
+        });
       }
-    ];
+    }
 
-    this.co2Projects.push(...sampleProjects);
-
-    // Sample milestones
-    const sampleMilestones: ProjectMilestone[] = [
-      {
-        id: 'milestone-001',
-        projectId: 'proj-001',
-        milestoneType: 'documentation',
-        title: 'Submit Soil Analysis Reports',
-        description: 'Complete soil composition and quality analysis documentation.',
-        status: 'completed',
-        dueDate: new Date('2024-02-15'),
-        completedDate: new Date('2024-02-10'),
-        assignedTo: 'verification-team',
-        priority: 'high',
-        notes: 'All required soil samples analyzed and documented.',
-        createdAt: new Date('2024-01-15'),
-        updatedAt: new Date('2024-02-10')
-      },
-      {
-        id: 'milestone-002',
-        projectId: 'proj-001',
-        milestoneType: 'verification',
-        title: 'Field Verification Visit',
-        description: 'On-site verification of farming practices and measurements.',
-        status: 'in-progress',
-        dueDate: new Date('2024-08-15'),
-        assignedTo: 'field-inspector',
-        priority: 'high',
-        notes: 'Site visit scheduled for next week.',
-        createdAt: new Date('2024-01-15'),
-        updatedAt: new Date('2024-07-25')
-      },
-      {
-        id: 'milestone-003',
-        projectId: 'proj-002',
-        milestoneType: 'documentation',
-        title: 'Solar Panel Specifications',
-        description: 'Submit detailed technical specifications for solar installation.',
-        status: 'pending',
-        dueDate: new Date('2024-08-30'),
-        assignedTo: 'technical-review',
-        priority: 'medium',
-        notes: 'Awaiting manufacturer specifications.',
-        createdAt: new Date('2024-03-01'),
-        updatedAt: new Date('2024-07-20')
-      }
-    ];
-
-    this.projectMilestones.push(...sampleMilestones);
-
-    // Sample activities
-    const sampleActivities: ProjectActivity[] = [
-      {
-        id: 'activity-001',
-        projectId: 'proj-001',
-        activityType: 'status_change',
-        title: 'Status Updated to In Progress',
-        description: 'Project status changed from Under Review to In Progress following approval.',
-        performedBy: 'system',
-        performedByName: 'FAGRI System',
-        timestamp: new Date('2024-07-01'),
-        metadata: null
-      },
-      {
-        id: 'activity-002',
-        projectId: 'proj-001',
-        activityType: 'document_upload',
-        title: 'Soil Analysis Report Uploaded',
-        description: 'Comprehensive soil analysis report added to project documentation.',
-        performedBy: 'user-001',
-        performedByName: 'Mario Rossi',
-        timestamp: new Date('2024-02-10'),
-        metadata: null
-      },
-      {
-        id: 'activity-003',
-        projectId: 'proj-002',
-        activityType: 'communication',
-        title: 'Technical Review Meeting',
-        description: 'Meeting with technical team to review solar panel specifications.',
-        performedBy: 'fagri-tech-001',
-        performedByName: 'FAGRI Technical Team',
-        timestamp: new Date('2024-07-25'),
-        metadata: null
-      }
-    ];
-
-    this.projectActivities.push(...sampleActivities);
+    return this.applications[appIndex];
   }
 
-  // Placeholder methods for existing functionality
-  async getContactRequests(): Promise<ContactRequest[]> {
-    return [...this.contactRequests];
+  // Audit logging
+  async createAuditLog(auditData: InsertAuditLog): Promise<AuditLog> {
+    const auditLog: AuditLog = {
+      id: `audit_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      userId: auditData.userId,
+      userName: auditData.userName,
+      userRole: auditData.userRole,
+      action: auditData.action,
+      entityType: auditData.entityType,
+      entityId: auditData.entityId,
+      oldValues: auditData.oldValues || null,
+      newValues: auditData.newValues || null,
+      description: auditData.description,
+      createdAt: new Date(),
+    };
+
+    this.auditLogs.push(auditLog);
+    return auditLog;
   }
 
-  async getMembershipApplications(): Promise<MembershipApplication[]> {
-    return [...this.membershipApplications];
+  async getAuditLogsByUser(userId: string): Promise<AuditLog[]> {
+    return this.auditLogs.filter(log => log.userId === userId);
+  }
+
+  async getAuditLogsByEntity(entityType: string, entityId: string): Promise<AuditLog[]> {
+    return this.auditLogs.filter(log => log.entityType === entityType && log.entityId === entityId);
   }
 }
 
+// Use MemStorage for immediate functionality, switch to DatabaseStorage when database is ready
 export const storage = new MemStorage();
-
-// Populate with sample data for development
-storage.populateSampleData();

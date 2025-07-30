@@ -850,6 +850,8 @@ export const translations = {
     'please-try-again': 'Si prega di riprovare',
     'fagri-id-copied': 'FAGRI ID copiato',
     'certificate-saved-successfully': 'Certificato salvato con successo',
+    'go-to-dashboard': 'Vai alla Dashboard',
+    'certificate-downloaded': 'Certificato scaricato con successo',
 
     // Account Type Selection - Italian
     'select-account-type': 'Seleziona Tipo di Account',
@@ -1175,7 +1177,6 @@ export const translations = {
     'co2-project-registration': 'Registrazione Progetti CO₂',
     'copied-to-clipboard': 'Copiato negli Appunti',
     'alphag8-id-copied': 'ALPHAG8 ID copiato con successo',
-    'certificate-downloaded': 'Certificato Scaricato',
     'certificate-downloaded-desc': 'Il tuo certificato ALPHAG8 è stato scaricato',
     'logged-out': 'Disconnesso',
     'session-ended-successfully': 'La tua sessione è terminata con successo',
@@ -3231,6 +3232,8 @@ export const translations = {
     'copied-to-clipboard': 'Copied to Clipboard',
     'fagri-id-copied': 'FAGRI ID copied',
     'certificate-saved-successfully': 'Certificate saved successfully',
+    'go-to-dashboard': 'Go to Dashboard',
+    'certificate-downloaded': 'Certificate downloaded successfully',
 
     // Account Type Selection - English
     'select-account-type': 'Select Account Type',

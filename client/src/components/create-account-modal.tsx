@@ -370,10 +370,15 @@ Contact: support@fagri.digital
 
                   <div className="flex justify-center">
                     <Button
-                      onClick={handleClose}
+                      onClick={() => {
+                        onClose();
+                        // Navigate directly to user dashboard
+                        window.location.href = `/user-dashboard?fagriId=${generatedFagriId}`;
+                      }}
                       className="bg-green-600 hover:bg-green-700 text-white px-8 py-3"
                     >
-                      {t('continue-to-account-setup')}
+                      <ArrowRight className="h-4 w-4 mr-2" />
+                      {t('go-to-dashboard')}
                     </Button>
                   </div>
                 </div>
