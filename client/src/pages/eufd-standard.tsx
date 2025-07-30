@@ -36,6 +36,9 @@ export default function EufdStandardPage() {
                 alt="Italian government building representing official EUFD2025-001 standard backing"
                 className="w-full h-64 md:h-80 object-cover object-center"
               />
+              <div className="absolute bottom-4 left-4 text-white text-sm bg-black bg-opacity-50 px-2 py-1 rounded">
+                Italian government building representing official EUFD2025-001 standard backing
+              </div>
             </div>
           </div>
         </div>
@@ -46,7 +49,7 @@ export default function EufdStandardPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             
-            {/* Introduction */}
+            {/* Pioneers from Italy to the World */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
                 Pioneers from Italy to the World: Our Blockchain Standard for CO₂ Certificates
@@ -61,7 +64,7 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* EUFD2025-001 Overview */}
+            {/* EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
                 EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain
@@ -98,7 +101,7 @@ export default function EufdStandardPage() {
                 Blockchain Technology Integration
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div className="space-y-8">
                 <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
                   <h3 className="text-xl font-medium text-slate-900 mb-3">
                     Double-Counting Prevention
@@ -107,6 +110,7 @@ export default function EufdStandardPage() {
                     Advanced cryptographic algorithms ensure each carbon credit can only be issued and traded once, eliminating fraud and double counting through immutable blockchain records.
                   </p>
                 </div>
+                
                 <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
                   <h3 className="text-xl font-medium text-slate-900 mb-3">
                     Greenwashing Protection
@@ -115,6 +119,7 @@ export default function EufdStandardPage() {
                     Complete transparency through public blockchain verification allows stakeholders to independently verify the authenticity and environmental impact of every carbon credit.
                   </p>
                 </div>
+                
                 <div className="bg-purple-50 rounded-xl p-8 border border-purple-200">
                   <h3 className="text-xl font-medium text-slate-900 mb-3">
                     Clear Ownership Verification
@@ -123,6 +128,7 @@ export default function EufdStandardPage() {
                     Smart contracts automatically establish and transfer ownership rights, providing legal certainty and reducing transaction costs in carbon credit markets.
                   </p>
                 </div>
+                
                 <div className="bg-orange-50 rounded-xl p-8 border border-orange-200">
                   <h3 className="text-xl font-medium text-slate-900 mb-3">
                     Maximum Security Standards
@@ -134,39 +140,42 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* EUFD2025-001 Key Features */}
+            {/* EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain (Second Section) */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
                 EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+              <div className="space-y-6">
+                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">
                     Elimination of Double Counting
                   </h3>
                   <p className="text-slate-600">
                     Each certificate is unique and immutable thanks to blockchain technology.
                   </p>
                 </div>
-                <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                
+                <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">
                     Prevention of Greenwashing
                   </h3>
                   <p className="text-slate-600">
                     The entire value chain is transparent and traceable.
                   </p>
                 </div>
-                <div className="bg-purple-50 rounded-xl p-8 border border-purple-200">
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                
+                <div className="bg-purple-50 rounded-xl p-6 border border-purple-200">
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">
                     Clear Ownership
                   </h3>
                   <p className="text-slate-600">
                     Digital registrations are tamper-proof and permanent.
                   </p>
                 </div>
-                <div className="bg-orange-50 rounded-xl p-8 border border-orange-200">
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                
+                <div className="bg-orange-50 rounded-xl p-6 border border-orange-200">
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">
                     Maximum Security
                   </h3>
                   <p className="text-slate-600">
@@ -194,22 +203,16 @@ export default function EufdStandardPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <p className="text-slate-700">
-                    Automatic prevention of double counting through advanced cryptographic algorithms
-                  </p>
-                </div>
-                <div className="text-center">
-                  <p className="text-slate-700">
-                    Complete transparency with public verification of all issued carbon credits
-                  </p>
-                </div>
-                <div className="text-center">
-                  <p className="text-slate-700">
-                    Clear ownership and secure transfer of carbon credit rights
-                  </p>
-                </div>
+              <div className="space-y-4">
+                <p className="text-slate-700">
+                  Automatic prevention of double counting through advanced cryptographic algorithms
+                </p>
+                <p className="text-slate-700">
+                  Complete transparency with public verification of all issued carbon credits
+                </p>
+                <p className="text-slate-700">
+                  Clear ownership and secure transfer of carbon credit rights
+                </p>
               </div>
             </div>
 
@@ -292,15 +295,15 @@ export default function EufdStandardPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div className="bg-white rounded-xl p-8 border border-slate-200">
-                  <div className="text-3xl font-light text-emerald-600 mb-2">110,000+</div>
+                  <div className="text-4xl font-light text-emerald-600 mb-2">110,000+</div>
                   <div className="text-slate-700">Membri della Rete</div>
                 </div>
                 <div className="bg-white rounded-xl p-8 border border-slate-200">
-                  <div className="text-3xl font-light text-blue-600 mb-2">80,000+</div>
+                  <div className="text-4xl font-light text-blue-600 mb-2">80,000+</div>
                   <div className="text-slate-700">Aziende Coinvolte</div>
                 </div>
                 <div className="bg-white rounded-xl p-8 border border-slate-200">
-                  <div className="text-3xl font-light text-purple-600 mb-2">30</div>
+                  <div className="text-4xl font-light text-purple-600 mb-2">30</div>
                   <div className="text-slate-700">Anni di Esperienza</div>
                 </div>
               </div>
