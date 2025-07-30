@@ -10,7 +10,7 @@ export function SimpleNavigation() {
   const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [location] = useLocation();
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,7 +71,7 @@ export function SimpleNavigation() {
                   key={item.key}
                   onClick={() => {
                     if (item.href) {
-                      window.location.href = item.href;
+                      navigate(item.href);
                     } else if (item.section) {
                       navigateToSection(item.section);
                     }
