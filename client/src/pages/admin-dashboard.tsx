@@ -40,6 +40,9 @@ interface AuthorizationRequest {
   authorizationType?: string;
   authorizationDescription?: string;
   requestReason?: string;
+  assignedTeamMember?: string;
+  assignedTeamMemberEmail?: string;
+  projectsRequested?: string[];
   status: 'pending' | 'approved' | 'rejected';
   requestedAt: string;
   fullName?: string;
@@ -443,10 +446,30 @@ export function AdminDashboard() {
                                     {language === 'it' ? 'Berechtigung' : 'Authorization'}: {request.authorizationType}
                                   </p>
                                   {request.authorizationDescription && (
-                                    <p className="text-xs text-blue-700">{request.authorizationDescription}</p>
+                                    <p className="text-xs text-blue-700 mb-2">{request.authorizationDescription}</p>
+                                  )}
+                                  {request.assignedTeamMember && (
+                                    <div className="bg-green-50 border border-green-200 rounded p-2 mb-2">
+                                      <p className="text-xs font-medium text-green-800">
+                                        {language === 'it' ? 'Zugewiesenes Team-Mitglied' : 'Assigned Team Member'}: {request.assignedTeamMember}
+                                      </p>
+                                      <p className="text-xs text-green-700">{request.assignedTeamMemberEmail}</p>
+                                    </div>
+                                  )}
+                                  {request.projectsRequested && request.projectsRequested.length > 0 && (
+                                    <div className="bg-orange-50 border border-orange-200 rounded p-2 mb-2">
+                                      <p className="text-xs font-medium text-orange-800 mb-1">
+                                        {language === 'it' ? 'Angeforderte Projekte' : 'Requested Projects'}:
+                                      </p>
+                                      <ul className="text-xs text-orange-700 space-y-1">
+                                        {request.projectsRequested.map((project, index) => (
+                                          <li key={index}>• {project}</li>
+                                        ))}
+                                      </ul>
+                                    </div>
                                   )}
                                   {request.requestReason && (
-                                    <p className="text-xs text-blue-600 mt-1">
+                                    <p className="text-xs text-blue-600">
                                       <strong>{language === 'it' ? 'Grund' : 'Reason'}:</strong> {request.requestReason}
                                     </p>
                                   )}
