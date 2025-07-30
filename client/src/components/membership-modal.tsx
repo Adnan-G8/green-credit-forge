@@ -649,51 +649,20 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                   </div>
                 )}
 
-                {/* Hectares/Capacity Field */}
+                {/* Additional Information Field */}
                 {formData.businessSector && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {formData.businessSector === 'renewable-energy' ? (
-                      <div className="space-y-2">
-                        <Label htmlFor="renewableCapacity" className="text-green-800 font-medium">
-                          {t('renewable-capacity')} (kW/MW)
-                        </Label>
-                        <Input
-                          id="renewableCapacity"
-                          value={formData.renewableCapacity}
-                          onChange={(e) => updateFormData('renewableCapacity', e.target.value)}
-                          className="border-green-200 focus:border-green-500"
-                          placeholder={t('capacity-placeholder')}
-                        />
-                      </div>
-                    ) : (
-                      <div className="space-y-2">
-                        <Label htmlFor="hectares" className="text-green-800 font-medium">
-                          {t('hectares')}
-                        </Label>
-                        <Input
-                          id="hectares"
-                          value={formData.hectares}
-                          onChange={(e) => updateFormData('hectares', e.target.value)}
-                          className="border-green-200 focus:border-green-500"
-                          placeholder={t('hectares-placeholder')}
-                        />
-                      </div>
-                    )}
-                    
-                    {/* Additional Information Field */}
-                    <div className="space-y-2">
-                      <Label htmlFor="agriculturalActivity" className="text-green-800 font-medium">
-                        {t('additional-business-info')}
-                      </Label>
-                      <Textarea
-                        id="agriculturalActivity"
-                        value={formData.agriculturalActivity}
-                        onChange={(e) => updateFormData('agriculturalActivity', e.target.value)}
-                        className="border-green-200 focus:border-green-500"
-                        placeholder={t('describe-additional-info')}
-                        rows={3}
-                      />
-                    </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="agriculturalActivity" className="text-green-800 font-medium">
+                      {t('additional-business-info')}
+                    </Label>
+                    <Textarea
+                      id="agriculturalActivity"
+                      value={formData.agriculturalActivity}
+                      onChange={(e) => updateFormData('agriculturalActivity', e.target.value)}
+                      className="border-green-200 focus:border-green-500"
+                      placeholder={t('describe-additional-info')}
+                      rows={3}
+                    />
                   </div>
                 )}
 
