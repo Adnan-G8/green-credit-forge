@@ -197,19 +197,9 @@ Contact: support@fagri.digital
     <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <div className="flex items-center justify-between">
-            <DialogTitle className="text-2xl font-light text-slate-800">
-              {t('create-digital-identity')}
-            </DialogTitle>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleClose}
-              className="h-8 w-8 p-0"
-            >
-              <X className="h-4 w-4" />
-            </Button>
-          </div>
+          <DialogTitle className="text-2xl font-light text-slate-800">
+            {t('create-digital-identity')}
+          </DialogTitle>
         </DialogHeader>
 
         <div className="px-8 py-8">
