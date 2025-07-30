@@ -9,6 +9,7 @@ import { AlphaG8RegistrationModal } from './alphag8-registration-modal';
 import { UserRoleSelectionModal } from './user-role-selection-modal';
 import { FagriMemberRegistrationModal } from './fagri-member-registration-modal';
 import { SignInModal } from './sign-in-modal-enhanced';
+import { RoleBasedSignInModal } from './role-based-signin-modal';
 import { RegisterProjectModal } from './register-project-modal';
 import { useLocation } from 'wouter';
 
@@ -23,6 +24,7 @@ export function Navigation() {
   const [showFagriMemberModal, setShowFagriMemberModal] = useState(false);
   const [selectedRole, setSelectedRole] = useState<'sales-team' | 'fagri-member' | 'non-member' | null>(null);
   const [showSignInModal, setShowSignInModal] = useState(false);
+  const [showRoleBasedSignInModal, setShowRoleBasedSignInModal] = useState(false);
   const [showRegisterProjectModal, setShowRegisterProjectModal] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [signedInAlphaG8Id, setSignedInAlphaG8Id] = useState<string>('');
@@ -150,8 +152,8 @@ export function Navigation() {
                   <Button
                     onClick={() => {
                       if (activeModal) return;
-                      setActiveModal('signin');
-                      setShowSignInModal(true);
+                      setActiveModal('role-signin');
+                      setShowRoleBasedSignInModal(true);
                     }}
                     variant="outline"
                     size="sm"
@@ -170,8 +172,8 @@ export function Navigation() {
                     size="sm"
                     className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
                   >
-                    <Key className="h-4 w-4 mr-2" />
-                    {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
+                    <UserPlus className="h-4 w-4 mr-2" />
+                    {language === 'it' ? 'Crea Account' : 'Create Account'}
                   </Button>
                 </>
               ) : (
@@ -281,8 +283,8 @@ export function Navigation() {
                     <button
                       onClick={() => {
                         if (activeModal) return;
-                        setActiveModal('signin');
-                        setShowSignInModal(true);
+                        setActiveModal('role-signin');
+                        setShowRoleBasedSignInModal(true);
                         setIsOpen(false);
                       }}
                       className="flex items-center text-emerald-700 hover:text-emerald-800 transition-colors duration-300 text-left font-medium"
@@ -300,8 +302,8 @@ export function Navigation() {
                       }}
                       className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
                     >
-                      <Key className="h-4 w-4 mr-2" />
-                      {language === 'it' ? 'Crea ID KEY' : 'Create ID KEY'}
+                      <UserPlus className="h-4 w-4 mr-2" />
+                      {language === 'it' ? 'Crea Account' : 'Create Account'}
                     </button>
                   </>
                 ) : (
@@ -418,6 +420,31 @@ export function Navigation() {
           setSignedInAlphaG8Id(alphaG8Id);
           setShowSignInModal(false);
           setActiveModal(null);
+        }}
+      />
+
+      <RoleBasedSignInModal
+        isOpen={showRoleBasedSignInModal}
+        onClose={() => {
+          setShowRoleBasedSignInModal(false);
+          setActiveModal(null);
+        }}
+        onSignInSuccess={(alphaG8Id: string, userRole: string) => {
+          setIsSignedIn(true);
+          setSignedInAlphaG8Id(alphaG8Id);
+          setShowRoleBasedSignInModal(false);
+          setActiveModal(null);
+          
+          // Navigate to appropriate dashboard based on role
+          if (userRole === 'fagri-member') {
+            setLocation('/dashboard');
+          } else if (userRole === 'team-member') {
+            setLocation('/team-dashboard');
+          } else if (userRole === 'certification') {
+            setLocation('/certification-dashboard');
+          } else if (userRole === 'administration') {
+            setLocation('/admin-dashboard');
+          }
         }}
       />
 
