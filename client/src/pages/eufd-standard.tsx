@@ -351,16 +351,22 @@ export default function EufdStandardPage() {
                 </p>
               </div>
 
-              <div className="space-y-4">
-                <p className="text-slate-700">
-                  {t.benefit1}
-                </p>
-                <p className="text-slate-700">
-                  {t.benefit2}
-                </p>
-                <p className="text-slate-700">
-                  {t.benefit3}
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                  <p className="text-slate-700">
+                    {t.benefit1}
+                  </p>
+                </div>
+                <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                  <p className="text-slate-700">
+                    {t.benefit2}
+                  </p>
+                </div>
+                <div className="bg-purple-50 rounded-xl p-6 border border-purple-200">
+                  <p className="text-slate-700">
+                    {t.benefit3}
+                  </p>
+                </div>
               </div>
             </div>
 
