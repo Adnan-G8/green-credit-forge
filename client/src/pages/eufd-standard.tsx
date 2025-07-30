@@ -1,7 +1,7 @@
 import { useLanguage } from '../components/language-provider';
 import { Navigation } from '../components/navigation';
 import { Footer } from '../components/footer';
-import { CheckCircle, Shield, Globe, Users } from 'lucide-react';
+import { CheckCircle, Shield, Globe, Users, Download, Lock, FileCheck } from 'lucide-react';
 import { Link } from 'wouter';
 import italianGovernment from '@assets/image_1753122095811.png';
 
@@ -17,14 +17,14 @@ export default function EufdStandardPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-light text-slate-900 mb-6">
-              {t('eufd-hero-title')}
+              The EUFD2025-001 Standard
             </h1>
             <p className="text-xl text-slate-600 mb-8 font-light">
-              {t('eufd-hero-subtitle')}
+              Scientific, concrete, accessible.
             </p>
             <div className="inline-flex items-center space-x-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full border border-emerald-200">
               <Globe className="h-4 w-4" />
-              <span className="text-sm font-medium">{t('eufd-status')}</span>
+              <span className="text-sm font-medium">Global Pioneer Standard</span>
             </div>
           </div>
           
@@ -42,334 +42,300 @@ export default function EufdStandardPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-8">
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             
             {/* Introduction */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('eufd-intro-title')}
+                Pioneers from Italy to the World: Our Blockchain Standard for CO₂ Certificates
               </h2>
               <div className="prose prose-lg text-slate-600 max-w-none">
                 <p className="mb-6 leading-relaxed">
-                  {t('eufd-intro-text1')}
+                  At FAGRI.Digital, we are proud to present our new innovative standard: EUFD2025-001. This standard is the result of years of intensive research and development, based on the latest scientific discoveries and created in close collaboration with leading Italian universities.
                 </p>
                 <p className="mb-6 leading-relaxed">
-                  {t('eufd-intro-text2')}
+                  The FAGRI Digital platform that supports the EUFD2025-001 standard is designed to usher in a new era of trust, efficiency and transparency in CO₂ certification and trading — powered by blockchain technology, advanced data protection protocols and 3FA security architecture.
                 </p>
               </div>
             </div>
 
-            {/* Detailed Blockchain Content Section */}
+            {/* Framework Overview */}
             <div className="mb-16">
-              <h2 className="text-4xl font-light text-slate-900 mb-8">
-                {t('eufd-detailed-title')}
+              <h2 className="text-3xl font-light text-slate-900 mb-8">
+                EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain
               </h2>
               <div className="prose prose-lg text-slate-600 max-w-none mb-8">
                 <p className="mb-6 leading-relaxed">
-                  {t('eufd-intro-p1')}
+                  The EUFD2025-001 standard represents a groundbreaking approach to agricultural CO₂ certification, combining rigorous scientific methodology with cutting-edge blockchain technology. Developed through extensive collaboration with leading European research institutions and validated by independent certification bodies, this standard ensures that every carbon credit issued is scientifically sound, completely transparent, and legally compliant.
                 </p>
                 <p className="mb-8 leading-relaxed">
-                  {t('eufd-intro-p2')}
+                  Our comprehensive framework addresses the growing need for standardized, verifiable carbon accounting in agriculture while maintaining the flexibility to accommodate diverse farming systems across Europe and beyond.
                 </p>
               </div>
-              
-              {/* Launch Vision Box */}
-              <div className="bg-blue-50 rounded-xl p-8 border border-blue-200 mb-12">
-                <h3 className="text-xl font-medium text-slate-900 mb-4">
-                  {t('eufd-launch-box-title')}
+            </div>
+
+            {/* Download Section */}
+            <div className="mb-16">
+              <div className="bg-white rounded-xl p-8 border border-slate-200 text-center">
+                <h3 className="text-2xl font-light text-slate-900 mb-4">
+                  EUFD2025-001 Standard Available Now
                 </h3>
-                <p className="text-slate-700 leading-relaxed">
-                  {t('eufd-launch-box-text')}
+                <p className="text-slate-600 mb-6">
+                  Access the complete EUFD2025-001 certification standard documentation. This comprehensive guide provides detailed methodologies, technical specifications, and implementation guidelines for agricultural CO₂ certification.
                 </p>
-              </div>
-
-              {/* Blockchain Features Grid */}
-              <h3 className="text-3xl font-light text-slate-900 mb-8">
-                {t('eufd-blockchain-features-title')}
-              </h3>
-              <div className="grid md:grid-cols-2 gap-8 mb-16">
-                <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
-                  <div className="flex items-center mb-4">
-                    <CheckCircle className="h-6 w-6 text-emerald-600 mr-3" />
-                    <h4 className="text-xl font-medium text-slate-900">
-                      {t('eufd-feature-double-counting-title')}
-                    </h4>
-                  </div>
-                  <p className="text-slate-700">
-                    {t('eufd-feature-double-counting-desc')}
-                  </p>
-                </div>
-                
-                <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
-                  <div className="flex items-center mb-4">
-                    <Shield className="h-6 w-6 text-blue-600 mr-3" />
-                    <h4 className="text-xl font-medium text-slate-900">
-                      {t('eufd-feature-greenwashing-title')}
-                    </h4>
-                  </div>
-                  <p className="text-slate-700">
-                    {t('eufd-feature-greenwashing-desc')}
-                  </p>
-                </div>
-                
-                <div className="bg-purple-50 rounded-xl p-8 border border-purple-200">
-                  <div className="flex items-center mb-4">
-                    <Globe className="h-6 w-6 text-purple-600 mr-3" />
-                    <h4 className="text-xl font-medium text-slate-900">
-                      {t('eufd-feature-clear-ownership-title')}
-                    </h4>
-                  </div>
-                  <p className="text-slate-700">
-                    {t('eufd-feature-clear-ownership-desc')}
-                  </p>
-                </div>
-                
-                <div className="bg-orange-50 rounded-xl p-8 border border-orange-200">
-                  <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-orange-600 mr-3" />
-                    <h4 className="text-xl font-medium text-slate-900">
-                      {t('eufd-feature-maximum-security-title')}
-                    </h4>
-                  </div>
-                  <p className="text-slate-700">
-                    {t('eufd-feature-maximum-security-desc')}
-                  </p>
-                </div>
+                <button className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                  <Download className="h-5 w-5" />
+                  <span>Download Standard</span>
+                </button>
               </div>
             </div>
 
-            {/* Key Features */}
+            {/* Blockchain Technology Integration */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
-                {t('eufd-features-title')}
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
-                  <div className="flex items-center mb-4">
-                    <CheckCircle className="h-6 w-6 text-emerald-600 mr-3" />
-                    <h3 className="text-xl font-medium text-slate-900">
-                      {t('eufd-feature1-title')}
-                    </h3>
-                  </div>
-                  <p className="text-slate-600">
-                    {t('eufd-feature1-description')}
-                  </p>
-                </div>
-                
-                <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
-                  <div className="flex items-center mb-4">
-                    <Shield className="h-6 w-6 text-blue-600 mr-3" />
-                    <h3 className="text-xl font-medium text-slate-900">
-                      {t('eufd-feature2-title')}
-                    </h3>
-                  </div>
-                  <p className="text-slate-600">
-                    {t('eufd-feature2-description')}
-                  </p>
-                </div>
-                
-                <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
-                  <div className="flex items-center mb-4">
-                    <Globe className="h-6 w-6 text-purple-600 mr-3" />
-                    <h3 className="text-xl font-medium text-slate-900">
-                      {t('eufd-feature3-title')}
-                    </h3>
-                  </div>
-                  <p className="text-slate-600">
-                    {t('eufd-feature3-description')}
-                  </p>
-                </div>
-                
-                <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
-                  <div className="flex items-center mb-4">
-                    <Users className="h-6 w-6 text-orange-600 mr-3" />
-                    <h3 className="text-xl font-medium text-slate-900">
-                      {t('eufd-feature4-title')}
-                    </h3>
-                  </div>
-                  <p className="text-slate-600">
-                    {t('eufd-feature4-description')}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Blockchain Technology for Transparency and Security */}
-            <div className="mb-16">
-              <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('eufd-blockchain-transparency-title')}
-              </h2>
-              <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200 mb-8">
-                <div className="bg-blue-600 text-white rounded-lg p-4 mb-6">
-                  <h3 className="text-xl font-medium mb-2">{t('eufd-blockchain-integration-title')}</h3>
-                  <p className="text-blue-100">
-                    {t('eufd-blockchain-integration-desc')}
-                  </p>
-                </div>
-                <p className="text-slate-700 mb-6 leading-relaxed">
-                  {t('eufd-blockchain-strategic-use')}
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('eufd-blockchain-benefit-1')}</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('eufd-blockchain-benefit-2')}</span>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-emerald-600 mt-1 flex-shrink-0" />
-                    <span className="text-slate-700">{t('eufd-blockchain-benefit-3')}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Regulatory Framework */}
-            <div className="mb-16">
-              <h2 className="text-3xl font-light text-slate-900 mb-8">
-                {t('eufd-framework-title')}
+                Blockchain Technology Integration
               </h2>
               
-              {/* EU Regulation 3012/2024 Box */}
-              <div className="bg-white rounded-xl p-8 border-2 border-blue-200 mb-6 shadow-lg">
-                <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Globe className="text-blue-700 h-8 w-8" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-medium text-slate-900 mb-3">
-                      {t('eufd-eu-regulation-title')}
-                    </h3>
-                    <p className="text-slate-600 mb-4 leading-relaxed">
-                      {t('eufd-eu-regulation-desc')}
-                    </p>
-                    <div className="bg-blue-50 rounded-lg p-4">
-                      <h4 className="font-medium text-slate-900 mb-3">{t('eufd-key-requirements')}</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-start space-x-3">
-                          <CheckCircle className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                          <span className="text-slate-700 text-sm">{t('eufd-req-1')}</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <CheckCircle className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                          <span className="text-slate-700 text-sm">{t('eufd-req-2')}</span>
-                        </div>
-                        <div className="flex items-start space-x-3">
-                          <CheckCircle className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                          <span className="text-slate-700 text-sm">{t('eufd-req-3')}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                    Double-Counting Prevention
+                  </h3>
+                  <p className="text-slate-600">
+                    Advanced cryptographic algorithms ensure each carbon credit can only be issued and traded once, eliminating fraud and double counting through immutable blockchain records.
+                  </p>
+                </div>
+                <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                    Greenwashing Protection
+                  </h3>
+                  <p className="text-slate-600">
+                    Complete transparency through public blockchain verification allows stakeholders to independently verify the authenticity and environmental impact of every carbon credit.
+                  </p>
+                </div>
+                <div className="bg-purple-50 rounded-xl p-8 border border-purple-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                    Clear Ownership Verification
+                  </h3>
+                  <p className="text-slate-600">
+                    Smart contracts automatically establish and transfer ownership rights, providing legal certainty and reducing transaction costs in carbon credit markets.
+                  </p>
+                </div>
+                <div className="bg-orange-50 rounded-xl p-8 border border-orange-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                    Maximum Security Standards
+                  </h3>
+                  <p className="text-slate-600">
+                    Military-grade encryption and Swiss banking-level security protocols protect all data, ensuring confidentiality while maintaining transparency where required.
+                  </p>
                 </div>
               </div>
+            </div>
 
-              {/* ISO Standards Box */}
-              <div className="bg-white rounded-xl p-8 border-2 border-emerald-200 shadow-lg">
-                <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Shield className="text-emerald-700 h-8 w-8" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-medium text-slate-900 mb-3">
-                      {t('eufd-iso-title')}
-                    </h3>
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                      {t('eufd-iso-desc')}
-                    </p>
-                    <div className="grid md:grid-cols-3 gap-4">
-                      <div className="bg-emerald-50 rounded-lg p-4">
-                        <h4 className="font-medium text-slate-900 mb-2">{t('eufd-iso-14064-1')}</h4>
-                        <p className="text-slate-600 text-sm">{t('eufd-iso-14064-1-desc')}</p>
-                      </div>
-                      <div className="bg-emerald-50 rounded-lg p-4">
-                        <h4 className="font-medium text-slate-900 mb-2">{t('eufd-iso-14064-2')}</h4>
-                        <p className="text-slate-600 text-sm">{t('eufd-iso-14064-2-desc')}</p>
-                      </div>
-                      <div className="bg-emerald-50 rounded-lg p-4">
-                        <h4 className="font-medium text-slate-900 mb-2">{t('eufd-iso-14064-3')}</h4>
-                        <p className="text-slate-600 text-sm">{t('eufd-iso-14064-3-desc')}</p>
-                      </div>
+            {/* Four Key Features */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-light text-slate-900 mb-8">
+                EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
+                  <Shield className="h-8 w-8 text-emerald-600 mb-4" />
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                    Elimination of Double Counting
+                  </h3>
+                  <p className="text-slate-600">
+                    Each certificate is unique and immutable thanks to blockchain technology.
+                  </p>
+                </div>
+                <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
+                  <CheckCircle className="h-8 w-8 text-blue-600 mb-4" />
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                    Prevention of Greenwashing
+                  </h3>
+                  <p className="text-slate-600">
+                    The entire value chain is transparent and traceable.
+                  </p>
+                </div>
+                <div className="bg-purple-50 rounded-xl p-8 border border-purple-200">
+                  <Globe className="h-8 w-8 text-purple-600 mb-4" />
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                    Clear Ownership
+                  </h3>
+                  <p className="text-slate-600">
+                    Digital registrations are tamper-proof and permanent.
+                  </p>
+                </div>
+                <div className="bg-orange-50 rounded-xl p-8 border border-orange-200">
+                  <Lock className="h-8 w-8 text-orange-600 mb-4" />
+                  <h3 className="text-xl font-medium text-slate-900 mb-3">
+                    Maximum Security
+                  </h3>
+                  <p className="text-slate-600">
+                    Unique digital fingerprint and three-factor authentication (3FA).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Complete Blockchain Transparency */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-light text-slate-900 mb-8">
+                Complete Blockchain Transparency
+              </h2>
+              
+              <div className="bg-slate-50 rounded-xl p-8 border border-slate-200 mb-8">
+                <h3 className="text-xl font-medium text-slate-900 mb-4">
+                  Advanced Blockchain Integration
+                </h3>
+                <p className="text-slate-600 mb-4">
+                  Integrated blockchain technology to ensure maximum transparency and immutability of certification records
+                </p>
+                <p className="text-slate-600">
+                  Our platform strategically uses blockchain technology to solve the major problems of carbon credit markets: double counting, greenwashing, and lack of transparency.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <CheckCircle className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
+                  <p className="text-slate-700">
+                    Automatic prevention of double counting through advanced cryptographic algorithms
+                  </p>
+                </div>
+                <div className="text-center">
+                  <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                  <p className="text-slate-700">
+                    Complete transparency with public verification of all issued carbon credits
+                  </p>
+                </div>
+                <div className="text-center">
+                  <Globe className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+                  <p className="text-slate-700">
+                    Clear ownership and secure transfer of carbon credit rights
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* European Regulatory Framework */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-light text-slate-900 mb-8">
+                European Regulatory Framework
+              </h2>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-4">
+                    EU Regulation 3012/2024
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Full compliance with the new EU Regulation 3012/2024 for carbon certification
+                  </p>
+                  <h4 className="font-medium text-slate-900 mb-3">Key Regulatory Requirements</h4>
+                  <ul className="space-y-2 text-slate-600">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      Mandatory use of blockchain platforms for agricultural projects
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      Immutable records to prevent fraud and double counting
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      Public transparency for independent stakeholder verification
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
+                  <h3 className="text-xl font-medium text-slate-900 mb-4">
+                    Integrated ISO 14064 Standards
+                  </h3>
+                  <p className="text-slate-600 mb-4">
+                    Complete implementation of international standards for greenhouse gas accounting
+                  </p>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium text-slate-900 mb-1">ISO 14064-1</h4>
+                      <p className="text-sm text-slate-600">
+                        Organizational level greenhouse gas inventories. Provides principles and requirements for designing, developing and managing GHG inventories.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-900 mb-1">ISO 14064-2</h4>
+                      <p className="text-sm text-slate-600">
+                        Project level greenhouse gas emission reductions and removal enhancements. Focuses on quantification and reporting of emission reductions.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-slate-900 mb-1">ISO 14064-3</h4>
+                      <p className="text-sm text-slate-600">
+                        Verification and validation of greenhouse gas assertions. Provides requirements for verifying organizational or project GHG inventories.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Our Vision: Efficiency and Equity */}
+            {/* Vision Section */}
             <div className="mb-16">
-              <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('eufd-our-vision-title')}
+              <h2 className="text-3xl font-light text-slate-900 mb-8">
+                Our Vision for Sustainable Agriculture
               </h2>
-              <div className="prose prose-lg text-slate-600 max-w-none">
-                <p className="mb-6 leading-relaxed">
-                  {t('eufd-vision-main-text')}
+              <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200 text-center">
+                <p className="text-lg text-slate-700 mb-6">
+                  FAGRI.Digital is transforming Italian agriculture through blockchain-based CO₂ certification, creating concrete economic opportunities for farmers while contributing to European climate goals.
                 </p>
-                <p className="mb-6 leading-relaxed">
-                  {t('eufd-vision-guarantee')}
+                <p className="text-slate-600">
+                  We guarantee transparency, security, and complete regulatory compliance for every certification project.
                 </p>
               </div>
             </div>
 
-            {/* Trust, Security and Global Reach */}
+            {/* Trust and Recognition */}
             <div className="mb-16">
-              <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('eufd-trust-global-title')}
+              <h2 className="text-3xl font-light text-slate-900 mb-8">
+                Global Trust and Recognition
               </h2>
-              <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
-                <p className="text-slate-700 mb-8 leading-relaxed">
-                  {t('eufd-trust-standard-desc')}
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <h4 className="text-3xl font-semibold text-emerald-600 mb-2">110,000+</h4>
-                    <p className="text-slate-600 text-sm">{t('eufd-network-members')}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-3xl font-semibold text-blue-600 mb-2">80,000+</h4>
-                    <p className="text-slate-600 text-sm">{t('eufd-network-companies')}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-3xl font-semibold text-purple-600 mb-2">30</h4>
-                    <p className="text-slate-600 text-sm">{t('eufd-network-years')}</p>
-                  </div>
+              <p className="text-lg text-slate-600 mb-8 text-center">
+                The EUFD2025-001 standard is internationally recognized and compatible with major carbon credit markets.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div className="bg-white rounded-xl p-8 border border-slate-200">
+                  <div className="text-3xl font-light text-emerald-600 mb-2">110,000+</div>
+                  <div className="text-slate-700">Membri della Rete</div>
+                </div>
+                <div className="bg-white rounded-xl p-8 border border-slate-200">
+                  <div className="text-3xl font-light text-blue-600 mb-2">80,000+</div>
+                  <div className="text-slate-700">Aziende Coinvolte</div>
+                </div>
+                <div className="bg-white rounded-xl p-8 border border-slate-200">
+                  <div className="text-3xl font-light text-purple-600 mb-2">30</div>
+                  <div className="text-slate-700">Anni di Esperienza</div>
                 </div>
               </div>
             </div>
 
             {/* Call to Action */}
-            <div className="text-center bg-gradient-to-r from-emerald-50 to-blue-50 rounded-xl p-12 border border-slate-200">
+            <div className="text-center mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('eufd-join-title')}
+                Join the CO₂ Certification Revolution
               </h2>
-              <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                {t('eufd-join-desc')}
+              <p className="text-lg text-slate-600 mb-8">
+                Become part of the future of sustainable agriculture with Europe's most advanced blockchain certification.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="/#contact"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium"
-                  onClick={() => {
-                    window.location.href = '/#contact';
-                    setTimeout(() => {
-                      const contactSection = document.getElementById('contact');
-                      if (contactSection) {
-                        contactSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }, 100);
-                  }}
-                >
-                  {t('eufd-contact-us')}
-                </a>
-                <Link 
-                  href="/"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-white text-slate-700 rounded-lg border border-slate-300 hover:bg-slate-50 transition-colors font-medium"
-                >
-                  {t('eufd-back-home')}
+                <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors">
+                  Contact Us
+                </Link>
+                <Link href="/" className="inline-flex items-center justify-center px-6 py-3 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors">
+                  Back to Home
                 </Link>
               </div>
             </div>
@@ -377,7 +343,7 @@ export default function EufdStandardPage() {
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
