@@ -1,5 +1,5 @@
 import { useLanguage } from '../components/language-provider';
-import { SimpleNavigation } from '../components/simple-navigation';
+import { Navigation } from '../components/navigation';
 import { Footer } from '../components/footer';
 import { Shield, Globe, CheckCircle, Users, FileText, Lock, Check } from 'lucide-react';
 
@@ -8,7 +8,7 @@ export default function SimpleCO2Certification() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SimpleNavigation />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-slate-50 border-b border-slate-200">

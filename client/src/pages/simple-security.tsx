@@ -1,4 +1,4 @@
-import { SimpleNavigation } from '@/components/simple-navigation';
+import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { useLanguage } from '@/components/language-provider';
 import { Shield, Database, Lock, CheckCircle, Server, Globe, Eye, Key, Mountain, Building, Leaf } from 'lucide-react';
@@ -16,7 +16,7 @@ export default function SimpleSecurity() {
   
   return (
     <div className="min-h-screen bg-fagri-bg">
-      <SimpleNavigation />
+      <Navigation />
       
       {/* Hero Section with Agricultural Image */}
       <section className="pt-20 pb-20 relative">
