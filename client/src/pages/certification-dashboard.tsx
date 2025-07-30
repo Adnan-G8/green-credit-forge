@@ -55,6 +55,9 @@ export default function CertificationDashboard() {
   
   // Current reviewer's ALPHAG8 ID (from localStorage)
   const reviewerAlphaG8Id = localStorage.getItem('alphaG8Id') || 'FAGRI-XXXXXXXX-XXXXXXXX-XX';
+  
+  // Check if current user is administrator (in production this would come from backend)
+  const isAdmin = localStorage.getItem('userRole') === 'admin' || reviewerAlphaG8Id.includes('ADMIN');
 
   // Mock comprehensive project data with all details needed for review
   const getProjectDetails = (project: any): ProjectReviewData => {
@@ -209,6 +212,40 @@ export default function CertificationDashboard() {
         variant: "destructive",
       });
     }
+  };
+
+  const handleDownloadDocument = (doc: any) => {
+    if (!isAdmin) {
+      toast({
+        title: language === 'it' ? 'Accesso Negato' : 'Access Denied',
+        description: language === 'it' 
+          ? 'Solo gli amministratori possono scaricare documenti' 
+          : 'Only administrators can download documents',
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Log admin download action with ALPHAG8 ID
+    const downloadAction = {
+      documentName: doc.name,
+      projectId: selectedProject?.id,
+      adminId: reviewerAlphaG8Id,
+      timestamp: new Date().toISOString(),
+      action: 'download'
+    };
+
+    // Store admin action (in production this would go to backend)
+    const existingAdminActions = JSON.parse(localStorage.getItem('adminActions') || '[]');
+    existingAdminActions.push(downloadAction);
+    localStorage.setItem('adminActions', JSON.stringify(existingAdminActions));
+
+    toast({
+      title: language === 'it' ? 'Download Autorizzato' : 'Download Authorized',
+      description: language === 'it' 
+        ? `Download di ${doc.name} avviato (Admin: ${reviewerAlphaG8Id})` 
+        : `Download of ${doc.name} started (Admin: ${reviewerAlphaG8Id})`,
+    });
   };
 
   return (
@@ -623,35 +660,126 @@ export default function CertificationDashboard() {
               {/* Documents */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <FileCheck className="h-5 w-5 mr-2" />
-                    {language === 'it' ? 'Documentazione' : 'Documentation'}
+                  <CardTitle className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <FileCheck className="h-5 w-5 mr-2" />
+                      {language === 'it' ? 'Documentazione' : 'Documentation'}
+                    </div>
+                    <div className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">
+                      {language === 'it' ? 'Visualizzazione diretta - Download solo Admin' : 'Direct viewing - Admin download only'}
+                    </div>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
                     {selectedProject.documents.map((doc, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
-                        <div className="flex items-center space-x-3">
-                          <FileCheck className="h-4 w-4 text-slate-500" />
-                          <div>
-                            <p className="font-medium">{doc.name}</p>
-                            <p className="text-sm text-slate-600">{doc.type} • {doc.size} • {language === 'it' ? 'Caricato' : 'Uploaded'} {doc.uploadDate}</p>
+                      <div key={index} className="p-3 bg-slate-50 rounded-lg border hover:bg-slate-100 transition-colors">
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center space-x-3">
+                            <FileCheck className="h-4 w-4 text-slate-500" />
+                            <div>
+                              <p className="font-medium">{doc.name}</p>
+                              <p className="text-sm text-slate-600">{doc.type} • {doc.size} • {language === 'it' ? 'Caricato' : 'Uploaded'} {doc.uploadDate}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <Badge className={
+                              doc.status === 'verified' ? 'bg-green-100 text-green-800' :
+                              doc.status === 'pending' ? 'bg-amber-100 text-amber-800' :
+                              'bg-red-100 text-red-800'
+                            }>
+                              {doc.status === 'verified' ? (language === 'it' ? 'Verificato' : 'Verified') :
+                               doc.status === 'pending' ? (language === 'it' ? 'In Attesa' : 'Pending') :
+                               (language === 'it' ? 'Correzioni' : 'Corrections')}
+                            </Badge>
+                            {/* Only administrators can download documents */}
+                            {isAdmin && (
+                              <Button 
+                                size="sm" 
+                                variant="outline"
+                                onClick={() => handleDownloadDocument(doc)}
+                                className="bg-blue-50 hover:bg-blue-100 text-blue-700"
+                              >
+                                <Download className="h-4 w-4 mr-1" />
+                                {language === 'it' ? 'Scarica' : 'Download'}
+                              </Button>
+                            )}
                           </div>
                         </div>
-                        <div className="flex items-center space-x-2">
-                          <Badge className={
-                            doc.status === 'verified' ? 'bg-green-100 text-green-800' :
-                            doc.status === 'pending' ? 'bg-amber-100 text-amber-800' :
-                            'bg-red-100 text-red-800'
-                          }>
-                            {doc.status === 'verified' ? (language === 'it' ? 'Verificato' : 'Verified') :
-                             doc.status === 'pending' ? (language === 'it' ? 'In Attesa' : 'Pending') :
-                             (language === 'it' ? 'Correzioni' : 'Corrections')}
-                          </Badge>
-                          <Button size="sm" variant="outline">
-                            <Download className="h-4 w-4" />
-                          </Button>
+                        
+                        {/* Document Preview/Content */}
+                        <div className="mt-3 p-3 bg-white border rounded text-sm">
+                          {doc.type === 'Soil Analysis' && (
+                            <div className="space-y-2">
+                              <h4 className="font-medium text-slate-800">{language === 'it' ? 'Analisi del Suolo - Milano' : 'Soil Analysis - Milan'}</h4>
+                              <div className="grid grid-cols-2 gap-4 text-xs text-slate-600">
+                                <div><strong>pH:</strong> 7.2 (neutro)</div>
+                                <div><strong>{language === 'it' ? 'Composizione' : 'Composition'}:</strong> 45% argilla, 35% sabbia, 20% limo</div>
+                                <div><strong>{language === 'it' ? 'Materia Organica' : 'Organic Matter'}:</strong> 3.8%</div>
+                                <div><strong>{language === 'it' ? 'Conducibilità' : 'Conductivity'}:</strong> 0.85 mS/cm</div>
+                                <div><strong>{language === 'it' ? 'Azoto' : 'Nitrogen'} (N):</strong> 28 mg/kg</div>
+                                <div><strong>{language === 'it' ? 'Fosforo' : 'Phosphorus'} (P):</strong> 15 mg/kg</div>
+                              </div>
+                              <p className="text-green-700 font-medium">{language === 'it' ? '✓ Suolo idoneo per installazione pannelli solari' : '✓ Soil suitable for solar panel installation'}</p>
+                            </div>
+                          )}
+                          
+                          {doc.type === 'CO₂ Calculations' && (
+                            <div className="space-y-2">
+                              <h4 className="font-medium text-slate-800">{language === 'it' ? 'Calcoli CO₂ - Fotovoltaico Milano' : 'CO₂ Calculations - Milan Photovoltaic'}</h4>
+                              <div className="space-y-1 text-xs font-mono text-slate-700">
+                                <div>Capacità installata: 500 kW</div>
+                                <div>Produzione annuale stimata: 650 MWh</div>
+                                <div>Fattore emissione rete italiana: 0.53 kg CO₂/kWh</div>
+                                <div className="border-t pt-1 text-green-700 font-bold">
+                                  Riduzione CO₂: 650 MWh × 0.53 = 344.5 t CO₂/anno
+                                </div>
+                              </div>
+                              <p className="text-amber-600 font-medium">{language === 'it' ? '⚠ In attesa di verifica finale' : '⚠ Pending final verification'}</p>
+                            </div>
+                          )}
+                          
+                          {doc.type === 'Technical Drawings' && (
+                            <div className="space-y-2">
+                              <h4 className="font-medium text-slate-800">{language === 'it' ? 'Schemi Tecnici Impianto' : 'Technical Installation Schemes'}</h4>
+                              <div className="bg-slate-100 p-3 rounded text-xs">
+                                <div className="grid grid-cols-2 gap-2">
+                                  <div><strong>{language === 'it' ? 'Superfice totale' : 'Total area'}:</strong> 2.5 ettari</div>
+                                  <div><strong>{language === 'it' ? 'N° pannelli' : 'Panel count'}:</strong> 1,250 unità</div>
+                                  <div><strong>{language === 'it' ? 'Inverter' : 'Inverters'}:</strong> 5 × 100kW</div>
+                                  <div><strong>{language === 'it' ? 'Cavi MT' : 'MV cables'}:</strong> 1.2 km</div>
+                                </div>
+                                <div className="mt-2 text-slate-600">
+                                  {language === 'it' ? 'Layout ottimizzato per massima efficienza energetica' : 'Layout optimized for maximum energy efficiency'}
+                                </div>
+                              </div>
+                              <p className="text-green-700 font-medium">{language === 'it' ? '✓ Schemi tecnici approvati' : '✓ Technical schemes approved'}</p>
+                            </div>
+                          )}
+                          
+                          {doc.type === 'Permits' && (
+                            <div className="space-y-2">
+                              <h4 className="font-medium text-slate-800">{language === 'it' ? 'Autorizzazioni Comunale' : 'Municipal Permits'}</h4>
+                              <div className="space-y-1 text-xs text-slate-600">
+                                <div className="flex justify-between">
+                                  <span>{language === 'it' ? 'Autorizzazione Edilizia:' : 'Building Permit:'}</span>
+                                  <span className="text-green-600 font-medium">✓ {language === 'it' ? 'Approvata' : 'Approved'}</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span>{language === 'it' ? 'Valutazione Ambientale:' : 'Environmental Assessment:'}</span>
+                                  <span className="text-green-600 font-medium">✓ {language === 'it' ? 'Conforme' : 'Compliant'}</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span>{language === 'it' ? 'Connessione Rete:' : 'Grid Connection:'}</span>
+                                  <span className="text-green-600 font-medium">✓ {language === 'it' ? 'Autorizzata' : 'Authorized'}</span>
+                                </div>
+                                <div className="mt-2 text-slate-700">
+                                  <strong>{language === 'it' ? 'Numero Pratica:' : 'Practice Number:'}</strong> MI-2024-SOL-001
+                                </div>
+                              </div>
+                              <p className="text-green-700 font-medium">{language === 'it' ? '✓ Tutte le autorizzazioni complete' : '✓ All permits completed'}</p>
+                            </div>
+                          )}
                         </div>
                       </div>
                     ))}
