@@ -1661,6 +1661,9 @@ export const translations = {
     'co2-cert-benefit7-title': 'Finanza Sostenibile',
     'co2-cert-benefit7-desc': 'Accesso a finanziamenti verdi e opportunità di investimento sostenibili',
     'form-success': 'Grazie per il tuo messaggio! Ti risponderemo al più presto.',
+    // Membership Modal Image Overlay
+    'membership-image-title': 'Unisciti alla Comunità Agricola FAGRI',
+    'membership-image-subtitle': 'Piattaforma Professionale di Certificazione Agricola',
     // Modal
     'modal-title': 'Adesione Fagri Filiera Agricola Italiana',
     'modal-description': 'Unisciti alla più grande rete agricola italiana. Accedi a servizi esclusivi, certificazione CO₂ e una community di oltre 110.000 membri.',
@@ -2293,6 +2296,9 @@ export const translations = {
     'co2-cert-benefit6-desc': 'Multi-stakeholder decision making and validation',
     'co2-cert-benefit7-title': 'Sustainable Finance',
     'co2-cert-benefit7-desc': 'Access to green financing and sustainable investment opportunities',
+    // Membership Modal Image Overlay
+    'membership-image-title': 'Joining FAGRI Agricultural Community',
+    'membership-image-subtitle': 'Professional Agricultural Certification Platform',
 
     // Dashboard English translations
     'monitor-co2-certification-projects': 'Monitor your CO₂ certification projects',

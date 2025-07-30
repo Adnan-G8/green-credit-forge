@@ -337,8 +337,8 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 text-white">
-              <p className="text-sm font-medium">Joining FAGRI Agricultural Community</p>
-              <p className="text-xs opacity-90">Professional Agricultural Certification Platform</p>
+              <p className="text-sm font-medium">{t('membership-image-title')}</p>
+              <p className="text-xs opacity-90">{t('membership-image-subtitle')}</p>
             </div>
           </div>
 
