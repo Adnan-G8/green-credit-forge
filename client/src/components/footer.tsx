@@ -72,8 +72,8 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/security">
-                  <span className="hover:text-emerald-400 transition-colors cursor-pointer text-emerald-400 font-medium">
-                    🔒 {t('footer-security')}
+                  <span className="hover:text-emerald-400 transition-colors cursor-pointer">
+                    {t('footer-security')}
                   </span>
                 </Link>
               </li>
