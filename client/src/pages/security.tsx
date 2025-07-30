@@ -3,6 +3,11 @@ import { Footer } from '../components/footer';
 import { useLanguage } from '../components/language-provider';
 import { Shield, Database, Lock, CheckCircle, Server, Globe, Eye, Key, Mountain, Building, Leaf } from 'lucide-react';
 import agriculturalLandscape from '@assets/image_1753121514850.png';
+import swissAlps from '@assets/image_1753202443401.png';
+import swissBunker from '@assets/image_1753694170930.png';
+import serverRack from '@assets/image_1753694751730.png';
+import swissAlpsLake from '@assets/image_1753695152431.png';
+import dataCenterCorridor from '@assets/image_1753695626105.png';
 
 export default function Security() {
   const { language } = useLanguage();
@@ -269,6 +274,17 @@ export default function Security() {
               </p>
             </div>
 
+            {/* Swiss Alps Image */}
+            <div className="mb-16">
+              <div className="relative rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
+                <img 
+                  src={swissAlps} 
+                  alt="Swiss Alps data center location"
+                  className="w-full h-64 md:h-80 object-cover object-center"
+                />
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-xl p-8 border border-slate-200">
                 <div className="flex items-center mb-4">
@@ -341,6 +357,17 @@ export default function Security() {
               <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
                 {t.technicalDesc}
               </p>
+            </div>
+
+            {/* Data Center Image */}
+            <div className="mb-16">
+              <div className="relative rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
+                <img 
+                  src={dataCenterCorridor} 
+                  alt="Data center technical infrastructure"
+                  className="w-full h-64 md:h-80 object-cover object-center"
+                />
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
