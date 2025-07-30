@@ -1,12 +1,215 @@
+import { useState } from 'react';
 import { Navigation } from '@/components/navigation';
 import { useLanguage } from '@/components/language-provider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Shield, CheckCircle, AlertTriangle, Clock, FileCheck, Award, TrendingUp, Search } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
+import { Shield, CheckCircle, AlertTriangle, Clock, FileCheck, Award, TrendingUp, Search, User, Calendar, MapPin, Download, MessageSquare, X, Check } from 'lucide-react';
+
+interface ProjectReviewData {
+  id: string;
+  name: string;
+  type: string;
+  co2: string;
+  status: string;
+  priority: string;
+  submittedBy: string;
+  assignedTo: string;
+  daysLeft: number;
+  submissionDate: string;
+  location: string;
+  capacity: string;
+  projectDescription: string;
+  documents: Array<{
+    name: string;
+    type: string;
+    uploadDate: string;
+    size: string;
+    status: string;
+  }>;
+  teamNotes: Array<{
+    author: string;
+    date: string;
+    note: string;
+    type: 'info' | 'warning' | 'success';
+  }>;
+  technicalSpecs: {
+    energyType: string;
+    installedCapacity: string;
+    expectedAnnualProduction: string;
+    co2ReductionCalculation: string;
+    emissionFactor: string;
+  };
+}
 
 export default function CertificationDashboard() {
   const { language } = useLanguage();
+  const { toast } = useToast();
+  const [selectedProject, setSelectedProject] = useState<ProjectReviewData | null>(null);
+  const [showReviewModal, setShowReviewModal] = useState(false);
+  const [reviewDecision, setReviewDecision] = useState<'approve' | 'corrections' | null>(null);
+  const [reviewNotes, setReviewNotes] = useState('');
+  
+  // Current reviewer's ALPHAG8 ID (from localStorage)
+  const reviewerAlphaG8Id = localStorage.getItem('alphaG8Id') || 'FAGRI-XXXXXXXX-XXXXXXXX-XX';
+
+  // Mock comprehensive project data with all details needed for review
+  const getProjectDetails = (project: any): ProjectReviewData => {
+    const projectData: { [key: string]: ProjectReviewData } = {
+      'PV-2024-001': {
+        id: 'PV-2024-001',
+        name: language === 'it' ? 'Progetto Solare Milano' : 'Milan Solar Project',
+        type: 'Solar',
+        co2: '750t',
+        status: 'validation',
+        priority: 'high',
+        submittedBy: 'Marco Rossi',
+        assignedTo: 'Alessandro Bianchi',
+        daysLeft: 2,
+        submissionDate: '2024-07-28',
+        location: 'Milano, Lombardia, Italia',
+        capacity: '500 kW',
+        projectDescription: 'Installazione di pannelli solari fotovoltaici su terreni agricoli per produzione di energia rinnovabile e riduzione delle emissioni CO₂.',
+        documents: [
+          { name: 'Analisi_Suolo_Milano.pdf', type: 'Soil Analysis', uploadDate: '2024-07-28', size: '2.1 MB', status: 'verified' },
+          { name: 'Calcoli_CO2_Fotovoltaico.xlsx', type: 'CO₂ Calculations', uploadDate: '2024-07-28', size: '850 KB', status: 'pending' },
+          { name: 'Schemi_Tecnici_Impianto.dwg', type: 'Technical Drawings', uploadDate: '2024-07-28', size: '4.2 MB', status: 'verified' },
+          { name: 'Autorizzazioni_Comune.pdf', type: 'Permits', uploadDate: '2024-07-27', size: '1.8 MB', status: 'verified' }
+        ],
+        teamNotes: [
+          { author: 'Alessandro Bianchi', date: '2024-07-29', note: 'Documentazione tecnica completa. Necessaria verifica calcoli CO₂.', type: 'info' },
+          { author: 'Marco Rossi', date: '2024-07-28', note: 'Progetto sottomesso con tutta la documentazione richiesta.', type: 'success' }
+        ],
+        technicalSpecs: {
+          energyType: 'Solarenergie (Energia Solare)',
+          installedCapacity: '500 kW',
+          expectedAnnualProduction: '650 MWh/anno',
+          co2ReductionCalculation: '650 MWh × 0.53 kg CO₂/kWh = 344.5 t CO₂/anno',
+          emissionFactor: '0.53 kg CO₂/kWh (Standard Italia)'
+        }
+      },
+      'WF-2024-008': {
+        id: 'WF-2024-008',
+        name: language === 'it' ? 'Parco Eolico Sardegna' : 'Sardinia Wind Farm',
+        type: 'Wind',
+        co2: '1,850t',
+        status: 'review',
+        priority: 'medium',
+        submittedBy: 'Sofia Bianchi',
+        assignedTo: 'Giuseppe Verdi',
+        daysLeft: 5,
+        submissionDate: '2024-07-25',
+        location: 'Cagliari, Sardegna, Italia',
+        capacity: '2 MW',
+        projectDescription: 'Installazione di turbine eoliche per produzione di energia rinnovabile nel sud Sardegna.',
+        documents: [
+          { name: 'Studio_Vento_Sardegna.pdf', type: 'Wind Analysis', uploadDate: '2024-07-25', size: '3.5 MB', status: 'verified' },
+          { name: 'Impatto_Ambientale_Eolico.pdf', type: 'Environmental Impact', uploadDate: '2024-07-25', size: '2.8 MB', status: 'verified' },
+          { name: 'Calcoli_Produzione_Energia.xlsx', type: 'Energy Production', uploadDate: '2024-07-25', size: '1.2 MB', status: 'pending' }
+        ],
+        teamNotes: [
+          { author: 'Giuseppe Verdi', date: '2024-07-26', note: 'Documentazione ambientale eccellente. Verificare calcoli di produzione.', type: 'info' },
+          { author: 'Sofia Bianchi', date: '2024-07-25', note: 'Progetto completo con tutte le autorizzazioni necessarie.', type: 'success' }
+        ],
+        technicalSpecs: {
+          energyType: 'Windenergie (Energia Eolica)',
+          installedCapacity: '2 MW',
+          expectedAnnualProduction: '4,200 MWh/anno',
+          co2ReductionCalculation: '4,200 MWh × 0.53 kg CO₂/kWh = 2,226 t CO₂/anno',
+          emissionFactor: '0.53 kg CO₂/kWh (Standard Italia)'
+        }
+      },
+      'HY-2024-003': {
+        id: 'HY-2024-003',
+        name: language === 'it' ? 'Idroelettrico Valle d\'Aosta' : 'Valle d\'Aosta Hydroelectric',
+        type: 'Hydro',
+        co2: '1,200t',
+        status: 'corrections',
+        priority: 'high',
+        submittedBy: 'Giuseppe Verdi',
+        assignedTo: 'Maria Rossi',
+        daysLeft: 1,
+        submissionDate: '2024-07-22',
+        location: 'Aosta, Valle d\'Aosta, Italia',
+        capacity: '1.5 MW',
+        projectDescription: 'Impianto idroelettrico a filo d\'acqua per sfruttamento sostenibile delle risorse idriche alpine.',
+        documents: [
+          { name: 'Studio_Idrologico_Aosta.pdf', type: 'Hydrological Study', uploadDate: '2024-07-22', size: '4.1 MB', status: 'verified' },
+          { name: 'Autorizzazioni_Regione.pdf', type: 'Regional Permits', uploadDate: '2024-07-22', size: '2.3 MB', status: 'corrections_needed' },
+          { name: 'Calcoli_Portata_Acqua.xlsx', type: 'Water Flow Calculations', uploadDate: '2024-07-22', size: '980 KB', status: 'corrections_needed' }
+        ],
+        teamNotes: [
+          { author: 'Maria Rossi', date: '2024-07-29', note: 'URGENTE: Autorizzazioni regionali incomplete. Mancano firme autorità competenti.', type: 'warning' },
+          { author: 'Giuseppe Verdi', date: '2024-07-22', note: 'Progetto sottomesso. In attesa di verifica documentazione.', type: 'info' }
+        ],
+        technicalSpecs: {
+          energyType: 'Wasserkraft (Energia Idroelettrica)',
+          installedCapacity: '1.5 MW',
+          expectedAnnualProduction: '2,800 MWh/anno',
+          co2ReductionCalculation: '2,800 MWh × 0.53 kg CO₂/kWh = 1,484 t CO₂/anno',
+          emissionFactor: '0.53 kg CO₂/kWh (Standard Italia)'
+        }
+      }
+    };
+    
+    return projectData[project.id] || projectData['PV-2024-001'];
+  };
+
+  const handleOpenReview = (project: any) => {
+    const fullProjectData = getProjectDetails(project);
+    setSelectedProject(fullProjectData);
+    setShowReviewModal(true);
+    setReviewDecision(null);
+    setReviewNotes('');
+  };
+
+  const handleCertifyProject = (project: any) => {
+    const fullProjectData = getProjectDetails(project);
+    setSelectedProject(fullProjectData);
+    setReviewDecision('approve');
+    setShowReviewModal(true);
+  };
+
+  const handleSubmitReview = async () => {
+    if (!selectedProject || !reviewDecision) return;
+
+    try {
+      // Log the review action with ALPHAG8 ID
+      const reviewAction = {
+        projectId: selectedProject.id,
+        reviewerId: reviewerAlphaG8Id,
+        reviewerName: 'Current Certification Officer',
+        decision: reviewDecision,
+        notes: reviewNotes,
+        timestamp: new Date().toISOString(),
+        projectName: selectedProject.name
+      };
+
+      // Store review action (in production this would go to backend)
+      const existingReviews = JSON.parse(localStorage.getItem('reviewActions') || '[]');
+      existingReviews.push(reviewAction);
+      localStorage.setItem('reviewActions', JSON.stringify(existingReviews));
+
+      toast({
+        title: language === 'it' ? 'Review Completato' : 'Review Completed',
+        description: language === 'it' 
+          ? `Progetto ${selectedProject.name} ${reviewDecision === 'approve' ? 'approvato' : 'richiede correzioni'}`
+          : `Project ${selectedProject.name} ${reviewDecision === 'approve' ? 'approved' : 'needs corrections'}`,
+      });
+
+      setShowReviewModal(false);
+      setSelectedProject(null);
+    } catch (error) {
+      toast({
+        title: language === 'it' ? 'Errore' : 'Error',
+        description: language === 'it' ? 'Errore durante il salvataggio del review' : 'Error saving review',
+        variant: "destructive",
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-50">
@@ -196,11 +399,19 @@ export default function CertificationDashboard() {
                           </div>
 
                           <div className="flex justify-end space-x-2">
-                            <Button size="sm" variant="outline">
+                            <Button 
+                              size="sm" 
+                              variant="outline"
+                              onClick={() => handleOpenReview(project)}
+                            >
                               {language === 'it' ? 'Rivedi' : 'Review'}
                             </Button>
                             {project.status === 'validation' && (
-                              <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                              <Button 
+                                size="sm" 
+                                className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                                onClick={() => handleCertifyProject(project)}
+                              >
                                 <CheckCircle className="h-4 w-4 mr-1" />
                                 {language === 'it' ? 'Certifica' : 'Certify'}
                               </Button>
@@ -294,6 +505,245 @@ export default function CertificationDashboard() {
           </div>
         </div>
       </div>
+
+      {/* Comprehensive Project Review Modal */}
+      <Dialog open={showReviewModal} onOpenChange={setShowReviewModal}>
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-light text-slate-800">
+              {language === 'it' ? 'Review Progetto Certificazione' : 'Project Certification Review'}
+            </DialogTitle>
+          </DialogHeader>
+
+          {selectedProject && (
+            <div className="space-y-6 p-6">
+              {/* Reviewer Information */}
+              <Card className="border-blue-200 bg-blue-50">
+                <CardContent className="pt-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-medium text-blue-800">
+                        {language === 'it' ? 'Revisore Corrente' : 'Current Reviewer'}
+                      </p>
+                      <p className="text-lg font-semibold text-blue-900">{reviewerAlphaG8Id}</p>
+                    </div>
+                    <User className="h-8 w-8 text-blue-600" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Project Overview */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <FileCheck className="h-5 w-5 mr-2" />
+                    {language === 'it' ? 'Panoramica Progetto' : 'Project Overview'}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <div>
+                        <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Nome Progetto' : 'Project Name'}</p>
+                        <p className="text-lg font-semibold">{selectedProject.name}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-600">ID</p>
+                        <p className="font-mono text-blue-600">{selectedProject.id}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Tipo' : 'Type'}</p>
+                        <p>{selectedProject.type}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-600">CO₂ {language === 'it' ? 'Riduzione' : 'Reduction'}</p>
+                        <p className="text-lg font-semibold text-green-600">{selectedProject.co2}</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div>
+                        <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Sottomesso da' : 'Submitted by'}</p>
+                        <p className="font-semibold">{selectedProject.submittedBy}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Assegnato a' : 'Assigned to'}</p>
+                        <p className="font-semibold">{selectedProject.assignedTo}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Localizzazione' : 'Location'}</p>
+                        <p>{selectedProject.location}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Capacità' : 'Capacity'}</p>
+                        <p>{selectedProject.capacity}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-slate-600 mb-2">{language === 'it' ? 'Descrizione' : 'Description'}</p>
+                    <p className="text-slate-700 bg-slate-50 p-3 rounded">{selectedProject.projectDescription}</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Technical Specifications */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <Shield className="h-5 w-5 mr-2" />
+                    {language === 'it' ? 'Specifiche Tecniche' : 'Technical Specifications'}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Tipo Energia' : 'Energy Type'}</p>
+                      <p>{selectedProject.technicalSpecs.energyType}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Capacità Installata' : 'Installed Capacity'}</p>
+                      <p>{selectedProject.technicalSpecs.installedCapacity}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Produzione Annuale' : 'Annual Production'}</p>
+                      <p>{selectedProject.technicalSpecs.expectedAnnualProduction}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-slate-600">{language === 'it' ? 'Fattore Emissione' : 'Emission Factor'}</p>
+                      <p>{selectedProject.technicalSpecs.emissionFactor}</p>
+                    </div>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                    <p className="text-sm font-medium text-green-800 mb-2">{language === 'it' ? 'Calcolo Riduzione CO₂' : 'CO₂ Reduction Calculation'}</p>
+                    <p className="font-mono text-green-700">{selectedProject.technicalSpecs.co2ReductionCalculation}</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Documents */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <FileCheck className="h-5 w-5 mr-2" />
+                    {language === 'it' ? 'Documentazione' : 'Documentation'}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {selectedProject.documents.map((doc, index) => (
+                      <div key={index} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+                        <div className="flex items-center space-x-3">
+                          <FileCheck className="h-4 w-4 text-slate-500" />
+                          <div>
+                            <p className="font-medium">{doc.name}</p>
+                            <p className="text-sm text-slate-600">{doc.type} • {doc.size} • {language === 'it' ? 'Caricato' : 'Uploaded'} {doc.uploadDate}</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Badge className={
+                            doc.status === 'verified' ? 'bg-green-100 text-green-800' :
+                            doc.status === 'pending' ? 'bg-amber-100 text-amber-800' :
+                            'bg-red-100 text-red-800'
+                          }>
+                            {doc.status === 'verified' ? (language === 'it' ? 'Verificato' : 'Verified') :
+                             doc.status === 'pending' ? (language === 'it' ? 'In Attesa' : 'Pending') :
+                             (language === 'it' ? 'Correzioni' : 'Corrections')}
+                          </Badge>
+                          <Button size="sm" variant="outline">
+                            <Download className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Team Notes */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <MessageSquare className="h-5 w-5 mr-2" />
+                    {language === 'it' ? 'Note del Team' : 'Team Notes'}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {selectedProject.teamNotes.map((note, index) => (
+                      <div key={index} className={`p-4 rounded-lg border ${
+                        note.type === 'warning' ? 'bg-amber-50 border-amber-200' :
+                        note.type === 'success' ? 'bg-green-50 border-green-200' :
+                        'bg-blue-50 border-blue-200'
+                      }`}>
+                        <div className="flex items-center justify-between mb-2">
+                          <p className="font-medium text-slate-800">{note.author}</p>
+                          <p className="text-sm text-slate-600">{note.date}</p>
+                        </div>
+                        <p className="text-slate-700">{note.note}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Review Decision */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <CheckCircle className="h-5 w-5 mr-2" />
+                    {language === 'it' ? 'Decisione Review' : 'Review Decision'}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex space-x-4">
+                    <Button
+                      onClick={() => setReviewDecision('approve')}
+                      className={`flex-1 ${reviewDecision === 'approve' ? 'bg-green-600 text-white' : 'bg-slate-100 text-slate-700'}`}
+                    >
+                      <Check className="h-4 w-4 mr-2" />
+                      {language === 'it' ? 'Approva Progetto' : 'Approve Project'}
+                    </Button>
+                    <Button
+                      onClick={() => setReviewDecision('corrections')}
+                      className={`flex-1 ${reviewDecision === 'corrections' ? 'bg-amber-600 text-white' : 'bg-slate-100 text-slate-700'}`}
+                    >
+                      <AlertTriangle className="h-4 w-4 mr-2" />
+                      {language === 'it' ? 'Richiedi Correzioni' : 'Request Corrections'}
+                    </Button>
+                  </div>
+
+                  <div>
+                    <p className="text-sm font-medium text-slate-700 mb-2">
+                      {language === 'it' ? 'Note del Review' : 'Review Notes'}
+                    </p>
+                    <Textarea
+                      value={reviewNotes}
+                      onChange={(e) => setReviewNotes(e.target.value)}
+                      placeholder={language === 'it' 
+                        ? 'Aggiungi note dettagliate sul tuo review...' 
+                        : 'Add detailed notes about your review...'}
+                      className="min-h-[100px]"
+                    />
+                  </div>
+
+                  <div className="flex justify-end space-x-3">
+                    <Button variant="outline" onClick={() => setShowReviewModal(false)}>
+                      {language === 'it' ? 'Annulla' : 'Cancel'}
+                    </Button>
+                    <Button
+                      onClick={handleSubmitReview}
+                      disabled={!reviewDecision}
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                    >
+                      {language === 'it' ? 'Completa Review' : 'Complete Review'}
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
