@@ -47,12 +47,14 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     postalCode: '',
     province: '', // for detailed location info
     
-    // Agricultural Business
-    businessSector: '',
-    agriculturalActivity: '',
+    // Agricultural Business - Hierarchical Structure
+    businessSector: '', // Main category
+    businessSubSector: '', // Sub-category based on main sector
+    agriculturalActivity: '', // Specific activities within sub-sector
     hectares: '',
     renewableEnergyType: '', // for renewable energy sector
     renewableCapacity: '', // MW or kW for renewable energy
+    specificActivities: [], // Multiple choice array for specific activities
     
     // Contact Preferences
     websiteUrl: '',
@@ -94,11 +96,86 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     'Trentino-Alto Adige', 'Umbria', 'Valle d\'Aosta', 'Veneto'
   ];
 
-  const agriculturalSectors = [
-    'crop-production', 'livestock', 'dairy-farming', 'viticulture', 
-    'olive-growing', 'fruit-growing', 'organic-farming', 'agroforestry',
-    'renewable-energy', 'agritourism', 'food-processing', 'other'
+  // Hierarchical Agricultural Business Structure
+  const businessSectors = [
+    'farmer-producer', 
+    'cooperative-association', 
+    'agricultural-industry', 
+    'renewable-energy', 
+    'agri-services'
   ];
+
+  // Sub-sectors for each main business sector
+  const subSectorsByCategory = {
+    'farmer-producer': [
+      'crop-production', 'livestock-farming', 'dairy-farming', 'viticulture', 
+      'olive-production', 'fruit-growing', 'organic-farming', 'mixed-farming'
+    ],
+    'cooperative-association': [
+      'agricultural-cooperative', 'wine-cooperative', 'dairy-cooperative',
+      'fruit-vegetable-cooperative', 'marketing-cooperative', 'supply-cooperative'
+    ],
+    'agricultural-industry': [
+      'food-processing', 'dairy-industry', 'wine-industry', 'olive-oil-production',
+      'grain-milling', 'meat-processing', 'agricultural-machinery', 'fertilizer-production'
+    ],
+    'renewable-energy': [
+      'solar-farms', 'wind-energy', 'biomass-energy', 'biogas-production',
+      'agrivoltaics', 'energy-storage', 'green-hydrogen'
+    ],
+    'agri-services': [
+      'consulting-services', 'certification-services', 'logistics-transport',
+      'agricultural-technology', 'financing-services', 'insurance-services'
+    ]
+  };
+
+  // Specific activities for each sub-sector
+  const activitiesBySubSector = {
+    // Farmer-Producer Activities
+    'crop-production': ['cereals', 'vegetables', 'legumes', 'oilseeds', 'industrial-crops'],
+    'livestock-farming': ['cattle', 'sheep', 'goats', 'pigs', 'poultry', 'aquaculture'],
+    'dairy-farming': ['milk-production', 'cheese-making', 'yogurt-production', 'organic-dairy'],
+    'viticulture': ['wine-grapes', 'table-grapes', 'organic-wine', 'sparkling-wine'],
+    'olive-production': ['oil-olives', 'table-olives', 'organic-olives', 'premium-oil'],
+    'fruit-growing': ['citrus', 'stone-fruits', 'berries', 'nuts', 'tropical-fruits'],
+    'organic-farming': ['organic-cereals', 'organic-vegetables', 'organic-livestock', 'biodynamic'],
+    'mixed-farming': ['crop-livestock', 'agrotourism', 'direct-sales', 'farm-to-table'],
+    
+    // Cooperative Activities
+    'agricultural-cooperative': ['member-services', 'bulk-purchasing', 'marketing-support', 'storage-facilities'],
+    'wine-cooperative': ['grape-processing', 'wine-production', 'bottling', 'marketing'],
+    'dairy-cooperative': ['milk-collection', 'processing', 'distribution', 'quality-control'],
+    'fruit-vegetable-cooperative': ['collection', 'packaging', 'distribution', 'quality-standards'],
+    'marketing-cooperative': ['brand-development', 'sales-channels', 'export', 'promotion'],
+    'supply-cooperative': ['input-purchasing', 'equipment-sharing', 'technical-support', 'financing'],
+    
+    // Industry Activities
+    'food-processing': ['preservation', 'packaging', 'value-addition', 'ready-meals'],
+    'dairy-industry': ['pasteurization', 'cheese-production', 'powder-production', 'fermented-products'],
+    'wine-industry': ['winemaking', 'aging', 'blending', 'bottling', 'distribution'],
+    'olive-oil-production': ['extraction', 'refining', 'packaging', 'quality-testing'],
+    'grain-milling': ['flour-production', 'feed-production', 'grain-cleaning', 'storage'],
+    'meat-processing': ['slaughtering', 'butchering', 'packaging', 'distribution'],
+    'agricultural-machinery': ['manufacturing', 'sales', 'maintenance', 'technology-development'],
+    'fertilizer-production': ['organic-fertilizers', 'mineral-fertilizers', 'specialty-products', 'research'],
+    
+    // Renewable Energy Activities
+    'solar-farms': ['photovoltaic-systems', 'solar-thermal', 'maintenance', 'grid-connection'],
+    'wind-energy': ['wind-turbines', 'maintenance', 'grid-integration', 'energy-storage'],
+    'biomass-energy': ['biomass-production', 'energy-conversion', 'waste-management', 'sustainability'],
+    'biogas-production': ['anaerobic-digestion', 'gas-upgrading', 'electricity-generation', 'heat-production'],
+    'agrivoltaics': ['dual-use-systems', 'crop-energy-optimization', 'research', 'development'],
+    'energy-storage': ['battery-systems', 'grid-services', 'peak-shaving', 'backup-power'],
+    'green-hydrogen': ['electrolysis', 'storage', 'transport', 'industrial-applications'],
+    
+    // Services Activities
+    'consulting-services': ['technical-advice', 'business-planning', 'sustainability-consulting', 'certification-support'],
+    'certification-services': ['organic-certification', 'quality-standards', 'co2-certification', 'auditing'],
+    'logistics-transport': ['farm-to-market', 'cold-chain', 'warehousing', 'distribution'],
+    'agricultural-technology': ['precision-agriculture', 'iot-sensors', 'data-analytics', 'automation'],
+    'financing-services': ['agricultural-loans', 'investment-funding', 'insurance-products', 'risk-management'],
+    'insurance-services': ['crop-insurance', 'livestock-insurance', 'equipment-insurance', 'liability-coverage']
+  };
 
   const renewableEnergyTypes = [
     'solar-photovoltaic', 'solar-thermal', 'wind-turbines', 'hydropower',
@@ -106,8 +183,33 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     'energy-storage', 'grid-integration', 'green-hydrogen', 'other-renewable'
   ];
 
-  const updateFormData = (field: string, value: string | boolean) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+  const updateFormData = (field: string, value: string | boolean | string[]) => {
+    setFormData(prev => ({ 
+      ...prev, 
+      [field]: value,
+      // Reset dependent fields when business sector changes
+      ...(field === 'businessSector' && { businessSubSector: '', specificActivities: [] }),
+      ...(field === 'businessSubSector' && { specificActivities: [] })
+    }));
+  };
+
+  // Helper functions for hierarchical options
+  const getSubSectors = () => {
+    if (!formData.businessSector) return [];
+    return subSectorsByCategory[formData.businessSector as keyof typeof subSectorsByCategory] || [];
+  };
+
+  const getSpecificActivities = () => {
+    if (!formData.businessSubSector) return [];
+    return activitiesBySubSector[formData.businessSubSector as keyof typeof activitiesBySubSector] || [];
+  };
+
+  const handleSpecificActivityToggle = (activity: string) => {
+    const currentActivities = formData.specificActivities;
+    const newActivities = currentActivities.includes(activity)
+      ? currentActivities.filter(a => a !== activity)
+      : [...currentActivities, activity];
+    updateFormData('specificActivities', newActivities);
   };
 
   const membershipMutation = useMutation({
@@ -138,10 +240,12 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
         postalCode: '',
         province: '',
         businessSector: '',
+        businessSubSector: '',
         agriculturalActivity: '',
         hectares: '',
         renewableEnergyType: '',
         renewableCapacity: '',
+        specificActivities: [],
         websiteUrl: '',
         emailContact: false,
         phoneContact: false,
@@ -503,7 +607,7 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
             </Card>
           )}
 
-          {/* Agricultural Business */}
+          {/* Hierarchical Agricultural Business */}
           {formData.membershipType && (
             <Card className="border-green-200 bg-green-50">
               <CardHeader>
@@ -511,87 +615,128 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                   <Briefcase className="h-5 w-5" />
                   <span>{t('agricultural-business')}</span>
                 </CardTitle>
+                <CardDescription className="text-green-700">
+                  {t('business-hierarchy-desc')}
+                </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <CardContent className="space-y-6">
+                
+                {/* Level 1: Main Business Sector */}
+                <div className="space-y-2">
+                  <Label htmlFor="businessSector" className="text-green-800 font-medium">
+                    {t('main-business-sector')} *
+                  </Label>
+                  <Select value={formData.businessSector} onValueChange={(value) => updateFormData('businessSector', value)}>
+                    <SelectTrigger className="border-green-200 focus:border-green-500">
+                      <SelectValue placeholder={t('select-main-sector')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {businessSectors.map((sector) => (
+                        <SelectItem key={sector} value={sector}>{t(sector)}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Level 2: Sub-Sector (appears when main sector is selected) */}
+                {formData.businessSector && (
                   <div className="space-y-2">
-                    <Label htmlFor="businessSector" className="text-green-800 font-medium">
-                      {t('business-sector')} *
+                    <Label htmlFor="businessSubSector" className="text-green-800 font-medium">
+                      {t('business-sub-sector')} *
                     </Label>
-                    <Select value={formData.businessSector} onValueChange={(value) => updateFormData('businessSector', value)}>
+                    <Select value={formData.businessSubSector} onValueChange={(value) => updateFormData('businessSubSector', value)}>
                       <SelectTrigger className="border-green-200 focus:border-green-500">
-                        <SelectValue placeholder={t('select-sector')} />
+                        <SelectValue placeholder={t('select-sub-sector')} />
                       </SelectTrigger>
                       <SelectContent>
-                        {agriculturalSectors.map((sector) => (
-                          <SelectItem key={sector} value={sector}>{t(sector)}</SelectItem>
+                        {getSubSectors().map((subSector) => (
+                          <SelectItem key={subSector} value={subSector}>{t(subSector)}</SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
                   </div>
-                  
-                  {/* Dynamic field - Hectares for traditional agriculture, Renewable Energy Type for renewable */}
-                  {formData.businessSector === 'renewable-energy' ? (
-                    <div className="space-y-2">
-                      <Label htmlFor="renewableEnergyType" className="text-green-800 font-medium">
-                        {t('renewable-energy-type')} *
-                      </Label>
-                      <Select value={formData.renewableEnergyType} onValueChange={(value) => updateFormData('renewableEnergyType', value)}>
-                        <SelectTrigger className="border-green-200 focus:border-green-500">
-                          <SelectValue placeholder={t('select-renewable-type')} />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {renewableEnergyTypes.map((type) => (
-                            <SelectItem key={type} value={type}>{t(type)}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  ) : (
-                    <div className="space-y-2">
-                      <Label htmlFor="hectares" className="text-green-800 font-medium">
-                        {t('hectares')}
-                      </Label>
-                      <Input
-                        id="hectares"
-                        value={formData.hectares}
-                        onChange={(e) => updateFormData('hectares', e.target.value)}
-                        className="border-green-200 focus:border-green-500"
-                        placeholder={t('hectares-placeholder')}
-                      />
-                    </div>
-                  )}
-                </div>
-                
-                {/* Additional field for renewable energy capacity */}
-                {formData.businessSector === 'renewable-energy' && (
-                  <div className="space-y-2">
-                    <Label htmlFor="renewableCapacity" className="text-green-800 font-medium">
-                      {t('renewable-capacity')}
+                )}
+
+                {/* Level 3: Specific Activities (Multiple Choice Checkboxes) */}
+                {formData.businessSubSector && getSpecificActivities().length > 0 && (
+                  <div className="space-y-3">
+                    <Label className="text-green-800 font-medium">
+                      {t('specific-activities')} ({t('multiple-choice')})
                     </Label>
-                    <Input
-                      id="renewableCapacity"
-                      value={formData.renewableCapacity}
-                      onChange={(e) => updateFormData('renewableCapacity', e.target.value)}
-                      className="border-green-200 focus:border-green-500"
-                      placeholder={t('capacity-placeholder')}
-                    />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-h-48 overflow-y-auto border border-green-200 rounded-lg p-4 bg-white">
+                      {getSpecificActivities().map((activity) => (
+                        <div key={activity} className="flex items-center space-x-2">
+                          <Checkbox
+                            id={`activity-${activity}`}
+                            checked={formData.specificActivities.includes(activity)}
+                            onCheckedChange={() => handleSpecificActivityToggle(activity)}
+                            className="border-green-300"
+                          />
+                          <Label 
+                            htmlFor={`activity-${activity}`} 
+                            className="text-sm text-green-700 cursor-pointer leading-tight"
+                          >
+                            {t(activity)}
+                          </Label>
+                        </div>
+                      ))}
+                    </div>
+                    {formData.specificActivities.length > 0 && (
+                      <div className="text-sm text-green-600">
+                        {t('selected-activities')}: {formData.specificActivities.length}
+                      </div>
+                    )}
                   </div>
                 )}
-                
-                <div className="space-y-2">
-                  <Label htmlFor="agriculturalActivity" className="text-green-800 font-medium">
-                    {t('agricultural-activity-detail')}
-                  </Label>
-                  <Textarea
-                    id="agriculturalActivity"
-                    value={formData.agriculturalActivity}
-                    onChange={(e) => updateFormData('agriculturalActivity', e.target.value)}
-                    className="border-green-200 focus:border-green-500"
-                    placeholder={t('describe-activities')}
-                    rows={3}
-                  />
-                </div>
+
+                {/* Hectares/Capacity Field */}
+                {formData.businessSector && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {formData.businessSector === 'renewable-energy' ? (
+                      <div className="space-y-2">
+                        <Label htmlFor="renewableCapacity" className="text-green-800 font-medium">
+                          {t('renewable-capacity')} (kW/MW)
+                        </Label>
+                        <Input
+                          id="renewableCapacity"
+                          value={formData.renewableCapacity}
+                          onChange={(e) => updateFormData('renewableCapacity', e.target.value)}
+                          className="border-green-200 focus:border-green-500"
+                          placeholder={t('capacity-placeholder')}
+                        />
+                      </div>
+                    ) : (
+                      <div className="space-y-2">
+                        <Label htmlFor="hectares" className="text-green-800 font-medium">
+                          {t('hectares')}
+                        </Label>
+                        <Input
+                          id="hectares"
+                          value={formData.hectares}
+                          onChange={(e) => updateFormData('hectares', e.target.value)}
+                          className="border-green-200 focus:border-green-500"
+                          placeholder={t('hectares-placeholder')}
+                        />
+                      </div>
+                    )}
+                    
+                    {/* Additional Information Field */}
+                    <div className="space-y-2">
+                      <Label htmlFor="agriculturalActivity" className="text-green-800 font-medium">
+                        {t('additional-business-info')}
+                      </Label>
+                      <Textarea
+                        id="agriculturalActivity"
+                        value={formData.agriculturalActivity}
+                        onChange={(e) => updateFormData('agriculturalActivity', e.target.value)}
+                        className="border-green-200 focus:border-green-500"
+                        placeholder={t('describe-additional-info')}
+                        rows={3}
+                      />
+                    </div>
+                  </div>
+                )}
+
               </CardContent>
             </Card>
           )}
