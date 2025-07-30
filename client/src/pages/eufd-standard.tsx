@@ -1,4 +1,3 @@
-import { useLanguage } from '../components/language-provider';
 import { Navigation } from '../components/navigation';
 import { Footer } from '../components/footer';
 import { CheckCircle, Shield, Globe, Users, Download, Lock, FileCheck } from 'lucide-react';
@@ -6,8 +5,6 @@ import { Link } from 'wouter';
 import italianGovernment from '@assets/image_1753122095811.png';
 
 export default function EufdStandardPage() {
-  const { t } = useLanguage();
-
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -49,19 +46,17 @@ export default function EufdStandardPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             
-            {/* Pioneers from Italy to the World */}
+            {/* Pioneers from Italy to the World: Our Blockchain Standard for CO₂ Certificates */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
                 Pioneers from Italy to the World: Our Blockchain Standard for CO₂ Certificates
               </h2>
-              <div className="prose prose-lg text-slate-600 max-w-none">
-                <p className="mb-6 leading-relaxed">
-                  At FAGRI.Digital, we are proud to present our new innovative standard: EUFD2025-001. This standard is the result of years of intensive research and development, based on the latest scientific discoveries and created in close collaboration with leading Italian universities.
-                </p>
-                <p className="mb-6 leading-relaxed">
-                  The FAGRI Digital platform that supports the EUFD2025-001 standard is designed to usher in a new era of trust, efficiency and transparency in CO₂ certification and trading — powered by blockchain technology, advanced data protection protocols and 3FA security architecture.
-                </p>
-              </div>
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                At FAGRI.Digital, we are proud to present our new innovative standard: EUFD2025-001. This standard is the result of years of intensive research and development, based on the latest scientific discoveries and created in close collaboration with leading Italian universities.
+              </p>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                The FAGRI Digital platform that supports the EUFD2025-001 standard is designed to usher in a new era of trust, efficiency and transparency in CO₂ certification and trading — powered by blockchain technology, advanced data protection protocols and 3FA security architecture.
+              </p>
             </div>
 
             {/* EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain */}
@@ -69,14 +64,12 @@ export default function EufdStandardPage() {
               <h2 className="text-3xl font-light text-slate-900 mb-8">
                 EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain
               </h2>
-              <div className="prose prose-lg text-slate-600 max-w-none mb-8">
-                <p className="mb-6 leading-relaxed">
-                  The EUFD2025-001 standard represents a groundbreaking approach to agricultural CO₂ certification, combining rigorous scientific methodology with cutting-edge blockchain technology. Developed through extensive collaboration with leading European research institutions and validated by independent certification bodies, this standard ensures that every carbon credit issued is scientifically sound, completely transparent, and legally compliant.
-                </p>
-                <p className="mb-8 leading-relaxed">
-                  Our comprehensive framework addresses the growing need for standardized, verifiable carbon accounting in agriculture while maintaining the flexibility to accommodate diverse farming systems across Europe and beyond.
-                </p>
-              </div>
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                The EUFD2025-001 standard represents a groundbreaking approach to agricultural CO₂ certification, combining rigorous scientific methodology with cutting-edge blockchain technology. Developed through extensive collaboration with leading European research institutions and validated by independent certification bodies, this standard ensures that every carbon credit issued is scientifically sound, completely transparent, and legally compliant.
+              </p>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Our comprehensive framework addresses the growing need for standardized, verifiable carbon accounting in agriculture while maintaining the flexibility to accommodate diverse farming systems across Europe and beyond.
+              </p>
             </div>
 
             {/* EUFD2025-001 Standard Available Now */}
