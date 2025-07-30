@@ -34,6 +34,35 @@ export function Navigation() {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [signedInAlphaG8Id, setSignedInAlphaG8Id] = useState<string>('');
 
+  // Check for existing session on component mount
+  useEffect(() => {
+    const checkSession = () => {
+      const sessionActive = localStorage.getItem('sessionActive');
+      const alphaG8Id = localStorage.getItem('alphaG8Id');
+      
+      if (sessionActive === 'true' && alphaG8Id) {
+        setIsSignedIn(true);
+        setSignedInAlphaG8Id(alphaG8Id);
+      }
+    };
+    
+    checkSession();
+    
+    // Listen for localStorage changes (when user signs in from another component)
+    const handleStorageChange = () => {
+      checkSession();
+    };
+    
+    window.addEventListener('storage', handleStorageChange);
+    // Also check periodically in case localStorage changed in same tab
+    const interval = setInterval(checkSession, 1000);
+    
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      clearInterval(interval);
+    };
+  }, []);
+
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [location, setLocation] = useLocation();
 
@@ -173,8 +202,11 @@ export function Navigation() {
                   
                   <Button
                     onClick={() => {
+                      localStorage.removeItem('sessionActive');
+                      localStorage.removeItem('alphaG8Id');
                       setIsSignedIn(false);
                       setSignedInAlphaG8Id('');
+                      setLocation('/');
                       console.log('User logged out');
                     }}
                     variant="outline"
@@ -262,9 +294,12 @@ export function Navigation() {
                     
                     <button
                       onClick={() => {
+                        localStorage.removeItem('sessionActive');
+                        localStorage.removeItem('alphaG8Id');
                         setIsSignedIn(false);
                         setSignedInAlphaG8Id('');
                         setIsOpen(false);
+                        setLocation('/');
                         console.log('Mobile user logged out');
                       }}
                       className="flex items-center text-red-600 hover:text-red-700 transition-colors duration-300 text-left font-medium"
