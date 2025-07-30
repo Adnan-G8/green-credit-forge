@@ -364,9 +364,10 @@ export function AdminDashboard() {
                               <div className="flex items-center space-x-3">
                                 <h3 className="font-medium text-slate-800">{request.fullName || request.fagriId}</h3>
                                 <Badge
-                                  variant={
-                                    request.status === 'approved' ? 'default' :
-                                    request.status === 'rejected' ? 'destructive' : 'secondary'
+                                  className={
+                                    request.status === 'approved' ? 'bg-green-100 text-green-800 border-green-200' :
+                                    request.status === 'rejected' ? 'bg-red-100 text-red-800 border-red-200' : 
+                                    'bg-orange-100 text-orange-800 border-orange-200'
                                   }
                                 >
                                   {request.status === 'pending' && (language === 'it' ? 'In Attesa' : 'Pending')}
@@ -374,7 +375,7 @@ export function AdminDashboard() {
                                   {request.status === 'rejected' && (language === 'it' ? 'Rifiutato' : 'Rejected')}
                                 </Badge>
                               </div>
-                              <p className="text-sm text-slate-600">FAGRI ID: {request.fagriId}</p>
+                              <p className="text-sm text-slate-600">ALPHAG8 ID: {request.fagriId}</p>
                               <p className="text-sm text-slate-600">{language === 'it' ? 'Tipo' : 'Type'}: {request.accountType}</p>
                               {request.email && (
                                 <p className="text-sm text-slate-600">Email: {request.email}</p>
@@ -445,7 +446,7 @@ export function AdminDashboard() {
                           <div className="flex items-start justify-between">
                             <div className="space-y-1">
                               <h3 className="font-medium text-slate-800">{activity.action}</h3>
-                              <p className="text-sm text-slate-600">FAGRI ID: {activity.fagriId}</p>
+                              <p className="text-sm text-slate-600">ALPHAG8 ID: {activity.fagriId}</p>
                               <p className="text-sm text-slate-600">{activity.details}</p>
                               {activity.ipAddress && (
                                 <p className="text-xs text-slate-500">IP: {activity.ipAddress}</p>
@@ -546,7 +547,7 @@ export function AdminDashboard() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-slate-600">FAGRI ID</label>
+                    <label className="text-sm font-medium text-slate-600">ALPHAG8 ID</label>
                     <p className="font-mono text-sm bg-slate-100 p-2 rounded">{selectedRequest.fagriId}</p>
                   </div>
                   <div>
@@ -555,9 +556,10 @@ export function AdminDashboard() {
                     </label>
                     <div className="mt-1">
                       <Badge
-                        variant={
-                          selectedRequest.status === 'approved' ? 'default' :
-                          selectedRequest.status === 'rejected' ? 'destructive' : 'secondary'
+                        className={
+                          selectedRequest.status === 'approved' ? 'bg-green-100 text-green-800 border-green-200' :
+                          selectedRequest.status === 'rejected' ? 'bg-red-100 text-red-800 border-red-200' : 
+                          'bg-orange-100 text-orange-800 border-orange-200'
                         }
                       >
                         {selectedRequest.status === 'pending' && (language === 'it' ? 'In Attesa' : 'Pending')}
