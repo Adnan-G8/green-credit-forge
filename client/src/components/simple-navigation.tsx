@@ -55,9 +55,9 @@ export function SimpleNavigation() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <FagriLogo className="h-8 w-8" />
-              <span className={`text-xl font-light transition-colors duration-300 ${
+            <div className="flex items-center space-x-3">
+              <FagriLogo className="h-12 w-12" />
+              <span className={`text-2xl font-light transition-colors duration-300 ${
                 isScrolled ? 'text-slate-800' : 'text-white'
               }`}>
                 FAGRI.Digital
