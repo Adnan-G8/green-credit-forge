@@ -137,7 +137,7 @@ export function PlatformSection() {
             
             {/* Learn More Button */}
             <div className="text-center mt-8">
-              <Link href="/certification-dashboard">
+              <Link href="/eufd-standard">
                 <button className="inline-flex items-center px-8 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium">
                   {t('platform-learn-more')}
                   <ArrowRight className="ml-2 h-5 w-5" />
