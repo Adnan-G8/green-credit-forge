@@ -160,8 +160,8 @@ export function Navigation() {
                   {/* Show My ID KEY for FAGRI Team members */}
                   <Button
                     onClick={() => {
-                      navigator.clipboard.writeText(signedInAlphaG8Id);
-                      // Show toast notification
+                      setLocation(`/user-dashboard?fagriId=${signedInAlphaG8Id}`);
+                      setIsOpen(false);
                     }}
                     variant="outline"
                     size="sm"
@@ -251,7 +251,7 @@ export function Navigation() {
                   <>
                     <button
                       onClick={() => {
-                        navigator.clipboard.writeText(signedInAlphaG8Id);
+                        setLocation(`/user-dashboard?fagriId=${signedInAlphaG8Id}`);
                         setIsOpen(false);
                       }}
                       className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
