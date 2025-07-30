@@ -2678,6 +2678,29 @@ export const translations = {
     'kyc-documents-uploaded': 'Documents uploaded',
     'kyc-submit-verification': 'Submit for Verification',
 
+    // Membership Application Form - English (only missing keys)
+    'fagri-membership-application': 'FAGRI Member Application',
+    'professional-membership-desc': 'Complete your professional application for FAGRI membership',
+    'select-membership-type': 'Select if you are registering yourself or your company',
+    'individual-membership': 'Individual Membership',
+    'company-membership': 'Company Membership',
+    'your-role': 'Your Role',
+    'select-region': 'Select Region',
+    'province-placeholder': 'MI',
+    'interests-sectors': 'Interests and Sectors',
+    'tell-us-about-yourself': 'Tell us about yourself',
+    'describe-interests-placeholder': 'Describe your interests, experience or objectives in the sustainability sector...',
+    'submit-application': 'Submit Application',
+    'submitting': 'Submitting...',
+    // Form Validation - English
+    'membership-success-title': 'Application Submitted!',
+    'membership-success-desc': 'Your application has been submitted successfully. We will contact you soon.',
+    'membership-error-title': 'Submission Error',
+    'membership-error-desc': 'An error occurred. Please try again later.',
+    'required-fields-missing': 'Please fill in all required fields',
+    'company-name-required': 'Company name is required for company membership',
+    'region-required-italy': 'Region is required for applications from Italy',
+
   }
 };
 // Add missing project registration translations
