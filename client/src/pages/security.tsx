@@ -223,155 +223,148 @@ export default function Security() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 overflow-hidden">
+      <section className="relative pt-28 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src={agriculturalLandscape} 
             alt="Agricultural landscape"
-            className="w-full h-full object-cover opacity-10"
+            className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-slate-900/60"></div>
         </div>
         <div className="relative container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-light text-slate-900 mb-6">
+            <h1 className="text-5xl md:text-6xl font-light text-white mb-6">
               {t.heroTitle}
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
+            <p className="text-xl text-slate-200 leading-relaxed">
               {t.heroSubtitle}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Security Overview */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-light text-slate-900 mb-6">
-              {t.overviewTitle}
-            </h2>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              {t.overviewDesc}
-            </p>
-          </div>
-        </div>
-      </section>
+
 
       {/* Three-Factor Authentication */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-16 bg-gradient-to-br from-emerald-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-light text-slate-900 mb-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-light text-slate-900 mb-4">
                 {t.accessTitle}
               </h2>
-              <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8">
+              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
                 {t.accessDesc}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-emerald-600" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-emerald-100 hover:shadow-xl transition-shadow">
+                <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3">{t.access1}</h3>
+                <h3 className="text-lg font-medium text-slate-900">{t.access1}</h3>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <Key className="w-6 h-6 text-blue-600" />
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition-shadow">
+                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                  <Key className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3">{t.access2}</h3>
+                <h3 className="text-lg font-medium text-slate-900">{t.access2}</h3>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                  <CheckCircle className="w-6 h-6 text-green-600" />
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-green-100 hover:shadow-xl transition-shadow">
+                <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3">{t.access3}</h3>
+                <h3 className="text-lg font-medium text-slate-900">{t.access3}</h3>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <Eye className="w-6 h-6 text-purple-600" />
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-purple-100 hover:shadow-xl transition-shadow">
+                <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <Eye className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3">{t.access4}</h3>
+                <h3 className="text-lg font-medium text-slate-900">{t.access4}</h3>
               </div>
             </div>
 
-            {/* Digital Fingerprint Section */}
-            <div className="bg-white p-12 rounded-xl shadow-sm border border-slate-100">
-              <h3 className="text-2xl font-light text-slate-900 mb-6">{t.fingerprintTitle}</h3>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">{t.fingerprintDesc}</p>
-              <p className="text-base text-slate-600 leading-relaxed">{t.fingerprintKyc}</p>
+            {/* Digital Fingerprint Section - Compact */}
+            <div className="bg-white p-8 rounded-xl shadow-lg border border-emerald-100">
+              <h3 className="text-xl font-medium text-slate-900 mb-4">{t.fingerprintTitle}</h3>
+              <p className="text-base text-slate-600 leading-relaxed mb-4">{t.fingerprintDesc}</p>
+              <p className="text-sm text-slate-600 leading-relaxed">{t.fingerprintKyc}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Data Sovereignty */}
-      <section className="py-20 bg-white">
+      {/* Alpine Data Centers - Combined Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-light text-slate-900 mb-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-light text-slate-900 mb-3">
                 {t.dataTitle}
               </h2>
-              <h3 className="text-2xl text-emerald-600 font-medium mb-6">
+              <h3 className="text-xl text-emerald-600 font-medium mb-4">
                 {t.dataSubtitle}
               </h3>
-              <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8">
                 {t.dataDesc}
               </p>
             </div>
 
+            {/* Combined Alpine + Data Sovereignty Features */}
             <div className="grid lg:grid-cols-3 gap-8 mb-16">
-              <div className="bg-slate-50 p-8 rounded-xl">
-                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-red-600" />
+              <div className="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl border border-red-200">
+                <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-white" />
                 </div>
+                <h4 className="text-lg font-medium text-slate-900 mb-3">Swiss Data Protection</h4>
                 <p className="text-slate-700 leading-relaxed">{t.dataPoint1}</p>
               </div>
 
-              <div className="bg-slate-50 p-8 rounded-xl">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <Building className="w-6 h-6 text-blue-600" />
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200">
+                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
+                  <Building className="w-6 h-6 text-white" />
                 </div>
+                <h4 className="text-lg font-medium text-slate-900 mb-3">FINMA Banking Compliance</h4>
                 <p className="text-slate-700 leading-relaxed">{t.dataPoint2}</p>
               </div>
 
-              <div className="bg-slate-50 p-8 rounded-xl">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                  <Lock className="w-6 h-6 text-green-600" />
+              <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border border-green-200">
+                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6">
+                  <Lock className="w-6 h-6 text-white" />
                 </div>
+                <h4 className="text-lg font-medium text-slate-900 mb-3">Banking-Level Security</h4>
                 <p className="text-slate-700 leading-relaxed">{t.dataPoint3}</p>
               </div>
             </div>
 
-            {/* Alpine Data Centers */}
-            <div className="bg-slate-50 p-12 rounded-xl">
+            {/* Alpine Infrastructure */}
+            <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-12 rounded-xl border border-emerald-200">
               <h3 className="text-2xl font-light text-slate-900 mb-6">{t.alpineTitle}</h3>
               <p className="text-lg text-slate-600 leading-relaxed mb-8">{t.alpineDesc}</p>
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-emerald-600" />
+                  <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-slate-700">{t.alpine1}</span>
+                  <span className="text-slate-800 font-medium">{t.alpine1}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Server className="w-4 h-4 text-blue-600" />
+                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <Server className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-slate-700">{t.alpine2}</span>
+                  <span className="text-slate-800 font-medium">{t.alpine2}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <Lock className="w-4 h-4 text-purple-600" />
+                  <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                    <Lock className="w-4 h-4 text-white" />
                   </div>
-                  <span className="text-slate-700">{t.alpine3}</span>
+                  <span className="text-slate-800 font-medium">{t.alpine3}</span>
                 </div>
               </div>
             </div>
@@ -380,57 +373,57 @@ export default function Security() {
       </section>
 
       {/* Physical Security Pillars */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-light text-slate-900 mb-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-light text-slate-900 mb-4">
                 {t.physicalTitle}
               </h2>
-              <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
                 {t.physicalDesc}
               </p>
             </div>
 
             {/* Swiss Alps Image */}
-            <div className="mb-16">
-              <div className="relative rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
+            <div className="mb-12">
+              <div className="relative rounded-xl overflow-hidden shadow-xl max-w-3xl mx-auto">
                 <img 
                   src={swissAlps} 
                   alt="Swiss Alps data center location"
-                  className="w-full h-64 md:h-80 object-cover object-center"
+                  className="w-full h-48 md:h-64 object-cover object-center"
                 />
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-red-600" />
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-red-200 hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar1Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar1Desc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <Server className="w-6 h-6 text-blue-600" />
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-blue-200 hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
+                  <Server className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar2Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar2Desc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                  <Eye className="w-6 h-6 text-green-600" />
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-green-200 hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6">
+                  <Eye className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar3Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar3Desc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                  <Mountain className="w-6 h-6 text-purple-600" />
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-purple-200 hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
+                  <Mountain className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar4Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar4Desc}</p>
@@ -455,7 +448,7 @@ export default function Security() {
 
             {/* Data Center Image */}
             <div className="mb-16">
-              <div className="relative rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
+              <div className="relative rounded-xl overflow-hidden shadow-xl max-w-4xl mx-auto">
                 <img 
                   src={dataCenterCorridor} 
                   alt="Data center technical infrastructure"
@@ -465,17 +458,17 @@ export default function Security() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-slate-50 p-8 rounded-xl">
-                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                  <Lock className="w-6 h-6 text-emerald-600" />
+              <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 p-8 rounded-xl border border-emerald-200 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center mb-6">
+                  <Lock className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.encryptionTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.encryptionDesc}</p>
               </div>
 
-              <div className="bg-slate-50 p-8 rounded-xl">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <Database className="w-6 h-6 text-blue-600" />
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
+                  <Database className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.redundancyTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.redundancyDesc}</p>
@@ -486,7 +479,7 @@ export default function Security() {
       </section>
 
       {/* Certifications and Compliance */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -499,25 +492,25 @@ export default function Security() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                  <CheckCircle className="w-6 h-6 text-green-600" />
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-green-200 hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-6">
+                  <CheckCircle className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.tierTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.tierDesc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                  <Globe className="w-6 h-6 text-blue-600" />
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-blue-200 hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
+                  <Globe className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.isoTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.isoDesc}</p>
               </div>
 
-              <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-                <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-red-600" />
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-red-200 hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.cyberTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.cyberDesc}</p>
@@ -631,28 +624,30 @@ export default function Security() {
       </section>
 
       {/* CO₂ Neutral Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-light text-slate-900 mb-6">
-                {t.neutralTitle}
-              </h2>
-            </div>
-
-            {/* Swiss Alps Lake Image */}
-            <div className="mb-16">
-              <div className="relative rounded-xl overflow-hidden shadow-lg max-w-4xl mx-auto">
-                <img 
-                  src={swissAlpsLake} 
-                  alt="Swiss Alps with turquoise lake representing clean hydropower energy"
-                  className="w-full h-64 md:h-80 object-cover object-center"
-                />
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Image on left */}
+              <div>
+                <div className="relative rounded-xl overflow-hidden shadow-xl">
+                  <img 
+                    src={swissAlpsLake} 
+                    alt="Swiss Alps with turquoise lake representing clean hydropower energy"
+                    className="w-full h-80 object-cover object-center"
+                  />
+                </div>
               </div>
-            </div>
-
-            <div className="bg-white p-12 rounded-xl shadow-sm border border-slate-100">
-              <p className="text-lg text-slate-600 leading-relaxed">{t.neutralDesc}</p>
+              
+              {/* Content on right */}
+              <div>
+                <h2 className="text-3xl font-light text-slate-900 mb-6">
+                  {t.neutralTitle}
+                </h2>
+                <div className="bg-white p-8 rounded-xl shadow-lg border border-green-200">
+                  <p className="text-base text-slate-600 leading-relaxed">{t.neutralDesc}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
