@@ -68,8 +68,16 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     additionalNotes: ''
   });
 
+  // Italian Regions - 20 total
+  const italianRegions = [
+    'Abruzzo', 'Basilicata', 'Calabria', 'Campania', 'Emilia-Romagna',
+    'Friuli-Venezia Giulia', 'Lazio', 'Liguria', 'Lombardia', 'Marche',
+    'Molise', 'Piemonte', 'Puglia', 'Sardegna', 'Sicilia',
+    'Toscana', 'Trentino-Alto Adige', 'Umbria', "Valle d'Aosta", 'Veneto'
+  ];
+
   const countries = [
-    // EU Member States
+    // EU Member States  
     'Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czech Republic',
     'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Greece',
     'Hungary', 'Ireland', 'Italy', 'Latvia', 'Lithuania', 'Luxembourg',
@@ -89,12 +97,7 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
     );
   }, [countrySearch]);
 
-  const italianRegions = [
-    'Abruzzo', 'Basilicata', 'Calabria', 'Campania', 'Emilia-Romagna',
-    'Friuli-Venezia Giulia', 'Lazio', 'Liguria', 'Lombardia', 'Marche',
-    'Molise', 'Piemonte', 'Puglia', 'Sardegna', 'Sicilia', 'Toscana',
-    'Trentino-Alto Adige', 'Umbria', 'Valle d\'Aosta', 'Veneto'
-  ];
+
 
   // Hierarchical Agricultural Business Structure
   const businessSectors = [
@@ -484,67 +487,37 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <Label htmlFor="country" className="text-amber-800 font-medium">
-                      {t('country')} *
+                    <Label htmlFor="region" className="text-amber-800 font-medium">
+                      {t('italian-region')} *
                     </Label>
-                    <Select value={formData.country} onValueChange={(value) => {
-                      updateFormData('country', value);
-                      setCountrySearch(''); // Reset search when country is selected
+                    <Select value={formData.region} onValueChange={(value) => {
+                      updateFormData('region', value);
                     }}>
                       <SelectTrigger className="border-amber-200 focus:border-amber-500">
-                        <SelectValue placeholder={t('select-country')} />
+                        <SelectValue placeholder={t('select-region')} />
                       </SelectTrigger>
                       <SelectContent>
-                        {/* Search Input */}
-                        <div className="flex items-center px-3 py-2 border-b border-gray-200">
-                          <Search className="h-4 w-4 text-gray-400 mr-2" />
-                          <Input
-                            placeholder={language === 'it' ? 'Cerca paese...' : 'Search country...'}
-                            value={countrySearch}
-                            onChange={(e) => setCountrySearch(e.target.value)}
-                            className="border-0 p-0 h-8 focus-visible:ring-0 focus-visible:ring-offset-0"
-                            onClick={(e) => e.stopPropagation()}
-                          />
-                        </div>
-                        
-                        {/* Filtered Countries */}
-                        {filteredCountries.length > 0 ? (
-                          filteredCountries.map((country) => (
-                            <SelectItem key={country} value={country}>
-                              {country}
-                            </SelectItem>
-                          ))
-                        ) : (
-                          <div className="px-3 py-2 text-sm text-gray-500">
-                            {language === 'it' ? 'Nessun paese trovato' : 'No countries found'}
-                          </div>
-                        )}
-                        
-                        {/* "Other" option always at the bottom */}
-                        {!countrySearch && (
-                          <SelectItem value="Other">{t('other')}</SelectItem>
-                        )}
+                        {italianRegions.map((region) => (
+                          <SelectItem key={region} value={region}>
+                            {region}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>
                   
-                  {formData.country === 'Italy' && (
-                    <div className="space-y-2">
-                      <Label htmlFor="region" className="text-amber-800 font-medium">
-                        {t('italian-region')} *
-                      </Label>
-                      <Select value={formData.region} onValueChange={(value) => updateFormData('region', value)}>
-                        <SelectTrigger className="border-amber-200 focus:border-amber-500">
-                          <SelectValue placeholder={t('select-region')} />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {italianRegions.map((region) => (
-                            <SelectItem key={region} value={region}>{region}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  )}
+                  <div className="space-y-2">
+                    <Label htmlFor="province" className="text-amber-800 font-medium">
+                      {t('province-state')}
+                    </Label>
+                    <Input
+                      id="province"
+                      value={formData.province}
+                      onChange={(e) => updateFormData('province', e.target.value)}
+                      className="border-amber-200 focus:border-amber-500"
+                      placeholder={t('province-placeholder')}
+                    />
+                  </div>
                 </div>
                 
                 {/* Structured Address Fields */}
