@@ -16,7 +16,7 @@ import LegalDocumentation from "@/pages/legal-documentation";
 import Dashboard from "@/pages/dashboard";
 import TeamDashboard from "@/pages/team-dashboard";
 import CertificationDashboard from "@/pages/certification-dashboard";
-import AdminDashboard from "@/pages/admin-dashboard";
+import { AdminDashboard } from "@/pages/admin-dashboard";
 import { UserDashboard } from "@/pages/user-dashboard";
 import { AdminAuthorizationDashboard } from "@/pages/admin-authorization-dashboard";
 import NotFound from "@/pages/not-found";
