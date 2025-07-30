@@ -1,249 +1,261 @@
-# FAGRI Digital Platform - Developer Onboarding Guide
+# FAGRI DIGITAL - Developer Setup Guide
 
-## 📋 Project Overview
+## 📥 How to Get the Complete Code Package
 
-FAGRI Digital is a sophisticated, bilingual (Italian/English) web platform for CO₂ certification in the agricultural sector. Built with modern web technologies and banking-level design standards, it serves as the digital gateway for the Italian agricultural movement FAGRI, featuring blockchain integration, advanced security protocols, and comprehensive certification management.
+Since Replit files cannot be downloaded directly, here are **3 ways** to access the complete FAGRI Digital code:
 
-### Core Mission
-Revolutionizing CO₂ certification processes for agricultural enterprises through blockchain technology, strategic partnerships, and advanced digital infrastructure.
+### **Option 1: Copy Files Manually (Recommended)**
+1. **View each file** in Replit's file explorer
+2. **Copy the content** of each component you need
+3. **Create new files** in your local development environment
+4. **Follow the Installation Instructions** below
 
-## 🏗️ Technical Architecture
+### **Option 2: GitHub Export**
+1. Connect this Replit to **GitHub** (if available)
+2. **Push to repository**
+3. **Clone repository** to your local machine
+4. **Run installation steps**
 
-### Frontend Stack
-- **Framework**: React 18 with TypeScript
-- **Build Tool**: Vite (fast development + optimized production builds)
-- **Routing**: Wouter (lightweight client-side routing)
-- **UI Framework**: Tailwind CSS + shadcn/ui components
-- **State Management**: TanStack Query for server state
-- **Form Handling**: React Hook Form with Zod validation
-- **Icons**: Lucide React + React Icons
-- **Styling**: Modern CSS with CSS variables for theming
-
-### Backend Stack
-- **Runtime**: Node.js with Express.js
-- **Language**: TypeScript throughout
-- **Database**: PostgreSQL with Drizzle ORM
-- **Validation**: Zod schemas for type safety
-- **API Design**: RESTful endpoints with JSON responses
-
-### Development Environment
-- **Platform**: Replit (all development and deployment)
-- **Hot Reloading**: Vite dev server with HMR
-- **Package Management**: npm
-- **TypeScript**: Strict type checking enabled
-
-## 📁 Project Structure
-
-```
-├── client/                    # Frontend React application
-│   ├── src/
-│   │   ├── components/       # Reusable UI components
-│   │   ├── pages/           # Page-level components
-│   │   ├── lib/             # Utilities and configurations
-│   │   └── hooks/           # Custom React hooks
-├── server/                   # Backend Express application
-│   ├── routes.ts            # API endpoint definitions
-│   ├── storage.ts           # Data storage abstraction
-│   └── index.ts             # Server entry point
-├── shared/                   # Shared types and schemas
-│   └── schema.ts            # Drizzle database schemas
-└── Configuration files (package.json, vite.config.ts, etc.)
-```
-
-## 🌐 Key Features & Pages
-
-### Main Website Sections
-1. **Hero Section**: Professional landing with key metrics and CTAs
-2. **Introduction Section**: Platform overview and value proposition  
-3. **Standard Section**: EUFD2025-001 protocol details
-4. **Platform Section**: Digital certification process walkthrough
-5. **Renewable Energy Section**: Sustainability partnerships
-6. **Contact Section**: Lead generation and inquiries
-
-### Dedicated Pages
-- `/eufd-standard` - Comprehensive EUFD2025-001 information
-- `/co2-certification` - Certification partnerships and technology
-- `/security` - Security infrastructure details
-- `/privacy-policy` - GDPR compliance and data protection
-- `/terms-of-service` - Legal terms and conditions
-- `/cookies` - Cookie policy and preferences
-- `/gdpr` - GDPR information and rights
-
-### Interactive Features
-- **Language Switching**: Complete Italian/English localization
-- **Membership Modal**: Application form for network joining
-- **Contact Forms**: Lead generation with validation
-- **Responsive Navigation**: Mobile-optimized menu system
-
-## 🔧 Development Workflow
-
-### Getting Started
-1. **Environment**: Development happens entirely on Replit
-2. **Workflow**: Use "Start application" workflow (runs `npm run dev`)
-3. **Hot Reloading**: Changes reflect immediately via Vite HMR
-4. **Debugging**: Browser dev tools + server logs in Replit console
-
-### Code Style & Standards
-- **TypeScript**: Strict typing throughout the application
-- **Component Structure**: Functional components with hooks
-- **Styling**: Tailwind utility classes with component variants
-- **Naming**: Clear, descriptive names following React conventions
-- **File Organization**: Group by feature, separate concerns
-
-### Database Development
-- **ORM**: Drizzle ORM for type-safe database operations
-- **Schemas**: Centralized in `shared/schema.ts`
-- **Migrations**: Managed through Drizzle Kit
-- **Storage**: Abstracted interface in `server/storage.ts`
-
-## 🌍 Internationalization System
-
-### Language Management
-- **Supported Languages**: Italian (primary), English
-- **Translation Files**: Centralized in `client/src/lib/translations.ts`
-- **Context Provider**: Language state managed globally
-- **Fallback Handling**: Graceful degradation for missing translations
-- **Storage**: User preference saved in localStorage
-
-### Adding New Translations
-1. Add key-value pairs to both `it` and `en` objects in translations.ts
-2. Use the `t()` function in components: `{t('translation-key')}`
-3. Follow naming convention: `section-element-descriptor`
-
-## 🔐 Security & Compliance
-
-### Data Protection Architecture
-- **Swiss Banking Environment**: Sensitive data (PII, financial)
-- **Global Distribution**: Non-sensitive data for performance
-- **3FA Authentication**: Three-factor security model
-- **GDPR Compliance**: Full European data protection compliance
-- **Blockchain Integration**: ALPHAG8 and G8Chain technology
-
-### Security Features
-- **Data Classification**: Multi-tier security based on sensitivity
-- **Hardware Security**: Industry-leading data center standards
-- **Encryption**: End-to-end protection for sensitive information
-- **Audit Trail**: Complete traceability for all operations
-
-## 🤝 Key Partnerships
-
-### Technology Partners
-- **ALPHAG8 Digital Solutions Switzerland**: Blockchain infrastructure
-- **G8Chain**: Federated Enterprise Blockchain technology
-
-### Institutional Partners
-- **European Commission**: Regulatory compliance and standards
-- **Italian Ministry**: National agricultural policy alignment
-- **ISO/UNI**: International and national standards certification
-- **SUOLO E SALUTE**: Organic certification partnership
-- **Italian Universities**: Research and development collaboration
-
-## 📊 Platform Metrics & Standards
-
-### Key Statistics
-- **110,000+ Members**: Agricultural network participants
-- **EUFD2025-001**: EU standard for CO₂ certification
-- **€2.4B+ Carbon Credit Value**: Market impact and scale
-
-### Technical Standards
-- **ISO 14064**: Carbon accounting and verification
-- **EUFD2025-001**: European framework for digital certification
-- **GDPR Compliance**: European data protection standards
-- **Swiss Banking Standards**: Data security and protection
-
-## 🛠️ Common Development Tasks
-
-### Adding New Components
-1. Create component file in `client/src/components/`
-2. Import and use shadcn/ui components where possible
-3. Add TypeScript interfaces for props
-4. Follow responsive design patterns
-5. Add translations if needed
-
-### Adding New Pages
-1. Create page component in `client/src/pages/`
-2. Add route to `client/src/App.tsx`
-3. Update navigation in `client/src/components/navigation.tsx`
-4. Add page-specific translations
-5. Implement SEO meta tags
-
-### Database Schema Changes
-1. Modify schemas in `shared/schema.ts`
-2. Update storage interface in `server/storage.ts`
-3. Add API endpoints in `server/routes.ts`
-4. Update frontend queries and mutations
-5. Test data flow end-to-end
-
-### Styling Guidelines
-- **Colors**: Use CSS variables defined in `index.css`
-- **Typography**: Professional, banking-style typography hierarchy
-- **Spacing**: Consistent Tailwind spacing utilities
-- **Responsive**: Mobile-first responsive design
-- **Accessibility**: ARIA labels and semantic HTML
-
-## 🚀 Deployment & Production
-
-### Build Process
-- **Frontend**: Vite builds to `dist/public`
-- **Backend**: ESBuild compiles to `dist`
-- **Assets**: Static files served by Express in production
-- **Environment**: Production deployment through Replit
-
-### Environment Variables
-- **DATABASE_URL**: PostgreSQL connection string
-- **NODE_ENV**: Environment setting (development/production)
-- **PORT**: Server port configuration
-
-## 📝 Important Notes for New Developers
-
-### Platform-Specific Considerations
-- **Replit Environment**: All development happens on Replit platform
-- **No Docker/Containers**: Use Replit's native environment
-- **Package Management**: Use packager tool, not direct npm commands
-- **File Paths**: Relative paths from root, no absolute paths
-
-### Design Philosophy
-- **Banking-Style Aesthetics**: Professional, credible, trustworthy
-- **Clean Typography**: Light font weights, proper hierarchy
-- **Minimal Design**: Avoid colorful gradients, focus on content
-- **Professional Trust**: Emphasis on credibility and security
-
-### Code Quality Standards
-- **Type Safety**: Leverage TypeScript throughout
-- **Error Handling**: Graceful error states and user feedback
-- **Performance**: Optimize for fast loading and smooth interactions
-- **Accessibility**: Ensure inclusive design practices
-
-## 🔍 Debugging & Troubleshooting
-
-### Common Issues
-- **Hot Reload Problems**: Check Vite configuration and imports
-- **Translation Errors**: Verify key exists in both language objects
-- **Database Issues**: Check connection string and schema sync
-- **Build Errors**: Review TypeScript errors and dependency issues
-
-### Useful Tools
-- **Browser DevTools**: React DevTools, Network tab, Console
-- **Replit Console**: Server logs and build output
-- **TypeScript**: Built-in type checking and IntelliSense
-- **Vite DevTools**: Hot reload status and module graph
-
-## 📚 Learning Resources
-
-### Framework Documentation
-- [React 18](https://react.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Drizzle ORM](https://drizzle.team)
-- [shadcn/ui](https://ui.shadcn.com)
-
-### Platform-Specific
-- [Replit Documentation](https://docs.replit.com)
-- [Vite Guide](https://vitejs.dev/guide)
-- [TanStack Query](https://tanstack.com/query)
+### **Option 3: ZIP Download**
+1. In Replit, go to **Tools** → **Download as ZIP**
+2. **Extract the ZIP** file to your development directory
+3. **Follow Installation Instructions**
 
 ---
 
-**Welcome to the FAGRI Digital development team!** This platform represents the cutting edge of agricultural technology and blockchain innovation. Focus on maintaining the professional, banking-level quality that establishes trust with our users while building features that genuinely serve the agricultural community.
+## 🚀 Complete Installation Instructions
 
-For questions or clarification on any aspect of the platform, refer to the `replit.md` file for the most current project status and recent changes.
+### **Prerequisites**
+- **Node.js 18+** installed on your system
+- **PostgreSQL database** (or Neon serverless)
+- **Git** (for version control)
+- **Code editor** (VS Code recommended)
+
+### **Step 1: Project Setup**
+```bash
+# Create project directory
+mkdir fagri-digital
+cd fagri-digital
+
+# Initialize Node.js project
+npm init -y
+
+# Install core dependencies
+npm install react react-dom @types/react @types/react-dom
+npm install typescript @vitejs/plugin-react vite
+npm install express @types/express @types/node
+npm install wouter @tanstack/react-query
+npm install tailwindcss autoprefixer postcss
+npm install lucide-react class-variance-authority clsx
+npm install drizzle-orm @neondatabase/serverless
+npm install zod drizzle-zod
+```
+
+### **Step 2: Project Structure**
+Create this exact folder structure:
+```
+fagri-digital/
+├── client/
+│   └── src/
+│       ├── components/
+│       │   ├── ui/
+│       │   ├── navigation.tsx
+│       │   ├── footer.tsx
+│       │   └── language-provider.tsx
+│       ├── pages/
+│       │   ├── dashboard.tsx
+│       │   ├── security.tsx
+│       │   └── home.tsx
+│       ├── hooks/
+│       │   └── use-authentication.ts
+│       ├── lib/
+│       │   └── translations.ts
+│       ├── assets/
+│       └── App.tsx
+├── server/
+│   ├── index.ts
+│   └── routes.ts
+├── shared/
+│   └── schema.ts
+├── package.json
+├── vite.config.ts
+├── tailwind.config.ts
+└── tsconfig.json
+```
+
+### **Step 3: Configuration Files**
+
+**package.json** - Add these scripts:
+```json
+{
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "vite",
+    "server": "tsx server/index.ts",
+    "build": "vite build",
+    "db:push": "drizzle-kit push:pg"
+  }
+}
+```
+
+**vite.config.ts**:
+```typescript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'client/src'),
+      '@assets': path.resolve(__dirname, 'attached_assets')
+    }
+  },
+  server: {
+    port: 3000,
+    proxy: {
+      '/api': 'http://localhost:5000'
+    }
+  }
+});
+```
+
+**tailwind.config.ts**:
+```typescript
+import { Config } from "tailwindcss";
+
+const config: Config = {
+  content: ['./client/src/**/*.{ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        emerald: {
+          50: '#ecfdf5',
+          500: '#10b981',
+          600: '#059669',
+          900: '#064e3b',
+        }
+      }
+    }
+  },
+  plugins: []
+};
+
+export default config;
+```
+
+### **Step 4: Environment Variables**
+Create `.env` file:
+```env
+DATABASE_URL=your_postgresql_connection_string
+NODE_ENV=development
+PORT=5000
+```
+
+### **Step 5: Copy Core Components**
+
+**Use the code from DEPLOYMENT_PACKAGE_1.md** to create:
+- `client/src/hooks/use-authentication.ts`
+- `client/src/components/language-provider.tsx`
+- `client/src/pages/dashboard.tsx`
+
+**Key Components to Create:**
+1. **Authentication System** - Complete session management
+2. **Language Provider** - Italian/English bilingual support
+3. **Dashboard** - Project tracking with authentication
+4. **Security Page** - ALPHAG8 ID KEY documentation
+5. **Navigation** - Responsive navigation with language switching
+
+### **Step 6: Start Development**
+```bash
+# Install all dependencies
+npm install
+
+# Start development servers
+npm run dev
+
+# Access the application
+# Frontend: http://localhost:3000
+# Backend: http://localhost:5000
+```
+
+### **Step 7: Test Authentication**
+1. **Password**: `CO2FAGRI2025`
+2. **Dashboard Test Account**: `FAGRI-TEST001-TEST001-T1`
+3. **Verify bilingual switching** works (Italian ↔ English)
+
+---
+
+## 🔧 Key Features Implemented
+
+### ✅ **Dual Authentication System**
+- App-level password protection (`CO2FAGRI2025`)
+- Dashboard ALPHAG8 ID authentication
+- 10-minute session timeout with activity tracking
+
+### ✅ **Complete Bilingual Support**
+- Italian (default) + English
+- Context-aware translations
+- Language persistence in localStorage
+
+### ✅ **Professional Banking Design**
+- Clean typography with light font weights
+- Emerald and slate color scheme
+- Agricultural landscape backgrounds
+- Mobile-responsive layouts
+
+### ✅ **Dashboard Functionality**
+- Project tracking with CO₂ calculations
+- Test data with sample renewable energy projects
+- Authentication-protected access
+- Professional statistics display
+
+### ✅ **Security Architecture**
+- ALPHAG8 ID KEY system documentation
+- Alpine data center infrastructure
+- Blockchain integration descriptions
+- Swiss banking-level security messaging
+
+---
+
+## 📋 Test Accounts & Passwords
+
+### **Main Access**
+- **Password Protection**: `CO2FAGRI2025`
+
+### **Dashboard Authentication**
+- **Test Account**: `FAGRI-TEST001-TEST001-T1`
+- **Admin Account**: `FAGRI-2MKQW8X9-PLVNR4T6-A2`
+- **Sales Team**: `FAGRI-5ZXCV9L4-ASDFGH34-C1`
+
+### **Sample Projects**
+1. **Renewable Energy Farm - Tuscany** (450 tons CO₂)
+2. **Sustainable Agriculture - Emilia** (320 tons CO₂)
+3. **Forest Carbon Project - Umbria** (680 tons CO₂)
+
+---
+
+## 🎯 Deployment Options
+
+### **Development**
+```bash
+npm run dev  # Start local development
+```
+
+### **Production Build**
+```bash
+npm run build  # Create production build
+npm start      # Start production server
+```
+
+### **Database Setup**
+```bash
+npm run db:push  # Push schema to database
+```
+
+---
+
+**Generated: July 30, 2025**  
+**Complete FAGRI Digital CO₂ Certification Platform**  
+**Bilingual Banking-Style Agricultural Technology Solution**
