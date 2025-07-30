@@ -145,6 +145,7 @@ export default function Dashboard() {
     // Fast authentication check - immediate, no loading delay
     let storedId = localStorage.getItem('alphaG8Id');
     const sessionActive = localStorage.getItem('sessionActive');
+    const fagriAuth = localStorage.getItem('fagri-authenticated');
     
     // Convert old ALPHAG8- format to new FAGRI- format
     if (storedId && storedId.startsWith('ALPHAG8-')) {
@@ -153,7 +154,8 @@ export default function Dashboard() {
       storedId = newId;
     }
     
-    if (storedId && sessionActive === 'true') {
+    // Check both dashboard and app-level authentication
+    if (storedId && (sessionActive === 'true' || fagriAuth === 'true')) {
       setIsAuthenticated(true);
       setAlphaG8Id(storedId);
       loadUserData(storedId);
@@ -165,6 +167,7 @@ export default function Dashboard() {
     const handleStorageChange = () => {
       let storedId = localStorage.getItem('alphaG8Id');
       const sessionActive = localStorage.getItem('sessionActive');
+      const fagriAuth = localStorage.getItem('fagri-authenticated');
       
       // Convert old ALPHAG8- format to new FAGRI- format
       if (storedId && storedId.startsWith('ALPHAG8-')) {
@@ -173,7 +176,8 @@ export default function Dashboard() {
         storedId = newId;
       }
       
-      if (storedId && sessionActive === 'true') {
+      // Check both dashboard and app-level authentication
+      if (storedId && (sessionActive === 'true' || fagriAuth === 'true')) {
         setIsAuthenticated(true);
         setAlphaG8Id(storedId);
         loadUserData(storedId);
@@ -208,8 +212,23 @@ export default function Dashboard() {
       
       localStorage.setItem('alphaG8Id', processedId);
       localStorage.setItem('sessionActive', 'true');
-      setIsAuthenticated(true);
+      
+      // Set app-level authentication to prevent conflicts
+      const now = Date.now();
+      localStorage.setItem('fagri-authenticated', 'true');
+      localStorage.setItem('fagri-auth-timestamp', now.toString());
+      localStorage.setItem('fagri-last-activity', now.toString());
+      
       setAlphaG8Id(processedId);
+      loadUserData(processedId);
+      
+      // Force re-render by setting authentication state
+      setTimeout(() => {
+        setIsAuthenticated(true);
+        setIsLoggingIn(false);
+      }, 100); // Small delay to ensure state updates properly
+      
+      return; // Prevent setting isLoggingIn to false immediately
     }
     setIsLoggingIn(false);
   };
