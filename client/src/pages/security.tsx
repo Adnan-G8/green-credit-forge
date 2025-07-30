@@ -30,6 +30,23 @@ export default function Security() {
       access3: "Active user session",
       access4: "Mandatory digital fingerprint for trust and respect ecosystem",
       
+      // ALPHAG8 ID KEY Section
+      alphag8SecureAccess: "Secure Access. No Passwords. No Hassle.",
+      alphag8ThreeFactorAuth: "Three-Factor Authentication (3FA)",
+      alphag8Description: "The ALPHAG8 ID KEY is your personal digital fingerprint – a smart, invisible security layer that uses your own device (smartphone or computer) as your unique login key. No passwords, no SMS codes, no key fobs – just seamless access based on who you are and what you use.",
+      alphag8ThreeFactorTitle: "3-Factor Authentication:",
+      alphag8ThreeFactorDesc: "Combines your device's hardware, software, and usage pattern",
+      alphag8ZeroTrustTitle: "Zero-Trust Security:",
+      alphag8ZeroTrustDesc: "Each login is fully re-validated – no shortcuts, no reuse",
+      alphag8PhoneKeyTitle: "Your Phone = Your Key:",
+      alphag8PhoneKeyDesc: "Without your phone, access is impossible – even with your password",
+      alphag8BiometricTitle: "Biometric-Ready:",
+      alphag8BiometricDesc: "Supports fingerprint or facial recognition when available",
+      alphag8SilentSecureTitle: "Silent and Secure:",
+      alphag8SilentSecureDesc: "No extra steps for you – maximum protection in the background",
+      alphag8IdentityPrivate: "Your identity stays private. Your access stays protected.",
+      alphag8TrustInvisible: "ALPHAG8 ID KEY – Because trust should be invisible, but unbreakable.",
+      
       fingerprintTitle: "Mandatory Digital Fingerprint for Every User and Active Member",
       fingerprintDesc: "For an ecosystem of trust and respect, every user and active member on the platform must provide their mandatory digital fingerprint. This ensures accountability, transparency and a secure environment for all participants.",
       fingerprintKyc: "All users and companies on the platform are required to undergo a full KYC (Know Your Customer) process in order to create their unique digital fingerprint. This step is crucial to ensure the highest level of security for all participants and to clearly identify every actor on the platform, thereby protecting against fraud, identity misuse, and any form of harmful activity. Once the digital fingerprint has been issued, all associated data and personal information are securely encrypted using advanced cryptographic techniques, ensuring that sensitive information remains protected while maintaining the transparency and traceability required for our trust ecosystem.",
@@ -128,6 +145,23 @@ export default function Security() {
       access2: "Dispositivo autorizzato (computer, smartphone, ecc.)", 
       access3: "Sessione utente attiva",
       access4: "Impronta digitale obbligatoria per l'ecosistema di fiducia e rispetto",
+      
+      // ALPHAG8 ID KEY Section Italian
+      alphag8SecureAccess: "Accesso Sicuro. Nessuna Password. Nessun Problema.",
+      alphag8ThreeFactorAuth: "Autenticazione a Tre Fattori (3FA)",
+      alphag8Description: "L'ALPHAG8 ID KEY è la tua impronta digitale personale – uno strato di sicurezza intelligente e invisibile che utilizza il tuo dispositivo (smartphone o computer) come chiave di accesso unica. Nessuna password, nessun codice SMS, nessun token – solo accesso fluido basato su chi sei e cosa usi.",
+      alphag8ThreeFactorTitle: "Autenticazione a 3 Fattori:",
+      alphag8ThreeFactorDesc: "Combina hardware, software e pattern di utilizzo del tuo dispositivo",
+      alphag8ZeroTrustTitle: "Sicurezza Zero-Trust:",
+      alphag8ZeroTrustDesc: "Ogni accesso è completamente ri-validato – nessuna scorciatoia, nessun riutilizzo",
+      alphag8PhoneKeyTitle: "Il Tuo Telefono = La Tua Chiave:",
+      alphag8PhoneKeyDesc: "Senza il tuo telefono, l'accesso è impossibile – anche con la tua password",
+      alphag8BiometricTitle: "Pronto per Biometria:",
+      alphag8BiometricDesc: "Supporta riconoscimento delle impronte o facciale quando disponibile",
+      alphag8SilentSecureTitle: "Silenzioso e Sicuro:",
+      alphag8SilentSecureDesc: "Nessun passaggio extra per te – massima protezione in background",
+      alphag8IdentityPrivate: "La tua identità rimane privata. Il tuo accesso rimane protetto.",
+      alphag8TrustInvisible: "ALPHAG8 ID KEY – Perché la fiducia dovrebbe essere invisibile, ma infrangibile.",
       
       fingerprintTitle: "Impronta Digitale Obbligatoria per Ogni Utente e Membro Attivo",
       fingerprintDesc: "Per un ecosistema di fiducia e rispetto, ogni utente e membro attivo della piattaforma deve fornire la propria impronta digitale obbligatoria. Questo garantisce responsabilità, trasparenza e un ambiente sicuro per tutti i partecipanti.",
@@ -265,13 +299,13 @@ export default function Security() {
             <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200 mb-8">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-light text-slate-900 mb-2">ALPHAG8 ID KEY</h3>
-                <p className="text-lg text-slate-600 mb-1">{t['alphag8-secure-access']}</p>
-                <h4 className="text-xl font-medium text-slate-800">{t['three-factor-auth']}</h4>
+                <p className="text-lg text-slate-600 mb-1">{t.alphag8SecureAccess}</p>
+                <h4 className="text-xl font-medium text-slate-800">{t.alphag8ThreeFactorAuth}</h4>
               </div>
               
               <div className="max-w-4xl mx-auto">
                 <p className="text-base text-slate-600 leading-relaxed mb-6 text-center">
-                  {t['alphag8-description']}
+                  {t.alphag8Description}
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -280,8 +314,8 @@ export default function Security() {
                       <CheckCircle className="w-4 h-4 text-emerald-600" />
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900">{t['three-factor-title']}</p>
-                      <p className="text-slate-600 text-sm">{t['three-factor-desc']}</p>
+                      <p className="font-medium text-slate-900">{t.alphag8ThreeFactorTitle}</p>
+                      <p className="text-slate-600 text-sm">{t.alphag8ThreeFactorDesc}</p>
                     </div>
                   </div>
                   
@@ -290,8 +324,8 @@ export default function Security() {
                       <Shield className="w-4 h-4 text-blue-600" />
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900">{t['zero-trust-title']}</p>
-                      <p className="text-slate-600 text-sm">{t['zero-trust-desc']}</p>
+                      <p className="font-medium text-slate-900">{t.alphag8ZeroTrustTitle}</p>
+                      <p className="text-slate-600 text-sm">{t.alphag8ZeroTrustDesc}</p>
                     </div>
                   </div>
                   
@@ -300,8 +334,8 @@ export default function Security() {
                       <Key className="w-4 h-4 text-amber-600" />
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900">{t['phone-key-title']}</p>
-                      <p className="text-slate-600 text-sm">{t['phone-key-desc']}</p>
+                      <p className="font-medium text-slate-900">{t.alphag8PhoneKeyTitle}</p>
+                      <p className="text-slate-600 text-sm">{t.alphag8PhoneKeyDesc}</p>
                     </div>
                   </div>
                   
@@ -310,8 +344,8 @@ export default function Security() {
                       <Eye className="w-4 h-4 text-purple-600" />
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900">{t['biometric-title']}</p>
-                      <p className="text-slate-600 text-sm">{t['biometric-desc']}</p>
+                      <p className="font-medium text-slate-900">{t.alphag8BiometricTitle}</p>
+                      <p className="text-slate-600 text-sm">{t.alphag8BiometricDesc}</p>
                     </div>
                   </div>
                 </div>
@@ -322,14 +356,14 @@ export default function Security() {
                       <Lock className="w-4 h-4 text-indigo-600" />
                     </div>
                     <div>
-                      <p className="font-medium text-slate-900">{t['silent-secure-title']}</p>
-                      <p className="text-slate-600 text-sm">{t['silent-secure-desc']}</p>
+                      <p className="font-medium text-slate-900">{t.alphag8SilentSecureTitle}</p>
+                      <p className="text-slate-600 text-sm">{t.alphag8SilentSecureDesc}</p>
                     </div>
                   </div>
                   
                   <div className="text-center pt-4 border-t border-slate-200">
-                    <p className="text-slate-700 font-medium mb-1">{t['identity-private']}</p>
-                    <p className="text-slate-600 text-sm">{t['trust-invisible']}</p>
+                    <p className="text-slate-700 font-medium mb-1">{t.alphag8IdentityPrivate}</p>
+                    <p className="text-slate-600 text-sm">{t.alphag8TrustInvisible}</p>
                   </div>
                 </div>
               </div>
