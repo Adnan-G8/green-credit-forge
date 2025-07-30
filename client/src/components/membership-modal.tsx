@@ -13,6 +13,7 @@ import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { X, Building, User, MapPin, Phone, Mail, Globe, Briefcase, CheckCircle, Search } from 'lucide-react';
 import { FagriLogo } from '../assets/fagri-logo';
+import agriculturalLandscapeImg from '@assets/image_1753904294522.png';
 
 interface MembershipModalProps {
   isOpen: boolean;
@@ -326,6 +327,20 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
               </div>
             </div>
           </DialogHeader>
+          
+          {/* Agricultural Landscape Image */}
+          <div className="relative h-48 overflow-hidden rounded-lg mb-6 shadow-lg">
+            <img 
+              src={agriculturalLandscapeImg} 
+              alt="Beautiful agricultural landscape with cow in pastoral setting"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4 text-white">
+              <p className="text-sm font-medium">Joining FAGRI Agricultural Community</p>
+              <p className="text-xs opacity-90">Professional Agricultural Certification Platform</p>
+            </div>
+          </div>
 
         <div className="space-y-6">
           {/* Membership Type Selection */}
