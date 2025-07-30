@@ -3053,6 +3053,7 @@ export const translations = {
     // Membership Application Form - English (only missing keys)
     'fagri-membership-application': 'FAGRI Member Application',
     'professional-membership-desc': 'Complete your professional application for FAGRI membership',
+    'membership-type': 'Membership Type',
     'select-membership-type': 'Select if you are registering yourself or your company',
     'individual-membership': 'Individual Membership',
     'company-membership': 'Company Membership',
