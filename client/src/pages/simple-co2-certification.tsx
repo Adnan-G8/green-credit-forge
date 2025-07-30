@@ -15,10 +15,10 @@ export default function SimpleCO2Certification() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
-              {t('co2-cert-title') || 'CO₂ Certification Platform'}
+              Your Trusted Partner for CO₂ Certification
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed font-light">
-              {t('co2-cert-subtitle') || 'Advanced blockchain-based certification system for agricultural carbon credits'}
+              On the FAGRI.Digital platform, CO₂ certification is built on foundations of scientific rigor, cutting-edge technology and solid legal compliance.
             </p>
           </div>
         </div>
@@ -29,119 +29,150 @@ export default function SimpleCO2Certification() {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto space-y-12">
             
-            {/* Collaborative Framework */}
+            {/* Our Collaborative Framework */}
             <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                {t('co2-cert-framework-title') || 'Collaborative Certification Framework'}
+                Our Collaborative Framework
               </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                {t('co2-cert-framework-description') || 'Our certification platform brings together leading agricultural cooperatives, environmental organizations, and financial institutions to create a transparent and trusted carbon credit ecosystem.'}
+                Our CO₂ certification process operates under the EUFD2025-001 standard, developed over years of research with important Italian universities and our technology partner, ALPHAG8 Digital Solutions Switzerland.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="h-8 w-8 text-emerald-600" />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <Globe className="h-6 w-6 text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Agricultural Cooperatives</h3>
-                  <p className="text-slate-600 text-sm">Direct farmer representation and expertise</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">European Commission</h3>
+                  <p className="text-slate-600 text-sm">Alignment with the EU's comprehensive climate policies and objectives.</p>
                 </div>
                 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="h-8 w-8 text-blue-600" />
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                    <Shield className="h-6 w-6 text-green-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Environmental Organizations</h3>
-                  <p className="text-slate-600 text-sm">Scientific validation and environmental oversight</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">Italian Ministry of Environment</h3>
+                  <p className="text-slate-600 text-sm">Ensuring compliance with national environmental regulations.</p>
                 </div>
                 
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Globe className="h-8 w-8 text-purple-600" />
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle className="h-6 w-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Financial Institutions</h3>
-                  <p className="text-slate-600 text-sm">Market infrastructure and trading platforms</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">GSE (Energy Systems Operator)</h3>
+                  <p className="text-slate-600 text-sm">Integration with established energy and emissions management frameworks.</p>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <FileText className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">ISO (International Organization for Standardization)</h3>
+                  <p className="text-slate-600 text-sm">Maintaining globally recognized quality and procedural benchmarks.</p>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                    <Users className="h-6 w-6 text-orange-600" />
+                  </div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">University of Tuscia at Viterbo</h3>
+                  <p className="text-slate-600 text-sm">Scientific partnership with this important Italian university for research and validation of our EUFD2025-001 certification methodologies.</p>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                    <Check className="h-6 w-6 text-teal-600" />
+                  </div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">SOIL AND HEALTH</h3>
+                  <p className="text-slate-600 text-sm">Our dedicated certification body for verification and independent validation.</p>
                 </div>
               </div>
             </div>
 
-            {/* Technology Partners */}
-            <div>
-              <h2 className="text-3xl font-light text-slate-900 mb-8 text-center">
-                {t('co2-cert-partners-title') || 'Technology & Institutional Partners'}
+            {/* Legal and Technological Foundation */}
+            <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
+              <h2 className="text-3xl font-light text-slate-900 mb-6">
+                Legal and Technological Foundation
               </h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Our certification process is firmly rooted in a comprehensive legal and technological framework.
+              </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* ALPHAG8 */}
-                <div className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Globe className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <h3 className="font-medium text-slate-900">ALPHAG8 Switzerland</h3>
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <Globe className="h-6 w-6 text-blue-600" />
                   </div>
-                  <p className="text-slate-600 text-sm mb-3">Swiss blockchain technology provider and G8Chain infrastructure partner</p>
-                  <div className="text-xs text-blue-600 font-medium">Technology Partner</div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">EU Emissions Trading System (EU ETS)</h3>
+                  <p className="text-slate-600 text-sm">Ensuring compliance with the cornerstone of EU climate policy.</p>
                 </div>
-
-                {/* EU Commission */}
-                <div className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-                      <Shield className="h-5 w-5 text-emerald-600" />
-                    </div>
-                    <h3 className="font-medium text-slate-900">European Commission</h3>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                    <Shield className="h-6 w-6 text-green-600" />
                   </div>
-                  <p className="text-slate-600 text-sm mb-3">Regulatory framework development and EUFD2025-001 standard oversight</p>
-                  <div className="text-xs text-emerald-600 font-medium">Institutional Partner</div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">Carbon Border Adjustment Mechanism (CBAM)</h3>
+                  <p className="text-slate-600 text-sm">Proactively addressing future reporting requirements and embedded emissions.</p>
                 </div>
-
-                {/* Italian Ministry */}
-                <div className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <FileText className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <h3 className="font-medium text-slate-900">Italian Ministry of Agriculture</h3>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <Lock className="h-6 w-6 text-purple-600" />
                   </div>
-                  <p className="text-slate-600 text-sm mb-3">National implementation and agricultural sector coordination</p>
-                  <div className="text-xs text-purple-600 font-medium">Government Partner</div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">Anti-Money Laundering (AML) and Know Your Customer (KYC) Framework</h3>
+                  <p className="text-slate-600 text-sm">Implementation of rigorous due diligence for all participants.</p>
                 </div>
-
-                {/* ISO */}
-                <div className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                      <CheckCircle className="h-5 w-5 text-orange-600" />
-                    </div>
-                    <h3 className="font-medium text-slate-900">ISO Standards Organization</h3>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircle className="h-6 w-6 text-emerald-600" />
                   </div>
-                  <p className="text-slate-600 text-sm mb-3">ISO 14064-1, 14064-2, 14064-3 compliance and certification standards</p>
-                  <div className="text-xs text-orange-600 font-medium">Standards Partner</div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">Paris Agreement (Article 6)</h3>
+                  <p className="text-slate-600 text-sm">Supporting mechanisms for Internationally Transferable Mitigation Results.</p>
                 </div>
-
-                {/* G8Chain */}
-                <div className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
-                      <Lock className="h-5 w-5 text-slate-600" />
-                    </div>
-                    <h3 className="font-medium text-slate-900">G8Chain Network</h3>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                    <FileText className="h-6 w-6 text-orange-600" />
                   </div>
-                  <p className="text-slate-600 text-sm mb-3">EVM-compatible blockchain infrastructure with 51-node validator network</p>
-                  <div className="text-xs text-slate-600 font-medium">Blockchain Partner</div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">Kyoto Protocol</h3>
+                  <p className="text-slate-600 text-sm">Based on established international accounting principles.</p>
                 </div>
+              </div>
+            </div>
 
-                {/* Italian Universities */}
-                <div className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
-                      <Users className="h-5 w-5 text-red-600" />
-                    </div>
-                    <h3 className="font-medium text-slate-900">Italian University Consortium</h3>
+            {/* Technology and Security */}
+            <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
+              <h2 className="text-3xl font-light text-slate-900 mb-6">
+                Technology and Security
+              </h2>
+              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+                Our platform uses blockchain technology for immutable document storage, creating unparalleled transparency and eliminating issues like double counting and greenwashing.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+                    <Lock className="h-6 w-6 text-slate-600" />
                   </div>
-                  <p className="text-slate-600 text-sm mb-3">Research institutions providing scientific validation and methodology development</p>
-                  <div className="text-xs text-red-600 font-medium">Academic Partner</div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">Blockchain Technology</h3>
+                  <p className="text-slate-600 text-sm">Immutable storage and complete transparency of documents.</p>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                    <Shield className="h-6 w-6 text-emerald-600" />
+                  </div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">Three-Factor Authentication (3FA)</h3>
+                  <p className="text-slate-600 text-sm">Unparalleled secure and reliable environment for all participants.</p>
+                </div>
+                
+                <div className="bg-white rounded-lg p-6 border border-slate-200">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <Users className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">Unique Digital Fingerprint</h3>
+                  <p className="text-slate-600 text-sm">Secure identification and clear ownership for every user.</p>
                 </div>
               </div>
             </div>
