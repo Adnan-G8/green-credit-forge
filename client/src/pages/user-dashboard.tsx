@@ -43,20 +43,40 @@ export function UserDashboard({ fagriId }: UserDashboardProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Load user data from localStorage (in production this would come from backend)
-    const userData = localStorage.getItem(`account_${fagriId}`);
-    if (userData) {
-      setUser(JSON.parse(userData));
-    }
+    const loadUserData = async () => {
+      try {
+        // Load user data from backend API
+        const userResponse = await fetch(`/api/users/${fagriId}`);
+        if (userResponse.ok) {
+          const userResult = await userResponse.json();
+          setUser(userResult.user);
+        }
 
-    // Load authorization requests
-    const authData = localStorage.getItem(`authorizations_${fagriId}`);
-    if (authData) {
-      setAuthorizations(JSON.parse(authData));
-    }
+        // Load authorization requests from backend API
+        // Note: In a production system, we'd have a user-specific authorization endpoint
+        // For now, we'll check if there are any authorizations for this user
+        const authResponse = await fetch('/api/authorizations/pending');
+        if (authResponse.ok) {
+          const authResult = await authResponse.json();
+          const userAuthorizations = authResult.authorizations.filter(
+            (auth: any) => auth.fagriIdKey === fagriId
+          );
+          setAuthorizations(userAuthorizations);
+        }
+      } catch (error) {
+        console.error('Error loading user data:', error);
+        toast({
+          title: 'Error',
+          description: 'Failed to load user data',
+          variant: 'destructive',
+        });
+      }
+      
+      setIsLoading(false);
+    };
 
-    setIsLoading(false);
-  }, [fagriId]);
+    loadUserData();
+  }, [fagriId, toast]);
 
   const handleCopyFagriId = () => {
     navigator.clipboard.writeText(fagriId);
@@ -105,25 +125,53 @@ Contact: support@fagri.digital
     });
   };
 
-  const requestAuthorization = (accountType: string, displayName: string) => {
-    const newAuth: Authorization = {
-      id: `auth_${Date.now()}`,
-      accountType,
-      displayName,
-      status: 'pending',
-      requestedAt: new Date().toISOString(),
-    };
+  const requestAuthorization = async (accountType: string, displayName: string) => {
+    try {
+      const response = await fetch('/api/authorizations/request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fagriIdKey: fagriId,
+          requestedAccountType: accountType,
+          justification: `User requesting ${displayName} account access for CO₂ certification platform`,
+          requestedPermissions: {}, // Add permissions based on account type
+        }),
+      });
 
-    const updatedAuths = [...authorizations, newAuth];
-    setAuthorizations(updatedAuths);
-    localStorage.setItem(`authorizations_${fagriId}`, JSON.stringify(updatedAuths));
+      if (!response.ok) {
+        throw new Error('Failed to submit authorization request');
+      }
 
-    toast({
-      title: language === 'it' ? 'Richiesta Inviata' : 'Request Submitted',
-      description: language === 'it' 
-        ? `La tua richiesta per ${displayName} è stata inviata all'amministrazione.`
-        : `Your request for ${displayName} has been sent to administration.`,
-    });
+      const result = await response.json();
+      
+      // Refresh authorization list
+      const authResponse = await fetch('/api/authorizations/pending');
+      if (authResponse.ok) {
+        const authResult = await authResponse.json();
+        const userAuthorizations = authResult.authorizations.filter(
+          (auth: any) => auth.fagriIdKey === fagriId
+        );
+        setAuthorizations(userAuthorizations);
+      }
+
+      toast({
+        title: language === 'it' ? 'Richiesta Inviata' : 'Request Submitted',
+        description: language === 'it' 
+          ? `La tua richiesta per ${displayName} è stata inviata all'amministrazione.`
+          : `Your request for ${displayName} has been sent to administration.`,
+      });
+    } catch (error) {
+      console.error('Authorization request error:', error);
+      toast({
+        title: language === 'it' ? 'Errore' : 'Error',
+        description: language === 'it' 
+          ? 'Impossibile inviare la richiesta. Riprova più tardi.'
+          : 'Failed to submit request. Please try again later.',
+        variant: 'destructive',
+      });
+    }
   };
 
   const getStatusIcon = (status: string) => {
