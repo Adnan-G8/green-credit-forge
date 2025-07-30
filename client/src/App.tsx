@@ -20,6 +20,7 @@ import { AdminDashboard } from "@/pages/admin-dashboard";
 import { UserDashboard } from "@/pages/user-dashboard";
 import { AdminAuthorizationDashboard } from "@/pages/admin-authorization-dashboard";
 import { EmployeeProfile } from "@/pages/employee-profile";
+import ProjectDetails from "@/pages/project-details";
 import NotFound from "@/pages/not-found";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
@@ -55,6 +56,7 @@ function ProtectedRouter() {
           return employeeId ? <EmployeeProfile employeeId={employeeId} /> : <NotFound />;
         }}
       </Route>
+      <Route path="/project/:id" component={ProjectDetails} />
       <Route path="/employee-profile/:id">
         {(params) => <EmployeeProfile employeeId={params.id} />}
       </Route>

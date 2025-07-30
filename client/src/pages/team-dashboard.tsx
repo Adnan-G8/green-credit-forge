@@ -368,8 +368,8 @@ export default function TeamDashboard() {
                           key={project.id}
                           className="p-4 border border-slate-200 rounded-lg hover:shadow-md hover:border-blue-300 transition-all cursor-pointer group"
                           onClick={() => {
-                            setSelectedProject(project);
-                            setShowProjectDetails(true);
+                            // Navigate to dedicated project page
+                            window.location.href = `/project/${project.id}`;
                           }}
                         >
                           <div className="flex items-center justify-between mb-2">
