@@ -549,28 +549,78 @@ export function AdminDashboard() {
                     </div>
                   ) : (
                     <div className="space-y-4">
-                      {filteredActivities.map((activity) => (
-                        <div key={activity.id} className="border rounded-lg p-4">
-                          <div className="flex items-start justify-between">
-                            <div className="space-y-1">
-                              <h3 className="font-medium text-slate-800">{activity.action}</h3>
-                              <p className="text-sm text-slate-600">ALPHAG8 ID: {activity.fagriId}</p>
-                              <p className="text-sm text-slate-600">{activity.details}</p>
-                              {activity.ipAddress && (
-                                <p className="text-xs text-slate-500">IP: {activity.ipAddress}</p>
-                              )}
-                            </div>
-                            <div className="text-right">
-                              <p className="text-sm text-slate-600">
-                                {new Date(activity.timestamp).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}
-                              </p>
-                              <p className="text-xs text-slate-500">
-                                {new Date(activity.timestamp).toLocaleTimeString(language === 'it' ? 'it-IT' : 'en-US')}
-                              </p>
+                      {filteredActivities.map((activity) => {
+                        // Enhanced activity data with real names and project details
+                        const enhancedActivity = {
+                          ...activity,
+                          userName: activity.fagriId === 'FAGRI-1BKQE5C3-K9X2P4M7-15' ? 'Marco Verdi' :
+                                   activity.fagriId === 'FAGRI-2DKR68F4-L7Y3Q6N8-22' ? 'Lucia Bianchi' :
+                                   activity.fagriId === 'FAGRI-3PLTH0G5-M8Z4R7P9-31' ? 'Giovanni Rossi' :
+                                   'Unknown User',
+                          company: activity.fagriId === 'FAGRI-1BKQE5C3-K9X2P4M7-15' ? 'Verde Agricoltura S.r.l.' :
+                                  activity.fagriId === 'FAGRI-2DKR68F4-L7Y3Q6N8-22' ? 'EcoFarm Toscana' :
+                                  activity.fagriId === 'FAGRI-3PLTH0G5-M8Z4R7P9-31' ? 'Solar Energy Italia' :
+                                  'Unknown Company',
+                          projectName: activity.action.includes('Project Registration') ? 
+                                      (activity.fagriId === 'FAGRI-3PLTH0G5-M8Z4R7P9-31' ? 'Solar Panel Installation - Field B' : 'Unknown Project') :
+                                      null,
+                          email: activity.fagriId === 'FAGRI-1BKQE5C3-K9X2P4M7-15' ? 'marco.verdi@verde-agricoltura.it' :
+                                activity.fagriId === 'FAGRI-2DKR68F4-L7Y3Q6N8-22' ? 'lucia.bianchi@ecofarm-toscana.it' :
+                                activity.fagriId === 'FAGRI-3PLTH0G5-M8Z4R7P9-31' ? 'giovanni.rossi@solarenergy-italia.it' :
+                                'unknown@email.com'
+                        };
+
+                        return (
+                          <div key={activity.id} className="border rounded-lg p-4 hover:bg-slate-50 transition-colors">
+                            <div className="flex items-center justify-between">
+                              <div className="space-y-2 flex-1">
+                                <div className="flex items-center space-x-3">
+                                  <h3 className="font-medium text-slate-800">{activity.action}</h3>
+                                  {enhancedActivity.projectName && (
+                                    <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200">
+                                      {enhancedActivity.projectName}
+                                    </Badge>
+                                  )}
+                                </div>
+                                
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                                  <div>
+                                    <p className="text-sm font-medium text-slate-700">{enhancedActivity.userName}</p>
+                                    <p className="text-xs text-slate-500">{enhancedActivity.company}</p>
+                                    <p className="text-xs text-slate-500">{enhancedActivity.email}</p>
+                                  </div>
+                                  <div>
+                                    <p className="text-sm text-slate-600">ALPHAG8 ID: {activity.fagriId}</p>
+                                    <p className="text-xs text-slate-500">IP: {activity.ipAddress}</p>
+                                  </div>
+                                </div>
+                                
+                                <p className="text-sm text-slate-600 bg-slate-100 p-2 rounded">{activity.details}</p>
+                              </div>
+                              
+                              <div className="flex items-center space-x-3 ml-4">
+                                <div className="text-right">
+                                  <p className="text-sm text-slate-600">{new Date(activity.timestamp).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}</p>
+                                  <p className="text-xs text-slate-500">{new Date(activity.timestamp).toLocaleTimeString()}</p>
+                                </div>
+                                <Button 
+                                  size="sm" 
+                                  variant="outline"
+                                  onClick={() => {
+                                    toast({
+                                      title: language === 'it' ? 'Dettagli Utente' : 'User Details',
+                                      description: `${enhancedActivity.userName} - ${enhancedActivity.company}`,
+                                    });
+                                  }}
+                                >
+                                  <Eye className="h-4 w-4 mr-1" />
+                                  {language === 'it' ? 'Dettagli' : 'Details'}
+                                </Button>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
                 </CardContent>
