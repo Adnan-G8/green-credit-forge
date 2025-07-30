@@ -2,10 +2,149 @@ import { Navigation } from '@/components/navigation';
 import { useLanguage } from '@/components/language-provider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Users, FileText, BarChart3, Settings, Plus, TrendingUp, Calendar, Award } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { useToast } from '@/hooks/use-toast';
+import { useState, useEffect } from 'react';
+import { 
+  Users, 
+  FileText, 
+  BarChart3, 
+  Settings, 
+  Plus, 
+  TrendingUp, 
+  Calendar, 
+  Award, 
+  User,
+  MessageSquare,
+  CheckSquare,
+  Mail,
+  Phone,
+  MapPin,
+  Edit,
+  Save,
+  X,
+  Send,
+  CheckCircle,
+  Clock,
+  AlertTriangle
+} from 'lucide-react';
 
 export default function TeamDashboard() {
   const { language } = useLanguage();
+  const { toast } = useToast();
+  
+  // State management
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'profile' | 'messages' | 'todo'>('dashboard');
+  const [showProfileEdit, setShowProfileEdit] = useState(false);
+  const [newTodoItem, setNewTodoItem] = useState('');
+  const [newMessage, setNewMessage] = useState('');
+  const [selectedConversation, setSelectedConversation] = useState<string | null>(null);
+  
+  // Profile data
+  const [profileData, setProfileData] = useState({
+    name: 'Alessandro Rossi',
+    email: 'alessandro.rossi@fagri.digital',
+    phone: '+39 348 123 4567',
+    department: 'CO₂ Certification Team',
+    role: 'Senior Certification Specialist',
+    location: 'Milano, Italia',
+    joinDate: '2024-01-15',
+    bio: 'Esperto in certificazione CO₂ con 8 anni di esperienza nel settore agricolo sostenibile.',
+    skills: ['ISO 14064', 'Carbon Accounting', 'Renewable Energy', 'Project Management']
+  });
+  
+  // Todo items
+  const [todoItems, setTodoItems] = useState([
+    {
+      id: '1',
+      task: 'Revisione documentazione Progetto Solare Toscana',
+      priority: 'high' as const,
+      completed: false,
+      dueDate: '2024-08-02',
+      project: 'Tuscany Solar Project'
+    },
+    {
+      id: '2', 
+      task: 'Chiamata con cliente Puglia Wind Farm',
+      priority: 'medium' as const,
+      completed: false,
+      dueDate: '2024-08-01',
+      project: 'Puglia Wind Farm'
+    },
+    {
+      id: '3',
+      task: 'Completare report mensile',
+      priority: 'low' as const,
+      completed: true,
+      dueDate: '2024-07-30',
+      project: 'Team Management'
+    }
+  ]);
+  
+  // Messages/conversations
+  const [conversations, setConversations] = useState([
+    {
+      id: 'admin-001',
+      sender: 'Admin Dashboard',
+      senderType: 'admin' as const,
+      lastMessage: 'Nuovo progetto assegnato per revisione urgente',
+      timestamp: '2024-07-30T14:30:00',
+      unread: true,
+      messages: [
+        {
+          id: 'msg-1',
+          sender: 'Admin Dashboard',
+          message: 'Ciao Alessandro, ti è stato assegnato un nuovo progetto per revisione urgente.',
+          timestamp: '2024-07-30T14:30:00',
+          isFromMe: false
+        },
+        {
+          id: 'msg-2',
+          sender: 'Admin Dashboard', 
+          message: 'Il progetto "Solar Panel Installation - Field B" richiede la tua immediate attenzione.',
+          timestamp: '2024-07-30T14:31:00',
+          isFromMe: false
+        }
+      ]
+    },
+    {
+      id: 'cert-001',
+      sender: 'Certification Authority',
+      senderType: 'certification' as const,
+      lastMessage: 'Certificato CO₂ pronto per download',
+      timestamp: '2024-07-30T10:15:00',
+      unread: false,
+      messages: [
+        {
+          id: 'msg-3',
+          sender: 'Certification Authority',
+          message: 'Il certificato per il progetto Tuscany Solar è stato completato.',
+          timestamp: '2024-07-30T10:15:00',
+          isFromMe: false
+        }
+      ]
+    },
+    {
+      id: 'client-001',
+      sender: 'Marco Bianchi (Project Owner)',
+      senderType: 'client' as const,
+      lastMessage: 'Domanda sulla documentazione richiesta',
+      timestamp: '2024-07-29T16:45:00',
+      unread: true,
+      messages: [
+        {
+          id: 'msg-4',
+          sender: 'Marco Bianchi',
+          message: 'Ciao Alessandro, ho una domanda sulla documentazione richiesta per il mio progetto eolico.',
+          timestamp: '2024-07-29T16:45:00',
+          isFromMe: false
+        }
+      ]
+    }
+  ]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50">
@@ -14,9 +153,9 @@ export default function TeamDashboard() {
       <div className="pt-20 pb-12">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
-            {/* Header */}
+            {/* Header with Navigation Tabs */}
             <div className="mb-8">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mb-6">
                 <div>
                   <h1 className="text-3xl font-light text-slate-800">
                     {language === 'it' ? 'Dashboard Team Member' : 'Team Member Dashboard'}
@@ -35,10 +174,59 @@ export default function TeamDashboard() {
                   </Button>
                 </div>
               </div>
+              
+              {/* Navigation Tabs */}
+              <div className="flex space-x-1 bg-white rounded-lg p-1 border border-slate-200">
+                <Button
+                  variant={activeTab === 'dashboard' ? 'default' : 'ghost'}
+                  className={`flex items-center space-x-2 ${activeTab === 'dashboard' ? 'bg-blue-600 text-white' : 'text-slate-600'}`}
+                  onClick={() => setActiveTab('dashboard')}
+                >
+                  <BarChart3 className="h-4 w-4" />
+                  <span>{language === 'it' ? 'Dashboard' : 'Dashboard'}</span>
+                </Button>
+                <Button
+                  variant={activeTab === 'profile' ? 'default' : 'ghost'}
+                  className={`flex items-center space-x-2 ${activeTab === 'profile' ? 'bg-blue-600 text-white' : 'text-slate-600'}`}
+                  onClick={() => setActiveTab('profile')}
+                >
+                  <User className="h-4 w-4" />
+                  <span>{language === 'it' ? 'Il Mio Profilo' : 'My Profile'}</span>
+                </Button>
+                <Button
+                  variant={activeTab === 'messages' ? 'default' : 'ghost'}
+                  className={`flex items-center space-x-2 ${activeTab === 'messages' ? 'bg-blue-600 text-white' : 'text-slate-600'} relative`}
+                  onClick={() => setActiveTab('messages')}
+                >
+                  <MessageSquare className="h-4 w-4" />
+                  <span>{language === 'it' ? 'Messaggi' : 'Messages'}</span>
+                  {conversations.filter(c => c.unread).length > 0 && (
+                    <Badge className="absolute -top-1 -right-1 h-5 w-5 text-xs bg-red-500 text-white p-0 flex items-center justify-center">
+                      {conversations.filter(c => c.unread).length}
+                    </Badge>
+                  )}
+                </Button>
+                <Button
+                  variant={activeTab === 'todo' ? 'default' : 'ghost'}
+                  className={`flex items-center space-x-2 ${activeTab === 'todo' ? 'bg-blue-600 text-white' : 'text-slate-600'}`}
+                  onClick={() => setActiveTab('todo')}
+                >
+                  <CheckSquare className="h-4 w-4" />
+                  <span>{language === 'it' ? 'Todo Lista' : 'Todo List'}</span>
+                  {todoItems.filter(item => !item.completed).length > 0 && (
+                    <Badge className="bg-orange-100 text-orange-800 border-orange-200">
+                      {todoItems.filter(item => !item.completed).length}
+                    </Badge>
+                  )}
+                </Button>
+              </div>
             </div>
 
-            {/* Stats Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            {/* Tab Content */}
+            {activeTab === 'dashboard' && (
+              <>
+                {/* Stats Overview */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
               <Card className="border-blue-200 bg-blue-50">
                 <CardContent className="pt-6">
                   <div className="flex items-center justify-between">
@@ -232,6 +420,462 @@ export default function TeamDashboard() {
                 </Card>
               </div>
             </div>
+              </>
+            )}
+
+            {/* Personal Profile Tab */}
+            {activeTab === 'profile' && (
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Profile Card */}
+                <div className="lg:col-span-2">
+                  <Card>
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="flex items-center space-x-2">
+                          <User className="h-5 w-5" />
+                          <span>{language === 'it' ? 'Il Mio Profilo' : 'My Profile'}</span>
+                        </CardTitle>
+                        <Button 
+                          variant="outline" 
+                          size="sm"
+                          onClick={() => setShowProfileEdit(true)}
+                        >
+                          <Edit className="h-4 w-4 mr-2" />
+                          {language === 'it' ? 'Modifica' : 'Edit'}
+                        </Button>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      {/* Basic Info */}
+                      <div className="flex items-center space-x-4">
+                        <div className="h-20 w-20 bg-blue-100 rounded-full flex items-center justify-center">
+                          <User className="h-10 w-10 text-blue-600" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-slate-800">{profileData.name}</h3>
+                          <p className="text-slate-600">{profileData.role}</p>
+                          <p className="text-sm text-slate-500">{profileData.department}</p>
+                        </div>
+                      </div>
+                      
+                      {/* Contact Info */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="space-y-3">
+                          <div className="flex items-center space-x-3">
+                            <Mail className="h-4 w-4 text-slate-500" />
+                            <span className="text-sm text-slate-700">{profileData.email}</span>
+                          </div>
+                          <div className="flex items-center space-x-3">
+                            <Phone className="h-4 w-4 text-slate-500" />
+                            <span className="text-sm text-slate-700">{profileData.phone}</span>
+                          </div>
+                        </div>
+                        <div className="space-y-3">
+                          <div className="flex items-center space-x-3">
+                            <MapPin className="h-4 w-4 text-slate-500" />
+                            <span className="text-sm text-slate-700">{profileData.location}</span>
+                          </div>
+                          <div className="flex items-center space-x-3">
+                            <Calendar className="h-4 w-4 text-slate-500" />
+                            <span className="text-sm text-slate-700">
+                              {language === 'it' ? 'Dal' : 'Since'} {new Date(profileData.joinDate).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Bio */}
+                      <div>
+                        <h4 className="text-sm font-medium text-slate-700 mb-2">
+                          {language === 'it' ? 'Biografia' : 'Biography'}
+                        </h4>
+                        <p className="text-sm text-slate-600">{profileData.bio}</p>
+                      </div>
+                      
+                      {/* Skills */}
+                      <div>
+                        <h4 className="text-sm font-medium text-slate-700 mb-3">
+                          {language === 'it' ? 'Competenze' : 'Skills'}
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {profileData.skills.map((skill, index) => (
+                            <Badge key={index} className="bg-blue-100 text-blue-800 border-blue-200">
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+                
+                {/* Quick Stats */}
+                <div className="space-y-4">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-sm">
+                        {language === 'it' ? 'Statistiche Veloci' : 'Quick Stats'}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-slate-600">
+                          {language === 'it' ? 'Progetti Assegnati' : 'Assigned Projects'}
+                        </span>
+                        <span className="font-semibold">12</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-slate-600">
+                          {language === 'it' ? 'Completati Questo Mese' : 'Completed This Month'}
+                        </span>
+                        <span className="font-semibold text-green-600">8</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-slate-600">
+                          {language === 'it' ? 'Efficienza Team' : 'Team Efficiency'}
+                        </span>
+                        <span className="font-semibold text-blue-600">92%</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            )}
+
+            {/* Messages Tab */}
+            {activeTab === 'messages' && (
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Conversations List */}
+                <div className="lg:col-span-1">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="flex items-center space-x-2">
+                        <MessageSquare className="h-5 w-5" />
+                        <span>{language === 'it' ? 'Conversazioni' : 'Conversations'}</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                      <div className="space-y-1">
+                        {conversations.map((conversation) => (
+                          <div
+                            key={conversation.id}
+                            className={`p-4 cursor-pointer border-b hover:bg-slate-50 transition-colors ${
+                              selectedConversation === conversation.id ? 'bg-blue-50 border-l-4 border-l-blue-600' : ''
+                            }`}
+                            onClick={() => setSelectedConversation(conversation.id)}
+                          >
+                            <div className="flex items-center justify-between mb-1">
+                              <div className="flex items-center space-x-2">
+                                <div className={`h-2 w-2 rounded-full ${
+                                  conversation.senderType === 'admin' ? 'bg-red-500' :
+                                  conversation.senderType === 'certification' ? 'bg-green-500' : 'bg-blue-500'
+                                }`} />
+                                <h4 className="text-sm font-medium text-slate-800">{conversation.sender}</h4>
+                                {conversation.unread && (
+                                  <div className="h-2 w-2 bg-red-500 rounded-full" />
+                                )}
+                              </div>
+                              <span className="text-xs text-slate-500">
+                                {new Date(conversation.timestamp).toLocaleDateString()}
+                              </span>
+                            </div>
+                            <p className="text-sm text-slate-600 truncate">{conversation.lastMessage}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+                
+                {/* Chat Area */}
+                <div className="lg:col-span-2">
+                  {selectedConversation ? (
+                    <Card className="h-96 flex flex-col">
+                      <CardHeader className="border-b">
+                        <CardTitle className="text-lg">
+                          {conversations.find(c => c.id === selectedConversation)?.sender}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-1 p-4 overflow-y-auto">
+                        <div className="space-y-4">
+                          {conversations.find(c => c.id === selectedConversation)?.messages.map((message) => (
+                            <div key={message.id} className={`flex ${message.isFromMe ? 'justify-end' : 'justify-start'}`}>
+                              <div className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                                message.isFromMe 
+                                  ? 'bg-blue-600 text-white' 
+                                  : 'bg-slate-100 text-slate-800'
+                              }`}>
+                                <p className="text-sm">{message.message}</p>
+                                <span className="text-xs opacity-70">
+                                  {new Date(message.timestamp).toLocaleTimeString()}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                      <div className="border-t p-4">
+                        <div className="flex space-x-2">
+                          <Input
+                            placeholder={language === 'it' ? 'Scrivi un messaggio...' : 'Type a message...'}
+                            value={newMessage}
+                            onChange={(e) => setNewMessage(e.target.value)}
+                            onKeyPress={(e) => {
+                              if (e.key === 'Enter') {
+                                toast({
+                                  title: language === 'it' ? 'Messaggio Inviato' : 'Message Sent',
+                                  description: language === 'it' ? 'Il tuo messaggio è stato inviato' : 'Your message has been sent',
+                                });
+                                setNewMessage('');
+                              }
+                            }}
+                          />
+                          <Button 
+                            size="sm"
+                            onClick={() => {
+                              toast({
+                                title: language === 'it' ? 'Messaggio Inviato' : 'Message Sent',
+                                description: language === 'it' ? 'Il tuo messaggio è stato inviato' : 'Your message has been sent',
+                              });
+                              setNewMessage('');
+                            }}
+                          >
+                            <Send className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </div>
+                    </Card>
+                  ) : (
+                    <Card className="h-96 flex items-center justify-center">
+                      <div className="text-center">
+                        <MessageSquare className="h-12 w-12 text-slate-400 mx-auto mb-4" />
+                        <p className="text-slate-600">
+                          {language === 'it' 
+                            ? 'Seleziona una conversazione per iniziare' 
+                            : 'Select a conversation to start'
+                          }
+                        </p>
+                      </div>
+                    </Card>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Todo Tab */}
+            {activeTab === 'todo' && (
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Todo List */}
+                <div className="lg:col-span-2">
+                  <Card>
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="flex items-center space-x-2">
+                          <CheckSquare className="h-5 w-5" />
+                          <span>{language === 'it' ? 'Le Mie Attività' : 'My Tasks'}</span>
+                        </CardTitle>
+                        <Badge className="bg-orange-100 text-orange-800 border-orange-200">
+                          {todoItems.filter(item => !item.completed).length} {language === 'it' ? 'da fare' : 'pending'}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      {/* Add New Todo */}
+                      <div className="mb-6">
+                        <div className="flex space-x-2">
+                          <Input
+                            placeholder={language === 'it' ? 'Aggiungi nuova attività...' : 'Add new task...'}
+                            value={newTodoItem}
+                            onChange={(e) => setNewTodoItem(e.target.value)}
+                            onKeyPress={(e) => {
+                              if (e.key === 'Enter' && newTodoItem.trim()) {
+                                const newItem = {
+                                  id: Date.now().toString(),
+                                  task: newTodoItem,
+                                  priority: 'medium' as const,
+                                  completed: false,
+                                  dueDate: new Date().toISOString().split('T')[0],
+                                  project: 'General'
+                                };
+                                setTodoItems([...todoItems, newItem]);
+                                setNewTodoItem('');
+                                toast({
+                                  title: language === 'it' ? 'Attività Aggiunta' : 'Task Added',
+                                  description: language === 'it' ? 'Nuova attività aggiunta alla lista' : 'New task added to your list',
+                                });
+                              }
+                            }}
+                          />
+                          <Button
+                            onClick={() => {
+                              if (newTodoItem.trim()) {
+                                const newItem = {
+                                  id: Date.now().toString(),
+                                  task: newTodoItem,
+                                  priority: 'medium' as const,
+                                  completed: false,
+                                  dueDate: new Date().toISOString().split('T')[0],
+                                  project: 'General'
+                                };
+                                setTodoItems([...todoItems, newItem]);
+                                setNewTodoItem('');
+                                toast({
+                                  title: language === 'it' ? 'Attività Aggiunta' : 'Task Added',
+                                  description: language === 'it' ? 'Nuova attività aggiunta alla lista' : 'New task added to your list',
+                                });
+                              }
+                            }}
+                          >
+                            <Plus className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </div>
+                      
+                      {/* Todo Items */}
+                      <div className="space-y-3">
+                        {todoItems.map((item) => (
+                          <div
+                            key={item.id}
+                            className={`p-4 border rounded-lg ${
+                              item.completed ? 'bg-green-50 border-green-200' : 'bg-white border-slate-200'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center space-x-3">
+                                <button
+                                  onClick={() => {
+                                    setTodoItems(todoItems.map(todo => 
+                                      todo.id === item.id ? { ...todo, completed: !todo.completed } : todo
+                                    ));
+                                  }}
+                                  className={`h-5 w-5 border-2 rounded ${
+                                    item.completed 
+                                      ? 'bg-green-600 border-green-600 text-white' 
+                                      : 'border-slate-300 hover:border-slate-400'
+                                  }`}
+                                >
+                                  {item.completed && <CheckCircle className="h-3 w-3" />}
+                                </button>
+                                <div>
+                                  <p className={`${item.completed ? 'line-through text-slate-500' : 'text-slate-800'}`}>
+                                    {item.task}
+                                  </p>
+                                  <div className="flex items-center space-x-4 mt-1">
+                                    <span className="text-xs text-slate-500">{item.project}</span>
+                                    <Badge 
+                                      className={
+                                        item.priority === 'high' ? 'bg-red-100 text-red-800 border-red-200' :
+                                        item.priority === 'medium' ? 'bg-yellow-100 text-yellow-800 border-yellow-200' :
+                                        'bg-green-100 text-green-800 border-green-200'
+                                      }
+                                    >
+                                      {item.priority === 'high' && (language === 'it' ? 'Alta' : 'High')}
+                                      {item.priority === 'medium' && (language === 'it' ? 'Media' : 'Medium')}
+                                      {item.priority === 'low' && (language === 'it' ? 'Bassa' : 'Low')}
+                                    </Badge>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <span className="text-xs text-slate-500">
+                                  {new Date(item.dueDate).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}
+                                </span>
+                                <Button
+                                  size="sm"
+                                  variant="ghost"
+                                  onClick={() => {
+                                    setTodoItems(todoItems.filter(todo => todo.id !== item.id));
+                                    toast({
+                                      title: language === 'it' ? 'Attività Eliminata' : 'Task Deleted',
+                                      description: language === 'it' ? 'Attività rimossa dalla lista' : 'Task removed from your list',
+                                    });
+                                  }}
+                                >
+                                  <X className="h-4 w-4" />
+                                </Button>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+                
+                {/* Todo Summary */}
+                <div className="space-y-4">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-sm">
+                        {language === 'it' ? 'Riassunto Attività' : 'Task Summary'}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-slate-600">
+                          {language === 'it' ? 'Totale Attività' : 'Total Tasks'}
+                        </span>
+                        <span className="font-semibold">{todoItems.length}</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-slate-600">
+                          {language === 'it' ? 'Completate' : 'Completed'}
+                        </span>
+                        <span className="font-semibold text-green-600">
+                          {todoItems.filter(item => item.completed).length}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-slate-600">
+                          {language === 'it' ? 'In Sospeso' : 'Pending'}
+                        </span>
+                        <span className="font-semibold text-orange-600">
+                          {todoItems.filter(item => !item.completed).length}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-slate-600">
+                          {language === 'it' ? 'Alta Priorità' : 'High Priority'}
+                        </span>
+                        <span className="font-semibold text-red-600">
+                          {todoItems.filter(item => !item.completed && item.priority === 'high').length}
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-sm">
+                        {language === 'it' ? 'Scadenze Imminenti' : 'Upcoming Deadlines'}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {todoItems
+                          .filter(item => !item.completed)
+                          .sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime())
+                          .slice(0, 3)
+                          .map((item) => (
+                            <div key={item.id} className="flex items-center space-x-3">
+                              <AlertTriangle className={`h-4 w-4 ${
+                                item.priority === 'high' ? 'text-red-500' : 
+                                item.priority === 'medium' ? 'text-yellow-500' : 'text-green-500'
+                              }`} />
+                              <div className="flex-1">
+                                <p className="text-sm text-slate-800 truncate">{item.task}</p>
+                                <p className="text-xs text-slate-500">
+                                  {new Date(item.dueDate).toLocaleDateString(language === 'it' ? 'it-IT' : 'en-US')}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
