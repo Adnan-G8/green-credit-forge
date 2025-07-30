@@ -259,35 +259,7 @@ export default function Security() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-5 h-5 text-slate-600" />
-                </div>
-                <h3 className="text-lg font-medium text-slate-900">{t.access1}</h3>
-              </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-                  <Key className="w-5 h-5 text-slate-600" />
-                </div>
-                <h3 className="text-lg font-medium text-slate-900">{t.access2}</h3>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-5 h-5 text-slate-600" />
-                </div>
-                <h3 className="text-lg font-medium text-slate-900">{t.access3}</h3>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-                  <Eye className="w-5 h-5 text-slate-600" />
-                </div>
-                <h3 className="text-lg font-medium text-slate-900">{t.access4}</h3>
-              </div>
-            </div>
 
             {/* ALPHAG8 ID KEY Section */}
             <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200 mb-8">
