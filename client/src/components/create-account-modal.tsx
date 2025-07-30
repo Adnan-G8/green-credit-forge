@@ -65,8 +65,31 @@ export function CreateAccountModal({ isOpen, onClose, onAccountCreated }: Create
       // Generate FAGRI ID KEY
       const fagriId = generateAlphaG8Id();
       
-      // Simulate account creation process
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Create user account via API
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fagriIdKey: fagriId,
+          firstName: digitalFingerprint.firstName,
+          lastName: digitalFingerprint.lastName,
+          email: digitalFingerprint.email,
+          socialSecurityNumber: digitalFingerprint.socialSecurityNumber,
+          telephone: digitalFingerprint.telephone,
+          streetAddress: '', // Will be added in future steps
+          city: '',
+          postalCode: '',
+          province: '',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create account');
+      }
+
+      const result = await response.json();
       
       // Store basic account information
       const accountData = {
@@ -262,13 +285,13 @@ Contact: support@fagri.digital
 
                   <div className="space-y-2">
                     <Label htmlFor="telephone" className="text-sm font-medium text-slate-700">
-                      {t('telephone')} *
+                      {t('phone-number')} *
                     </Label>
                     <Input
                       id="telephone"
                       value={digitalFingerprint.telephone}
                       onChange={(e) => handleInputChange('telephone', e.target.value)}
-                      placeholder={t('enter-telephone')}
+                      placeholder="Enter phone number"
                       className="border-slate-300"
                     />
                   </div>

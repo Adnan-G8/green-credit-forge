@@ -141,26 +141,29 @@ export function AccountTypeSelectionModal({
     setIsCreating(true);
     
     try {
-      // Simulate account creation process
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Get existing account data
-      const existingAccount = JSON.parse(localStorage.getItem(`account_${fagriId}`) || '{}');
-      
-      // Update account with selected type
-      const updatedAccount = {
-        ...existingAccount,
-        accountType: selectedType,
-        accountPermissions: getAccountPermissions(selectedType),
-        lastUpdated: new Date().toISOString()
-      };
+      // Request authorization for the selected account type via API
+      const response = await fetch('/api/authorizations/request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fagriIdKey: fagriId,
+          requestedAccountType: selectedType,
+          justification: `User requesting ${selectedType} account access for CO₂ certification platform`,
+          requestedPermissions: getAccountPermissions(selectedType),
+        }),
+      });
 
-      // Store updated account information
-      localStorage.setItem(`account_${fagriId}`, JSON.stringify(updatedAccount));
+      if (!response.ok) {
+        throw new Error('Failed to submit authorization request');
+      }
+
+      const result = await response.json();
       
       toast({
-        title: t('account-type-created'),
-        description: t('account-setup-completed'),
+        title: t('authorization-request-submitted'),
+        description: t('admin-will-review-request'),
       });
 
       if (onAccountTypeSelected) {
@@ -169,8 +172,9 @@ export function AccountTypeSelectionModal({
 
       onClose();
     } catch (error) {
+      console.error('Authorization request error:', error);
       toast({
-        title: t('creation-failed'),
+        title: t('request-failed'),
         description: t('please-try-again'),
         variant: "destructive",
       });

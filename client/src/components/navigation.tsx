@@ -301,14 +301,14 @@ export function Navigation() {
                     <button
                       onClick={() => {
                         if (activeModal) return;
-                        setActiveModal('role');
-                        setShowRoleModal(true);
+                        setActiveModal('create-account');
+                        setShowCreateAccountModal(true);
                         setIsOpen(false);
                       }}
                       className="flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-300 text-left font-medium"
                     >
                       <UserPlus className="h-4 w-4 mr-2" />
-                      {language === 'it' ? 'Crea Account' : 'Create Account'}
+                      {t('create-digital-identity')}
                     </button>
                   </>
                 ) : (
