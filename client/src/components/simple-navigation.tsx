@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from './language-provider';
 import fagriWhiteLogoPath from "@assets/FAGRI-White_1753868982629.png";
+import fagriGreenLogoPath from "@assets/FAGRI (1)_1753869083945.png";
 import { Button } from '@/components/ui/button';
 import { Menu, X, LogIn, UserPlus } from 'lucide-react';
 import { useLocation } from 'wouter';
@@ -57,11 +58,9 @@ export function SimpleNavigation() {
             {/* Logo */}
             <div className="flex items-center space-x-4">
               <img 
-                src={fagriWhiteLogoPath} 
+                src={isScrolled ? fagriGreenLogoPath : fagriWhiteLogoPath} 
                 alt="FAGRI DIGITAL" 
-                className={`h-20 w-auto transition-all duration-300 ${
-                  isScrolled ? 'brightness-0 saturate-100 hue-rotate-[120deg]' : 'brightness-100'
-                }`}
+                className="h-20 w-auto transition-all duration-300"
               />
             </div>
 
