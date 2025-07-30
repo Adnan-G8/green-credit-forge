@@ -229,7 +229,7 @@ Contact: support@fagri.digital
               onClick={() => setLocation('/')}
               variant="outline"
               size="sm"
-              className="flex items-center space-x-2 text-slate-600 hover:text-slate-800 border-slate-300 hover:border-slate-400"
+              className="flex items-center space-x-2 text-slate-600 hover:text-white hover:bg-slate-600 border-slate-300 hover:border-slate-600 transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               <span>{language === 'it' ? 'Indietro' : 'Back'}</span>
@@ -238,7 +238,7 @@ Contact: support@fagri.digital
               onClick={() => setLocation('/')}
               variant="outline"
               size="sm"
-              className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 border-emerald-300 hover:border-emerald-400"
+              className="flex items-center space-x-2 text-blue-600 hover:text-white hover:bg-blue-600 border-blue-300 hover:border-blue-600 transition-colors"
             >
               <Home className="h-4 w-4" />
               <span>{language === 'it' ? 'Home' : 'Home'}</span>
