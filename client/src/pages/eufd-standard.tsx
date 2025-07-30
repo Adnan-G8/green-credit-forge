@@ -168,12 +168,9 @@ export default function EufdStandardPage() {
             <div className="relative rounded-xl overflow-hidden shadow-lg">
               <img 
                 src={italianGovernment} 
-                alt="Italian government building representing official EUFD2025-001 standard backing"
+                alt="Italian government building"
                 className="w-full h-64 md:h-80 object-cover object-center"
               />
-              <div className="absolute bottom-4 left-4 text-white text-sm bg-black bg-opacity-50 px-2 py-1 rounded">
-                Italian government building representing official EUFD2025-001 standard backing
-              </div>
             </div>
           </div>
         </div>
