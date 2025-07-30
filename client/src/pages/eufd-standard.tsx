@@ -1,6 +1,6 @@
 import { Navigation } from '../components/navigation';
 import { Footer } from '../components/footer';
-import { CheckCircle, Shield, Globe, Users, Download, Lock, FileCheck } from 'lucide-react';
+import { CheckCircle, Shield, Globe, Users, Download, Lock, FileCheck, Eye, UserCheck } from 'lucide-react';
 import { Link } from 'wouter';
 import { useLanguage } from '../components/language-provider';
 import italianGovernment from '@assets/image_1753122095811.png';
@@ -232,38 +232,58 @@ export default function EufdStandardPage() {
                 {t.blockchainTitle}
               </h2>
               
-              <div className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
-                    {t.doubleCountingTitle}
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center mr-3">
+                      <CheckCircle className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-medium text-slate-900">
+                      {t.doubleCountingTitle}
+                    </h3>
+                  </div>
                   <p className="text-slate-600">
                     {t.doubleCountingDesc}
                   </p>
                 </div>
                 
                 <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
-                    {t.greenwashingTitle}
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                      <Eye className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-medium text-slate-900">
+                      {t.greenwashingTitle}
+                    </h3>
+                  </div>
                   <p className="text-slate-600">
                     {t.greenwashingDesc}
                   </p>
                 </div>
                 
                 <div className="bg-purple-50 rounded-xl p-8 border border-purple-200">
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
-                    {t.ownershipTitle}
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center mr-3">
+                      <Globe className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-medium text-slate-900">
+                      {t.ownershipTitle}
+                    </h3>
+                  </div>
                   <p className="text-slate-600">
                     {t.ownershipDesc}
                   </p>
                 </div>
                 
                 <div className="bg-orange-50 rounded-xl p-8 border border-orange-200">
-                  <h3 className="text-xl font-medium text-slate-900 mb-3">
-                    {t.securityTitle}
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center mr-3">
+                      <UserCheck className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-medium text-slate-900">
+                      {t.securityTitle}
+                    </h3>
+                  </div>
                   <p className="text-slate-600">
                     {t.securityDesc}
                   </p>
