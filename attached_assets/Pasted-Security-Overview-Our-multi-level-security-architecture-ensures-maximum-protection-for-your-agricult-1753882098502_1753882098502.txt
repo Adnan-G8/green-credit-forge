@@ -1,0 +1,107 @@
+Security Overview
+Our multi-level security architecture ensures maximum protection for your agricultural data.
+
+Three-Factor Authentication (3FA)
+Platform access is secured through:
+
+Certified user identity
+Authorized device (computer, smartphone, etc.)
+Active user session
+Mandatory digital fingerprint for trust and respect ecosystem
+Mandatory Digital Fingerprint for Every User and Active Member
+For an ecosystem of trust and respect, every user and active member on the platform must provide their mandatory digital fingerprint. This ensures accountability, transparency and a secure environment for all participants.
+
+All users and companies on the platform are required to undergo a full KYC (Know Your Customer) process in order to create their unique digital fingerprint. This step is crucial to ensure the highest level of security for all participants and to clearly identify every actor on the platform, thereby protecting against fraud, identity misuse, and any form of harmful activity. Once the digital fingerprint has been issued, all associated data and personal information are securely encrypted and stored on a dedicated, isolated server infrastructure designed to prevent unauthorized access and abuse. This information is used exclusively for legal, regulatory, and compliance purposes. It is never shared with third parties or external organizations unless there is a legally binding obligation to do so in accordance with applicable laws and regulations.
+
+Data Sovereignty and Access Control
+Your Data. Our Fortress. Swiss Precision for a Global Platform. Our infrastructure is designed to connect nations worldwide and enable international applications. To ensure maximum data sovereignty and neutrality, we rely on a specialized Swiss service provider for secure data management.
+
+Strictest Data Protection Laws: subject to the new Federal Data Protection Act (nFADP), one of the world's most rigorous data protection regulations
+Banking FINMA Compliance: compliant with Federal Financial Market Supervisory Authority requirements (FINMA-RS 18/3)
+Banking-level security with controlled access through banking sector-compliant platforms
+Alpine Data Centers
+Our primary data centers are strategically located in former Swiss military bunkers deep in the Alps, offering unparalleled physical security and natural protection from environmental and human threats.
+
+EMP-resistant military bunkers
+Autonomous power and cooling systems
+Multi-ton security doors with biometric access
+Unrivaled Physical Security: Data in Alpine Fortresses
+Our data centers utilize former Swiss military bunkers, repurposed as state-of-the-art data centers, offering a level of physical protection far beyond conventional data centers.
+
+Secure data center infrastructure with professional server equipment
+
+Professional data center with server infrastructure
+Military Standards
+Military Standard: built to withstand conventional attacks, chemical/biological threats and electromagnetic pulses (EMP)
+
+Autonomous Operations
+Autonomous Operability: independent power systems and autonomous ventilation for operational continuity even during disasters
+
+Access Control
+Rigorous Access Controls: multi-ton security doors, biometric scanners and 24/7 video surveillance
+
+Disaster Recovery
+Dedicated alpine recovery site with triple backup systems geographically distributed across dispersed Swiss locations
+
+Technical Excellence and Operational Resilience
+Beyond impressive physical security, we integrate cutting-edge technical measures and complete redundancies to ensure data protection and availability.
+
+Multi-Layer Encryption
+Data is protected with internationally recognized encryption standards such as AES-256 and RSA-4096. A "Zero-Knowledge" architecture ensures that only you can decrypt your files.
+
+Robust Redundancy
+Customer data is triple-backed up, with each file stored simultaneously in different and geographically dispersed locations within Switzerland. A dedicated "Disaster Recovery Site" in the depths of the Swiss Alps offers maximum protection.
+
+Certifications and Compliance: The Highest Standards for Your Security
+Our comprehensive certification portfolio demonstrates our commitment to the highest security standards.
+
+Maximum Availability
+Data centers comply with the highest Uptime Institute Tier Classifications (Tier III/IV), ensuring concurrent maintainability and fault tolerance.
+
+ISO/IEC 27001 & PCI DSS
+Internationally recognized standards for systematic management of sensitive business information and payment data protection.
+
+National Cyber Resilience
+Integrated into Switzerland's national cyber resilience strategy with mandatory 24-hour cyber attack reporting to the National Cyber Security Centre (NCSC).
+
+Alpine Data Centers Meet Blockchain Innovation
+Our Swiss mountain data centers provide the physical security foundation, while our 51-node blockchain network ensures cryptographic integrity. This combination creates an unprecedented level of protection for your agricultural data, with the same security standards used by Swiss banks and government institutions.
+
+Swiss Security Guarantee
+Alpine Security Meets Global Blockchain Governance
+For the first time, blockchain validators are managed jointly by institutions, social organizations and partners from multiple countries — all with equal rights and shared responsibilities.
+
+Hosted in Swiss mountain data centers with banking-level security, our 51-node blockchain ensures integrity, resilience and data sovereignty.
+
+FAGRI.Digital combines physical protection with decentralized governance, creating a transparent and reliable infrastructure for CO₂ certification and agricultural data for tomorrow's world.
+
+Swiss Alps representing the secure mountain data centers
+51 Validator Nodes
+Each partner organization controls a single validator node, ensuring no single point of failure and creating a truly decentralized governance structure among social and corporate entities.
+
+DPoS Consensus
+Delegated Proof of Stake ensures energy efficiency while maintaining security. Validators are chosen through democratic participation, creating shared responsibility and trust.
+
+EVM Compatibility
+Full Ethereum Virtual Machine compatibility guarantees interoperability with existing DeFi protocols while maintaining our specialized agricultural focus.
+
+Diversified Trust Network
+Multi-Stakeholder Governance
+Our blockchain brings together agricultural cooperatives, environmental organizations, financial institutions and technology partners. This diversification ensures that no single entity can manipulate the network.
+
+Agricultural cooperatives and farmers' unions
+Environmental certification bodies
+Financial institutions and impact investors
+Technical Security Features
+Advanced cryptographic mechanisms guarantee data integrity and prevent double counting or manipulation of carbon credits and agricultural certifications.
+
+Immutable audit trails for all transactions
+Smart contract validation of sustainability metrics
+Cryptographic proof of agricultural practices
+Swiss Alps with turquoise lake representing clean hydropower energy
+100% CO₂ Neutral – Sustainable Technology for a New Era of Digital Infrastructure
+All our data centers and digital services operate on a completely CO₂-neutral basis. Located in the Swiss Alps, within repurposed military bunkers, our infrastructure is powered entirely by certified 100% Swiss hydropower.
+
+The naturally cool climate of the mountain region significantly reduces the need for high-intensity energy cooling, lowering overall energy consumption without compromising performance or security.
+
+FAGRI.Digital represents a digital ecosystem that is not only secure and sovereign, but also ecologically responsible. Every data process, every certification, every transaction is conducted climate-neutrally – a commitment to our partners, members and future generations.
