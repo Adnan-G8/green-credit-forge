@@ -37,6 +37,9 @@ interface AuthorizationRequest {
   id: string;
   fagriId: string;
   accountType: string;
+  authorizationType?: string;
+  authorizationDescription?: string;
+  requestReason?: string;
   status: 'pending' | 'approved' | 'rejected';
   requestedAt: string;
   fullName?: string;
@@ -433,7 +436,22 @@ export function AdminDashboard() {
                                 </Badge>
                               </div>
                               <p className="text-sm text-slate-600">ALPHAG8 ID: {request.fagriId}</p>
-                              <p className="text-sm text-slate-600">{language === 'it' ? 'Tipo' : 'Type'}: {request.accountType}</p>
+                              <p className="text-sm text-slate-600">{language === 'it' ? 'Typ' : 'Type'}: {request.accountType}</p>
+                              {request.authorizationType && (
+                                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-2">
+                                  <p className="text-sm font-medium text-blue-800 mb-1">
+                                    {language === 'it' ? 'Berechtigung' : 'Authorization'}: {request.authorizationType}
+                                  </p>
+                                  {request.authorizationDescription && (
+                                    <p className="text-xs text-blue-700">{request.authorizationDescription}</p>
+                                  )}
+                                  {request.requestReason && (
+                                    <p className="text-xs text-blue-600 mt-1">
+                                      <strong>{language === 'it' ? 'Grund' : 'Reason'}:</strong> {request.requestReason}
+                                    </p>
+                                  )}
+                                </div>
+                              )}
                               {request.email && (
                                 <p className="text-sm text-slate-600">Email: {request.email}</p>
                               )}
