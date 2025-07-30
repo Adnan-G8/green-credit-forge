@@ -703,15 +703,31 @@ export default function TeamDashboard() {
                         <div className="space-y-4">
                           {conversations.find(c => c.id === selectedConversation)?.messages.map((message) => (
                             <div key={message.id} className={`flex ${message.isFromMe ? 'justify-end' : 'justify-start'}`}>
-                              <div className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
-                                message.isFromMe 
-                                  ? 'bg-blue-600 text-white' 
-                                  : 'bg-slate-100 text-slate-800'
-                              }`}>
-                                <p className="text-sm">{message.message}</p>
-                                <span className="text-xs opacity-70">
-                                  {new Date(message.timestamp).toLocaleTimeString()}
-                                </span>
+                              <div className="flex flex-col max-w-xs lg:max-w-md">
+                                {!message.isFromMe && (
+                                  <div className="mb-1 ml-2">
+                                    <span className="text-xs font-medium text-slate-600">
+                                      {message.sender}
+                                    </span>
+                                  </div>
+                                )}
+                                <div className={`px-4 py-2 rounded-lg ${
+                                  message.isFromMe 
+                                    ? 'bg-blue-600 text-white' 
+                                    : 'bg-slate-100 text-slate-800'
+                                }`}>
+                                  <p className="text-sm">{message.message}</p>
+                                  <div className="flex justify-between items-center mt-1">
+                                    <span className="text-xs opacity-70">
+                                      {new Date(message.timestamp).toLocaleTimeString()}
+                                    </span>
+                                    {message.isFromMe && (
+                                      <span className="text-xs opacity-70 ml-2">
+                                        {language === 'it' ? 'Tu' : 'You'}
+                                      </span>
+                                    )}
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           ))}
