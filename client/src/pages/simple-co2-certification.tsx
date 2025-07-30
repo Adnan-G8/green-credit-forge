@@ -15,10 +15,10 @@ export default function SimpleCO2Certification() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-light text-slate-900 mb-6">
-              Your Trusted Partner for CO₂ Certification
+              {t('co2-cert-title')}
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed font-light">
-              On the FAGRI.Digital platform, CO₂ certification is built on foundations of scientific rigor, cutting-edge technology and solid legal compliance.
+              {t('co2-cert-subtitle')}
             </p>
           </div>
         </div>
@@ -32,10 +32,10 @@ export default function SimpleCO2Certification() {
             {/* Our Collaborative Framework */}
             <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                Our Collaborative Framework
+                {t('co2-cert-framework-title')}
               </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Our CO₂ certification process operates under the EUFD2025-001 standard, developed over years of research with important Italian universities and our technology partner, ALPHAG8 Digital Solutions Switzerland.
+                {t('co2-cert-framework-description')}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -43,48 +43,48 @@ export default function SimpleCO2Certification() {
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                     <Globe className="h-6 w-6 text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">European Commission</h3>
-                  <p className="text-slate-600 text-sm">Alignment with the EU's comprehensive climate policies and objectives.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-partner-eu')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-partner-eu-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                     <Shield className="h-6 w-6 text-green-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Italian Ministry of Environment</h3>
-                  <p className="text-slate-600 text-sm">Ensuring compliance with national environmental regulations.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-partner-ministry')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-partner-ministry-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                     <CheckCircle className="h-6 w-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">GSE (Energy Systems Operator)</h3>
-                  <p className="text-slate-600 text-sm">Integration with established energy and emissions management frameworks.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-partner-gse')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-partner-gse-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                     <FileText className="h-6 w-6 text-purple-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">ISO (International Organization for Standardization)</h3>
-                  <p className="text-slate-600 text-sm">Maintaining globally recognized quality and procedural benchmarks.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-partner-iso')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-partner-iso-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                     <Users className="h-6 w-6 text-orange-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">University of Tuscia at Viterbo</h3>
-                  <p className="text-slate-600 text-sm">Scientific partnership with this important Italian university for research and validation of our EUFD2025-001 certification methodologies.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-partner-uni')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-partner-uni-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
                     <Check className="h-6 w-6 text-teal-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">SOIL AND HEALTH</h3>
-                  <p className="text-slate-600 text-sm">Our dedicated certification body for verification and independent validation.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-partner-suolo')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-partner-suolo-desc')}</p>
                 </div>
               </div>
             </div>
