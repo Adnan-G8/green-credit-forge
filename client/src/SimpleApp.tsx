@@ -27,7 +27,7 @@ function SimpleRouter() {
       <Route path="/" component={SimpleHome} />
       <Route path="/security" component={SimpleSecurity} />
       <Route path="/eufd-standard" component={SimpleEufdStandard} />
-      <Route path="/simple-co2-certification" component={SimpleCO2Certification} />
+      <Route path="/co2-certification" component={SimpleCO2Certification} />
       <Route path="/legal-documentation" component={LegalDocumentation} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />

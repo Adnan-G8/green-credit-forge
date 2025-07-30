@@ -64,7 +64,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/simple-co2-certification">
+                <Link href="/co2-certification">
                   <span className="hover:text-emerald-400 transition-colors cursor-pointer">
                     {t('footer-certification')}
                   </span>
