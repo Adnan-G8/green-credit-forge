@@ -10,7 +10,7 @@ import { useAuthentication } from "./hooks/use-authentication";
 import { useScrollToTop } from "./hooks/use-scroll-to-top";
 import SimpleHome from "@/pages/simple-home";
 import SimpleSecurity from "@/pages/simple-security";
-import SimpleEufdStandard from "@/pages/simple-eufd-standard";
+import EufdStandard from "@/pages/eufd-standard";
 import SimpleCO2Certification from "@/pages/simple-co2-certification";
 import LegalDocumentation from "@/pages/legal-documentation";
 import NotFound from "@/pages/not-found";
@@ -26,7 +26,7 @@ function SimpleRouter() {
     <Switch>
       <Route path="/" component={SimpleHome} />
       <Route path="/security" component={SimpleSecurity} />
-      <Route path="/eufd-standard" component={SimpleEufdStandard} />
+      <Route path="/eufd-standard" component={EufdStandard} />
       <Route path="/co2-certification" component={SimpleCO2Certification} />
       <Route path="/legal-documentation" component={LegalDocumentation} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
