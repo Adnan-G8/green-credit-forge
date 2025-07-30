@@ -276,8 +276,8 @@ export default function Security() {
                 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
-                      <CheckCircle className="w-4 h-4 text-slate-600" />
+                    <div className="w-6 h-6 bg-emerald-100 rounded-lg flex items-center justify-center mt-1">
+                      <CheckCircle className="w-4 h-4 text-emerald-600" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">3-Factor Authentication:</p>
@@ -286,8 +286,8 @@ export default function Security() {
                   </div>
                   
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
-                      <Shield className="w-4 h-4 text-slate-600" />
+                    <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
+                      <Shield className="w-4 h-4 text-blue-600" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">Zero-Trust Security:</p>
@@ -296,8 +296,8 @@ export default function Security() {
                   </div>
                   
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
-                      <Key className="w-4 h-4 text-slate-600" />
+                    <div className="w-6 h-6 bg-amber-100 rounded-lg flex items-center justify-center mt-1">
+                      <Key className="w-4 h-4 text-amber-600" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">Your Phone = Your Key:</p>
@@ -306,8 +306,8 @@ export default function Security() {
                   </div>
                   
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
-                      <Eye className="w-4 h-4 text-slate-600" />
+                    <div className="w-6 h-6 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
+                      <Eye className="w-4 h-4 text-purple-600" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">Biometric-Ready:</p>
@@ -316,10 +316,10 @@ export default function Security() {
                   </div>
                 </div>
                 
-                <div className="bg-slate-50 p-6 rounded-lg">
+                <div className="bg-indigo-50 p-6 rounded-lg">
                   <div className="flex items-start space-x-3 mb-4">
-                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
-                      <Lock className="w-4 h-4 text-slate-600" />
+                    <div className="w-6 h-6 bg-indigo-100 rounded-lg flex items-center justify-center mt-1">
+                      <Lock className="w-4 h-4 text-indigo-600" />
                     </div>
                     <div>
                       <p className="font-medium text-slate-900">Silent and Secure:</p>
@@ -364,24 +364,24 @@ export default function Security() {
             {/* Combined Alpine + Data Sovereignty Features */}
             <div className="grid lg:grid-cols-3 gap-8 mb-12">
               <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-green-600" />
                 </div>
                 <h4 className="text-lg font-medium text-slate-900 mb-3">Swiss Data Protection</h4>
                 <p className="text-slate-600 leading-relaxed">{t.dataPoint1}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Building className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                  <Building className="w-6 h-6 text-blue-600" />
                 </div>
                 <h4 className="text-lg font-medium text-slate-900 mb-3">FINMA Banking Compliance</h4>
                 <p className="text-slate-600 leading-relaxed">{t.dataPoint2}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Lock className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
+                  <Lock className="w-6 h-6 text-amber-600" />
                 </div>
                 <h4 className="text-lg font-medium text-slate-900 mb-3">Banking-Level Security</h4>
                 <p className="text-slate-600 leading-relaxed">{t.dataPoint3}</p>
@@ -395,20 +395,20 @@ export default function Security() {
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-slate-600" />
+                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-emerald-600" />
                   </div>
                   <span className="text-slate-700 font-medium">{t.alpine1}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <Server className="w-4 h-4 text-slate-600" />
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <Server className="w-4 h-4 text-blue-600" />
                   </div>
                   <span className="text-slate-700 font-medium">{t.alpine2}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <Lock className="w-4 h-4 text-slate-600" />
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <Lock className="w-4 h-4 text-purple-600" />
                   </div>
                   <span className="text-slate-700 font-medium">{t.alpine3}</span>
                 </div>
@@ -444,32 +444,32 @@ export default function Security() {
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-red-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar1Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar1Desc}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Server className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                  <Server className="w-6 h-6 text-orange-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar2Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar2Desc}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Eye className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
+                  <Eye className="w-6 h-6 text-cyan-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar3Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar3Desc}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Mountain className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
+                  <Mountain className="w-6 h-6 text-emerald-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.pillar4Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.pillar4Desc}</p>
@@ -505,16 +505,16 @@ export default function Security() {
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Lock className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                  <Lock className="w-6 h-6 text-indigo-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.encryptionTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.encryptionDesc}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg border border-slate-200 shadow-sm">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Database className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6">
+                  <Database className="w-6 h-6 text-teal-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.redundancyTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.redundancyDesc}</p>
@@ -539,24 +539,24 @@ export default function Security() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <CheckCircle className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                  <CheckCircle className="w-6 h-6 text-green-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.tierTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.tierDesc}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Globe className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                  <Globe className="w-6 h-6 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.isoTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.isoDesc}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Shield className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-purple-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.cyberTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.cyberDesc}</p>
@@ -587,24 +587,24 @@ export default function Security() {
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Server className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-violet-100 rounded-lg flex items-center justify-center mb-6">
+                  <Server className="w-6 h-6 text-violet-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.nodes51Title}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.nodes51Desc}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <CheckCircle className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
+                  <CheckCircle className="w-6 h-6 text-emerald-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.dposTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.dposDesc}</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6">
-                  <Globe className="w-6 h-6 text-slate-600" />
+                <div className="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6">
+                  <Globe className="w-6 h-6 text-cyan-600" />
                 </div>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{t.evmTitle}</h3>
                 <p className="text-slate-600 leading-relaxed">{t.evmDesc}</p>
@@ -619,20 +619,20 @@ export default function Security() {
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <CheckCircle className="w-4 h-4 text-slate-600" />
+                  <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
                   </div>
                   <span className="text-slate-700">{t.trust1}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <Leaf className="w-4 h-4 text-slate-600" />
+                  <div className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center">
+                    <Leaf className="w-4 h-4 text-emerald-600" />
                   </div>
                   <span className="text-slate-700">{t.trust2}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <Building className="w-4 h-4 text-slate-600" />
+                  <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <Building className="w-4 h-4 text-blue-600" />
                   </div>
                   <span className="text-slate-700">{t.trust3}</span>
                 </div>
@@ -646,20 +646,20 @@ export default function Security() {
               
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <Lock className="w-4 h-4 text-slate-600" />
+                  <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <Lock className="w-4 h-4 text-indigo-600" />
                   </div>
                   <span className="text-slate-700">{t.techSec1}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <CheckCircle className="w-4 h-4 text-slate-600" />
+                  <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <CheckCircle className="w-4 h-4 text-orange-600" />
                   </div>
                   <span className="text-slate-700">{t.techSec2}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <Shield className="w-4 h-4 text-slate-600" />
+                  <div className="w-8 h-8 bg-rose-100 rounded-lg flex items-center justify-center">
+                    <Shield className="w-4 h-4 text-rose-600" />
                   </div>
                   <span className="text-slate-700">{t.techSec3}</span>
                 </div>
