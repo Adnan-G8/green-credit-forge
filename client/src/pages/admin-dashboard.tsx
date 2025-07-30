@@ -1122,6 +1122,163 @@ export function AdminDashboard() {
                   </CardContent>
                 </Card>
 
+                {/* Project Actions */}
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center space-x-2">
+                      <Settings className="h-5 w-5" />
+                      <span>{language === 'it' ? 'Azioni Progetto' : 'Project Actions'}</span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {/* Status Change Actions */}
+                      <div className="space-y-3">
+                        <h4 className="text-sm font-medium text-slate-700">
+                          {language === 'it' ? 'Cambio Status' : 'Status Change'}
+                        </h4>
+                        <div className="space-y-2">
+                          <Button 
+                            className="w-full bg-green-600 hover:bg-green-700 text-white"
+                            onClick={() => {
+                              toast({
+                                title: language === 'it' ? 'Progetto Approvato' : 'Project Approved',
+                                description: language === 'it' ? 'Il progetto è stato approvato per la certificazione' : 'Project has been approved for certification',
+                              });
+                            }}
+                          >
+                            <CheckCircle className="h-4 w-4 mr-2" />
+                            {language === 'it' ? 'Approva Progetto' : 'Approve Project'}
+                          </Button>
+                          
+                          <Button 
+                            className="w-full bg-orange-600 hover:bg-orange-700 text-white"
+                            onClick={() => {
+                              toast({
+                                title: language === 'it' ? 'Richieste Modifiche' : 'Requested Changes',
+                                description: language === 'it' ? 'Richieste modifiche inviate al proprietario progetto' : 'Change requests sent to project owner',
+                              });
+                            }}
+                          >
+                            <AlertTriangle className="h-4 w-4 mr-2" />
+                            {language === 'it' ? 'Richiedi Modifiche' : 'Request Changes'}
+                          </Button>
+                          
+                          <Button 
+                            className="w-full bg-red-600 hover:bg-red-700 text-white"
+                            onClick={() => {
+                              toast({
+                                title: language === 'it' ? 'Progetto Rifiutato' : 'Project Rejected',
+                                description: language === 'it' ? 'Il progetto è stato rifiutato' : 'Project has been rejected',
+                              });
+                            }}
+                          >
+                            <XCircle className="h-4 w-4 mr-2" />
+                            {language === 'it' ? 'Rifiuta Progetto' : 'Reject Project'}
+                          </Button>
+                        </div>
+                      </div>
+
+                      {/* Project Management Actions */}
+                      <div className="space-y-3">
+                        <h4 className="text-sm font-medium text-slate-700">
+                          {language === 'it' ? 'Gestione Progetto' : 'Project Management'}
+                        </h4>
+                        <div className="space-y-2">
+                          <Button 
+                            className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                            onClick={() => {
+                              toast({
+                                title: language === 'it' ? 'Apertura Editor' : 'Opening Editor',
+                                description: language === 'it' ? 'Editor progetto in apertura...' : 'Opening project editor...',
+                              });
+                            }}
+                          >
+                            <FileText className="h-4 w-4 mr-2" />
+                            {language === 'it' ? 'Modifica Progetto' : 'Edit Project'}
+                          </Button>
+                          
+                          <Button 
+                            className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+                            onClick={() => {
+                              toast({
+                                title: language === 'it' ? 'Team Member Assegnato' : 'Team Member Assigned',
+                                description: language === 'it' ? 'Alessandro Rossi assegnato al progetto' : 'Alessandro Rossi assigned to project',
+                              });
+                            }}
+                          >
+                            <UserPlus className="h-4 w-4 mr-2" />
+                            {language === 'it' ? 'Assegna Team Member' : 'Assign Team Member'}
+                          </Button>
+                          
+                          <Button 
+                            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                            onClick={() => {
+                              toast({
+                                title: language === 'it' ? 'Download Iniziato' : 'Download Started',
+                                description: language === 'it' ? 'Download documentazione progetto in corso...' : 'Downloading project documentation...',
+                              });
+                            }}
+                          >
+                            <Download className="h-4 w-4 mr-2" />
+                            {language === 'it' ? 'Scarica Documenti' : 'Download Documents'}
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Priority Actions */}
+                    <div className="border-t pt-4">
+                      <h4 className="text-sm font-medium text-slate-700 mb-3">
+                        {language === 'it' ? 'Azioni Prioritarie' : 'Priority Actions'}
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <Button 
+                          className="bg-red-100 text-red-800 border-red-200 hover:bg-red-200"
+                          variant="outline"
+                          onClick={() => {
+                            toast({
+                              title: language === 'it' ? 'Priorità Alta' : 'High Priority',
+                              description: language === 'it' ? 'Progetto marcato come priorità alta' : 'Project marked as high priority',
+                            });
+                          }}
+                        >
+                          <AlertTriangle className="h-4 w-4 mr-2" />
+                          {language === 'it' ? 'Priorità Alta' : 'High Priority'}
+                        </Button>
+                        
+                        <Button 
+                          className="bg-yellow-100 text-yellow-800 border-yellow-200 hover:bg-yellow-200"
+                          variant="outline"
+                          onClick={() => {
+                            toast({
+                              title: language === 'it' ? 'In Revisione' : 'Under Review',
+                              description: language === 'it' ? 'Progetto in stato di revisione' : 'Project under review status',
+                            });
+                          }}
+                        >
+                          <Eye className="h-4 w-4 mr-2" />
+                          {language === 'it' ? 'In Revisione' : 'Under Review'}
+                        </Button>
+                        
+                        <Button 
+                          className="bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200"
+                          variant="outline"
+                          onClick={() => {
+                            toast({
+                              title: language === 'it' ? 'Pianifica Follow-up' : 'Schedule Follow-up',
+                              description: language === 'it' ? 'Follow-up pianificato per domani' : 'Follow-up scheduled for tomorrow',
+                            });
+                          }}
+                        >
+                          <Calendar className="h-4 w-4 mr-2" />
+                          {language === 'it' ? 'Pianifica Follow-up' : 'Schedule Follow-up'}
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
                 {/* Communication Center */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {/* Project Comments */}
