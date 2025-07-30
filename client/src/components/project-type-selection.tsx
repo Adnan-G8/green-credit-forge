@@ -3,9 +3,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/components/language-provider';
 import { ArrowLeft, Wheat, Trees, Zap } from 'lucide-react';
-import carbonFarmingImage from '@assets/image_1753778388461.png';
-import forestationImage from '@assets/image_1753778463931.png';
-import renewableEnergyImage from '@assets/image_1753778575362.png';
 
 interface ProjectTypeSelectionProps {
   onBack: () => void;
@@ -22,7 +19,7 @@ export function ProjectTypeSelection({ onBack, onSelectType }: ProjectTypeSelect
       titleItalian: 'Progetto Carbon Farming',
       description: 'Sequestro CO₂ attraverso pratiche agricole sostenibili',
       descriptionEnglish: 'CO₂ sequestration through sustainable agricultural practices',
-      image: carbonFarmingImage,
+      features: ['Colture tradizionali e biologiche', 'Agroforestazione e cover crops', 'Agricoltura rigenerativa'],
       icon: <Wheat className="h-8 w-8" />,
       gradient: 'from-green-600 to-emerald-600',
       bgColor: 'bg-green-50 hover:bg-green-100',
@@ -34,7 +31,7 @@ export function ProjectTypeSelection({ onBack, onSelectType }: ProjectTypeSelect
       titleItalian: 'Progetto Forestazione',
       description: 'Assorbimento CO₂ attraverso imboschimento e riforestazione',
       descriptionEnglish: 'CO₂ absorption through afforestation and reforestation',
-      image: forestationImage,
+      features: ['Boschi decidui e sempreverdi', 'Riforestazione urbana', 'Imboschimento terreni agricoli'],
       icon: <Trees className="h-8 w-8" />,
       gradient: 'from-emerald-700 to-green-700',
       bgColor: 'bg-emerald-50 hover:bg-emerald-100',
@@ -46,7 +43,7 @@ export function ProjectTypeSelection({ onBack, onSelectType }: ProjectTypeSelect
       titleItalian: 'Progetto Energia Rinnovabile',
       description: 'Riduzione emissioni CO₂ tramite energie rinnovabili',
       descriptionEnglish: 'CO₂ emission reduction through renewable energy',
-      image: renewableEnergyImage,
+      features: ['Solare, Eolico, Idroelettrico', 'Biomasse, Geotermico, Marino', 'Idrogeno verde e storage'],
       icon: <Zap className="h-8 w-8" />,
       gradient: 'from-blue-600 to-cyan-600',
       bgColor: 'bg-blue-50 hover:bg-blue-100',
@@ -85,22 +82,24 @@ export function ProjectTypeSelection({ onBack, onSelectType }: ProjectTypeSelect
             onClick={() => onSelectType(type.id)}
           >
             <CardContent className="p-0">
-              {/* Image Header */}
+              {/* Gradient Header */}
               <div className="relative h-48 overflow-hidden rounded-t-lg">
-                <img
-                  src={type.image}
-                  alt={type.titleItalian}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t ${type.gradient} opacity-20`} />
+                <div className={`w-full h-full bg-gradient-to-br ${type.gradient} transition-transform duration-300 group-hover:scale-110`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 
                 {/* Icon Overlay */}
                 <div className="absolute top-4 right-4">
                   <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
                     <div className="text-gray-700">
-                      {type.icon}
+                      {React.cloneElement(type.icon, { className: "h-6 w-6" })}
                     </div>
                   </div>
+                </div>
+                
+                {/* CO₂ Badge */}
+                <div className="absolute bottom-4 left-4 text-white">
+                  <div className="text-2xl font-bold opacity-90">CO₂</div>
+                  <div className="text-sm opacity-75">Certification</div>
                 </div>
               </div>
 
@@ -115,29 +114,15 @@ export function ProjectTypeSelection({ onBack, onSelectType }: ProjectTypeSelect
                 
                 {/* Features */}
                 <div className="space-y-2 mb-6">
-                  {type.id === 'carbon-farming' && (
-                    <div className="text-xs text-green-700 space-y-1">
-                      <div>• Colture tradizionali e biologiche</div>
-                      <div>• Agroforestazione e cover crops</div>
-                      <div>• Agricoltura rigenerativa</div>
-                    </div>
-                  )}
-                  
-                  {type.id === 'forestation' && (
-                    <div className="text-xs text-emerald-700 space-y-1">
-                      <div>• Boschi decidui e sempreverdi</div>
-                      <div>• Riforestazione urbana</div>
-                      <div>• Imboschimento terreni agricoli</div>
-                    </div>
-                  )}
-                  
-                  {type.id === 'renewable-energy' && (
-                    <div className="text-xs text-blue-700 space-y-1">
-                      <div>• Solare, Eolico, Idroelettrico</div>
-                      <div>• Biomasse, Geotermico, Marino</div>
-                      <div>• Idrogeno verde e storage</div>
-                    </div>
-                  )}
+                  <div className={`text-xs space-y-1 ${
+                    type.id === 'carbon-farming' ? 'text-green-700' :
+                    type.id === 'forestation' ? 'text-emerald-700' : 
+                    'text-blue-700'
+                  }`}>
+                    {type.features.map((feature, index) => (
+                      <div key={index}>• {feature}</div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Action Button */}
