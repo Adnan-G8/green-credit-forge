@@ -40,9 +40,19 @@ export function Navigation() {
       const sessionActive = localStorage.getItem('sessionActive');
       const alphaG8Id = localStorage.getItem('alphaG8Id');
       
-      if (sessionActive === 'true' && alphaG8Id) {
+      // Also check if we're on team dashboard - that means user is already authenticated
+      const isOnTeamDashboard = window.location.pathname === '/team-dashboard';
+      const isOnUserDashboard = window.location.pathname === '/user-dashboard';
+      const isOnAdminDashboard = window.location.pathname === '/admin-dashboard';
+      
+      if ((sessionActive === 'true' && alphaG8Id) || isOnTeamDashboard || isOnUserDashboard || isOnAdminDashboard) {
         setIsSignedIn(true);
-        setSignedInAlphaG8Id(alphaG8Id);
+        // If on dashboard but no stored ID, create a temporary one
+        if (!alphaG8Id && (isOnTeamDashboard || isOnUserDashboard || isOnAdminDashboard)) {
+          setSignedInAlphaG8Id('FAGRI-TEAM-MEMBER-AUTHENTICATED');
+        } else {
+          setSignedInAlphaG8Id(alphaG8Id || 'FAGRI-AUTHENTICATED-USER');
+        }
       }
     };
     
