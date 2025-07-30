@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Label } from '@/components/ui/label';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
+import { ProjectCreationModal } from '@/components/project-creation-modal';
 import { 
   Users, 
   FileText, 
@@ -52,26 +53,27 @@ export default function TeamDashboard() {
   const [profilePhoto, setProfilePhoto] = useState<string | null>(null);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [showProjectDetails, setShowProjectDetails] = useState(false);
+  const [showProjectCreationModal, setShowProjectCreationModal] = useState(false);
   
-  // Handler function to open project registration directly
+  // Handler function to open the project creation modal (the dashboard you built)
   const handleNewProject = () => {
-    // Instead of navigating to dashboard, let's use the register project modal directly
-    // This avoids authentication issues
-    const registerModal = document.querySelector('[data-register-project-modal]');
-    if (registerModal) {
-      // If register project modal exists, trigger it
-      const event = new CustomEvent('openRegisterProject');
-      document.dispatchEvent(event);
-    } else {
-      // Fallback: navigate to a dedicated project registration page
-      setLocation('/register-project');
-    }
+    setShowProjectCreationModal(true);
     
     toast({
-      title: language === 'it' ? 'Registrazione Progetto' : 'Project Registration',
+      title: language === 'it' ? 'Dashboard Progetto' : 'Project Dashboard',
       description: language === 'it' 
-        ? 'Apertura modulo registrazione progetto...' 
-        : 'Opening project registration form...',
+        ? 'Apertura dashboard per registrazione progetto...' 
+        : 'Opening project registration dashboard...',
+    });
+  };
+
+  const handleProjectCreated = () => {
+    // Refresh projects or update state as needed
+    toast({
+      title: language === 'it' ? 'Progetto Creato' : 'Project Created',
+      description: language === 'it' 
+        ? 'Il progetto è stato creato con successo!' 
+        : 'Project has been created successfully!',
     });
   };
 
@@ -1333,6 +1335,14 @@ export default function TeamDashboard() {
                 )}
               </DialogContent>
             </Dialog>
+
+            {/* Project Creation Modal - The Dashboard you built */}
+            <ProjectCreationModal
+              isOpen={showProjectCreationModal}
+              onClose={() => setShowProjectCreationModal(false)}
+              alphaG8Id="FAGRI-ADMIN-DASHBOARD"
+              onProjectCreated={handleProjectCreated}
+            />
           </div>
         </div>
       </div>
