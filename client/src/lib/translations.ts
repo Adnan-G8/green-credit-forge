@@ -3095,6 +3095,8 @@ export const translations = {
     'tell-us-about-yourself': 'Tell us about yourself',
     'describe-interests-placeholder': 'Describe your interests, experience or objectives in the sustainability sector...',
     'submit-application': 'Submit Application',
+    'cancel': 'Cancel',
+    'annulla': 'Cancel',
     'submitting': 'Submitting...',
     // Form Validation - English
     'membership-success-title': 'Application Submitted!',
