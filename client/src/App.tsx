@@ -11,6 +11,7 @@ import { useScrollToTop } from "./hooks/use-scroll-to-top";
 import Home from "@/pages/home";
 import Security from "@/pages/security";
 import EufdStandard from "@/pages/eufd-standard";
+import SimpleCO2Certification from "@/pages/simple-co2-certification";
 
 import LegalDocumentation from "@/pages/legal-documentation";
 import Dashboard from "@/pages/dashboard";
@@ -33,6 +34,7 @@ function ProtectedRouter() {
       <Route path="/" component={Home} />
       <Route path="/security" component={Security} />
       <Route path="/eufd-standard" component={EufdStandard} />
+      <Route path="/co2-certification" component={SimpleCO2Certification} />
 
       <Route path="/legal-documentation" component={LegalDocumentation} />
       <Route path="/dashboard" component={Dashboard} />
