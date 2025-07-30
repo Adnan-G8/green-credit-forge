@@ -48,6 +48,8 @@ export default function TeamDashboard() {
   const [newMessage, setNewMessage] = useState('');
   const [selectedConversation, setSelectedConversation] = useState<string | null>(null);
   const [profilePhoto, setProfilePhoto] = useState<string | null>(null);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [showProjectDetails, setShowProjectDetails] = useState(false);
   
   // Profile data
   const [profileData, setProfileData] = useState({
@@ -152,11 +154,69 @@ export default function TeamDashboard() {
     }
   ]);
 
+  // Sample project data with detailed information
+  const activeProjects = [
+    {
+      id: 'proj-001',
+      name: 'Tuscany Solar Project',
+      type: 'Solar',
+      status: 'In Certification',
+      progress: 75,
+      co2Reduction: '450t CO₂',
+      client: 'Azienda Agricola Rossi',
+      location: 'Siena, Tuscany',
+      startDate: '2024-03-15',
+      estimatedCompletion: '2024-08-30',
+      description: 'Installazione di pannelli solari da 500kW su terreni agricoli con coltivazione agrivoltaica.',
+      documents: ['Permessi comunali', 'Studio impatto ambientale', 'Contratto GSE'],
+      nextActions: ['Ispezione finale tecnica', 'Certificazione ISO 14064-2', 'Rilascio crediti CO₂'],
+      teamMembers: ['Alessandro Rossi', 'Maria Bianchi'],
+      budget: '€850,000',
+      currentPhase: 'Certificazione Finale'
+    },
+    {
+      id: 'proj-002', 
+      name: 'Puglia Wind Farm',
+      type: 'Wind',
+      status: 'Active',
+      progress: 45,
+      co2Reduction: '1,200t CO₂',
+      client: 'Cooperativa Energia Verde Puglia',
+      location: 'Foggia, Puglia',
+      startDate: '2024-01-20',
+      estimatedCompletion: '2024-12-15',
+      description: 'Parco eolico da 15 turbine per generazione di energia rinnovabile e certificazione carbon credits.',
+      documents: ['VIA Regionale', 'Autorizzazione Unica', 'Studio ornitologico'],
+      nextActions: ['Montaggio turbine 8-15', 'Test prestazioni', 'Allacciamento rete'],
+      teamMembers: ['Alessandro Rossi', 'Giuseppe Verdi', 'Lucia Romano'],
+      budget: '€2,400,000',
+      currentPhase: 'Installazione Hardware'
+    },
+    {
+      id: 'proj-003',
+      name: 'Lombardy Biomass',
+      type: 'Biomass', 
+      status: 'Planning',
+      progress: 25,
+      co2Reduction: '800t CO₂',
+      client: 'Consorzio Agricolo Lombardo',
+      location: 'Bergamo, Lombardia',
+      startDate: '2024-06-01',
+      estimatedCompletion: '2025-03-30',
+      description: 'Impianto biogas da residui agricoli per produzione energia e certificazione sostenibilità.',
+      documents: ['Studio fattibilità', 'Analisi substrati', 'Piano investimenti'],
+      nextActions: ['Permesso edilizio', 'Fornitura digestore', 'Preparazione sito'],
+      teamMembers: ['Alessandro Rossi', 'Marco Colombo'],
+      budget: '€1,200,000',
+      currentPhase: 'Autorizzazioni e Permessi'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50">
       <Navigation />
       
-      <div className="pt-20 pb-12">
+      <div className="pt-28 pb-12">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             {/* Header with Navigation Tabs */}
@@ -303,45 +363,50 @@ export default function TeamDashboard() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {[
-                        {
-                          name: language === 'it' ? 'Progetto Fotovoltaico Toscana' : 'Tuscany Solar Project',
-                          type: 'Solar',
-                          status: language === 'it' ? 'In Certificazione' : 'In Certification',
-                          co2: '450t',
-                          progress: 75
-                        },
-                        {
-                          name: language === 'it' ? 'Parco Eolico Puglia' : 'Puglia Wind Farm',
-                          type: 'Wind',
-                          status: language === 'it' ? 'Attivo' : 'Active',
-                          co2: '1,200t',
-                          progress: 100
-                        },
-                        {
-                          name: language === 'it' ? 'Biomasse Lombardia' : 'Lombardy Biomass',
-                          type: 'Biomass',
-                          status: language === 'it' ? 'Pianificazione' : 'Planning',
-                          co2: '800t',
-                          progress: 25
-                        }
-                      ].map((project, index) => (
-                        <div key={index} className="p-4 border border-slate-200 rounded-lg hover:shadow-md transition-shadow">
+                      {activeProjects.map((project) => (
+                        <div 
+                          key={project.id}
+                          className="p-4 border border-slate-200 rounded-lg hover:shadow-md hover:border-blue-300 transition-all cursor-pointer group"
+                          onClick={() => {
+                            setSelectedProject(project);
+                            setShowProjectDetails(true);
+                          }}
+                        >
                           <div className="flex items-center justify-between mb-2">
-                            <h3 className="font-medium text-slate-800">{project.name}</h3>
-                            <span className="text-sm px-2 py-1 bg-blue-100 text-blue-800 rounded-full">
+                            <h3 className="font-medium text-slate-800 group-hover:text-blue-600 transition-colors">
+                              {project.name}
+                            </h3>
+                            <span className={`text-sm px-2 py-1 rounded-full ${
+                              project.type === 'Solar' ? 'bg-blue-100 text-blue-800' :
+                              project.type === 'Wind' ? 'bg-emerald-100 text-emerald-800' :
+                              'bg-green-100 text-green-800'
+                            }`}>
                               {project.type}
                             </span>
                           </div>
-                          <div className="flex items-center justify-between text-sm text-slate-600">
+                          <div className="flex items-center justify-between text-sm text-slate-600 mb-1">
                             <span>{project.status}</span>
-                            <span className="font-medium">{project.co2} CO₂</span>
+                            <span className="font-medium">{project.co2Reduction}</span>
+                          </div>
+                          <div className="flex items-center justify-between text-xs text-slate-500 mb-2">
+                            <span>{project.client}</span>
+                            <span>{project.currentPhase}</span>
                           </div>
                           <div className="mt-2 bg-slate-200 rounded-full h-2">
                             <div 
-                              className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                              className={`h-2 rounded-full transition-all duration-300 ${
+                                project.type === 'Solar' ? 'bg-blue-600' :
+                                project.type === 'Wind' ? 'bg-emerald-600' :
+                                'bg-green-600'
+                              }`}
                               style={{ width: `${project.progress}%` }}
                             ></div>
+                          </div>
+                          <div className="flex justify-between items-center mt-2 text-xs text-slate-500">
+                            <span>{project.progress}% Complete</span>
+                            <span className="group-hover:text-blue-600 transition-colors">
+                              {language === 'it' ? 'Clicca per dettagli' : 'Click for details'} →
+                            </span>
                           </div>
                         </div>
                       ))}
@@ -1039,6 +1104,190 @@ export default function TeamDashboard() {
                     </Button>
                   </div>
                 </div>
+              </DialogContent>
+            </Dialog>
+
+            {/* Project Details Modal */}
+            <Dialog open={showProjectDetails} onOpenChange={setShowProjectDetails}>
+              <DialogContent className="sm:max-w-4xl max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="flex items-center space-x-2">
+                    <FileText className="h-5 w-5" />
+                    <span>{selectedProject?.name}</span>
+                  </DialogTitle>
+                </DialogHeader>
+                {selectedProject && (
+                  <div className="space-y-6">
+                    {/* Project Overview */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg">
+                            {language === 'it' ? 'Informazioni Progetto' : 'Project Information'}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">{language === 'it' ? 'Cliente:' : 'Client:'}</span>
+                            <span className="font-medium">{selectedProject.client}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">{language === 'it' ? 'Tipo:' : 'Type:'}</span>
+                            <Badge className={`${
+                              selectedProject.type === 'Solar' ? 'bg-blue-100 text-blue-800' :
+                              selectedProject.type === 'Wind' ? 'bg-emerald-100 text-emerald-800' :
+                              'bg-green-100 text-green-800'
+                            }`}>
+                              {selectedProject.type}
+                            </Badge>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">{language === 'it' ? 'Stato:' : 'Status:'}</span>
+                            <span className="font-medium">{selectedProject.status}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">{language === 'it' ? 'Località:' : 'Location:'}</span>
+                            <span className="font-medium">{selectedProject.location}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">{language === 'it' ? 'Riduzione CO₂:' : 'CO₂ Reduction:'}</span>
+                            <span className="font-medium text-green-600">{selectedProject.co2Reduction}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">{language === 'it' ? 'Budget:' : 'Budget:'}</span>
+                            <span className="font-medium">{selectedProject.budget}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg">
+                            {language === 'it' ? 'Timeline Progetto' : 'Project Timeline'}
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">{language === 'it' ? 'Inizio:' : 'Start Date:'}</span>
+                            <span className="font-medium">{selectedProject.startDate}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">{language === 'it' ? 'Completamento:' : 'Completion:'}</span>
+                            <span className="font-medium">{selectedProject.estimatedCompletion}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-600">{language === 'it' ? 'Fase Attuale:' : 'Current Phase:'}</span>
+                            <span className="font-medium">{selectedProject.currentPhase}</span>
+                          </div>
+                          <div className="space-y-2">
+                            <div className="flex justify-between text-sm">
+                              <span>{language === 'it' ? 'Progresso:' : 'Progress:'}</span>
+                              <span>{selectedProject.progress}%</span>
+                            </div>
+                            <div className="w-full bg-slate-200 rounded-full h-2">
+                              <div 
+                                className={`h-2 rounded-full ${
+                                  selectedProject.type === 'Solar' ? 'bg-blue-600' :
+                                  selectedProject.type === 'Wind' ? 'bg-emerald-600' :
+                                  'bg-green-600'
+                                }`}
+                                style={{ width: `${selectedProject.progress}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+
+                    {/* Project Description */}
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-lg">
+                          {language === 'it' ? 'Descrizione Progetto' : 'Project Description'}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-slate-700">{selectedProject.description}</p>
+                      </CardContent>
+                    </Card>
+
+                    {/* Team Members and Documents */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg flex items-center space-x-2">
+                            <Users className="h-5 w-5" />
+                            <span>{language === 'it' ? 'Team Membri' : 'Team Members'}</span>
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-2">
+                            {selectedProject.teamMembers.map((member: string, index: number) => (
+                              <div key={index} className="flex items-center space-x-2">
+                                <div className="h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                  <User className="h-4 w-4 text-blue-600" />
+                                </div>
+                                <span className="text-slate-700">{member}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg flex items-center space-x-2">
+                            <FileText className="h-5 w-5" />
+                            <span>{language === 'it' ? 'Documenti' : 'Documents'}</span>
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-2">
+                            {selectedProject.documents.map((doc: string, index: number) => (
+                              <div key={index} className="flex items-center space-x-2 text-sm">
+                                <div className="h-2 w-2 bg-green-500 rounded-full"></div>
+                                <span className="text-slate-700">{doc}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+
+                    {/* Next Actions */}
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-lg flex items-center space-x-2">
+                          <CheckCircle className="h-5 w-5" />
+                          <span>{language === 'it' ? 'Prossime Azioni' : 'Next Actions'}</span>
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-3">
+                          {selectedProject.nextActions.map((action: string, index: number) => (
+                            <div key={index} className="flex items-start space-x-3 p-3 bg-slate-50 rounded-lg">
+                              <div className="h-6 w-6 bg-orange-100 rounded-full flex items-center justify-center mt-0.5">
+                                <span className="text-xs font-medium text-orange-600">{index + 1}</span>
+                              </div>
+                              <span className="text-slate-700 flex-1">{action}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+
+                    {/* Action Buttons */}
+                    <div className="flex justify-end space-x-3 pt-4 border-t">
+                      <Button variant="outline" onClick={() => setShowProjectDetails(false)}>
+                        {language === 'it' ? 'Chiudi' : 'Close'}
+                      </Button>
+                      <Button className="bg-blue-600 hover:bg-blue-700">
+                        <Edit className="h-4 w-4 mr-2" />
+                        {language === 'it' ? 'Modifica Progetto' : 'Edit Project'}
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </DialogContent>
             </Dialog>
           </div>
