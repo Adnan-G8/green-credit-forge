@@ -11,6 +11,8 @@ import { FagriMemberRegistrationModal } from './fagri-member-registration-modal'
 import { SignInModal } from './sign-in-modal-enhanced';
 import { RoleBasedSignInModal } from './role-based-signin-modal';
 import { RegisterProjectModal } from './register-project-modal';
+import { CreateAccountModal } from './create-account-modal';
+import { AccountTypeSelectionModal } from './account-type-selection-modal';
 import { useLocation } from 'wouter';
 
 export function Navigation() {
@@ -26,6 +28,9 @@ export function Navigation() {
   const [showSignInModal, setShowSignInModal] = useState(false);
   const [showRoleBasedSignInModal, setShowRoleBasedSignInModal] = useState(false);
   const [showRegisterProjectModal, setShowRegisterProjectModal] = useState(false);
+  const [showCreateAccountModal, setShowCreateAccountModal] = useState(false);
+  const [showAccountTypeModal, setShowAccountTypeModal] = useState(false);
+  const [createdFagriId, setCreatedFagriId] = useState<string>('');
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [signedInAlphaG8Id, setSignedInAlphaG8Id] = useState<string>('');
 
@@ -166,14 +171,14 @@ export function Navigation() {
                   <Button
                     onClick={() => {
                       if (activeModal) return;
-                      setActiveModal('role');
-                      setShowRoleModal(true);
+                      setActiveModal('create-account');
+                      setShowCreateAccountModal(true);
                     }}
                     size="sm"
                     className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
                   >
                     <UserPlus className="h-4 w-4 mr-2" />
-                    {language === 'it' ? 'Crea Account' : 'Create Account'}
+                    {t('create-digital-identity')}
                   </Button>
                 </>
               ) : (
@@ -451,6 +456,38 @@ export function Navigation() {
       <RegisterProjectModal
         isOpen={showRegisterProjectModal}
         onClose={() => setShowRegisterProjectModal(false)}
+      />
+
+      {/* New Account Creation System */}
+      <CreateAccountModal
+        isOpen={showCreateAccountModal}
+        onClose={() => {
+          setShowCreateAccountModal(false);
+          setActiveModal(null);
+        }}
+        onAccountCreated={(fagriId: string) => {
+          setCreatedFagriId(fagriId);
+          setShowCreateAccountModal(false);
+          setActiveModal('account-type');
+          setShowAccountTypeModal(true);
+        }}
+      />
+
+      <AccountTypeSelectionModal
+        isOpen={showAccountTypeModal}
+        onClose={() => {
+          setShowAccountTypeModal(false);
+          setActiveModal(null);
+          setCreatedFagriId('');
+        }}
+        fagriId={createdFagriId}
+        onAccountTypeSelected={(accountType: string, fagriId: string) => {
+          setShowAccountTypeModal(false);
+          setActiveModal(null);
+          setCreatedFagriId('');
+          // Account creation completed, user can now sign in with their new account
+          console.log(`Account created: ${accountType} account for FAGRI ID: ${fagriId}`);
+        }}
       />
     </>
   );
