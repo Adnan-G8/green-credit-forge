@@ -180,7 +180,7 @@ export default function SimpleCO2Certification() {
             {/* Certification Process */}
             <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
               <h2 className="text-3xl font-light text-slate-900 mb-8 text-center">
-                {t('co2-cert-process-title') || 'Certification Process'}
+                Certification Process
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -221,7 +221,7 @@ export default function SimpleCO2Certification() {
             {/* Benefits */}
             <div className="text-center">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
-                {t('co2-cert-benefits-title') || 'Platform Benefits'}
+                Platform Benefits
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
