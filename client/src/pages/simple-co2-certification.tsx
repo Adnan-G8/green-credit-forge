@@ -92,10 +92,10 @@ export default function SimpleCO2Certification() {
             {/* Legal and Technological Foundation */}
             <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                Legal and Technological Foundation
+                {t('co2-cert-legal-title')}
               </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Our certification process is firmly rooted in a comprehensive legal and technological framework.
+                {t('co2-cert-legal-description')}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -103,40 +103,40 @@ export default function SimpleCO2Certification() {
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                     <Globe className="h-6 w-6 text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">EU Emissions Trading System (EU ETS)</h3>
-                  <p className="text-slate-600 text-sm">Ensuring compliance with the cornerstone of EU climate policy.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-compliance-ets')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-ets-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
                     <Shield className="h-6 w-6 text-green-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Carbon Border Adjustment Mechanism (CBAM)</h3>
-                  <p className="text-slate-600 text-sm">Proactively addressing future reporting requirements and embedded emissions.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-compliance-cbam')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-cbam-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
                     <Lock className="h-6 w-6 text-purple-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Anti-Money Laundering (AML) and Know Your Customer (KYC) Framework</h3>
-                  <p className="text-slate-600 text-sm">Implementation of rigorous due diligence for all participants.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-compliance-aml')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-aml-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                     <CheckCircle className="h-6 w-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Paris Agreement (Article 6)</h3>
-                  <p className="text-slate-600 text-sm">Supporting mechanisms for Internationally Transferable Mitigation Results.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-compliance-paris')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-paris-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
                     <FileText className="h-6 w-6 text-orange-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Kyoto Protocol</h3>
-                  <p className="text-slate-600 text-sm">Based on established international accounting principles.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-compliance-kyoto')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-compliance-kyoto-desc')}</p>
                 </div>
               </div>
             </div>
@@ -144,10 +144,10 @@ export default function SimpleCO2Certification() {
             {/* Technology and Security */}
             <div className="bg-slate-50 rounded-xl p-8 border border-slate-200">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
-                Technology and Security
+                {t('co2-cert-technology-title')}
               </h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Our platform uses blockchain technology for immutable document storage, creating unparalleled transparency and eliminating issues like double counting and greenwashing.
+                {t('co2-cert-technology-description')}
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -155,24 +155,24 @@ export default function SimpleCO2Certification() {
                   <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
                     <Lock className="h-6 w-6 text-slate-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Blockchain Technology</h3>
-                  <p className="text-slate-600 text-sm">Immutable storage and complete transparency of documents.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-tech-blockchain')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-tech-blockchain-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
                     <Shield className="h-6 w-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Three-Factor Authentication (3FA)</h3>
-                  <p className="text-slate-600 text-sm">Unparalleled secure and reliable environment for all participants.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-tech-3fa')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-tech-3fa-desc')}</p>
                 </div>
                 
                 <div className="bg-white rounded-lg p-6 border border-slate-200">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                     <Users className="h-6 w-6 text-blue-600" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-2">Unique Digital Fingerprint</h3>
-                  <p className="text-slate-600 text-sm">Secure identification and clear ownership for every user.</p>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2">{t('co2-cert-tech-fingerprint')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-tech-fingerprint-desc')}</p>
                 </div>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function SimpleCO2Certification() {
             {/* Certification Process */}
             <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
               <h2 className="text-3xl font-light text-slate-900 mb-8 text-center">
-                Certification Process
+                {t('co2-cert-process-title')}
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -188,32 +188,32 @@ export default function SimpleCO2Certification() {
                   <div className="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                     1
                   </div>
-                  <h3 className="font-medium text-slate-900 mb-2">Project Registration</h3>
-                  <p className="text-slate-600 text-sm">Submit project details and documentation through secure platform</p>
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-process-step1')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-process-step1-desc')}</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                     2
                   </div>
-                  <h3 className="font-medium text-slate-900 mb-2">Multi-Stakeholder Review</h3>
-                  <p className="text-slate-600 text-sm">Collaborative validation by partner organizations</p>
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-process-step2')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-process-step2-desc')}</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                     3
                   </div>
-                  <h3 className="font-medium text-slate-900 mb-2">Blockchain Recording</h3>
-                  <p className="text-slate-600 text-sm">Immutable certification recorded on G8Chain network</p>
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-process-step3')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-process-step3-desc')}</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
                     4
                   </div>
-                  <h3 className="font-medium text-slate-900 mb-2">Credit Issuance</h3>
-                  <p className="text-slate-600 text-sm">Verified carbon credits issued and available for trading</p>
+                  <h3 className="font-medium text-slate-900 mb-2">{t('co2-cert-process-step4')}</h3>
+                  <p className="text-slate-600 text-sm">{t('co2-cert-process-step4-desc')}</p>
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function SimpleCO2Certification() {
             {/* Benefits */}
             <div className="text-center">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
-                Platform Benefits
+                {t('co2-cert-benefits-title')}
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
