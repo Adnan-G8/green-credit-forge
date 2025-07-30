@@ -120,7 +120,13 @@ export function Navigation() {
                 onClick={() => setLocation('/dashboard')}
                 className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
               >
-                Dashboard
+                User Dashboard
+              </button>
+              <button
+                onClick={() => setLocation('/admin-authorization')}
+                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
+              >
+                Admin
               </button>
 
             </div>
@@ -279,7 +285,16 @@ export function Navigation() {
                   }}
                   className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
                 >
-                  Dashboard
+                  User Dashboard
+                </button>
+                <button
+                  onClick={() => {
+                    setLocation('/admin-authorization');
+                    setIsOpen(false);
+                  }}
+                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-300 text-left font-medium"
+                >
+                  Admin
                 </button>
                 
                 {/* Clean Mobile Navigation */}
