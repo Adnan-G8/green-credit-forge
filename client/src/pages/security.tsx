@@ -289,6 +289,80 @@ export default function Security() {
               </div>
             </div>
 
+            {/* ALPHAG8 ID KEY Section */}
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200 mb-8">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-light text-slate-900 mb-2">ALPHAG8 ID KEY</h3>
+                <p className="text-lg text-slate-600 mb-1">Secure Access. No Passwords. No Hassle.</p>
+                <h4 className="text-xl font-medium text-slate-800">Three-Factor Authentication (3FA)</h4>
+              </div>
+              
+              <div className="max-w-4xl mx-auto">
+                <p className="text-base text-slate-600 leading-relaxed mb-6 text-center">
+                  The ALPHAG8 ID KEY is your personal digital fingerprint – a smart, invisible security layer that uses your own device (smartphone or computer) as your unique login key. No passwords, no SMS codes, no key fobs – just seamless access based on who you are and what you use.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
+                      <CheckCircle className="w-4 h-4 text-slate-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-slate-900">3-Factor Authentication:</p>
+                      <p className="text-slate-600 text-sm">Combines your device's hardware, software, and usage pattern</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
+                      <Shield className="w-4 h-4 text-slate-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-slate-900">Zero-Trust Security:</p>
+                      <p className="text-slate-600 text-sm">Each login is fully re-validated – no shortcuts, no reuse</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
+                      <Key className="w-4 h-4 text-slate-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-slate-900">Your Phone = Your Key:</p>
+                      <p className="text-slate-600 text-sm">Without your phone, access is impossible – even with your password</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
+                      <Eye className="w-4 h-4 text-slate-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-slate-900">Biometric-Ready:</p>
+                      <p className="text-slate-600 text-sm">Supports fingerprint or facial recognition when available</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-slate-50 p-6 rounded-lg">
+                  <div className="flex items-start space-x-3 mb-4">
+                    <div className="w-6 h-6 bg-slate-100 rounded-lg flex items-center justify-center mt-1">
+                      <Lock className="w-4 h-4 text-slate-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-slate-900">Silent and Secure:</p>
+                      <p className="text-slate-600 text-sm">No extra steps for you – maximum protection in the background</p>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center pt-4 border-t border-slate-200">
+                    <p className="text-slate-700 font-medium mb-1">Your identity stays private. Your access stays protected.</p>
+                    <p className="text-slate-600 text-sm">ALPHAG8 ID KEY – Because trust should be invisible, but unbreakable.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Digital Fingerprint Section - Banking Style */}
             <div className="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
               <h3 className="text-xl font-medium text-slate-900 mb-4">{t.fingerprintTitle}</h3>
