@@ -77,26 +77,26 @@ export function Navigation() {
       <nav className="fixed top-0 left-0 w-full z-40 bg-white shadow-sm border-b border-slate-200">
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-8">
               <button onClick={() => setLocation('/')} className="flex items-center">
                 <FagriLogo className="w-20 h-12" />
               </button>
-            </div>
-
-            {/* Desktop Navigation - Simplified */}
-            <div className="hidden md:flex space-x-8">
-              <button
-                onClick={() => navigateToSection('home')}
-                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
-              >
-                {t('nav-home')}
-              </button>
-              <button
-                onClick={() => navigateToSection('contact')}
-                className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
-              >
-                {t('nav-contact')}
-              </button>
+              
+              {/* Desktop Navigation - Next to Logo */}
+              <div className="hidden md:flex space-x-6">
+                <button
+                  onClick={() => navigateToSection('home')}
+                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
+                >
+                  {t('nav-home')}
+                </button>
+                <button
+                  onClick={() => navigateToSection('contact')}
+                  className="text-slate-800 hover:text-emerald-700 transition-colors duration-200 font-medium text-base"
+                >
+                  {t('nav-contact')}
+                </button>
+              </div>
             </div>
 
             {/* Language Switcher & Mobile Menu */}
