@@ -77,6 +77,13 @@ export default function Dashboard() {
       // Mark migration as completed
       localStorage.setItem('fagri-migration-done', 'true');
     }
+
+    // Check if we should open project creation from team dashboard navigation
+    const shouldOpenProjectCreation = localStorage.getItem('openProjectCreation');
+    if (shouldOpenProjectCreation === 'true') {
+      localStorage.removeItem('openProjectCreation'); // Clear the flag
+      setShowProjectCreation(true); // Open project creation modal
+    }
     
     // Create test projects for design demonstration
     const testProjects = [

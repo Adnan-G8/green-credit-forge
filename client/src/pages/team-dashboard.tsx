@@ -9,6 +9,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { useToast } from '@/hooks/use-toast';
 import { Label } from '@/components/ui/label';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'wouter';
 import { 
   Users, 
   FileText, 
@@ -39,6 +40,7 @@ import {
 export default function TeamDashboard() {
   const { language } = useLanguage();
   const { toast } = useToast();
+  const [, setLocation] = useLocation();
   
   // State management
   const [activeTab, setActiveTab] = useState<'dashboard' | 'profile' | 'messages' | 'todo'>('dashboard');
@@ -51,6 +53,25 @@ export default function TeamDashboard() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [showProjectDetails, setShowProjectDetails] = useState(false);
   
+  // Handler function to navigate to project registration dashboard
+  const handleNewProject = () => {
+    // Navigate to the main dashboard with project creation mode
+    setLocation('/dashboard');
+    
+    // After a short delay, trigger the project creation modal
+    setTimeout(() => {
+      // Set project creation mode in localStorage so dashboard can open the project creation section
+      localStorage.setItem('openProjectCreation', 'true');
+      
+      toast({
+        title: language === 'it' ? 'Navigazione Dashboard' : 'Dashboard Navigation',
+        description: language === 'it' 
+          ? 'Apertura dashboard per creazione nuovo progetto...' 
+          : 'Opening dashboard for new project creation...',
+      });
+    }, 100);
+  };
+
   // Profile data
   const [profileData, setProfileData] = useState({
     name: 'Alessandro Rossi',
@@ -234,9 +255,12 @@ export default function TeamDashboard() {
                   </p>
                 </div>
                 <div className="flex space-x-3">
-                  <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button 
+                    className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                    onClick={() => handleNewProject()}
+                  >
                     <Plus className="h-4 w-4 mr-2" />
-                    {language === 'it' ? 'Nuovo Progetto Team' : 'New Team Project'}
+                    {language === 'it' ? 'Nuovo Progetto' : 'New Project'}
                   </Button>
                 </div>
               </div>
