@@ -60,10 +60,10 @@ export default function TeamDashboard() {
     setShowProjectCreationModal(true);
     
     toast({
-      title: language === 'it' ? 'Dashboard Progetto' : 'Project Dashboard',
+      title: language === 'it' ? 'Nuovo Progetto Personale' : 'New Personal Project',
       description: language === 'it' 
-        ? 'Apertura dashboard per registrazione progetto...' 
-        : 'Opening project registration dashboard...',
+        ? 'Apertura dashboard per progetto riservato individuale...' 
+        : 'Opening dashboard for individual confidential project...',
     });
   };
 
@@ -250,14 +250,22 @@ export default function TeamDashboard() {
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h1 className="text-3xl font-light text-slate-800">
-                    {language === 'it' ? 'Dashboard Team Member' : 'Team Member Dashboard'}
+                    {language === 'it' ? 'Account Personale' : 'Personal Account'}
                   </h1>
                   <p className="text-slate-600 mt-2">
                     {language === 'it' 
-                      ? 'Gestione progetti multipli e coordinamento team FAGRI'
-                      : 'Multi-project management and FAGRI team coordination'
+                      ? 'Gestione progetti individuali e informazioni riservate'
+                      : 'Individual project management and confidential information'
                     }
                   </p>
+                  <div className="mt-3 flex items-center space-x-2 text-sm">
+                    <div className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full border border-emerald-200">
+                      🔒 {language === 'it' ? 'Account Privato' : 'Private Account'}
+                    </div>
+                    <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full border border-blue-200">
+                      👤 {language === 'it' ? 'Solo Accesso Individuale' : 'Individual Access Only'}
+                    </div>
+                  </div>
                 </div>
                 <div className="flex space-x-3">
                   <Button 
@@ -327,7 +335,7 @@ export default function TeamDashboard() {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm font-medium text-blue-800">
-                        {language === 'it' ? 'Progetti Team' : 'Team Projects'}
+                        {language === 'it' ? 'Progetti Personali' : 'Personal Projects'}
                       </p>
                       <p className="text-2xl font-bold text-blue-900">12</p>
                     </div>
@@ -381,13 +389,13 @@ export default function TeamDashboard() {
 
             {/* Main Content */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Team Projects */}
+              {/* Personal Projects */}
               <div className="lg:col-span-2">
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center text-slate-800">
-                      <Users className="h-5 w-5 mr-2 text-blue-600" />
-                      {language === 'it' ? 'Progetti Team Attivi' : 'Active Team Projects'}
+                      <User className="h-5 w-5 mr-2 text-blue-600" />
+                      {language === 'it' ? 'I Miei Progetti Attivi' : 'My Active Projects'}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>

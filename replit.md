@@ -471,3 +471,12 @@ Preferred communication style: Simple, everyday language.
 - **Handover Capability**: Complete project and communication history enables seamless handovers when team members are unavailable
 - **Damage Control Features**: Full audit trail of all actions, communications, and project changes for accountability and problem resolution
 - **Role-Based Permissions**: Strict hierarchy ensuring team members have appropriate access levels while maintaining administrative control
+
+### Critical Privacy Architecture (July 31, 2025)
+- **Individual Private Accounts**: Each team member has a completely private, confidential account - NO shared team dashboards
+- **Data Protection Compliance**: Individual accounts contain sensitive business information accessible only to the specific team member
+- **Business Interest Security**: Projects and information are strictly confidential to prevent business interest conflicts
+- **Admin Management Only**: Administrators can manage team member accounts but CANNOT access their private project data
+- **Project Registration Privacy**: New project uploads are individual and confidential, not visible to other team members
+- **Personal Account Branding**: All interfaces clearly labeled as "Account Personale" / "Personal Account" with privacy indicators
+- **Confidential Project Workflow**: Project creation marked as "progetto riservato individuale" / "individual confidential project"
