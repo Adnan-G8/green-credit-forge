@@ -55,6 +55,9 @@ function ProtectedRouter() {
           return employeeId ? <EmployeeProfile employeeId={employeeId} /> : <NotFound />;
         }}
       </Route>
+      <Route path="/employee-profile/:id">
+        {(params) => <EmployeeProfile employeeId={params.id} />}
+      </Route>
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/gdpr" component={GDPR} />
