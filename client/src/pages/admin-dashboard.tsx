@@ -105,43 +105,42 @@ export function AdminDashboard() {
     try {
       setLoading(true);
       
-      // Load authorization requests
-      const authResponse = await fetch('/api/admin/authorization-requests');
+      // Load data in parallel for better performance
+      const [authResponse, activityResponse, metricsResponse, teamResponse, appsResponse, certsResponse] = await Promise.all([
+        fetch('/api/admin/authorization-requests'),
+        fetch('/api/admin/user-activities'),
+        fetch('/api/admin/system-metrics'),
+        fetch('/api/admin/team-members'),
+        fetch('/api/admin/applications'),
+        fetch('/api/admin/certifications')
+      ]);
+
+      // Process responses
       if (authResponse.ok) {
         const authData = await authResponse.json();
         setAuthorizationRequests(authData.requests || []);
       }
 
-      // Load user activities
-      const activityResponse = await fetch('/api/admin/user-activities');
       if (activityResponse.ok) {
         const activityData = await activityResponse.json();
         setUserActivities(activityData.activities || []);
       }
 
-      // Load system metrics
-      const metricsResponse = await fetch('/api/admin/system-metrics');
       if (metricsResponse.ok) {
         const metricsData = await metricsResponse.json();
         setSystemMetrics(metricsData.metrics || null);
       }
 
-      // Load team members
-      const teamResponse = await fetch('/api/admin/team-members');
       if (teamResponse.ok) {
         const teamData = await teamResponse.json();
         setTeamMembers(teamData.members || []);
       }
 
-      // Load applications
-      const appsResponse = await fetch('/api/admin/applications');
       if (appsResponse.ok) {
         const appsData = await appsResponse.json();
         setApplications(appsData.applications || []);
       }
 
-      // Load certifications
-      const certsResponse = await fetch('/api/admin/certifications');
       if (certsResponse.ok) {
         const certsData = await certsResponse.json();
         setCertifications(certsData.certifications || []);
@@ -636,7 +635,14 @@ export function AdminDashboard() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {filteredTeamMembers.length === 0 ? (
+                  {loading ? (
+                    <div className="text-center py-8">
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                      <p className="text-slate-600">
+                        {language === 'it' ? 'Caricamento team members...' : 'Loading team members...'}
+                      </p>
+                    </div>
+                  ) : filteredTeamMembers.length === 0 ? (
                     <div className="text-center py-8">
                       <Users className="h-12 w-12 text-slate-400 mx-auto mb-4" />
                       <p className="text-slate-600">

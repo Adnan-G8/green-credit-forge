@@ -632,7 +632,7 @@ router.get('/certifications', (req, res) => {
 router.get('/employee/:id', (req, res) => {
   try {
     const employeeId = req.params.id;
-    const employee = mockEmployeeProfiles[employeeId];
+    const employee = (mockEmployeeProfiles as any)[employeeId];
     
     if (!employee) {
       return res.status(404).json({
@@ -658,7 +658,7 @@ router.get('/employee/:id', (req, res) => {
 router.get('/employee/:id/projects', (req, res) => {
   try {
     const employeeId = req.params.id;
-    const projects = mockEmployeeProjects[employeeId] || [];
+    const projects = (mockEmployeeProjects as any)[employeeId] || [];
 
     res.json({
       success: true,
@@ -677,7 +677,7 @@ router.get('/employee/:id/projects', (req, res) => {
 router.get('/employee/:id/chat', (req, res) => {
   try {
     const employeeId = req.params.id;
-    const messages = mockChatMessages[employeeId] || [];
+    const messages = (mockChatMessages as any)[employeeId] || [];
 
     res.json({
       success: true,
@@ -698,8 +698,8 @@ router.post('/employee/:id/chat', (req, res) => {
     const employeeId = req.params.id;
     const { message, senderId, senderName } = req.body;
 
-    if (!mockChatMessages[employeeId]) {
-      mockChatMessages[employeeId] = [];
+    if (!(mockChatMessages as any)[employeeId]) {
+      (mockChatMessages as any)[employeeId] = [];
     }
 
     const newMessage = {
@@ -711,7 +711,7 @@ router.post('/employee/:id/chat', (req, res) => {
       isAdmin: senderId === 'admin'
     };
 
-    mockChatMessages[employeeId].push(newMessage);
+    (mockChatMessages as any)[employeeId].push(newMessage);
 
     res.json({
       success: true,
