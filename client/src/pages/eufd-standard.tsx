@@ -61,7 +61,7 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* Framework Overview */}
+            {/* EUFD2025-001 Overview */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
                 EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain
@@ -76,7 +76,7 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* Download Section */}
+            {/* EUFD2025-001 Standard Available Now */}
             <div className="mb-16">
               <div className="bg-white rounded-xl p-8 border border-slate-200 text-center">
                 <h3 className="text-2xl font-light text-slate-900 mb-4">
@@ -134,7 +134,7 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* Four Key Features */}
+            {/* EUFD2025-001 Key Features */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
                 EUFD2025-001: Scientific, Transparent, Accessible and Secure with Blockchain
@@ -142,7 +142,6 @@ export default function EufdStandardPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
-                  <Shield className="h-8 w-8 text-emerald-600 mb-4" />
                   <h3 className="text-xl font-medium text-slate-900 mb-3">
                     Elimination of Double Counting
                   </h3>
@@ -151,7 +150,6 @@ export default function EufdStandardPage() {
                   </p>
                 </div>
                 <div className="bg-blue-50 rounded-xl p-8 border border-blue-200">
-                  <CheckCircle className="h-8 w-8 text-blue-600 mb-4" />
                   <h3 className="text-xl font-medium text-slate-900 mb-3">
                     Prevention of Greenwashing
                   </h3>
@@ -160,7 +158,6 @@ export default function EufdStandardPage() {
                   </p>
                 </div>
                 <div className="bg-purple-50 rounded-xl p-8 border border-purple-200">
-                  <Globe className="h-8 w-8 text-purple-600 mb-4" />
                   <h3 className="text-xl font-medium text-slate-900 mb-3">
                     Clear Ownership
                   </h3>
@@ -169,7 +166,6 @@ export default function EufdStandardPage() {
                   </p>
                 </div>
                 <div className="bg-orange-50 rounded-xl p-8 border border-orange-200">
-                  <Lock className="h-8 w-8 text-orange-600 mb-4" />
                   <h3 className="text-xl font-medium text-slate-900 mb-3">
                     Maximum Security
                   </h3>
@@ -193,26 +189,23 @@ export default function EufdStandardPage() {
                 <p className="text-slate-600 mb-4">
                   Integrated blockchain technology to ensure maximum transparency and immutability of certification records
                 </p>
-                <p className="text-slate-600">
+                <p className="text-slate-600 mb-6">
                   Our platform strategically uses blockchain technology to solve the major problems of carbon credit markets: double counting, greenwashing, and lack of transparency.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <CheckCircle className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
                   <p className="text-slate-700">
                     Automatic prevention of double counting through advanced cryptographic algorithms
                   </p>
                 </div>
                 <div className="text-center">
-                  <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                   <p className="text-slate-700">
                     Complete transparency with public verification of all issued carbon credits
                   </p>
                 </div>
                 <div className="text-center">
-                  <Globe className="h-12 w-12 text-purple-600 mx-auto mb-4" />
                   <p className="text-slate-700">
                     Clear ownership and secure transfer of carbon credit rights
                   </p>
@@ -236,18 +229,9 @@ export default function EufdStandardPage() {
                   </p>
                   <h4 className="font-medium text-slate-900 mb-3">Key Regulatory Requirements</h4>
                   <ul className="space-y-2 text-slate-600">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
-                      Mandatory use of blockchain platforms for agricultural projects
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
-                      Immutable records to prevent fraud and double counting
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
-                      Public transparency for independent stakeholder verification
-                    </li>
+                    <li>Mandatory use of blockchain platforms for agricultural projects</li>
+                    <li>Immutable records to prevent fraud and double counting</li>
+                    <li>Public transparency for independent stakeholder verification</li>
                   </ul>
                 </div>
 
@@ -282,13 +266,13 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* Vision Section */}
+            {/* Our Vision for Sustainable Agriculture */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
                 Our Vision for Sustainable Agriculture
               </h2>
-              <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200 text-center">
-                <p className="text-lg text-slate-700 mb-6">
+              <div className="bg-emerald-50 rounded-xl p-8 border border-emerald-200">
+                <p className="text-lg text-slate-700 mb-4">
                   FAGRI.Digital is transforming Italian agriculture through blockchain-based CO₂ certification, creating concrete economic opportunities for farmers while contributing to European climate goals.
                 </p>
                 <p className="text-slate-600">
@@ -297,7 +281,7 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* Trust and Recognition */}
+            {/* Global Trust and Recognition */}
             <div className="mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-8">
                 Global Trust and Recognition
@@ -322,7 +306,7 @@ export default function EufdStandardPage() {
               </div>
             </div>
 
-            {/* Call to Action */}
+            {/* Join the CO₂ Certification Revolution */}
             <div className="text-center mb-16">
               <h2 className="text-3xl font-light text-slate-900 mb-6">
                 Join the CO₂ Certification Revolution
