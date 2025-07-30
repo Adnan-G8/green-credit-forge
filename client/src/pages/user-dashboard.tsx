@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useLanguage } from '@/components/language-provider';
+import { useLocation } from 'wouter';
 import { 
   User, 
   Key, 
@@ -17,7 +18,9 @@ import {
   CheckCircle,
   XCircle,
   UserPlus,
-  Eye
+  Eye,
+  ArrowLeft,
+  Home
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -39,6 +42,7 @@ interface Authorization {
 export function UserDashboard({ fagriId }: UserDashboardProps) {
   const { t, language } = useLanguage();
   const { toast } = useToast();
+  const [, setLocation] = useLocation();
   const [user, setUser] = useState<any>(null);
   const [authorizations, setAuthorizations] = useState<Authorization[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -218,8 +222,28 @@ Contact: support@fagri.digital
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4 max-w-6xl">
-        {/* Header */}
+        {/* Navigation Header */}
         <div className="mb-8">
+          <div className="flex items-center space-x-4 mb-4">
+            <Button
+              onClick={() => setLocation('/')}
+              variant="outline"
+              size="sm"
+              className="flex items-center space-x-2 text-slate-600 hover:text-slate-800 border-slate-300 hover:border-slate-400"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              <span>{language === 'it' ? 'Indietro' : 'Back'}</span>
+            </Button>
+            <Button
+              onClick={() => setLocation('/')}
+              variant="outline"
+              size="sm"
+              className="flex items-center space-x-2 text-emerald-600 hover:text-emerald-700 border-emerald-300 hover:border-emerald-400"
+            >
+              <Home className="h-4 w-4" />
+              <span>{language === 'it' ? 'Home' : 'Home'}</span>
+            </Button>
+          </div>
           <h1 className="text-3xl font-light text-slate-800 mb-2">
             {language === 'it' ? 'Dashboard Utente' : 'User Dashboard'}
           </h1>
