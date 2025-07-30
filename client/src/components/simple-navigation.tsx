@@ -43,9 +43,9 @@ export function SimpleNavigation() {
 
   const navigationItems = [
     { key: 'home', label: t('nav-home'), href: '/' },
-    { key: 'standard', label: t('nav-standard'), section: 'standard' },
+    { key: 'standard', label: t('nav-standard'), href: '/eufd-standard' },
     { key: 'platform', label: t('nav-platform'), section: 'platform' },
-    { key: 'security', label: t('nav-security'), section: 'security' },
+    { key: 'security', label: t('nav-security'), href: '/security' },
     { key: 'contact', label: t('nav-contact'), section: 'contact' },
   ];
 
