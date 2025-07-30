@@ -562,19 +562,6 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                       placeholder={t('postal-code-placeholder')}
                     />
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="province" className="text-amber-800 font-medium">
-                      {t('province-state')}
-                    </Label>
-                    <Input
-                      id="province"
-                      value={formData.province}
-                      onChange={(e) => updateFormData('province', e.target.value)}
-                      className="border-amber-200 focus:border-amber-500"
-                      placeholder={t('province-placeholder')}
-                    />
-                  </div>
                 </div>
               </CardContent>
             </Card>

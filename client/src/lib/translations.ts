@@ -2678,6 +2678,7 @@ export const translations = {
     'farmer-producer': 'Farmer/Producer',
     'cooperative-association': 'Cooperative/Association',
     'agricultural-industry': 'Agricultural Industry',
+    'renewable-energy': 'Renewable Energy',
     'agri-services': 'Agricultural Services',
     
     // Farmer-Producer Sub-sectors - English
