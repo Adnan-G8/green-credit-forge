@@ -14,13 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          alphag8_id: string
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+          user_role: string | null
+        }
+        Insert: {
+          alphag8_id: string
+          created_at?: string
+          display_name?: string | null
+          id: string
+          updated_at?: string
+          user_role?: string | null
+        }
+        Update: {
+          alphag8_id?: string
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_role?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      generate_alphag8_id: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never
