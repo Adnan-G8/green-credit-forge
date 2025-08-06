@@ -4,7 +4,7 @@ import { translations, type Language, type TranslationKey } from '@/lib/translat
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: TranslationKey) => string;
+  t: (key: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -36,12 +36,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }, 100);
   };
 
-  const t = (key: TranslationKey): string => {
+  const t = (key: string): string => {
     if (!isInitialized) {
       // Return Italian translation while initializing
-      return translations['it'][key] || key;
+      return (translations['it'] as any)[key] || key;
     }
-    const translation = translations[language]?.[key] || translations['it'][key] || key;
+    const translation = (translations[language] as any)?.[key] || (translations['it'] as any)[key] || key;
     return translation;
   };
 

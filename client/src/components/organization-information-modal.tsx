@@ -127,8 +127,22 @@ export function OrganizationInformationModal({ isOpen, onClose, alphaG8Id }: Org
         vatNumber,
         fiscalCode,
         registrationNumber,
-        legalAddress,
-        operationalAddress,
+        legalAddress: {
+          street: legalStreet,
+          street2: legalStreet2,
+          city: legalCity,
+          postalCode: legalPostalCode,
+          province: legalProvince,
+          country: legalCountry
+        },
+        operationalAddress: {
+          street: operationalStreet,
+          street2: operationalStreet2,
+          city: operationalCity,
+          postalCode: operationalPostalCode,
+          province: operationalProvince,
+          country: operationalCountry
+        },
         phoneNumber,
         emailAddress,
         pecAddress,

@@ -511,7 +511,7 @@ ${payment.verifiedDate ? `Data Verifica: ${new Date(payment.verifiedDate).toLoca
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Shield className="h-5 w-5 text-purple-600" />
+              <div className="h-5 w-5 bg-purple-600 rounded"></div>
               Modalità Dipendente
             </CardTitle>
           </CardHeader>
