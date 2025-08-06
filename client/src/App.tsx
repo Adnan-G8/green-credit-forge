@@ -4,8 +4,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "./components/language-provider";
-import { PasswordProtection } from "./components/password-protection";
-import { SessionExpiryHandler } from "./components/session-expiry-handler";
 import { useSupabaseAuth } from "./hooks/use-supabase-auth";
 import { useScrollToTop } from "./hooks/use-scroll-to-top";
 import Home from "@/pages/home";

@@ -38,15 +38,15 @@ export default function AuthPage() {
     }
 
     setIsLoading(true);
-    const { error } = await signUp(email, password, {
+    const result = await signUp(email, password, {
       display_name: displayName,
       user_role: 'fagri-member'
     });
 
-    if (error) {
+    if (result?.error) {
       toast({
         title: 'Sign Up Error',
-        description: error.message,
+        description: 'An error occurred during sign up',
         variant: 'destructive',
       });
     } else {
@@ -70,12 +70,12 @@ export default function AuthPage() {
     }
 
     setIsLoading(true);
-    const { error } = await signIn(email, password);
+    const result = await signIn(email, password);
 
-    if (error) {
+    if (result?.error) {
       toast({
         title: 'Sign In Error',
-        description: error.message,
+        description: 'An error occurred during sign in',
         variant: 'destructive',
       });
     } else {
