@@ -92,8 +92,8 @@ export function KeyInfoModal({ isOpen, onClose, alphaG8Id }: KeyInfoModalProps) 
         const { clientSecret } = await response.json();
         
         // Redirect to Stripe checkout or open Stripe Elements
-        if (window.Stripe) {
-          const stripe = window.Stripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+        if ((window as any).Stripe) {
+          const stripe = (window as any).Stripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
           const { error } = await stripe.redirectToCheckout({
             clientSecret,
             successUrl: `${window.location.origin}/dashboard?payment=success`,

@@ -210,7 +210,7 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
 
   const handleSpecificActivityToggle = (activity: string) => {
     const currentActivities = formData.specificActivities;
-    const newActivities = currentActivities.includes(activity)
+    const newActivities = currentActivities.includes(activity as never)
       ? currentActivities.filter(a => a !== activity)
       : [...currentActivities, activity];
     updateFormData('specificActivities', newActivities);
@@ -643,7 +643,7 @@ export function MembershipModal({ isOpen, onClose }: MembershipModalProps) {
                         <div key={activity} className="flex items-center space-x-2">
                           <Checkbox
                             id={`activity-${activity}`}
-                            checked={formData.specificActivities.includes(activity)}
+                            checked={formData.specificActivities.includes(activity as never)}
                             onCheckedChange={() => handleSpecificActivityToggle(activity)}
                             className="border-green-300"
                           />
