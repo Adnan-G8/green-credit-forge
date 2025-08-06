@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { useLocation } from 'wouter';
+import { useSupabaseAuth } from '../hooks/use-supabase-auth';
 import { Navigation } from '@/components/navigation';
 import { HeroSection } from '@/components/hero-section';
 import { TransitionSection } from '@/components/transition-section';
@@ -12,6 +14,16 @@ import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
+  const { isAuthenticated } = useSupabaseAuth();
+  const [, setLocation] = useLocation();
+
+  // Redirect unauthenticated users to auth page
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setLocation('/auth');
+    }
+  }, [isAuthenticated, setLocation]);
+
   // Handle hash navigation when coming from other pages
   useEffect(() => {
     if (window.location.hash) {

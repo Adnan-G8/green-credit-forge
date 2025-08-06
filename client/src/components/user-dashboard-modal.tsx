@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from './language-provider';
+import { useSupabaseAuth } from '../hooks/use-supabase-auth';
+import { useLocation } from 'wouter';
 import { X, User, Key, Shield, Copy, Download, LogOut, Settings, Navigation, Folder, FileText } from 'lucide-react';
 
 interface UserDashboardModalProps {
@@ -14,6 +16,8 @@ interface UserDashboardModalProps {
 export function UserDashboardModal({ isOpen, onClose, alphaG8Id, userRole }: UserDashboardModalProps) {
   const { toast } = useToast();
   const { t } = useLanguage();
+  const { signOut } = useSupabaseAuth();
+  const [, setLocation] = useLocation();
 
   const handleCopyId = () => {
     navigator.clipboard.writeText(alphaG8Id);
@@ -62,12 +66,22 @@ Security: swiss-security@alphag8.digital`;
     });
   };
 
-  const handleLogout = () => {
-    toast({
-      title: t('logged-out'),
-      description: t('session-ended-successfully'),
-    });
-    onClose();
+  const handleLogout = async () => {
+    const { error } = await signOut();
+    if (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to sign out',
+        variant: 'destructive',
+      });
+    } else {
+      toast({
+        title: t('logged-out'),
+        description: t('session-ended-successfully'),
+      });
+      onClose();
+      setLocation('/auth');
+    }
   };
 
   useEffect(() => {

@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "./components/language-provider";
 import { PasswordProtection } from "./components/password-protection";
 import { SessionExpiryHandler } from "./components/session-expiry-handler";
-import { useAuthentication } from "./hooks/use-authentication";
+import { useSupabaseAuth } from "./hooks/use-supabase-auth";
 import { useScrollToTop } from "./hooks/use-scroll-to-top";
 import Home from "@/pages/home";
 import Security from "@/pages/security";
@@ -27,6 +27,7 @@ import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
 import GDPR from "@/pages/gdpr";
 import Cookies from "@/pages/cookies";
+import AuthPage from "@/pages/auth";
 
 function ProtectedRouter() {
   useScrollToTop();
@@ -34,6 +35,7 @@ function ProtectedRouter() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/auth" component={AuthPage} />
       <Route path="/security" component={Security} />
       <Route path="/eufd-standard" component={EufdStandard} />
       <Route path="/co2-certification" component={SimpleCO2Certification} />
@@ -72,7 +74,7 @@ function ProtectedRouter() {
 }
 
 function App() {
-  const { isAuthenticated, isLoading, authenticate } = useAuthentication();
+  const { isAuthenticated, isLoading } = useSupabaseAuth();
 
   if (isLoading) {
     return (
@@ -87,14 +89,7 @@ function App() {
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
-          {!isAuthenticated ? (
-            <PasswordProtection onAuthenticated={authenticate} />
-          ) : (
-            <>
-              <ProtectedRouter />
-              <SessionExpiryHandler />
-            </>
-          )}
+          <ProtectedRouter />
         </TooltipProvider>
       </LanguageProvider>
     </QueryClientProvider>

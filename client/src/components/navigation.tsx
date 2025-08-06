@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from './language-provider';
-import { useAuthentication } from '../hooks/use-authentication';
+import { useSupabaseAuth } from '../hooks/use-supabase-auth';
 import { FagriLogo } from '@/assets/fagri-logo';
 import { Button } from '@/components/ui/button';
 import { Menu, X, LogOut, UserPlus, User, Key, LogIn, FileText, Folder, Lightbulb } from 'lucide-react';
@@ -17,7 +17,7 @@ import { useLocation } from 'wouter';
 
 export function Navigation() {
   const { language, setLanguage, t } = useLanguage();
-  const { logout } = useAuthentication();
+  const { isAuthenticated, signOut, profile } = useSupabaseAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMembershipModal, setShowMembershipModal] = useState(false);
@@ -174,14 +174,10 @@ export function Navigation() {
               </div>
 
               {/* Simplified Smart Navigation Buttons */}
-              {!isSignedIn ? (
+              {!isAuthenticated ? (
                 <>
                   <Button
-                    onClick={() => {
-                      if (activeModal) return;
-                      setActiveModal('role-signin');
-                      setShowRoleBasedSignInModal(true);
-                    }}
+                    onClick={() => setLocation('/auth')}
                     variant="outline"
                     size="sm"
                     className="hidden md:flex items-center px-4 py-2 text-emerald-700 border-emerald-700 hover:bg-emerald-50 transition-colors duration-200"
@@ -191,42 +187,26 @@ export function Navigation() {
                   </Button>
                   
                   <Button
-                    onClick={() => {
-                      if (activeModal) return;
-                      setActiveModal('create-account');
-                      setShowCreateAccountModal(true);
-                    }}
+                    onClick={() => setLocation('/auth')}
                     size="sm"
                     className="hidden md:flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
                   >
                     <UserPlus className="h-4 w-4 mr-2" />
-                    {language === 'it' ? 'Crea Identità' : 'Create Digital Identity'}
+                    {language === 'it' ? 'Crea Account' : 'Create Account'}
                   </Button>
                 </>
               ) : (
                 <>
-                  {/* Show My ID KEY for FAGRI Team members */}
-                  <Button
-                    onClick={() => {
-                      setLocation(`/user-dashboard?fagriId=${signedInAlphaG8Id}`);
-                      setIsOpen(false);
-                    }}
-                    variant="outline"
-                    size="sm"
-                    className="hidden md:flex items-center px-4 py-2 text-blue-700 border-blue-700 hover:bg-blue-50 transition-colors duration-200"
-                  >
+                  {/* Show My ID KEY for authenticated users */}
+                  <span className="hidden md:flex items-center px-3 py-2 text-sm text-slate-600 bg-slate-100 rounded-lg">
                     <Key className="h-4 w-4 mr-2" />
-                    {language === 'it' ? 'La Mia ID KEY' : 'My ID KEY'}
-                  </Button>
+                    {profile?.alphag8_id || 'Loading...'}
+                  </span>
                   
                   <Button
-                    onClick={() => {
-                      localStorage.removeItem('sessionActive');
-                      localStorage.removeItem('alphaG8Id');
-                      setIsSignedIn(false);
-                      setSignedInAlphaG8Id('');
-                      setLocation('/');
-                      console.log('User logged out');
+                    onClick={async () => {
+                      await signOut();
+                      setLocation('/auth');
                     }}
                     variant="outline"
                     size="sm"
