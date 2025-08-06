@@ -17,12 +17,8 @@ export default function Home() {
   const { isAuthenticated } = useSupabaseAuth();
   const [, setLocation] = useLocation();
 
-  // Redirect unauthenticated users to auth page
-  useEffect(() => {
-    if (!isAuthenticated) {
-      setLocation('/auth');
-    }
-  }, [isAuthenticated, setLocation]);
+  // Don't redirect from home page - allow public access
+  // Users can navigate to /auth if they want to sign in
 
   // Handle hash navigation when coming from other pages
   useEffect(() => {
