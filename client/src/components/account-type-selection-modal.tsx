@@ -108,7 +108,7 @@ export function AccountTypeSelectionModal({
   ];
 
   const getColorClasses = (color: string, type: 'bg' | 'border' | 'text' | 'hover') => {
-    const colorMap = {
+    const colorMap: Record<string, Record<string, string>> = {
       emerald: {
         bg: 'bg-emerald-50',
         border: 'border-emerald-200',
