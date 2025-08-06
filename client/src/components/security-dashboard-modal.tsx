@@ -585,6 +585,7 @@ Authorized by ALPHAG8 Switzerland Technology
         isOpen={showExtensionModal}
         onClose={() => setShowExtensionModal(false)}
         fagriId={alphaG8Id}
+        currentExpiryDate=""
       />
     </Dialog>
   );
