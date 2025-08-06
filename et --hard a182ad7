@@ -1,0 +1,610 @@
+* [33m56629f5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Implement a team member dashboard for managing CO₂ certification projects
+* [33m9495f72[m Add soil analysis to improve project tracking and carbon certification
+* [33m40db6b5[m Improve user account creation process by adjusting validation logic
+* [33mb6046ad[m Allow users to personalize accounts by adding a profile picture
+* [33m9bb003d[m Add illustration to help users learn about carbon farming practices
+* [33md29144d[m Add forest image for better visual representation of tree planting projects
+* [33m7ec5fbd[m Add images related to renewable energy and associated project visuals
+* [33m80c8e5a[m Update the website visuals with improved sustainable farming images
+* [33mf03c9eb[m Improve login process for team members and address a potential login issue
+* [33m73c2140[m Update images to reflect a more accurate and modern visual representation
+* [33m0bef76e[m Update project selection screen with engaging illustrative visuals
+* [33m018b4f5[m Implement team member login to secure dashboard access after logout
+* [33mf9964dd[m Display relevant images for each project type on project selection page
+* [33m591c04b[m Add navigation link to CO₂ certification dashboard for easy access by users
+* [33mfb04762[m Show helpful pictures to users when choosing which type of project to create
+* [33m386afd5[m Restored to 'a182ad7a78ee663b4ceb19fb55505fd1555019dc'
+* [33me5c29fd[m Saved your changes before rolling back
+* [33m8d192dc[m Improve the appearance of project selection by using higher resolution pictures
+* [33mcf108cc[m Improve user experience by showing loading details when opening projects
+* [33m386c8ee[m Enhance project selection with images to improve user experience
+* [33ma182ad7[m Make opening individual project details faster and improve user experience
+* [33m986ccae[m Rename team dashboards to personal accounts for improved user privacy
+* [33m5e2c6c7[m Improve project selection interface with faster loading times
+* [33ma93a7be[m Restore direct project creation dashboard for team management features
+* [33m820b2e2[m Enable users to register new sustainability projects on the platform
+* [33m7be0ceb[m Route users to project registration dashboard from the team dashboard
+* [33ma743a01[m Restrict document downloads to administrators and allow direct viewing
+* [33me107c42[m Enable reviewers to assess projects with associated data and documents
+* [33m4702fc0[m Show who sent messages in team conversations inside the project dashboard
+* [33m55af6a9[m Refine the account creation screen by removing a redundant close button
+* [33mbd10f98[m Prevent users from seeing login prompts when already signed in
+* [33mf277f1b[m Enable users to view complete details for each carbon credit project
+* [33m6b275ca[m Improve team project overview page with selectable project details
+* [33mc807a56[m Enable users to upload and change their profile picture in team settings
+* [33m0745a5f[m Improve user experience by streamlining access to dashboard pages
+* [33m1a4eb91[m Enhance team dashboard with profile, messaging, and to-do list features
+* [33m501bb20[m Add interface allowing administrators to manage projects and change their status
+* [33m8656ec4[m Improve loading speed of the admin dashboard and team management page
+* [33m427bb38[m Show user names and project details in the admin activity log
+* [33m3fb175f[m Add screenshot that visually explains which activities belong to whom
+* [33m8b5fa68[m Enable communication and commenting on project certifications details
+* [33m2237363[m Enable viewing complete details for each project application on the dashboard
+* [33m537905f[m Improve team management with complete accountability and communication features
+* [33m6261789[m Improve team management navigation and profile access for administrators
+* [33m603fedd[m Improve team member management and access to employee profiles
+* [33m07600bc[m Enhance authorization request display with assigned team and project info
+* [33m4e10139[m Show the reasons and types of authorization requests on the admin dashboard
+* [33m7bc0a88[m Add detailed employee profiles with chat and project management features
+* [33m48c91d7[m Expand admin dashboard with team, application, certification overviews
+* [33m06afa6f[m Update ID labels and reflect request status with distinct color-coded badges
+* [33m4076045[m Implement master control board to manage users and system functionalities
+* [33mdc9fbb3[m Improve user experience with better navigation across the platform
+* [33m5c82f18[m Improve button appearance for better readability and visual appeal
+* [33m2d95528[m Add navigation options to user dashboard for improved accessibility
+* [33mb8b69f6[m Maintain user login status across the platform for a smoother experience
+* [33mf18e381[m Take users back to dashboard when they click their ID, improving navigation
+* [33m595f078[m Inform users about their account request status and provide assistance
+* [33m2626fac[m Show the correct language on the membership image overlay in the modal
+* [33m71d8d1f[m Improve display of agricultural landscape image in membership section
+* [33mc55d687[m Enhance membership sign-up with a compelling visual of agricultural landscape
+* [33m4b31ff2[m Improve the placement of navigation buttons for a cleaner interface
+* [33mcea4945[m Add more information regarding CO₂ certification benefits for our users
+* [33m7beb11c[m Add details about certification process and platform benefits for users
+* [33m0cccd7f[m Enable multi-language support for the CO₂ certification page
+* [33mbbeb985[m Improve the look of the security link by removing the icon in the footer
+* [33me16d9cc[m Make the CO₂ Certification link in the website footer directly navigate to the page
+* [33m1640379[m Route 'Learn More' button to the correct CO₂ Certification page
+* [33m3b7c396[m Update link to provide clear path to EU forestry directive information
+* [33m7895554[m Route users to the certification dashboard when learning about CO₂ certification
+* [33m2f3f096[m Update button link to direct users to the correct information page
+* [33m2d7a44d[m Remove direct link to certification page and enable navigation to platform section
+* [33me564c56[m Add new simpler CO₂ certification process to website for broader accessibility
+* [33m628f35a[m Restore security page to ensure users can access important information
+* [33ma2d60db[m Streamline navigation by removing redundant buttons and simplifying sign-in
+* [33m0fc70d9[m Unify navigation and page structure to provide a consistent experience
+* [33m77eefae[m Fetch user and authorization data from backend and enable authorization requests
+* [33mb5014ea[m Differentiate navigation options for regular users and administrative staff
+* [33m707edb4[m Enable users to create accounts and request specific access roles
+* [33m20a1b66[m Add user dashboards and authorization workflow for secure access
+* [33mf5c30d0[m Enable users to create accounts and select specific account types
+* [33mf6e0caf[m Guide developers on obtaining and setting up the FAGRI Digital platform
+* [33ma9f25f4[m Document the platform's authentication and language management systems
+* [33m09715ad[m Improve user login persistence and prevent page loading errors after sign-in
+* [33m6e3ad40[m Add visual aid to clarify navigation differences for user understanding
+* [33m4dda357[m Implement secure access using digital fingerprint for user authentication
+* [33mde3b59a[m Add new image to clarify a feature and improve overall documentation
+* [33mf53e86d[m Add Italian translation to enhance the security information display
+* [33m2d1dab3[m Add Italian translations for new ALPHAG8 ID KEY security feature
+* [33m51c2b71[m Improve the look of security page icons and elements with soft colors
+* [33md1743e1[m Remove visual containers from security page to improve the look and feel
+* [33m2db10c7[m Implement ALPHAG8 ID KEY for enhanced security and password-free access
+* [33ma9de96d[m Refine security page to emphasize decentralized blockchain governance
+* [33me12e17c[m Improve appearance of security page, ensuring key elements are clearly visible
+* [33m4fa7aed[m Enhance platform security through digital identities and robust data protection
+* [33mbdda20b[m Enhance security page with illustrative images of secure infrastructure
+* [33mfef63f0[m Revert security page to previous version with original content and structure
+* [33mf4eac63[m Improve the appearance of the EUFD standard information page
+* [33m4087f51[m Reduce space between images and text for better visual appearance
+* [33m16e167e[m Improve the layout and appearance of the EUFD standard benefits section
+* [33me7113d6[m Remove extraneous text from image description for clarity of the interface
+* [33mb4a69e0[m Connect buttons on the EU farming details page to the correct sections
+* [33mbd1a530[m Improve the appearance of EUFD standard information on the website
+* [33mcc76696[m Improve the appearance of the EU standard page for better user experience
+* [33mcf7b4b4[m Add language support to the EUFD standard page for wider accessibility
+* [33mc433121[m Rename and relocate the EUFD standard page for better organization
+* [33m04d70df[m Update text and add image to the EUFD2025-001 standard page
+* [33m182bd55[m Update EU farming standard page with EU compliance and blockchain details
+* [33m91bbd66[m Update EU carbon standard page with improved clarity and focus on key features
+* [33m182a078[m Introduce EUFD2025-001 standard, a blockchain-based CO₂ certification process
+* [33m4aac337[m Revert the platform to its original starting page as requested by user
+* [33m3c8d451[m Show users how carbon emissions are certified and tracked on the platform
+* [33mc1442d2[m Restore the navigation link and correct the route for important pages
+* [33m7a84b9c[m Update the certification page link to improve site navigation for all users
+* [33m559174e[m Update link to CO₂ certification page and remove obsolete page
+* [33m7549a2b[m Improve navigation bar appearance on subpages for better user experience
+* [33m2edf045[m Update titles on the CO₂ certification page for clarity and consistency
+* [33mf16cdcf[m Refine CO₂ certification information and improve clarity and readability
+* [33m8e9c051[m Refine membership form by removing unnecessary field about land size
+* [33me84d39b[m Add Italian translation for the "Cancel" button across the platform
+* [33mfb1691f[m Add Italian translations for website fields and contact preferences
+* [33m9b6fe08[m Add translation for renewable energy in the membership form dropdown
+* [33m6a4787e[m Add translations for the registration form and other parts of the platform
+* [33m3c0e6eb[m Add English translations for several fields on the registration form
+* [33m7570366[m Expand the application form with membership type selection for clarity
+* [33mc3d79bb[m Update membership form to collect Italian regions instead of countries
+* [33m9905c79[m Improve membership application with a more detailed business activity selection
+* [33m6148778[m Add English translations for the membership application form fields
+* [33m08d9ca1[m Improve website loading speed when navigating between different pages
+* [33mcf7d42b[m Provide initial website structure with essential pages and multilingual support
+* [33m46a3fed[m Improve logo appearance on navigation bar for a cleaner user interface
+* [33meda5cbe[m Enhance navigation bar with logo and dynamic color transitions
+* [33m404f74f[m Ensure navigation elements are consistently visible against the logo
+* [33m0e11f4d[m Increase the size of the logo and the main title on the navigation bar
+* [33mda5c35b[m Improve the appearance of the company logo and name on the navigation bar
+* [33m3f598b5[m Increase the logo size in the navigation bar for improved visibility
+* [33m2893b86[m Provide a basic version of the website without login features
+* [33mfcf1809[m Enable role-based access with dedicated dashboards for varied user roles
+* [33m2856700[m Update banking details across the platform for seamless transactions
+* [33m460bb2c[m Remove duplicated text about renewal costs under the main price
+* [33mc68c267[m Update displayed pricing details in certification pricing information
+* [33m426acff[m Refine dashboard layout and visuals for improved user experience
+* [33m5ac1e20[m Ensure page titles are fully visible and not obscured by the navigation
+* [33m08882f1[m Show the Dashboard button in the navigation for easier access
+* [33m30f34e4[m Improve dashboard appearance for mobile phones and smaller screens
+* [33m865ec3b[m Update pricing to accurately reflect company account registration costs
+* [33ma0c5866[m Translate payment summaries to Italian language for better user experience
+* [33m8bebe9d[m Translate pricing details into Italian for user certification process
+* [33m0b45d46[m Show the total price to transfer and explain extra project costs
+* [33m81a6b04[m Update payment information to include bank details for Italian translation
+* [33m49ef431[m Update pricing and labels to reflect new fingerprint and blockchain fees
+* [33m1667962[m Update pricing and payment details for both individual and company accounts
+* [33m8f279c3[m Add visual aid to clarify instructions or enhance user interface elements
+* [33m70cebe7[m Add user profile picture and update payment details on registration
+* [33mbd827d5[m Adjust registration fees and payment details during user registration
+* [33maabbe5f[m Use official Italian emission factor for renewable energy calculations
+* [33mbe245bc[m Improve project detail presentation with default values and content
+* [33m401bffa[m Improve project details view and display blockchain and certification data
+* [33mc7427d5[m Remove duplicate project upload functionality from dashboard interface
+* [33m9e23995[m Update project tracking dashboard with improved design and functionality
+* [33m961b4d1[m Add sample projects to the dashboard for immediate visual review
+* [33ma810307[m Restore correct CO₂ emission factor and standardize renewable energy types
+* [33md7ae68d[m Update CO₂ emission calculations to align with EU compliance standards
+* [33mf93b5c3[m Integrate project details directly into the main dashboard view
+* [33m21ef92e[m Update display and add translations for ongoing carbon certification projects
+* [33mefc4af8[m Calculate and display CO₂ savings for renewable energy projects
+* [33m3379ad7[m Add document explaining how solar panels help reduce carbon emissions
+* [33m426338a[m Remove redundant close buttons on the identity verification pop-up window
+* [33m285cb0c[m Integrate new KYC process and payment for employee account setup
+* [33m9f719c0[m Add screenshot illustrating user interface improvements for user feedback
+* [33m8c9d49d[m Redesign the KYC upload process to improve user experience and clarity
+* [33maace112[m Refine text and remove unneeded phrases for a cleaner user experience
+* [33m468dc8b[m Enhance user experience with KYC, payments, and audit trail sections
+* [33m1b53580[m Improve how project details are shown and ensure all user projects are displayed
+* [33m9e78adf[m Calculate and display CO₂ sequestration values in project creation forms
+* [33m4842d77[m Enable users to upload and view supporting documents for projects
+* [33mf54627e[m Streamline project creation by guiding users to dedicated project forms
+* [33m8df98ac[m Give project owners access to view detailed information and calculation data
+* [33m60442f3[m Update carbon credit calculations and project creation form fields
+* [33m8bbe9d2[m Implement carbon calculation conforming to EU standards and display formulas
+* [33m5619f40[m Enable creation of forestation projects and display carbon calculation
+* [33m6ca181c[m Add guidelines to facilitate the creation of new forestation projects
+* [33m130bd97[m Enable users to create and manage CO₂ certification projects
+* [33m3c486ce[m Add supporting documents to clarify project requirements and direction
+* [33m9e527cb[m Improve display of extended text in the additional description field
+* [33mbe4da17[m Enable users to add machinery, buildings, and renewable energy sources
+* [33me4282d6[m Refine the organization address input to ensure data integrity
+* [33m03c032b[m Add more details to the project's certification and compliance information
+* [33m6e040ba[m Expand platform capabilities by adding new data fields and descriptions
+* [33mf7ea772[m Add Italian translations for organization registration form fields
+* [33m62f3a8b[m Improve user experience by translating organization information form fields
+* [33mc42d1b6[m Translate organization information fields to English for global users
+* [33m42ce1d1[m Improve dashboard layout and remove redundant link for better user experience
+* [33m67e05d8[m Remove unneeded feature that suggests renewable energy projects
+* [33ma1f31ed[m Improve the appearance and usability of the account extension form
+* [33mc6b7dc7[m Enable credit card and bank transfer options for extending accounts
+* [33mfee776b[m Update contact information ensuring users can reach the correct support team
+* [33m7b9c1d9[m Improve the display of payment information in English for carbon credits
+* [33m94ff982[m Add English translations for carbon credit certification pricing structure
+* [33me68c935[m Show the cost structure for blockchain accounts within the certification process
+* [33m18df332[m Update the yearly account renewal cost displayed to reflect the new price
+* [33m60aa744[m Enable users to extend their account subscriptions through payment system
+* [33m9f38e96[m Remove session verification feature from the security dashboard
+* [33m13bb22b[m Improve security verification process by distinguishing verification types
+* [33m9600a39[m Ensure all text on the security key card is consistently displayed in English
+* [33m4f9af5e[m Add English translations to improve security and certificate handling features
+* [33mbfab7ae[m Update security key card to display all information correctly in English
+* [33m07de3a5[m Improve the look and feel of the recommendation window for projects
+* [33m9d5ea00[m Add English translations for dashboard elements and improve user interface
+* [33m2953fdf[m Add English translations to certification, legal, and tech descriptions
+* [33m7554103[m Add translations for CO₂ certification content to the digital platform
+* [33m36c8ac7[m Update title and description for agricultural supply chain membership
+* [33m3eaa544[m Add English translations for contact section titles on the website
+* [33mce75319[m Improve consistency of text appearance in the contact section
+* [33ma9dc912[m Improve clarity of KYC process description for enhanced user understanding
+* [33m595bc3d[m Add English translations for key platform features and security details
+* [33mea796b1[m Update security information to use English on the website
+* [33m17ca25c[m Update security information to be available in multiple languages
+* [33m3755f20[m Improve security descriptions and add images for better clarity
+* [33m1c77011[m Add translations for the security page to protect user agricultural data
+* [33m92c0ad5[m Reduce visual spacing on key website sections for a cleaner interface
+* [33m78468d8[m Reduce visual spacing in multiple sections for a cleaner presentation
+* [33mf70a818[m Improve the look and feel of the platform section and text
+* [33m4a3496f[m Add text and images describing the new EU carbon certification standard
+* [33m2f48bd8[m Improve clarity of CO₂ certification standards information on the platform
+* [33m8b663cb[m Refine introduction text on EU carbon certificate standard page
+* [33m20f2101[m Add introductory text to explain EU carbon credit certification process
+* [33mf2c34b3[m Restore complete English translation across the entire platform interface
+* [33m140be66[m Correct the primary language of the login button across the whole platform
+* [33me476adc[m Add missing English translations for key website elements
+* [33m67aa6ac[m Add section to ensure the platform meets security and compliance standards
+* [33m15365dc[m Update website text so users can navigate and understand the platform
+* [33m8cc0e7c[m Add new descriptive text and ensure consistent language across the platform
+* [33mcede2b1[m Improve user experience by translating remaining text into English
+* [33md52acb1[m Add various sections to the dashboard and match the Italian source
+* [33m26edc9e[m Update displayed text and recommendations to support Italian translation
+* [33m3860d8c[m Improve the layout and sizing of icons on the main dashboard
+* [33me3dd906[m Add descriptions for ISO standards for carbon tracking and verification
+* [33m64bc57e[m Add Italian translation to the 'Learn More' button on platform
+* [33m57638d3[m Refine the platform introduction text for better user comprehension
+* [33m05c6a9a[m Remove redundant text about upcoming platform availability from website
+* [33mde3719f[m Make the website more user-friendly by translating button text to English
+* [33m5ee4e85[m Improve website by displaying trust indicators and security information
+* [33m9d5e4fc[m Improve platform description and enhance security information for users
+* [33m0ca7f9e[m Update website text to highlight renewable energy and contact information
+* [33m8cd53c2[m Update the platform's English content and add global partnership details
+* [33m2a687ef[m Expand platform information and add details about carbon credit opportunities
+* [33m3d0cc1f[m Expand introductory section with new key metrics and mission statement
+* [33mb46ee9e[m Expand the introductory section with more details about the platform
+* [33m8101847[m Update main page text and call-to-action buttons for clarity
+* [33m974e6ef[m Illustrate the difference between Italian and English translations
+* [33m1b0a418[m Improve admin data access and add document sharing capabilities
+* [33m4b85d2f[m Fix broken links in the footer to ensure users can access important legal information
+* [33m56db3eb[m Add new security information to the platform and enhance data protection
+* [33m4e0f4a3[m Add more details about security standards to the Italian website
+* [33mb0980c8[m Improve data security details shown on the security information page
+* [33md310a82[m Add Italian translation to security page and include security images
+* [33m26ca57b[m Add a new security page with details about data protection measures
+* [33m43ca615[m Add Italian translations describing EU regulation and blockchain benefits
+* [33m9c1c505[m Restore EUFD standard page, footnotes, and standard section texts
+* [33m262f262[m Refine website text for clarity and improve user experience significantly
+* [33mca84927[m Add descriptions of the platform features and benefits in two languages
+* [33m1681839[m Add more information about global carbon credit certification standards
+* [33mc5eed63[m Introduce a section highlighting the transition to sustainable agriculture
+* [33m68951ff[m Add Italian translations for main sections of the home page
+* [33mf491429[m Introduce EUFD2025-001 standard details with compliance information
+* [33m7c2a3f4[m Improve website appearance with new labels, text and language options
+* [33m42ec794[m Revamp website content focusing on mission, innovation, and user opportunities
+* [33m0649505[m Refactor text content to remove duplicates and streamline translations
+* [33m2e42ad7[m Update data center image to better represent secure infrastructure
+* [33mcde9a04[m Showcase platform's certifications and security measures for user data
+* [33mf2b892f[m Update image on security page to better represent clean energy
+* [33mfa7ed63[m Update security page with latest information about CO₂ neutrality
+* [33m3bc071e[m Show details of the blockchain architecture and diversified trust network
+* [33m79601b4[m Enhance the security page with CO₂ neutral information and translations
+* [33m8b0364e[m Show commitment to environmental responsibility through CO₂ neutral infrastructure
+* [33mfd7147a[m Update security page to show more accurate representation of security
+* [33m800f4fe[m Showcase robust security and global governance of the blockchain network
+* [33ma0387fd[m Show users how the platform protects their information using advanced tech
+* [33m9256042[m Improve the layout of security features for better visual appeal
+* [33mc5c467e[m Showcase enhanced physical security measures using alpine data fortresses
+* [33m1e6878d[m Remove unnecessary security feature cards from the security page
+* [33m34a3577[m Update security page to highlight platform safety measures and protocols
+* [33m9f123c7[m Restore original three-tier security layout with enhanced explanations
+* [33mfe831a9[m Enhance security page layout and improve clarity of information displayed
+* [33m5326f4e[m Enhance security page with details on authentication, data control, and infrastructure
+* [33mf4bfb87[m Improve the display of legal compliance information on the CO₂ certification page
+* [33m683134b[m Update legal and tech info for CO₂ certification to reflect new standards
+* [33m9adf48c[m Refine descriptions on CO₂ certification page for better user engagement
+* [33m8ce4fea[m Update text on the CO₂ certification page to improve user understanding
+* [33m73e2dda[m Improve CO₂ certification page with detailed partner information
+* [33m61ba232[m Add a button that allows users to explore CO₂ certification details
+* [33m2c5c6f1[m Improve the Italian translation and update descriptions on the platform
+* [33mfc6ece2[m Update platform section to describe the CO₂ certification process
+* [33m4699b93[m Add content to help agricultural businesses show climate impact and get funding
+* [33m727158f[m Add introductory content and statistics to the main landing page
+* [33m96ffe3d[m Update certification information and add Italian translations
+* [33m12ecc98[m Translate opportunity section to Italian language for broader user access
+* [33m42036b4[m Update partnership information to reflect new collaborations and technologies
+* [33ma06289b[m Remove informational message about the EU funding initiative
+* [33m06f15e2[m Update descriptions to emphasize EU compliance and carbon market access
+* [33m27c7d34[m Add image to asset folder for use in a new feature or enhancement
+* [33m7717b8e[m Inform users about the platform's vision and the upcoming new feature launch
+* [33m50237a1[m Remove EU regulation details and show blockchain benefits under title
+* [33m38e634f[m Add compliance information and blockchain integration details to EU standard
+* [33mad4ce0c[m Restore detailed information about our EUFD standard and its benefits
+* [33m1602b91[m Add new content to explain the regulations concerning carbon credits
+* [33m7c83631[m Restore content to standard subpage and add new blockchain information
+* [33m32dc709[m Add introductory and transition content to the platform main page
+* [33m2a988a9[m Add introductory information about EU agricultural carbon certification
+* [33mde4fd5b[m Add text to describe EUFD standards and vision for sustainable certification
+* [33m8e6e799[m Add document download link for renewable energy project certification
+* [33m16e637f[m Update wording and add new partners images to the partnerships section
+* [33mf3f782b[m Add translations for CO2 certification and security features in Italian
+* [33m22928f8[m Add screenshot to enhance the explanation of recent platform updates
+* [33m6788189[m Add descriptions about carbon credits and opportunities for carbon offsetting
+* [33m3da4068[m Add Italian translations for EU carbon certification standard information
+* [33mf75b6bf[m Restore translation keys, standard certifications section and add missing images
+* [33m12002a3[m Add contact form and platform information translations for bilingual support
+* [33m7d28ced[m Improve translation accuracy and update dashboard display elements
+* [33m5b5723c[m Enhance the user dashboard with Italian translations and renewal details
+* [33mf0f08b3[m Add interface translations for improved user account security management
+* [33m0602d74[m Add marketing consent text to enrollment forms in both English and Italian
+* [33m7d04ac2[m Revamp website's introduction and navigation for enhanced user engagement
+* [33m990b2bd[m Update the landing page with information about carbon certifications
+* [33me7dd80f[m Revamp website text, navigation labels, and add homepage content
+* [33mae3470f[m Improve user login appearance and update text in Italian translation
+* [33m99fc57f[m Update ID format to new standard and ensure data migration compatibility
+* [33m5a0794f[m Update ID keys and references to reflect the FAGRI standard
+* [33m9662460[m Give users suggestions on renewable energy projects for carbon offsetting
+* [33m74c5ba5[m Offer customized renewable energy suggestions to platform users
+* [33m6e22fcc[m Update the identification key shown on the security dashboard modal
+* [33mf079599[m Restore account extension feature, providing clear renewal options for users
+* [33m65b074b[m Enhance user security and admin control with user session insights
+* [33m8745b72[m Improve user experience by displaying the correct ID and storing login info
+* [33m3f191c7[m Enhance user security and account identification within the dashboard
+* [33m01b0399[m Improve sign-in modal and add ID validation messages for a smoother experience
+* [33m307193a[m Change dashboard info button to direct users to security settings
+* [33mc545550[m Update project IDs to align with the new naming conventions
+* [33m4a3df6b[m Introduce security dashboard for account access and session management
+* [33ma2fb3cd[m Show official certification pricing structure for carbon credits
+* [33m065baca[m Enable organizations to input and manage their official information
+* [33mb314e40[m Improve visual clarity of the automatic renewal setting toggle switch
+* [33m36c9116[m Improve switch button to clearly show when auto-renewal is active
+* [33mf9e19f5[m Enable users to renew keys through card payments and bank transfers
+* [33m8121e63[m Update location details to improve information accuracy for all users
+* [33md4d953b[m Enhance modal to display real-time security information for user awareness
+* [33me54248c[m Improve the appearance of the identification key within the information window
+* [33mb35121a[m Enhance key information modal with auto-renewal options and visual updates
+* [33md6b0fbe[m Enable users to view key information and manage their subscriptions
+* [33md3a5e92[m Improve readability on the dashboard's agricultural hero section
+* [33m9bd8cae[m Update the user interface to reflect the correct ID key name
+* [33m733cc46[m Improve the display of user authentication information on the dashboard
+* [33m6e1879e[m Improve dashboard layout for clearer display and consistent navigation
+* [33m3ad3622[m Improve handling of expired user sessions with improved language support
+* [33m777d918[m Enhance dashboard look and feel with a hero image and updated translations
+* [33m36b84d4[m Enhance user dashboard with key information and improved navigation
+* [33mc7898ea[m Improve dashboard loading speed and navigation for a smoother user experience
+* [33m0744e2a[m Enable users to enter an ID key to access the protected dashboard
+* [33m79dd37c[m Update website background image for improved visual appeal and clarity
+* [33m031cdf1[m Enhance login security and improve dashboard appearance for unauthorized users
+* [33mf2a28fc[m Implement secure dashboard access and track project certification status
+* [33m17b9ac3[m Add project tracking dashboard to monitor renewable energy certifications
+* [33m52acb01[m Improve the way project information is collected and displayed to users
+* [33m3e228e7[m Improve address input and renewable energy selection on membership form
+* [33m147b3ef[m Replace privacy and terms modals with direct links for easier access
+* [33m6aac1fd[m Show the privacy policy and terms of service in pop-up windows
+* [33m093921d[m Ensure privacy and terms modals always appear on top of other elements
+* [33me2d478a[m Update the privacy policy link text to Italian in membership modal
+* [33m018bd28[m Ensure legal agreement pop-ups show correctly when applying for membership
+* [33me2c8955[m Enable easier country selection with a search field in the membership form
+* [33m6d4e29b[m Improve the usability of the privacy policy and terms of service pop-up
+* [33m2590aa7[m Update the country list to include all EU member and partner countries
+* [33m569f160[m Improve the display and functionality of the Terms and Privacy modals
+* [33mb4499bb[m Use consistent branding by implementing the standard logo component
+* [33md71a7c0[m Enhance visual appeal with logo and improve checkbox state indication
+* [33m8778751[m Enable direct access to privacy policy and terms of service documents
+* [33m5830374[m Enable users to register projects for CO2 certification with different types
+* [33m2eaac7e[m Improve the appearance of the logout button on the user dashboard
+* [33mec7333b[m Improve user dashboard interface and ensure proper modal behavior
+* [33mf24a218[m Update user dashboard modal design for improved user experience
+* [33m503ccfc[m Revamp user dashboard design for improved visual consistency
+* [33mab2b125[m Remove unhelpful platform features section and correct translation error
+* [33mc7d9696[m Improve the user interface by adding descriptions and validation
+* [33mb1dac22[m Enable users to register projects after signing in to the platform
+* [33mb3ca0f0[m Remove broken recommendation and project registration features
+* [33m04c8aa1[m Improve user interface and add enhanced authentication messages
+* [33mfdd7480[m Improve the navigation by preventing multiple modal windows from opening
+* [33mac55354[m Fix issue preventing successful user authentication and text correction
+* [33m039b9b8[m Improve user login flow and remove outdated ID verification messages
+* [33m7906269[m Improve project registration process and add translations for different languages
+* [33ma9f515b[m Give users clearer payment options and instructions during registration
+* [33mfd32014[m Improve user experience when registering projects and selecting payment methods
+* [33maba11a9[m Rearrange navigation buttons and sign-in workflow for better user experience
+* [33mdceed74[m Ensure pop-up windows appear on top of all other website elements
+* [33m802df78[m Improve navigation button functionality and fix a modal rendering issue
+* [33mbf878d5[m Improve the look and function of the renewable project registration
+* [33mc2131b0[m Add a feature that provides personalized renewable energy project ideas
+* [33mbdd6d69[m Enhance project registration modal with immersive visuals and improved UI
+* [33m88fac00[m Enhance Renewable Energy project registration with detailed information
+* [33mc0ebfdc[m Enhance project registration screen with an appealing forest background
+* [33m7148922[m Enhance project registration with new design and detailed information input
+* [33m2240ae7[m Improve user dashboard appearance for smaller screens and better usability
+* [33m7677629[m Improve visual clarity of user dashboard and add security enhancements
+* [33mbfe4963[m Improve user interface of the dashboard to be more visually appealing
+* [33mf7db04d[m Introduce user dashboard with document management and project registration
+* [33mafbbf88[m Add easy ID filling functionality for developers during testing
+* [33mf7e9786[m Improve navigation by removing less important options for a cleaner look
+* [33mdb312fd[m Improve user login by validating secure keys and enhancing visuals
+* [33m4510e13[m Enable users to upload and manage CO2 certification documents
+* [33m6d73825[m Improve visual clarity by using distinct colors for project types
+* [33mc11a6c2[m Update test ID key and provide auto-fill functionality for development
+* [33maad1c44[m Improve user experience by streamlining the project registration process
+* [33m6eca278[m Improve the project registration process and sign-in modal appearance
+* [33m7a5e729[m Restructure navigation to improve project registration and user login
+* [33m12e856b[m Generate unique IDs for users upon registration for platform access
+* [33m8612ec1[m Enable farmers to register as Fagri members with detailed profiles
+* [33m6810053[m Translate remaining user role selection text into Italian for consistency
+* [33mec32e3e[m Enable employee registration with banking KYC and payment processing
+* [33m69b7d5d[m Add EU CO2 certification standard download to Renewable Energy section
+* [33m6dfb37d[m Remove redundant close buttons on registration and role selection pop-ups
+* [33maa6f430[m Add a button for users to download the EU CO2 emissions standard document
+* [33mfb38bfc[m Enhance user security with clear explanations of ALPHAG8 ID KEY protections
+* [33m4d0c624[m Add role-based access to registration process for different user groups
+* [33mb5e6553[m Enable users to register and obtain a secure ALPHAG8 digital identity
+* [33md95f801[m Add sign-up and register buttons to the navigation bar for easy access
+* [33m84eeb94[m Enhance security by automatically logging out inactive users after 10 minutes
+* [33m16c00d8[m Correct a typo in the title describing the European CO₂ ecosystem
+* [33m781a94a[m Update introductory text on main website to reflect current state
+* [33m0bc2afc[m Update introductory text to reflect completed platform development
+* [33m91cbd1c[m Refine description of carbon credit handling on the blockchain platform
+* [33m3ca67f6[m Refine text describing energy companies that produce renewable energy
+* [33mb9f3bb8[m Improve clarity in explaining how carbon credits are issued and certified
+* [33mefc96a8[m Refine explanation of how the platform manages carbon credit projects
+* [33mb20318b[m Improve the description of how carbon credits are created and certified
+* [33m078c262[m Improve clarity of carbon credit information for environmental projects
+* [33m4cfb825[m Correct capitalization error in explanation of carbon credit processing
+* [33m2da2cd3[m Correct minor grammatical error in the description of carbon credits
+* [33m21af761[m Fix a typo in the description of the carbon credit certification process
+* [33m9a72312[m Correct spelling errors and upload screenshot for context
+* [33m594ed74[m Expand legal documents page with details on global regulatory frameworks
+* [33m7e3cdf5[m Add document detailing transparent carbon market using blockchain
+* [33m2e216e0[m Remove in-depth legal analysis from the legal documentation page
+* [33m1d689d6[m Improve legal documentation with expandable sections and full text
+* [33m03d6f0b[m Translate legal documents to Italian for better user comprehension
+* [33ma3eeb6b[m Improve the display of legal documents with interactive sections
+* [33mcf91cde[m Correctly display legal documentation titles and text in Italian and English
+* [33m25b9a45[m Fix translation errors and improve language handling on legal documentation
+* [33md3379f2[m Rename 'Technical Documentation' to 'Legal Documentation' and translate it
+* [33mc7097d3[m Add a new section to help users understand our environmental platform
+* [33m51ccbad[m Add detailed explanation of the platform's goals and features
+* [33md79c036[m Improve the look and layout of the website footer for better user experience
+* [33m8ce9d41[m Improve the footer layout with partner section and visual enhancements
+* [33m02ec1bd[m Improve website footer by showcasing key project stakeholders and government partners
+* [33md594aeb[m Showcase technology and institutional partners in the website footer section
+* [33m9cb7307[m Reduce the empty space between the image and title for a cleaner look
+* [33me4df9a2[m Improve appearance of government building image for better visual balance
+* [33m51bda53[m Update copyright notice to reflect current ownership and year
+* [33mb3af16b[m Add copyright and company information to the password protection interface
+* [33m72963e5[m Enable users to switch displayed language on the password protected page
+* [33m8adbb11[m Add password protection and a beautiful landing page for website access
+* [33m3273cb9[m Update text regarding carbon credits for accuracy and client satisfaction
+* [33mc6f1405[m Update descriptions of opportunities for businesses in carbon farming
+* [33mcf1b438[m Expand the main welcome area with a more descriptive message
+* [33m84fd52b[m Update the platform description to highlight carbon certification focus
+* [33m8b6212d[m Add visual element to promote inclusive participation in carbon ecosystem
+* [33maae042a[m Promote a global vision for fair and transparent CO2 management standards
+* [33m494b95f[m Update section to emphasize a complete carbon credit solution
+* [33me84ebbc[m Update the displayed standards to align with the correct certifications
+* [33mb5fcd42[m Enhance visual appeal by adding a scenic image between text fields
+* [33mdc18700[m Refine trust indicators to align with specific environmental certification standards
+* [33maf0a19f[m Highlight security and data protection features for enhanced user trust
+* [33m5962227[m Revamp platform section to highlight impact and value proposition
+* [33m3c56b69[m Refine platform benefits section and standardize ISO certification display
+* [33m46c0355[m Improve website security and ensure secure connections for all users
+* [33m240e972[m Make the website publicly accessible for all users to view and interact
+* [33m5edc294[m Make the AgriDigital platform accessible to everyone for broad participation
+* [33m3bd6c19[m Configure the deployment settings to automatically build and run the application
+* [33m3b75352[m Add visual resource to improve user understanding of the platform
+* [33m66c8528[m Add screenshot showing problem where the website is marked as not secure
+* [33m00e5a31[m Add visual aid clarifying the carbon certification process for farmers
+* [33mc31c6cf[m Update contact information across the website for general and membership inquiries
+* [33m9605335[m Update carbon emission standards to include detailed ISO specifications
+* [33m2a37e97[m Update partner information and add screenshot of the updated content
+* [33mf613477[m Acknowledge scientific partnership with University of Viterbo La Tuscia
+* [33m26e6bd6[m Improve website security and domain handling for a better user experience
+* [33m3897bc5[m Add screenshot showing redirect issue on mobile despite prior fixes
+* [33m63d3d45[m Improve website content and deploy project under custom domain
+* [33m7239bb4[m Add visual representation of socket closure for improved issue tracking
+* [33mbf403ab[m Add Italian translations for data center security features on website
+* [33mdf12594[m Make fingerprint information consistent across all supported languages
+* [33m90a3376[m Update the website footer to display technology provider information
+* [33mafe5448[m Improve mobile display and adjust footer text for better user experience
+* [33m91d2045[m Improve website appearance on phones and tablets for optimal usability
+* [33m16c8396[m Refine introductory text to focus on the platform itself, removing mentions of specific partner organizations
+* [33m2f846aa[m Show process for creating and protecting digital identities on platform
+* [33m8a8a1c0[m Showcase official backing of carbon certification with image
+* [33mafb7c17[m Relocate digital fingerprint information to the three-factor authentication area
+* [33m362552d[m Showcase agricultural landscape image prominently on the security page
+* [33m3b4837d[m Require digital fingerprints to boost platform trust and transparency
+* [33mf449af3[m Enhance security page with agricultural trust visual and translations
+* [33m73e621e[m Enhance user security with mandatory digital fingerprint for traceability
+* [33m9f9a711[m Refine display of carbon neutrality information on the security page
+* [33m70d9fec[m Enhance visual appeal of security page by including relevant images
+* [33me4613af[m Showcase commitment to environmental sustainability with CO₂ neutral infrastructure
+* [33mf1fb849[m Update security information to highlight data protection measures
+* [33m845b6e8[m Improve the appearance of the security page by removing redundant elements
+* [33meee1b2d[m Add visual resource to enhance understanding of the platform
+* [33m1f7457f[m Enhance security page with details on validator governance and data centers
+* [33m88a1a20[m Clarify the consortium of technology partners for the EUFD2025-001
+* [33m3bbbbd5[m Acknowledge expanded partnerships that contributed to the platform's creation
+* [33m0926e95[m Update ISO certification standards to include a broader range of criteria
+* [33md18705f[m Highlight compliance with EU standards for carbon certifications
+* [33m6f2f179[m Update security information for improved user understanding of key features
+* [33m39eccd1[m Enhance security page with blockchain details and correct translation
+* [33mb5684c6[m Show how blockchain creates transparent, secure, and traceable carbon credits
+* [33m64ffa19[m Refocus platform messaging to emphasize carbon certification impact
+* [33mba7438c[m Condense security information on landing page for better user experience
+* [33m190d1af[m Improve the clarity of data protection with real world comparison
+* [33ma746b38[m Enhance data protection description highlighting blockchain integration
+* [33m47e1c9d[m Overhaul the security subpage to provide clear and concise information
+* [33me7aeba2[m Streamline the landing page by relocating detailed security information
+* [33m53073fe[m Showcase data center certifications and compliance for enhanced security
+* [33m0f6b5c5[m Enhance security information with Swiss military-grade data protection
+* [33ma6893d6[m Enhance data security information and emphasize Swiss data protection standards
+* [33m145b74a[m Refocuses website messaging to highlight global compliance and innovation
+* [33m5252f78[m Highlight key security and trust indicators on the platform homepage
+* [33m2d98e4b[m Update the introduction section to reflect the correct number of offices
+* [33m88246af[m Update introductory section to reflect accurate platform statistics
+* [33m8d6f824[m Include a visual aid demonstrating the user interface for clarity
+* [33m98862d8[m Add image to enhance visual clarity and appeal of platform documentation
+* [33m7f9a450[m Reflect platform's commitment to enabling real change in the ecological transition
+* [33m8e2cd20[m Show users how blockchain ensures data integrity and transparency
+* [33m661b263[m Show the platform's commitment to security and data protection for users
+* [33m1074b05[m Refine information on the carbon certification platform within the application
+* [33m4f4ad46[m Showcase a wider range of partners including technology collaborators
+* [33mc1e5c5e[m Show the platform's institutional collaborations to build trust
+* [33m8f0706e[m Update the description of the CO2 certification standard on the platform
+* [33mbd58962[m Enable the display of carbon credit market information in multiple languages
+* [33m47786bb[m Explain what carbon credits are and how they are used on the platform
+* [33m5ea3645[m Show new opportunities for agricultural and energy companies to generate revenue
+* [33m77787c2[m Enhance the main page with a motivational tagline and updated styling
+* [33mb2e880e[m Refine website content to better convey platform's purpose and capabilities
+* [33m651a7c2[m Add new visual assets to enhance the user experience on the platform
+* [33m2ea610d[m Add reference image to assist with upcoming Italian translation refinements
+* [33m3022ee3[m Add onboarding guide for new developers to understand the platform quickly
+* [33m2479823[m Revert to previous design to improve overall user experience
+* [33m841117b[m Enhance the visual appeal of the main page with an attractive pattern
+* [33m1d6477b[m Acknowledge website design contribution in the footer section of the page
+* [33m181a3b2[m Introduce visual transition to break up technical aspects of the website
+* [33m8a6c72b[m Improve website responsiveness for optimal viewing on mobile devices
+* [33m60b3be3[m Restructure partner logos to reflect stakeholder arrangement on the platform
+* [33m7d9b8bf[m Rearrange partner listings to reflect accurate partner classifications
+* [33mc404b89[m Move G8Chain from technology to institutional partners on the main page
+* [33m33dea42[m Refine partner section layout and information presentation for clarity
+* [33m6821e97[m Improve the layout of the technology partners section on the main page
+* [33m7491a01[m Acknowledge SUOLO E SALUTE, expand ALPHAG8 description, and include UNI standards
+* [33m2a2b0d5[m Show technology and institutional partners supporting the FAGRI platform
+* [33m75dd730[m Show the company we are collaborating with to deliver the platform
+* [33mef62b1e[m Fix incorrect links in navigation menu for Italian language users
+* [33m604a9be[m Implement a consistent navigation system throughout the entire platform
+* [33mce0fcd2[m Direct users to EUFD standard information from the main page
+* [33m953d971[m Restore link to CO2 certification information from the footer navigation
+* [33m375dcc9[m Correct the name of the blockchain platform used throughout the application
+* [33m063e820[m Fix link in the footer to make it work correctly across all pages
+* [33mca73f38[m Remove the partnership section from the homepage and navigation areas
+* [33mdc402f2[m Update the footer with partner links and remove social media icons
+* [33m6377ad3[m Improve user experience and content on the CO2 certification page
+* [33m944fb6b[m Showcase CO2 certification process with partners and legal framework
+* [33m26c8b87[m Improve visibility of mission statement and remove redundant name
+* [33m2d1a7dd[m Elaborate on the company's mission and vision within the platform introduction
+* [33m138143a[m Update mission statement on the platform, enhancing clarity and purpose
+* [33m4f4bea5[m Remove the security section from the homepage and navigation bar
+* [33m7ecb071[m Enable navigation links to work correctly when moving between pages
+* [33me1f227b[m Enable users to access privacy and GDPR policies directly from forms
+* [33m847bf2b[m Inform users about the high security measures in place for their data
+* [33m29778a1[m Improve the user experience by automatically scrolling to the top of pages
+* [33m0167ec1[m Add legal information pages and link them in the website footer
+* [33m39ccb23[m Relocate the company name to the left side and remove the logo
+* [33m3bbe94c[m Update contact information and privacy policy links for improved clarity
+* [33m948b51a[m Move "Join Network" button to contact section and add membership form
+* [33mf002774[m Enhance the platform's appearance with a professional, modern dark theme
+* [33mb70f283[m Enhance the welcome section with dynamic elements and a modern design
+* [33m6480d0e[m Make the "Contact" button navigate directly to the contact section
+* [33m6b3e588[m Improve the description of the EUFD2025-001 standard and its global launch
+* [33m54671d8[m Add detailed page about the new EUFD2025-001 certification standard
+* [33m7c6251b[m Implement full multi-language support across key website sections
+* [33m8d3a214[m Enable complete translation of the introductory section of the platform
+* [33m060ca67[m Make all text in the main section change language correctly upon selection
+* [33m29936a9[m Add new security information page with details about data protection
+* [33m4985bf5[m Add a new section describing the security measures in place at Fagri
+* [33m0128b82[m Improve the look of the main page by removing unnecessary sections
+* [33m3d7a4c8[m Restore solar panel image and remove unnecessary container styling
+* [33m8d72491[m Improve image display and proportions in the certification section
+* [33m69a9ed4[m Showcase harmonious integration of agriculture and renewable energy
+* [33m4eadcf9[m Enhance visual appeal with engaging images showcasing project goals
+* [33me7184f2[m Replace generic image with feature cards highlighting EUFD2025-001 protocol
+* [33mb3e6b66[m Add section highlighting renewable energy and sustainability initiatives
+* [33me8ab553[m Showcase renewable energy and agriculture integration on the website
+* [33m2853551[m Replace repeated content with a clear certification process diagram
+* [33m135a29a[m Improve website language switching functionality and ensure proper initialization
+* [33m6b4edd5[m Improve website translation and default language settings for all users
+* [33m0d053c7[m Update wording to reflect the correct name of the new EU standard
+* [33m52d6890[m Update contact information and company details across the website
+* [33m8046a98[m Improve membership form with region/country selection and navigation style
+* [33m049f201[m Revamp website design to build trust and show banking professionalism
+* [33mb73da17[m Revamp website appearance with vibrant colors and compelling imagery
+* [33m9077378[m Enhance website appearance with a fresh design and improved readability
+* [33m674d084[m Enhance website design with new logo and improved visual styling
+* [33m9cf4625[m Improve website structure and add core features for initial launch
+* [33m2232b6c[m Initial commit
