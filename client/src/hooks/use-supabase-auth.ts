@@ -12,17 +12,23 @@ interface Profile {
 }
 
 export function useSupabaseAuth() {
+  console.log('useSupabaseAuth hook initializing...');
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  console.log('useSupabaseAuth state:', { user: !!user, session: !!session, profile: !!profile, isLoading });
+
   useEffect(() => {
-    // Set up auth state listener
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event: AuthChangeEvent, session: Session | null) => {
-        setSession(session);
-        setUser(session?.user ?? null);
+    console.log('Setting up auth state listener...');
+    try {
+      // Set up auth state listener
+      const { data: { subscription } } = supabase.auth.onAuthStateChange(
+        async (event: AuthChangeEvent, session: Session | null) => {
+          console.log('Auth state changed:', { event, session: !!session });
+          setSession(session);
+          setUser(session?.user ?? null);
         
         if (session?.user) {
           // Fetch user profile after authentication
@@ -48,19 +54,31 @@ export function useSupabaseAuth() {
         } else {
           setProfile(null);
         }
-        
+          
+          setIsLoading(false);
+        }
+      );
+
+      // Check for existing session
+      console.log('Checking for existing session...');
+      supabase.auth.getSession().then(({ data: { session } }: { data: { session: Session | null } }) => {
+        console.log('Existing session check result:', { session: !!session });
+        setSession(session);
+        setUser(session?.user ?? null);
         setIsLoading(false);
-      }
-    );
+      }).catch((error) => {
+        console.error('Error getting session:', error);
+        setIsLoading(false);
+      });
 
-    // Check for existing session
-    supabase.auth.getSession().then(({ data: { session } }: { data: { session: Session | null } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
+      return () => {
+        console.log('Cleaning up auth subscription');
+        subscription.unsubscribe();
+      };
+    } catch (error) {
+      console.error('Error setting up auth:', error);
       setIsLoading(false);
-    });
-
-    return () => subscription.unsubscribe();
+    }
   }, []);
 
   const signUp = async (email: string, password: string, metadata?: { display_name?: string; user_role?: string }) => {

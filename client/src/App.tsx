@@ -74,15 +74,21 @@ function ProtectedRouter() {
 }
 
 function App() {
+  console.log('App component rendering...');
   const { isAuthenticated, isLoading } = useSupabaseAuth();
+  
+  console.log('Auth state:', { isAuthenticated, isLoading });
 
   if (isLoading) {
+    console.log('App is in loading state');
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
         <div className="text-white text-xl">Loading...</div>
       </div>
     );
   }
+
+  console.log('App rendering main content');
 
   return (
     <QueryClientProvider client={queryClient}>

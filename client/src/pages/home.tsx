@@ -14,8 +14,11 @@ import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
+  console.log('Home component rendering...');
   const { isAuthenticated } = useSupabaseAuth();
   const [, setLocation] = useLocation();
+
+  console.log('Home component auth state:', { isAuthenticated });
 
   // Don't redirect from home page - allow public access
   // Users can navigate to /auth if they want to sign in
