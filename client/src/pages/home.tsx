@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { useLocation } from 'wouter';
 import { useSupabaseAuth } from '../hooks/use-supabase-auth';
@@ -14,41 +15,48 @@ import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 
 export default function Home() {
-  console.log('Home component rendering...');
-  const { isAuthenticated } = useSupabaseAuth();
-  const [, setLocation] = useLocation();
+  console.log('🔍 Home component rendering - v2...');
+  
+  try {
+    const { isAuthenticated } = useSupabaseAuth();
+    const [, setLocation] = useLocation();
 
-  console.log('Home component auth state:', { isAuthenticated });
+    console.log('🔍 Home component auth state:', { isAuthenticated });
 
-  // Don't redirect from home page - allow public access
-  // Users can navigate to /auth if they want to sign in
+    // Handle hash navigation when coming from other pages
+    useEffect(() => {
+      if (window.location.hash) {
+        const sectionId = window.location.hash.substring(1);
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }, []);
 
-  // Handle hash navigation when coming from other pages
-  useEffect(() => {
-    if (window.location.hash) {
-      const sectionId = window.location.hash.substring(1);
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    }
-  }, []);
-
-  return (
-    <div className="min-h-screen bg-fagri-bg">
-      <Navigation />
-      <HeroSection />
-      <TransitionSection />
-      <IntroductionSection />
-      <OpportunitiesSection />
-      <StandardSection />
-      <PlatformSection />
-      <SecurityMainSection />
-      <RenewableEnergySection />
-      <ContactSection />
-      <Footer />
-    </div>
-  );
+    return (
+      <div className="min-h-screen bg-fagri-bg">
+        <Navigation />
+        <HeroSection />
+        <TransitionSection />
+        <IntroductionSection />
+        <OpportunitiesSection />
+        <StandardSection />
+        <PlatformSection />
+        <SecurityMainSection />
+        <RenewableEnergySection />
+        <ContactSection />
+        <Footer />
+      </div>
+    );
+  } catch (error) {
+    console.error('🚨 Error in Home component:', error);
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+        <div className="text-white text-xl">Loading home page...</div>
+      </div>
+    );
+  }
 }
