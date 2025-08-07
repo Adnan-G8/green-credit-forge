@@ -1,25 +1,14 @@
-console.log('main.tsx starting to load');
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 
-console.log('All imports loaded successfully');
-
-const rootElement = document.getElementById('root');
-console.log('Root element found:', rootElement);
-
-if (rootElement) {
-  console.log('Creating React root...');
-  const root = ReactDOM.createRoot(rootElement);
-  console.log('Rendering App...');
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-  );
-  console.log('App rendered successfully');
-} else {
-  console.error('Root element not found!');
+function App() {
+  return (
+    <div style={{ padding: '50px', backgroundColor: '#f0f0f0' }}>
+      <h1 style={{ color: '#333', fontSize: '32px' }}>Green Credit Forge</h1>
+      <p style={{ color: '#666', fontSize: '18px' }}>Application is running successfully!</p>
+    </div>
+  )
 }
+
+ReactDOM.createRoot(document.getElementById('root')!).render(<App />)
