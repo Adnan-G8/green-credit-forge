@@ -1,7 +1,62 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+// Error Boundary Component
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error('React Error Boundary caught an error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{
+          minHeight: '100vh',
+          backgroundColor: '#ff0000',
+          color: '#ffffff',
+          padding: '20px',
+          fontFamily: 'Arial, sans-serif'
+        }}>
+          <h1>🚨 React Error Detected</h1>
+          <p>Error: {this.state.error?.toString()}</p>
+          <button onClick={() => window.location.reload()}>Reload Page</button>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
 function App() {
+  console.log('App component rendering...');
+  
+  React.useEffect(() => {
+    console.log('App component mounted successfully');
+    
+    // Check for any global errors
+    window.addEventListener('error', (e) => {
+      console.error('Global error:', e.error);
+    });
+    
+    window.addEventListener('unhandledrejection', (e) => {
+      console.error('Unhandled promise rejection:', e.reason);
+    });
+    
+    return () => {
+      console.log('App component unmounting');
+    };
+  }, []);
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -12,7 +67,13 @@ function App() {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '20px',
-      textAlign: 'center'
+      textAlign: 'center',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      zIndex: 9999
     }}>
       <h1 style={{
         fontSize: '3rem',
@@ -43,7 +104,7 @@ function App() {
         fontWeight: 'bold',
         boxShadow: '0 8px 32px rgba(0, 255, 136, 0.3)'
       }}>
-        ✅ System Online & Ready
+        ✅ System Online & Ready - {new Date().toLocaleTimeString()}
       </div>
       
       <div style={{
@@ -61,4 +122,10 @@ function App() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<App />)
+console.log('About to render React app...');
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <ErrorBoundary>
+    <App />
+  </ErrorBoundary>
+)
