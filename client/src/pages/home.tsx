@@ -1,16 +1,22 @@
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
+import { IntroductionSection } from '@/components/introduction-section';
+import { MissionSection } from '@/components/mission-section';
+import { RenewableEnergySection } from '@/components/renewable-energy-section';
+import { StandardSection } from '@/components/standard-section';
+import { TransitionSection } from '@/components/transition-section';
 
-export default function HomePage() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <div className="pt-24 pb-20">
-        <div className="container mx-auto px-6">
-          <h1 className="text-4xl font-bold text-foreground mb-8">Home</h1>
-          <p className="text-lg text-muted-foreground">Welcome to FAGRI Digital Platform.</p>
-        </div>
-      </div>
+      <main>
+        <IntroductionSection />
+        <MissionSection />
+        <RenewableEnergySection />
+        <StandardSection />
+        <TransitionSection />
+      </main>
       <Footer />
     </div>
   );
