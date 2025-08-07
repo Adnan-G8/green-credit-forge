@@ -6,14 +6,17 @@ function App() {
       <div className="min-h-screen bg-background">
         <Routes>
           <Route path="/" element={
-            <div className="flex items-center justify-center min-h-screen">
+            <div className="flex items-center justify-center min-h-screen bg-white">
               <div className="text-center">
-                <h1 className="text-4xl font-bold text-foreground mb-4">
+                <h1 className="text-4xl font-bold text-black mb-4">
                   Green Credit Forge
                 </h1>
-                <p className="text-muted-foreground">
+                <p className="text-gray-600">
                   Your project is now ready for development
                 </p>
+                <div className="mt-4 p-4 bg-blue-100 border border-blue-300 rounded">
+                  <p className="text-blue-800">Debug: If you can see this, the app is working!</p>
+                </div>
               </div>
             </div>
           } />
